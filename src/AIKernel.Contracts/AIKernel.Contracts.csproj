@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- Package metadata -->
+    <Authors>Takuya Sogawa</Authors>
+    <Company>AIKernel-NET</Company>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/AIKernel-NET/AIKernel.NET</RepositoryUrl>
+    <Copyright>Copyright © 2026 Takuya Sogawa of AIKernel-NET</Copyright>
+
+    <!-- Description: English then Japanese -->
+    <Description>
+AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orchestration. This package is part of the AIKernel Core and provides foundational components required by Kernel, Providers, and VFS layers.
+
+Provides the orchestration contracts and context schemas used by the AIKernel OS, including OrchestrationContext, MaterialContext, and ExpressionContext. These contracts define the immutable input format for Kernel execution.
+
+AIKernel は AI アプリケーション向けの OS 的フレームワークであり、カテゴリ分離、コンテキスト隔離、契約駆動の設計思想に基づいています。本パッケージは AIKernel Core の一部であり、Kernel、Provider、VFS 層が利用する基盤コンポーネントを提供します。
+
+OrchestrationContext、MaterialContext、ExpressionContext など、AIKernel OS で使用されるオーケストレーション契約とコンテキストスキーマを提供します。これらは Kernel 実行の不変な入力形式を定義します。
+    </Description>
+
+    <!-- Package settings -->
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://www.nuget.org/profiles/AIKernel</PackageProjectUrl>
+    <PackageIcon>aikernel-logo128x128.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>aikernel;aikernel-core;ai-os;architecture;category-separation;context-isolation;contract-driven;governance;preprocessing;</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\aikernel-logo128x128.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AIKernel.Enums\AIKernel.Enums.csproj" />
+    <ProjectReference Include="..\AIKernel.Dtos\AIKernel.Dtos.csproj" />
+  </ItemGroup>
+</Project>
