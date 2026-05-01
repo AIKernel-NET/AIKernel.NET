@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/tests/">
+    <Project Path="tests/AIKernel.Abstractions.Tests/AIKernel.Abstractions.Tests.csproj" />
+  </Folder>
   <Project Path="AIKernel.Abstractions/AIKernel.Abstractions.csproj" />
   <Project Path="AIKernel.Contracts/AIKernel.Contracts.csproj" />
   <Project Path="AIKernel.Dtos/AIKernel.Dtos.csproj" />
