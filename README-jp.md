@@ -43,11 +43,16 @@ Enterprise (運用拡張)
 
 ---
 
-# 3. AIKernel.Coreディレクトリ構成（最新版）
+# 3. AIKernel.NETディレクトリ構成（最新版）
 
 ```
 AIKernel.NET/
+├─ README.md
+├─ README-jp.md
+├─ LICENSE
 ├─ docs/
+│  ├─ CONTRIBUTING.md
+│  ├─ CONTRIBUTING-jp.md
 │  ├─ assets/
 │  │  └─ aikernel-logo.png
 │  ├─ architecture/
@@ -66,12 +71,36 @@ AIKernel.NET/
 │  │  ├─ 6.AIKERNEL_VS_LANGCHAIN.md
 │  │  └─ 6.AIKERNEL_VS_LANGCHAIN-jp.md
 │  ├─ design/
+│  │  ├─ index.md
+│  │  ├─ index-jp.md
 │  │  ├─ DESIGN_INTENT.md
-│  │  └─ DESIGN_INTENT-jp.md
+│  │  ├─ DESIGN_INTENT-jp.md
+│  │  ├─ ARCHITECTURE_DECISIONS.md
+│  │  ├─ ARCHITECTURE_DECISIONS-jp.md
+│  │  ├─ EXTENSION_POINTS.md
+│  │  ├─ EXTENSION_POINTS-jp.md
+│  │  ├─ DI_GUIDE.md
+│  │  ├─ DI_GUIDE-jp.md
+│  │  ├─ CONTRACT_VERSIONING.md
+│  │  └─ CONTRACT_VERSIONING-jp.md
+│  ├─ guidelines/
+│  │  ├─ index.md
+│  │  ├─ index-jp.md
+│  │  ├─ DOCUMENTATION_GUIDELINES.md
+│  │  ├─ DOCUMENTATION_GUIDELINES-jp.md
+│  │  ├─ DOCS_CONTRIBUTING.md
+│  │  ├─ DOCS_CONTRIBUTING-jp.md
+│  │  ├─ REPO_DEPENDENCY_RULES.md
+│  │  ├─ REPO_DEPENDENCY_RULES-jp.md
+│  ├─ operations/                # TBD: Planned.
+│  │  ├─ index.md
+│  │  ├─ index-jp.md
+│  │  ├─ MIGRATION_GUIDE.md
+│  │  └─ MIGRATION_GUIDE-jp.md
 │  └─ rules/
 │     └─ PromptRules_TEMPLATES/  # TBD: Coming Soon.
 │
-├─ src/
+├─ src/                           # TBD: Coming Soon.
 │ ├─ AIKernel.Abstractions/
 │ ├─ AIKernel.Contracts/
 │ ├─ AIKernel.Dtos/
