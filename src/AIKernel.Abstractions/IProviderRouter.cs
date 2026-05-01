@@ -57,32 +57,3 @@ public interface IProviderRouter
     /// </summary>
     IReadOnlyList<string> GetRegisteredProviders();
 }
-
-/// <summary>
-/// 個別のプロバイダーを定義します。
-/// </summary>
-public interface IProvider
-{
-    /// <summary>
-    /// プロバイダーの名前を取得します。
-    /// </summary>
-    string GetName();
-
-    /// <summary>
-    /// データを非同期に取得します。
-    /// </summary>
-    /// <param name="query">クエリ</param>
-    /// <returns>取得したデータ</returns>
-    Task<string> GetDataAsync(string query);
-
-    /// <summary>
-    /// プロバイダーが利用可能かどうかを確認します。
-    /// </summary>
-    Task<bool> IsAvailableAsync();
-
-    /// <summary>
-    /// プロバイダーの優先度を取得します。
-    /// 値が大きいほど優先度が高い。
-    /// </summary>
-    int GetPriority();
-}
