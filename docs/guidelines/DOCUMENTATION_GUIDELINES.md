@@ -1,5 +1,5 @@
 ---
-version: 1.0.0
+version: 0.0.0
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel Documentation Guidelines"
 created: 2026-04-30
@@ -7,33 +7,40 @@ tags:
   - aikernel
   - documentation
   - guideline
+  - english
 ---
 
 # AIKernel.NET — Documentation Guidelines
-All documentation in AIKernel must follow the principles defined here.  
-The goal is to maximize **human readability, structural purity, reproducibility, and governance**.
+All AIKernel documentation must follow these principles to maximize **human readability, structural purity, reproducibility, and governance**.
 
 ---
 
-# 1. Fundamental Principles
+# 1. Basic Policy
 
-## 1.1 Markdown First
-- All design documents, specifications, rules, and manifests must be written in **Markdown**.
-- YAML/JSON must be embedded as code blocks within Markdown.
-- PDF, Word, and HTML formats are not used.
+## 1.1 Markdown-first
+- All design docs, specifications, rules, and manifests must be written in **Markdown**.
+- YAML/JSON should be embedded as code blocks in Markdown.
+- Do not use PDF / Word / HTML as primary formats.
 
-## 1.2 English as the canonical version, Japanese as the deep‑dive version
-- `xxx.md` → English version (canonical, OSS‑facing)
-- `xxx.jp.md` → Japanese version (deep explanations, additional context, philosophical details)
+## 1.2 English is canonical; Japanese is deep-dive
+- `xxx.md` → English (canonical, for OSS)
+- `xxx-jp.md` → Japanese (deep-dive, additional rationale)
 
-The Japanese version is **not required to be a direct translation**;  
-it may contain deeper explanations that are more naturally expressed in Japanese.
+Reverse-translating Japanese into English is prohibited; English is the canonical version. Japanese may contain deeper explanations that remain only in Japanese.
+
+## 1.3 Repository scope (contracts repo)
+This repository provides **contracts (Interfaces / minimal DTOs / Enums)** for AIKernel.NET.
+Implementations (Kernel / Providers / Server, etc.) are developed in separate repositories.
+
+## 1.4 Versioning (0.0.0 during review)
+While Japanese drafts are under review, set document/contract version to **0.0.0**.
+When stable, reflect changes into English and update SemVer.
 
 ---
 
 # 2. File Naming Rules
 
-## 2.1 Architecture documents must be numbered
+## 2.1 Numbered architecture files
 ```
 1.CATEGORY_SEPARATION_PRINCIPLES.md
 2.CONTEXT_ISOLATION_SPEC.md
@@ -43,161 +50,159 @@ it may contain deeper explanations that are more naturally expressed in Japanese
 6.AIKERNEL_VS_LANGCHAIN.md
 index.md
 ```
+Japanese versions append `-jp.md`.
 
-Japanese versions use `.jp.md`.
-
-## 2.2 README files must be placed at the repository root
+## 2.2 README at repository root
 - `README.md` (English)
 - `README.jp.md` (Japanese)
 
 ## 2.3 PromptRules / PipelineManifests use SemVer + ID
-Example:
+Examples:
 ```
-default-safety-v1.0.0.md
-minimal-dag-v1.0.0.md
+default-safety-v0.0.0.md
+minimal-dag-v0.0.0.md
 ```
 
 ---
 
 # 3. Style Guidelines
 
-## 3.1 Use of emoji
-- English README → limited emoji allowed (✔ / ❌), but always accompanied by text (e.g., ❌ Incorrect.)
-- Japanese README → emoji should be minimal
-- architecture → emoji prohibited (to preserve conceptual purity)
-- PromptRules → emoji prohibited (for machine‑readability and stability)
+## 3.1 Emoji usage
+- English README: limited emoji allowed with accompanying text (e.g., ✔ / ❌ plus the word)
+- Japanese README: minimize emoji
+- architecture: emoji prohibited
+- PromptRules: emoji prohibited
 
-## 3.2 Prohibited elements
-- Platform‑dependent characters (①②③, full‑width symbols, etc.)
-- Decorative or excessive emoji
+## 3.2 Prohibitions
+- Platform-dependent characters (circled numbers, full-width symbols)
+- Excessive decorative emoji
 - Metaphors without context
-- Mixing examples into reasoning explanations (violates AIKernel principles)
+- Mixing examples into inference explanations
 
 ## 3.3 Recommended style
 - Short, clear paragraphs
-- Frequent use of bullet points
-- Structure: **Principle → Reason → Conclusion**
-- Use **bold** for important terms
-- Provide English terms for technical concepts (e.g., 推論 / reasoning)
+- Use lists
+- Prefer Principle → Reason → Conclusion order
+- Emphasize important terms with **bold**
+- Include English terms for technical words
 
 ---
 
 # 4. Content Guidelines
 
-## 4.1 Maintain information category separation
-Documentation must follow the same principles as AIKernel itself:  
-**never mix heterogeneous categories**.
+## 4.1 Maintain category separation
+Documents must follow AIKernel's category separation principle and avoid mixing categories.
 
-Examples of categories:
-- Principle  
-- Theory  
-- Specification  
-- Comparison  
-- Implementation  
-- Operations  
+## 4.2 Examples must not be mixed into inference explanations
+Architecture documents should avoid examples and remain abstract.
 
-Each must be placed in separate documents.
+## 4.3 Do not mix RAG material into documents
+Minimize external citations and always cite sources.
 
-## 4.2 Do not mix examples into reasoning explanations
-Architecture documents must avoid examples and focus on abstract structure.
-
-## 4.3 Do not embed RAG material into documents
-External references should be minimal and must include proper attribution.
+## 4.4 docs/operations for operations content
+Operational docs (Migration Guide, runbooks, release procedures) belong in `docs/operations/`. If a document is planned, mark `status: Planned` and include `TBD` at the top.
 
 ---
 
 # 5. Structural Guidelines
 
-## 5.1 Recommended structure for all documents
+## 5.1 Recommended document structure
 ```
-# Title
+Title
 Summary (required)
 Background (optional)
 Principles / Theory / Specification (required)
-Reasoning (required)
+Rationale (required)
 Conclusion (required)
-Related Documents (optional)
+Related documents (optional)
 ```
 
-## 5.2 Architecture documents follow:
-**Philosophy → Principles → Specification → Comparison → Conclusion**
 
+
+## 5.2 architecture documents: "philosophy → principles → spec → conclusion"
 Example flow:
 - Theory (Attention Pollution)
 - Principle (Category Separation)
-- Specification (Context Isolation)
+- Spec (Context Isolation)
 - Comparison (LangChain)
-- Conclusion (Why AIKernel is structurally correct)
+- Conclusion (AIKernel advantages)
 
 ---
 
 # 6. Governance and Reproducibility
 
-## 6.1 All documents must be version‑controlled in Git
-- Markdown must be structured so diffs are readable
-- YAML/JSON must follow “one meaning per line”
+## 6.1 All docs under Git
+- Keep diffs readable
+- Write YAML/JSON one meaning per line
 
-## 6.2 PromptRules / Manifests must include signatures
-Required fields:
+## 6.2 Signed PromptRules / Manifests
+Include:
 - `issuer`
 - `version`
 - `signature`
 - `scope`
 
-## 6.3 All documents must include a changelog
+## 6.3 Always include a changelog
 Example:
+
 ```
-## Changelog
-- v1.0.0 Initial version
-- v1.1.0 Updated Context Isolation section
+Changelog
+v0.0.0 Draft
+
+v0.0.1 Review: applied issue #123
+
+v0.1.0 Context Isolation update
 ```
+
+## 6.4 Test operations (not mandatory initially)
+Initially, this repo prioritizes contracts; include build-only CI (dotnet build). Add tests for dependency direction and breaking-change detection when contracts stabilize.
 
 ---
 
-# 7. Cross‑linking Rules
+# 7. Cross-linking
 
 ## 7.1 README ↔ architecture/index.md
-- README must link to architecture/index.md
-- architecture/index.md must link back to README
+- README links to architecture
+- architecture/index.md links back to README
 
-## 7.2 English ↔ Japanese versions
-Each file must include at the top:
+## 7.2 English ↔ Japanese
+At the top of each file include:
 
-```
-For the Japanese version, see xxx.jp.md
-```
+For Japanese version, see xxx-jp.md
+
 
 ---
 
-# 8. Rules by Document Type
+# 8. Rules by document type
 
-## 8.1 architecture (conceptual documents)
+## 8.1 architecture
 - No emoji
 - No examples
 - High abstraction
-- Principles and reasoning must be explicit
+- Clear principles and rationale
 
-## 8.2 design (Design Intent)
+## 8.2 design
 - Bridge between philosophy and implementation
-- May include both abstract and concrete content
+- Include both abstract and concrete details
 
 ## 8.3 rules (PromptRules)
 - YAML + Markdown
-- Signature required
-- Emoji prohibited
+- Signed
+- No emoji
 
-## 8.4 provider documentation
-- Must describe capabilities, not model names
-- Avoid model‑specific behavior unless necessary
+## 8.4 provider docs
+- Capability-based
+- Avoid model-name dependent explanations
+
+## 8.5 docs/design and docs/operations naming
+- Prefer index.md for navigation rather than numbering
+
+## 8.6 ADR
+- Number ADRs for traceability (e.g., docs/design/adr/ADR-0001-*.md)
 
 ---
 
 # 9. Final Note
 
-Documentation in AIKernel is not merely descriptive;  
-it is **part of the architecture itself**.
-
-These guidelines ensure that AIKernel’s core philosophy  
-— category separation, preprocessing‑first, attention purity, and OS‑level structure —  
-is consistently reflected across all documents.
-
+AIKernel documentation is part of the architecture itself.
+This guideline ensures consistent reflection of AIKernel's principles (category separation, preprocessing-first, attention purity, OS-like structure) across all documents.

@@ -1,212 +1,200 @@
+---
+id: design-intent
+version: 0.0.0
+issuer: ai-kernel@tkysoftware.xsrv.jp
+scope:
+  - repo: AIKernel.NET
+createdAt: 2026-04-28T00:00:00Z
+---
+
 # Design Intent
 
 ## Summary
 
-- Prioritize human readability through a Markdown-first approach. All design documents, rules, and prompts are written in Markdown to enable easy diffing and review.  
-- The Core layer holds abstract interfaces and Contracts (JSON Schema), eliminating implementation dependencies.  
-- Providers are handled based on capabilities, not model names or vendor-specific behavior.  
-- LLMs act as suggestors, while the PDP (Policy Decision Point) is the final decision-maker.  
-- Pipelines are structured as DAGs, with the TaskManager responsible for resource control and scheduling.  
-- PromptRules are signed Markdown documents to strengthen governance and change tracking.  
-- Auditing and reproducibility (Deterministic Replay) are top priorities, ensuring complete preservation of execution logs, prompts, and runtime state.
+- Use Markdown as the primary representation and prioritize human readability. Design docs, rules, and prompts are managed in Markdown to make diff review easy.
+- Core holds abstract interfaces and Contracts (JSON Schema) and avoids implementation dependencies.
+- Providers are treated capability-first and must not depend on model names or vendor-specific behaviors.
+- LLMs act as suggestors; the PDP (Policy Decision Point) is the final decision-maker.
+- Pipelines are DAGs; TaskManager handles resource control and scheduling.
+- PromptRules are signed Markdown to strengthen governance and tamper detection.
+- Prioritize auditability and reproducibility (Deterministic Replay) by fully recording execution logs, prompts, and runtime state.
 
 ---
 
 ## Details
 
-## Design Philosophy
+### Design Philosophy
 
-### Human-Centric Documentation
-Markdown is treated as the primary representation of design.  
-Documents must be immediately understandable by developers, reviewers, and auditors—not only machines.
+#### Human-centered documentation
+Markdown is the primary representation so developers, reviewers, and auditors can immediately understand artifacts.
 
-### Contract-Driven Architecture
-All interfaces between the Core and Providers are defined using JSON Schema.  
-Schemas are versioned and include explicit compatibility rules (backward compatibility, handling of breaking changes).
+#### Contract-driven
+All interfaces between Core and Providers are defined as JSON Schema. Schemas are versioned and the handling of backward-incompatible changes is explicit.
 
-### Capability Abstraction
-Providers declare what they can do (capabilities).  
-Callers adapt dynamically to these capabilities.  
-Model names and API details are hidden behind capability implementations, enabling easy provider replacement and multi-provider operation.
+#### Capability abstraction
+Providers declare "what they can do" (Capabilities). Callers adapt dynamically to capabilities. Model names and API details are hidden behind capability adapters to enable provider replacement and multi-provider operation.
 
-### Separation of Responsibilities
-LLMs are limited to generating suggestions.  
-Final decisions are made by the PDP, which integrates rules, compliance, cost, and risk evaluation.
+#### Separation of responsibilities
+LLMs generate suggestions; PDP makes final decisions. PDP integrates rules, compliance, cost, and risk assessments.
 
 ---
 
 ## Architecture Overview
 
 ### Core
-- Abstract interfaces (input/output types, error types, metadata types)  
-- Contracts defined in JSON Schema  
-- CI-based schema validation  
-- Breaking changes require explicit migration procedures
+- Abstract interfaces (input/output types, error types, metadata)
+- Contracts (JSON Schema)
+- Schema validation in CI
+- Breaking changes require explicit migration steps
 
-### Provider Layer
-- Capability declarations (e.g., streaming, embeddings, function-calling, multimodal)  
-- Thin adapter layer mapping Core abstractions to provider-specific APIs  
-- Minimal side effects and high testability
+### Provider layer
+- Capability declarations (e.g., streaming, embeddings, function-calling, multimodal)
+- Thin adapter mapping Core abstractions to provider APIs
+- Minimize side effects and maximize testability
 
-### Pipeline Layer
-- DAG representation (tasks as nodes, dependencies as edges)  
-- Each task maintains input and output hashes for reproducibility  
-- TaskManager handles resource allocation, priority, parallelism, rate limiting, and failover
+### Pipeline layer
+- DAG representation (Tasks are nodes, dependencies are edges)
+- Tasks have input and output hashes for re-execution
+- TaskManager manages resource allocation, priority, concurrency, rate limits, and failover
 
 ### PromptRules
-- Signed Markdown documents  
-- Tamper detection and versioned change history  
-- Rule evaluation engine integrated with the PDP, applied before and after prompt generation
+- Signed Markdown
+- Tamper detection and history
+- PDP integration for rule checks before and after prompt generation
 
 ---
 
 ## Governance and Security
 
-### Centralized Policy Management
-The PDP centrally manages policies and applies them at runtime.  
-Policies are versioned and require diff-based review.
+### Centralized policy
+PDP centralizes policy application at runtime. Policies are versioned and require diff review.
 
-### Signing and Verification
-PromptRules, critical configuration files, and contract files must be signed and verified at runtime.
+### Signing and verification
+PromptRules, critical configuration, and contract files must be signed and verified at runtime.
 
-### Least Privilege
-Provider credentials and keys are stored in a Secret Manager with minimal access permissions.
+### Least privilege
+Provider credentials and keys are stored in a Secret Manager and access is minimized.
 
-### Data Classification
-Input and output data carry classification labels.  
-Processing rules (masking, storage permissions, external transmission) are automatically applied based on classification.
+### Data classification
+Inputs and outputs carry classification labels that automatically control masking, storage, and external transmission.
 
 ---
 
-## Auditing and Reproducibility
+## Auditability and Reproducibility
 
 ### Deterministic Replay
-All elements required for execution are preserved, including:
+Save the following to guarantee re-execution under identical conditions:
+- PromptRules version
+- Provider capability declarations
+- Input data
+- Runtime configuration
+- Random seeds
+- Snapshots of external API responses
 
-- PromptRules version  
-- Provider capability declarations  
-- Input data  
-- Runtime configuration  
-- Random seeds  
-- Snapshots of external API responses  
+### Audit logs
+Record change history, PDP decision rationale, signature verification results, errors, and retry history in searchable audit logs.
 
-This ensures exact re-execution under identical conditions.
-
-### Audit Logs
-Audit logs store change history, PDP decision reasons, signature verification results, and error/retry history.  
-Logs are searchable and support dedicated audit views.
-
-### Differential Reproduction
-Tools are provided to compare small changes (e.g., minor PromptRules edits) and identify their impact.
+### Diff replay
+Provide tools to compare small PromptRules changes and identify impact.
 
 ---
 
 ## Operations and Observability
 
-- Standard metrics: latency, success rate, cost (per API call), cache hit rate, retry rate  
-- Distributed tracing with trace IDs for each pipeline execution  
-- Alerts for SLA violations, abnormal cost increases, and policy violation attempts  
-- Regular backups of Contracts, PromptRules, PDP policies, and audit logs, with documented recovery procedures
+- Metrics: latency, success rate, cost, cache hit rate, retry rate
+- Distributed tracing: assign trace IDs per Pipeline execution
+- Alerts for SLA violations, anomalous cost, policy violation attempts
+- Regular backups and recovery procedures for Contracts, PromptRules, PDP policies, and audit logs
 
 ---
 
 ## Developer Guidelines
 
-- All public APIs, Contracts, and PromptRules must be written in Markdown and validated automatically during PRs  
-- Required test types: unit tests, contract tests, integration tests, replay tests  
-- Minor updates must maintain backward compatibility; breaking changes require major version increments and migration guides  
-- Adding new capabilities requires defining a Capability Schema and documenting how existing providers adapt  
-- Changes to PromptRules or PDP policies require approval from both a security reviewer and a domain reviewer
+- Document public APIs, Contracts, and PromptRules in Markdown and validate them in PRs
+- Require unit tests, contract tests, integration tests, and replay tests
+- Maintain backward compatibility for minor updates; breaking changes use major versions
+- When adding a Capability, define its Capability Schema and show compatibility with existing Providers
+- Changes to PromptRules or PDP policies require security and domain owner approvals
 
 ---
 
-## Error Handling and Fallback
+## Error Handling and Fallbacks
 
-- Error types are defined in Contracts; callers must implement recovery strategies based on error categories  
-- Critical decision paths must include fallback providers or local rules  
-- Provider calls use exponential backoff and retry limits, with retry policies controlled by the PDP
+- Define error types in Contracts; callers implement recovery strategies per error type
+- Provide multi-provider or local-rule fallbacks for critical decision paths
+- Provider calls use exponential backoff and max retries; PDP controls retry policies
 
 ---
 
 ## Performance and Cost Management
 
-- Provider cost metrics are collected and used to estimate pipeline execution cost  
-- Result caching is used where it does not compromise reproducibility  
-- TaskManager is designed for horizontal scaling and allocates resource slots based on constraints
+- Include provider cost metrics and provide per-pipeline cost estimates
+- Use caching where it does not break reproducibility
+- TaskManager is designed for horizontal scaling and slot allocation based on resource constraints
 
 ---
 
 ## Compatibility and Migration
 
-- Contracts, PromptRules, and PDP policies are versioned independently  
-- Runtime execution explicitly records the version of each component  
-- Breaking changes require automated conversion tools, migration documentation, and mandatory migration tests
+- Version Contracts, PromptRules, and PDP policies independently
+- Expose versions at runtime
+- Provide automatic conversion tools and migration guides for breaking changes; require migration tests
 
 ---
 
-## Change History
+## Changelog
 
-- v1.0.0 Initial version
-
----
+- v1.0.0 Initial release
 
 ## Glossary
 
-### Capability  
-A declaration of what a provider can do.  
-Used by the Runtime to select providers based on functionality rather than model names.
+### Capability
+A provider-declared set of "what it can do" abstracted from model names and API details.
 
-### PDP (Policy Decision Point)  
-The component responsible for final decision-making.  
-Evaluates rules, compliance, cost, and risk.
+### PDP
+Policy Decision Point that integrates compliance, cost, risk, and rules to make final decisions.
 
-### LLMController  
-Controls LLM behavior by treating the LLM as a suggestor.  
-Ensures that LLM output is not used without PDP approval.
+### LLMController
+Control layer treating LLM as a suggestor; outputs are subject to PDP decisions.
 
-### TaskManager  
-Deterministic scheduler responsible for resource allocation, priority, parallelism, rate limiting, and failover.
+### TaskManager
+Deterministic scheduler for pipeline tasks.
 
-### DAG (Directed Acyclic Graph)  
-Pipeline structure where tasks are nodes and dependencies are edges.  
-Ensures reproducibility and traceability.
+### DAG
+Directed Acyclic Graph representation of pipeline structure.
 
-### PromptRules  
-Signed Markdown documents defining prompt-generation rules.  
-Versioned and auditable.
+### PromptRules
+Signed Markdown rules for prompt generation.
 
-### Contracts  
-JSON Schema–based definitions of data types, error types, and metadata types.  
-Guarantee compatibility between Core, Runtime, and Providers.
+### Contracts
+JSON Schema-based contract definitions held by Core.
 
-### Deterministic Replay  
-Mechanism ensuring that executions can be reproduced exactly under the same conditions.
+### Deterministic Replay
+Mechanism to save all elements required to re-run an execution identically.
 
-### Provider  
-Implements capabilities and provides actual model or API functionality.  
-Examples: OpenAI, LocalRAG, LlamaCpp.
+### Provider
+Layer that declares Capabilities and provides models or APIs.
 
-### FeatureSpec  
-Specification of provider-supported features such as streaming or multimodal support.
+### FeatureSpec
+Provider feature specification (function-calling, streaming, multimodal support).
 
-### TokenizerProfile  
-Abstract representation of a provider’s tokenizer characteristics.
+### TokenizerProfile
+Profile describing tokenizer characteristics to normalize token counts.
 
-### DynamicMetricStore  
-Stores dynamic provider metrics (latency, error rate, health) used during provider selection.
+### DynamicMetricStore
+Store for provider dynamic metrics used in runtime provider scoring.
 
-### Secret Manager  
-Secure storage for provider credentials and keys.
+### Secret Manager
+Secure store for provider credentials and keys.
 
-### AuditEvent  
-Primary execution information recorded for auditing and reproducibility.
+### AuditEvent
+Primary runtime information recorded for auditing and replay.
 
-### Policy  
-Rule set used by the PDP for decision-making.
+### Policy
+Rule sets referenced by PDP.
 
-### Replay Test  
-Test verifying that deterministic replay produces identical results.
+### Replay Test
+Test to verify deterministic replay yields identical results.
 
-### Contract Test  
-Test verifying compatibility with JSON Schema–based Contracts.
-
+### Contract Test
+Tests ensuring Provider and Runtime compatibility with Contracts.

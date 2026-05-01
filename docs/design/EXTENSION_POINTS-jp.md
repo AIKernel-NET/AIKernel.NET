@@ -110,8 +110,8 @@ Deterministic Replay と監査を支える一次情報を出力する。
 ---
 
 ## 関連ドキュメント
-- `../DESIGN_INTENT.jp.md`
-- `ARCHITECTURE_DECISIONS.jp.md`  
-- `CONTRACT_VERSIONING.jp.md`  
-- `../architecture/index.jp.md`
-- `../DOCUMENTATION_GUIDELINES.jp.md`
+- `../DESIGN_INTENT-jp.md`
+- `ARCHITECTURE_DECISIONS-jp.md`  
+- `CONTRACT_VERSIONING-jp.md`  
+- `../architecture/index-jp.md`
+- `../DOCUMENTATION_GUIDELINES-jp.md`

@@ -2,228 +2,195 @@
 
 ![AIKernel.NET Logo](docs/assets/aikernel-logo.png)
 
-A framework designed as an **Operating System for AI applications**.
+A framework aiming to be the **Operating System (OS) for AI applications**.
 
-AIKernel treats LLMs not as simple API endpoints, but as **capability‑based processes** orchestrated by an AI‑native OS kernel.
+AIKernel treats LLMs not as simple API calls but as **capability-bearing processes**.
 
-For the Japanese version of this document, see [README.jp.md](README.jp.md).
+See `docs/design/DESIGN_INTENT.md` for design philosophy.
 
 ---
 
 # 1. Purpose
 
-AIKernel.NET aims to provide an execution platform where AI applications can run with:
-
-- **Model‑agnostic, capability‑based execution**
-- **Strict information category separation to maximize reasoning quality**
-- **Deterministic scheduling + nondeterministic LLM reasoning**
-- **Reproducibility (Deterministic Replay)**
-- **Governance (signed PromptRules, audit logs, policy enforcement)**
-- **OS‑like extensibility (Providers as drivers, Kernel as execution engine)**
+AIKernel.NET aims to provide an OS that enables AI applications with:
+- capability-based execution independent of model names
+- category separation to maximize inference purity
+- deterministic scheduler + nondeterministic LLM hybrid control
+- reproducibility (Deterministic Replay)
+- governance (signed PromptRules / audit logs)
+- OS-like extensibility (Provider = driver / Kernel = execution engine)
 
 ---
 
 # 2. Architecture Overview
 
-AIKernel follows a 6‑layer OS‑inspired architecture:
+AIKernel.NET defines abstractions and provides minimal DTOs/Enums. Implementations are separated to preserve Core purity.
 
 ```
-Core (syscall layer)
-Kernel (AI execution engine)
-Providers (LLM / embedding / multimodal drivers)
+AIKernel architecture layers (OS-like):
+Core (syscall)
+Kernel (AI OS core)
+Providers (brain drivers)
 VfsProviders (external data sources)
-Server (OpenAI‑compatible API)
-Hosting (application integration)
-Enterprise (operations and governance extensions)
+Server (external API adapter)
+Hosting (app integration)
+Enterprise (operations extensions)
 ```
 
 ---
 
-# 3. Directory Structure (Final Version)
+# 3. AIKernel.Core directory layout (current)
 
 ```
-AIKernel/
+AIKernel.NET/
 ├─ docs/
+│  ├─ assets/
+│  │  └─ aikernel-logo.png
 │  ├─ architecture/
-│  │  ├─ CATEGORY_SEPARATION_PRINCIPLES.md
-│  │  ├─ CONTEXT_ISOLATION_SPEC.md
-│  │  ├─ ATTENTION_POLLUTION_THEORY.md
-│  │  ├─ PREPROCESSING_VS_PROMPTING.md
-│  │  ├─ LLM_SURFACE_MODE_FAILURE.md
-│  │  └─ AIKERNEL_VS_LANGCHAIN.md
+│  │  ├─ index.md
+│  │  ├─ index-jp.md
+│  │  ├─ 1.CATEGORY_SEPARATION_PRINCIPLES.md
+│  │  ├─ 1.CATEGORY_SEPARATION_PRINCIPLES-jp.md
+│  │  ├─ 2.CONTEXT_ISOLATION_SPEC.md
+│  │  ├─ 2.CONTEXT_ISOLATION_SPEC-jp.md
+│  │  ├─ 3.ATTENTION_POLLUTION_THEORY.md
+│  │  ├─ 3.ATTENTION_POLLUTION_THEORY-jp.md
+│  │  ├─ 4.LLM_SURFACE_MODE_FAILURE.md
+│  │  ├─ 4.LLM_SURFACE_MODE_FAILURE-jp.md
+│  │  ├─ 5.PREPROCESSING_VS_PROMPTING.md
+│  │  ├─ 5.PREPROCESSING_VS_PROMPTING-jp.md
+│  │  ├─ 6.AIKERNEL_VS_LANGCHAIN.md
+│  │  └─ 6.AIKERNEL_VS_LANGCHAIN-jp.md
 │  ├─ design/
-│  │  └─ DESIGN_INTENT.md
+│  │  ├─ DESIGN_INTENT.md
+│  │  └─ DESIGN_INTENT-jp.md
 │  └─ rules/
-│     └─ PromptRules_TEMPLATES/
+│     └─ PromptRules_TEMPLATES/  # TBD: Coming Soon.
 │
 ├─ src/
-│  ├─ Core/                      # Syscall layer (abstractions + contracts)
-│  │  ├─ Abstractions/
-│  │  ├─ Contracts/
-│  │  ├─ KernelContext/
-│  │  ├─ Events/
-│  │  └─ VFS/
-│  │
-│  ├─ Kernel/                    # Former Runtime → renamed to Kernel
-│  │  ├─ Scheduler/
-│  │  ├─ Router/
-│  │  ├─ Controller/
-│  │  ├─ RagEngine/
-│  │  ├─ Pipeline/
-│  │  └─ Rules/
-│  │
-│  ├─ Providers/                 # “Brain drivers”
-│  │  ├─ SDK/
-│  │  ├─ OpenAI/
-│  │  ├─ Groq/
-│  │  ├─ LlamaCpp/
-│  │  └─ LocalRAG/
-│  │
-│  ├─ VfsProviders/              # Git belongs here (not in Providers)
-│  │  └─ Git/
-│  │
-│  ├─ Server/
-│  │  └─ OpenAICompat/
-│  │
-│  └─ Hosting/
-│     └─ Default/
-│
-├─ samples/
-│  └─ quickstart/
-│
-└─ enterprise/
-   └─ AIKernel.Enterprise/
+│ ├─ AIKernel.Abstractions/
+│ ├─ AIKernel.Contracts/
+│ ├─ AIKernel.Dtos/
+│ ├─ AIKernel.Enums/
+│ ├─ AIKernel.Events/
+│ ├─ AIKernel.KernelContext/
+│ └─ AIKernel.VFS/
+└─ AIKernel.NET.sln
 ```
 
----
+# Repository mapping
 
-# 4. Core Design Principles
-
-## 4.1 Information Category Separation (Most Important)
-AIKernel enforces strict separation of:
-
-- purpose  
-- constraints  
-- structure  
-- history  
-- expression  
-- RAG material  
-- metadata  
-
-> “Never mix categories in a single LLM context.  
-> Mixing destroys attention and collapses reasoning.”
-
-See: `docs/architecture/CATEGORY_SEPARATION_PRINCIPLES.md`
+| Repository | Contained solutions/projects | Example directories | Artifacts | Main dependencies |
+| --- | --- | --- | --- | --- |
+| **AIKernel.NET** | Contracts layer (shared) | `Contracts` (Interfaces; DTO; Enums) | NuGet contract packages | none (top-level contracts) |
+| **AIKernel.Core** | Core platform | `Core/`, `Kernel/`, `Providers/`, `VfsProviders/`, `Server/`, `Hosting/` | NuGet libraries | **AIKernel.NET** |
+| **AIKernel.SDK** | Client libraries | `AIKernel.SDK` | NuGet client packages | **AIKernel.NET**, **AIKernel.Core** |
+| **AIKernel.Web** | Admin console | `admin-web` (SPA/Blazor) | SPA build artifacts | **AIKernel.NET**, **AIKernel.Core** |
+| **AIKernel.Infra** | Deployment definitions | `terraform/`, `k8s/`, `helm/` | Manifests | all repos |
+| **AIKernel.Tools** | Dev tools & CI templates | `cli/`, `generators/`, `ci-templates/` | CLI binaries; CI templates | all repos |
+| **AIKernel.Docs** | Documentation aggregation | `architecture/`, `runbooks/` | Documentation site | all repos |
+| **AIKernel.Enterprise** | Enterprise solutions | `solutions/`, `services/`, `workers/`, `charts/` | Private container images; Helm charts | **AIKernel.NET**, **AIKernel.Core**, **AIKernel.Infra** |
 
 ---
 
-## 4.2 Preprocessing First
-Prompting is **not** the core.  
-The core is **structuring information before it reaches the model**.
+# 4. Design Principles
 
-See: `PREPROCESSING_VS_PROMPTING.md`
+## 4.1 Category separation (most important)
+- Orchestration (inference)
+- Expression (output shaping)
+- Material (external data)
+- History
+- Style
 
----
+Do not mix these categories.
 
-## 4.3 Attention Pollution Prevention
-Examples, RAG fragments, and style instructions must be isolated.
-
-See: `ATTENTION_POLLUTION_THEORY.md`
-
----
-
-## 4.4 LLM as Suggestor, PDP as Decision Maker
-LLMs propose.  
-The Policy Decision Point (PDP) authorizes.
+> "Information passed to an LLM must not be mixed into a single context." — CATEGORY_SEPARATION_PRINCIPLES.md
 
 ---
 
-# 5. Kernel (Execution Engine)
+## 4.2 Preprocessing-first
+Prompts are the final formatting step.
 
-The Kernel is the heart of AIKernel:
-
-- **Scheduler** — deterministic task scheduling  
-- **LlmController** — nondeterministic reasoning  
-- **ProviderRouter** — capability‑based provider selection  
-- **RagEngine** — materialization  
-- **PipelineExecutor** — DAG execution  
-- **RulesEngine** — PromptRules evaluation  
-
-This separation ensures reproducibility and governance.
+> Inference quality is determined by preprocessing structure. — PREPROCESSING_VS_PROMPTING.md
 
 ---
 
-# 6. Providers (AI Drivers)
+## 4.3 Attention pollution prevention
+Mixing examples, RAG, and history breaks inference.
 
-Providers declare **Capabilities**, not model names:
-
-- chat  
-- embedding  
-- multimodal  
-- reasoning  
-- vector‑search  
-- streaming  
-
-Provider SDK enables easy extension.
+> When attention is drawn to surface structures, inference halts. — ATTENTION_POLLUTION_THEORY.md
 
 ---
 
-# 7. VFS Providers (External Data Sources)
-
-Git is not an AI provider.  
-It is a **VFS implementation** and belongs under:
-
-```
-src/VfsProviders/Git/
-```
+## 4.4 LLM as suggestor, PDP as decision-maker
+LLM is a suggestor; PDP makes final decisions.
 
 ---
 
-# 8. Server (OpenAI‑Compatible API)
+# 5. Kernel (formerly Runtime)
 
-Allows AIKernel to be used as an OpenAI‑compatible backend.
+Kernel is the core OS:
+- TaskManager (deterministic scheduler)
+- LlmController (nondeterministic inference)
+- ProviderRouter (capability-based brain selection)
+- RagEngine (materialization)
+- PipelineExecutor (DAG execution)
+- RulesEngine (PromptRules)
+
+---
+
+# 6. Providers (brain drivers)
+
+Providers declare **Capabilities** rather than model names:
+- chat
+- embedding
+- multimodal
+- reasoning
+- vector-search
+- streaming
+
+Providers are extensible via SDKs.
+
+---
+
+# 7. VFS Providers (Git, etc.)
+
+Treat Git as an external data source (VFS), not a Provider.
+
+---
+
+# 8. Server (OpenAI-compatible API)
+
+Adapter to expose AIKernel as an OpenAI-compatible API.
 
 ---
 
 # 9. Hosting
 
-Provides:
-
-- DI setup  
-- default pipelines  
-- configuration  
-- application integration  
+- DI
+- default pipelines
+- configuration
+- app integration
 
 ---
 
 # 10. Enterprise
 
-Provides:
-
-- SIEM integration  
-- multi‑tenant support  
-- SLO dashboards  
-- compliance tooling  
+- SIEM integration
+- multi-tenant support
+- SLO dashboards
 
 ---
 
-# 11. Contributing & License
+# 11. License / Contribution
 
-- Contributions are welcome via PR.  
-- Breaking changes must include migration guides.  
-- See LICENSE for details.
+- PR-based contributions
+- Explicit compatibility for Contracts and PromptRules
+- Attach migration guides for breaking changes
 
 ---
 
-# 12. Summary
+# 12. Final Note
 
-AIKernel.NET is an **AI‑native OS** designed for:
-
-- structural correctness  
-- reproducibility  
-- governance  
-- capability‑based execution  
-- clean separation of reasoning and expression  
-
-Its goal is to provide a stable, extensible foundation for the next generation of AI applications.
-
+AIKernel.NET provides a **structurally correct AI execution platform** as an OS.
+It aims to be the standard OS for AI applications by focusing on category separation, preprocessing-first design, governance, and reproducibility.

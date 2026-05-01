@@ -1,5 +1,5 @@
 ---
-version: 1.0.0
+version: 0.0.0
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel Architecture — Index"
 created: 2026-04-30
@@ -7,176 +7,141 @@ tags:
   - aikernel
   - architecture
   - index
+  - english
 ---
 
 # AIKernel Architecture Index
-This directory contains the core architectural principles, theories, and specifications that define **AIKernel.NET** — an Operating System for AI applications.
+This document is the entry point to the set of documents that systematically present the architectural philosophy of AIKernel.NET.
 
-AIKernel is built on a set of strict, theory‑driven design principles:
-- **Information Category Separation**
-- **Context Isolation**
-- **Attention Pollution Prevention**
-- **Surface Mode Failure Avoidance**
-- **Preprocessing over Prompting**
-- **Structural correctness over empirical prompt tuning**
+AIKernel aims to be the **Operating System (OS) for AI applications**. Its core principles are **category separation, preprocessing-first design, attention pollution prevention, and separation of inference and expression**.
 
-These documents explain *why* AIKernel works and *why other frameworks fail structurally*.
-
-For the Japanese version of this index, see `index.jp.md`.
+This index functions as a guide to understand AIKernel's design principles, theoretical background, and structural comparisons.
 
 ---
 
 # 1. Core Architectural Principles
 
-## **1. Category Separation Principles**  
+## 1.1 Principles of Category Separation
 **File:** `1.CATEGORY_SEPARATION_PRINCIPLES.md`
 
-The most fundamental rule of AIKernel:
-> **Never mix heterogeneous information in a single LLM context.**
+Information passed to an LLM must not be mixed into a single context. Mixing information destroys attention, halts inference, and triggers surface-mode behavior.
 
-Mixing categories destroys attention purity and collapses reasoning.
+**Category examples:**
+- purpose
+- constraints
+- structure
+- history
+- rag_material
+- expression
+- metadata
 
-Categories include:
-- purpose  
-- constraints  
-- structure  
-- history  
-- context  
-- rag_material  
-- expression  
-- metadata  
-
-This principle is the foundation of all other architecture rules.
+> "Information passed to an LLM must not be mixed into a single context."
+> — CATEGORY_SEPARATION_PRINCIPLES.md
 
 ---
 
-## **2. Context Isolation Specification**  
+## 1.2 Context Isolation Specification
 **File:** `2.CONTEXT_ISOLATION_SPEC.md`
 
-AIKernel isolates information into three distinct contexts:
+AIKernel separates information into three layers before passing it to an LLM:
 
-### **OrchestrationContext**  
-Purpose, constraints, abstract structure, reasoning patterns.
+- **OrchestrationContext** (inference)
+- **ExpressionContext** (expression)
+- **MaterialContext** (material)
 
-### **ExpressionContext**  
-Style, examples, explanations, analogies.
-
-### **MaterialContext**  
-RAG fragments, external information.
-
-Rules:
-- Examples must never enter OrchestrationContext  
-- RAG material must never be mixed directly into reasoning  
-- ExpressionContext is used only at output time  
+Examples, stylistic instructions, and RAG fragments must not be mixed into inference.
 
 ---
 
-## **3. Attention Pollution Theory**  
+## 1.3 Theory of Attention Pollution
 **File:** `3.ATTENTION_POLLUTION_THEORY.md`
 
-LLM reasoning depends on **attention purity**.  
-Pollution sources include:
+An LLM's inference capability depends on the purity of attention. Examples, stylistic mimicry, RAG fragments, and history divert attention to surface structures and halt inference.
 
-- examples  
-- style instructions  
-- RAG fragments  
-- history  
-- noise  
-
-Effects:
-- reasoning collapse  
-- surface imitation  
-- hallucination increase  
-- loss of purpose  
-
-This theory explains why naive RAG and prompt mixing fail.
+> "When attention is drawn to surface structures, inference halts, and the system falls into surface-mode failure."
+> — ATTENTION_POLLUTION_THEORY.md
 
 ---
 
-## **4. LLM Surface Mode Failure**  
+## 1.4 Risks of Surface-Mode Failure
 **File:** `4.LLM_SURFACE_MODE_FAILURE.md`
 
-When exposed to examples or stylistic patterns, LLMs fall into **surface mode**:
-
-- imitates style  
-- stops reasoning  
-- loses structure  
-- becomes “instantly dumb”  
-
-AIKernel prevents this by isolating examples and expression.
+When exposed to examples, LLMs can enter a "non-inferential mode." This is one reason AIKernel isolates examples.
 
 ---
 
-## **5. Preprocessing vs Prompting**  
+## 1.5 Preprocessing vs Prompting
 **File:** `5.PREPROCESSING_VS_PROMPTING.md`
 
-Prompting is not the core.  
-The core is **structuring information before it reaches the model**.
-
-Misconceptions:
-- “Prompt engineering is the key” → ❌  
-- “Examples improve accuracy” → ❌  
-- “RAG can be passed directly” → ❌  
-
-Truth:
-> **Preprocessing determines reasoning quality. Prompting is only final formatting.**
+The essence is **structuring preprocessing**, not prompt design. What is included in attention and what is isolated determines inference accuracy.
 
 ---
 
 # 2. Comparative Architecture
 
-## **6. AIKernel vs LangChain**  
+## 2.1 AIKernel vs LangChain
 **File:** `6.AIKERNEL_VS_LANGCHAIN.md`
 
-LangChain issues:
-- mixes all information in one context  
-- passes RAG directly  
-- mixes examples and history  
-- destroys attention  
-- produces unstable reasoning  
+Issues with LangChain:
+- All information is mixed into a single context.
+- RAG is passed as-is.
+- Examples and history are mixed.
+- Attention is disrupted.
 
-AIKernel advantages:
-- strict category separation  
-- isolated reasoning and expression layers  
-- RAG materialization  
-- attention pollution prevention  
+Features of AIKernel:
+- Category separation
+- Separation of inference and expression layers
+- Isolation of examples
+- Structuring of RAG
+- Prevention of attention pollution
 
-Conclusion:
-> LangChain “works by accident”.  
-> AIKernel “works by architecture”.
+> "LangChain is a structure that 'works by chance.' AIKernel is an architecture that 'works correctly by design.'"
 
 ---
 
-# 3. How to Use This Architecture Section
+# 3. Architectural Philosophy
 
-This directory is designed to:
+## 3.1 Design Intent
+**File:** `../design/DESIGN_INTENT.md`
 
-- explain the theoretical foundations of AIKernel  
-- provide the rationale behind category separation  
-- show why naive prompt‑based frameworks fail  
-- prepare developers before reading Core / Kernel / Providers code  
-
-Reading these documents in order provides a complete understanding of  
-**why AIKernel is an AI‑native OS**.
-
----
-
-# 4. Recommended Reading Order
-
-1. **Category Separation Principles**  
-2. **Context Isolation Specification**  
-3. **Attention Pollution Theory**  
-4. **Surface Mode Failure**  
-5. **Preprocessing vs Prompting**  
-6. **AIKernel vs LangChain**  
-7. **Design Intent** (`../design/DESIGN_INTENT.md`)
+AIKernel's design philosophy:
+- Markdown-first principle (human readability)
+- Core = Abstractions + Contracts (JSON Schema)
+- Provider = Capability-based
+- LLM as suggestor, PDP as decision-maker
+- Pipeline = DAG
+- PromptRules = Signed Markdown
+- Deterministic Replay (reproducibility)
 
 ---
 
-# 5. Summary
+# 4. How to Use This Architecture Section
 
-AIKernel’s architecture is not based on prompt tricks or empirical tuning.  
-It is based on **structural correctness**, **information purity**, and **OS‑level separation of concerns**.
+The `architecture/` directory is structured to:
+- Explain AIKernel's philosophy
+- Explain why category separation is necessary
+- Clarify structural differences from frameworks like LangChain
+- Provide prerequisite knowledge before reading implementation (Core / Kernel / Providers)
 
-This index serves as the entry point to the theoretical foundation of the framework.
+Reading this index and the linked documents in order will help you understand **why AIKernel is the "OS for AI applications."**
 
+---
+
+# 5. Recommended Reading Order
+
+1. CATEGORY_SEPARATION_PRINCIPLES
+2. CONTEXT_ISOLATION_SPEC
+3. ATTENTION_POLLUTION_THEORY
+4. LLM_SURFACE_MODE_FAILURE
+5. PREPROCESSING_VS_PROMPTING
+6. AIKERNEL_VS_LANGCHAIN
+7. DESIGN_INTENT
+
+---
+
+# 6. Conclusion
+
+AIKernel's architecture is not something that "works by chance."
+It is an **OS-level approach designed to work correctly by structure.**
+
+This index is the entry point to understanding AIKernel's overall design.
