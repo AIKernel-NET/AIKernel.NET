@@ -5,7 +5,6 @@ issuer: ai-kernel@tkysoftware.xsrv.jp
 scope:
   - repo: AIKernel.NET
 createdAt: 2026-04-28T00:00:00Z
-signature: ""
 ---
 
 # Design Intent
