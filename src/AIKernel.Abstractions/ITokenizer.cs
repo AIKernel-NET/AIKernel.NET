@@ -1,8 +1,11 @@
 namespace AIKernel.Abstractions;
 
+using AIKernel.Abstractions.Models;
+
 /// <summary>
 /// トークナイザーインターフェースを定義します。
 /// テキストトークン化と統計情報の管理を行います。
+/// NPU環境での物理基数（パディング）対応に対応しています。
 /// </summary>
 public interface ITokenizer
 {
@@ -49,6 +52,23 @@ public interface ITokenizer
     /// <param name="modelName">モデル名</param>
     /// <returns>サポートしている場合は true</returns>
     bool SupportsModel(string modelName);
+
+    /// <summary>
+    /// 論理的なトークン数を物理基数に変換します。
+    /// NPU最適化のためのパディングを考慮します。
+    /// </summary>
+    /// <param name="logicalTokenCount">論理的なトークン数</param>
+    /// <param name="deviceType">デバイスタイプ（"NPU", "GPU", "CPU"等）</param>
+    /// <returns>NPU最適化後の物理基数</returns>
+    int GetPhysicalCardinality(int logicalTokenCount, string deviceType);
+
+    /// <summary>
+    /// 指定された物理基数でのパディング情報を取得します。
+    /// </summary>
+    /// <param name="logicalTokenCount">論理的なトークン数</param>
+    /// <param name="physicalCardinality">物理基数</param>
+    /// <returns>パディング情報</returns>
+    PaddingInfo GetPaddingInfo(int logicalTokenCount, int physicalCardinality);
 }
 
 /// <summary>
@@ -111,4 +131,49 @@ public sealed class TokenizerStatistics
     /// 最大トークン長を取得または設定します。
     /// </summary>
     public int MaxTokenLength { get; init; }
+}
+
+/// <summary>
+/// パディング情報を表現するクラスです。
+/// NPU最適化に必要な物理基数への調整情報を提供します。
+/// </summary>
+public sealed class PaddingInfo
+{
+    /// <summary>
+    /// 論理的なトークン数を取得します。
+    /// </summary>
+    public required int LogicalTokenCount { get; init; }
+
+    /// <summary>
+    /// 物理基数（パディング後）を取得します。
+    /// </summary>
+    public required int PhysicalCardinality { get; init; }
+
+    /// <summary>
+    /// パディング量（追加トークン数）を取得します。
+    /// </summary>
+    public int PaddingAmount => PhysicalCardinality - LogicalTokenCount;
+
+    /// <summary>
+    /// パディング率（%）を取得します。
+    /// </summary>
+    public float PaddingPercentage => LogicalTokenCount > 0 
+        ? (PaddingAmount * 100.0f) / LogicalTokenCount 
+        : 0.0f;
+
+    /// <summary>
+    /// パディング方式を取得します。
+    /// 例："AttentionMask", "ZeroPadding", "ReflectPadding"
+    /// </summary>
+    public string? PaddingMethod { get; init; }
+
+    /// <summary>
+    /// パディング前後のメモリ使用差分（バイト）を取得します。
+    /// </summary>
+    public long MemoryDifferenceBytes { get; init; }
+
+    /// <summary>
+    /// パディングが推奨される理由を取得します。
+    /// </summary>
+    public string? Rationale { get; init; }
 }
