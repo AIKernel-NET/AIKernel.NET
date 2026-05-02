@@ -1,5 +1,6 @@
 using AIKernel.Abstractions.Context;
 using AIKernel.Abstractions.Execution;
+using AIKernel.Abstractions.Models;
 using Xunit;
 
 namespace AIKernel.Abstractions.Tests;
@@ -14,6 +15,8 @@ public class TwoPhaseExecutionTests
     /// </summary>
     private class TestThoughtProcess : IThoughtProcess
     {
+        public ModelCapacityVector RequiredCapacity { get; } = new(reasoningDepth: 0.8f);
+
         public Task<RawLogic> BuildLogicAsync(IContextCollection orchestrationContext, CancellationToken ct = default)
         {
             var buffer = orchestrationContext.GetOrchestrationBuffer();
@@ -27,6 +30,8 @@ public class TwoPhaseExecutionTests
     /// </summary>
     private class TestOutputPolisher : IOutputPolisher
     {
+        public ModelCapacityVector RequiredCapacity { get; } = new(linguisticFluidity: 0.9f, structuralIntegrity: 0.8f);
+
         public Task<string> RenderAsync(RawLogic logic, ExpressionContext expressionContext, CancellationToken ct = default)
         {
             if (logic.IsEmpty)

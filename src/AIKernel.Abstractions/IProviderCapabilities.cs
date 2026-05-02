@@ -1,5 +1,7 @@
 namespace AIKernel.Abstractions;
 
+using AIKernel.Abstractions.Models;
+
 /// <summary>
 /// プロバイダーの機能情報を定義します。
 /// </summary>
@@ -24,6 +26,12 @@ public interface IProviderCapabilities
     /// レート制限情報を取得します。
     /// </summary>
     RateLimitInfo? RateLimit { get; }
+
+    /// <summary>
+    /// プロバイダー（特にモデル）の能力ベクトルを取得します。
+    /// このベクトルはプロバイダー自体の「能力の履歴書」として機能します。
+    /// </summary>
+    ModelCapacityVector Vector { get; }
 
     /// <summary>
     /// 特定の操作をサポートしているかどうかを確認します。

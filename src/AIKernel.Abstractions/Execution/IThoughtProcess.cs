@@ -1,4 +1,5 @@
 using AIKernel.Abstractions.Context;
+using AIKernel.Abstractions.Models;
 
 namespace AIKernel.Abstractions.Execution;
 
@@ -9,6 +10,12 @@ namespace AIKernel.Abstractions.Execution;
 /// </summary>
 public interface IThoughtProcess
 {
+    /// <summary>
+    /// このThoughtProcessが要求するモデル能力ベクトル。
+    /// 通常は ReasoningDepth が高いベクトルが要求されます。
+    /// </summary>
+    ModelCapacityVector RequiredCapacity { get; }
+
     /// <summary>
     /// Orchestration コンテキストからロジックを構築します。
     /// </summary>

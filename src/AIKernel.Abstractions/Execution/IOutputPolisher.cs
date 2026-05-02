@@ -1,4 +1,5 @@
 using AIKernel.Abstractions.Context;
+using AIKernel.Abstractions.Models;
 
 namespace AIKernel.Abstractions.Execution;
 
@@ -30,6 +31,12 @@ public readonly struct ExpressionContext
 /// </summary>
 public interface IOutputPolisher
 {
+    /// <summary>
+    /// このOutputPolisherが要求するモデル能力ベクトル。
+    /// 通常は LinguisticFluidity と StructuralIntegrity が高いベクトルが要求されます。
+    /// </summary>
+    ModelCapacityVector RequiredCapacity { get; }
+
     /// <summary>
     /// 生のロジックを Expression コンテキストに基づいて整形・レンダリングします。
     /// </summary>
