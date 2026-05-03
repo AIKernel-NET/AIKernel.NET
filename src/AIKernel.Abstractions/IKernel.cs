@@ -1,6 +1,7 @@
 using AIKernel.Contracts;
 using AIKernel.Dtos;
 using AIKernel.Enums;
+using AIKernel.Abstractions.Execution;
 
 namespace AIKernel.Abstractions;
 
@@ -72,7 +73,7 @@ public sealed class KernelExecutionResult
     /// <summary>
     /// 実行結果のデータを取得します。
     /// </summary>
-    public object? Data { get; init; }
+    public IExecutionOutput? Data { get; init; }
 
     /// <summary>
     /// エラーメッセージを取得します。

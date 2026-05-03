@@ -12,7 +12,7 @@ public interface IEventBus : IProvider
     /// <param name="eventName">イベント名</param>
     /// <param name="eventData">イベントデータ</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
-    Task PublishAsync(string eventName, object eventData, CancellationToken cancellationToken = default);
+    Task PublishAsync(string eventName, EventBusMessage eventData, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// イベントに購読します。
@@ -36,7 +36,7 @@ public interface IEventBus : IProvider
     /// <param name="eventName">イベント名</param>
     /// <param name="eventData">イベントデータ</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
-    Task BroadcastAsync(string eventName, object eventData, CancellationToken cancellationToken = default);
+    Task BroadcastAsync(string eventName, EventBusMessage eventData, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 指定されたイベント名の購読者数を取得します。
@@ -69,7 +69,7 @@ public class EventBusMessage
     /// <summary>
     /// イベントデータを取得または設定します。
     /// </summary>
-    public required object Data { get; set; }
+    public required string Data { get; set; }
 
     /// <summary>
     /// イベントソースを取得または設定します。

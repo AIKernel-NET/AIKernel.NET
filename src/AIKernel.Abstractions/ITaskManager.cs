@@ -130,17 +130,17 @@ public interface ITask
     /// <param name="context">実行コンテキスト</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>タスク結果</returns>
-    Task<object?> ExecuteAsync(ITaskContext context, CancellationToken cancellationToken = default);
+    Task<ITaskExecutionResult> ExecuteAsync(ITaskContext context, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// タスクの入力スキーマを取得します。
     /// </summary>
-    IDictionary<string, object>? GetInputSchema();
+    ITaskSchema? GetInputSchema();
 
     /// <summary>
     /// タスクの出力スキーマを取得します。
     /// </summary>
-    IDictionary<string, object>? GetOutputSchema();
+    ITaskSchema? GetOutputSchema();
 
     /// <summary>
     /// タスクが実行可能かどうかを判定します。
@@ -173,35 +173,35 @@ public interface ITaskContext
     /// <summary>
     /// タスク入力パラメータを取得します。
     /// </summary>
-    IDictionary<string, object?> GetInputParameters();
+    IReadOnlyDictionary<string, string?> GetInputParameters();
 
     /// <summary>
     /// タスク入力パラメータを設定します。
     /// </summary>
     /// <param name="key">パラメータキー</param>
     /// <param name="value">パラメータ値</param>
-    void SetInputParameter(string key, object? value);
+    void SetInputParameter(string key, string? value);
 
     /// <summary>
     /// 依存タスクの出力結果を取得します。
     /// </summary>
     /// <param name="taskId">タスクID</param>
     /// <returns>タスク出力</returns>
-    object? GetDependencyOutput(string taskId);
+    ITaskExecutionResult? GetDependencyOutput(string taskId);
 
     /// <summary>
     /// コンテキスト変数を取得します。
     /// </summary>
     /// <param name="key">変数キー</param>
     /// <returns>変数値</returns>
-    object? GetVariable(string key);
+    string? GetVariable(string key);
 
     /// <summary>
     /// コンテキスト変数を設定します。
     /// </summary>
     /// <param name="key">変数キー</param>
     /// <param name="value">変数値</param>
-    void SetVariable(string key, object? value);
+    void SetVariable(string key, string? value);
 
     /// <summary>
     /// 実行時刻を取得します。
@@ -283,7 +283,7 @@ public interface ITaskExecutionResult
     /// <summary>
     /// タスク出力を取得します。
     /// </summary>
-    object? Output { get; }
+    string? Output { get; }
 
     /// <summary>
     /// エラーメッセージを取得します。
@@ -299,6 +299,27 @@ public interface ITaskExecutionResult
     /// リトライ回数を取得します。
     /// </summary>
     int RetryCount { get; }
+}
+
+/// <summary>
+/// タスク入出力スキーマを定義します。
+/// </summary>
+public interface ITaskSchema
+{
+    /// <summary>
+    /// スキーマ名を取得します。
+    /// </summary>
+    string Name { get; }
+
+    /// <summary>
+    /// スキーマバージョンを取得します。
+    /// </summary>
+    string Version { get; }
+
+    /// <summary>
+    /// フィールド定義を取得します。
+    /// </summary>
+    IReadOnlyDictionary<string, string> Fields { get; }
 }
 
 /// <summary>

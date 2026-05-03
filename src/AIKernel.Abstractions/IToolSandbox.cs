@@ -20,7 +20,7 @@ public interface IToolSandbox
     /// <returns>実行結果</returns>
     Task<SandboxExecutionResult> ExecuteToolAsync(
         string toolName,
-        Dictionary<string, object> parameters,
+        IReadOnlyDictionary<string, string> parameters,
         IToolPermission permissions);
 
     /// <summary>
@@ -63,7 +63,7 @@ public sealed class SandboxExecutionResult
     /// <summary>
     /// 実行結果を取得または設定します。
     /// </summary>
-    public object? Result { get; init; }
+    public string? Result { get; init; }
 
     /// <summary>
     /// 実行エラーメッセージを取得または設定します。

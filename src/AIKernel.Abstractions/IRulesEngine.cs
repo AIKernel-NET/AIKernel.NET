@@ -34,7 +34,7 @@ public interface IRulesEngine : IProvider
     /// <param name="context">評価コンテキスト</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>評価結果</returns>
-    Task<RuleEvaluationResult> EvaluateAsync(string ruleId, IDictionary<string, object> context, CancellationToken cancellationToken = default);
+    Task<RuleEvaluationResult> EvaluateAsync(string ruleId, RuleEvaluationContext context, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// プロンプト生成前のルール検証を実行します。
@@ -43,7 +43,7 @@ public interface IRulesEngine : IProvider
     /// <param name="prepromptContext">プロンプト生成前コンテキスト</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>検証結果</returns>
-    Task<RuleValidationResult> ValidatePrePromptAsync(string ruleId, IDictionary<string, object> prepromptContext, CancellationToken cancellationToken = default);
+    Task<RuleValidationResult> ValidatePrePromptAsync(string ruleId, RuleEvaluationContext prepromptContext, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// プロンプト生成後のルール検証を実行します。
@@ -52,7 +52,7 @@ public interface IRulesEngine : IProvider
     /// <param name="postpromptContext">プロンプト生成後コンテキスト</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>検証結果</returns>
-    Task<RuleValidationResult> ValidatePostPromptAsync(string ruleId, IDictionary<string, object> postpromptContext, CancellationToken cancellationToken = default);
+    Task<RuleValidationResult> ValidatePostPromptAsync(string ruleId, RuleEvaluationContext postpromptContext, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// すべて登録されているルールを取得します。
@@ -145,7 +145,7 @@ public interface IPromptRule
     /// <summary>
     /// ルールメタデータを取得します。
     /// </summary>
-    IReadOnlyDictionary<string, object>? Metadata { get; }
+    IReadOnlyDictionary<string, string>? Metadata { get; }
 }
 
 /// <summary>
@@ -197,7 +197,7 @@ public class RuleEvaluationResult
     /// <summary>
     /// 評価メタデータを取得または設定します。
     /// </summary>
-    public Dictionary<string, object>? Metadata { get; set; }
+    public IReadOnlyDictionary<string, string>? Metadata { get; set; }
 
     /// <summary>
     /// 実行にかかった時間（ミリ秒）を取得または設定します。
@@ -234,4 +234,25 @@ public class RuleValidationResult
     /// 実行にかかった時間（ミリ秒）を取得または設定します。
     /// </summary>
     public long DurationMs { get; set; }
+}
+
+/// <summary>
+/// ルール評価コンテキストを定義します。
+/// </summary>
+public sealed class RuleEvaluationContext
+{
+    /// <summary>
+    /// コンテキスト識別子を取得または設定します。
+    /// </summary>
+    public required string ContextId { get; init; }
+
+    /// <summary>
+    /// 評価対象フェーズを取得または設定します。
+    /// </summary>
+    public required string Phase { get; init; }
+
+    /// <summary>
+    /// 評価用キー値を取得または設定します。
+    /// </summary>
+    public IReadOnlyDictionary<string, string> Values { get; init; } = new Dictionary<string, string>();
 }

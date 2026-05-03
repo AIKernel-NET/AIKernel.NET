@@ -34,5 +34,5 @@ public class ContextFragment
     /// <summary>
     /// フラグメントのメタデータを取得または設定します。
     /// </summary>
-    public Dictionary<string, object>? Metadata { get; init; }
+    public IReadOnlyDictionary<string, string>? Metadata { get; init; }
 }

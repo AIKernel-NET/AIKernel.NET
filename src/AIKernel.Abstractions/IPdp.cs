@@ -64,7 +64,7 @@ public sealed class AccessRequest
     /// <summary>
     /// 環境属性を取得または設定します。
     /// </summary>
-    public Dictionary<string, object>? Environment { get; init; }
+    public IReadOnlyDictionary<string, string>? Environment { get; init; }
 }
 
 /// <summary>
@@ -90,7 +90,7 @@ public sealed class AccessDecision
     /// <summary>
     /// 追加の制約条件を取得します。
     /// </summary>
-    public Dictionary<string, object>? Constraints { get; init; }
+    public IReadOnlyDictionary<string, string>? Constraints { get; init; }
 }
 
 /// <summary>

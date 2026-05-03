@@ -69,5 +69,5 @@ public interface IToolAccessValidator
     /// <param name="permission">検証対象の権限</param>
     /// <param name="context">実行コンテキスト情報</param>
     /// <returns>すべての制約を満たしている場合は true</returns>
-    bool ValidateConstraints(IToolPermission permission, Dictionary<string, object> context);
+    bool ValidateConstraints(IToolPermission permission, IReadOnlyDictionary<string, string> context);
 }

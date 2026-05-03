@@ -23,5 +23,5 @@ public sealed class SourceInfo
     /// <summary>
     /// 出典に関する追加のメタデータを取得または設定します。
     /// </summary>
-    public Dictionary<string, object>? Metadata { get; init; }
+    public IReadOnlyDictionary<string, string>? Metadata { get; init; }
 }
