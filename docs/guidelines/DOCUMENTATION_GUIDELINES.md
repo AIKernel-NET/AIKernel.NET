@@ -1,8 +1,9 @@
 ---
-version: 0.0.0
+version: 0.0.0.0
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel Documentation Guidelines"
 created: 2026-04-30
+updated: 2026-05-04
 tags:
   - aikernel
   - documentation
@@ -22,11 +23,10 @@ All AIKernel documentation must follow these principles to maximize **human read
 - YAML/JSON should be embedded as code blocks in Markdown.
 - Do not use PDF / Word / HTML as primary formats.
 
-## 1.2 English is canonical; Japanese is deep-dive
-- `xxx.md` → English (canonical, for OSS)
-- `xxx-jp.md` → Japanese (deep-dive, additional rationale)
-
-Reverse-translating Japanese into English is prohibited; English is the canonical version. Japanese may contain deeper explanations that remain only in Japanese.
+## 1.2 Bilingual symmetry is mandatory
+- Manage `xxx.md` and `xxx-jp.md` strictly as a pair.
+- Keep heading levels, bullet counts, and code-block content aligned between Japanese and English.
+- Do not apply unilateral edits; update both files in the same PR.
 
 ## 1.3 Repository scope (contracts repo)
 This repository provides **contracts (Interfaces / minimal DTOs / Enums)** for AIKernel.NET.
@@ -42,9 +42,9 @@ When stable, reflect changes into English and update SemVer.
 
 ## 2.1 Numbered architecture files
 ```
-1.CATEGORY_SEPARATION_PRINCIPLES.md
+1.1.CATEGORY_SEPARATION_PRINCIPLES.md
 2.CONTEXT_ISOLATION_SPEC.md
-3.ATTENTION_POLLUTION_THEORY.md
+3.3.ATTENTION_POLLUTION_THEORY.md
 4.LLM_SURFACE_MODE_FAILURE.md
 5.PREPROCESSING_VS_PROMPTING.md
 6.AIKERNEL_VS_LANGCHAIN.md
@@ -206,3 +206,21 @@ For Japanese version, see xxx-jp.md
 
 AIKernel documentation is part of the architecture itself.
 This guideline ensures consistent reflection of AIKernel's principles (category separation, preprocessing-first, attention purity, OS-like structure) across all documents.
+
+---
+
+# 10. AI-Native Integrity Rules (Mandatory)
+
+## 10.1 Use full abstraction type names
+- Use exact type names such as `ContextFragment`, `ExpressionBuffer`, `IModelVectorRouter`, and `IComputeShapeAdvisor` instead of descriptive aliases.
+- Wrap type names in backticks.
+
+## 10.2 Stay synchronized with the latest architecture
+- Align documentation with the `UC-01` through `UC-14` use-case catalog.
+- Preserve assumptions around `ModelCapacityVector` and NPU/dynamic-cardinality support.
+- Do not use model-name-dependent guidance (including deprecated model naming examples).
+
+## 10.3 Fail-Closed security language
+- Treat signature verification by `IPromptVerifier` as an execution precondition, not a recommendation.
+- Explicitly state that verification failure must stop execution (fail-closed).
+

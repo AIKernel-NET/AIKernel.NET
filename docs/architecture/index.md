@@ -1,8 +1,9 @@
 ---
-version: 0.0.0
+version: 0.0.0.0
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel Architecture — Index"
 created: 2026-04-30
+updated: 2026-05-04
 tags:
   - aikernel
   - architecture
@@ -22,7 +23,7 @@ This index functions as a guide to understand AIKernel's design principles, theo
 # 1. Core Architectural Principles
 
 ## 1.1 Principles of Category Separation
-**File:** `1.CATEGORY_SEPARATION_PRINCIPLES.md`
+**File:** `1.1.CATEGORY_SEPARATION_PRINCIPLES.md`
 
 Information passed to an LLM must not be mixed into a single context. Mixing information destroys attention, halts inference, and triggers surface-mode behavior.
 
@@ -36,7 +37,7 @@ Information passed to an LLM must not be mixed into a single context. Mixing inf
 - metadata
 
 > "Information passed to an LLM must not be mixed into a single context."
-> — CATEGORY_SEPARATION_PRINCIPLES.md
+> — 1.CATEGORY_SEPARATION_PRINCIPLES.md
 
 ---
 
@@ -54,12 +55,12 @@ Examples, stylistic instructions, and RAG fragments must not be mixed into infer
 ---
 
 ## 1.3 Theory of Attention Pollution
-**File:** `3.ATTENTION_POLLUTION_THEORY.md`
+**File:** `3.3.ATTENTION_POLLUTION_THEORY.md`
 
 An LLM's inference capability depends on the purity of attention. Examples, stylistic mimicry, RAG fragments, and history divert attention to surface structures and halt inference.
 
 > "When attention is drawn to surface structures, inference halts, and the system falls into surface-mode failure."
-> — ATTENTION_POLLUTION_THEORY.md
+> — 3.ATTENTION_POLLUTION_THEORY.md
 
 ---
 
@@ -74,6 +75,97 @@ When exposed to examples, LLMs can enter a "non-inferential mode." This is one r
 **File:** `5.PREPROCESSING_VS_PROMPTING.md`
 
 The essence is **structuring preprocessing**, not prompt design. What is included in attention and what is isolated determines inference accuracy.
+
+---
+
+## 1.6 DI Composition and Pipeline Bootstrap
+**File:** `7.DI_COMPOSITION_AND_PIPELINE_BOOTSTRAP.md`
+
+Defines how AIKernel composes model routing, provider binding, and pipeline execution through DI:
+- `IServiceRegistrar` / `IProviderRegistrar`
+- `IKernelModule` / `IKernelHost`
+- `IModelVectorRouter` / `IProviderRouter` / `IModelProvider`
+- `IPipelineOrchestrator` / `ITaskManager`
+
+It also specifies `IPromptVerifier` as a fail-closed startup gate.
+
+---
+
+## 1.7 Execution Contract Architecture
+**File:** `8.EXECUTION_CONTRACT_ARCHITECTURE.md`
+
+Defines phase boundaries for `Structure -> Generation -> Polish` and prevents phase leakage between reasoning and expression.
+
+---
+
+## 1.8 PDP Guard Decision Plane
+**File:** `9.PDP_GUARD_DECISION_PLANE.md`
+
+Defines governance responsibilities and enforces the operating rule:
+- LLM suggests
+- PDP decides
+
+---
+
+## 1.9 Dynamic Capacity Routing
+**File:** `10.DYNAMIC_CAPACITY_ROUTING.md`
+
+Defines capability-vector-driven routing with dynamic axes:
+- `ModelCapacityVector`
+- `IDynamicCapacityProvider`
+- `IVectorMatcher`
+- `IModelVectorRouter`
+
+---
+
+## 1.10 Material Quarantine Trust Model
+**File:** `11.MATERIAL_QUARANTINE_TRUST_MODEL.md`
+
+Defines how external material is quarantined and normalized before entering reasoning paths.
+
+---
+
+## 1.11 Semantic Memory Management Spec
+**File:** `12.SEMANTIC_MEMORY_MANAGEMENT_SPEC.md`
+
+Defines token-budget-aware semantic memory management:
+- layer-aware purge/swap priority
+- summarization with provenance retention
+- fail-closed conditions under context pressure
+
+---
+
+## 1.12 Capability Definition Schema
+**File:** `13.CAPABILITY_DEFINITION_SCHEMA.md`
+
+Defines capability dimensions and declaration schema for model/provider onboarding and routing integrity.
+
+---
+
+## 1.13 Signed Prompt Governance Workflow
+**File:** `14.SIGNED_PROMPT_GOVERNANCE_WORKFLOW.md`
+
+Defines sequence-level fail-closed verification from prompt artifact load to execution allow/deny decision.
+
+---
+
+## 1.14 Replayable Execution Dump Format
+**File:** `15.REPLAYABLE_EXECUTION_DUMP_FORMAT.md`
+
+Defines deterministic replay dump structure (seed, hashes, provider manifest, execution outcome chain).
+
+---
+
+## 1.15 Semantic Context OS Vision
+**File:** `16.SEMANTIC_CONTEXT_OS_VISION.md`
+
+AIKernel's final architectural target is the **Semantic Context OS**:
+- Forkable Reasoning
+- Committee Reasoning
+- Signed Prompt Governance (Fail-Closed)
+- Three-Layer Buffer Model
+
+This document defines the architectural north star that unifies reproducibility, governance, and model-agnostic reasoning.
 
 ---
 
@@ -129,13 +221,25 @@ Reading this index and the linked documents in order will help you understand **
 
 # 5. Recommended Reading Order
 
+Note: `16` is the last chapter in `architecture/`; `18` is intentionally reserved as a cross-reference to `/design/DESIGN_INTENT`.
+
 1. CATEGORY_SEPARATION_PRINCIPLES
 2. CONTEXT_ISOLATION_SPEC
 3. ATTENTION_POLLUTION_THEORY
 4. LLM_SURFACE_MODE_FAILURE
 5. PREPROCESSING_VS_PROMPTING
 6. AIKERNEL_VS_LANGCHAIN
-7. DESIGN_INTENT
+7. DI_COMPOSITION_AND_PIPELINE_BOOTSTRAP
+8. EXECUTION_CONTRACT_ARCHITECTURE
+9. PDP_GUARD_DECISION_PLANE
+10. DYNAMIC_CAPACITY_ROUTING
+11. MATERIAL_QUARANTINE_TRUST_MODEL
+12. SEMANTIC_MEMORY_MANAGEMENT_SPEC
+13. CAPABILITY_DEFINITION_SCHEMA
+14. SIGNED_PROMPT_GOVERNANCE_WORKFLOW
+15. REPLAYABLE_EXECUTION_DUMP_FORMAT
+16. SEMANTIC_CONTEXT_OS_VISION
+18. /design/DESIGN_INTENT
 
 ---
 
@@ -145,3 +249,7 @@ AIKernel's architecture is not something that "works by chance."
 It is an **OS-level approach designed to work correctly by structure.**
 
 This index is the entry point to understanding AIKernel's overall design.
+
+---
+
+

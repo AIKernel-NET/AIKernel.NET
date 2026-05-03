@@ -87,8 +87,8 @@ For each release, publish:
 ---
 
 ## Related Documents
-- `../DESIGN_INTENT.md`
+- `./DESIGN_INTENT.md`
 - `ARCHITECTURE_DECISIONS.md`
 - `EXTENSION_POINTS.md`
 - `../architecture/index.md`
-- `../DOCUMENTATION_GUIDELINES.md`
+- `../guidelines/DOCUMENTATION_GUIDELINES.md`
