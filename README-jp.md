@@ -10,6 +10,18 @@ AIKernel は、LLM を単なる API 呼び出しではなく
 設計思想は `docs/design/DESIGN_INTENT.md` を参照。  
 実装契約（Spec Sheet）は `docs/specs/index-jp.md` を参照。
 
+目標イメージ（起動ログ例）:
+```txt
+[KERNEL] Initializing AIKernel.NET v0.1.0...
+[KERNEL] Loading ISignatureTrustStore... [OK]
+[KERNEL] Mounting VFS (Git: ./context)... [OK]
+[KERNEL] Verifying System Prompt Signature... [VALID]
+[KERNEL] Routing to Provider: [[provider.reasoning.high]]... [OK]
+
+> Hello Intelligence.
+> The Semantic Context is stable. Governance is active.
+```
+
 ---
 
 # 1. 目的
@@ -296,4 +308,3 @@ AIKernel.NET は「AI アプリケーションの OS」として
 AI アプリケーションの標準 OS を目指す。
 
 実装時は、まず `docs/specs/index-jp.md` の読書順に沿って契約を固定し、次に `docs/design` で実装戦略を適用する。
-

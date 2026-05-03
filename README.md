@@ -9,6 +9,18 @@ AIKernel treats LLMs not as simple API calls but as **capability-bearing process
 See `docs/design/DESIGN_INTENT.md` for design philosophy.  
 For executable contracts (spec sheets), see `docs/specs/index.md`.
 
+Target experience (boot log example):
+```txt
+[KERNEL] Initializing AIKernel.NET v0.1.0...
+[KERNEL] Loading ISignatureTrustStore... [OK]
+[KERNEL] Mounting VFS (Git: ./context)... [OK]
+[KERNEL] Verifying System Prompt Signature... [VALID]
+[KERNEL] Routing to Provider: [[provider.reasoning.high]]... [OK]
+
+> Hello Intelligence.
+> The Semantic Context is stable. Governance is active.
+```
+
 ---
 
 # 1. Purpose
