@@ -6,7 +6,8 @@ A framework aiming to be the **Operating System (OS) for AI applications**.
 
 AIKernel treats LLMs not as simple API calls but as **capability-bearing processes**.
 
-See `docs/design/DESIGN_INTENT.md` for design philosophy.
+See `docs/design/DESIGN_INTENT.md` for design philosophy.  
+For executable contracts (spec sheets), see `docs/specs/index.md`.
 
 ---
 
@@ -36,6 +37,12 @@ Server (external API adapter)
 Hosting (app integration)
 Enterprise (operations extensions)
 ```
+
+Documentation is organized into four layers:
+- `docs/architecture`: Why (principles, theory, governance)
+- `docs/design`: How (design decisions and implementation strategy)
+- `docs/specs`: What (executable contracts and verifiable requirements)
+- `docs/guidelines`: operational and contribution rules
 
 ---
 
@@ -78,7 +85,24 @@ AIKernel.NET/
 │  │  ├─ DI_GUIDE.md
 │  │  ├─ DI_GUIDE-jp.md
 │  │  ├─ CONTRACT_VERSIONING.md
-│  │  └─ CONTRACT_VERSIONING-jp.md
+│  │  ├─ CONTRACT_VERSIONING-jp.md
+│  │  ├─ SEMANTIC_SNAPSHOT_FORMAT.md
+│  │  └─ SEMANTIC_SNAPSHOT_FORMAT-jp.md
+│  ├─ specs/
+│  │  ├─ index.md
+│  │  ├─ index-jp.md
+│  │  ├─ 01.EXECUTION_PIPELINE_SPEC.md
+│  │  ├─ 01.EXECUTION_PIPELINE_SPEC-jp.md
+│  │  ├─ 02.SIGNED_PROMPT_GOVERNANCE_SPEC.md
+│  │  ├─ 02.SIGNED_PROMPT_GOVERNANCE_SPEC-jp.md
+│  │  ├─ 03.ROM_CORE_SPEC.md
+│  │  ├─ 03.ROM_CORE_SPEC-jp.md
+│  │  ├─ 04.MODEL_ROUTING_SPEC.md
+│  │  ├─ 04.MODEL_ROUTING_SPEC-jp.md
+│  │  ├─ 05.MATERIAL_QUARANTINE_SPEC.md
+│  │  ├─ 05.MATERIAL_QUARANTINE_SPEC-jp.md
+│  │  ├─ 06.REPLAY_DUMP_SPEC.md
+│  │  └─ 06.REPLAY_DUMP_SPEC-jp.md
 │  ├─ guidelines/
 │  │  ├─ index.md
 │  │  ├─ index-jp.md
@@ -154,6 +178,28 @@ Mixing examples, RAG, and history breaks inference.
 ## 4.4 LLM as suggestor, PDP as decision-maker
 LLM is a suggestor; PDP makes final decisions.
 
+## 4.5 Signed Prompt Governance and Fail-Closed
+Prompts carry authority equivalent to code execution.  
+AIKernel executes only approved, signed prompts and halts immediately when tampering or untrusted signers are detected.
+
+- Verification sequence: `IPromptRepository` -> `IPromptVerifier` -> `ISignatureTrustStore` -> `IPromptValidator` -> `ExecutionPipeline`
+- Detailed spec: `docs/specs/02.SIGNED_PROMPT_GOVERNANCE_SPEC.md`
+
+## 4.6 Relation-Oriented Data Structure (Relation-Oriented Markdown: ROM)
+AIKernel treats knowledge not as linear text but as a set of relations.
+
+- `YAML`: Defines entity metadata and identity.
+- `Headings`: Define semantic categories and contextual scopes.
+- `Bullets`: Declaratively express facts and properties.
+- `Links` (`[[id]]`): Represent graph edges between entities.
+- `Semantic Hash`: Uses order-insensitive canonical hashing to strengthen signature verification.
+
+With ROM, human-authored notes can be transformed directly into an LLM-reasonable knowledge base.
+
+## 4.7 Git-Managed Reasoning (ConversationStore)
+AI conversations are managed not as linear logs but as tree-structured Git commits.  
+This natively supports reasoning forks and point-in-time replay.
+
 ---
 
 # 5. Kernel (formerly Runtime)
@@ -165,6 +211,8 @@ Kernel is the core OS:
 - RagEngine (materialization)
 - PipelineExecutor (DAG execution)
 - RulesEngine (PromptRules)
+- IPromptVerifier / IPromptValidator (runtime signature verification for fail-closed enforcement)
+- ISignatureTrustStore (trust anchor managing trusted signers and revocation state)
 
 ---
 
@@ -223,3 +271,5 @@ Adapter to expose AIKernel as an OpenAI-compatible API.
 
 AIKernel.NET provides a **structurally correct AI execution platform** as an OS.
 It aims to be the standard OS for AI applications by focusing on category separation, preprocessing-first design, governance, and reproducibility.
+
+For implementation, lock contracts first by following `docs/specs/index.md`, then apply implementation strategy from `docs/design`.

@@ -27,6 +27,7 @@ This document defines:
 - metadata keys
 - section semantics
 - format constraints for reproducibility and auditability
+- responsibility boundary with ROM (format shell vs semantic content model)
 
 # Specification / Procedure
 
@@ -131,10 +132,34 @@ Constraints:
 - [ ] Expression is isolated
 - [ ] Prompt signature is present and verified
 
+## 9. Relationship with ROM (Relation-Oriented Markdown)
+This specification defines the snapshot container; ROM defines semantic structure inside the container.
+
+- `SEMANTIC_SNAPSHOT_FORMAT`: guarantees section ordering, governance metadata, and verifiability.
+- `ROM`: guarantees relational expression through `YAML`, `Headings`, `Bullets`, and `[[id]]`.
+
+Operational rules:
+- Body content in `Material Quarantine` and `Thought Process` may follow ROM.
+- Snapshot top-level ordering (1..5) is governed by this specification.
+- Non-ROM fragments should be treated as lower-trust even when quarantined.
+
+## 10. Canonicalization and Semantic Hash Rules
+To stabilize signatures and diff behavior, normalize the following before hashing.
+
+- Heading numbering variance (`# 1. ...` vs `# ...`) is treated as equivalent.
+- Bullet ordering can be order-insensitive when semantics are commutative.
+- `[[id]]` links are compared as resolved identifier sets.
+- Whitespace/newline/indentation formatting noise is ignored in hash inputs.
+
+Fail-Closed:
+- If normalized content does not match `PromptSignature`, execution is denied.
+- If unresolved links (orphan IDs) exist in mandatory references, execution is halted.
+
 # References
 - ../architecture/16.SEMANTIC_CONTEXT_OS_VISION.md
 - ../architecture/2.CONTEXT_ISOLATION_SPEC.md
 - ../architecture/3.ATTENTION_POLLUTION_THEORY.md
+- ../architecture/11.MATERIAL_QUARANTINE_TRUST_MODEL.md
 - DESIGN_INTENT.md
 
 # Changelog

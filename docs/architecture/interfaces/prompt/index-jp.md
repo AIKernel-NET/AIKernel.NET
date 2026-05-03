@@ -20,5 +20,6 @@ tags:
 - IPromptRuleSet-jp.md
 - IPromptSignatureProvider-jp.md
 - IPromptSigner-jp.md
+- ISignatureTrustStore-jp.md
 - IPromptValidator-jp.md
 - IPromptVerifier-jp.md

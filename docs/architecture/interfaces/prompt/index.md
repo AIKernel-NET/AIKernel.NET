@@ -20,5 +20,6 @@ For Japanese version, see index-jp.md.
 - IPromptRuleSet.md
 - IPromptSignatureProvider.md
 - IPromptSigner.md
+- ISignatureTrustStore.md
 - IPromptValidator.md
 - IPromptVerifier.md
