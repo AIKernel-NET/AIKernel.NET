@@ -1,6 +1,6 @@
-namespace AIKernel.Abstractions;
-
 using AIKernel.Dtos;
+
+namespace AIKernel.Abstractions;
 
 /// <summary>
 /// 情報検索・取得（RAG）プロバイダーを定義します。
@@ -24,7 +24,7 @@ public interface IRagProvider : IProvider
     /// <param name="content">ドキュメントコンテンツ</param>
     /// <param name="metadata">メタデータ</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
-    Task IndexAsync(string documentId, string content, IReadOnlyDictionary<string, string>? metadata = null, CancellationToken cancellationToken = default);
+    Task IndexAsync(string documentId, string content, IReadOnlyDictionary<string, object>? metadata = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// ドキュメントをインデックスから削除します。

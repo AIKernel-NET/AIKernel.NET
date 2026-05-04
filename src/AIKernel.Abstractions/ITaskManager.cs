@@ -130,17 +130,17 @@ public interface ITask
     /// <param name="context">実行コンテキスト</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>タスク結果</returns>
-    Task<ITaskExecutionResult> ExecuteAsync(ITaskContext context, CancellationToken cancellationToken = default);
+    Task<object?> ExecuteAsync(ITaskContext context, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// タスクの入力スキーマを取得します。
     /// </summary>
-    ITaskSchema? GetInputSchema();
+    IReadOnlyDictionary<string, object>? GetInputSchema();
 
     /// <summary>
     /// タスクの出力スキーマを取得します。
     /// </summary>
-    ITaskSchema? GetOutputSchema();
+    IReadOnlyDictionary<string, object>? GetOutputSchema();
 
     /// <summary>
     /// タスクが実行可能かどうかを判定します。

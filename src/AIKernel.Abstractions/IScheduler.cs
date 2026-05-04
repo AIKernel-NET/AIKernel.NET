@@ -57,9 +57,10 @@ public interface IScheduleSpec
     string Description { get; }
 
     /// <summary>
-    /// 実行対象の作業を取得します。
+    /// 実行対象の作業を識別する名前またはIDを取得します。
+    /// DI Container で実装を解決するために使用されます。
     /// </summary>
-    Func<CancellationToken, Task> Work { get; }
+    string WorkId { get; }
 
     /// <summary>
     /// Cron形式のスケジュール式を取得します（例: "0 9 * * MON"）。
