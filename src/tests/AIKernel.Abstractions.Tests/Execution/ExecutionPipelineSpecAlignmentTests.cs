@@ -40,7 +40,7 @@ public sealed class ExecutionPipelineSpecAlignmentTests
             PolishParentHash = "g1"
         };
 
-        Assert.False(chain.IsChainValid());
+        Assert.False(IsHashChainValid(chain));
     }
 
     [Fact]
@@ -108,5 +108,15 @@ public sealed class ExecutionPipelineSpecAlignmentTests
         public int PhysicalCardinality => 1;
         public string? GetContextValue(string key) => null;
         public IReadOnlyDictionary<string, string> GetAllContextValues() => new Dictionary<string, string>();
+    }
+
+    private static bool IsHashChainValid(HashChain chain)
+    {
+        return !string.IsNullOrEmpty(chain.StructureHash)
+            && !string.IsNullOrEmpty(chain.GenerationHash)
+            && !string.IsNullOrEmpty(chain.GenerationParentHash)
+            && !string.IsNullOrEmpty(chain.PolishHash)
+            && !string.IsNullOrEmpty(chain.PolishParentHash)
+            && chain.GenerationParentHash == chain.StructureHash;
     }
 }

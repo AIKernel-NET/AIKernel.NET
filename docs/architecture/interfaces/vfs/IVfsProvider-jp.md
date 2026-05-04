@@ -33,6 +33,7 @@ IVfsProvider が AIKernel のオーケストレーションおよび統治フロ
 ## Notes
 - 本文書は Interface レベルのドラフトである。
 - 実装は fail-closed と deterministic replay の原則を維持すること。
+- `VfsProviderHealth` などの具象データキャリアは `AIKernel.Dtos.Vfs` に定義する。
 
 
 

@@ -1,5 +1,7 @@
 namespace AIKernel.VFS;
 
+using AIKernel.Dtos.Vfs;
+
 /// <summary>
 /// VFS クエリ結果のインターフェースを定義します。
 /// </summary>

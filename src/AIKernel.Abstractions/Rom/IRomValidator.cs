@@ -16,7 +16,7 @@ public interface IRomValidator
     /// <param name="document">検証対象の ROM ドキュメント</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>スキーマ検証結果</returns>
-    Task<RomSchemaValidationResult> ValidateSchemaAsync(
+    Task<AIKernel.Dtos.Rom.RomSchemaValidationResult> ValidateSchemaAsync(
         IRomDocument document,
         CancellationToken cancellationToken = default);
 
@@ -29,7 +29,7 @@ public interface IRomValidator
     /// <param name="relationResolver">関係解決サービス</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>リンク検証結果</returns>
-    Task<RomLinkageValidationResult> ValidateLinkageAsync(
+    Task<AIKernel.Dtos.Rom.RomLinkageValidationResult> ValidateLinkageAsync(
         IRomDocument document,
         IRelationResolver relationResolver,
         CancellationToken cancellationToken = default);
@@ -43,9 +43,9 @@ public interface IRomValidator
     /// <param name="typeSchema">型スキーマ定義</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>型一貫性検証結果</returns>
-    Task<RomTypeConsistencyResult> ValidateTypeConsistencyAsync(
+    Task<AIKernel.Dtos.Rom.RomTypeConsistencyResult> ValidateTypeConsistencyAsync(
         IRomDocument document,
-        EntityTypeSchema typeSchema,
+        AIKernel.Dtos.Rom.EntityTypeSchema typeSchema,
         CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -57,7 +57,7 @@ public interface IRomValidator
     /// <param name="maxDepth">探索の最大深度（無限ループ防止）</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>循環参照検出結果</returns>
-    Task<CircularReferenceDetectionResult> DetectCircularReferencesAsync(
+    Task<AIKernel.Dtos.Rom.CircularReferenceDetectionResult> DetectCircularReferencesAsync(
         IRomDocument document,
         IRelationResolver relationResolver,
         int maxDepth = 10,
@@ -76,7 +76,7 @@ public interface IRelationResolver
     /// <param name="referenceId">参照 ID（例: "user.tky"）</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>解決されたエンティティ、存在しない場合は null</returns>
-    Task<ResolvableEntity?> ResolveAsync(string referenceId, CancellationToken cancellationToken = default);
+    Task<AIKernel.Dtos.Rom.ResolvableEntity?> ResolveAsync(string referenceId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 参照が解決可能であるかだけを確認します（軽量チェック）。

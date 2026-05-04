@@ -54,5 +54,5 @@ public interface IRomDocument
     /// RCS-004 の正規化処理（Linguistic, Structural, Reference Anchoring）。
     /// </summary>
     /// <returns>正規化されたドキュメント表現</returns>
-    Task<CanonicalizedRomDocument> CanonicalizeAsync();
+    Task<AIKernel.Dtos.Rom.CanonicalizedRomDocument> CanonicalizeAsync();
 }

@@ -1,5 +1,7 @@
 namespace AIKernel.VFS;
 
+using AIKernel.Dtos.Vfs;
+
 /// <summary>
 /// VFS クエリのインターフェースを定義します。
 /// データのクエリと検索を行うクエリ。
@@ -14,7 +16,7 @@ public interface IVfsQuery
     /// <summary>
     /// クエリのフィルター条件を取得します。
     /// </summary>
-    IReadOnlyDictionary<string, object>? Filters { get; }
+    IReadOnlyDictionary<string, string>? Filters { get; }
 
     /// <summary>
     /// クエリの結果制限を取得します。

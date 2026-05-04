@@ -33,6 +33,7 @@ See ../../use-cases/AIKernel_UseCaseCatalog.md for references where IVfsProvider
 ## Notes
 - This document is an interface-level draft.
 - Implementations must preserve fail-closed and deterministic replay principles.
+- Concrete VFS data carriers (for example `VfsProviderHealth`) are defined in `AIKernel.Dtos.Vfs`.
 
 
 

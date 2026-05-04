@@ -26,7 +26,7 @@ public interface ISemanticHashCalculator
     /// </summary>
     /// <param name="canonicalized">正規化された ROM ドキュメント</param>
     /// <returns>ハッシュ値</returns>
-    string ComputeHash(CanonicalizedRomDocument canonicalized);
+    string ComputeHash(AIKernel.Dtos.Rom.CanonicalizedRomDocument canonicalized);
 
     /// <summary>
     /// ドキュメント本文と期待ハッシュの一致を検証します。

@@ -12,13 +12,6 @@ public interface IVfsSession : IAsyncDisposable
     DateTimeOffset CreatedAtUtc { get; }
 }
 
-public sealed class VfsProviderHealth
-{
-    public bool IsHealthy { get; init; }
-    public string? Message { get; init; }
-    public DateTimeOffset CheckedAtUtc { get; init; }
-}
-
 public interface IVfsProvider
 {
     string ProviderId { get; }

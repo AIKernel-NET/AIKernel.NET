@@ -15,10 +15,10 @@ public class MaterialQuarantineTests
     /// </summary>
     private class TestStructuredMaterial : IStructuredMaterial
     {
-        public string RawContent { get; init; }
-        public string NormalizedContent { get; init; }
+        public required string RawContent { get; init; }
+        public required string NormalizedContent { get; init; }
         public double Weight { get; init; }
-        public SourceInfo SourceInfo { get; init; }
+        public required SourceInfo SourceInfo { get; init; }
     }
 
     /// <summary>
@@ -96,7 +96,7 @@ public class MaterialQuarantineTests
     }
 
     [Fact]
-    public async Task StructuredMaterial_ShouldPreserveSourceInfo()
+    public void StructuredMaterial_ShouldPreserveSourceInfo()
     {
         // Arrange
         var sourceInfo = new SourceInfo

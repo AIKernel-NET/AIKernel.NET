@@ -1,5 +1,6 @@
 using AIKernel.Abstractions;
 using AIKernel.Contracts;
+using AIKernel.Enums;
 
 namespace AIKernel.Events;
 
@@ -15,5 +16,5 @@ public sealed class AuditEvent : IAuditEvent
     public string Subject { get; init; } = string.Empty;
     public string Description { get; init; } = string.Empty;
     public AuditSeverity Severity { get; init; } = AuditSeverity.Information;
-    public IReadOnlyDictionary<string, object> Metadata { get; init; } = new Dictionary<string, object>();
+    public IReadOnlyDictionary<string, string> Metadata { get; init; } = new Dictionary<string, string>();
 }

@@ -1,5 +1,7 @@
 namespace AIKernel.VFS;
 
+using AIKernel.Dtos.Vfs;
+
 /// <summary>
 /// VFS（Virtual File System）プロバイダーのインターフェースを定義します。
 /// 外部データソースへの統一的なアクセスを提供します。

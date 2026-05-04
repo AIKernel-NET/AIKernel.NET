@@ -16,3 +16,6 @@ tags:
 
 ## ドキュメント一覧
 - IVfsProvider-jp.md
+
+## 境界ルール
+- VFS パッケージはインターフェース契約のみを保持し、具象データキャリアは `AIKernel.Dtos.Vfs` に定義する。

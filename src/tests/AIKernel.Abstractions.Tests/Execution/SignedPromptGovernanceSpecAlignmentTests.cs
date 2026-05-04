@@ -40,11 +40,12 @@ public sealed class SignedPromptGovernanceSpecAlignmentTests
     }
 
     private static SignedPromptArtifactDto BuildArtifact() =>
-        new(
-            "logic.analyser.core",
-            "2.1.0",
-            "kernel.signed_prompt",
-            new PromptPolicyDto(
+        new()
+        {
+            EntityId = "logic.analyser.core",
+            Version = "2.1.0",
+            Type = "kernel.signed_prompt",
+            Policy = new PromptPolicyDto(
                 0.0,
                 Array.Empty<string>(),
                 new[] { "scope.read" },
@@ -52,14 +53,17 @@ public sealed class SignedPromptGovernanceSpecAlignmentTests
                 1000,
                 DateTime.UtcNow.AddMinutes(10),
                 DateTime.UtcNow.AddMinutes(-1)),
-            "body",
-            new GovernanceMetadataDto(
-                "issuer",
-                "signer",
-                "SHA256",
-                "sha256:x",
-                "sig",
-                DateTime.UtcNow));
+            PromptBody = "body",
+            Governance = new GovernanceMetadataDto
+            {
+                Issuer = "issuer",
+                SignerId = "signer",
+                HashAlgorithm = "SHA256",
+                Hash = "sha256:x",
+                Signature = "sig",
+                SignedAt = DateTime.UtcNow
+            }
+        };
 
     private sealed class StubPromptVerifier(FailClosedDecision decision) : IPromptVerifier
     {

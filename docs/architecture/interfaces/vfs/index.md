@@ -16,3 +16,6 @@ For Japanese version, see index-jp.md.
 
 ## Documents
 - IVfsProvider.md
+
+## Boundary Rule
+- VFS package keeps interface contracts only; concrete data carriers are defined in `AIKernel.Dtos.Vfs`.

@@ -21,7 +21,7 @@ public interface IPipelineOrchestrator
     /// <returns>全フェーズメタデータを含む ExecutionResult</returns>
     Task<ExecutionResult> ExecuteAsync(
         IContextCollection context,
-        SignatureVerificationResult signatureVerificationResult,
+        AIKernel.Dtos.Execution.SignatureVerificationResult signatureVerificationResult,
         CancellationToken cancellationToken = default);
 
     /// <summary>

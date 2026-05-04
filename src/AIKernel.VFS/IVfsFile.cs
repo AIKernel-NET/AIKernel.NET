@@ -43,5 +43,5 @@ public interface IVfsFile
     /// <summary>
     /// ファイルメタデータを取得します。
     /// </summary>
-    IReadOnlyDictionary<string, object>? GetMetadata();
+    IReadOnlyDictionary<string, string>? GetMetadata();
 }

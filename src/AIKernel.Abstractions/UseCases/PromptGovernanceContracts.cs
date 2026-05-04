@@ -2,7 +2,7 @@ namespace AIKernel.Abstractions.UseCases;
 
 public interface IPromptSignatureProvider
 {
-    Task<SignatureVerificationResult> VerifySignatureAsync(
+    Task<AIKernel.Dtos.Prompt.SignatureVerificationResult> VerifySignatureAsync(
         SignedPromptArtifactDto artifact,
         CancellationToken ct = default);
 }

@@ -63,24 +63,3 @@ public interface IToolPermission
     /// </summary>
     IReadOnlyList<PermissionConstraint> Constraints { get; }
 }
-
-/// <summary>
-/// 権限の制約条件を表現します。
-/// </summary>
-public sealed class PermissionConstraint
-{
-    /// <summary>
-    /// 制約の種類を取得または設定します。
-    /// </summary>
-    public required string ConstraintType { get; init; }
-
-    /// <summary>
-    /// 制約の値を取得または設定します。
-    /// </summary>
-    public required string Value { get; init; }
-
-    /// <summary>
-    /// 制約の説明を取得または設定します。
-    /// </summary>
-    public string? Description { get; init; }
-}

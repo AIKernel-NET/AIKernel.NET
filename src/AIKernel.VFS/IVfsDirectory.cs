@@ -1,5 +1,7 @@
 namespace AIKernel.VFS;
 
+using AIKernel.Dtos.Vfs;
+
 /// <summary>
 /// VFS ディレクトリのインターフェースを定義します。
 /// </summary>
@@ -40,5 +42,5 @@ public interface IVfsDirectory
     /// <summary>
     /// ディレクトリメタデータを取得します。
     /// </summary>
-    IReadOnlyDictionary<string, object>? GetMetadata();
+    IReadOnlyDictionary<string, string>? GetMetadata();
 }

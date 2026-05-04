@@ -75,7 +75,7 @@ tags:
 | AIKernel.Dtos | AIKernel.Enums |
 | AIKernel.Events | AIKernel.Enums, AIKernel.Dtos |
 | AIKernel.KernelContext | AIKernel.Enums |
-| AIKernel.VFS | AIKernel.Enums |
+| AIKernel.VFS | AIKernel.Dtos |
 | tests/* | 参照自由（逆流禁止） |
 
 ### 4.2 禁止事項（Forbidden）
@@ -83,6 +83,7 @@ tags:
 - 循環依存（A → B → A）
 - src が tests を参照すること（逆流）
 - Core が Kernel/Providers/Server/Hosting/Enterprise を参照すること
+- VFS インターフェースに具象データ型を内包すること（具象データは AIKernel.Dtos に定義する）
 
 ---
 
