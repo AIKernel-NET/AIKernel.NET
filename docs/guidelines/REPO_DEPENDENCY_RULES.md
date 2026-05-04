@@ -74,7 +74,7 @@ Dependencies not listed here are generally forbidden; exceptions must be documen
 | AIKernel.Dtos | AIKernel.Enums |
 | AIKernel.Events | AIKernel.Enums, AIKernel.Dtos |
 | AIKernel.KernelContext | AIKernel.Enums |
-| AIKernel.VFS | AIKernel.Enums |
+| AIKernel.VFS | AIKernel.Dtos |
 | tests/* | free to reference (no reverse flow) |
 
 ### 4.2 Forbidden
@@ -82,6 +82,7 @@ Dependencies not listed here are generally forbidden; exceptions must be documen
 - Circular dependencies (A → B → A)
 - src referencing tests (reverse flow)
 - Core referencing Kernel/Providers/Server/Hosting/Enterprise
+- Concrete data carriers in VFS interfaces (must be defined in AIKernel.Dtos)
 
 ---
 

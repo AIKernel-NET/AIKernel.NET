@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+
+    <!-- Assembly metadata -->
+    <Authors>Takuya Sogawa</Authors>
+    <Company>AIKernel-NET</Company>
+    <Title>AIKernel.NET Abstractions Tests</Title>
+    <RepositoryUrl>https://github.com/AIKernel-NET/AIKernel.NET</RepositoryUrl>
+    <Copyright>Copyright © 2026 Takuya Sogawa of AIKernel-NET</Copyright>
+
+    <!-- Description: English then Japanese -->
+    <Description>
+AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orchestration. This package is part of the AIKernel Core and provides foundational components required by Kernel, Providers, and VFS layers.
+
+Contains contract-level unit tests for AIKernel abstractions. These tests verify specification alignment, fail-closed behavior, and interface-level use-case composition without concrete implementation dependencies.
+
+AIKernel は AI アプリケーション向けの OS 的フレームワークであり、カテゴリ分離、コンテキスト隔離、契約駆動の設計思想に基づいています。本パッケージは AIKernel Core の一部であり、Kernel、Provider、VFS 層が利用する基盤コンポーネントを提供します。
+
+AIKernel 抽象契約のユニットテストを収容します。実装依存を持たず、仕様整合性、fail-closed 動作、インターフェースレベルのユースケース連結を検証します。
+    </Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.4" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\AIKernel.Abstractions\AIKernel.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+</Project>

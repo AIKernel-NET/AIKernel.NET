@@ -1,0 +1,38 @@
+---
+id: itoolaccessvalidator
+version: 0.0.0
+issuer: ai-kernel@tkysoftware.xsrv.jp
+title: "IToolAccessValidator"
+created: 2026-05-03
+tags:
+  - aikernel
+  - architecture
+  - interfaces
+  - japanese
+---
+
+英語版は $(System.Collections.Hashtable.name).md を参照。
+
+# IToolAccessValidator
+
+## Responsibility
+IToolAccessValidator が AIKernel のオーケストレーション、統治、ランタイム運用で担う契約境界を定義する。
+
+## 主要メンバー
+| Member | Type | 説明 |
+| --- | --- | --- |
+| `CanExecuteTool(IToolPermission permission, string toolName)` | `bool` | Validate tool execution permission. |
+| `CanReadFile(IToolPermission permission, string filePath)` | `bool` | Validate file read permission. |
+| `CanWriteFile(IToolPermission permission, string filePath)` | `bool` | Validate file write permission. |
+| `CanAccessNetwork(IToolPermission permission, string host)` | `bool` | Validate network access permission. |
+| `CanAccessEnvironment(IToolPermission permission, string variableName)` | `bool` | Validate environment access permission. |
+| `CanExecuteSystemCommand(IToolPermission permission, string commandName)` | `bool` | Validate system command permission. |
+| `IsPermissionValid(IToolPermission permission)` | `bool` | Check permission validity period. |
+| `ValidateConstraints(IToolPermission permission, IReadOnlyDictionary<string, string> context)` | `bool` | Validate runtime constraints. |
+
+## 関連ユースケース
+../../use-cases/AIKernel_UseCaseCatalog-jp.md の $(System.Collections.Hashtable.name) 参照箇所を基準とする。
+
+## Notes
+- 本 Interface は拡張ポイント用途が中心で、現時点でランタイム参照が未接続のものを含む。
+- 適用可能な箇所では fail-closed と deterministic replay の原則を維持すること。

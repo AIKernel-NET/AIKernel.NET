@@ -2,6 +2,7 @@
 id: contributing
 version: 0.0.0
 issuer: ai-kernel@tkysoftware.xsrv.jp
+title: "AIKernel Contributing Guide"
 scope:
   - repo: AIKernel.NET
 createdAt: 2026-04-28T00:00:00Z

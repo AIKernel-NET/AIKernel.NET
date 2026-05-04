@@ -109,8 +109,8 @@ Emit primary information to support Deterministic Replay and auditing.
 ---
 
 ## Related Documents
-- `../DESIGN_INTENT.md`
+- `./DESIGN_INTENT.md`
 - `ARCHITECTURE_DECISIONS.md`
 - `CONTRACT_VERSIONING.md`
 - `../architecture/index.md`
-- `../DOCUMENTATION_GUIDELINES.md`
+- `../guidelines/DOCUMENTATION_GUIDELINES.md`

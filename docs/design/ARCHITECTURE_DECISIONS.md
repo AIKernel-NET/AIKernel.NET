@@ -98,8 +98,8 @@ Documentation is part of the architecture. Use numbered architecture files + ind
 ---
 
 ## Related Documents
-- `../DESIGN_INTENT.md` (Design Intent)
+- `./DESIGN_INTENT.md` (Design Intent)
 - `../architecture/index.md` (Architecture index)
-- `../DOCUMENTATION_GUIDELINES.md` (Documentation guidelines)
+- `../guidelines/DOCUMENTATION_GUIDELINES.md` (Documentation guidelines)
 - `EXTENSION_POINTS.md` (Extension points)
 - `CONTRACT_VERSIONING.md` (Contract versioning)
