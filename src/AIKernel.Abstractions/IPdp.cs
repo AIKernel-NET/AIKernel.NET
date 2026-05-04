@@ -39,58 +39,6 @@ public interface IPdp
 }
 
 /// <summary>
-/// アクセス決定リクエストを表現します。
-/// </summary>
-public sealed class AccessRequest
-{
-    /// <summary>
-    /// リクエスト主体を取得または設定します。
-    /// </summary>
-    public required IPrincipal Principal { get; init; }
-
-    /// <summary>
-    /// リクエストアクションを取得または設定します。
-    /// </summary>
-    public required string Action { get; init; }
-
-    /// <summary>
-    /// 対象リソースを取得または設定します。
-    /// </summary>
-    public required string Resource { get; init; }
-
-    /// <summary>
-    /// 環境属性を取得または設定します。
-    /// </summary>
-    public IReadOnlyDictionary<string, string>? Environment { get; init; }
-}
-
-/// <summary>
-/// アクセス決定結果を表現します。
-/// </summary>
-public sealed class AccessDecision
-{
-    /// <summary>
-    /// アクセスが許可されたかどうかを取得します。
-    /// </summary>
-    public bool Allowed { get; init; }
-
-    /// <summary>
-    /// 決定理由を取得します。
-    /// </summary>
-    public string? Reason { get; init; }
-
-    /// <summary>
-    /// 適用されたポリシーを取得します。
-    /// </summary>
-    public List<string> AppliedPolicies { get; init; } = new();
-
-    /// <summary>
-    /// 追加の制約条件を取得します。
-    /// </summary>
-    public IReadOnlyDictionary<string, string>? Constraints { get; init; }
-}
-
-/// <summary>
 /// セキュリティポリシーを定義します。
 /// </summary>
 public interface IPolicy
@@ -118,30 +66,4 @@ public interface IPolicy
     /// <param name="request">アクセスリクエスト</param>
     /// <returns>ポリシー評価結果</returns>
     AccessDecision Evaluate(AccessRequest request);
-}
-
-/// <summary>
-/// ポリシー評価結果を表現します。
-/// </summary>
-public sealed class PolicyEvaluationResult
-{
-    /// <summary>
-    /// 全ポリシー評価が許可されたかどうかを取得します。
-    /// </summary>
-    public bool AllAllowed { get; init; }
-
-    /// <summary>
-    /// 個別の評価結果を取得します。
-    /// </summary>
-    public List<AccessDecision> Decisions { get; init; } = new();
-
-    /// <summary>
-    /// 失敗したポリシーを取得します。
-    /// </summary>
-    public List<string> FailedPolicies { get; init; } = new();
-
-    /// <summary>
-    /// 全体的なリスクレベルを取得します（Low / Medium / High）。
-    /// </summary>
-    public string RiskLevel { get; init; } = "Low";
 }
