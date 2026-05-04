@@ -101,24 +101,4 @@ public class PhaseHandoverResult
     /// </summary>
     public List<string> Warnings { get; init; } = new();
 
-    /// <summary>
-    /// 成功した検証結果を作成します。
-    /// </summary>
-    public static PhaseHandoverResult Success(string message = "Handover validation passed")
-    {
-        return new PhaseHandoverResult { IsValid = true, Message = message };
-    }
-
-    /// <summary>
-    /// 失敗した検証結果を作成します。
-    /// </summary>
-    public static PhaseHandoverResult Failure(string message, params string[] issues)
-    {
-        return new PhaseHandoverResult
-        {
-            IsValid = false,
-            Message = message,
-            Issues = issues.ToList()
-        };
-    }
 }

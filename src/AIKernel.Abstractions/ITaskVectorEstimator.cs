@@ -2,7 +2,6 @@ namespace AIKernel.Abstractions;
 
 using AIKernel.Abstractions.Context;
 using AIKernel.Abstractions.Models;
-using AIKernel.Dtos;
 
 /// <summary>
 /// 目的と制約から必要なモデル能力ベクトルを推定するインターフェースです。

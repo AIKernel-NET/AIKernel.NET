@@ -1,7 +1,5 @@
 namespace AIKernel.Abstractions.Models;
 
-using AIKernel.Enums;
-
 /// <summary>
 /// モデルの能力を「基数の関数」として表現するプロファイルです。
 /// 単一のベクトル（点）ではなく、基数やメモリなどのパラメータに対する

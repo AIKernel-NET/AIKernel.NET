@@ -2,7 +2,6 @@ namespace AIKernel.Abstractions.Governance;
 
 using AIKernel.Abstractions.Models;
 using AIKernel.Abstractions.Context;
-using AIKernel.Enums;
 
 /// <summary>
 /// Attention 消費とコンテキスト品質を受動的に監視するインターフェースです。

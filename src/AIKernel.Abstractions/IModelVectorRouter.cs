@@ -1,7 +1,6 @@
 namespace AIKernel.Abstractions;
 
 using AIKernel.Abstractions.Models;
-using AIKernel.Enums;
 
 /// <summary>
 /// ベクトル演算を用いて最適なモデルを決定するエンジンです。

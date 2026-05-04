@@ -105,7 +105,7 @@ public sealed record ResolvableEntity
     /// <summary>
     /// 必要に応じた追加データ。
     /// </summary>
-    public IReadOnlyDictionary<string, object> Metadata { get; init; } = new Dictionary<string, object>();
+    public IReadOnlyDictionary<string, string> Metadata { get; init; } = new Dictionary<string, string>();
 }
 
 /// <summary>

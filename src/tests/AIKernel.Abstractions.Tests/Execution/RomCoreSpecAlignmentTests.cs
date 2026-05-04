@@ -41,7 +41,7 @@ public sealed class RomCoreSpecAlignmentTests
         public string EntityType => "execution.contract";
         public string Version => "1.0.0";
         public string Body => "* [author]: [[provider.reasoning_model]]";
-        public IReadOnlyDictionary<string, object> Metadata => new Dictionary<string, object>();
+        public IReadOnlyDictionary<string, string> Metadata => new Dictionary<string, string>();
         public IReadOnlyList<string> RelationReferences => new[] { "[[provider.reasoning_model]]" };
         public Task<string> GetSemanticHashAsync() => Task.FromResult("sha256:abc");
         public Task<CanonicalizedRomDocument> CanonicalizeAsync() => Task.FromResult(new CanonicalizedRomDocument

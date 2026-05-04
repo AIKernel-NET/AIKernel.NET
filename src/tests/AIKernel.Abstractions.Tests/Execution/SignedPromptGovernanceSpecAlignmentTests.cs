@@ -1,6 +1,7 @@
 using AIKernel.Abstractions;
+using AIKernel.Abstractions.Core;
 using AIKernel.Abstractions.Models;
-using AIKernel.Dtos.Prompt;
+using AIKernel.Abstractions.UseCases;
 
 namespace AIKernel.Abstractions.Tests.Execution;
 
@@ -39,30 +40,26 @@ public sealed class SignedPromptGovernanceSpecAlignmentTests
     }
 
     private static SignedPromptArtifactDto BuildArtifact() =>
-        new()
-        {
-            EntityId = "logic.analyser.core",
-            Version = "2.1.0",
-            Type = "kernel.signed_prompt",
-            PromptBody = "body",
-            Policy = new PromptPolicyDto
-            {
-                AllowedTools = new[] { "tool.a" },
-                AllowedScopes = new[] { "scope.read" },
-                MaxTokenBudget = 1000,
-                CreatedAt = DateTime.UtcNow.AddMinutes(-1),
-                ExpiresAt = DateTime.UtcNow.AddMinutes(10)
-            },
-            Governance = new GovernanceMetadataDto
-            {
-                Issuer = "issuer",
-                SignerId = "signer",
-                HashAlgorithm = "SHA256",
-                Hash = "sha256:x",
-                Signature = "sig",
-                SignedAt = DateTime.UtcNow
-            }
-        };
+        new(
+            "logic.analyser.core",
+            "2.1.0",
+            "kernel.signed_prompt",
+            new PromptPolicyDto(
+                0.0,
+                Array.Empty<string>(),
+                new[] { "scope.read" },
+                new[] { "tool.a" },
+                1000,
+                DateTime.UtcNow.AddMinutes(10),
+                DateTime.UtcNow.AddMinutes(-1)),
+            "body",
+            new GovernanceMetadataDto(
+                "issuer",
+                "signer",
+                "SHA256",
+                "sha256:x",
+                "sig",
+                DateTime.UtcNow));
 
     private sealed class StubPromptVerifier(FailClosedDecision decision) : IPromptVerifier
     {
@@ -91,7 +88,7 @@ public sealed class SignedPromptGovernanceSpecAlignmentTests
         public int BatchSize => 1;
         public int SequenceLength => 128;
         public int PhysicalCardinality => 1;
-        public object? GetContextValue(string key) => null;
-        public IReadOnlyDictionary<string, object> GetAllContextValues() => new Dictionary<string, object>();
+        public string? GetContextValue(string key) => null;
+        public IReadOnlyDictionary<string, string> GetAllContextValues() => new Dictionary<string, string>();
     }
 }

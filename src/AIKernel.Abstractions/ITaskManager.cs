@@ -1,5 +1,3 @@
-using AIKernel.Contracts;
-
 namespace AIKernel.Abstractions;
 
 /// <summary>
@@ -130,17 +128,17 @@ public interface ITask
     /// <param name="context">実行コンテキスト</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>タスク結果</returns>
-    Task<object?> ExecuteAsync(ITaskContext context, CancellationToken cancellationToken = default);
+    Task<string?> ExecuteAsync(ITaskContext context, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// タスクの入力スキーマを取得します。
     /// </summary>
-    IReadOnlyDictionary<string, object>? GetInputSchema();
+    IReadOnlyDictionary<string, string>? GetInputSchema();
 
     /// <summary>
     /// タスクの出力スキーマを取得します。
     /// </summary>
-    IReadOnlyDictionary<string, object>? GetOutputSchema();
+    IReadOnlyDictionary<string, string>? GetOutputSchema();
 
     /// <summary>
     /// タスクが実行可能かどうかを判定します。
@@ -168,7 +166,7 @@ public interface ITaskContext
     /// <summary>
     /// パイプラインコンテキスト契約を取得します。
     /// </summary>
-    IUnifiedContextContract? ContextContract { get; }
+    UnifiedContextDto? ContextContract { get; }
 
     /// <summary>
     /// タスク入力パラメータを取得します。
@@ -247,7 +245,7 @@ public interface IPipelineExecutionResult
     /// <summary>
     /// パイプラインの最終出力を取得します。
     /// </summary>
-    object? FinalOutput { get; }
+    string? FinalOutput { get; }
 
     /// <summary>
     /// 各タスクの実行結果を取得します。

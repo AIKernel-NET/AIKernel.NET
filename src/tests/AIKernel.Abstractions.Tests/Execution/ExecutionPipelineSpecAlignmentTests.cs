@@ -106,7 +106,7 @@ public sealed class ExecutionPipelineSpecAlignmentTests
         public int BatchSize => 1;
         public int SequenceLength => 512;
         public int PhysicalCardinality => 1;
-        public object? GetContextValue(string key) => null;
-        public IReadOnlyDictionary<string, object> GetAllContextValues() => new Dictionary<string, object>();
+        public string? GetContextValue(string key) => null;
+        public IReadOnlyDictionary<string, string> GetAllContextValues() => new Dictionary<string, string>();
     }
 }

@@ -1,11 +1,9 @@
-namespace AIKernel.Abstractions;
-
-using AIKernel.Contracts;
+namespace AIKernel.Abstractions.UseCases;
 
 public interface IKernelContext
 {
     string ContextId { get; }
-    IUnifiedContextContract? Contract { get; }
+    UnifiedContextDto? Contract { get; }
     DateTimeOffset CreatedAtUtc { get; }
     IReadOnlyDictionary<string, string> Attributes { get; }
 }

@@ -1,6 +1,3 @@
-using AIKernel.Contracts;
-using AIKernel.Enums;
-
 namespace AIKernel.Abstractions;
 
 /// <summary>
@@ -23,7 +20,7 @@ public interface IGuard
     /// <param name="principal">実行主体</param>
     /// <param name="contract">コンテキスト契約</param>
     /// <returns>アクセス可能な場合 true</returns>
-    Task<bool> CanAccessContextAsync(IPrincipal principal, IUnifiedContextContract contract);
+    Task<bool> CanAccessContextAsync(IPrincipal principal, UnifiedContextDto contract);
 
     /// <summary>
     /// リソースの読み取り権をチェックします。

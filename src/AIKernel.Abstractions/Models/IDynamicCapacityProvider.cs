@@ -1,7 +1,5 @@
 namespace AIKernel.Abstractions.Models;
 
-using AIKernel.Enums;
-
 /// <summary>
 /// 実行制約に基づいて動的に能力ベクトルを解決するインターフェースです。
 /// これは指示書で提案された、NPU対応の中核となるコンポーネントです。

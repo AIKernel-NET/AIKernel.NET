@@ -1,6 +1,3 @@
-using AIKernel.Contracts;
-using AIKernel.Enums;
-
 namespace AIKernel.Abstractions;
 
 /// <summary>
@@ -38,7 +35,7 @@ public interface IPdp
     /// </summary>
     /// <param name="contract">コンテキスト契約</param>
     /// <returns>ポリシー評価結果</returns>
-    Task<PolicyEvaluationResult> EvaluatePoliciesAsync(IUnifiedContextContract contract);
+    Task<PolicyEvaluationResult> EvaluatePoliciesAsync(UnifiedContextDto contract);
 }
 
 /// <summary>

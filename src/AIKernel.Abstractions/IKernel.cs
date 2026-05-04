@@ -1,6 +1,3 @@
-using AIKernel.Contracts;
-using AIKernel.Dtos;
-using AIKernel.Enums;
 using AIKernel.Abstractions.Execution;
 
 namespace AIKernel.Abstractions;
@@ -27,22 +24,22 @@ public interface IKernel
     /// </summary>
     /// <param name="contract">処理する統合コンテキスト契約</param>
     /// <returns>処理結果</returns>
-    Task<KernelExecutionResult> ExecuteAsync(IUnifiedContextContract contract);
+    Task<KernelExecutionResult> ExecuteAsync(UnifiedContextDto contract);
 
     /// <summary>
     /// Orchestration Context を検証し、Attention 汚染を検出します。
     /// </summary>
-    Task<AttentionAnalysis> AnalyzeAttentionAsync(IOrchestrationContract contract);
+    Task<AttentionAnalysis> AnalyzeAttentionAsync(OrchestrationContextDto contract);
 
     /// <summary>
     /// Material Context を正規化・構造化します。
     /// </summary>
-    Task<MaterialContextDto> PreprocessMaterialAsync(IMaterialContract material);
+    Task<MaterialContextDto> PreprocessMaterialAsync(MaterialContextDto material);
 
     /// <summary>
     /// Expression Context を推論後に適用可能な状態にします。
     /// </summary>
-    Task<ExpressionContextDto> PrepareExpressionAsync(IExpressionContract expression);
+    Task<ExpressionContextDto> PrepareExpressionAsync(ExpressionContextDto expression);
 
     /// <summary>
     /// 複数の Provider を管理・ルーティングします。

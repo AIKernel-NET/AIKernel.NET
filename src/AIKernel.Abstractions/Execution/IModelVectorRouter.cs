@@ -68,5 +68,5 @@ public sealed record ModelRoutingDecision
     /// <summary>
     /// 追加のメタデータ。
     /// </summary>
-    public IReadOnlyDictionary<string, object> Metadata { get; init; } = new Dictionary<string, object>();
+    public IReadOnlyDictionary<string, string> Metadata { get; init; } = new Dictionary<string, string>();
 }

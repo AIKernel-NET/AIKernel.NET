@@ -34,7 +34,7 @@ public interface IRulesEngine : IProvider
     /// <param name="context">評価コンテキスト</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>評価結果</returns>
-    Task<RuleEvaluationResult> EvaluateAsync(string ruleId, IReadOnlyDictionary<string, object> context, CancellationToken cancellationToken = default);
+    Task<RuleEvaluationResult> EvaluateAsync(string ruleId, IReadOnlyDictionary<string, string> context, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// プロンプト生成前のルール検証を実行します。
@@ -43,7 +43,7 @@ public interface IRulesEngine : IProvider
     /// <param name="prepromptContext">プロンプト生成前コンテキスト</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>検証結果</returns>
-    Task<RuleValidationResult> ValidatePrePromptAsync(string ruleId, IReadOnlyDictionary<string, object> prepromptContext, CancellationToken cancellationToken = default);
+    Task<RuleValidationResult> ValidatePrePromptAsync(string ruleId, IReadOnlyDictionary<string, string> prepromptContext, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// プロンプト生成後のルール検証を実行します。
@@ -52,7 +52,7 @@ public interface IRulesEngine : IProvider
     /// <param name="postpromptContext">プロンプト生成後コンテキスト</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>検証結果</returns>
-    Task<RuleValidationResult> ValidatePostPromptAsync(string ruleId, IReadOnlyDictionary<string, object> postpromptContext, CancellationToken cancellationToken = default);
+    Task<RuleValidationResult> ValidatePostPromptAsync(string ruleId, IReadOnlyDictionary<string, string> postpromptContext, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// すべて登録されているルールを取得します。
@@ -145,7 +145,7 @@ public interface IPromptRule
     /// <summary>
     /// ルールメタデータを取得します。
     /// </summary>
-    IReadOnlyDictionary<string, object>? Metadata { get; }
+    IReadOnlyDictionary<string, string>? Metadata { get; }
 }
 
 /// <summary>

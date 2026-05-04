@@ -1,4 +1,4 @@
-namespace AIKernel.Abstractions;
+namespace AIKernel.Abstractions.UseCases;
 
 public interface IContextSnapshot
 {

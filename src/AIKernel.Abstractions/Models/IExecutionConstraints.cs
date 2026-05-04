@@ -66,11 +66,11 @@ public interface IExecutionConstraints
     /// </summary>
     /// <param name="key">キー</param>
     /// <returns>値、キーが存在しない場合は null</returns>
-    object? GetContextValue(string key);
+    string? GetContextValue(string key);
 
     /// <summary>
     /// すべてのコンテキスト情報を取得します。
     /// </summary>
     /// <returns>キー-値ペアの読み取り専用辞書</returns>
-    IReadOnlyDictionary<string, object> GetAllContextValues();
+    IReadOnlyDictionary<string, string> GetAllContextValues();
 }

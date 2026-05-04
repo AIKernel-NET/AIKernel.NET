@@ -1,4 +1,6 @@
-namespace AIKernel.Abstractions.Context;
+namespace AIKernel.Abstractions.Governance;
+
+using AIKernel.Abstractions.Context;
 
 /// <summary>
 /// コンテキストバッファの寿命管理と状態遷移を統治するインターフェースです。

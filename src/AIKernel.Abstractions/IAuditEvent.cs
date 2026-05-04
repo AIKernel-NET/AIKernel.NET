@@ -39,7 +39,7 @@ public interface IAuditEvent
     /// <summary>
     /// イベントに関連するメタデータを取得します。
     /// </summary>
-    IReadOnlyDictionary<string, object> Metadata { get; }
+    IReadOnlyDictionary<string, string> Metadata { get; }
 }
 
 /// <summary>

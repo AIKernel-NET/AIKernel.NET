@@ -34,7 +34,7 @@ public interface IRomDocument
     /// <summary>
     /// YAML front matter のメタデータ。
     /// </summary>
-    IReadOnlyDictionary<string, object> Metadata { get; }
+    IReadOnlyDictionary<string, string> Metadata { get; }
 
     /// <summary>
     /// ドキュメント内に含まれるすべての関係参照（[[id]]）。
