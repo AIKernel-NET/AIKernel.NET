@@ -7,6 +7,7 @@
     <!-- Package metadata -->
     <Authors>Takuya Sogawa</Authors>
     <Company>AIKernel-NET</Company>
+    <Title>AIKernel.NET Enums</Title>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/AIKernel-NET/AIKernel.NET</RepositoryUrl>
     <Copyright>Copyright © 2026 Takuya Sogawa of AIKernel-NET</Copyright>
@@ -15,20 +16,19 @@
     <Description>
 AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orchestration. This package is part of the AIKernel Core and provides foundational components required by Kernel, Providers, and VFS layers.
 
-Defines core enumerations used throughout the AIKernel OS, including RejectCode, PdpDecision, and DataClassification. These enums form the shared vocabulary for Kernel, Providers, and VFS.
+Defines core enumerations used throughout the AIKernel OS, including RejectCode, PdpDecision, DataClassification, and VfsEntryType. These enums form the shared vocabulary across contracts, DTOs, and interface layers.
 
 AIKernel は AI アプリケーション向けの OS 的フレームワークであり、カテゴリ分離、コンテキスト隔離、契約駆動の設計思想に基づいています。本パッケージは AIKernel Core の一部であり、Kernel、Provider、VFS 層が利用する基盤コンポーネントを提供します。
 
-RejectCode、PdpDecision、DataClassification など、AIKernel OS 全体で使用されるコア列挙型を定義します。これらは Kernel、Provider、VFS の共通語彙を形成します。
+RejectCode、PdpDecision、DataClassification、VfsEntryType など、AIKernel OS 全体で使用されるコア列挙型を定義します。これらは契約層・DTO 層・インターフェース層を横断する共通語彙を形成します。
     </Description>
 
     <!-- Package settings -->
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageProjectUrl>https://www.nuget.org/profiles/AIKernel</PackageProjectUrl>
     <PackageIcon>aikernel-logo128x128.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageTags>aikernel;aikernel-core;ai-os;architecture;category-separation;context-isolation;contract-driven;governance;preprocessing;</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

@@ -132,15 +132,18 @@ AIKernel.NET/
 │  └─ rules/
 │     └─ PromptRules_TEMPLATES/  # TBD: Coming Soon.
 │
-├─ src/                           # TBD: Coming Soon.
-│ ├─ AIKernel.Abstractions/
-│ ├─ AIKernel.Contracts/
-│ ├─ AIKernel.Dtos/
-│ ├─ AIKernel.Enums/
-│ ├─ AIKernel.Events/
-│ ├─ AIKernel.KernelContext/
-│ └─ AIKernel.VFS/
-└─ AIKernel.NET.sln
+├─ src/
+│  ├─ AIKernel.NET.slnx
+│  ├─ README.md
+│  ├─ README.jp.md
+│  ├─ AIKernel.Abstractions/
+│  ├─ AIKernel.Contracts/
+│  ├─ AIKernel.Dtos/
+│  ├─ AIKernel.Enums/
+│  ├─ AIKernel.Events/
+│  ├─ AIKernel.KernelContext/
+│  ├─ AIKernel.VFS/
+│  └─ tests/
 ```
 
 # Repository mapping

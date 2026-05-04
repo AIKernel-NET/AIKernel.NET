@@ -7,6 +7,7 @@
     <!-- Package metadata -->
     <Authors>Takuya Sogawa</Authors>
     <Company>AIKernel-NET</Company>
+    <Title>AIKernel.NET Events</Title>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/AIKernel-NET/AIKernel.NET</RepositoryUrl>
     <Copyright>Copyright © 2026 Takuya Sogawa of AIKernel-NET</Copyright>
@@ -23,12 +24,11 @@ AIKernel OS の監査およびシステムイベント定義を提供します�
     </Description>
 
     <!-- Package settings -->
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageProjectUrl>https://www.nuget.org/profiles/AIKernel</PackageProjectUrl>
     <PackageIcon>aikernel-logo128x128.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageTags>aikernel;aikernel-core;ai-os;architecture;category-separation;context-isolation;contract-driven;governance;preprocessing;</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
