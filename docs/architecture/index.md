@@ -23,7 +23,7 @@ This index functions as a guide to understand AIKernel's design principles, theo
 # 1. Core Architectural Principles
 
 ## 1.1 Principles of Category Separation
-**File:** `1.1.CATEGORY_SEPARATION_PRINCIPLES.md`
+**File:** `1.CATEGORY_SEPARATION_PRINCIPLES.md`
 
 Information passed to an LLM must not be mixed into a single context. Mixing information destroys attention, halts inference, and triggers surface-mode behavior.
 
@@ -55,7 +55,7 @@ Examples, stylistic instructions, and RAG fragments must not be mixed into infer
 ---
 
 ## 1.3 Theory of Attention Pollution
-**File:** `3.3.ATTENTION_POLLUTION_THEORY.md`
+**File:** `3.ATTENTION_POLLUTION_THEORY.md`
 
 An LLM's inference capability depends on the purity of attention. Examples, stylistic mimicry, RAG fragments, and history divert attention to surface structures and halt inference.
 
@@ -159,13 +159,14 @@ Defines deterministic replay dump structure (seed, hashes, provider manifest, ex
 ## 1.15 Semantic Context OS Vision
 **File:** `16.SEMANTIC_CONTEXT_OS_VISION.md`
 
-AIKernel's final architectural target is the **Semantic Context OS**:
-- Forkable Reasoning
-- Committee Reasoning
-- Signed Prompt Governance (Fail-Closed)
-- Three-Layer Buffer Model
+AIKernel's final architecture target is the **Semantic Context OS**, governing reasoning, material, and expression as independent objects.
 
-This document defines the architectural north star that unifies reproducibility, governance, and model-agnostic reasoning.
+This chapter defines the following core requirements:
+- System Integrity Requirements (`SIR-001` to `SIR-004`)
+- Kernel startup state machine (Inactive -> Initializing -> Governing -> Ready -> Executing)
+- Architecture logical audit (Replay lock / PDP reasoning isolation / ROM canonicalization)
+
+This document is the north star that constrains AIKernel as an OS that places AI under strict state-machine and immutable constraints.
 
 ---
 
@@ -251,5 +252,6 @@ It is an **OS-level approach designed to work correctly by structure.**
 This index is the entry point to understanding AIKernel's overall design.
 
 ---
+
 
 
