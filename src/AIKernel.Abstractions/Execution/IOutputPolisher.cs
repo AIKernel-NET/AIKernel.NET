@@ -1,28 +1,7 @@
-using AIKernel.Abstractions.Context;
+using AIKernel.Dtos.Context;
 using AIKernel.Abstractions.Models;
 
 namespace AIKernel.Abstractions.Execution;
-
-/// <summary>
-/// 出力整形の文脈情報を保持する構造体。
-/// Expression コンテキストに基づいて、スタイルやトーンを指定します。
-/// </summary>
-public readonly struct ExpressionContext
-{
-    /// <summary>
-    /// Expression バッファを取得します。
-    /// </summary>
-    public ExpressionBuffer ExpressionBuffer { get; }
-
-    /// <summary>
-    /// ExpressionContext を初期化します。
-    /// </summary>
-    /// <param name="expressionBuffer">Expression バッファ</param>
-    public ExpressionContext(ExpressionBuffer expressionBuffer)
-    {
-        ExpressionBuffer = expressionBuffer;
-    }
-}
 
 /// <summary>
 /// 出力整形インターフェース。

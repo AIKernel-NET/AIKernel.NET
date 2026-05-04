@@ -1,6 +1,6 @@
 namespace AIKernel.Abstractions;
 
-using AIKernel.Abstractions.Context;
+using AIKernel.Dtos.Context;
 using AIKernel.Abstractions.Models;
 
 /// <summary>

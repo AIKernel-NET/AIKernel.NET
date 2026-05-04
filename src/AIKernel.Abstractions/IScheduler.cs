@@ -159,24 +159,3 @@ public interface IExecutionResult
     /// </summary>
     string? Log { get; }
 }
-
-/// <summary>
-/// スケジューラのジョブ状態を定義します。
-/// </summary>
-public enum ScheduleStatus
-{
-    /// <summary>待機中</summary>
-    Waiting = 1,
-
-    /// <summary>実行中</summary>
-    Running = 2,
-
-    /// <summary>完了</summary>
-    Completed = 3,
-
-    /// <summary>失敗</summary>
-    Failed = 4,
-
-    /// <summary>キャンセル済</summary>
-    Cancelled = 5
-}

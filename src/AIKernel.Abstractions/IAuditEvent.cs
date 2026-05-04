@@ -41,29 +41,3 @@ public interface IAuditEvent
     /// </summary>
     IReadOnlyDictionary<string, string> Metadata { get; }
 }
-
-/// <summary>
-/// 監査イベントの重要度を定義します。
-/// </summary>
-public enum AuditSeverity
-{
-    /// <summary>
-    /// 情報レベル
-    /// </summary>
-    Information = 1,
-
-    /// <summary>
-    /// 警告レベル
-    /// </summary>
-    Warning = 2,
-
-    /// <summary>
-    /// エラーレベル
-    /// </summary>
-    Error = 3,
-
-    /// <summary>
-    /// 重大エラーレベル
-    /// </summary>
-    Critical = 4
-}

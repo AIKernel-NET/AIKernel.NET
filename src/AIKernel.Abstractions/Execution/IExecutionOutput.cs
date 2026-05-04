@@ -75,30 +75,3 @@ public interface IPhaseHandover
         string nextPhase,
         CancellationToken cancellationToken = default);
 }
-
-/// <summary>
-/// フェーズハンドオーバーの検証結果を表現します。
-/// </summary>
-public class PhaseHandoverResult
-{
-    /// <summary>
-    /// 検証が成功したかどうかを取得します。
-    /// </summary>
-    public bool IsValid { get; init; }
-
-    /// <summary>
-    /// 検証メッセージを取得します。
-    /// </summary>
-    public string Message { get; init; } = string.Empty;
-
-    /// <summary>
-    /// 検出された問題を取得します。
-    /// </summary>
-    public List<string> Issues { get; init; } = new();
-
-    /// <summary>
-    /// 警告情報を取得します。
-    /// </summary>
-    public List<string> Warnings { get; init; } = new();
-
-}

@@ -26,27 +26,3 @@ public interface IPromptValidator
         Models.IExecutionConstraints executionConstraints,
         CancellationToken ct = default);
 }
-
-public enum FailClosedDecision
-{
-    Allow = 0,
-    Deny = 1,
-    Indeterminate = 2
-}
-
-public sealed record SignatureVerificationResult(
-    bool IsValid,
-    string Message);
-
-public sealed record PromptVerificationResult(
-    FailClosedDecision Decision,
-    bool HashIntegrityVerified,
-    bool SignaturePresent,
-    string Message);
-
-public sealed record PromptValidationResult(
-    FailClosedDecision Decision,
-    bool TemporalIntegrityValid,
-    bool ScopeBindingValid,
-    IReadOnlyList<string> Violations,
-    string Message);

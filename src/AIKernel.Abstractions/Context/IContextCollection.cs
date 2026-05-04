@@ -1,133 +1,45 @@
 namespace AIKernel.Abstractions.Context;
 
 /// <summary>
-/// Orchestrationi§ŒäEw¦jƒtƒF[ƒY—pƒoƒbƒtƒ@B
-/// „˜_‘O‚Ì§Œäî•ñ‚ğ’ñ‹Ÿ‚µ‚Ü‚·B
-/// </summary>
-public readonly struct OrchestrationBuffer
-{
-    /// <summary>
-    /// ƒoƒbƒtƒ@“à‚Ìƒtƒ‰ƒOƒƒ“ƒgˆê——‚ğæ“¾‚µ‚Ü‚·B
-    /// </summary>
-    public IReadOnlyList<ContextFragment> Fragments { get; }
-
-    /// <summary>
-    /// OrchestrationBuffer ‚ğ‰Šú‰»‚µ‚Ü‚·B
-    /// </summary>
-    /// <param name="fragments">ƒtƒ‰ƒOƒƒ“ƒgˆê——</param>
-    public OrchestrationBuffer(IEnumerable<ContextFragment> fragments)
-    {
-        var list = fragments?.ToList() ?? new List<ContextFragment>();
-        Fragments = list.AsReadOnly();
-    }
-}
-
-/// <summary>
-/// Expressioni•\Œ»E®Œ`jƒtƒF[ƒY—pƒoƒbƒtƒ@B
-/// „˜_Œã‚Ì®Œ`‚É•K—v‚Èî•ñ‚ğ’ñ‹Ÿ‚µ‚Ü‚·B
-/// </summary>
-public readonly struct ExpressionBuffer
-{
-    /// <summary>
-    /// ƒoƒbƒtƒ@“à‚Ìƒtƒ‰ƒOƒƒ“ƒgˆê——‚ğæ“¾‚µ‚Ü‚·B
-    /// </summary>
-    public IReadOnlyList<ExpressionFragment> Fragments { get; }
-
-    /// <summary>
-    /// ExpressionBuffer ‚ğ‰Šú‰»‚µ‚Ü‚·B
-    /// </summary>
-    /// <param name="fragments">ƒtƒ‰ƒOƒƒ“ƒgˆê——</param>
-    public ExpressionBuffer(IEnumerable<ExpressionFragment> fragments)
-    {
-        var list = fragments?.ToList() ?? new List<ExpressionFragment>();
-        Fragments = list.AsReadOnly();
-    }
-}
-
-/// <summary>
-/// Materiali‘fŞjƒtƒF[ƒY—pƒoƒbƒtƒ@B
-/// “ü—Í‚Æ‚È‚é‘fŞî•ñ‚ğ’ñ‹Ÿ‚µ‚Ü‚·B
-/// </summary>
-public readonly struct MaterialBuffer
-{
-    /// <summary>
-    /// ƒoƒbƒtƒ@“à‚Ìƒtƒ‰ƒOƒƒ“ƒgˆê——‚ğæ“¾‚µ‚Ü‚·B
-    /// </summary>
-    public IReadOnlyList<ContextFragment> Fragments { get; }
-
-    /// <summary>
-    /// MaterialBuffer ‚ğ‰Šú‰»‚µ‚Ü‚·B
-    /// </summary>
-    /// <param name="fragments">ƒtƒ‰ƒOƒƒ“ƒgˆê——</param>
-    public MaterialBuffer(IEnumerable<ContextFragment> fragments)
-    {
-        var list = fragments?.ToList() ?? new List<ContextFragment>();
-        Fragments = list.AsReadOnly();
-    }
-}
-
-/// <summary>
-/// Historyi—š—ğjƒtƒF[ƒY—pƒoƒbƒtƒ@B
-/// —š—ğEŠwK‹L˜^î•ñ‚ğ’ñ‹Ÿ‚µ‚Ü‚·B
-/// </summary>
-public readonly struct HistoryBuffer
-{
-    /// <summary>
-    /// ƒoƒbƒtƒ@“à‚Ìƒtƒ‰ƒOƒƒ“ƒgˆê——‚ğæ“¾‚µ‚Ü‚·B
-    /// </summary>
-    public IReadOnlyList<ContextFragment> Fragments { get; }
-
-    /// <summary>
-    /// HistoryBuffer ‚ğ‰Šú‰»‚µ‚Ü‚·B
-    /// </summary>
-    /// <param name="fragments">ƒtƒ‰ƒOƒƒ“ƒgˆê——</param>
-    public HistoryBuffer(IEnumerable<ContextFragment> fragments)
-    {
-        var list = fragments?.ToList() ?? new List<ContextFragment>();
-        Fragments = list.AsReadOnly();
-    }
-}
-
-/// <summary>
-/// ƒRƒ“ƒeƒLƒXƒgî•ñ‚ÌW‡‚ğŠÇ—‚·‚éƒCƒ“ƒ^[ƒtƒF[ƒXB
-/// ƒJƒeƒSƒŠ•Ê‚ÌŠu—£‚Æ“Ç‚İæ‚èê—pƒAƒNƒZƒX‚ğ•ÛØ‚µ‚Ü‚·B
+/// ï¿½Rï¿½ï¿½ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½ï¿½ÌWï¿½ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½^ï¿½[ï¿½tï¿½Fï¿½[ï¿½Xï¿½B
+/// ï¿½Jï¿½eï¿½Sï¿½ï¿½ï¿½Ê‚ÌŠuï¿½ï¿½ï¿½Æ“Ç‚İï¿½ï¿½ï¿½pï¿½Aï¿½Nï¿½Zï¿½Xï¿½ï¿½ÛØ‚ï¿½ï¿½Ü‚ï¿½ï¿½B
 /// </summary>
 public interface IContextCollection
 {
     /// <summary>
-    /// ‚·‚×‚Ä‚ÌƒRƒ“ƒeƒLƒXƒgƒtƒ‰ƒOƒƒ“ƒg‚ğæ“¾‚µ‚Ü‚·B
+    /// ï¿½ï¿½ï¿½×‚Ä‚ÌƒRï¿½ï¿½ï¿½eï¿½Lï¿½Xï¿½gï¿½tï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½gï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
     /// </summary>
-    /// <returns>ƒtƒ‰ƒOƒƒ“ƒgˆê——</returns>
+    /// <returns>ï¿½tï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½gï¿½ê——</returns>
     IEnumerable<ContextFragment> GetAll();
 
     /// <summary>
-    /// w’è‚³‚ê‚½ƒJƒeƒSƒŠ‚É‘®‚·‚éƒtƒ‰ƒOƒƒ“ƒg‚ğæ“¾‚µ‚Ü‚·B
+    /// ï¿½wï¿½è‚³ï¿½ê‚½ï¿½Jï¿½eï¿½Sï¿½ï¿½ï¿½É‘ï¿½ï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½gï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
     /// </summary>
-    /// <param name="category">ƒJƒeƒSƒŠ</param>
-    /// <returns>ƒJƒeƒSƒŠ‚Éˆê’v‚·‚éƒtƒ‰ƒOƒƒ“ƒgˆê——</returns>
+    /// <param name="category">ï¿½Jï¿½eï¿½Sï¿½ï¿½</param>
+    /// <returns>ï¿½Jï¿½eï¿½Sï¿½ï¿½ï¿½Éˆï¿½vï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½gï¿½ê——</returns>
     IEnumerable<ContextFragment> GetByCategory(ContextCategory category);
 
     /// <summary>
-    /// Orchestration ƒoƒbƒtƒ@‚ğæ“¾‚µ‚Ü‚·B
+    /// Orchestration ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
     /// </summary>
-    /// <returns>Orchestration ƒtƒF[ƒY—pƒoƒbƒtƒ@</returns>
+    /// <returns>Orchestration ï¿½tï¿½Fï¿½[ï¿½Yï¿½pï¿½oï¿½bï¿½tï¿½@</returns>
     OrchestrationBuffer GetOrchestrationBuffer();
 
     /// <summary>
-    /// Expression ƒoƒbƒtƒ@‚ğæ“¾‚µ‚Ü‚·B
+    /// Expression ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
     /// </summary>
-    /// <returns>Expression ƒtƒF[ƒY—pƒoƒbƒtƒ@</returns>
+    /// <returns>Expression ï¿½tï¿½Fï¿½[ï¿½Yï¿½pï¿½oï¿½bï¿½tï¿½@</returns>
     ExpressionBuffer GetExpressionBuffer();
 
     /// <summary>
-    /// Material ƒoƒbƒtƒ@‚ğæ“¾‚µ‚Ü‚·B
+    /// Material ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
     /// </summary>
-    /// <returns>Material ƒtƒF[ƒY—pƒoƒbƒtƒ@</returns>
+    /// <returns>Material ï¿½tï¿½Fï¿½[ï¿½Yï¿½pï¿½oï¿½bï¿½tï¿½@</returns>
     MaterialBuffer GetMaterialBuffer();
 
     /// <summary>
-    /// History ƒoƒbƒtƒ@‚ğæ“¾‚µ‚Ü‚·B
+    /// History ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
     /// </summary>
-    /// <returns>History ƒtƒF[ƒY—pƒoƒbƒtƒ@</returns>
+    /// <returns>History ï¿½tï¿½Fï¿½[ï¿½Yï¿½pï¿½oï¿½bï¿½tï¿½@</returns>
     HistoryBuffer GetHistoryBuffer();
 }

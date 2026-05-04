@@ -47,32 +47,6 @@ public interface IGuard
 }
 
 /// <summary>
-/// Guard が取るべきアクションを定義します。
-/// </summary>
-public enum GuardAction
-{
-    /// <summary>
-    /// 実行を続行する
-    /// </summary>
-    Continue = 1,
-
-    /// <summary>
-    /// 実行を一時停止して警告を表示する
-    /// </summary>
-    Warn = 2,
-
-    /// <summary>
-    /// 実行をブロックする
-    /// </summary>
-    Block = 3,
-
-    /// <summary>
-    /// 代替戦略を試みる
-    /// </summary>
-    FallBack = 4
-}
-
-/// <summary>
 /// 実行主体（プリンシパル）を表現します。
 /// </summary>
 public interface IPrincipal

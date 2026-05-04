@@ -1,6 +1,6 @@
 namespace AIKernel.Abstractions.Governance;
 
-using AIKernel.Abstractions.Context;
+using AIKernel.Dtos.Context;
 
 /// <summary>
 /// コンテキストバッファの寿命管理と状態遷移を統治するインターフェースです。
@@ -74,76 +74,4 @@ public interface IContextLifecycleManager
     Task<ContextLifecycleState> GetLifecycleStateAsync(
         IContextCollection collection,
         CancellationToken cancellationToken = default);
-}
-
-/// <summary>
-/// コンテキストのライフサイクル状態を表現します。
-/// </summary>
-public class ContextLifecycleState
-{
-    /// <summary>
-    /// 現在のステージを取得します。
-    /// </summary>
-    public ContextStage CurrentStage { get; init; }
-
-    /// <summary>
-    /// 作成時刻を取得します。
-    /// </summary>
-    public DateTime CreatedAt { get; init; }
-
-    /// <summary>
-    /// 最後の更新時刻を取得します。
-    /// </summary>
-    public DateTime LastModifiedAt { get; init; }
-
-    /// <summary>
-    /// コンテキストの総サイズ（バイト）を取得します。
-    /// </summary>
-    public long TotalSize { get; init; }
-
-    /// <summary>
-    /// フラグメント数を取得します。
-    /// </summary>
-    public int FragmentCount { get; init; }
-
-    /// <summary>
-    /// 圧縮可能な余地（0.0 ~ 1.0）を取得します。
-    /// </summary>
-    public float CompressionCapacity { get; init; }
-}
-
-/// <summary>
-/// コンテキストライフサイクルのステージを定義します。
-/// </summary>
-public enum ContextStage
-{
-    /// <summary>
-    /// 初期化段階
-    /// </summary>
-    Initialized,
-
-    /// <summary>
-    /// Orchestration コンテキストが活動中
-    /// </summary>
-    OrchestrationActive,
-
-    /// <summary>
-    /// Material に昇格済み
-    /// </summary>
-    Materialized,
-
-    /// <summary>
-    /// 圧縮完了
-    /// </summary>
-    Compressed,
-
-    /// <summary>
-    /// 要約・忘却処理済み
-    /// </summary>
-    Summarized,
-
-    /// <summary>
-    /// クリア済み
-    /// </summary>
-    Cleared
 }

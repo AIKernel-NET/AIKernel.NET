@@ -1,4 +1,4 @@
-using AIKernel.Abstractions.Context;
+using AIKernel.Dtos.Context;
 using AIKernel.Abstractions.Material;
 
 namespace AIKernel.Abstractions.History;

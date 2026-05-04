@@ -1,7 +1,7 @@
 namespace AIKernel.Abstractions.Governance;
 
 using AIKernel.Abstractions.Models;
-using AIKernel.Abstractions.Context;
+using AIKernel.Dtos.Context;
 
 /// <summary>
 /// Attention 消費とコンテキスト品質を受動的に監視するインターフェースです。
@@ -84,66 +84,4 @@ public interface IAttentionObserver
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>観察された統計情報</returns>
     Task<AttentionObservationStats> GetObservationStatsAsync(CancellationToken cancellationToken = default);
-}
-
-/// <summary>
-/// Attention 観察の統計情報を表現します。
-/// </summary>
-public class AttentionObservationStats
-{
-    /// <summary>
-    /// 観察開始時刻を取得します。
-    /// </summary>
-    public DateTime ObservationStartedAt { get; init; }
-
-    /// <summary>
-    /// 消費された総 Attention を取得します。
-    /// </summary>
-    public long TotalAttentionConsumed { get; init; }
-
-    /// <summary>
-    /// 検知された Attention 汚染の回数を取得します。
-    /// </summary>
-    public int PollutionDetectionCount { get; init; }
-
-    /// <summary>
-    /// 平均信号対雑音比を取得します。
-    /// </summary>
-    public float AverageSignalToNoiseRatio { get; init; }
-
-    /// <summary>
-    /// モデル選定の成功率を取得します。
-    /// </summary>
-    public float ModelSelectionSuccessRate { get; init; }
-
-    /// <summary>
-    /// フェーズごとの詳細統計を取得します。
-    /// </summary>
-    public Dictionary<string, PhaseObservationStats> PhaseStatistics { get; init; } = new();
-}
-
-/// <summary>
-/// フェーズごとの観察統計を表現します。
-/// </summary>
-public class PhaseObservationStats
-{
-    /// <summary>
-    /// フェーズ名を取得します。
-    /// </summary>
-    public required string PhaseName { get; init; }
-
-    /// <summary>
-    /// 実行回数を取得します。
-    /// </summary>
-    public int ExecutionCount { get; init; }
-
-    /// <summary>
-    /// 平均実行時間（ミリ秒）を取得します。
-    /// </summary>
-    public double AverageExecutionTimeMs { get; init; }
-
-    /// <summary>
-    /// 消費された総 Attention を取得します。
-    /// </summary>
-    public long TotalAttentionConsumed { get; init; }
 }

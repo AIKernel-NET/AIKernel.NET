@@ -319,24 +319,3 @@ public interface ITaskSchema
     /// </summary>
     IReadOnlyDictionary<string, string> Fields { get; }
 }
-
-/// <summary>
-/// タスクの実行タイプを定義します。
-/// </summary>
-public enum TaskType
-{
-    /// <summary>同期タスク</summary>
-    Sync = 1,
-
-    /// <summary>非同期タスク</summary>
-    Async = 2,
-
-    /// <summary>条件付きタスク</summary>
-    Conditional = 3,
-
-    /// <summary>ループタスク</summary>
-    Loop = 4,
-
-    /// <summary>並列実行タスク</summary>
-    Parallel = 5
-}

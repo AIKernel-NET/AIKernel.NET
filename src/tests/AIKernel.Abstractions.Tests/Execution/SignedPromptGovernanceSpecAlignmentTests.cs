@@ -1,5 +1,5 @@
 using AIKernel.Abstractions;
-using AIKernel.Abstractions.Core;
+
 using AIKernel.Abstractions.Models;
 using AIKernel.Abstractions.UseCases;
 
