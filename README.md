@@ -6,6 +6,25 @@ A framework aiming to be the **Operating System (OS) for AI applications**.
 
 AIKernel treats LLMs not as simple API calls but as **capability-bearing processes**.
 
+---
+
+## NuGet Packages
+
+AIKernel.NET is composed of multiple independent abstraction layers.  
+Each layer is published as a separate NuGet package.
+
+| Layer | Package | Version | Link |
+|-------|---------|---------|------|
+| Core Types | AIKernel.Enums | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Enums.svg) | https://www.nuget.org/packages/AIKernel.Enums/ |
+| Data Models | AIKernel.Dtos | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Dtos.svg) | https://www.nuget.org/packages/AIKernel.Dtos/ |
+| Contracts | AIKernel.Contracts | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Contracts.svg) | https://www.nuget.org/packages/AIKernel.Contracts/ |
+| Abstractions | AIKernel.Abstractions | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Abstractions.svg) | https://www.nuget.org/packages/AIKernel.Abstractions/ |
+| Kernel Context | AIKernel.KernelContext | ![NuGet](https://img.shields.io/nuget/v/AIKernel.KernelContext.svg) | https://www.nuget.org/packages/AIKernel.KernelContext/ |
+| Virtual File System | AIKernel.VFS | ![NuGet](https://img.shields.io/nuget/v/AIKernel.VFS.svg) | https://www.nuget.org/packages/AIKernel.VFS/ |
+| Event System | AIKernel.Events | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Events.svg) | https://www.nuget.org/packages/AIKernel.Events/ |
+
+---
+
 See `docs/design/DESIGN_INTENT.md` for design philosophy.  
 For executable contracts (spec sheets), see `docs/specs/index.md`.
 
