@@ -2,10 +2,28 @@
 
 ![AIKernel.NET Logo](docs/assets/aikernel-logo.png)
 
-AI アプリケーションのための **OS（Operating System）** を目指すフレームワーク。
+AIKernel.NET は、AI アプリケーションのための **オペレーティングシステム（OS）** を目指すフレームワークです。
 
 AIKernel は、LLM を単なる API 呼び出しではなく  
 **「能力（Capability）」を持つプロセスとして扱う AI OS** である。
+
+---
+
+## NuGet パッケージ一覧
+
+AIKernel.NET は複数の独立した抽象レイヤーで構成されており、  
+各レイヤーは個別の NuGet パッケージとして公開されています。
+
+| レイヤー | パッケージ | バージョン | リンク |
+|---------|------------|------------|--------|
+| コア型定義 | AIKernel.Enums | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Enums.svg) | https://www.nuget.org/packages/AIKernel.Enums/ |
+| データモデル | AIKernel.Dtos | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Dtos.svg) | https://www.nuget.org/packages/AIKernel.Dtos/ |
+| 契約（Contracts） | AIKernel.Contracts | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Contracts.svg) | https://www.nuget.org/packages/AIKernel.Contracts/ |
+| 抽象レイヤー | AIKernel.Abstractions | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Abstractions.svg) | https://www.nuget.org/packages/AIKernel.Abstractions/ |
+| カーネルコンテキスト | AIKernel.KernelContext | ![NuGet](https://img.shields.io/nuget/v/AIKernel.KernelContext.svg) | https://www.nuget.org/packages/AIKernel.KernelContext/ |
+| 仮想ファイルシステム | AIKernel.VFS | ![NuGet](https://img.shields.io/nuget/v/AIKernel.VFS.svg) | https://www.nuget.org/packages/AIKernel.VFS/ |
+| イベントシステム | AIKernel.Events | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Events.svg) | https://www.nuget.org/packages/AIKernel.Events/ |
+
 
 設計思想は `docs/design/DESIGN_INTENT.md` を参照。  
 実装契約（Spec Sheet）は `docs/specs/index-jp.md` を参照。
