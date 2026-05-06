@@ -1,6 +1,7 @@
 namespace AIKernel.Abstractions.Execution;
 
 /// <summary>
+/// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// 実行フェーズの成果物を統一的に表現する基底インターフェースです。
 /// ExecutionResult, RawLogic, その他の出力型を統一的に扱えます。
 /// </summary>
@@ -45,33 +46,4 @@ public interface IExecutionOutput
     TOutput ConvertTo<TOutput>() where TOutput : class, IExecutionOutput;
 }
 
-/// <summary>
-/// フェーズハンドオーバーのための検証インターフェースです。
-/// 異なるフェーズ間での出力検証を統一的に行います。
-/// </summary>
-public interface IPhaseHandover
-{
-    /// <summary>
-    /// 前フェーズの出力が次フェーズに適したものかを検証します。
-    /// </summary>
-    /// <param name="output">検証対象の出力</param>
-    /// <param name="nextPhase">次のフェーズ名</param>
-    /// <param name="cancellationToken">キャンセルトークン</param>
-    /// <returns>検証結果</returns>
-    Task<PhaseHandoverResult> ValidateHandoverAsync(
-        IExecutionOutput output,
-        string nextPhase,
-        CancellationToken cancellationToken = default);
 
-    /// <summary>
-    /// 出力をレストアアップする（次フェーズの入力形式に変換）します。
-    /// </summary>
-    /// <param name="output">変換対象の出力</param>
-    /// <param name="nextPhase">次のフェーズ名</param>
-    /// <param name="cancellationToken">キャンセルトークン</param>
-    /// <returns>レストアアップ後の出力</returns>
-    Task<IExecutionOutput> RestageForNextPhaseAsync(
-        IExecutionOutput output,
-        string nextPhase,
-        CancellationToken cancellationToken = default);
-}

@@ -29,6 +29,7 @@ AIKernel は AI アプリケーション向けの OS 的フレームワークで
     <PackageProjectUrl>https://www.nuget.org/profiles/AIKernel</PackageProjectUrl>
     <PackageIcon>aikernel-logo128x128.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Version>0.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

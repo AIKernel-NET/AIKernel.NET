@@ -1,6 +1,7 @@
 namespace AIKernel.Abstractions.Models;
 
 /// <summary>
+/// UC-22 に基づく契約です。
 /// 実行直前コンテキストの制約を表現するインターフェースです。
 /// SGS-007 Dynamic Scope Binding の `allowed_tools` / `max_token_budget` / `scopes` と
 /// 実行環境制約を統合して表現します。
@@ -74,3 +75,4 @@ public interface IExecutionConstraints
     /// <returns>キー-値ペアの読み取り専用辞書</returns>
     IReadOnlyDictionary<string, string> GetAllContextValues();
 }
+

@@ -3,6 +3,7 @@ namespace AIKernel.Contracts;
 /// <summary>
 /// 監査イベント契約を定義します。
 /// セキュリティイベントのログ記録と追跡を行います。
+/// UC-24（監査イベント出力）
 /// </summary>
 public interface IAuditEventContract
 {
@@ -41,3 +42,4 @@ public interface IAuditEventContract
     /// </summary>
     IReadOnlyDictionary<string, object>? Metadata { get; }
 }
+

@@ -1,5 +1,5 @@
 ---
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel Documentation Guidelines"
 description: Guidelines for writing docs, PR rules, and CI checks
@@ -9,6 +9,7 @@ tags:
   - documentation
   - guideline
   - english
+updated: 2026-05-06
 ---
 
 # Purpose
@@ -55,3 +56,5 @@ Each document must include the following front matter:
 
 # Changelog
 - 2026-05-01 Initial version
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
+

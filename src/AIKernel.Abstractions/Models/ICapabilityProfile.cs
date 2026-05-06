@@ -1,6 +1,7 @@
 namespace AIKernel.Abstractions.Models;
 
 /// <summary>
+/// UC-22 に基づく契約です。
 /// モデルの能力を「基数の関数」として表現するプロファイルです。
 /// 単一のベクトル（点）ではなく、基数やメモリなどのパラメータに対する
 /// 性能関数 F(N) を定義することで、NPU環境での動的基数対応を実現します。
@@ -69,3 +70,4 @@ public interface ICapabilityProfile
     /// <returns>推奨基数</returns>
     int RecommendCardinalityForMemoryBudget(long availableMemoryMb, string quantizationLevel);
 }
+

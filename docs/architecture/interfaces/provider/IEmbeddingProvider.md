@@ -1,9 +1,10 @@
 ---
 id: iembeddingprovider
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "IEmbeddingProvider"
 created: 2026-05-03
+updated: 2026-05-06
 tags:
   - aikernel
   - architecture
@@ -11,22 +12,49 @@ tags:
   - english
 ---
 
-For Japanese version, see $(System.Collections.Hashtable.name)-jp.md.
+For Japanese version, see [IEmbeddingProvider-jp.md](./IEmbeddingProvider-jp.md).
 
-# IEmbeddingProvider
+# IEmbeddingProvider (Interface Specification)
 
-## Responsibility
-Define the contract boundary for IEmbeddingProvider within AIKernel orchestration, governance, and runtime operations.
+## 1. Responsibility Boundary
+`IEmbeddingProvider` converts unstructured text into semantic vectors and supplies numeric foundations for retrieval and relevance evaluation.
 
-## Key Members
-| Member | Type | Description |
-| --- | --- | --- |
-| `EmbedAsync(string text, CancellationToken cancellationToken = default)` | `Task<IReadOnlyList<float>>` | Generate embedding vector for text. |
-| `EmbedBatchAsync(IReadOnlyList<string> texts, CancellationToken cancellationToken = default)` | `Task<IReadOnlyList<IReadOnlyList<float>>>` | Generate embeddings for batch input. |
+- Role:
+  Provide single/batch embedding generation and vector-dimension metadata.
+- Non-role:
+  Vector persistence, indexing, and nearest-neighbor search are out of scope.
 
-## Related Use Cases
-See ../../use-cases/AIKernel_UseCaseCatalog.md for references where $(System.Collections.Hashtable.name) appears.
+## 2. Contract Signature
+```csharp
+namespace AIKernel.Abstractions.Providers;
 
-## Notes
-- This interface is currently extension-point oriented and may not yet be referenced by runtime implementations.
-- Implementations must preserve fail-closed and deterministic replay principles where applicable.
+public interface IEmbeddingProvider : IProvider
+{
+    Task<float[]> EmbedAsync(string text, CancellationToken cancellationToken = default);
+    Task<IReadOnlyList<float[]>> EmbedBatchAsync(IReadOnlyList<string> texts, CancellationToken cancellationToken = default);
+    int GetDimension();
+}
+```
+
+## 3. Related Use Cases
+- `UC-05` Material relevance evaluation:
+  Uses embeddings for similarity-based material filtering.
+- `UC-11` RAG:
+  Projects queries and document chunks into a common vector space for retrieval.
+
+## 4. Governance & Determinism
+- Model stability:
+  For the same `ProviderId` and configuration, embedding dimensionality/space behavior should not drift silently.
+- Fail-Closed:
+  Input-limit violations or dimension mismatches should fail explicitly instead of returning partial semantics.
+
+## 5. Implementation Notes
+- Dimension consistency:
+  Ensure `GetDimension()` always matches produced vector lengths.
+- Batch throttling:
+  `EmbedBatchAsync` should consider provider rate limits and apply chunking when required.
+---
+
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

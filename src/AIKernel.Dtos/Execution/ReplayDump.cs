@@ -1,5 +1,8 @@
 namespace AIKernel.Dtos.Execution;
 
+/// <summary>
+/// ReplayDump の契約を定義します。
+/// </summary>
 public sealed record ReplayDump
 {
     public required string DumpId { get; init; }
@@ -9,4 +12,7 @@ public sealed record ReplayDump
     public required DateTime CreatedAt { get; init; }
     public required HashChain HashChain { get; init; }
 }
+
+
+
 

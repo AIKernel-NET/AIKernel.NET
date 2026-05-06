@@ -1,11 +1,11 @@
 ---
-version: 0.0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "Semantic Snapshot Markdown Format"
 description: Canonical Markdown format for AIKernel semantic memory snapshots
 lang: en
 last_updated: 2026-05-04
-updated: 2026-05-04
+updated: 2026-05-06
 owners:
   - AIKernel Architecture Team
 tags:
@@ -167,4 +167,5 @@ Fail-Closed:
 
 # Owners
 - AIKernel Architecture Team
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 

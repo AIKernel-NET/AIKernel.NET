@@ -1,5 +1,5 @@
 ---
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel Operations — Index"
 created: 2026-05-01
@@ -9,6 +9,7 @@ tags:
   - runbook
   - governance
   - japanese
+updated: 2026-05-06
 ---
 
 # AIKernel Operations — Index
@@ -123,5 +124,9 @@ Operations 文書は、AIKernel の
 - `docs/architecture/` — アーキテクチャ思想（Why）  
 - `docs/design/` — 実装方針（How）  
 - `docs/guideline/` — 運用ルール（Rules）  
-- `docs/operations/` — 運用手順（Runbook） ← *本ディレクトリ*  
+- `docs/operations/` — 運用手順（Runbook） ← *本ディレクトリ*
+---
 
+# 変更履歴
+- v0.0.0 / v0.0.0.0: 初期ドラフト
+- v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新

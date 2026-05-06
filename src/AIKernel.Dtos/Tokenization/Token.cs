@@ -1,5 +1,8 @@
 namespace AIKernel.Dtos.Tokenization;
 
+/// <summary>
+/// Token の契約を定義します。
+/// </summary>
 public sealed class Token
 {
     public required string Value { get; init; }
@@ -8,4 +11,7 @@ public sealed class Token
     public int EndPosition { get; init; }
     public string? TokenType { get; init; }
 }
+
+
+
 

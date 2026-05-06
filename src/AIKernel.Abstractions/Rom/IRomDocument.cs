@@ -1,6 +1,7 @@
 namespace AIKernel.Abstractions.Rom;
 
 /// <summary>
+/// UC-01/UC-12 に基づく契約です。
 /// Relation-Oriented Markdown (ROM) ドキュメントの抽象化。
 /// RCS-001: ROM 文書は entity.id と entity.type を持たなければならない（MUST）。
 /// RCS-002: [[id]] は解決可能な参照でなければならない（MUST）。
@@ -54,5 +55,6 @@ public interface IRomDocument
     /// RCS-004 の正規化処理（Linguistic, Structural, Reference Anchoring）。
     /// </summary>
     /// <returns>正規化されたドキュメント表現</returns>
-    Task<AIKernel.Dtos.Rom.CanonicalizedRomDocument> CanonicalizeAsync();
+    Task<CanonicalizedRomDto> CanonicalizeAsync();
 }
+

@@ -2,6 +2,9 @@ namespace AIKernel.Dtos.Context;
 
 using AIKernel.Enums;
 
+/// <summary>
+/// ExpressionFragment の契約を定義します。
+/// </summary>
 public sealed class ExpressionFragment : ContextFragment
 {
     public IReadOnlyList<string> Examples { get; init; } = Array.Empty<string>();
@@ -14,3 +17,6 @@ public sealed class ExpressionFragment : ContextFragment
         Category = ContextCategory.Expression;
     }
 }
+
+
+

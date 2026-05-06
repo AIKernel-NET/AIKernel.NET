@@ -12,3 +12,4 @@ public sealed record RawLogic(string SerializedRepresentation)
     public bool IsEmpty => string.IsNullOrWhiteSpace(SerializedRepresentation);
 }
 
+

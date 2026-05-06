@@ -1,6 +1,7 @@
 namespace AIKernel.Abstractions.Governance;
 
 /// <summary>
+/// UC-06/UC-32 に基づく契約です。
 /// 署名信頼ストアの契約。
 /// SGS-003: ISignatureTrustStore は署名者信頼/失効を判定しなければならない（MUST）。
 /// SGS-006: 信頼連鎖の検証（Validation of Trust Chain）。
@@ -63,3 +64,4 @@ public interface ISignatureTrustStore
     /// <returns>ストアが到達可能でかつ正常に動作しているかどうか</returns>
     Task<bool> IsHealthyAsync(CancellationToken cancellationToken = default);
 }
+

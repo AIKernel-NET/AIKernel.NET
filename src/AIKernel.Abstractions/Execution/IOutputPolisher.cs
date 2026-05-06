@@ -4,6 +4,7 @@ using AIKernel.Abstractions.Models;
 namespace AIKernel.Abstractions.Execution;
 
 /// <summary>
+/// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// 出力整形インターフェース。
 /// 生のロジックと Expression コンテキストから最終出力を生成します。
 /// これは Two‑Phase 実行の第 2 ステップです。
@@ -25,3 +26,5 @@ public interface IOutputPolisher
     /// <returns>最終出力（整形済みテキスト）</returns>
     Task<string> RenderAsync(RawLogic logic, ExpressionContext expressionContext, CancellationToken ct = default);
 }
+
+

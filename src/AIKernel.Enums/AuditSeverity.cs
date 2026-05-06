@@ -1,5 +1,8 @@
 namespace AIKernel.Enums;
 
+/// <summary>
+/// AuditSeverity の契約を定義します。
+/// </summary>
 public enum AuditSeverity
 {
     Information = 1,
@@ -7,3 +10,6 @@ public enum AuditSeverity
     Error = 3,
     Critical = 4
 }
+
+
+

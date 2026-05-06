@@ -1,9 +1,9 @@
 ---
-version: 0.0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel Documentation Guidelines"
 created: 2026-04-30
-updated: 2026-05-04
+updated: 2026-05-06
 tags:
   - aikernel
   - documentation
@@ -223,4 +223,8 @@ This guideline ensures consistent reflection of AIKernel's principles (category 
 ## 10.3 Fail-Closed security language
 - Treat signature verification by `IPromptVerifier` as an execution precondition, not a recommendation.
 - Explicitly state that verification failure must stop execution (fail-closed).
+---
 
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

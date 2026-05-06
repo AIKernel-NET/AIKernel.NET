@@ -1,5 +1,8 @@
 namespace AIKernel.Dtos.Sandbox;
 
+/// <summary>
+/// SandboxExecutionResult の契約を定義します。
+/// </summary>
 public sealed class SandboxExecutionResult
 {
     public required bool Success { get; init; }
@@ -9,4 +12,7 @@ public sealed class SandboxExecutionResult
     public string? StdOut { get; init; }
     public string? StdErr { get; init; }
 }
+
+
+
 

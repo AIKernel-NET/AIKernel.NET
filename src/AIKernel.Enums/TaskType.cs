@@ -1,5 +1,8 @@
 namespace AIKernel.Enums;
 
+/// <summary>
+/// TaskType の契約を定義します。
+/// </summary>
 public enum TaskType
 {
     Sync = 1,
@@ -8,3 +11,6 @@ public enum TaskType
     Loop = 4,
     Parallel = 5
 }
+
+
+

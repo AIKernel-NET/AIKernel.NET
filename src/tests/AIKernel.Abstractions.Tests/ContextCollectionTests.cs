@@ -1,6 +1,4 @@
 using AIKernel.Abstractions.Context;
-using AIKernel.Abstractions.Material;
-using AIKernel.Abstractions.Exceptions;
 using Xunit;
 
 namespace AIKernel.Abstractions.Tests;
@@ -13,6 +11,7 @@ public class ContextCollectionTests
     [Fact]
     public void GetByCategory_ShouldReturnFragmentsOfSpecificCategory()
     {
+        // UC-06: 指示・素材・出力の 3 層バッファ境界を維持
         // Arrange
         var orchestrationFragment = new ContextFragment
         {
@@ -116,3 +115,5 @@ public class ContextCollectionTests
         Assert.Empty(buffer.Fragments);
     }
 }
+
+

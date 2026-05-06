@@ -1,5 +1,8 @@
 namespace AIKernel.Dtos.Governance;
 
+/// <summary>
+/// TrustContext の契約を定義します。
+/// </summary>
 public sealed record TrustContext
 {
     public required string SignerId { get; init; }
@@ -11,3 +14,6 @@ public sealed record TrustContext
     public required DateTime VerificationTimestamp { get; init; }
     public required bool IsDetermined { get; init; }
 }
+
+
+

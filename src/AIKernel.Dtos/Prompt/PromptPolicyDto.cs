@@ -1,5 +1,8 @@
 namespace AIKernel.Dtos.Prompt;
 
+/// <summary>
+/// PromptPolicyDto の契約を定義します。
+/// </summary>
 public sealed record PromptPolicyDto
 {
     public double TrustLevelRequired { get; init; } = 0.0;
@@ -30,3 +33,6 @@ public sealed record PromptPolicyDto
         CreatedAt = createdAt;
     }
 }
+
+
+

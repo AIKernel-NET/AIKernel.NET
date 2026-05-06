@@ -1,9 +1,10 @@
 ---
 id: iproviderresourceprofile
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "IProviderResourceProfile"
 created: 2026-05-03
+updated: 2026-05-06
 tags:
   - aikernel
   - architecture
@@ -13,14 +14,19 @@ tags:
   - english
 ---
 
-For Japanese version, see `IProviderResourceProfile-jp.md`.
+For Japanese version, see [IProviderResourceProfile-jp.md](./IProviderResourceProfile-jp.md).
 
-# IProviderResourceProfile
+# IProviderResourceProfile (Unified Resource Profile Specification)
 
-## Responsibility
-Aggregate provider credit, cost, usage, and billing views into a single orchestration-readable profile.
+## 1. Responsibility Boundary
+`IProviderResourceProfile` aggregates credit, cost, usage, and billing dimensions into a single source of truth for final execution decisions.
 
-## Properties
+- Role:
+  Provide a complete economic/operational context for router scoring without cross-querying multiple interfaces.
+- Non-role:
+  Detailed collection logic of each sub-profile remains delegated to the corresponding lower-level contracts.
+
+## 2. Properties
 | Property | Type | Description |
 | --- | --- | --- |
 | `ProviderId` | `string` | Provider identifier. |
@@ -31,26 +37,35 @@ Aggregate provider credit, cost, usage, and billing views into a single orchestr
 | `HealthScore` | `double` | Normalized provider readiness score. |
 | `UpdatedAtUtc` | `DateTimeOffset` | Last aggregate update time. |
 
-## Use Cases
-- UC-23 Provider Credit Management
-- UC-19 Parallel Multi-Model Execution
-- UC-22 Complementary Reasoning
+## 3. Use Cases
+- `UC-23` AI credit management
+- `UC-19` Parallel multi-model execution
+- `UC-22` Complementary reasoning
 
-## Integration with `IModelVectorRouter`
-`IModelVectorRouter` consumes `IProviderResourceProfile` as a composite constraint vector:
-- capability score from `IProviderCapabilities`
-- economic score from `CostProfile` and `CreditInfo`
-- runtime pressure score from `UsageStats`
-- risk penalty from `BillingInfo` and `HealthScore`
+## 4. Integration with `IModelVectorRouter`
+`IModelVectorRouter` consumes this profile as a composite constraint vector:
+1. Capability score:
+   from `IProviderCapabilities`
+2. Economic score:
+   from `CostProfile` and `CreditInfo`
+3. Runtime pressure score:
+   from `UsageStats`
+4. Risk penalty:
+   from `BillingInfo` and `HealthScore`
 
-## Pie-Chart UI Data
-- cost composition: input/output/compute/storage from `CostProfile`
-- credit composition: available/reserved/consumed from `CreditInfo`
-- usage composition: request/input-token/output-token shares from `UsageStats`
-- billing risk composition: active/forecast/risk from `BillingInfo`
-- labels: `ProviderId`, `HealthScore`, `UpdatedAtUtc`
+## 5. Unified UI Data Supply
+- Cost composition:
+  input/output/compute/storage from `CostProfile`
+- Credit composition:
+  available/reserved/consumed from `CreditInfo`
+- Usage composition:
+  request/input-token/output-token from `UsageStats`
+- Billing risk composition:
+  active/forecast/risk from `BillingInfo`
+- Metadata:
+  `ProviderId`, `HealthScore`, `UpdatedAtUtc`
 
-## Aggregate Flow (Mermaid)
+## 6. Architecture Flow
 ```mermaid
 flowchart LR
   Credit["IProviderCreditInfo"] --> Profile["IProviderResourceProfile"]
@@ -60,6 +75,13 @@ flowchart LR
   Profile --> Router["IModelVectorRouter"]
 ```
 
+## 7. Governance Constraints
+- Atomicity of view:
+  Sub-profile fields should be aggregated against as-close-as-possible `UpdatedAtUtc` to reduce contradictory decisions.
+- Deterministic replay:
+  Persist full profile snapshots at execution time so routing decisions remain auditable and reproducible.
+---
 
-
-
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

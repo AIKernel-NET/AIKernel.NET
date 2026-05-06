@@ -1,12 +1,13 @@
 ---
 id: contributing
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel Contributing Guide"
 scope:
   - repo: AIKernel.NET
 createdAt: 2026-04-28T00:00:00Z
 signature: ""
+updated: 2026-05-06
 ---
 
 # CONTRIBUTING
@@ -115,3 +116,8 @@ CI runs build and tests to ensure baseline quality.
 
 ## Closing
 AIKernel targets **.NET 10 / C# 14** and aims to be a production-grade contract-driven AI runtime. Follow these guidelines to contribute effectively.
+---
+
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

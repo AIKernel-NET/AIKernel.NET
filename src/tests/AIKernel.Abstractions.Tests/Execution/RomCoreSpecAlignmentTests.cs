@@ -1,9 +1,31 @@
 using AIKernel.Abstractions.Rom;
+using AIKernel.Dtos.Rom;
 
 namespace AIKernel.Abstractions.Tests.Execution;
 
+/// <summary>
+/// RomCoreSpecAlignmentTests の契約を定義します。
+/// </summary>
 public sealed class RomCoreSpecAlignmentTests
 {
+    [Fact]
+    public async Task RCS_CANON_001_003_Canonical_First_Is_Required_Before_Hashing()
+    {
+        // RCS-CANON-001/002/003:
+        // ハッシュ計算は必ず IROMCanonicalizer の出力のみを入力にする
+        IRomDocument rom = new StubRomDocument();
+        var canonicalizer = new RecordingCanonicalizer();
+        var hasher = new RecordingSemanticHasher();
+
+        var canonical = await canonicalizer.CanonicalizeAsync(rom);
+        var hash = await hasher.ComputeHashAsync(canonical);
+
+        Assert.True(canonicalizer.WasCalled);
+        Assert.True(hasher.WasCalled);
+        Assert.Same(canonicalizer.LastCanonicalized, hasher.LastInput);
+        Assert.StartsWith("sha256:", hash, StringComparison.Ordinal);
+    }
+
     [Fact]
     public async Task RCS_001_002_004_RomContract_Covers_Mandatory_Fields_References_And_Hash()
     {
@@ -44,12 +66,19 @@ public sealed class RomCoreSpecAlignmentTests
         public IReadOnlyDictionary<string, string> Metadata => new Dictionary<string, string>();
         public IReadOnlyList<string> RelationReferences => new[] { "[[provider.reasoning_model]]" };
         public Task<string> GetSemanticHashAsync() => Task.FromResult("sha256:abc");
-        public Task<CanonicalizedRomDocument> CanonicalizeAsync() => Task.FromResult(new CanonicalizedRomDocument
+        public Task<CanonicalizedRomDto> CanonicalizeAsync() => Task.FromResult(new CanonicalizedRomDto
         {
-            NormalizedEntityId = "entity.1",
-            NormalizedMetadata = new Dictionary<string, string>(),
-            NormalizedBody = Body,
-            CanonicalizedAt = DateTime.UtcNow
+            CanonicalBody = Body,
+            CanonicalizationVersion = "1.0.0",
+            Entities = new[]
+            {
+                new RomEntityMetadataDto
+                {
+                    EntityId = "entity.1",
+                    EntityType = "execution.contract",
+                    Version = "1.0.0"
+                }
+            }
         });
     }
 
@@ -76,4 +105,62 @@ public sealed class RomCoreSpecAlignmentTests
         public Task<bool> CanResolveAsync(string referenceId, CancellationToken cancellationToken = default) =>
             Task.FromResult(false);
     }
+
+    private sealed class RecordingCanonicalizer : IROMCanonicalizer
+    {
+        public bool WasCalled { get; private set; }
+        public CanonicalizedRomDto? LastCanonicalized { get; private set; }
+
+        public CanonicalizedRomDto Canonicalize(IRomDocument document)
+        {
+            WasCalled = true;
+            LastCanonicalized = new CanonicalizedRomDto
+            {
+                CanonicalBody = document.Body,
+                CanonicalizationVersion = "1.0.0",
+                Entities = new[]
+                {
+                    new RomEntityMetadataDto
+                    {
+                        EntityId = document.EntityId,
+                        EntityType = document.EntityType,
+                        Version = document.Version
+                    }
+                }
+            };
+            return LastCanonicalized;
+        }
+
+        public Task<CanonicalizedRomDto> CanonicalizeAsync(IRomDocument document, CancellationToken cancellationToken = default) =>
+            Task.FromResult(Canonicalize(document));
+    }
+
+    private sealed class RecordingSemanticHasher : ISemanticHasher
+    {
+        public string Algorithm => "SHA256";
+        public bool WasCalled { get; private set; }
+        public CanonicalizedRomDto? LastInput { get; private set; }
+
+        public string ComputeHash(CanonicalizedRomDto canonicalized)
+        {
+            WasCalled = true;
+            LastInput = canonicalized;
+            return "sha256:canon";
+        }
+
+        public Task<string> ComputeHashAsync(CanonicalizedRomDto canonicalized, CancellationToken cancellationToken = default) =>
+            Task.FromResult(ComputeHash(canonicalized));
+
+        public bool VerifyHash(CanonicalizedRomDto canonicalized, string expectedHash) =>
+            string.Equals(ComputeHash(canonicalized), expectedHash, StringComparison.Ordinal);
+
+        public Task<bool> VerifyHashAsync(
+            CanonicalizedRomDto canonicalized,
+            string expectedHash,
+            CancellationToken cancellationToken = default) =>
+            Task.FromResult(VerifyHash(canonicalized, expectedHash));
+    }
 }
+
+
+

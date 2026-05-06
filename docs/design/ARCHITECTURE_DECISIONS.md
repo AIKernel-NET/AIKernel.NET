@@ -1,6 +1,6 @@
 ---
 id: architecture-decisions
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "ARCHITECTURE_DECISIONS — Major Architecture Decisions (ADR Collection)"
 created: 2026-05-01
@@ -10,6 +10,7 @@ tags:
 - adr
 - governance
 - english
+updated: 2026-05-06
 ---
 
 # ARCHITECTURE_DECISIONS — Major Architecture Decisions (ADR Collection)
@@ -103,3 +104,8 @@ Documentation is part of the architecture. Use numbered architecture files + ind
 - `../guidelines/DOCUMENTATION_GUIDELINES.md` (Documentation guidelines)
 - `EXTENSION_POINTS.md` (Extension points)
 - `CONTRACT_VERSIONING.md` (Contract versioning)
+---
+
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

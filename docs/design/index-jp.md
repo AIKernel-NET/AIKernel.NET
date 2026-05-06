@@ -1,33 +1,42 @@
 ---
-version: 0.0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
-title: "AIKernel Design — Index"
-created: 2026-05-04
-updated: 2026-05-04
+title: "Design Documentation Index"
+created: 2026-05-03
+updated: 2026-05-06
 tags:
   - aikernel
   - design
-  - index
   - japanese
 ---
 
-# docs/design — Index（How）
+英語版は index.md を参照。
 
-このディレクトリは、AIKernel の「How（実装・運用へ落とす方針）」をまとめる。
+# Design Documentation Index
 
-## ドキュメント一覧
-- DESIGN_INTENT-jp.md — 設計意図（思想→実装の橋渡し）
-- ARCHITECTURE_DECISIONS-jp.md — 主要設計決定（ADR）
-- DI_GUIDE-jp.md — DI の拡張ポイントと登録パターン
-- EXTENSION_POINTS-jp.md — Provider / VFS / Scheduler 等の拡張仕様
-- CONTRACT_VERSIONING-jp.md — 契約のバージョニング方針
-- SEMANTIC_SNAPSHOT_FORMAT-jp.md — Semantic Snapshot の標準 Markdown 形式
+## 1. 目的
+`docs/design` は、仕様（spec）と実装（src）の間を接続する「設計上の意思決定ログ」です。AIKernel を AIOS として成立させるため、Kernel・VFS・System Call 相当の責務分離と拡張点を明文化します。
 
-## 推奨読書順
-1. DESIGN_INTENT
-2. ARCHITECTURE_DECISIONS
-3. EXTENSION_POINTS
-4. DI_GUIDE
-5. CONTRACT_VERSIONING
-6. SEMANTIC_SNAPSHOT_FORMAT
+## 2. 設計原則
+- Kernel: 実行状態遷移と Fail-Closed ガバナンスの統制点
+- VFS: 知能資産の永続化境界
+- System Call 相当: Interface を介した副作用制御（tooling/security/provider）
 
+## 3. 関連仕様
+- `docs/specs/01.EXECUTION_PIPELINE_SPEC-jp.md`
+- `docs/specs/02.SIGNED_PROMPT_GOVERNANCE_SPEC-jp.md`
+- `docs/specs/03.ROM_CORE_SPEC-jp.md`
+
+## 4. ドキュメント一覧
+- [DESIGN_INTENT-jp.md](DESIGN_INTENT-jp.md)
+- [ARCHITECTURE_DECISIONS-jp.md](ARCHITECTURE_DECISIONS-jp.md)
+- [DI_GUIDE-jp.md](DI_GUIDE-jp.md)
+- [EXTENSION_POINTS-jp.md](EXTENSION_POINTS-jp.md)
+- [CONTRACT_VERSIONING-jp.md](CONTRACT_VERSIONING-jp.md)
+- [SEMANTIC_SNAPSHOT_FORMAT-jp.md](SEMANTIC_SNAPSHOT_FORMAT-jp.md)
+
+---
+
+# 変更履歴
+- v0.0.0 / v0.0.0.0: 初期ドラフト
+- v0.0.1 (2026-05-06): AIOS理論との対応付けを追加

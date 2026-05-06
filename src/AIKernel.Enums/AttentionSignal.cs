@@ -52,3 +52,4 @@ public enum AttentionSignal
     /// </summary>
     GeneralNoise = 105
 }
+

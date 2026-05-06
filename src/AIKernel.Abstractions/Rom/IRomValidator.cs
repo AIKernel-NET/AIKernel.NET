@@ -1,6 +1,7 @@
 namespace AIKernel.Abstractions.Rom;
 
 /// <summary>
+/// UC-01/UC-12 に基づく契約です。
 /// ROM バリデーターの契約。
 /// RCS-F002: リンク未解決時は推論入力を拒否。
 /// RCS-F004: Type Consistency の検証。
@@ -64,25 +65,3 @@ public interface IRomValidator
         CancellationToken cancellationToken = default);
 }
 
-/// <summary>
-/// 関係参照を解決するサービスの契約。
-/// RCS-002, RCS-F002 で使用。
-/// </summary>
-public interface IRelationResolver
-{
-    /// <summary>
-    /// 参照 ID を解決して実際のエンティティを取得します。
-    /// </summary>
-    /// <param name="referenceId">参照 ID（例: "user.tky"）</param>
-    /// <param name="cancellationToken">キャンセルトークン</param>
-    /// <returns>解決されたエンティティ、存在しない場合は null</returns>
-    Task<AIKernel.Dtos.Rom.ResolvableEntity?> ResolveAsync(string referenceId, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// 参照が解決可能であるかだけを確認します（軽量チェック）。
-    /// </summary>
-    /// <param name="referenceId">参照 ID</param>
-    /// <param name="cancellationToken">キャンセルトークン</param>
-    /// <returns>解決可能かどうか</returns>
-    Task<bool> CanResolveAsync(string referenceId, CancellationToken cancellationToken = default);
-}

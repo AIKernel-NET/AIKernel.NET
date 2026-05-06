@@ -4,6 +4,7 @@ using AIKernel.Abstractions.Models;
 using AIKernel.Dtos.Context;
 
 /// <summary>
+/// UC-06/UC-32 に基づく契約です。
 /// Attention 消費とコンテキスト品質を受動的に監視するインターフェースです。
 /// 統計やログを収集し、運用フェーズにおける分析に利用されます。
 /// </summary>
@@ -85,3 +86,4 @@ public interface IAttentionObserver
     /// <returns>観察された統計情報</returns>
     Task<AttentionObservationStats> GetObservationStatsAsync(CancellationToken cancellationToken = default);
 }
+

@@ -2,6 +2,9 @@ using AIKernel.Enums;
 
 namespace AIKernel.Dtos.Vfs;
 
+/// <summary>
+/// VfsEntry の契約を定義します。
+/// </summary>
 public sealed record VfsEntry
 {
     public required string Name { get; init; }
@@ -11,3 +14,6 @@ public sealed record VfsEntry
     public required DateTime CreatedAt { get; init; }
     public required DateTime ModifiedAt { get; init; }
 }
+
+
+

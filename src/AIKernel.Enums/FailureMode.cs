@@ -37,3 +37,4 @@ public enum FailureMode
     /// </summary>
     SelfCorrectionLost = 6
 }
+

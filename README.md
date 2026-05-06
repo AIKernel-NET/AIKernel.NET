@@ -6,6 +6,25 @@ A framework aiming to be the **Operating System (OS) for AI applications**.
 
 AIKernel treats LLMs not as simple API calls but as **capability-bearing processes**.
 
+---
+
+## NuGet Packages
+
+AIKernel.NET is composed of multiple independent abstraction layers.  
+Each layer is published as a separate NuGet package.
+
+| Layer | Package | Version | Link |
+|-------|---------|---------|------|
+| Core Types | AIKernel.Enums | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Enums.svg) | https://www.nuget.org/packages/AIKernel.Enums/ |
+| Data Models | AIKernel.Dtos | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Dtos.svg) | https://www.nuget.org/packages/AIKernel.Dtos/ |
+| Contracts | AIKernel.Contracts | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Contracts.svg) | https://www.nuget.org/packages/AIKernel.Contracts/ |
+| Abstractions | AIKernel.Abstractions | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Abstractions.svg) | https://www.nuget.org/packages/AIKernel.Abstractions/ |
+| Virtual File System | AIKernel.VFS | ![NuGet](https://img.shields.io/nuget/v/AIKernel.VFS.svg) | https://www.nuget.org/packages/AIKernel.VFS/ |
+| Context Models (integrated) | AIKernel.Dtos (AIKernel.Dtos.KernelContext) | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Dtos.svg) | https://www.nuget.org/packages/AIKernel.Dtos/ |
+| Event Models (integrated) | AIKernel.Dtos (AIKernel.Dtos.Events) | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Dtos.svg) | https://www.nuget.org/packages/AIKernel.Dtos/ |
+
+---
+
 See `docs/design/DESIGN_INTENT.md` for design philosophy.  
 For executable contracts (spec sheets), see `docs/specs/index.md`.
 
@@ -58,93 +77,22 @@ Documentation is organized into four layers:
 
 ---
 
-# 3. AIKernel.NET directory layout (current)
+# 3. Documentation Structure
 
-```
-AIKernel.NET/
-├─ README.md
-├─ README-jp.md
-├─ LICENSE
-├─ docs/
-│  ├─ CONTRIBUTING.md
-│  ├─ CONTRIBUTING-jp.md
-│  ├─ assets/
-│  │  └─ aikernel-logo.png
-│  ├─ architecture/
-│  │  ├─ index.md
-│  │  ├─ index-jp.md
-│  │  ├─ 1.CATEGORY_SEPARATION_PRINCIPLES.md
-│  │  ├─ 1.CATEGORY_SEPARATION_PRINCIPLES-jp.md
-│  │  ├─ 2.CONTEXT_ISOLATION_SPEC.md
-│  │  ├─ 2.CONTEXT_ISOLATION_SPEC-jp.md
-│  │  ├─ 3.ATTENTION_POLLUTION_THEORY.md
-│  │  ├─ 3.ATTENTION_POLLUTION_THEORY-jp.md
-│  │  ├─ 4.LLM_SURFACE_MODE_FAILURE.md
-│  │  ├─ 4.LLM_SURFACE_MODE_FAILURE-jp.md
-│  │  ├─ 5.PREPROCESSING_VS_PROMPTING.md
-│  │  ├─ 5.PREPROCESSING_VS_PROMPTING-jp.md
-│  │  ├─ 6.AIKERNEL_VS_LANGCHAIN.md
-│  │  └─ 6.AIKERNEL_VS_LANGCHAIN-jp.md
-│  ├─ design/
-│  │  ├─ index.md
-│  │  ├─ index-jp.md
-│  │  ├─ DESIGN_INTENT.md
-│  │  ├─ DESIGN_INTENT-jp.md
-│  │  ├─ ARCHITECTURE_DECISIONS.md
-│  │  ├─ ARCHITECTURE_DECISIONS-jp.md
-│  │  ├─ EXTENSION_POINTS.md
-│  │  ├─ EXTENSION_POINTS-jp.md
-│  │  ├─ DI_GUIDE.md
-│  │  ├─ DI_GUIDE-jp.md
-│  │  ├─ CONTRACT_VERSIONING.md
-│  │  ├─ CONTRACT_VERSIONING-jp.md
-│  │  ├─ SEMANTIC_SNAPSHOT_FORMAT.md
-│  │  └─ SEMANTIC_SNAPSHOT_FORMAT-jp.md
-│  ├─ specs/
-│  │  ├─ index.md
-│  │  ├─ index-jp.md
-│  │  ├─ 01.EXECUTION_PIPELINE_SPEC.md
-│  │  ├─ 01.EXECUTION_PIPELINE_SPEC-jp.md
-│  │  ├─ 02.SIGNED_PROMPT_GOVERNANCE_SPEC.md
-│  │  ├─ 02.SIGNED_PROMPT_GOVERNANCE_SPEC-jp.md
-│  │  ├─ 03.ROM_CORE_SPEC.md
-│  │  ├─ 03.ROM_CORE_SPEC-jp.md
-│  │  ├─ 04.MODEL_ROUTING_SPEC.md
-│  │  ├─ 04.MODEL_ROUTING_SPEC-jp.md
-│  │  ├─ 05.MATERIAL_QUARANTINE_SPEC.md
-│  │  ├─ 05.MATERIAL_QUARANTINE_SPEC-jp.md
-│  │  ├─ 06.REPLAY_DUMP_SPEC.md
-│  │  └─ 06.REPLAY_DUMP_SPEC-jp.md
-│  ├─ guidelines/
-│  │  ├─ index.md
-│  │  ├─ index-jp.md
-│  │  ├─ DOCUMENTATION_GUIDELINES.md
-│  │  ├─ DOCUMENTATION_GUIDELINES-jp.md
-│  │  ├─ DOCS_CONTRIBUTING.md
-│  │  ├─ DOCS_CONTRIBUTING-jp.md
-│  │  ├─ REPO_DEPENDENCY_RULES.md
-│  │  ├─ REPO_DEPENDENCY_RULES-jp.md
-│  ├─ operations/                # TBD: Planned.
-│  │  ├─ index.md
-│  │  ├─ index-jp.md
-│  │  ├─ MIGRATION_GUIDE.md
-│  │  └─ MIGRATION_GUIDE-jp.md
-│  └─ rules/
-│     └─ PromptRules_TEMPLATES/  # TBD: Coming Soon.
-│
-├─ src/
-│  ├─ AIKernel.NET.slnx
-│  ├─ README.md
-│  ├─ README.jp.md
-│  ├─ AIKernel.Abstractions/
-│  ├─ AIKernel.Contracts/
-│  ├─ AIKernel.Dtos/
-│  ├─ AIKernel.Enums/
-│  ├─ AIKernel.Events/
-│  ├─ AIKernel.KernelContext/
-│  ├─ AIKernel.VFS/
-│  └─ tests/
-```
+To keep documentation and source synchronized, this README intentionally avoids
+deep file-by-file listings.
+
+The documentation is organized into four foundational categories:
+
+- `docs/architecture` — Why (principles, invariants, governance)
+- `docs/design` — How (design decisions and implementation strategy)
+- `docs/specs` — What (normative contracts and acceptance criteria)
+- `docs/guidelines` — Rules (repository and contribution policies)
+
+For the latest structure and cross-links, use:
+
+- `docs/index.md`
+- `docs/index-jp.md`
 
 # Repository mapping
 

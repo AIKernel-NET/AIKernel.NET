@@ -1,5 +1,8 @@
 namespace AIKernel.Enums;
 
+/// <summary>
+/// EventPriority の契約を定義します。
+/// </summary>
 public enum EventPriority
 {
     Low = 0,
@@ -7,3 +10,6 @@ public enum EventPriority
     High = 2,
     Critical = 3
 }
+
+
+

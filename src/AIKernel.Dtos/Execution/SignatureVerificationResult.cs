@@ -1,5 +1,8 @@
 namespace AIKernel.Dtos.Execution;
 
+/// <summary>
+/// SignatureVerificationResult の契約を定義します。
+/// </summary>
 public sealed record SignatureVerificationResult
 {
     public required bool IsValid { get; init; }
@@ -8,4 +11,7 @@ public sealed record SignatureVerificationResult
     public required string Message { get; init; }
     public required DateTime VerificationTimestamp { get; init; }
 }
+
+
+
 

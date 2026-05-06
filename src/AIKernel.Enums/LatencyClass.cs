@@ -31,3 +31,4 @@ public enum LatencyClass
     /// </summary>
     Slow = 5
 }
+

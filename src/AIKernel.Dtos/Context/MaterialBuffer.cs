@@ -6,3 +6,4 @@ public readonly struct MaterialBuffer
     public MaterialBuffer(IEnumerable<ContextFragment> fragments)
         => Fragments = (fragments ?? Array.Empty<ContextFragment>()).ToList().AsReadOnly();
 }
+

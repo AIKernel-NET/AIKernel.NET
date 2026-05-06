@@ -1,5 +1,8 @@
 namespace AIKernel.Enums;
 
+/// <summary>
+/// RejectCode の契約を定義します。
+/// </summary>
 public enum RejectCode
 {
     AuthenticationFailed = 1,
@@ -11,3 +14,6 @@ public enum RejectCode
     InsufficientPermissions = 7,
     SessionExpired = 8
 }
+
+
+

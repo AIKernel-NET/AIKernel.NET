@@ -1,5 +1,5 @@
 ---
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel Guidelines — Index"
 created: 2026-05-01
@@ -9,6 +9,7 @@ tags:
   - documentation
   - governance
   - english
+updated: 2026-05-06
 ---
 
 # AIKernel Guidelines — Index
@@ -127,5 +128,9 @@ These guidelines provide the foundation for operating AIKernel as a long-term **
 
 - `docs/architecture/` — Architectural philosophy (Why)  
 - `docs/design/` — Implementation policies (How)  
-- `docs/guideline/` — Operational rules (Rules) ← *this directory*  
+- `docs/guideline/` — Operational rules (Rules) ← *this directory*
+---
 
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

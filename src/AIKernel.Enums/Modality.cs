@@ -1,5 +1,8 @@
 namespace AIKernel.Enums;
 
+/// <summary>
+/// Modality の契約を定義します。
+/// </summary>
 public enum Modality
 {
     Text = 1,
@@ -10,3 +13,6 @@ public enum Modality
     Binary = 6,
     TimeSeries = 7
 }
+
+
+

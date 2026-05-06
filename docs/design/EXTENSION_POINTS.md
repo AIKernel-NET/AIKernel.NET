@@ -1,6 +1,6 @@
 ---
 id: extension-points
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "EXTENSION_POINTS — Extension Point Specifications (Provider / VFS / Policy, etc.)"
 created: 2026-05-01
@@ -10,6 +10,7 @@ tags:
 - extension
 - capabilities
 - english
+updated: 2026-05-06
 ---
 
 # EXTENSION_POINTS — Extension Point Specifications (Provider / VFS / Policy, etc.)
@@ -114,3 +115,8 @@ Emit primary information to support Deterministic Replay and auditing.
 - `CONTRACT_VERSIONING.md`
 - `../architecture/index.md`
 - `../guidelines/DOCUMENTATION_GUIDELINES.md`
+---
+
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

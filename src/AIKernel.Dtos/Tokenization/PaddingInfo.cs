@@ -1,5 +1,8 @@
 namespace AIKernel.Dtos.Tokenization;
 
+/// <summary>
+/// PaddingInfo の契約を定義します。
+/// </summary>
 public sealed class PaddingInfo
 {
     public required int LogicalTokenCount { get; init; }
@@ -12,4 +15,7 @@ public sealed class PaddingInfo
     public long MemoryDifferenceBytes { get; init; }
     public string? Rationale { get; init; }
 }
+
+
+
 

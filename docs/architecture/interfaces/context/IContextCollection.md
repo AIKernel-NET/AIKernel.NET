@@ -1,9 +1,10 @@
 ---
 id: icontextcollection
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "IContextCollection"
 created: 2026-05-03
+updated: 2026-05-06
 tags:
   - aikernel
   - architecture
@@ -13,27 +14,52 @@ tags:
 
 For Japanese version, see IContextCollection-jp.md.
 
-# IContextCollection
+# IContextCollection (Interface Specification)
 
-## Responsibility
-Define the contract boundary for IContextCollection within AIKernel orchestration and governance flows.
+## 1. Responsibility Boundary
+`IContextCollection` is the boundary interface for managing runtime context fragments and enforcing phase-specific buffer boundaries during reasoning cycles.
 
-## Key Members (Draft)
-| Member | Type | Description |
-| --- | --- | --- |
-| `GetAll()` | `IEnumerable<ContextFragment>` | Return all fragments across categories. |
-| `GetByCategory(ContextCategory category)` | `IEnumerable<ContextFragment>` | Return fragments in a single category. |
-| `GetOrchestrationBuffer()` | `OrchestrationBuffer` | Return orchestration-phase read buffer. |
-| `GetExpressionBuffer()` | `ExpressionBuffer` | Return expression-phase read buffer. |
-| `GetMaterialBuffer()` | `MaterialBuffer` | Return material-phase read buffer. |
-| `GetHistoryBuffer()` | `HistoryBuffer` | Return history-phase read buffer. |
+- Role:
+  Manage categorized `ContextFragment` data and provide `Orchestration/Material/Expression/History` buffers.
+- Non-role:
+  Persistence, external retrieval, and storage integration are out of scope. This interface focuses on in-cycle working memory.
 
-## Related Use Cases
-See ../../use-cases/AIKernel_UseCaseCatalog.md for references where IContextCollection appears.
+## 2. Contract Signature
+```csharp
+namespace AIKernel.Abstractions.Context;
 
-## Notes
-- This document is an interface-level draft.
-- Implementations must preserve fail-closed and deterministic replay principles.
+public interface IContextCollection
+{
+    IEnumerable<ContextFragment> GetAll();
+    IEnumerable<ContextFragment> GetByCategory(ContextCategory category);
+    OrchestrationBuffer GetOrchestrationBuffer();
+    ExpressionBuffer GetExpressionBuffer();
+    MaterialBuffer GetMaterialBuffer();
+    HistoryBuffer GetHistoryBuffer();
+}
+```
 
+## 3. Related Use Cases
+- `UC-06` Three-layer buffer boundary (Context Isolation):
+  Maintains separation of instruction/material/expression to reduce attention pollution.
+- `UC-02` Structure phase execution:
+  Supplies inputs required by `IThoughtProcess` logic construction.
 
+## 4. Governance & Determinism
+- Immutability in-cycle:
+  Buffer content should be treated as immutable within a single reasoning cycle.
+- Deterministic ordering:
+  `GetAll()` / `GetByCategory()` should return stable ordering for identical inputs.
+- Fail-Closed:
+  Missing mandatory categories should terminate on the deny side instead of allowing partial execution.
 
+## 5. Implementation Notes
+- Preserve boundaries:
+  Keep explicit buffer demarcation conventions during rendering to avoid category bleed.
+- Memory efficiency:
+  Prefer reference-based handling for large material payloads and minimize deep copies.
+---
+
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

@@ -1,6 +1,6 @@
 ---
 id: contract-versioning
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "CONTRACT_VERSIONING — Contract (Interface/DTO/Enum) Versioning Policy"
 created: 2026-05-01
@@ -11,6 +11,7 @@ tags:
 - versioning
 - governance
 - english
+updated: 2026-05-06
 ---
 
 # CONTRACT_VERSIONING — Contract (Interface/DTO/Enum) Versioning Policy
@@ -92,3 +93,8 @@ For each release, publish:
 - `EXTENSION_POINTS.md`
 - `../architecture/index.md`
 - `../guidelines/DOCUMENTATION_GUIDELINES.md`
+---
+
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

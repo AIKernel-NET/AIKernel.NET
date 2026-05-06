@@ -1,5 +1,8 @@
 namespace AIKernel.Dtos.Routing;
 
+/// <summary>
+/// ModelCapacityVector の契約を定義します。
+/// </summary>
 public sealed record ModelCapacityVector
 {
     public float StructuralIntegrity { get; init; }
@@ -22,3 +25,6 @@ public sealed record ModelCapacityVector
         LatencyPerformance = latencyPerformance;
     }
 }
+
+
+

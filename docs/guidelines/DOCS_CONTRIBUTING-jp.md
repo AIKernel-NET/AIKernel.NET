@@ -1,5 +1,5 @@
 ---
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel Documentation Guidelines"
 description: ドキュメントの書き方、PR ルール、CI チェックについて
@@ -9,6 +9,7 @@ tags:
   - documentation
   - guideline
   - japanese
+updated: 2026-05-06
 ---
 
 # 目的
@@ -55,3 +56,5 @@ tags:
 
 # 変更履歴
 - 2026-05-01 初版
+- v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新
+

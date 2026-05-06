@@ -1,6 +1,7 @@
 namespace AIKernel.Abstractions.Models;
 
 /// <summary>
+/// UC-22 に基づく契約です。
 /// 実行制約に基づいて動的に能力ベクトルを解決するインターフェースです。
 /// これは指示書で提案された、NPU対応の中核となるコンポーネントです。
 /// </summary>
@@ -48,3 +49,4 @@ public interface IDynamicCapacityProvider
     /// <returns>登録済みモデルタイプの列挙</returns>
     IEnumerable<ModelType> GetRegisteredModels();
 }
+

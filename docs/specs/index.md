@@ -1,40 +1,43 @@
 ---
-version: 0.0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
-title: "AIKernel Specs — Index"
-created: 2026-05-04
-updated: 2026-05-04
+title: "Specification Index"
+created: 2026-05-03
+updated: 2026-05-06
 tags:
   - aikernel
   - specs
-  - index
   - english
 ---
 
-# docs/specs — Index (What / Contract)
+For Japanese version, see index-jp.md.
 
-This directory defines executable spec sheets used directly for implementation and verification in AIKernel.
+# Specification Index
 
-## Overview
-- `01.EXECUTION_PIPELINE_SPEC`: Defines phase boundaries, immutability, and hash chaining for `Structure -> Generation -> Polish`.
-- `02.SIGNED_PROMPT_GOVERNANCE_SPEC`: Defines fail-closed signature verification, trust-chain validation, and dynamic scope binding.
-- `03.ROM_CORE_SPEC`: Defines ROM minimum grammar, canonicalization, relation syntax, and integrity verification.
-- `04.MODEL_ROUTING_SPEC`: Defines capability-vector routing with dynamic constraints and hardware-aware adaptation.
-- `05.MATERIAL_QUARANTINE_SPEC`: Defines quarantine workflow, TrustVector scoring, and recursive re-ingestion guards.
-- `06.REPLAY_DUMP_SPEC`: Defines replay dump structure, environment consistency checks, and audit certification.
+## 1. Purpose
+`docs/specs` defines AIKernel normative contracts. Implementations must follow each MUST/MUST NOT rule and apply fail-closed behavior when decision paths are indeterminate.
 
-## Documents
-1. 01.EXECUTION_PIPELINE_SPEC.md — execution contract for Structure/Generation/Polish
-2. 02.SIGNED_PROMPT_GOVERNANCE_SPEC.md — signed governance and fail-closed verification contract
-3. 03.ROM_CORE_SPEC.md — minimum grammar and validation rules for Relation-Oriented Markdown (ROM)
-4. 04.MODEL_ROUTING_SPEC.md — routing contract for `IModelVectorRouter` and capacity vectors
-5. 05.MATERIAL_QUARANTINE_SPEC.md — material quarantine contract for `IMaterialQuarantine`
-6. 06.REPLAY_DUMP_SPEC.md — deterministic replay dump contract
+## 2. Spec Family Mapping
+- RCS (ROM Core): structure, canonicalization, hash invariance of intelligence assets
+- SGS (Signed Prompt Governance): trust chain and non-LLM PDP before execution
+- MRS (Model Routing): dynamic selection and replay-time locking behavior
+- RDS (Replay Dump): frozen execution context for deterministic replay
 
-## Recommended reading order
-1. EXECUTION_PIPELINE_SPEC
-2. SIGNED_PROMPT_GOVERNANCE_SPEC
-3. ROM_CORE_SPEC
-4. MODEL_ROUTING_SPEC
-5. MATERIAL_QUARANTINE_SPEC
-6. REPLAY_DUMP_SPEC
+## 3. Integration Points
+- `RCS` canonical output is consumed by `SGS` signature verification
+- `MRS` decisions are frozen by `RDS` as `LockedProviderInfo`
+- `SGS` and `RDS` connect pre-execution and post-execution audit chain
+
+## 4. Documents
+- [01.EXECUTION_PIPELINE_SPEC.md](01.EXECUTION_PIPELINE_SPEC.md)
+- [02.SIGNED_PROMPT_GOVERNANCE_SPEC.md](02.SIGNED_PROMPT_GOVERNANCE_SPEC.md)
+- [03.ROM_CORE_SPEC.md](03.ROM_CORE_SPEC.md)
+- [04.MODEL_ROUTING_SPEC.md](04.MODEL_ROUTING_SPEC.md)
+- [05.MATERIAL_QUARANTINE_SPEC.md](05.MATERIAL_QUARANTINE_SPEC.md)
+- [06.REPLAY_DUMP_SPEC.md](06.REPLAY_DUMP_SPEC.md)
+
+---
+
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Added explicit RCS/SGS/MRS/RDS cross-mapping

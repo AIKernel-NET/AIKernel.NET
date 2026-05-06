@@ -1,5 +1,8 @@
 namespace AIKernel.Enums;
 
+/// <summary>
+/// ContextCategory の契約を定義します。
+/// </summary>
 public enum ContextCategory
 {
     Orchestration = 1,
@@ -8,3 +11,6 @@ public enum ContextCategory
     Governance = 4,
     History = 5
 }
+
+
+

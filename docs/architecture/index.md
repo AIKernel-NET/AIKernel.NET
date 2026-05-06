@@ -1,9 +1,9 @@
 ---
-version: 0.0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel Architecture — Index"
 created: 2026-04-30
-updated: 2026-05-04
+updated: 2026-05-06
 tags:
   - aikernel
   - architecture
@@ -252,6 +252,8 @@ It is an **OS-level approach designed to work correctly by structure.**
 This index is the entry point to understanding AIKernel's overall design.
 
 ---
+---
 
-
-
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

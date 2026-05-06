@@ -6,3 +6,4 @@ public readonly struct HistoryBuffer
     public HistoryBuffer(IEnumerable<ContextFragment> fragments)
         => Fragments = (fragments ?? Array.Empty<ContextFragment>()).ToList().AsReadOnly();
 }
+

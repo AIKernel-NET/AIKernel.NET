@@ -1,5 +1,8 @@
 namespace AIKernel.Enums;
 
+/// <summary>
+/// ScheduleStatus の契約を定義します。
+/// </summary>
 public enum ScheduleStatus
 {
     Waiting = 1,
@@ -8,3 +11,6 @@ public enum ScheduleStatus
     Failed = 4,
     Cancelled = 5
 }
+
+
+
