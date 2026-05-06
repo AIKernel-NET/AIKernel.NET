@@ -1,6 +1,6 @@
 ---
 id: repo-dependency-rules
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel.NET Repository Dependency Rules — 依存方向規約"
 created: 2026-04-30
@@ -11,6 +11,7 @@ tags:
 - architecture
 - governance
 - japanese
+updated: 2026-05-06
 ---
 
 ## 概要
@@ -109,3 +110,8 @@ tags:
 
 依存方向は設計そのものである。  
 AIKernel.NET は OS として、境界と依存方向を最初に固定し、以後の拡張でも崩さない。
+---
+
+# 変更履歴
+- v0.0.0 / v0.0.0.0: 初期ドラフト
+- v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新

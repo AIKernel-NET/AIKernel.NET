@@ -26,3 +26,4 @@ public sealed class SourceInfo
     public IReadOnlyDictionary<string, string>? Metadata { get; init; }
 }
 
+

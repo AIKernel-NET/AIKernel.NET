@@ -48,3 +48,4 @@ public enum InformationCategory
     /// </summary>
     Metadata = 8
 }
+

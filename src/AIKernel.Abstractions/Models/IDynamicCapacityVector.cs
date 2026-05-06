@@ -1,6 +1,7 @@
 namespace AIKernel.Abstractions.Models;
 
 /// <summary>
+/// UC-22 に基づく契約です。
 /// 動的次元を持つモデル能力ベクトルを表現するインターフェースです。
 /// 従来の固定プロパティベースの ModelCapacityVector とは異なり、
 /// 実行制約に応じて次元数や各軸の値が動的に変わります。
@@ -50,3 +51,4 @@ public interface IDynamicCapacityVector
     /// <returns>能力マップ</returns>
     IDictionary<string, float> GetCapacitiesForCardinality(int cardinality, string quantizationLevel);
 }
+

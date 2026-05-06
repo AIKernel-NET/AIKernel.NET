@@ -1,5 +1,8 @@
 namespace AIKernel.Dtos.Execution;
 
+/// <summary>
+/// HashChain の契約を定義します。
+/// </summary>
 public sealed record HashChain
 {
     public required string StructureHash { get; init; }
@@ -9,4 +12,7 @@ public sealed record HashChain
     public required string PolishParentHash { get; init; }
     public string HashAlgorithm { get; init; } = "SHA256";
 }
+
+
+
 

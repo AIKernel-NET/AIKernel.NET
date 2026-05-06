@@ -1,5 +1,8 @@
 namespace AIKernel.Dtos.Execution;
 
+/// <summary>
+/// InitializationResult の契約を定義します。
+/// </summary>
 public sealed record InitializationResult
 {
     public required bool IsInitialized { get; init; }
@@ -7,4 +10,7 @@ public sealed record InitializationResult
     public IReadOnlyList<string> Issues { get; init; } = new List<string>();
     public string? PreExecutionContextHash { get; init; }
 }
+
+
+
 

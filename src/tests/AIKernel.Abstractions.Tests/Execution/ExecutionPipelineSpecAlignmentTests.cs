@@ -1,12 +1,23 @@
 using AIKernel.Abstractions.Context;
 using AIKernel.Abstractions.Execution;
 using AIKernel.Abstractions.Models;
-using ExecutionRouter = AIKernel.Abstractions.Execution.IModelVectorRouter;
+using AIKernel.Dtos.Execution;
+using AIKernel.Dtos.Routing;
+using AIKernel.Dtos.Rules;
+using ExecutionRouter = AIKernel.Abstractions.Routing.IModelVectorRouter;
 
 namespace AIKernel.Abstractions.Tests.Execution;
 
+/// <summary>
+/// ExecutionPipelineSpecAlignmentTests の契約を定義します。
+/// </summary>
 public sealed class ExecutionPipelineSpecAlignmentTests
 {
+    private static readonly string[] EpsViolations = ["EPS-F005"];
+    private static readonly string[] AlteredSegments = ["plan"];
+    private static readonly string[] AllowedToolsValues = ["tool.a"];
+    private static readonly string[] ScopeValues = ["scope.read"];
+
     [Fact]
     public async Task EPS_004_EPS_008_UseCase_Flows_By_Interface_Composition()
     {
@@ -15,10 +26,11 @@ public sealed class ExecutionPipelineSpecAlignmentTests
         var router = new StubRouter();
         var constraints = new StubExecutionConstraints();
         var required = new ModelCapacityVector { ReasoningDepth = 0.9f };
+        var context = new RuleEvaluationContext("ctx-1", "generation", new Dictionary<string, string>());
 
-        var structureRoute = await router.RouteAsync(required, constraints);
-        var generationRoute = await router.RouteAsync(required, constraints);
-        var polishRoute = await router.RouteAsync(required, constraints);
+        var structureRoute = await router.RouteAsync(required, context, constraints);
+        var generationRoute = await router.RouteAsync(required, context, constraints);
+        var polishRoute = await router.RouteAsync(required, context, constraints);
 
         Assert.Equal("provider.reasoning", structureRoute.SelectedProviderId);
         Assert.Equal("provider.reasoning", generationRoute.SelectedProviderId);
@@ -55,8 +67,16 @@ public sealed class ExecutionPipelineSpecAlignmentTests
 
     private sealed class StubRouter : ExecutionRouter
     {
-        public Task<ModelRoutingDecision> RouteAsync(ModelCapacityVector requiredCapacity, IExecutionConstraints executionConstraints, CancellationToken cancellationToken = default) =>
-            Task.FromResult(new ModelRoutingDecision
+        public Task<ModelRoutingDecision> RouteAsync(
+            ModelCapacityVector requiredCapacity,
+            RuleEvaluationContext ruleEvaluationContext,
+            IExecutionConstraints executionConstraints,
+            CancellationToken cancellationToken = default)
+        {
+            _ = ruleEvaluationContext;
+            _ = executionConstraints;
+            _ = cancellationToken;
+            return Task.FromResult(new ModelRoutingDecision
             {
                 SelectedProviderId = "provider.reasoning",
                 SelectionRationale = "deterministic",
@@ -64,6 +84,19 @@ public sealed class ExecutionPipelineSpecAlignmentTests
                 FittingScore = 1.0,
                 DecisionTimestamp = DateTime.UtcNow
             });
+        }
+
+        public ModelType SelectOptimalModel(ModelCapacityVector requirement, IEnumerable<ModelType> candidates)
+        {
+            _ = requirement;
+            return candidates.FirstOrDefault();
+        }
+
+        public IEnumerable<(ModelType Model, float Score)> RankModels(ModelCapacityVector requirement, IEnumerable<ModelType> candidates)
+        {
+            _ = requirement;
+            return candidates.Select(x => (x, 1.0f));
+        }
 
         public bool VerifyDeterministicRouting(ModelRoutingDecision decision1, ModelRoutingDecision decision2) =>
             decision1.SelectedProviderId == decision2.SelectedProviderId && decision1.SelectionRationale == decision2.SelectionRationale;
@@ -76,7 +109,7 @@ public sealed class ExecutionPipelineSpecAlignmentTests
             {
                 IsValid = false,
                 Message = "logic divergence",
-                Violations = new[] { "EPS-F005" },
+                Violations = EpsViolations,
                 LogicIntegrityScore = 0.0
             });
 
@@ -87,15 +120,15 @@ public sealed class ExecutionPipelineSpecAlignmentTests
                 DivergenceType = "plan",
                 Description = "EPS-F005",
                 Severity = "critical",
-                AlteredSegments = new[] { "plan" }
+                AlteredSegments = AlteredSegments
             });
     }
 
     private sealed class StubExecutionConstraints : IExecutionConstraints
     {
         public int ContextCardinality => 1;
-        public IReadOnlyList<string> AllowedTools => new[] { "tool.a" };
-        public IReadOnlyList<string> Scopes => new[] { "scope.read" };
+        public IReadOnlyList<string> AllowedTools => AllowedToolsValues;
+        public IReadOnlyList<string> Scopes => ScopeValues;
         public int MaxTokenBudget => 2048;
         public long AvailableMemoryMb => 1024;
         public int? MaxLatencyMs => 500;
@@ -120,3 +153,6 @@ public sealed class ExecutionPipelineSpecAlignmentTests
             && chain.GenerationParentHash == chain.StructureHash;
     }
 }
+
+
+

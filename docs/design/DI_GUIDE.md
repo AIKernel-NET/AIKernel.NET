@@ -1,5 +1,5 @@
 ---
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "DI Guide"
 description: Extension points and DI registration patterns for AIKernel.Core (for integrators)
@@ -10,6 +10,7 @@ tags:
   - preprocessing
   - prompt-design
   - english
+updated: 2026-05-06
 ---
 
 # Purpose
@@ -79,3 +80,5 @@ Core provides NoOp/Stub implementations for initial startup. NoOp is for test st
 
 # Changelog
 - 2026-05-01 Initial version
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
+

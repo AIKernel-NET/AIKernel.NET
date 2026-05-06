@@ -1,33 +1,42 @@
 ---
-version: 0.0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
-title: "AIKernel Design — Index"
-created: 2026-05-04
-updated: 2026-05-04
+title: "Design Documentation Index"
+created: 2026-05-03
+updated: 2026-05-06
 tags:
   - aikernel
   - design
-  - index
   - english
 ---
 
-# docs/design — Index (How)
+For Japanese version, see index-jp.md.
 
-This directory collects AIKernel's "How" — policies for implementation and operations.
+# Design Documentation Index
 
-## Documents
-- DESIGN_INTENT.md — Design intent (bridge from philosophy to implementation)
-- ARCHITECTURE_DECISIONS.md — Major architecture decisions (ADR collection)
-- DI_GUIDE.md — DI extension points and registration patterns
-- EXTENSION_POINTS.md — Extension specifications for Provider / VFS / Scheduler, etc.
-- CONTRACT_VERSIONING.md — Contract versioning policy
-- SEMANTIC_SNAPSHOT_FORMAT.md — Canonical markdown format for semantic snapshots
+## 1. Purpose
+`docs/design` is the decision layer between formal specs and source contracts. It explains how AIKernel behaves as an AIOS through explicit separation of Kernel, VFS, and system-call-like interface boundaries.
 
-## Recommended reading order
-1. DESIGN_INTENT
-2. ARCHITECTURE_DECISIONS
-3. EXTENSION_POINTS
-4. DI_GUIDE
-5. CONTRACT_VERSIONING
-6. SEMANTIC_SNAPSHOT_FORMAT
+## 2. Design Principles
+- Kernel: control point for execution-state transitions and fail-closed governance
+- VFS: persistence boundary for intelligence assets
+- System-call equivalent: side-effect control through interfaces (tooling/security/provider)
 
+## 3. Related Specs
+- `docs/specs/01.EXECUTION_PIPELINE_SPEC.md`
+- `docs/specs/02.SIGNED_PROMPT_GOVERNANCE_SPEC.md`
+- `docs/specs/03.ROM_CORE_SPEC.md`
+
+## 4. Documents
+- [DESIGN_INTENT.md](DESIGN_INTENT.md)
+- [ARCHITECTURE_DECISIONS.md](ARCHITECTURE_DECISIONS.md)
+- [DI_GUIDE.md](DI_GUIDE.md)
+- [EXTENSION_POINTS.md](EXTENSION_POINTS.md)
+- [CONTRACT_VERSIONING.md](CONTRACT_VERSIONING.md)
+- [SEMANTIC_SNAPSHOT_FORMAT.md](SEMANTIC_SNAPSHOT_FORMAT.md)
+
+---
+
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Added AIOS-oriented architecture mapping

@@ -2,6 +2,9 @@ namespace AIKernel.Dtos.Context;
 
 using AIKernel.Enums;
 
+/// <summary>
+/// ContextFragment の契約を定義します。
+/// </summary>
 public class ContextFragment
 {
     public string FragmentId { get; init; } = string.Empty;
@@ -11,3 +14,6 @@ public class ContextFragment
     public DateTime CreatedAt { get; init; } = DateTime.UtcNow;
     public IReadOnlyDictionary<string, string>? Metadata { get; init; }
 }
+
+
+

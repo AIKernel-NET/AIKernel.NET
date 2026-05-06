@@ -1,9 +1,10 @@
 ---
 id: iproviderusagestats
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "IProviderUsageStats"
 created: 2026-05-03
+updated: 2026-05-06
 tags:
   - aikernel
   - architecture
@@ -13,14 +14,19 @@ tags:
   - english
 ---
 
-For Japanese version, see `IProviderUsageStats-jp.md`.
+For Japanese version, see [IProviderUsageStats-jp.md](./IProviderUsageStats-jp.md).
 
-# IProviderUsageStats
+# IProviderUsageStats (Usage Telemetry Interface Specification)
 
-## Responsibility
-Expose near-real-time usage telemetry for throughput, token volume, and rate-limit pressure.
+## 1. Responsibility Boundary
+`IProviderUsageStats` exposes near-real-time throughput, token consumption, and rate-limit pressure to drive dynamic routing decisions.
 
-## Properties
+- Role:
+  Provide short-window usage and performance signals for operational balancing.
+- Non-role:
+  Long-term archival/audit retention is outside this interface scope.
+
+## 2. Properties
 | Property | Type | Description |
 | --- | --- | --- |
 | `ProviderId` | `string` | Provider identifier. |
@@ -32,20 +38,37 @@ Expose near-real-time usage telemetry for throughput, token volume, and rate-lim
 | `AvgLatencyMs` | `double` | Average request latency. |
 | `RateLimitUtilization` | `double` | Ratio between current usage and limit (0.0 to 1.0+). |
 
-## Use Cases
-- UC-19 Parallel Multi-Model Execution
-- UC-23 Provider Credit Management
+## 3. Use Cases
+- `UC-19` Parallel multi-model execution:
+  Uses latency/pressure signals to rebalance traffic across providers.
+- `UC-23` AI credit management:
+  Uses token telemetry to monitor live budget burn rate.
 
-## Integration with `IModelVectorRouter`
-Router can down-rank saturated providers based on `RateLimitUtilization` and `AvgLatencyMs` to avoid queue amplification.
+## 4. Integration with `IModelVectorRouter`
+- Congestion avoidance:
+  Down-rank providers when `RateLimitUtilization` rises or `AvgLatencyMs` degrades.
+- Allocation efficiency:
+  Temporarily avoid high-pressure routes to preserve system-wide availability.
 
-## Pie-Chart UI Data
-- request share: `RequestsCount`
-- input-token share: `InputTokens`
-- output-token share: `OutputTokens`
-- rate-limit slice: `RateLimitUtilization`
-- labels: `ProviderId`, `WindowStartUtc`, `WindowEndUtc`
+## 5. Visualization Mapping (Dashboard/Pie)
+- Request share:
+  `RequestsCount`
+- Token throughput:
+  `InputTokens`, `OutputTokens`
+- Rate-limit pressure:
+  `RateLimitUtilization`
+- Labels:
+  `ProviderId`, `WindowStartUtc`, `WindowEndUtc`
 
+## 6. Governance & Determinism
+- Observation accuracy:
+  Include error paths (e.g., 429s) in pressure/latency interpretation to avoid optimistic bias.
+- Replay integrity:
+  Persist referenced usage snapshots so congestion context is reconstructable during replay.
+- Window consistency:
+  Align comparison windows or define interpolation rules before cross-provider scoring.
+---
 
-
-
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

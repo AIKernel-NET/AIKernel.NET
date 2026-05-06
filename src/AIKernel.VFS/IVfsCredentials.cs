@@ -2,6 +2,7 @@ namespace AIKernel.VFS;
 
 /// <summary>
 /// VFS 認証情報を定義します。
+/// UC-08（コンテキストスナップショットと永続化）, UC-18（Chat Persistence）
 /// </summary>
 public interface IVfsCredentials
 {
@@ -25,3 +26,4 @@ public interface IVfsCredentials
     /// </summary>
     IReadOnlyDictionary<string, object>? Parameters { get; }
 }
+

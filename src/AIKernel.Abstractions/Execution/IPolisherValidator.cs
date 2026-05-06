@@ -1,6 +1,7 @@
 namespace AIKernel.Abstractions.Execution;
 
 /// <summary>
+/// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// Polish フェーズの意味改変検出・検証の契約。
 /// EPS-005（ハッシュ完全性）と EPS-F005（Logic Divergence Check）の実装基盤。
 /// </summary>
@@ -33,3 +34,5 @@ public interface IPolisherValidator
         string polishedOutput,
         CancellationToken cancellationToken = default);
 }
+
+

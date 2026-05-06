@@ -6,3 +6,4 @@ public readonly struct OrchestrationBuffer
     public OrchestrationBuffer(IEnumerable<ContextFragment> fragments)
         => Fragments = (fragments ?? Array.Empty<ContextFragment>()).ToList().AsReadOnly();
 }
+

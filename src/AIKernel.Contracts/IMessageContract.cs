@@ -3,6 +3,7 @@ namespace AIKernel.Contracts;
 /// <summary>
 /// メッセージ契約を定義します。
 /// カーネル内通信のメッセージ形式を標準化します。
+/// UC-25（Event Bus 配信）
 /// </summary>
 public interface IMessageContract
 {
@@ -41,3 +42,4 @@ public interface IMessageContract
     /// </summary>
     IReadOnlyDictionary<string, string>? Headers { get; }
 }
+

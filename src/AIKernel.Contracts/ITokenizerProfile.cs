@@ -3,6 +3,7 @@ namespace AIKernel.Contracts;
 /// <summary>
 /// トークナイザープロファイル契約を定義します。
 /// トークナイザーの設定とメタデータを管理します。
+/// UC-30（トークン・ベクトル推定）
 /// </summary>
 public interface ITokenizerProfile
 {
@@ -36,3 +37,4 @@ public interface ITokenizerProfile
     /// </summary>
     bool RequiresSpecialHandling { get; }
 }
+

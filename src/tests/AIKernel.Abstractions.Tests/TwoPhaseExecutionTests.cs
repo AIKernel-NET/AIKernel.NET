@@ -6,7 +6,7 @@ using Xunit;
 namespace AIKernel.Abstractions.Tests;
 
 /// <summary>
-/// IThoughtProcess, IOutputPolisher, ExecutionResult のテスト
+/// UC-02（Structure フェーズ）と UC-04（生成と出力整形）の整合テスト。
 /// </summary>
 public class TwoPhaseExecutionTests
 {
@@ -78,6 +78,7 @@ public class TwoPhaseExecutionTests
     [Fact]
     public async Task TwoPhaseExecution_BuildLogic_ShouldGenerateRawLogic()
     {
+        // UC-02: Structure フェーズでタスク分解ロジックを生成
         // Arrange
         var thoughtProcess = new TestThoughtProcess();
         var orchestrationFragment = new ContextFragment
@@ -101,6 +102,7 @@ public class TwoPhaseExecutionTests
     [Fact]
     public async Task TwoPhaseExecution_Render_ShouldApplyExpressionContext()
     {
+        // UC-04: 生成結果を Expression コンテキストで整形
         // Arrange
         var polisher = new TestOutputPolisher();
         var logic = new RawLogic("TEST_LOGIC");
@@ -155,6 +157,7 @@ public class TwoPhaseExecutionTests
     [Fact]
     public void ExecutionResult_ShouldEncapsulateLogicAndOutput()
     {
+        // Two-Phase 実行結果 DTO（現行契約: ExecutionResult）を検証
         // Arrange
         var logic = new RawLogic("LOGIC_DATA");
         var finalOutput = "Final output text";
@@ -226,3 +229,4 @@ public class TwoPhaseExecutionTests
         Assert.True(result.ElapsedMilliseconds >= 0);
     }
 }
+

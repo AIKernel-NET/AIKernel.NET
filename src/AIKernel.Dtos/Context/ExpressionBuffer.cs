@@ -6,3 +6,4 @@ public readonly struct ExpressionBuffer
     public ExpressionBuffer(IEnumerable<ExpressionFragment> fragments)
         => Fragments = (fragments ?? Array.Empty<ExpressionFragment>()).ToList().AsReadOnly();
 }
+

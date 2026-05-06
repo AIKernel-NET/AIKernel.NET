@@ -1,6 +1,7 @@
 namespace AIKernel.Abstractions.Models;
 
 /// <summary>
+/// UC-22 に基づく契約です。
 /// モデル能力評価の次元（ディメンション）を表現するインターフェースです。
 /// 将来的な評価軸の追加に対応するための拡張性を提供します。
 /// </summary>
@@ -39,3 +40,4 @@ public interface ICapacityAxis
     /// <returns>値が有効な範囲内の場合は true</returns>
     bool IsValueValid(float value);
 }
+

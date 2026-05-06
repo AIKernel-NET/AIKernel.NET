@@ -1,9 +1,10 @@
 ---
 id: iprovidercostprofile
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "IProviderCostProfile"
 created: 2026-05-03
+updated: 2026-05-06
 tags:
   - aikernel
   - architecture
@@ -13,14 +14,19 @@ tags:
   - english
 ---
 
-For Japanese version, see `IProviderCostProfile-jp.md`.
+For Japanese version, see [IProviderCostProfile-jp.md](./IProviderCostProfile-jp.md).
 
-# IProviderCostProfile
+# IProviderCostProfile (Interface Specification)
 
-## Responsibility
-Describe normalized cost characteristics per provider and model tier for routing-time economic optimization.
+## 1. Responsibility Boundary
+`IProviderCostProfile` defines normalized pricing catalogs per provider and model tier, supplying static economic evidence for routing decisions.
 
-## Properties
+- Role:
+  Provide unit costs for input/output tokens, compute time, storage, and pricing effective timestamp.
+- Non-role:
+  Accumulated spending state is owned by `IProviderBillingInfo`.
+
+## 2. Properties
 | Property | Type | Description |
 | --- | --- | --- |
 | `ProviderId` | `string` | Provider identifier. |
@@ -31,20 +37,37 @@ Describe normalized cost characteristics per provider and model tier for routing
 | `StorageUnitCost` | `decimal` | Cost per persisted snapshot unit. |
 | `EffectiveFromUtc` | `DateTimeOffset` | Cost profile start time. |
 
-## Use Cases
-- UC-23 Provider Credit Management
-- UC-03 Model Vector Routing
+## 3. Use Cases
+- `UC-23` AI credit management:
+  Compare estimated cost against budget headroom to gate execution.
+- `UC-03` Model vector routing:
+  Blend cost with capability and latency scores during path selection.
 
-## Integration with `IModelVectorRouter`
-Router computes a total estimated cost per candidate route and combines it with capability and latency scores.
+## 4. Integration with `IModelVectorRouter`
+1. Total-cost estimation:
+   Predict per-route cost from expected token usage and unit pricing.
+2. Multi-objective optimization:
+   Combine capability, latency, and cost signals to choose the final route.
 
-## Pie-Chart UI Data
-- input-cost share: `InputTokenUnitCost`
-- output-cost share: `OutputTokenUnitCost`
-- compute-cost share: `ComputeMinuteCost`
-- storage-cost share: `StorageUnitCost`
-- labels: `ProviderId`, `ModelClass`, `EffectiveFromUtc`
+## 5. Visualization Mapping (UI)
+- Input-cost share:
+  `InputTokenUnitCost`
+- Output-cost share:
+  `OutputTokenUnitCost`
+- Compute/storage share:
+  `ComputeMinuteCost`, `StorageUnitCost`
+- Labels:
+  `ProviderId`, `ModelClass`, `EffectiveFromUtc`
 
+## 6. Governance Constraints
+- Immutability:
+  Profiles tied to a specific `EffectiveFromUtc` should not be retroactively altered for audit integrity.
+- Fail-Closed:
+  If no valid cost profile is available, block routing to prevent unbounded billing risk.
+- Replay integrity:
+  Persist applied `EffectiveFromUtc` so economic conditions can be reconstructed during replay.
+---
 
-
-
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

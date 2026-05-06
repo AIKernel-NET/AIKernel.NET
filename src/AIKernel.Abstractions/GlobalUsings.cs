@@ -1,8 +1,11 @@
 global using AIKernel.Dtos;
 global using AIKernel.Dtos.Context;
+global using AIKernel.Dtos.Core;
 global using AIKernel.Dtos.Execution;
+global using AIKernel.Dtos.Events;
 global using AIKernel.Dtos.Governance;
 global using AIKernel.Dtos.Kernel;
+global using AIKernel.Dtos.KernelContext;
 global using AIKernel.Dtos.Material;
 global using AIKernel.Dtos.Prompt;
 global using AIKernel.Dtos.Rom;
@@ -14,3 +17,18 @@ global using AIKernel.Dtos.Tokenization;
 global using AIKernel.Dtos.Vfs;
 global using AIKernel.Enums;
 global using AIKernel.Abstractions.Context;
+global using AIKernel.Abstractions.Events;
+global using AIKernel.Abstractions.Execution;
+global using AIKernel.Abstractions.Hosting;
+global using AIKernel.Abstractions.Kernel;
+global using AIKernel.Abstractions.Models;
+global using AIKernel.Abstractions.Prompt;
+global using AIKernel.Abstractions.Providers;
+global using AIKernel.Abstractions.Rules;
+global using AIKernel.Abstractions.Routing;
+global using AIKernel.Abstractions.Scheduling;
+global using AIKernel.Abstractions.Security;
+global using AIKernel.Abstractions.Tasks;
+global using AIKernel.Abstractions.Tooling;
+
+

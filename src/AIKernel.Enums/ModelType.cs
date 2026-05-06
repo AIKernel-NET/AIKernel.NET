@@ -1,5 +1,8 @@
 namespace AIKernel.Enums;
 
+/// <summary>
+/// ModelType の契約を定義します。
+/// </summary>
 public enum ModelType
 {
     LanguageModel = 1,
@@ -12,3 +15,6 @@ public enum ModelType
     Classification = 8,
     Custom = 9
 }
+
+
+

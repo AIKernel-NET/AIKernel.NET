@@ -42,3 +42,4 @@ public sealed record SignedPromptArtifactDto
     /// </summary>
     public required GovernanceMetadataDto Governance { get; init; }
 }
+

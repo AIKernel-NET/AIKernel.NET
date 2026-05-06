@@ -1,9 +1,10 @@
 ---
 id: iprovidercapabilities
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "IProviderCapabilities"
 created: 2026-05-03
+updated: 2026-05-06
 tags:
   - aikernel
   - architecture
@@ -11,33 +12,60 @@ tags:
   - english
 ---
 
-For Japanese version, see IProviderCapabilities-jp.md.
+For Japanese version, see [IProviderCapabilities-jp.md](./IProviderCapabilities-jp.md).
 
-# IProviderCapabilities
+# IProviderCapabilities (Interface Specification)
 
-## Responsibility
-Define the contract boundary for IProviderCapabilities within AIKernel orchestration and governance flows.
+## 1. Responsibility Boundary
+`IProviderCapabilities` is the capability specification sheet used by routing/governance to evaluate what a provider can do and under which constraints.
 
-## Key Members (Draft)
-| Member | Type | Description |
-| --- | --- | --- |
-| `SupportedOperations` | `IReadOnlyList<string>` | Supported operation set. |
-| `SupportedDataTypes` | `IReadOnlyList<string>` | Supported data types. |
-| `MaxConcurrentConnections` | `int` | Maximum concurrent execution channels. |
-| `RateLimit` | `RateLimitInfo?` | Provider rate-limit metadata. |
-| `Vector` | `ModelCapacityVector` | Static capability vector. |
-| `GetDynamicCapacities(IExecutionConstraints constraints)` | `IDictionary<string, float>?` | Dynamic capacity map under runtime constraints. |
-| `GetCapabilityProfile()` | `ICapabilityProfile?` | Capacity profile curve by cardinality/constraints. |
-| `SupportsOperation(string operation)` | `bool` | Check operation support. |
-| `SupportsDataType(string dataType)` | `bool` | Check data type support. |
-| `SupportsQuantization(string quantizationLevel)` | `bool` | Check quantization support. |
+- Role:
+  Expose supported operations/data types, concurrency ceilings, rate limits, static capacity vector, and dynamic capacity views.
+- Non-role:
+  It does not execute inference; it declares capability metadata only.
 
-## Related Use Cases
-See ../../use-cases/AIKernel_UseCaseCatalog.md for references where IProviderCapabilities appears.
+## 2. Contract Signature
+```csharp
+namespace AIKernel.Abstractions.Providers;
 
-## Notes
-- This document is an interface-level draft.
-- Implementations must preserve fail-closed and deterministic replay principles.
+using AIKernel.Abstractions.Models;
 
+public interface IProviderCapabilities
+{
+    IReadOnlyList<string> SupportedOperations { get; }
+    IReadOnlyList<string> SupportedDataTypes { get; }
+    int MaxConcurrentConnections { get; }
+    RateLimitInfo? RateLimit { get; }
+    ModelCapacityVector Vector { get; }
+    IDictionary<string, float>? GetDynamicCapacities(IExecutionConstraints constraints);
+    ICapabilityProfile? GetCapabilityProfile();
+    bool SupportsOperation(string operation);
+    bool SupportsDataType(string dataType);
+    bool SupportsQuantization(string quantizationLevel);
+}
+```
 
+## 3. Related Use Cases
+- `UC-03` Model vector routing:
+  Uses `Vector` and dynamic capacities for candidate matching.
+- `UC-22` Dynamic capacity control:
+  Uses `RateLimit` and runtime capacities for throttling and route weighting.
 
+## 4. Governance & Determinism
+- Capability accuracy:
+  If declared operations are not actually executable, mark provider unhealthy and fail closed.
+- Replay integrity:
+  Snapshot dynamic capacity values at execution time for deterministic audit/replay reasoning.
+- Backend transparency:
+  Return comparable metrics regardless of cloud API vs local runtime backend.
+
+## 5. Implementation Notes
+- Vector dimension discipline:
+  Keep `ModelCapacityVector` dimensions consistent for fair comparison.
+- Cache strategy:
+  If dynamic probes are cached, enforce explicit TTL to balance freshness and stability.
+---
+
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

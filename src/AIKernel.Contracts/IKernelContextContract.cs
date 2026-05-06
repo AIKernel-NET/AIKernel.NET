@@ -3,6 +3,7 @@ namespace AIKernel.Contracts;
 /// <summary>
 /// Kernel コンテキスト契約を定義します。
 /// カーネルレベルの実行コンテキスト管理を行います。
+/// UC-14（Kernel Module による動的構成）
 /// </summary>
 public interface IKernelContextContract
 {
@@ -36,3 +37,4 @@ public interface IKernelContextContract
     /// </summary>
     IReadOnlyDictionary<string, object>? Metadata { get; }
 }
+

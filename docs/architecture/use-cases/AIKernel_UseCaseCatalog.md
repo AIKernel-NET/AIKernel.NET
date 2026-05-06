@@ -1,9 +1,10 @@
 ---
 id: aikernel_use-case_catalog
-version: 0.0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: AIKernel.NET — Use Case Catalog
 created: 2026-05-02
+updated: 2026-05-06
 tags:
   - aikernel
   - architecture
@@ -26,10 +27,10 @@ It serves as the validation baseline for interface design and architectural corr
 ### UC-01: Task Intake & Context Distribution
 
 **Purpose**  
-Receive user input (natural language or structured data), normalize it through `IInputNormalizer`, and distribute it as `ContextFragment` objects into the appropriate context layers.
+Receive user input (natural language or structured data), then canonicalize ROM and verify semantic hash before distributing it into the appropriate layers of `IContextCollection`.
 
 **Required Abstractions**  
-`IInputNormalizer`, `IContextCollection`, `ContextFragment`
+`IROMCanonicalizer`, `ISemanticHasher`, `IContextCollection`
 
 ---
 
@@ -78,10 +79,10 @@ Execute across heterogeneous compute backends (cloud APIs, local NPUs, etc.) thr
 ### UC-06: Attention Control via Three‑Layer Buffers
 
 **Purpose**  
-Physically isolate instructions, materials, and output to prevent attention pollution using `IAttentionGuard`.
+Physically isolate instructions, materials, and output using `IAttentionGuard` and `IKernelContext` to prevent attention pollution.
 
 **Required Abstractions**  
-`IContextCollection`, `IContextCategory`, `IAttentionGuard`
+`IContextCollection`, `IKernelContext`, `IAttentionGuard`
 
 ---
 
@@ -101,7 +102,7 @@ Validate and normalize external data (e.g., RAG results) through `IMaterialQuara
 Extract execution state as an `IContextSnapshot` and persist/restore it through `IVfsProvider`.
 
 **Required Abstractions**  
-`IContextSerializer`, `IVfsProvider`, `IContextSnapshot`
+`IContextCollection`, `IContextSnapshot`, `IVfsProvider`
 
 ---
 
@@ -135,17 +136,17 @@ Optimize execution by selecting tensor shapes and compute parameters appropriate
 Validate Markdown‑based prompts during CI to ensure compliance with AIKernel’s architectural principles and structural rules.
 
 **Required Abstractions**  
-`IPromptValidator`, `IPromptRuleSet`
+`IPromptValidator`, `IPolicy`, `IRuleEngine`
 
 ---
 
 ### UC-12: Prompt Signing
 
 **Purpose**  
-After validation, sign prompts using `IPromptSigner` to establish them as trusted specifications.
+After validation, compute semantic hash from canonicalized prompt snapshots and sign via `IPromptSignatureProvider` to establish trusted specifications.
 
 **Required Abstractions**  
-`IPromptSigner`, `IPromptHashCalculator`
+`IROMCanonicalizer`, `ISemanticHasher`, `IPromptSignatureProvider`
 
 ---
 
@@ -190,7 +191,7 @@ Branch conversation history like Git and start a new conversation from any prior
 Save arbitrary conversation points as checkpoints so they can be restored, compared, and branched later.
 
 **Required Abstractions**  
-`IConversationCheckpoint`, `IConversationSerializer`, `IConversationTimeline`
+`IConversationCheckpoint`, `IConversationTimeline`, `IConversationStore`
 
 ---
 
@@ -232,51 +233,51 @@ Orchestration, Provider
 
 ---
 
-### UC-20: Committee Reasoning
+### UC-20: Deterministic Replay and Audit Trail
 
 **Purpose**  
-Integrate reasoning outputs from multiple models to avoid single-model dependency and improve decision robustness.
+Fix execution conditions from a Replay Dump and guarantee both deterministic re-execution and auditable evidence.
 
 **Required Interfaces**  
-`IConversationSnapshot`, `IConversationDiff`, `IThoughtProcess`, `IProvider`
+`IKernelReplayer`, `IAuditLogger`, `IAuditEvent`, `IContextSnapshot`
 
 **Context**  
-UC-02 (Structure Phase), UC-15 (Chat Branching), UC-17 (Chat Diffing)
+UC-09 (Deterministic Pipeline), UC-13 (Runtime Signature Verification), UC-24 (Audit Event Emission)
 
 **Layer**  
-Orchestration, Material
+Execution, Governance
 
 ---
 
-### UC-21: Cross-Model Conflict Detection
+### UC-21: Material Quarantine and Policy Enforcement
 
 **Purpose**  
-Detect conflicts in claims, evidence, and constraints across model outputs and route them into fail-closed re-evaluation.
+Quarantine external material and allow execution only for inputs that pass PDP/Guard policy evaluation.
 
 **Required Interfaces**  
-`IConversationDiff`, `IDiffFormatter`, `IConversationSnapshot`, `IPromptVerifier`
+`IMaterialScanner`, `IMaterialQuarantine`, `IGuard`, `IPdp`, `IPolicy`, `IPrincipal`
 
 **Context**  
-UC-13 (Runtime Signature Verification), UC-17 (Chat Diffing), UC-20 (Committee Reasoning)
+UC-07 (Material Quarantine), UC-11 (Static Prompt Validation), UC-13 (Runtime Signature Verification)
 
 **Layer**  
-Orchestration, Material, Expression
+Governance, Material
 
 ---
 
-### UC-22: Complementary Reasoning
+### UC-22: Dynamic Capacity Control and Model Routing
 
 **Purpose**  
-Combine model-specific strengths to achieve reasoning depth beyond single-model execution.
+Evaluate dynamic capability, load, and budget constraints to decide routing targets while balancing quality and cost.
 
 **Required Interfaces**  
-`IModelVectorRouter`, `IProviderCapabilities`, `IThoughtProcess`, `IConversationBranch`
+`IModelVectorRouter`, `ICapabilityRegistry`, `IDynamicCapacityProvider`, `IDynamicCapacityVector`, `IVectorMatcher`, `IComputeShapeAdvisor`
 
 **Context**  
-UC-03 (Model Vector Routing), UC-10 (Compute Shape Advisory), UC-19 (Parallel Multi-Model Execution)
+UC-03 (Model Vector Routing), UC-10 (Compute Shape Advisory), UC-23 (Provider Credit Management)
 
 **Layer**  
-Orchestration, Provider
+Routing, Execution
 
 ---
 
@@ -458,3 +459,8 @@ This catalog defines the required behaviors of the AIKernel.NET abstraction laye
   Type names and use cases must maintain a strict 1:1 correspondence.
 
 ---
+---
+
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

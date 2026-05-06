@@ -1,9 +1,10 @@
 ---
 id: iembeddingprovider
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "IEmbeddingProvider"
 created: 2026-05-03
+updated: 2026-05-06
 tags:
   - aikernel
   - architecture
@@ -11,22 +12,49 @@ tags:
   - japanese
 ---
 
-英語版は $(System.Collections.Hashtable.name).md を参照。
+英語版は [IEmbeddingProvider.md](./IEmbeddingProvider.md) を参照。
 
-# IEmbeddingProvider
+# IEmbeddingProvider (インターフェース仕様)
 
-## Responsibility
-IEmbeddingProvider が AIKernel のオーケストレーション、統治、ランタイム運用で担う契約境界を定義する。
+## 1. 責務の境界 (Responsibility Boundary)
+`IEmbeddingProvider` は、非構造化テキストを意味ベクトルへ変換し、検索・関連度評価の基盤データを供給する境界インターフェースです。
 
-## 主要メンバー
-| Member | Type | 説明 |
-| --- | --- | --- |
-| `EmbedAsync(string text, CancellationToken cancellationToken = default)` | `Task<IReadOnlyList<float>>` | Generate embedding vector for text. |
-| `EmbedBatchAsync(IReadOnlyList<string> texts, CancellationToken cancellationToken = default)` | `Task<IReadOnlyList<IReadOnlyList<float>>>` | Generate embeddings for batch input. |
+- 役割:
+  単体/バッチの埋め込み生成と、ベクトル次元情報の提供を行います。
+- 非役割:
+  ベクトル保存・索引化・最近傍探索は責務外です。
 
-## 関連ユースケース
-../../use-cases/AIKernel_UseCaseCatalog-jp.md の $(System.Collections.Hashtable.name) 参照箇所を基準とする。
+## 2. 契約シグネチャ (Signature)
+```csharp
+namespace AIKernel.Abstractions.Providers;
 
-## Notes
-- 本 Interface は拡張ポイント用途が中心で、現時点でランタイム参照が未接続のものを含む。
-- 適用可能な箇所では fail-closed と deterministic replay の原則を維持すること。
+public interface IEmbeddingProvider : IProvider
+{
+    Task<float[]> EmbedAsync(string text, CancellationToken cancellationToken = default);
+    Task<IReadOnlyList<float[]>> EmbedBatchAsync(IReadOnlyList<string> texts, CancellationToken cancellationToken = default);
+    int GetDimension();
+}
+```
+
+## 3. 関連ユースケース (Related UCs)
+- `UC-05` 素材関連性評価:
+  埋め込みを用いた類似度計算で素材選別を支えます。
+- `UC-11` RAG:
+  クエリと文書断片を同一空間へ投影し検索精度を担保します。
+
+## 4. 統治上の制約 (Governance & Determinism)
+- モデル固定性:
+  同一 `ProviderId` / 同一設定で次元や空間特性が予告なく変化しない運用を前提とします。
+- Fail-Closed:
+  入力上限超過や次元不整合を検知した場合は、不完全結果を返さず失敗として扱います。
+
+## 5. 実装時の注意 (Notes)
+- 次元整合:
+  `GetDimension()` と実出力長が常に一致することを保証してください。
+- バッチ制御:
+  `EmbedBatchAsync` はレート制限を考慮し、必要に応じてチャンク処理を行ってください。
+---
+
+# 変更履歴
+- v0.0.0 / v0.0.0.0: 初期ドラフト
+- v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新

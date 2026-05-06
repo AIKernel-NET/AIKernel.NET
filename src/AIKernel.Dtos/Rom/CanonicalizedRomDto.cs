@@ -1,10 +1,14 @@
 namespace AIKernel.Dtos.Rom;
 
+/// <summary>
+/// CanonicalizedRomDto の契約を定義します。
+/// </summary>
 public sealed record CanonicalizedRomDto
 {
-    public required RomEntityMetadataDto NormalizedMetadata { get; init; }
-    public required string NormalizedBody { get; init; }
-    public IReadOnlyList<RomRelationDto> NormalizedRelations { get; init; } = new List<RomRelationDto>();
-    public IReadOnlyList<ResolvedRomRelationDto> ResolvedRelations { get; init; } = new List<ResolvedRomRelationDto>();
-    public required DateTime CanonicalizedAt { get; init; }
+    public required string CanonicalBody { get; init; }
+    public required string CanonicalizationVersion { get; init; }
+    public IReadOnlyList<RomEntityMetadataDto> Entities { get; init; } = new List<RomEntityMetadataDto>();
+    public IReadOnlyList<ResolvedRomRelationDto> Relations { get; init; } = new List<ResolvedRomRelationDto>();
 }
+
+

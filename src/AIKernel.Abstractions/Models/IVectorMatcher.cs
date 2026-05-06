@@ -1,6 +1,7 @@
 namespace AIKernel.Abstractions.Models;
 
 /// <summary>
+/// UC-22 に基づく契約です。
 /// モデル能力ベクトル間の距離や類似度を計算するための戦略インターフェースです。
 /// 異なるアルゴリズム（コサイン類似度、ユークリッド距離等）を実装側で柔軟に選択できます。
 /// </summary>
@@ -30,3 +31,4 @@ public interface IVectorMatcher
     /// <returns>すべてのディメンションで候補が要求以上の場合は true</returns>
     bool IsSatisfied(ModelCapacityVector required, ModelCapacityVector candidate);
 }
+

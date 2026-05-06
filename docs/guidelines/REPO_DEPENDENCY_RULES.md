@@ -1,6 +1,6 @@
 ---
 id: repo-dependency-rules
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel.NET Repository Dependency Rules"
 created: 2026-04-30
@@ -11,6 +11,7 @@ tags:
 - architecture
 - governance
 - english
+updated: 2026-05-06
 ---
 
 ## Overview
@@ -107,3 +108,8 @@ Dependencies not listed here are generally forbidden; exceptions must be documen
 ## Conclusion
 
 Dependency direction is design. AIKernel.NET, as an OS, fixes boundaries and dependency directions early and preserves them through future extensions.
+---
+
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

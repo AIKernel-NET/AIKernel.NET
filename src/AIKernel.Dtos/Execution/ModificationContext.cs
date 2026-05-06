@@ -1,5 +1,8 @@
 namespace AIKernel.Dtos.Execution;
 
+/// <summary>
+/// ModificationContext の契約を定義します。
+/// </summary>
 public sealed record ModificationContext
 {
     public required string Reason { get; init; }
@@ -7,4 +10,7 @@ public sealed record ModificationContext
     public required string ModificationData { get; init; }
     public required string ModifiedBy { get; init; }
 }
+
+
+
 

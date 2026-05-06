@@ -1,8 +1,9 @@
 ---
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel Architecture Interfaces — Index"
 created: 2026-05-03
+updated: 2026-05-06
 tags:
   - aikernel
   - architecture
@@ -16,28 +17,36 @@ For Japanese version, see index-jp.md.
 
 ## Namespaces
 - [context/index.md](context/index.md)
+- [contracts/index.md](contracts/index.md)
 - [conversation/index.md](conversation/index.md)
 - [execution/index.md](execution/index.md)
 - [governance/index.md](governance/index.md)
 - [hosting/index.md](hosting/index.md)
+- [kernel/index.md](kernel/index.md)
 - [material/index.md](material/index.md)
 - [models/index.md](models/index.md)
 - [pipeline/index.md](pipeline/index.md)
 - [prompt/index.md](prompt/index.md)
 - [provider/index.md](provider/index.md)
+- [rom/index.md](rom/index.md)
+- [routing/index.md](routing/index.md)
+- [rules/index.md](rules/index.md)
+- [scheduling/index.md](scheduling/index.md)
+- [security/index.md](security/index.md)
+- [tasks/index.md](tasks/index.md)
 - [tooling/index.md](tooling/index.md)
 - [vfs/index.md](vfs/index.md)
 
 ## Namespace Overview
-- `context`: `ContextFragment` lifecycle, context serialization/snapshots, and intake normalization.
-- `conversation`: branching/checkpoint/diff contracts for chat state lineage.
-- `execution`: two-phase boundary contracts (`IThoughtProcess`, `IOutputPolisher`).
-- `governance`: fail-closed guards, audit events, attention/lifecycle observation.
-- `hosting`: kernel hosting lifecycle and DI/provider registration contracts.
-- `material`: quarantine and structured material contracts.
-- `models`: capacity vectors, routing, token/vector estimation, and shape advisory.
-- `pipeline`: deterministic pipeline orchestration and task execution contracts.
-- `prompt`: signed prompt governance and verification chain with `IPromptVerifier`.
-- `provider`: provider runtime, retrieval/model/event/scheduler contracts, and economics profiles.
-- `tooling`: tool permission validation and sandbox execution boundaries.
-- `vfs`: virtual filesystem provider and session abstractions.
+- `kernel`: execution entry and lifecycle contracts.
+- `models`: capability axes, dynamic capacity, and execution constraints.
+- `security`: deterministic authorization contracts via PDP/Guard.
+- `tasks`: task units and pipeline result contracts.
+- `scheduling`: scheduled job and execution-result contracts.
+- Existing categories (context to vfs) now include responsibility/UC/spec linkage in each index.
+
+---
+
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Added categories and synchronized links with src

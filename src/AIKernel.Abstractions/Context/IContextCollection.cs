@@ -1,45 +1,47 @@
 namespace AIKernel.Abstractions.Context;
 
 /// <summary>
-/// �R���e�L�X�g���̏W�����Ǘ�����C���^�[�t�F�[�X�B
-/// �J�e�S���ʂ̊u���Ɠǂݎ���p�A�N�Z�X��ۏ؂��܂��B
+/// UC-06/UC-08 に基づく契約です。
+/// コンテキスト断片の集合を管理するインターフェースです。
+/// カテゴリ別アクセスと各フェーズ向けバッファ取得を提供します。
 /// </summary>
 public interface IContextCollection
 {
     /// <summary>
-    /// ���ׂẴR���e�L�X�g�t���O�����g���擾���܂��B
+    /// すべてのコンテキストフラグメントを取得します。
     /// </summary>
-    /// <returns>�t���O�����g�ꗗ</returns>
+    /// <returns>コンテキストフラグメント一覧</returns>
     IEnumerable<ContextFragment> GetAll();
 
     /// <summary>
-    /// �w�肳�ꂽ�J�e�S���ɑ�����t���O�����g���擾���܂��B
+    /// 指定カテゴリに属するコンテキストフラグメントを取得します。
     /// </summary>
-    /// <param name="category">�J�e�S��</param>
-    /// <returns>�J�e�S���Ɉ�v����t���O�����g�ꗗ</returns>
+    /// <param name="category">対象カテゴリ</param>
+    /// <returns>カテゴリに一致するコンテキストフラグメント一覧</returns>
     IEnumerable<ContextFragment> GetByCategory(ContextCategory category);
 
     /// <summary>
-    /// Orchestration �o�b�t�@���擾���܂��B
+    /// Orchestration フェーズ向けバッファを取得します。
     /// </summary>
-    /// <returns>Orchestration �t�F�[�Y�p�o�b�t�@</returns>
+    /// <returns>Orchestration バッファ</returns>
     OrchestrationBuffer GetOrchestrationBuffer();
 
     /// <summary>
-    /// Expression �o�b�t�@���擾���܂��B
+    /// Expression フェーズ向けバッファを取得します。
     /// </summary>
-    /// <returns>Expression �t�F�[�Y�p�o�b�t�@</returns>
+    /// <returns>Expression バッファ</returns>
     ExpressionBuffer GetExpressionBuffer();
 
     /// <summary>
-    /// Material �o�b�t�@���擾���܂��B
+    /// Material フェーズ向けバッファを取得します。
     /// </summary>
-    /// <returns>Material �t�F�[�Y�p�o�b�t�@</returns>
+    /// <returns>Material バッファ</returns>
     MaterialBuffer GetMaterialBuffer();
 
     /// <summary>
-    /// History �o�b�t�@���擾���܂��B
+    /// History フェーズ向けバッファを取得します。
     /// </summary>
-    /// <returns>History �t�F�[�Y�p�o�b�t�@</returns>
+    /// <returns>History バッファ</returns>
     HistoryBuffer GetHistoryBuffer();
 }
+

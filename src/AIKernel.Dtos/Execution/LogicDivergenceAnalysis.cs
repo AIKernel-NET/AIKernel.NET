@@ -1,5 +1,8 @@
 namespace AIKernel.Dtos.Execution;
 
+/// <summary>
+/// LogicDivergenceAnalysis の契約を定義します。
+/// </summary>
 public sealed record LogicDivergenceAnalysis
 {
     public required bool DivergenceDetected { get; init; }
@@ -8,4 +11,7 @@ public sealed record LogicDivergenceAnalysis
     public required string Severity { get; init; }
     public IReadOnlyList<string> AlteredSegments { get; init; } = new List<string>();
 }
+
+
+
 

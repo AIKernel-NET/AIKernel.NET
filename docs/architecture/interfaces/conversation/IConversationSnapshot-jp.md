@@ -1,9 +1,10 @@
 ---
 id: iconversationsnapshot
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "IConversationSnapshot"
 created: 2026-05-03
+updated: 2026-05-06
 tags:
   - aikernel
   - architecture
@@ -32,6 +33,8 @@ IConversationSnapshot が AIKernel のオーケストレーションおよび統
 ## Notes
 - 本文書は Interface レベルのドラフトである。
 - 実装は fail-closed と deterministic replay の原則を維持すること。
+---
 
-
-
+# 変更履歴
+- v0.0.0 / v0.0.0.0: 初期ドラフト
+- v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新

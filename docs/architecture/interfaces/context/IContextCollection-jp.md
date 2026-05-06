@@ -1,9 +1,10 @@
 ---
 id: icontextcollection
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "IContextCollection"
 created: 2026-05-03
+updated: 2026-05-06
 tags:
   - aikernel
   - architecture
@@ -11,29 +12,54 @@ tags:
   - japanese
 ---
 
-英語版は IContextCollection.md を参照。
+英語版は [IContextCollection.md](./IContextCollection.md)を参照。
 
-# IContextCollection
+# IContextCollection (インターフェース仕様)
 
-## Responsibility
-IContextCollection が AIKernel のオーケストレーションおよび統治フローで担う契約境界を定義する。
+## 1. 責務の境界 (Responsibility Boundary)
+`IContextCollection` は、推論サイクルで使用するコンテキスト断片を一元管理し、フェーズ別バッファ境界を維持する境界インターフェースです。
 
-## 主要メンバー（Draft）
-| Member | Type | 説明 |
-| --- | --- | --- |
-| `GetAll()` | `IEnumerable<ContextFragment>` | Return all fragments across categories. |
-| `GetByCategory(ContextCategory category)` | `IEnumerable<ContextFragment>` | Return fragments in a single category. |
-| `GetOrchestrationBuffer()` | `OrchestrationBuffer` | Return orchestration-phase read buffer. |
-| `GetExpressionBuffer()` | `ExpressionBuffer` | Return expression-phase read buffer. |
-| `GetMaterialBuffer()` | `MaterialBuffer` | Return material-phase read buffer. |
-| `GetHistoryBuffer()` | `HistoryBuffer` | Return history-phase read buffer. |
+- 役割:
+  カテゴリ化された `ContextFragment` の管理と、`Orchestration/Material/Expression/History` 各バッファの提供を担います。
+- 非役割:
+  永続化、外部検索、ストレージ連携は責務外です。本インターフェースは実行中ワーキングメモリに集中します。
 
-## 関連ユースケース
-../../use-cases/AIKernel_UseCaseCatalog-jp.md の IContextCollection 参照箇所を基準とする。
+## 2. 契約シグネチャ (Signature)
+```csharp
+namespace AIKernel.Abstractions.Context;
 
-## Notes
-- 本文書は Interface レベルのドラフトである。
-- 実装は fail-closed と deterministic replay の原則を維持すること。
+public interface IContextCollection
+{
+    IEnumerable<ContextFragment> GetAll();
+    IEnumerable<ContextFragment> GetByCategory(ContextCategory category);
+    OrchestrationBuffer GetOrchestrationBuffer();
+    ExpressionBuffer GetExpressionBuffer();
+    MaterialBuffer GetMaterialBuffer();
+    HistoryBuffer GetHistoryBuffer();
+}
+```
 
+## 3. 関連ユースケース (Related UCs)
+- `UC-06` 3層バッファ境界（Context Isolation）:
+  指示・素材・出力の分離を維持し、Attention 汚染を抑制します。
+- `UC-02` Structure フェーズ実行:
+  `IThoughtProcess` の論理構築に必要な入力集合を提供します。
 
+## 4. 統治上の制約 (Governance & Determinism)
+- 不変性尊重:
+  同一推論サイクル中のバッファ内容は、実装上不変として扱う運用を前提とします。
+- 決定論的順序:
+  同一入力に対して `GetAll()` / `GetByCategory()` の返却順序は一定である必要があります。
+- Fail-Closed:
+  必須カテゴリ欠落時は不完全実行を許容せず、拒否側で終了させる設計が推奨されます。
 
+## 5. 実装時の注意 (Notes)
+- 境界明確化:
+  バッファ間の境界が曖昧化しないよう、レンダリング時の区切り規約を統一してください。
+- メモリ効率:
+  大容量素材は参照保持を優先し、実体コピーを最小化する構成を推奨します。
+---
+
+# 変更履歴
+- v0.0.0 / v0.0.0.0: 初期ドラフト
+- v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新

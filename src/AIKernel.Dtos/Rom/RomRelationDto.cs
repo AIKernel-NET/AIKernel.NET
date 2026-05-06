@@ -1,5 +1,8 @@
 namespace AIKernel.Dtos.Rom;
 
+/// <summary>
+/// RomRelationDto の契約を定義します。
+/// </summary>
 public sealed record RomRelationDto
 {
     public required string RelationType { get; init; }
@@ -8,3 +11,6 @@ public sealed record RomRelationDto
     public double? NumericValue { get; init; }
     public string? TextValue { get; init; }
 }
+
+
+

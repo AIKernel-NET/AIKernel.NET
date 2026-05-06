@@ -1,6 +1,7 @@
 namespace AIKernel.Abstractions.Models;
 
 /// <summary>
+/// UC-22 に基づく契約です。
 /// 実行制約に応じて動的に値が変わる評価軸を表現するインターフェースです。
 /// NPU環境では、基数やメモリ制約によって各軸の値が非線形に変化するため、
 /// 静的な ICapacityAxis では不十分です。
@@ -23,3 +24,4 @@ public interface IDynamicCapacityAxis : ICapacityAxis
     /// <returns>この軸が制約下で有効な場合は true</returns>
     bool IsApplicable(IExecutionConstraints constraints);
 }
+

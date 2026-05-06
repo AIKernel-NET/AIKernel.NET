@@ -1,11 +1,12 @@
 ---
 id: design-intent
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel Design Intent"
 scope:
   - repo: AIKernel.NET
 createdAt: 2026-04-28T00:00:00Z
+updated: 2026-05-06
 ---
 
 # Design Intent
@@ -199,3 +200,8 @@ Test to verify deterministic replay yields identical results.
 
 ### Contract Test
 Tests ensuring Provider and Runtime compatibility with Contracts.
+---
+
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

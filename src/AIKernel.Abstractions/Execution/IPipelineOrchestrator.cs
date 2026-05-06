@@ -3,6 +3,7 @@ using AIKernel.Dtos.Context;
 namespace AIKernel.Abstractions.Execution;
 
 /// <summary>
+/// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// パイプラインオーケストレーションの契約。
 /// EPS-004: フェーズ順序は固定であり、逆流は不可（MUST）。
 /// EPS-006: 状態の不変性（State Immutability）の実装基盤。
@@ -49,3 +50,5 @@ public interface IPipelineOrchestrator
         IContextCollection context,
         CancellationToken cancellationToken = default);
 }
+
+

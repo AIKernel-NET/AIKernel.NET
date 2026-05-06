@@ -1,9 +1,10 @@
 ---
 id: imodelprovider
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "IModelProvider"
 created: 2026-05-03
+updated: 2026-05-06
 tags:
   - aikernel
   - architecture
@@ -11,23 +12,51 @@ tags:
   - english
 ---
 
-For Japanese version, see $(System.Collections.Hashtable.name)-jp.md.
+For Japanese version, see [IModelProvider-jp.md](./IModelProvider-jp.md).
 
-# IModelProvider
+# IModelProvider (Interface Specification)
 
-## Responsibility
-Define the contract boundary for IModelProvider within AIKernel orchestration, governance, and runtime operations.
+## 1. Responsibility Boundary
+`IModelProvider` is the intelligence execution-engine boundary that consumes normalized messages and performs concrete model inference.
 
-## Key Members
-| Member | Type | Description |
-| --- | --- | --- |
-| `GenerateAsync(IReadOnlyList<IModelMessage> messages, CancellationToken cancellationToken = default)` | `Task<string>` | Execute text generation. |
-| `StreamGenerateAsync(IReadOnlyList<IModelMessage> messages, Func<string, Task> onChunk, CancellationToken cancellationToken = default)` | `Task` | Stream generation chunks. |
-| `AnswerAsync(string question, string? context = null, CancellationToken cancellationToken = default)` | `Task<string>` | Generate answer for a single question. |
+- Role:
+  Provide full generation, streaming generation, and direct Q&A while abstracting provider-specific transport differences.
+- Non-role:
+  Model selection belongs to `IModelVectorRouter`; provider lifecycle ownership remains in `IProvider`.
 
-## Related Use Cases
-See ../../use-cases/AIKernel_UseCaseCatalog.md for references where $(System.Collections.Hashtable.name) appears.
+## 2. Contract Signature
+```csharp
+namespace AIKernel.Abstractions.Providers;
 
-## Notes
-- This interface is currently extension-point oriented and may not yet be referenced by runtime implementations.
-- Implementations must preserve fail-closed and deterministic replay principles where applicable.
+public interface IModelProvider : IProvider
+{
+    Task<string> GenerateAsync(IReadOnlyList<IModelMessage> messages, CancellationToken cancellationToken = default);
+    Task StreamGenerateAsync(IReadOnlyList<IModelMessage> messages, Func<string, Task> onChunk, CancellationToken cancellationToken = default);
+    Task<string> AnswerAsync(string question, string? context = null, CancellationToken cancellationToken = default);
+}
+```
+
+## 3. Related Use Cases
+- `UC-02` Structure phase execution:
+  Serves as the execution body beneath reasoning construction.
+- `UC-04` Generation and output polishing:
+  Produces source outputs for downstream polishing/rendering.
+
+## 4. Governance & Determinism
+- Determinism contribution:
+  Implementations should maximize replay stability through fixed inference settings where possible.
+- Fail-Closed:
+  Safety violations, token-limit breaches, or execution faults should fail explicitly instead of returning partial answers.
+- Isolation compliance:
+  Do not inject implicit context beyond supplied `messages`.
+
+## 5. Implementation Notes
+- Transport abstraction:
+  Hide REST/gRPC/local runtime differences behind this contract.
+- Extensibility:
+  Evolve multimodal support in sync with `IModelMessage` contract extensions.
+---
+
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

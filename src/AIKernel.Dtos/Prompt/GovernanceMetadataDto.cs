@@ -1,5 +1,8 @@
 namespace AIKernel.Dtos.Prompt;
 
+/// <summary>
+/// GovernanceMetadataDto の契約を定義します。
+/// </summary>
 public sealed record GovernanceMetadataDto
 {
     public required string Issuer { get; init; }
@@ -9,3 +12,6 @@ public sealed record GovernanceMetadataDto
     public required string Signature { get; init; }
     public DateTime SignedAt { get; init; }
 }
+
+
+

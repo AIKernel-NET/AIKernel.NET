@@ -1,9 +1,10 @@
 ---
 id: icontextsnapshot
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "IContextSnapshot"
 created: 2026-05-03
+updated: 2026-05-06
 tags:
   - aikernel
   - architecture
@@ -13,24 +14,51 @@ tags:
 
 For Japanese version, see IContextSnapshot-jp.md.
 
-# IContextSnapshot
+# IContextSnapshot (Interface Specification)
 
-## Responsibility
-Define the contract boundary for IContextSnapshot within AIKernel orchestration and governance flows.
+## 1. Responsibility Boundary
+`IContextSnapshot` is the boundary interface that fixes a point-in-time `IContextCollection` with integrity metadata for auditability and deterministic replay.
 
-## Key Members (Draft)
-| Member | Type | Description |
-| --- | --- | --- |
-| `Name` | `string` | Logical identifier of this contract instance. |
-| `Version` | `string` | Contract version for compatibility checks. |
-| `Metadata` | `IReadOnlyDictionary<string, string>` | Extension metadata for implementation-specific details. |
+- Role:
+  Expose snapshot identity, lineage, timestamp, integrity hash, and frozen context payload.
+- Non-role:
+  Storage backend and serialization format are out of scope.
 
-## Related Use Cases
-See ../../use-cases/AIKernel_UseCaseCatalog.md for references where IContextSnapshot appears.
+## 2. Contract Signature
+```csharp
+namespace AIKernel.Abstractions.Context;
 
-## Notes
-- This document is an interface-level draft.
-- Implementations must preserve fail-closed and deterministic replay principles.
+public interface IContextSnapshot
+{
+    string SnapshotId { get; }
+    string? ParentSnapshotId { get; }
+    DateTimeOffset CreatedAtUtc { get; }
+    string ContextHash { get; }
+    IContextCollection Context { get; }
+}
+```
 
+## 3. Related Use Cases
+- `UC-20` Deterministic replay and audit trail:
+  Reconstructs historical execution conditions from a fixed snapshot baseline.
+- `UC-09` Execution state persistence and restore:
+  Provides a consistent anchor for suspend/resume workflows.
 
+## 4. Governance & Determinism
+- Immutability:
+  Snapshot content is expected to remain immutable once finalized.
+- Integrity:
+  `ContextHash` must remain consistent with the referenced `Context` payload.
+- Fail-Closed:
+  Reject restore/replay when hash mismatch, mandatory-field loss, or prerequisite divergence is detected.
 
+## 5. Implementation Notes
+- Lineage tracking:
+  Use `ParentSnapshotId` to preserve traceable delta lineage.
+- Time normalization:
+  Keep `CreatedAtUtc` in UTC to remove audit timeline ambiguity.
+---
+
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

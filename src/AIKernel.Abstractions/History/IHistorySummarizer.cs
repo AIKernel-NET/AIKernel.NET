@@ -4,6 +4,7 @@ using AIKernel.Abstractions.Material;
 namespace AIKernel.Abstractions.History;
 
 /// <summary>
+/// UC-32 に基づく契約です。
 /// 履歴を要約・投影するインターフェース。
 /// 履歴を単なるログではなく、再利用可能な素材または文脈として扱います。
 /// </summary>
@@ -31,3 +32,4 @@ public interface IHistorySummarizer
         HistoryPolicy policy,
         CancellationToken ct = default);
 }
+

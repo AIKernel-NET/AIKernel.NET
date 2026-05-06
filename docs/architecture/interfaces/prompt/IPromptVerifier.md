@@ -1,9 +1,10 @@
 ---
 id: ipromptverifier
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "IPromptVerifier"
 created: 2026-05-03
+updated: 2026-05-06
 tags:
   - aikernel
   - architecture
@@ -13,24 +14,50 @@ tags:
 
 For Japanese version, see IPromptVerifier-jp.md.
 
-# IPromptVerifier
+# IPromptVerifier (Interface Specification)
 
-## Responsibility
-Define the contract boundary for IPromptVerifier within AIKernel orchestration and governance flows.
+## 1. Responsibility Boundary
+`IPromptVerifier` is the boundary interface that validates integrity of signed prompt artifacts at runtime.
 
-## Key Members (Draft)
-| Member | Type | Description |
-| --- | --- | --- |
-| `VerifyAsync(string promptContent, string signature, CancellationToken ct = default)` | `Task<bool>` | Verify signature validity. |
-| `VerifyWithKeyAsync(string promptContent, string signature, string keyId, CancellationToken ct = default)` | `Task<bool>` | Verify with explicit key id. |
-| `FailClosed` | `bool` | Verification failure must stop execution. |
+- Role:
+  Evaluate a `SignedPromptArtifactDto` and return tamper/missing/mismatch outcomes through `PromptVerificationResult`.
+- Non-role:
+  Signature generation is owned by `IPromptSignatureProvider`; `IPromptVerifier` focuses only on verification.
 
-## Related Use Cases
-See ../../use-cases/AIKernel_UseCaseCatalog.md for references where IPromptVerifier appears.
+## 2. Contract Signature
+```csharp
+namespace AIKernel.Abstractions.Prompt;
 
-## Notes
-- This document is an interface-level draft.
-- Implementations must preserve fail-closed and deterministic replay principles.
+/// <summary>
+/// Defines the IPromptVerifier contract based on UC-11/UC-12/UC-13.
+/// </summary>
+public interface IPromptVerifier
+{
+    Task<PromptVerificationResult> VerifyAsync(
+        SignedPromptArtifactDto artifact,
+        CancellationToken ct = default);
+}
+```
 
+## 3. Related Use Cases
+- `UC-13` Runtime signature verification:
+  Core component for signature and hash validation during prompt load.
+- `UC-20` Deterministic replay and audit trail:
+  Contributes to verifying replay artifacts against historical execution conditions.
 
+## 4. Governance & Determinism
+- Enforce Fail-Closed:
+  Execution must not continue when `PromptVerificationResult.Decision` does not satisfy permit criteria.
+- Canonicalization precondition:
+  Signature/hash validation assumes the same canonicalization rules (`IROMCanonicalizer`) used at signing time.
 
+## 5. Implementation Notes
+- Trust-store integration:
+  Integrating with `ISignatureTrustStore` is recommended to reject revoked or untrusted keys.
+- Semantic hash validation:
+  Prefer semantic-equivalence checks aligned with `ISemanticHasher` over superficial string equality.
+---
+
+# Changelog
+- v0.0.0 / v0.0.0.0: Initial draft
+- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines

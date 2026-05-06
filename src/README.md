@@ -1,89 +1,103 @@
-﻿# AIKernel.NET
-AIKernel is an operating-system-style framework for AI applications, built on strict category separation, context isolation, and contract-driven orchestration.
-This repository contains the Core layer of the AIKernel OS, including abstractions, contracts, DTOs, enums, events, execution context, and virtual file system interfaces.
+# AIKernel.NET
+
+AIKernel.NET is a specification-first repository for Semantic Context OS contracts.
+The `src` tree contains the canonical specification projects that define interfaces, DTOs, enums, and external boundary contracts.
 
 ---
 
-## Core Architecture Overview
+## Projects
 
-AIKernel Core is divided into **7 foundational modules**, each representing a strict OS boundary:
+### AIKernel.Abstractions
+- Purpose: Interface layer (no concrete business logic).
+- Main namespaces:
+  - `AIKernel.Abstractions.Context`
+  - `AIKernel.Abstractions.Conversation`
+  - `AIKernel.Abstractions.Events`
+  - `AIKernel.Abstractions.Execution`
+  - `AIKernel.Abstractions.Governance`
+  - `AIKernel.Abstractions.History`
+  - `AIKernel.Abstractions.Hosting`
+  - `AIKernel.Abstractions.Kernel`
+  - `AIKernel.Abstractions.Material`
+  - `AIKernel.Abstractions.Models`
+  - `AIKernel.Abstractions.Prompt`
+  - `AIKernel.Abstractions.Providers`
+  - `AIKernel.Abstractions.Rom`
+  - `AIKernel.Abstractions.Routing`
+  - `AIKernel.Abstractions.Scheduling`
+  - `AIKernel.Abstractions.Security`
+  - `AIKernel.Abstractions.Tasks`
+  - `AIKernel.Abstractions.Tooling`
+- Project references: `AIKernel.Dtos`, `AIKernel.Enums`
 
-- **AIKernel.Abstractions**     – Syscall-level interfaces (IKernel, IProvider, IGuard, IPdp)
-- **AIKernel.Contracts**        – Orchestration and context schemas (immutable input formats)
-- **AIKernel.Dtos**             – Lightweight data transfer objects
-- **AIKernel.Enums**            – Shared enumerations across the OS
-- **AIKernel.Events**           – Audit and system event definitions
-- **AIKernel.KernelContext**    – Execution context (identity, permissions, budgets, classification)
-- **AIKernel.VFS**              – Virtual file system abstractions (external data boundary)
+### AIKernel.Contracts
+- Purpose: Cross-boundary contract interfaces for orchestration/context projections.
+- Main namespace: `AIKernel.Contracts`
+- Project references: `AIKernel.Dtos`, `AIKernel.Enums`
 
-This structure enforces the AIKernel design principles:
+### AIKernel.Dtos
+- Purpose: POCO/record data carriers only (no business logic).
+- Main namespaces:
+  - `AIKernel.Dtos.Context`
+  - `AIKernel.Dtos.Core`
+  - `AIKernel.Dtos.Events`
+  - `AIKernel.Dtos.Execution`
+  - `AIKernel.Dtos.Governance`
+  - `AIKernel.Dtos.Kernel`
+  - `AIKernel.Dtos.KernelContext`
+  - `AIKernel.Dtos.Material`
+  - `AIKernel.Dtos.Prompt`
+  - `AIKernel.Dtos.Rom`
+  - `AIKernel.Dtos.Routing`
+  - `AIKernel.Dtos.Rules`
+  - `AIKernel.Dtos.Sandbox`
+  - `AIKernel.Dtos.Security`
+  - `AIKernel.Dtos.Tokenization`
+  - `AIKernel.Dtos.Vfs`
+- Project references: `AIKernel.Enums`
 
-- **Category Separation** — No mixing of abstractions, contracts, DTOs, or events
-- **Context Isolation** — Runtime context is never mixed with LLM inference
-- **Contract-Driven Execution** — Kernel behavior is defined by immutable schemas
-- **Boundary Enforcement** — Kernel, Providers, and VFS interact only through stable interfaces
+### AIKernel.Enums
+- Purpose: Shared enum primitives used across the specification layer.
+- Main namespace: `AIKernel.Enums`
+- Project references: none
+
+### AIKernel.VFS
+- Purpose: Provider-agnostic Virtual File System contracts.
+- Main namespace: `AIKernel.VFS`
+- Project references: `AIKernel.Dtos`
 
 ---
 
-## NuGet Packages
+## Dependency Rules (Normative)
 
-Each module is published as an independent NuGet package:
+- `AIKernel.Abstractions` -> `AIKernel.Dtos`, `AIKernel.Enums`
+- `AIKernel.Contracts` -> `AIKernel.Dtos`, `AIKernel.Enums`
+- `AIKernel.Dtos` -> `AIKernel.Enums`
+- `AIKernel.Enums` -> (none)
+- `AIKernel.VFS` -> `AIKernel.Dtos`
 
-- AIKernel.Abstractions
-- AIKernel.Contracts
-- AIKernel.Dtos
-- AIKernel.Enums
-- AIKernel.Events
-- AIKernel.KernelContext
-- AIKernel.VFS
-
-All packages follow:
-
-- MIT License
-- Semantic Versioning
-- Strict dependency rules (see below)
+Prohibited examples:
+- `Abstractions` -> `Contracts`
+- `Contracts` -> `Abstractions`
+- `VFS` -> `Abstractions`
 
 ---
 
-## Dependency Rules (Critical for OS Integrity)
+## Notes on Decomposition
 
-To prevent architectural erosion, the following dependency graph is enforced:
-
-- AIKernel.Abstractions   →  AIKernel.Contracts, AIKernel.Enums
-- AIKernel.Contracts      →  AIKernel.Enums
-- AIKernel.Dtos           →  AIKernel.Enums
-- AIKernel.Events         →  AIKernel.Enums, AIKernel.Dtos
-- AIKernel.KernelContext  →  AIKernel.Enums, AIKernel.Dtos
-- AIKernel.VFS            →  AIKernel.Enums, AIKernel.Dtos, AIKernel.KernelContext
-- tests/*                 →  Free (but must not be referenced by src)
-
-**Prohibited dependencies:**
-
-- Contracts → Dtos
-- Events → Abstractions
-- KernelContext → Abstractions
-- VFS → Abstractions
+- `AIKernel.KernelContext` project has been decomposed and moved into `AIKernel.Dtos.KernelContext` (models) and `AIKernel.Abstractions` (contracts).
+- `AIKernel.Events` project has been decomposed and moved into `AIKernel.Dtos.Events` (models) and `AIKernel.Abstractions.Events` (contracts).
+- Concrete runtime implementations are out of this repository scope and belong to `AIKernel.Core`.
 
 ---
 
-## Testing Structure
+## Testing
 
-- tests/AIKernel.Abstractions.Tests   – Contract tests for IKernel / IProvider / IGuard / IPdp
-- tests/AIKernel.Contracts.Tests      – Schema and context validation tests
-
-Mocks and test utilities live in:
-
-- AIKernel.Testing
+- `src/tests/AIKernel.Abstractions.Tests`: spec-alignment and interface-composition tests.
 
 ---
 
 ## License
 
-MIT License
-Copyright © 2026 Takuya Sogawa of AIKernel-NET
-
----
-
-## Repository
-
-https://github.com/AIKernel-NET/AIKernel.NET
+MIT License  
+Copyright © 2026 Takuya Sogawa

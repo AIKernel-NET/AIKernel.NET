@@ -1,6 +1,6 @@
 ---
 id: extension-points
-version: 0.0.0
+version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "EXTENSION_POINTS — 拡張ポイント仕様（Provider/VFS/Policy 等）"
 created: 2026-05-01
@@ -10,6 +10,7 @@ tags:
 - extension
 - capabilities
 - japanese
+updated: 2026-05-06
 ---
 
 # EXTENSION_POINTS — 拡張ポイント仕様（Provider/VFS/Policy 等）
@@ -115,3 +116,8 @@ Deterministic Replay と監査を支える一次情報を出力する。
 - `CONTRACT_VERSIONING-jp.md`  
 - `../architecture/index-jp.md`
 - `../guidelines/DOCUMENTATION_GUIDELINES-jp.md`
+---
+
+# 変更履歴
+- v0.0.0 / v0.0.0.0: 初期ドラフト
+- v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新

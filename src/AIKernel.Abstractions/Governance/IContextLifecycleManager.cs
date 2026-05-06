@@ -3,6 +3,7 @@ namespace AIKernel.Abstractions.Governance;
 using AIKernel.Dtos.Context;
 
 /// <summary>
+/// UC-06/UC-32 に基づく契約です。
 /// コンテキストバッファの寿命管理と状態遷移を統治するインターフェースです。
 /// 履歴の忘却、圧縮、昇格などの戦略をOS レベルで標準化します。
 /// </summary>
@@ -75,3 +76,4 @@ public interface IContextLifecycleManager
         IContextCollection collection,
         CancellationToken cancellationToken = default);
 }
+

@@ -1,6 +1,7 @@
 namespace AIKernel.Abstractions.Material;
 
 /// <summary>
+/// UC-21 に基づく契約です。
 /// 構造化された素材を表現するインターフェース。
 /// 入力データの正規化と重み付けを保証します。
 /// </summary>
@@ -26,3 +27,4 @@ public interface IStructuredMaterial
     /// </summary>
     SourceInfo SourceInfo { get; }
 }
+
