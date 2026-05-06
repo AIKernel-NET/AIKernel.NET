@@ -2,9 +2,14 @@
 
 ![AIKernel.NET Logo](docs/assets/aikernel-logo.png)
 
-A framework aiming to be the **Operating System (OS) for AI applications**.
+AIKernel is an operating system for AI applications.
 
-AIKernel treats LLMs not as simple API calls but as **capability-bearing processes**.
+AIKernel does not define features themselves.  
+It defines deterministic execution context in which features become inevitable.
+
+This repository manages the canonical contract set of AIKernel.
+
+AIKernel.NET is a contract-first foundation that treats LLMs not as simple APIs, but as capability-bearing processes.
 
 ---
 
@@ -28,6 +33,43 @@ Each layer is published as a separate NuGet package.
 See `docs/design/DESIGN_INTENT.md` for design philosophy.  
 For executable contracts (spec sheets), see `docs/specs/index.md`.
 
+## Hosting Example (C#)
+
+AIKernel.NET is integrated into ASP.NET Core DI.  
+By composing Core, Provider, and Governance, you can host an AI execution platform.
+
+Because AIKernel.NET is interface-contract based, implementations can be replaced freely.
+
+### Example Implementation
+
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAIKernelCore(options =>
+{
+    options.EnableDeterministicReplay = true;
+    options.FailClosed = true;
+});
+
+builder.Services.AddModelProvider<OpenAIModelProvider>();
+builder.Services.AddVfsProvider<GitVfsProvider>();
+
+builder.Services.AddSignatureTrustStore<FileSignatureTrustStore>();
+
+builder.Services.AddControllers();
+
+var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var kernel = scope.ServiceProvider.GetRequiredService<IAIKernel>();
+    await kernel.InitializeAsync();
+}
+
+app.MapControllers();
+app.Run();
+```
+
 Target experience (boot log example):
 ```txt
 [KERNEL] Initializing AIKernel.NET v0.1.0...
@@ -38,6 +80,36 @@ Target experience (boot log example):
 
 > Hello Intelligence.
 > The Semantic Context is stable. Governance is active.
+> This boot sequence is deterministic and verifiable.
+```
+
+## API Example / curl
+
+AIKernel can be exposed as an OpenAI-compatible API.  
+Below is a minimal execution example.
+
+```bash
+curl -X POST http://localhost:5000/v1/execute \
+  -H "Content-Type: application/json" \
+  -d '{
+    "capability": "reasoning",
+    "input": "Hello Intelligence",
+    "context": {
+      "vfs": "git://./context"
+    }
+  }'
+```
+
+### Response Example
+```json
+{
+  "output": "[OpenAI] Hello Intelligence",
+  "provider": "openai",
+  "capability": "reasoning",
+  "context": {
+    "vfs": "git://./context"
+  }
+}
 ```
 
 ---
@@ -56,7 +128,8 @@ AIKernel.NET aims to provide an OS that enables AI applications with:
 
 # 2. Architecture Overview
 
-AIKernel.NET defines abstractions and provides minimal DTOs/Enums. Implementations are separated to preserve Core purity.
+AIKernel.NET defines abstract contracts and provides minimal DTOs/Enums.  
+By fully separating implementation, it preserves Core purity and maximizes implementation flexibility.
 
 ```
 AIKernel architecture layers (OS-like):
