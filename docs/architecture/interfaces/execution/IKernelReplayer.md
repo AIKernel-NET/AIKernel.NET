@@ -65,6 +65,8 @@ The interface does not hard-code exception types, but current contract comments 
   `CanReplay` should strictly verify schema/engine compatibility before execution.
 - Security:
   Apply signature and access checks when loading replay artifacts.
+- Replay scope:
+  This interface is not intended to reproduce the internal LLM inference algorithm itself (or freeze every probabilistic micro-variance). Its guarantee is that runtime context composition, pipeline traversal order, and per-step data transformations follow the same logical path as recorded evidence.
 ---
 
 # Changelog
