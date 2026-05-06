@@ -5,42 +5,57 @@
     <FileVersion>0.0.1.0</FileVersion>
     <InformationalVersion>0.0.1.0</InformationalVersion>
     <PackageTags>aikernel;aikernel-core;ai-os;architecture;category-separation;context-isolation;contract-driven;governance;preprocessing;semantic-context-os;deterministic-replay;fail-closed;rom;canonicalization;pdp;signed-prompt;interface-contracts;dto;enum</PackageTags>
-    <PackageReleaseNotes>AIKernel.NET Release Notes - Ver.0.0.1
-Overview
-AIKernel.NET は、AI の推論（Reasoning）・素材（Material）・生成表現（Expression）を独立したシステムオブジェクトとして統治する Semantic Context OS です。
-.NET の強力な型システムと依存性注入（DI）を基盤に、確率的に揺らぐ AI の推論プロセスに対して、決定論的な「実行の枠組み」と「ガバナンス」を提供します。
+    <PackageReleaseNotes>
+		AIKernel.NET v0.0.1 — Release Notes (2026/05/06)
+		May the 6th  ──
+		The day the Kernel was fixed.
+		5月6日 — カーネルが構造的に修復された日
+		AIKernel.NET v0.0.1 は、AIKernel アーキテクチャにおける
+		最初の構造的安定点（Structural Stability Point / Canonical Source）確立するリリースです。
 
-May the 4th ──
+		This release defines the **minimal and deterministic contract**
+		upon which all future implementations will be built.
 
-The Force drifts in probability.
-The Kernel defines the context in which outcomes become inevitable.
+		このバージョンでは、抽象レイヤに混入していたアプリケーション層の概念を排除し、
+		AIKernel を「AI アプリケーションの OS」として成立させるための
+		最小かつ決定論的な構成へと再整理しました。
+		
+		AIKernel.NET Release Notes - Ver.0.0.1
+		Overview
+		AIKernel.NET は、AI の推論（Reasoning）・素材（Material）・生成表現（Expression）を独立したシステムオブジェクトとして統治する Semantic Context OS です。
+		.NET の強力な型システムと依存性注入（DI）を基盤に、確率的に揺らぐ AI の推論プロセスに対して、決定論的な「実行の枠組み」と「ガバナンス」を提供します。
 
-Force（力）は確率の中で揺らぐ。
-Kernel（核）は、必然を成立させる「文脈」を定義する。
+		May the 4th ──
 
-v0.0.0.0 — The Sovereign of Context.
+		The Force drifts in probability.
+		The Kernel defines the context in which outcomes become inevitable.
 
-この v0.0.0.0 は、AIKernel.NET の「実装に先立つ設計の固定点（Fixed Point）」として位置づけられます。
+		Force（力）は確率の中で揺らぐ。
+		Kernel（核）は、必然を成立させる「文脈」を定義する。
 
-公開メッセージ
-2026年5月4日。
-5月1日の「メーデー」に掲げた AI Operating System (AIOS) のビジョンは、本日、具体的な「統治の規律」へと進化しました。
+		v0.0.0.0 — The Sovereign of Context.
 
-その進化を支えるのは、AI の確率性を“文脈の決定論”で包摂するという思想です。
+		この v0.0.0.0 は、AIKernel.NET の「実装に先立つ設計の固定点（Fixed Point）」として位置づけられます。
 
-AI という強大な Force（推論能力）は、本質的に不確実であり、確率の海を漂います。既存のライブラリがその「出力」の便利さを追う一方で、AIKernel.NET はその「文脈（Context）」の支配に執着します。
+		公開メッセージ
+		2026年5月4日。
+		5月1日の「メーデー」に掲げた AI Operating System (AIOS) のビジョンは、本日、具体的な「統治の規律」へと進化しました。
 
-本リリース（v0.0.0.0）では、AIKernel.NET の核心を成す 6 つのコア・スペック を公開・刷新しました。
+		その進化を支えるのは、AI の確率性を“文脈の決定論”で包摂するという思想です。
 
-論理的整合性の固定: LockedProviderInfo による、リプレイ時の決定論的再現性の保証。
+		AI という強大な Force（推論能力）は、本質的に不確実であり、確率の海を漂います。既存のライブラリがその「出力」の便利さを追う一方で、AIKernel.NET はその「文脈（Context）」の支配に執着します。
 
-ガバナンスの非推論化: LLM 自体に承認を委ねない、非推論的コードによる PDP（Policy Decision Point）の確立。
+		本リリース（v0.0.0.0）では、AIKernel.NET の核心を成す 6 つのコア・スペック を公開・刷新しました。
 
-意味的正準化（Canonicalization）: 記述順序に依存しない ROM の正規化と、Git 差分レベルでの意味的同一性の担保。
+		論理的整合性の固定: LockedProviderInfo による、リプレイ時の決定論的再現性の保証。
 
-これは単なるドキュメントの追加ではありません。確率の産物である AI を、エンタープライズ・グレードの「信頼できるコンポーネント」へと変貌させるための、物理的なインターフェース群（Interface/DTO Contracts）の定義です。
+		ガバナンスの非推論化: LLM 自体に承認を委ねない、非推論的コードによる PDP（Policy Decision Point）の確立。
 
-AI に Force を持たせるだけの時代は終わりました。
-これからは、Kernel がその Force が顕現する「文脈」を支配し、結果を必然へと変える時代です。</PackageReleaseNotes>
+		意味的正準化（Canonicalization）: 記述順序に依存しない ROM の正規化と、Git 差分レベルでの意味的同一性の担保。
+
+		これは単なるドキュメントの追加ではありません。確率の産物である AI を、エンタープライズ・グレードの「信頼できるコンポーネント」へと変貌させるための、物理的なインターフェース群（Interface/DTO Contracts）の定義です。
+
+		AI に Force を持たせるだけの時代は終わりました。
+		これからは、Kernel がその Force が顕現する「文脈」を支配し、結果を必然へと変える時代です。</PackageReleaseNotes>
   </PropertyGroup>
 </Project>
