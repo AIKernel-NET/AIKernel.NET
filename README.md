@@ -5,7 +5,7 @@
 AIKernel is an operating system for AI applications.
 
 AIKernel does not define features themselves.  
-It defines deterministic execution context in which features become inevitable.
+It defines the deterministic execution context in which features become inevitable.
 
 This repository manages the canonical contract set of AIKernel.
 
@@ -19,26 +19,26 @@ AIKernel.NET is composed of multiple independent abstraction layers.
 Each layer is published as a separate NuGet package.
 
 | Layer | Package | Version | Link |
-|-------|---------|---------|------|
-| Core Types | AIKernel.Enums | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Enums.svg) | https://www.nuget.org/packages/AIKernel.Enums/ |
-| Data Models | AIKernel.Dtos | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Dtos.svg) | https://www.nuget.org/packages/AIKernel.Dtos/ |
-| Contracts | AIKernel.Contracts | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Contracts.svg) | https://www.nuget.org/packages/AIKernel.Contracts/ |
-| Abstractions | AIKernel.Abstractions | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Abstractions.svg) | https://www.nuget.org/packages/AIKernel.Abstractions/ |
-| Virtual File System | AIKernel.VFS | ![NuGet](https://img.shields.io/nuget/v/AIKernel.VFS.svg) | https://www.nuget.org/packages/AIKernel.VFS/ |
-| Context Models (integrated) | AIKernel.Dtos (AIKernel.Dtos.KernelContext) | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Dtos.svg) | https://www.nuget.org/packages/AIKernel.Dtos/ |
-| Event Models (integrated) | AIKernel.Dtos (AIKernel.Dtos.Events) | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Dtos.svg) | https://www.nuget.org/packages/AIKernel.Dtos/ |
+| --- | --- | --- | --- |
+| Core Types | `AIKernel.Enums` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Enums.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Enums/) |
+| Data Models | `AIKernel.Dtos` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Dtos.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Dtos/) |
+| Contracts | `AIKernel.Contracts` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Contracts.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Contracts/) |
+| Abstractions | `AIKernel.Abstractions` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Abstractions.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Abstractions/) |
+| Virtual File System | `AIKernel.VFS` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.VFS.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.VFS/) |
 
 ---
 
 See `docs/design/DESIGN_INTENT.md` for design philosophy.  
-For executable contracts (spec sheets), see `docs/specs/index.md`.
+For executable contracts and spec sheets, see `docs/specs/index.md`.
+
+---
 
 ## Hosting Example (C#)
 
-AIKernel.NET is integrated into ASP.NET Core DI.  
-By composing Core, Provider, and Governance, you can host an AI execution platform.
+AIKernel.NET integrates with ASP.NET Core DI.  
+By composing Core, Providers, and Governance, you can host an AI execution platform.
 
-Because AIKernel.NET is interface-contract based, implementations can be replaced freely.
+Because AIKernel.NET is based on interface contracts, implementations can be replaced freely.
 
 ### Example Implementation
 
@@ -70,7 +70,8 @@ app.MapControllers();
 app.Run();
 ```
 
-Target experience (boot log example):
+### Target Experience / Boot Log Example
+
 ```txt
 [KERNEL] Initializing AIKernel.NET v0.1.0...
 [KERNEL] Loading ISignatureTrustStore... [OK]
@@ -83,10 +84,12 @@ Target experience (boot log example):
 > This boot sequence is deterministic and verifiable.
 ```
 
+---
+
 ## API Example / curl
 
 AIKernel can be exposed as an OpenAI-compatible API.  
-Below is a minimal execution example.
+Below is an execution example with explicit context.
 
 ```bash
 curl -X POST http://localhost:5000/v1/execute \
@@ -101,6 +104,7 @@ curl -X POST http://localhost:5000/v1/execute \
 ```
 
 ### Response Example
+
 ```json
 {
   "output": "[OpenAI] Hello Intelligence",
@@ -112,117 +116,152 @@ curl -X POST http://localhost:5000/v1/execute \
 }
 ```
 
+> Context is not merely input data.  
+> It is an execution condition bound to the Kernel.
+
 ---
 
-# 1. Purpose
+## 1. Purpose
 
 AIKernel.NET aims to provide an OS that enables AI applications with:
+
 - capability-based execution independent of model names
 - category separation to maximize inference purity
-- deterministic scheduler + nondeterministic LLM hybrid control
-- reproducibility (Deterministic Replay)
-- governance (signed PromptRules / audit logs)
-- OS-like extensibility (Provider = driver / Kernel = execution engine)
+- hybrid control of a deterministic scheduler and nondeterministic LLMs
+- reproducibility through Deterministic Replay
+- governance through signed PromptRules and audit logs
+- OS-like extensibility where Providers act as drivers and the Kernel acts as the execution engine
 
 ---
 
-# 2. Architecture Overview
+## 2. Architecture Overview
 
-AIKernel.NET defines abstract contracts and provides minimal DTOs/Enums.  
-By fully separating implementation, it preserves Core purity and maximizes implementation flexibility.
+AIKernel.NET defines abstract contracts and provides minimal DTOs and Enums.  
+By fully separating contracts from implementation, it preserves Core purity and maximizes implementation flexibility.
 
+AIKernel is designed as an OS-like layered architecture:
+
+```text
+Core         = syscall layer
+Kernel       = AI OS core
+Providers    = brain drivers
+VfsProviders = external data sources
+Server       = external API adapter
+Hosting      = application integration
+Enterprise   = operations extensions
 ```
-AIKernel architecture layers (OS-like):
-Core (syscall)
-Kernel (AI OS core)
-Providers (brain drivers)
-VfsProviders (external data sources)
-Server (external API adapter)
-Hosting (app integration)
-Enterprise (operations extensions)
-```
-
-Documentation is organized into four layers:
-- `docs/architecture`: Why (principles, theory, governance)
-- `docs/design`: How (design decisions and implementation strategy)
-- `docs/specs`: What (executable contracts and verifiable requirements)
-- `docs/guidelines`: operational and contribution rules
 
 ---
 
-# 3. Documentation Structure
+## 3. Documentation Structure
 
-To keep documentation and source synchronized, this README intentionally avoids
-deep file-by-file listings.
+To keep documentation and source synchronized, this README intentionally avoids deep file-by-file listings.
 
 The documentation is organized into four foundational categories:
 
-- `docs/architecture` — Why (principles, invariants, governance)
-- `docs/design` — How (design decisions and implementation strategy)
-- `docs/specs` — What (normative contracts and acceptance criteria)
-- `docs/guidelines` — Rules (repository and contribution policies)
+| Directory | Role |
+| --- | --- |
+| `docs/architecture` | Why: principles, invariants, governance |
+| `docs/design` | How: design decisions and implementation strategy |
+| `docs/specs` | What: normative contracts and acceptance criteria |
+| `docs/guidelines` | Rules: repository and contribution policies |
 
 For the latest structure and cross-links, use:
 
 - `docs/index.md`
 - `docs/index-jp.md`
 
-# Repository mapping
+---
 
-| Repository | Contained solutions/projects | Example directories | Artifacts | Main dependencies |
+## Repository Mapping
+
+AIKernel is organized across multiple repositories.  
+This repository manages the shared contract layer used by all solutions.
+
+| Repository | Responsibility | Example directories/projects | Artifacts | Main dependencies |
 | --- | --- | --- | --- | --- |
-| **AIKernel.NET** | Contracts layer (shared) | `Contracts` (Interfaces; DTO; Enums) | NuGet contract packages | none (top-level contracts) |
+| **AIKernel.NET** | Shared contract layer | `Contracts`, DTOs, Enums | NuGet contract packages | none |
 | **AIKernel.Core** | Core platform | `Core/`, `Kernel/`, `Providers/`, `VfsProviders/`, `Server/`, `Hosting/` | NuGet libraries | **AIKernel.NET** |
 | **AIKernel.SDK** | Client libraries | `AIKernel.SDK` | NuGet client packages | **AIKernel.NET**, **AIKernel.Core** |
-| **AIKernel.Web** | Admin console | `admin-web` (SPA/Blazor) | SPA build artifacts | **AIKernel.NET**, **AIKernel.Core** |
+| **AIKernel.Web** | Admin console | `admin-web` | SPA build artifacts | **AIKernel.NET**, **AIKernel.Core** |
 | **AIKernel.Infra** | Deployment definitions | `terraform/`, `k8s/`, `helm/` | Manifests | all repos |
-| **AIKernel.Tools** | Dev tools & CI templates | `cli/`, `generators/`, `ci-templates/` | CLI binaries; CI templates | all repos |
+| **AIKernel.Tools** | Developer tools and CI templates | `cli/`, `generators/`, `ci-templates/` | CLI binaries, CI templates | all repos |
 | **AIKernel.Docs** | Documentation aggregation | `architecture/`, `runbooks/` | Documentation site | all repos |
-| **AIKernel.Enterprise** | Enterprise solutions | `solutions/`, `services/`, `workers/`, `charts/` | Private container images; Helm charts | **AIKernel.NET**, **AIKernel.Core**, **AIKernel.Infra** |
+| **AIKernel.Enterprise** | Enterprise solutions | `solutions/`, `services/`, `workers/`, `charts/` | Private container images, Helm charts | **AIKernel.NET**, **AIKernel.Core**, **AIKernel.Infra** |
 
 ---
 
-# 4. Design Principles
+## 4. Design Principles
 
-## 4.1 Category separation (most important)
-- Orchestration (inference)
-- Expression (output shaping)
-- Material (external data)
+### 4.1 Category Separation
+
+Category separation is the most important design principle in AIKernel.
+
+The following categories must not be mixed into a single context:
+
+- Orchestration
+- Expression
+- Material
 - History
 - Style
 
-Do not mix these categories.
-
-> "Information passed to an LLM must not be mixed into a single context." — CATEGORY_SEPARATION_PRINCIPLES.md
+> Information passed to an LLM must not be mixed into a single context.  
+> — `CATEGORY_SEPARATION_PRINCIPLES.md`
 
 ---
 
-## 4.2 Preprocessing-first
+### 4.2 Preprocessing First
+
 Prompts are the final formatting step.
 
-> Inference quality is determined by preprocessing structure. — PREPROCESSING_VS_PROMPTING.md
+> Inference quality is determined by preprocessing structure.  
+> — `PREPROCESSING_VS_PROMPTING.md`
 
 ---
 
-## 4.3 Attention pollution prevention
-Mixing examples, RAG, and history breaks inference.
+### 4.3 Attention Pollution Prevention
 
-> When attention is drawn to surface structures, inference halts. — ATTENTION_POLLUTION_THEORY.md
+Mixing examples, RAG material, and history can break inference.
+
+> When attention is drawn to surface structures, inference halts.  
+> — `ATTENTION_POLLUTION_THEORY.md`
 
 ---
 
-## 4.4 LLM as suggestor, PDP as decision-maker
-LLM is a suggestor; PDP makes final decisions.
+### 4.4 LLM as Suggestor, PDP as Decision-Maker
 
-## 4.5 Signed Prompt Governance and Fail-Closed
-Prompts carry authority equivalent to code execution.  
+The LLM is a suggestor.  
+The Policy Decision Point (PDP) makes final decisions.
+
+---
+
+### 4.5 Signed Prompt Governance and Fail-Closed
+
+Prompts carry authority equivalent to code execution.
+
 AIKernel executes only approved, signed prompts and halts immediately when tampering or untrusted signers are detected.
 
-- Verification sequence: `IPromptRepository` -> `IPromptVerifier` -> `ISignatureTrustStore` -> `IPromptValidator` -> `ExecutionPipeline`
-- Detailed spec: `docs/specs/02.SIGNED_PROMPT_GOVERNANCE_SPEC.md`
+Verification sequence:
 
-## 4.6 Relation-Oriented Data Structure (Relation-Oriented Markdown: ROM)
-AIKernel treats knowledge not as linear text but as a set of relations.
+```text
+IPromptRepository
+-> IPromptVerifier
+-> ISignatureTrustStore
+-> IPromptValidator
+-> ExecutionPipeline
+```
+
+Detailed spec:
+
+- `docs/specs/02.SIGNED_PROMPT_GOVERNANCE_SPEC.md`
+
+---
+
+### 4.6 Relation-Oriented Data Structure (ROM)
+
+AIKernel treats knowledge not as linear text, but as a set of relations.
+
+Relation-Oriented Markdown (ROM) is the canonical representation format for AIKernel knowledge assets.
 
 - `YAML`: Defines entity metadata and identity.
 - `Headings`: Define semantic categories and contextual scopes.
@@ -232,29 +271,43 @@ AIKernel treats knowledge not as linear text but as a set of relations.
 
 With ROM, human-authored notes can be transformed directly into an LLM-reasonable knowledge base.
 
-## 4.7 Git-Managed Reasoning (ConversationStore)
-AI conversations are managed not as linear logs but as tree-structured Git commits.  
-This natively supports reasoning forks and point-in-time replay.
+---
+
+### 4.7 Git-Managed Reasoning (ConversationStore)
+
+AI conversations are managed not as linear logs, but as tree-structured Git commits.
+
+This natively supports:
+
+- reasoning forks
+- branch exploration
+- point-in-time replay
 
 ---
 
-# 5. Kernel (formerly Runtime)
+## 5. Kernel
 
-Kernel is the core OS:
-- TaskManager (deterministic scheduler)
-- LlmController (nondeterministic inference)
-- ProviderRouter (capability-based brain selection)
-- RagEngine (materialization)
-- PipelineExecutor (DAG execution)
-- RulesEngine (PromptRules)
-- IPromptVerifier / IPromptValidator (runtime signature verification for fail-closed enforcement)
-- ISignatureTrustStore (trust anchor managing trusted signers and revocation state)
+Kernel is the core of AIKernel and corresponds to the operating system kernel.
+
+Primary components include:
+
+- TaskManager: deterministic scheduler
+- LlmController: nondeterministic inference controller
+- ProviderRouter: capability-based brain selection
+- RagEngine: materialization engine
+- PipelineExecutor: DAG execution
+- RulesEngine: PromptRules evaluation
+- IPromptVerifier / IPromptValidator: runtime signature verification for fail-closed enforcement
+- ISignatureTrustStore: trust anchor for trusted signers and revocation state
 
 ---
 
-# 6. Providers (brain drivers)
+## 6. Providers
 
-Providers declare **Capabilities** rather than model names:
+Providers declare **Capabilities** rather than model names.
+
+Examples:
+
 - chat
 - embedding
 - multimodal
@@ -262,32 +315,38 @@ Providers declare **Capabilities** rather than model names:
 - vector-search
 - streaming
 
-Providers are extensible via SDKs.
+Providers are extensible through SDKs.
 
 ---
 
-# 7. VFS Providers (Git, etc.)
+## 7. VFS Providers
 
-Treat Git as an external data source (VFS), not a Provider.
+Git and other storage systems are treated as external data sources.
 
----
-
-# 8. Server (OpenAI-compatible API)
-
-Adapter to expose AIKernel as an OpenAI-compatible API.
+They are classified as VFS Providers, not Model Providers.
 
 ---
 
-# 9. Hosting
+## 8. Server
 
-- DI
+The Server layer exposes AIKernel as an OpenAI-compatible API.
+
+---
+
+## 9. Hosting
+
+The Hosting layer provides application integration features such as:
+
+- Dependency Injection
 - default pipelines
 - configuration
-- app integration
+- application startup integration
 
 ---
 
-# 10. Enterprise
+## 10. Enterprise
+
+Enterprise extensions may include:
 
 - SIEM integration
 - multi-tenant support
@@ -295,17 +354,24 @@ Adapter to expose AIKernel as an OpenAI-compatible API.
 
 ---
 
-# 11. License / Contribution
+## 11. License / Contribution
 
-- PR-based contributions
-- Explicit compatibility for Contracts and PromptRules
-- Attach migration guides for breaking changes
+- Contributions are PR-based.
+- Compatibility for Contracts and PromptRules must be explicit.
+- Breaking changes must include migration guides.
 
 ---
 
-# 12. Final Note
+## 12. Final Note
 
-AIKernel.NET provides a **structurally correct AI execution platform** as an OS.
-It aims to be the standard OS for AI applications by focusing on category separation, preprocessing-first design, governance, and reproducibility.
+AIKernel.NET provides a **structurally correct AI execution platform** as an operating system for AI applications.
+
+It aims to become a standard OS for AI applications by focusing on:
+
+- category separation
+- preprocessing-first design
+- governance
+- reproducibility
+- deterministic execution context
 
 For implementation, lock contracts first by following `docs/specs/index.md`, then apply implementation strategy from `docs/design`.
