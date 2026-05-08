@@ -5,12 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
 
     <!-- Package metadata -->
-    <Authors>Takuya Sogawa</Authors>
-    <Company>AIKernel-NET</Company>
     <Title>AIKernel.NET VFS</Title>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/AIKernel-NET/AIKernel.NET</RepositoryUrl>
-    <Copyright>Copyright © 2026 Takuya Sogawa of AIKernel-NET</Copyright>
 
     <!-- Description: English then Japanese -->
     <Description>
@@ -26,7 +21,6 @@ AIKernel OS の仮想ファイルシステムのインターフェース契約�
     <!-- Package settings -->
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageProjectUrl>https://www.nuget.org/profiles/AIKernel</PackageProjectUrl>
     <PackageIcon>aikernel-logo128x128.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <AssemblyVersion>0.0.1.0</AssemblyVersion>

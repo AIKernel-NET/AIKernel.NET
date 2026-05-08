@@ -7,11 +7,7 @@
     <IsPackable>false</IsPackable>
 
     <!-- Assembly metadata -->
-    <Authors>Takuya Sogawa</Authors>
-    <Company>AIKernel-NET</Company>
     <Title>AIKernel.NET Abstractions Tests</Title>
-    <RepositoryUrl>https://github.com/AIKernel-NET/AIKernel.NET</RepositoryUrl>
-    <Copyright>Copyright © 2026 Takuya Sogawa of AIKernel-NET</Copyright>
 
     <!-- Description: English then Japanese -->
     <Description>

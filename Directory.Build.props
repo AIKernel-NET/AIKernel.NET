@@ -1,9 +1,15 @@
 <Project>
   <PropertyGroup>
-    <Version>0.0.1</Version>
-    <AssemblyVersion>0.0.1.0</AssemblyVersion>
-    <FileVersion>0.0.1.0</FileVersion>
-    <InformationalVersion>0.0.1.0</InformationalVersion>
+    <Version>0.0.2</Version>
+    <AssemblyVersion>0.0.2.0</AssemblyVersion>
+    <FileVersion>0.0.2.0</FileVersion>
+    <InformationalVersion>0.0.2.0</InformationalVersion>
+	<Authors>Takuya Sogawa</Authors>
+	<Company>AIKernel-NET</Company>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PackageProjectUrl>https://www.nuget.org/profiles/AIKernel-NET</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/AIKernel-NET/AIKernel.NET</RepositoryUrl>
+	<Copyright>Copyright © 2026 Takuya Sogawa of AIKernel-NET</Copyright>
     <PackageTags>aikernel;aikernel-core;ai-os;architecture;category-separation;context-isolation;contract-driven;governance;preprocessing;semantic-context-os;deterministic-replay;fail-closed;rom;canonicalization;pdp;signed-prompt;interface-contracts;dto;enum</PackageTags>
     <PackageReleaseNotes>
 		AIKernel.NET v0.0.1 — Release Notes (2026/05/06)
