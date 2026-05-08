@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
@@ -9,11 +9,11 @@
 
     <!-- Description: English then Japanese -->
     <Description>
-AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orchestration. This package is part of the AIKernel Core and provides foundational components required by Kernel, Providers, and VFS layers.
+AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orchestration. This package is part of the AIKernel Core and provides foundational components required by Kernel, Providers, and Vfs layers.
 
 Provides the orchestration contracts and context schemas used by the AIKernel OS, including OrchestrationContext, MaterialContext, and ExpressionContext. These contracts define the immutable input format for Kernel execution.
 
-AIKernel は AI アプリケーション向けの OS 的フレームワークであり、カテゴリ分離、コンテキスト隔離、契約駆動の設計思想に基づいています。本パッケージは AIKernel Core の一部であり、Kernel、Provider、VFS 層が利用する基盤コンポーネントを提供します。
+AIKernel は AI アプリケーション向けの OS 的フレームワークであり、カテゴリ分離、コンテキスト隔離、契約駆動の設計思想に基づいています。本パッケージは AIKernel Core の一部であり、Kernel、Provider、Vfs 層が利用する基盤コンポーネントを提供します。
 
 OrchestrationContext、MaterialContext、ExpressionContext など、AIKernel OS で使用されるオーケストレーション契約とコンテキストスキーマを提供します。これらは Kernel 実行の不変な入力形式を定義します。
     </Description>

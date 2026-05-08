@@ -1,7 +1,7 @@
-namespace AIKernel.VFS;
+namespace AIKernel.Vfs;
 
 /// <summary>
-/// 書き込み可能な VFS セッション能力を定義します。
+/// 書き込み可能な Vfs セッション能力を定義します。
 /// </summary>
 public interface IWritableVfsSession
 {

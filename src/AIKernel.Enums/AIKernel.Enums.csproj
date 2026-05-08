@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
@@ -9,11 +9,11 @@
 
     <!-- Description: English then Japanese -->
     <Description>
-AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orchestration. This package is part of the AIKernel Core and provides foundational components required by Kernel, Providers, and VFS layers.
+AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orchestration. This package is part of the AIKernel Core and provides foundational components required by Kernel, Providers, and Vfs layers.
 
 Defines core enumerations used throughout the AIKernel OS, including RejectCode, PdpDecision, DataClassification, and VfsEntryType. These enums form the shared vocabulary across contracts, DTOs, and interface layers.
 
-AIKernel は AI アプリケーション向けの OS 的フレームワークであり、カテゴリ分離、コンテキスト隔離、契約駆動の設計思想に基づいています。本パッケージは AIKernel Core の一部であり、Kernel、Provider、VFS 層が利用する基盤コンポーネントを提供します。
+AIKernel は AI アプリケーション向けの OS 的フレームワークであり、カテゴリ分離、コンテキスト隔離、契約駆動の設計思想に基づいています。本パッケージは AIKernel Core の一部であり、Kernel、Provider、Vfs 層が利用する基盤コンポーネントを提供します。
 
 RejectCode、PdpDecision、DataClassification、VfsEntryType など、AIKernel OS 全体で使用されるコア列挙型を定義します。これらは契約層・DTO 層・インターフェース層を横断する共通語彙を形成します。
     </Description>

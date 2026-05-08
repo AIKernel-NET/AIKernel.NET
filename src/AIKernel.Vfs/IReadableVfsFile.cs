@@ -1,7 +1,7 @@
-namespace AIKernel.VFS;
+namespace AIKernel.Vfs;
 
 /// <summary>
-/// 読み取り可能な VFS ファイル能力を定義します。
+/// 読み取り可能な Vfs ファイル能力を定義します。
 /// </summary>
 public interface IReadableVfsFile : IVfsEntryInfo
 {

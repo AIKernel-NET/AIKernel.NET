@@ -24,7 +24,7 @@ Each layer is published as a separate NuGet package.
 | Data Models | `AIKernel.Dtos` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Dtos.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Dtos/) |
 | Contracts | `AIKernel.Contracts` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Contracts.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Contracts/) |
 | Abstractions | `AIKernel.Abstractions` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Abstractions.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Abstractions/) |
-| Virtual File System | `AIKernel.VFS` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.VFS.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.VFS/) |
+| Virtual File System | `AIKernel.Vfs` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Vfs.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Vfs/) |
 
 ---
 
@@ -75,7 +75,7 @@ app.Run();
 ```txt
 [KERNEL] Initializing AIKernel.NET v0.1.0...
 [KERNEL] Loading ISignatureTrustStore... [OK]
-[KERNEL] Mounting VFS (Git: ./context)... [OK]
+[KERNEL] Mounting Vfs (Git: ./context)... [OK]
 [KERNEL] Verifying System Prompt Signature... [VALID]
 [KERNEL] Routing to Provider: [[provider.reasoning.high]]... [OK]
 
@@ -319,11 +319,11 @@ Providers are extensible through SDKs.
 
 ---
 
-## 7. VFS Providers
+## 7. Vfs Providers
 
 Git and other storage systems are treated as external data sources.
 
-They are classified as VFS Providers, not Model Providers.
+They are classified as Vfs Providers, not Model Providers.
 
 ---
 

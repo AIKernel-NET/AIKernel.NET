@@ -1,5 +1,5 @@
 using AIKernel.Dtos.Vfs;
-using AIKernel.VFS;
+using AIKernel.Vfs;
 
 namespace AIKernel.Abstractions.Tests;
 

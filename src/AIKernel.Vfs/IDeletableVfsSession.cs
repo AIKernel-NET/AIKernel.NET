@@ -1,7 +1,7 @@
-namespace AIKernel.VFS;
+namespace AIKernel.Vfs;
 
 /// <summary>
-/// 削除可能な VFS セッション能力を定義します。
+/// 削除可能な Vfs セッション能力を定義します。
 /// </summary>
 public interface IDeletableVfsSession
 {

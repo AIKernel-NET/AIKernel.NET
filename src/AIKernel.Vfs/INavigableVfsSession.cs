@@ -1,7 +1,7 @@
-namespace AIKernel.VFS;
+namespace AIKernel.Vfs;
 
 /// <summary>
-/// 階層移動可能な VFS セッション能力を定義します。
+/// 階層移動可能な Vfs セッション能力を定義します。
 /// </summary>
 public interface INavigableVfsSession
 {

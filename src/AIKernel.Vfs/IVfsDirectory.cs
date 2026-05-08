@@ -1,9 +1,9 @@
-namespace AIKernel.VFS;
+namespace AIKernel.Vfs;
 
 using AIKernel.Dtos.Vfs;
 
 /// <summary>
-/// VFS ディレクトリの互換合成インターフェースを定義します。
+/// Vfs ディレクトリの互換合成インターフェースを定義します。
 /// UC-08（コンテキストスナップショットと永続化）, UC-18（Chat Persistence）
 /// </summary>
 /// <remarks>

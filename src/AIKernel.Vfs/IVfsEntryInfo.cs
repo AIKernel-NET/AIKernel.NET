@@ -1,7 +1,7 @@
-namespace AIKernel.VFS;
+namespace AIKernel.Vfs;
 
 /// <summary>
-/// VFS エントリに共通する識別情報を定義します。
+/// Vfs エントリに共通する識別情報を定義します。
 /// </summary>
 public interface IVfsEntryInfo
 {

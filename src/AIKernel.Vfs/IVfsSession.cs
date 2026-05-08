@@ -1,7 +1,7 @@
-namespace AIKernel.VFS;
+namespace AIKernel.Vfs;
 
 /// <summary>
-/// VFS セッションの互換合成インターフェースを定義します。
+/// Vfs セッションの互換合成インターフェースを定義します。
 /// ファイルシステム操作を行うセッション。
 /// </summary>
 /// <remarks>

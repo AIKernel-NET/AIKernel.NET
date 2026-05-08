@@ -61,9 +61,9 @@ The `src` tree contains the canonical specification projects that define interfa
 - Main namespace: `AIKernel.Enums`
 - Project references: none
 
-### AIKernel.VFS
+### AIKernel.Vfs
 - Purpose: Provider-agnostic Virtual File System contracts.
-- Main namespace: `AIKernel.VFS`
+- Main namespace: `AIKernel.Vfs`
 - Project references: `AIKernel.Dtos`
 
 ---
@@ -74,12 +74,12 @@ The `src` tree contains the canonical specification projects that define interfa
 - `AIKernel.Contracts` -> `AIKernel.Dtos`, `AIKernel.Enums`
 - `AIKernel.Dtos` -> `AIKernel.Enums`
 - `AIKernel.Enums` -> (none)
-- `AIKernel.VFS` -> `AIKernel.Dtos`
+- `AIKernel.Vfs` -> `AIKernel.Dtos`
 
 Prohibited examples:
 - `Abstractions` -> `Contracts`
 - `Contracts` -> `Abstractions`
-- `VFS` -> `Abstractions`
+- `Vfs` -> `Abstractions`
 
 ---
 

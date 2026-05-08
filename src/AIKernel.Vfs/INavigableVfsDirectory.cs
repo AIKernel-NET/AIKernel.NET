@@ -1,9 +1,9 @@
-namespace AIKernel.VFS;
+namespace AIKernel.Vfs;
 
 using AIKernel.Dtos.Vfs;
 
 /// <summary>
-/// 列挙および階層移動が可能な VFS ディレクトリ能力を定義します。
+/// 列挙および階層移動が可能な Vfs ディレクトリ能力を定義します。
 /// </summary>
 public interface INavigableVfsDirectory : IVfsEntryInfo
 {

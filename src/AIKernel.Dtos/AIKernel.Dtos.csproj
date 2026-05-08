@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
@@ -9,13 +9,13 @@
 
     <!-- Description: English then Japanese -->
     <Description>
-AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orchestration. This package is part of the AIKernel Core and provides foundational components required by Kernel, Providers, and VFS layers.
+AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orchestration. This package is part of the AIKernel Core and provides foundational components required by Kernel, Providers, and Vfs layers.
 
-Contains immutable data transfer objects used across AIKernel components, including execution/governance/ROM/prompt/routing/security payloads and VFS data carriers. DTOs are designed for contract-safe interchangeability without embedding business logic.
+Contains immutable data transfer objects used across AIKernel components, including execution/governance/ROM/prompt/routing/security payloads and Vfs data carriers. DTOs are designed for contract-safe interchangeability without embedding business logic.
 
-AIKernel は AI アプリケーション向けの OS 的フレームワークであり、カテゴリ分離、コンテキスト隔離、契約駆動の設計思想に基づいています。本パッケージは AIKernel Core の一部であり、Kernel、Provider、VFS 層が利用する基盤コンポーネントを提供します。
+AIKernel は AI アプリケーション向けの OS 的フレームワークであり、カテゴリ分離、コンテキスト隔離、契約駆動の設計思想に基づいています。本パッケージは AIKernel Core の一部であり、Kernel、Provider、Vfs 層が利用する基盤コンポーネントを提供します。
 
-実行・ガバナンス・ROM・プロンプト・ルーティング・セキュリティのペイロード、および VFS データキャリアを含む不変 DTO を提供します。DTO はビジネスロジックを持たず、契約互換を維持した交換可能性を重視して設計されています。
+実行・ガバナンス・ROM・プロンプト・ルーティング・セキュリティのペイロード、および Vfs データキャリアを含む不変 DTO を提供します。DTO はビジネスロジックを持たず、契約互換を維持した交換可能性を重視して設計されています。
     </Description>
 
     <!-- Package settings -->
