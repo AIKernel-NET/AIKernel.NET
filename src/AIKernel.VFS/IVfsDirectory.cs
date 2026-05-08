@@ -3,21 +3,15 @@ namespace AIKernel.VFS;
 using AIKernel.Dtos.Vfs;
 
 /// <summary>
-/// VFS ディレクトリのインターフェースを定義します。
+/// VFS ディレクトリの互換合成インターフェースを定義します。
 /// UC-08（コンテキストスナップショットと永続化）, UC-18（Chat Persistence）
 /// </summary>
-public interface IVfsDirectory
+/// <remarks>
+/// v0.0.2 以降、階層移動能力は <see cref="INavigableVfsDirectory"/> で表現します。
+/// 本インターフェースは既存実装との互換性を維持するため、従来の戻り値型を残します。
+/// </remarks>
+public interface IVfsDirectory : INavigableVfsDirectory
 {
-    /// <summary>
-    /// ディレクトリの名前を取得します。
-    /// </summary>
-    string Name { get; }
-
-    /// <summary>
-    /// ディレクトリパスを取得します。
-    /// </summary>
-    string Path { get; }
-
     /// <summary>
     /// ディレクトリ内のファイルを列挙します。
     /// </summary>
@@ -33,12 +27,6 @@ public interface IVfsDirectory
     Task<IReadOnlyList<IVfsDirectory>> GetDirectoriesAsync();
 
     /// <summary>
-    /// ディレクトリ内のすべてのエントリ（ファイルおよびディレクトリ）を列挙します。
-    /// </summary>
-    /// <returns>エントリ一覧</returns>
-    Task<IReadOnlyList<VfsEntry>> GetEntriesAsync();
-
-    /// <summary>
     /// サブディレクトリを取得します。
     /// </summary>
     /// <param name="name">サブディレクトリ名</param>
@@ -46,10 +34,21 @@ public interface IVfsDirectory
     /// <exception cref="ArgumentException">name が不正な場合にスローされます。</exception>
     Task<IVfsDirectory?> GetSubdirectoryAsync(string name);
 
-    /// <summary>
-    /// ディレクトリメタデータを取得します。
-    /// </summary>
-    /// <returns>メタデータ。未設定の場合は null。</returns>
-    IReadOnlyDictionary<string, string>? GetMetadata();
+    async Task<IReadOnlyList<IReadableVfsFile>> INavigableVfsDirectory.GetReadableFilesAsync(bool recursive)
+    {
+        IReadOnlyList<IVfsFile> files = await GetFilesAsync(recursive).ConfigureAwait(false);
+        return files;
+    }
+
+    async Task<IReadOnlyList<INavigableVfsDirectory>> INavigableVfsDirectory.GetNavigableDirectoriesAsync()
+    {
+        IReadOnlyList<IVfsDirectory> directories = await GetDirectoriesAsync().ConfigureAwait(false);
+        return directories;
+    }
+
+    async Task<INavigableVfsDirectory?> INavigableVfsDirectory.GetNavigableSubdirectoryAsync(string name)
+    {
+        return await GetSubdirectoryAsync(name).ConfigureAwait(false);
+    }
 }
 

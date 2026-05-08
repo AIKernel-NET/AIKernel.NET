@@ -1,0 +1,52 @@
+---
+id: ivfscapabilitycontracts
+version: 0.0.2
+issuer: ai-kernel@tkysoftware.xsrv.jp
+title: "VFS Capability Contracts"
+created: 2026-05-09
+updated: 2026-05-09
+tags:
+  - aikernel
+  - architecture
+  - interfaces
+  - vfs
+  - capability
+  - english
+---
+
+For Japanese version, see IVfsCapabilityContracts-jp.md.
+
+# VFS Capability Contracts
+
+## Responsibility
+VFS capability contracts express file-system authority at the type-system level. Implementations expose only the interfaces that correspond to operations they can perform.
+
+## Capability Interfaces
+| Interface | Responsibility |
+| --- | --- |
+| `IVfsEntryInfo` | Common VFS entry identity and metadata. |
+| `IReadableVfsFile` | Read file bytes or text. |
+| `IWritableVfsFile` | Write file bytes or text when file-level mutation is supported. |
+| `INavigableVfsDirectory` | Enumerate files, directories, entries, and subdirectories. |
+| `IReadableVfsSession` | Read files and check path existence. |
+| `IWritableVfsSession` | Write files through a session. |
+| `IDeletableVfsSession` | Delete files or directories through a session. |
+| `INavigableVfsSession` | Open navigable directories through a session. |
+| `IQueryableVfsSession` | Execute provider-defined VFS queries. |
+
+## Compatibility Contracts
+`IVfsFile`, `IVfsDirectory`, and `IVfsSession` remain as composite compatibility contracts.
+
+- `IVfsFile` extends `IReadableVfsFile`.
+- `IVfsDirectory` extends `INavigableVfsDirectory` and keeps legacy directory return types.
+- `IVfsSession` composes readable, writable, deletable, navigable, queryable, and async-disposable session capabilities.
+
+## Fail-Closed Rule
+A caller must check the required capability interface before executing an operation. If the capability is absent, execution must be denied before side effects begin.
+
+Unsupported capabilities must not be represented by methods that partially execute or fail late with `NotSupportedException`.
+
+---
+
+# Changelog
+- v0.0.2 (2026-05-09): Initial capability-based VFS contract definition
