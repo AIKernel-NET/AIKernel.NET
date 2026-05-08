@@ -2,7 +2,7 @@
 id: extension-points
 version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
-title: "EXTENSION_POINTS — Extension Point Specifications (Provider / VFS / Policy, etc.)"
+title: "EXTENSION_POINTS — Extension Point Specifications (Provider / Vfs / Policy, etc.)"
 created: 2026-05-01
 tags:
 - aikernel
@@ -13,7 +13,7 @@ tags:
 updated: 2026-05-06
 ---
 
-# EXTENSION_POINTS — Extension Point Specifications (Provider / VFS / Policy, etc.)
+# EXTENSION_POINTS — Extension Point Specifications (Provider / Vfs / Policy, etc.)
 
 ## Overview
 This document enumerates AIKernel.NET's extension points (replaceable components) and clarifies **what is a contract and what is implementation**. AIKernel's core principles—contract-driven, capability-based, PDP governance, DAG execution, and reproducibility—guide extension design.
@@ -82,12 +82,12 @@ Compose use-cases (Chat/RAG/Optimization) while separating cross-cutting concern
 
 ---
 
-## 6. VFS (External data boundary) extension
+## 6. Vfs (External data boundary) extension
 ### 6.1 Purpose
 Separate external data sources (Git, etc.) from Providers as a data boundary.
 
 ### 6.2 Contract-level requirements
-- Abstract read/write/list operations as VFS contracts; implementations live in separate repos.
+- Abstract read/write/list operations as Vfs contracts; implementations live in separate repos.
 
 ---
 

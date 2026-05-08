@@ -2,7 +2,7 @@
 id: ivfscapabilitycontracts
 version: 0.0.2
 issuer: ai-kernel@tkysoftware.xsrv.jp
-title: "VFS Capability Contracts"
+title: "Vfs Capability Contracts"
 created: 2026-05-09
 updated: 2026-05-09
 tags:
@@ -16,15 +16,15 @@ tags:
 
 For Japanese version, see IVfsCapabilityContracts-jp.md.
 
-# VFS Capability Contracts
+# Vfs Capability Contracts
 
 ## Responsibility
-VFS capability contracts express file-system authority at the type-system level. Implementations expose only the interfaces that correspond to operations they can perform.
+Vfs capability contracts express file-system authority at the type-system level. Implementations expose only the interfaces that correspond to operations they can perform.
 
 ## Capability Interfaces
 | Interface | Responsibility |
 | --- | --- |
-| `IVfsEntryInfo` | Common VFS entry identity and metadata. |
+| `IVfsEntryInfo` | Common Vfs entry identity and metadata. |
 | `IReadableVfsFile` | Read file bytes or text. |
 | `IWritableVfsFile` | Write file bytes or text when file-level mutation is supported. |
 | `INavigableVfsDirectory` | Enumerate files, directories, entries, and subdirectories. |
@@ -32,7 +32,7 @@ VFS capability contracts express file-system authority at the type-system level.
 | `IWritableVfsSession` | Write files through a session. |
 | `IDeletableVfsSession` | Delete files or directories through a session. |
 | `INavigableVfsSession` | Open navigable directories through a session. |
-| `IQueryableVfsSession` | Execute provider-defined VFS queries. |
+| `IQueryableVfsSession` | Execute provider-defined Vfs queries. |
 
 ## Compatibility Contracts
 `IVfsFile`, `IVfsDirectory`, and `IVfsSession` remain as composite compatibility contracts.
@@ -49,4 +49,4 @@ Unsupported capabilities must not be represented by methods that partially execu
 ---
 
 # Changelog
-- v0.0.2 (2026-05-09): Initial capability-based VFS contract definition
+- v0.0.2 (2026-05-09): Initial capability-based Vfs contract definition

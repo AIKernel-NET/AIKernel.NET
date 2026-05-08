@@ -17,16 +17,16 @@ tags:
 # IVfsProvider
 
 ## Responsibility
-IVfsProvider が AIKernel のオーケストレーションおよび統治フローで、認証済み VFS session を開くための provider 境界を定義する。
+IVfsProvider が AIKernel のオーケストレーションおよび統治フローで、認証済み Vfs session を開くための provider 境界を定義する。
 
 `IVfsProvider` 自体は read/write/delete/navigation/query 権限を意味しない。これらの権限は、返された session が実装する capability interface によって表現する。
 
 ## 主要メンバー（Draft）
 | Member | Type | 説明 |
 | --- | --- | --- |
-| `ProviderId` | `string` | VFS provider identifier. |
-| `Name` | `string` | VFS provider display name. |
-| `OpenSessionAsync(IVfsCredentials credentials)` | `Task<IVfsSession>` | Open authenticated VFS session. |
+| `ProviderId` | `string` | Vfs provider identifier. |
+| `Name` | `string` | Vfs provider display name. |
+| `OpenSessionAsync(IVfsCredentials credentials)` | `Task<IVfsSession>` | Open authenticated Vfs session. |
 | `IsAvailableAsync()` | `Task<bool>` | Check provider availability. |
 | `GetHealthAsync()` | `Task<VfsProviderHealth>` | Return health status for diagnostics. |
 

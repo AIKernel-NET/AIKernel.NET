@@ -208,7 +208,7 @@ Compare two conversation states and visualize which reasoning, instructions, and
 ### UC-18: Chat Persistence
 
 **Purpose**  
-Persist conversation history in a Git-like model across local storage, cloud backends, and VFS.
+Persist conversation history in a Git-like model across local storage, cloud backends, and Vfs.
 
 **Required Abstractions**  
 `IConversationStore`, `IVfsProvider`

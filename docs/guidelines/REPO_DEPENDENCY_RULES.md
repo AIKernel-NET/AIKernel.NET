@@ -37,7 +37,7 @@ This rule set is an OS rule to "first create layers, then fix dependency directi
 
 ## 2. Layer Definitions
 
-- Core (syscall): Abstractions / Contracts / Dtos / Enums / Events / KernelContext / VFS
+- Core (syscall): Abstractions / Contracts / Dtos / Enums / Events / KernelContext / Vfs
 - Kernel (implementation): Scheduler / Router / Controller / Pipeline / RagEngine / Rules
 - Providers (drivers): Capability implementations
 - VfsProviders (external data): Git and other data sources
@@ -57,7 +57,7 @@ This rule set is an OS rule to "first create layers, then fix dependency directi
 - AIKernel.Enums         : RejectCode / PdpDecision
 - AIKernel.Events        : AuditEvent / GuardEvent
 - AIKernel.KernelContext : Identity / Permission / Budget / DataClassification
-- AIKernel.VFS           : VFS abstractions (external data boundary)
+- AIKernel.Vfs           : Vfs abstractions (external data boundary)
 
 ---
 
@@ -75,7 +75,7 @@ Dependencies not listed here are generally forbidden; exceptions must be documen
 | AIKernel.Dtos | AIKernel.Enums |
 | AIKernel.Events | AIKernel.Enums, AIKernel.Dtos |
 | AIKernel.KernelContext | AIKernel.Enums |
-| AIKernel.VFS | AIKernel.Dtos |
+| AIKernel.Vfs | AIKernel.Dtos |
 | tests/* | free to reference (no reverse flow) |
 
 ### 4.2 Forbidden
@@ -83,7 +83,7 @@ Dependencies not listed here are generally forbidden; exceptions must be documen
 - Circular dependencies (A → B → A)
 - src referencing tests (reverse flow)
 - Core referencing Kernel/Providers/Server/Hosting/Enterprise
-- Concrete data carriers in VFS interfaces (must be defined in AIKernel.Dtos)
+- Concrete data carriers in Vfs interfaces (must be defined in AIKernel.Dtos)
 
 ---
 
