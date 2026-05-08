@@ -1,13 +1,13 @@
 ---
 title: "Migration Guide"
 status: "Planned"
-version: 0.0.1
-updated: 2026-05-06
+version: 0.0.2
+updated: 2026-05-09
 ---
 
 # Migration Guide
 
-This guide defines migration steps from the initial concept baseline (`v0.0.0`) to the canonical architecture baseline (`v0.0.1`).
+This guide defines migration steps from the initial concept baseline (`v0.0.0`) to the canonical architecture baseline (`v0.0.1`), and to the naming/capability contract changes introduced in `v0.0.2`.
 
 ## 1. Fundamental Changes
 In `v0.0.1`, the architecture was rebuilt around `Determinism` and `Non-LLM Governance`.
@@ -44,8 +44,80 @@ Replacement rules from old terms to canonical terms:
 - `Dtos` do not contain business logic or exception contracts.
 - `IRomDocument -> IROMCanonicalizer -> ISemanticHasher` order is enforced.
 - `IPdp` remains deterministic with `Indeterminate => Deny` behavior.
+
+## 5. Migrating to v0.0.2: Vfs Naming Convention
+In v0.0.2, acronyms with three or more characters are treated as words according to the .NET Framework Design Guidelines. As a result, `VFS` is normalized to `Vfs` in identifiers.
+
+This is a breaking change that affects namespaces, project/package names, and public documentation.
+
+### 5.1 Replacement Mapping
+| Legacy Name | New Name | Notes |
+|---|---|---|
+| `AIKernel.VFS` | `AIKernel.Vfs` | Namespace / project / NuGet package name normalization. |
+| `AIKernel.VFS.csproj` | `AIKernel.Vfs.csproj` | Update ProjectReference and solution entries. |
+| `VFS` | `Vfs` | Canonical spelling for code identifiers and package/docs references. |
+| `ProviderID` | `ProviderId` | `Id` is normalized as a two-letter word. |
+
+Types that already use the canonical spelling, such as `IVfsProvider`, `IVfsSession`, `VfsProviderHealth`, and `VfsEntry`, remain unchanged.
+
+### 5.2 Migration Steps
+1. Replace `using AIKernel.VFS;` with `using AIKernel.Vfs;`.
+2. Update `.csproj` / `.slnx` references to `AIKernel.Vfs/AIKernel.Vfs.csproj`.
+3. If NuGet package references are used, replace `AIKernel.VFS` with `AIKernel.Vfs`.
+4. Normalize remaining `VFS` references in README, design docs, and operational docs to `Vfs`.
+5. Run a case-sensitive search to confirm that `VFS`, `AIKernel.VFS`, and `ProviderID` no longer remain.
+
+## 6. Migrating to v0.0.2: Vfs Capability Contracts
+This section corresponds to Issue #4, `[RFC] Interface Segregation for VFS: Transitioning to Capability-Based Abstractions`.
+
+In v0.0.2, Vfs permissions are represented by capability interfaces instead of a single monolithic contract.
+
+### 6.1 New Capability Interfaces
+| Capability | Purpose |
+|---|---|
+| `IVfsEntryInfo` | Common identity and metadata for Vfs entries. |
+| `IReadableVfsFile` | Read file contents. |
+| `IWritableVfsFile` | Write file contents when file-level mutation is supported. |
+| `INavigableVfsDirectory` | Enumerate and navigate directories. |
+| `IReadableVfsSession` | Read files and check path existence through a session. |
+| `IWritableVfsSession` | Write files through a session. |
+| `IDeletableVfsSession` | Delete files or directories through a session. |
+| `INavigableVfsSession` | Open directories through a session. |
+| `IQueryableVfsSession` | Execute provider-defined queries. |
+
+### 6.2 Compatibility Contracts
+Existing `IVfsFile`, `IVfsDirectory`, and `IVfsSession` contracts remain as composite compatibility contracts.
+
+- `IVfsFile` extends `IReadableVfsFile`.
+- `IVfsDirectory` extends `INavigableVfsDirectory` while preserving legacy `IVfsFile` / `IVfsDirectory` return types.
+- `IVfsSession` composes readable / writable / deletable / navigable / queryable / async-disposable capabilities.
+
+As a result, existing implementations that depend on `IVfsSession` do not need to be replaced immediately. However, new implementations and standard providers should narrow their dependencies to the smallest capability interface required.
+
+### 6.3 Implementation Guidance
+- Read-only providers should implement only `IReadableVfsSession`, and should not implement `IWritableVfsSession` or `IDeletableVfsSession`.
+- Avoid placeholder `WriteFileAsync` implementations that throw `NotSupportedException` for providers that cannot write.
+- Callers should check the required capability interface before executing an operation. If the capability is absent, deny before side effects begin.
+
+```csharp
+if (session is not IWritableVfsSession writable)
+{
+    // Deny before side effects begin.
+    return;
+}
+
+await writable.WriteFileAsync(path, content);
+```
+
+## 7. v0.0.2 Verification Checklist
+- No `using AIKernel.VFS;` remains.
+- ProjectReference / solution entries point to `AIKernel.Vfs/AIKernel.Vfs.csproj`.
+- Public docs / README / csproj metadata no longer contain `VFS`.
+- Read-only Vfs implementations do not expose mutation capabilities.
+- Missing capabilities are handled as pre-execution denial, not late `NotSupportedException` failures.
 ---
 
 # Changelog
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
+- v0.0.2 (2026-05-09): Added Issue #4 Vfs capability contract migration steps and Issue #7 Vfs naming normalization
