@@ -152,7 +152,81 @@ Read-only cache adapters should implement `IMaterialCacheReader` without exposin
 
 Callers should depend on the smallest validator capability needed for the operation. Missing capability means denial before execution begins.
 
-### 7.4 RAG Provider Contracts
+### 7.4 Event Bus Contracts
+`IEventBus` remains as a composite compatibility contract over `IProvider`, event publishing, broadcast, and subscription registry capabilities.
+
+| Capability | Purpose |
+|---|---|
+| `IEventPublisher` | Publish events. |
+| `IEventBroadcaster` | Broadcast events to all subscribers. |
+| `IEventSubscriptionRegistry` | Subscribe, unsubscribe, and inspect subscriber counts. |
+
+Subscription-only adapters should implement `IEventSubscriptionRegistry` without exposing publish or broadcast capabilities.
+
+### 7.5 Task and Scheduler Contracts
+`ITaskManager` and `IScheduler` remain as composite compatibility contracts, but execution, control, result lookup, and scheduling authority are separated.
+
+| Capability | Purpose |
+|---|---|
+| `IPipelineRegistrar` | Register pipelines. |
+| `IPipelineExecutor` | Execute registered pipelines. |
+| `ITaskExecutor` | Execute individual tasks. |
+| `IPipelineExecutionController` | Pause, resume, and cancel pipeline executions. |
+| `IPipelineExecutionResultReader` | Read pipeline execution results. |
+| `IScheduledJobReader` | Read scheduled jobs and list jobs. |
+| `IJobScheduler` | Schedule jobs. |
+| `IScheduledJobCanceller` | Cancel scheduled jobs. |
+| `IScheduledExecutionResultReader` | Read scheduled job execution results. |
+
+Observation-only components should depend on result-reader or job-reader capabilities without receiving execution or cancellation authority.
+
+### 7.6 Tokenizer Contracts
+`ITokenizer` remains as a composite compatibility contract, but tokenization, counting, decoding, statistics, model support, and NPU cardinality concerns are separated.
+
+| Capability | Purpose |
+|---|---|
+| `ITokenizerIdentity` | Tokenizer profile Id and name. |
+| `ITextTokenizer` | Convert text into tokens. |
+| `ITokenCounter` | Count tokens without exposing token materialization. |
+| `ITokenDecoder` | Decode tokens back to text. |
+| `ITokenizerStatisticsProvider` | Read tokenizer statistics. |
+| `ITokenizerModelSupport` | Check model support. |
+| `IPhysicalCardinalityAdvisor` | Convert logical token counts to physical cardinality. |
+| `IPaddingInfoProvider` | Read padding information. |
+
+Budget estimators should usually depend on `ITokenCounter` and, only when hardware alignment is required, `IPhysicalCardinalityAdvisor`.
+
+### 7.7 Signature Trust Store Contracts
+`ISignatureTrustStore` remains as a composite compatibility contract, but trust resolution, revocation, expiry, chain verification, trusted-anchor lookup, and health probing are separated.
+
+| Capability | Purpose |
+|---|---|
+| `ISignerTrustResolver` | Resolve signer trust score. |
+| `IKeyRevocationChecker` | Check key revocation. |
+| `IKeyExpiryReader` | Read key expiry. |
+| `ICertificateChainVerifier` | Verify certificate chain. |
+| `ITrustedAnchorReader` | Read trusted anchors. |
+| `ITrustStoreHealthProbe` | Check trust store reachability. |
+
+Health-only checks should depend on `ITrustStoreHealthProbe` and should not receive trust-resolution or revocation authority.
+
+### 7.8 Kernel Facade Contracts
+`IKernel` remains as the top-level facade compatibility contract, but execution, analysis, preprocessing, provider routing, and governance access are independently expressible.
+
+| Capability | Purpose |
+|---|---|
+| `IKernelVersionProvider` | Read kernel version. |
+| `IKernelExecutor` | Execute a unified context contract. |
+| `IKernelAttentionAnalyzer` | Analyze orchestration attention pollution. |
+| `IKernelMaterialPreprocessor` | Normalize and structure Material Context. |
+| `IKernelExpressionPreparer` | Prepare Expression Context. |
+| `IKernelProviderRouterAccessor` | Access Provider Router. |
+| `IKernelGuardAccessor` | Access Guard. |
+| `IKernelPdpAccessor` | Access PDP. |
+
+Application code should depend on the narrow kernel capability it needs. `IKernel` should be reserved for composition roots and facade-level orchestration.
+
+### 7.9 RAG Provider Contracts
 `IRagProvider` remains as a composite compatibility contract over `IProvider`, search, and index mutation capabilities.
 
 | Capability | Purpose |
@@ -172,6 +246,11 @@ Read-only RAG providers should implement `IRagSearchProvider` only, plus `IProvi
 - Missing capabilities are handled as pre-execution denial, not late `NotSupportedException` failures.
 - Read-only RAG providers expose `IRagSearchProvider` without index mutation capabilities.
 - Provider/router dependencies are narrowed to identity, lifecycle, retrieval, cache, or registry capabilities where possible.
+- Event dependencies are narrowed to publisher, broadcaster, or subscription registry capabilities where possible.
+- Task and scheduler dependencies are narrowed to execution, control, result reader, job reader, scheduler, or canceller capabilities where possible.
+- Tokenizer dependencies are narrowed to counter, tokenizer, decoder, statistics, model support, cardinality, or padding capabilities where possible.
+- Signature trust dependencies are narrowed to trust resolver, revocation checker, expiry reader, chain verifier, anchor reader, or health probe capabilities where possible.
+- Kernel dependencies are narrowed to execution, analysis, preprocessing, provider-router access, guard access, or PDP access capabilities where possible.
 - Tool access validation dependencies are narrowed to the required capability interface where possible.
 ---
 

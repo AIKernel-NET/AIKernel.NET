@@ -2,10 +2,9 @@ namespace AIKernel.Abstractions.Events;
 
 /// <summary>
 /// UC-20/UC-24/UC-25 に基づく契約です。
-/// イベントバスプロバイダーを定義します。
-/// アプリケーション全体のイベント配信と購読を管理します。
+/// イベントを発行する capability interface です。
 /// </summary>
-public interface IEventBus : IProvider
+public interface IEventPublisher
 {
     /// <summary>
     /// イベントを発行します。
@@ -14,7 +13,29 @@ public interface IEventBus : IProvider
     /// <param name="eventData">イベントデータ</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     Task PublishAsync(string eventName, object eventData, CancellationToken cancellationToken = default);
+}
 
+/// <summary>
+/// UC-20/UC-24/UC-25 に基づく契約です。
+/// すべての購読者へイベントを配信する capability interface です。
+/// </summary>
+public interface IEventBroadcaster
+{
+    /// <summary>
+    /// すべての購読者にイベントを配信します。
+    /// </summary>
+    /// <param name="eventName">イベント名</param>
+    /// <param name="eventData">イベントデータ</param>
+    /// <param name="cancellationToken">キャンセルトークン</param>
+    Task BroadcastAsync(string eventName, object eventData, CancellationToken cancellationToken = default);
+}
+
+/// <summary>
+/// UC-20/UC-24/UC-25 に基づく契約です。
+/// イベント購読を管理する capability interface です。
+/// </summary>
+public interface IEventSubscriptionRegistry
+{
     /// <summary>
     /// イベントに購読します。
     /// </summary>
@@ -32,14 +53,6 @@ public interface IEventBus : IProvider
     bool Unsubscribe(string subscriptionId);
 
     /// <summary>
-    /// すべての購読者にイベントを配信します。
-    /// </summary>
-    /// <param name="eventName">イベント名</param>
-    /// <param name="eventData">イベントデータ</param>
-    /// <param name="cancellationToken">キャンセルトークン</param>
-    Task BroadcastAsync(string eventName, object eventData, CancellationToken cancellationToken = default);
-
-    /// <summary>
     /// 指定されたイベント名の購読者数を取得します。
     /// </summary>
     /// <param name="eventName">イベント名</param>
@@ -47,4 +60,15 @@ public interface IEventBus : IProvider
     int GetSubscriberCount(string eventName);
 }
 
-
+/// <summary>
+/// UC-20/UC-24/UC-25 に基づく契約です。
+/// イベントバスプロバイダーを定義する互換合成インターフェースです。
+/// アプリケーション全体のイベント配信と購読を管理します。
+/// </summary>
+public interface IEventBus :
+    IProvider,
+    IEventPublisher,
+    IEventBroadcaster,
+    IEventSubscriptionRegistry
+{
+}

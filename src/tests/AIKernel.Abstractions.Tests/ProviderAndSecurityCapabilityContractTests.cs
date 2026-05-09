@@ -1,4 +1,5 @@
 using AIKernel.Abstractions.Models;
+using AIKernel.Abstractions.Events;
 using AIKernel.Abstractions.Providers;
 using AIKernel.Abstractions.Security;
 using AIKernel.Abstractions.Tooling;
@@ -74,6 +75,26 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
         Assert.False(cacheReader is IMaterialCacheWriter);
         Assert.False(cacheReader is IProviderRegistry);
+    }
+
+    [Fact]
+    public void CompositeEventBusExposesGranularEventCapabilities()
+    {
+        IEventBus eventBus = new FullEventBus();
+
+        Assert.IsAssignableFrom<IProvider>(eventBus);
+        Assert.IsAssignableFrom<IEventPublisher>(eventBus);
+        Assert.IsAssignableFrom<IEventBroadcaster>(eventBus);
+        Assert.IsAssignableFrom<IEventSubscriptionRegistry>(eventBus);
+    }
+
+    [Fact]
+    public void SubscriptionOnlyEventRegistryDoesNotExposePublishCapabilities()
+    {
+        IEventSubscriptionRegistry registry = new SubscriptionOnlyEventRegistry();
+
+        Assert.False(registry is IEventPublisher);
+        Assert.False(registry is IEventBroadcaster);
     }
 
     private sealed class FullToolAccessValidator : IToolAccessValidator
@@ -274,6 +295,86 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         public IReadOnlyList<string> GetRegisteredProviders()
         {
             return [];
+        }
+    }
+
+    private sealed class SubscriptionOnlyEventRegistry : IEventSubscriptionRegistry
+    {
+        public string Subscribe<T>(string eventName, Func<T, Task> handler)
+        {
+            return "subscription";
+        }
+
+        public bool Unsubscribe(string subscriptionId)
+        {
+            return true;
+        }
+
+        public int GetSubscriberCount(string eventName)
+        {
+            return 0;
+        }
+    }
+
+    private sealed class FullEventBus : FullProviderBase, IEventBus
+    {
+        public Task PublishAsync(string eventName, object eventData, CancellationToken cancellationToken = default)
+        {
+            return Task.CompletedTask;
+        }
+
+        public Task BroadcastAsync(string eventName, object eventData, CancellationToken cancellationToken = default)
+        {
+            return Task.CompletedTask;
+        }
+
+        public string Subscribe<T>(string eventName, Func<T, Task> handler)
+        {
+            return "subscription";
+        }
+
+        public bool Unsubscribe(string subscriptionId)
+        {
+            return true;
+        }
+
+        public int GetSubscriberCount(string eventName)
+        {
+            return 0;
+        }
+    }
+
+    private abstract class FullProviderBase : IProvider
+    {
+        public string ProviderId => "provider";
+
+        public string Name => "Provider";
+
+        public string Version => "0.0.2";
+
+        public IProviderCapabilities GetCapabilities()
+        {
+            return new EmptyProviderCapabilities();
+        }
+
+        public Task<bool> IsAvailableAsync()
+        {
+            return Task.FromResult(true);
+        }
+
+        public Task InitializeAsync()
+        {
+            return Task.CompletedTask;
+        }
+
+        public Task ShutdownAsync()
+        {
+            return Task.CompletedTask;
+        }
+
+        public Task<ProviderHealthStatus> GetHealthAsync()
+        {
+            return Task.FromResult(new ProviderHealthStatus(true, null, DateTime.UnixEpoch, 0));
         }
     }
 }
