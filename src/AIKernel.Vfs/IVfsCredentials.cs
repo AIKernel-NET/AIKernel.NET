@@ -1,7 +1,7 @@
-namespace AIKernel.VFS;
+namespace AIKernel.Vfs;
 
 /// <summary>
-/// VFS 認証情報を定義します。
+/// Vfs 認証情報を定義します。
 /// UC-08（コンテキストスナップショットと永続化）, UC-18（Chat Persistence）
 /// </summary>
 public interface IVfsCredentials

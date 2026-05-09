@@ -1,24 +1,19 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
 
     <!-- Package metadata -->
-    <Authors>Takuya Sogawa</Authors>
-    <Company>AIKernel-NET</Company>
     <Title>AIKernel.NET Abstractions</Title>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/AIKernel-NET/AIKernel.NET</RepositoryUrl>
-    <Copyright>Copyright © 2026 Takuya Sogawa of AIKernel-NET</Copyright>
 
     <!-- Description: English then Japanese -->
     <Description>
-AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orchestration. This package is part of the AIKernel Core and provides foundational components required by Kernel, Providers, and VFS layers.
+AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orchestration. This package is part of the AIKernel Core and provides foundational components required by Kernel, Providers, and Vfs layers.
 
 Defines the syscall-level abstractions of the AIKernel OS, including IKernel, IProvider, IGuard, and IPdp. These interfaces form the stable execution boundary for all Kernel and Provider implementations.
 
-AIKernel は AI アプリケーション向けの OS 的フレームワークであり、カテゴリ分離、コンテキスト隔離、契約駆動の設計思想に基づいています。本パッケージは AIKernel Core の一部であり、Kernel、Provider、VFS 層が利用する基盤コンポーネントを提供します。
+AIKernel は AI アプリケーション向けの OS 的フレームワークであり、カテゴリ分離、コンテキスト隔離、契約駆動の設計思想に基づいています。本パッケージは AIKernel Core の一部であり、Kernel、Provider、Vfs 層が利用する基盤コンポーネントを提供します。
 
 AIKernel OS の syscall レベルの抽象を定義します。IKernel、IProvider、IGuard、IPdp などを含み、Kernel と Provider 実装の安定した実行境界を提供します。
     </Description>
@@ -26,7 +21,6 @@ AIKernel OS の syscall レベルの抽象を定義します。IKernel、IProvid
     <!-- Package settings -->
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageProjectUrl>https://www.nuget.org/profiles/AIKernel</PackageProjectUrl>
     <PackageIcon>aikernel-logo128x128.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>

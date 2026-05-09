@@ -2,7 +2,7 @@
 id: extension-points
 version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
-title: "EXTENSION_POINTS — Extension Point Specifications (Provider / VFS / Policy, etc.)"
+title: "EXTENSION_POINTS — Extension Point Specifications (Provider / Vfs / Policy, etc.)"
 created: 2026-05-01
 tags:
 - aikernel
@@ -10,10 +10,10 @@ tags:
 - extension
 - capabilities
 - english
-updated: 2026-05-06
+updated: 2026-05-09
 ---
 
-# EXTENSION_POINTS — Extension Point Specifications (Provider / VFS / Policy, etc.)
+# EXTENSION_POINTS — Extension Point Specifications (Provider / Vfs / Policy, etc.)
 
 ## Overview
 This document enumerates AIKernel.NET's extension points (replaceable components) and clarifies **what is a contract and what is implementation**. AIKernel's core principles—contract-driven, capability-based, PDP governance, DAG execution, and reproducibility—guide extension design.
@@ -82,29 +82,41 @@ Compose use-cases (Chat/RAG/Optimization) while separating cross-cutting concern
 
 ---
 
-## 6. VFS (External data boundary) extension
+## 6. Query Processing extension
 ### 6.1 Purpose
-Separate external data sources (Git, etc.) from Providers as a data boundary.
+Allow Phase 1 query augmentation, decomposition, semantic projection, and query routing to be replaced without changing Core contracts.
 
 ### 6.2 Contract-level requirements
-- Abstract read/write/list operations as VFS contracts; implementations live in separate repos.
+- `IQueryAugmentor`, `IQueryDecomposer`, and `IQueryRouter` receive `IKernelContext`.
+- `QueryPart` is the immutable handoff DTO between query planning and context/material build.
+- Provider capability metadata declares query-processing and embedding support.
+- RAG stays a provider/pipeline strategy and is not pulled into Core retrieval.
 
 ---
 
-## 7. PromptRules / RulesEngine extension (operational artifacts)
+## 7. Vfs (External data boundary) extension
 ### 7.1 Purpose
-Treat PromptRules as signed Markdown operational artifacts for tamper detection and governance.
+Separate external data sources (Git, etc.) from Providers as a data boundary.
 
 ### 7.2 Contract-level requirements
+- Abstract read/write/list operations as Vfs contracts; implementations live in separate repos.
+
+---
+
+## 8. PromptRules / RulesEngine extension (operational artifacts)
+### 8.1 Purpose
+Treat PromptRules as signed Markdown operational artifacts for tamper detection and governance.
+
+### 8.2 Contract-level requirements
 - Support metadata such as signature, scope, and version.
 
 ---
 
-## 8. Audit events (Audit/Event) extension
-### 8.1 Purpose
+## 9. Audit events (Audit/Event) extension
+### 9.1 Purpose
 Emit primary information to support Deterministic Replay and auditing.
 
-### 8.2 Contract-level requirements
+### 9.2 Contract-level requirements
 - Event types should be additive and backward-compatible; changes follow versioning rules.
 
 ---
@@ -120,3 +132,4 @@ Emit primary information to support Deterministic Replay and auditing.
 # Changelog
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
+- v0.0.1 (2026-05-09): Added Query Processing extension point

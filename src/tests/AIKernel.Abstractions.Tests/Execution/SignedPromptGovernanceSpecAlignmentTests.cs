@@ -228,6 +228,14 @@ public sealed class SignedPromptGovernanceSpecAlignmentTests
             return Task.FromResult(false);
         }
 
+        public Task<GuardAction> EnforceAsync(SecurityPrincipal principal, string action, string resource)
+        {
+            _ = principal;
+            _ = action;
+            _ = resource;
+            return Task.FromResult(GuardAction.Block);
+        }
+
         public Task<GuardAction> OnFailureModeDetectedAsync(FailureMode mode, string context)
         {
             _ = mode;

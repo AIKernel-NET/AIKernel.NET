@@ -21,7 +21,7 @@ updated: 2026-05-06
 - 役割:
   指定アルゴリズムで決定論的ハッシュを生成し、期待値との整合を検証します。
 - 非役割:
-  正準化処理そのものは `IROMCanonicalizer` の責務です。
+  正準化処理そのものは `IRomCanonicalizer` の責務です。
 
 ## 2. 契約シグネチャ (Signature)
 ```csharp

@@ -15,11 +15,11 @@ tags:
 # Design Documentation Index
 
 ## 1. 目的
-`docs/design` は、仕様（spec）と実装（src）の間を接続する「設計上の意思決定ログ」です。AIKernel を AIOS として成立させるため、Kernel・VFS・System Call 相当の責務分離と拡張点を明文化します。
+`docs/design` は、仕様（spec）と実装（src）の間を接続する「設計上の意思決定ログ」です。AIKernel を AIOS として成立させるため、Kernel・Vfs・System Call 相当の責務分離と拡張点を明文化します。
 
 ## 2. 設計原則
 - Kernel: 実行状態遷移と Fail-Closed ガバナンスの統制点
-- VFS: 知能資産の永続化境界
+- Vfs: 知能資産の永続化境界
 - System Call 相当: Interface を介した副作用制御（tooling/security/provider）
 
 ## 3. 関連仕様

@@ -28,7 +28,7 @@ This guide shows dependency injection (DI) registration patterns, lifecycle guid
 - **IModelProvider**: model inference interface. Singleton recommended.
 - **IRagProvider**: retrieval (RAG) interface. Singleton recommended.
 - **IEmbeddingProvider**: embedding generation. Singleton recommended.
-- **IVirtualFileProvider**: VFS abstraction (Git/S3/Blob). Singleton recommended.
+- **IVirtualFileProvider**: Vfs abstraction (Git/S3/Blob). Singleton recommended.
 - **IScheduler**: job scheduler. Singleton recommended.
 - **IEventBus**: event delivery. Singleton recommended.
 

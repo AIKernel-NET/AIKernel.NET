@@ -1,9 +1,9 @@
-namespace AIKernel.VFS;
+namespace AIKernel.Vfs;
 
 using AIKernel.Dtos.Vfs;
 
 /// <summary>
-/// VFS クエリのインターフェースを定義します。
+/// Vfs クエリのインターフェースを定義します。
 /// データのクエリと検索を行うクエリ。
 /// UC-08（コンテキストスナップショットと永続化）, UC-18（Chat Persistence）
 /// </summary>

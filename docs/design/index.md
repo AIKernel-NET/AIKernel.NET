@@ -15,11 +15,11 @@ For Japanese version, see index-jp.md.
 # Design Documentation Index
 
 ## 1. Purpose
-`docs/design` is the decision layer between formal specs and source contracts. It explains how AIKernel behaves as an AIOS through explicit separation of Kernel, VFS, and system-call-like interface boundaries.
+`docs/design` is the decision layer between formal specs and source contracts. It explains how AIKernel behaves as an AIOS through explicit separation of Kernel, Vfs, and system-call-like interface boundaries.
 
 ## 2. Design Principles
 - Kernel: control point for execution-state transitions and fail-closed governance
-- VFS: persistence boundary for intelligence assets
+- Vfs: persistence boundary for intelligence assets
 - System-call equivalent: side-effect control through interfaces (tooling/security/provider)
 
 ## 3. Related Specs

@@ -21,7 +21,7 @@ For Japanese version, see [ISemanticHasher-jp.md](./ISemanticHasher-jp.md).
 - Role:
   Produce algorithm-bound deterministic digests and verify digest equality against expected values.
 - Non-role:
-  Canonicalization itself is delegated to `IROMCanonicalizer`.
+  Canonicalization itself is delegated to `IRomCanonicalizer`.
 
 ## 2. Contract Signature
 ```csharp

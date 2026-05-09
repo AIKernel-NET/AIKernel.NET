@@ -1,6 +1,4 @@
-using AIKernel.Dtos;
 using AIKernel.Dtos.Context;
-using AIKernel.Enums;
 
 namespace AIKernel.Contracts;
 
@@ -43,17 +41,5 @@ public interface IExpressionContract
     /// </summary>
     /// <returns>比喩・類推一覧</returns>
     IReadOnlyList<string> GetAnalogies();
-
-    /// <summary>
-    /// このコントラクトが推論結果に混入していないことを確認します。
-    /// </summary>
-    /// <returns>分離検証結果</returns>
-    ValidationResult ValidateIsolation();
-
-    /// <summary>
-    /// 推論後の適用タイミングを確認します。
-    /// </summary>
-    /// <returns>推論後に適用可能な場合は true。</returns>
-    bool CanApplyAfterInference();
 }
 

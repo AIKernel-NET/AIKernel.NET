@@ -1,7 +1,7 @@
 ---
 version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
-title: 'IROMCanonicalizer'
+title: 'IRomCanonicalizer'
 created: 2026-05-06
 tags:
   - aikernel
@@ -11,12 +11,12 @@ tags:
 updated: 2026-05-06
 ---
 
-For Japanese version, see [IROMCanonicalizer-jp.md](./IROMCanonicalizer-jp.md).
+For Japanese version, see [IRomCanonicalizer-jp.md](./IRomCanonicalizer-jp.md).
 
-# IROMCanonicalizer (ROM Canonicalization Interface Specification)
+# IRomCanonicalizer (ROM Canonicalization Interface Specification)
 
 ## 1. Responsibility Boundary
-`IROMCanonicalizer` transforms heterogeneous ROM representations into meaning-preserving canonical form, enabling deterministic comparison, signing, and verification.
+`IRomCanonicalizer` transforms heterogeneous ROM representations into meaning-preserving canonical form, enabling deterministic comparison, signing, and verification.
 
 - Role:
   Normalize newline/order/whitespace/reference representation so semantically equal inputs produce identical canonical outputs.
@@ -27,7 +27,7 @@ For Japanese version, see [IROMCanonicalizer-jp.md](./IROMCanonicalizer-jp.md).
 ```csharp
 namespace AIKernel.Abstractions.Rom;
 
-public interface IROMCanonicalizer
+public interface IRomCanonicalizer
 {
     CanonicalizedRomDto Canonicalize(IRomDocument document);
 

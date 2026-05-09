@@ -4,10 +4,9 @@ using AIKernel.Abstractions.Models;
 
 /// <summary>
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
-/// プロバイダーの機能情報を定義します。
-/// 静的な能力情報と、実行制約に基づく動的能力に対応します。
+/// Provider の静的な操作・データ種別 capability を公開します。
 /// </summary>
-public interface IProviderCapabilities
+public interface IProviderOperationCapabilities
 {
     /// <summary>
     /// サポートされている操作の一覧を取得します。
@@ -18,38 +17,6 @@ public interface IProviderCapabilities
     /// サポートされているデータタイプの一覧を取得します。
     /// </summary>
     IReadOnlyList<string> SupportedDataTypes { get; }
-
-    /// <summary>
-    /// 最大同時接続数を取得します。
-    /// </summary>
-    int MaxConcurrentConnections { get; }
-
-    /// <summary>
-    /// レート制限情報を取得します。
-    /// </summary>
-    RateLimitInfo? RateLimit { get; }
-
-    /// <summary>
-    /// プロバイダー（特にモデル）の能力ベクトルを取得します。
-    /// このベクトルはプロバイダー自体の「能力の履歴書」として機能します。
-    /// 静的な環境での能力を表します。
-    /// </summary>
-    ModelCapacityVector Vector { get; }
-
-    /// <summary>
-    /// 実行制約に基づいて動的に能力ベクトルを取得します。
-    /// NPU環境など、基数やメモリが非線形に性能に影響する場合に使用。
-    /// </summary>
-    /// <param name="constraints">実行制約条件</param>
-    /// <returns>制約下での動的能力ベクトル</returns>
-    IDictionary<string, float>? GetDynamicCapacities(IExecutionConstraints constraints);
-
-    /// <summary>
-    /// このプロバイダーの能力プロファイルを取得します。
-    /// 基数による性能変化をプロファイル曲線として取得できます。
-    /// </summary>
-    /// <returns>能力プロファイル、有効でない場合は null</returns>
-    ICapabilityProfile? GetCapabilityProfile();
 
     /// <summary>
     /// 特定の操作をサポートしているかどうかを確認します。
@@ -64,7 +31,74 @@ public interface IProviderCapabilities
     /// <param name="dataType">データタイプ</param>
     /// <returns>サポートしている場合は true</returns>
     bool SupportsDataType(string dataType);
+}
 
+/// <summary>
+/// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
+/// Provider の接続・レート制限 capability を公開します。
+/// </summary>
+public interface IProviderConnectionCapabilities
+{
+    /// <summary>
+    /// 最大同時接続数を取得します。
+    /// </summary>
+    int MaxConcurrentConnections { get; }
+
+    /// <summary>
+    /// レート制限情報を取得します。
+    /// </summary>
+    RateLimitInfo? RateLimit { get; }
+}
+
+/// <summary>
+/// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
+/// Provider の静的能力ベクトルを公開します。
+/// </summary>
+public interface IProviderCapacityVectorSource
+{
+    /// <summary>
+    /// プロバイダー（特にモデル）の能力ベクトルを取得します。
+    /// このベクトルはプロバイダー自体の「能力の履歴書」として機能します。
+    /// 静的な環境での能力を表します。
+    /// </summary>
+    ModelCapacityVector Vector { get; }
+}
+
+/// <summary>
+/// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
+/// 実行制約に基づく動的能力を公開します。
+/// </summary>
+public interface IDynamicProviderCapacitySource
+{
+    /// <summary>
+    /// 実行制約に基づいて動的に能力ベクトルを取得します。
+    /// NPU環境など、基数やメモリが非線形に性能に影響する場合に使用。
+    /// </summary>
+    /// <param name="constraints">実行制約条件</param>
+    /// <returns>制約下での動的能力ベクトル</returns>
+    IDictionary<string, float>? GetDynamicCapacities(IExecutionConstraints constraints);
+}
+
+/// <summary>
+/// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
+/// Provider の能力プロファイルを公開します。
+/// </summary>
+public interface IProviderProfileSource
+{
+    /// <summary>
+    /// このプロバイダーの能力プロファイルを取得します。
+    /// 基数による性能変化をプロファイル曲線として取得できます。
+    /// </summary>
+    /// <returns>能力プロファイル、有効でない場合は null</returns>
+    ICapabilityProfile? GetCapabilityProfile();
+}
+
+/// <summary>
+/// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
+/// 量子化サポート情報を公開します。
+/// </summary>
+public interface IQuantizationSupport
+{
     /// <summary>
     /// 指定された量子化レベルをサポートしているか確認します。
     /// </summary>
@@ -73,4 +107,81 @@ public interface IProviderCapabilities
     bool SupportsQuantization(string quantizationLevel);
 }
 
+/// <summary>
+/// Phase 1 Query Processing に関する Provider capability を公開します。
+/// Query 補間・分解・ルーティングは Core 実装ではなく、Provider または拡張実装が宣言する能力として扱います。
+/// </summary>
+public interface IQueryProcessingCapabilities
+{
+    /// <summary>
+    /// Query 補間または正規化をサポートしているかどうかを取得します。
+    /// </summary>
+    bool SupportsQueryAugmentation { get; }
 
+    /// <summary>
+    /// Query 分解をサポートしているかどうかを取得します。
+    /// </summary>
+    bool SupportsQueryDecomposition { get; }
+
+    /// <summary>
+    /// Query routing をサポートしているかどうかを取得します。
+    /// </summary>
+    bool SupportsQueryRouting { get; }
+
+    /// <summary>
+    /// 一度に扱える QueryPart の最大数を取得します。
+    /// </summary>
+    int MaxQueryParts { get; }
+
+    /// <summary>
+    /// サポートされている query processing operation の一覧を取得します。
+    /// </summary>
+    IReadOnlyList<string> SupportedQueryProcessingOperations { get; }
+
+    /// <summary>
+    /// 指定された query processing operation をサポートしているか確認します。
+    /// </summary>
+    /// <param name="operation">操作名。</param>
+    /// <returns>サポートしている場合は true。</returns>
+    bool SupportsQueryProcessingOperation(string operation);
+}
+
+/// <summary>
+/// Embedding に関する Provider capability metadata を公開します。
+/// 実際の embedding 生成は ITextEmbeddingProvider / IBatchEmbeddingProvider / IEmbeddingProvider が担います。
+/// </summary>
+public interface IEmbeddingCapabilityMetadata
+{
+    /// <summary>
+    /// Embedding 生成をサポートしているかどうかを取得します。
+    /// </summary>
+    bool SupportsEmbedding { get; }
+
+    /// <summary>
+    /// Embedding vector の次元数を取得します。
+    /// 次元が固定でない場合、または未公開の場合は null を返します。
+    /// </summary>
+    int? EmbeddingDimensions { get; }
+
+    /// <summary>
+    /// サポートされている embedding model 名の一覧を取得します。
+    /// </summary>
+    IReadOnlyList<string> SupportedEmbeddingModels { get; }
+}
+
+/// <summary>
+/// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
+/// プロバイダーの機能情報を定義する互換合成インターフェースです。
+/// 静的な能力情報と、実行制約に基づく動的能力に対応します。
+/// </summary>
+public interface IProviderCapabilities :
+    IProviderOperationCapabilities,
+    IProviderConnectionCapabilities,
+    IProviderCapacityVectorSource,
+    IDynamicProviderCapacitySource,
+    IProviderProfileSource,
+    IQuantizationSupport,
+    IQueryProcessingCapabilities,
+    IEmbeddingCapabilityMetadata
+{
+}

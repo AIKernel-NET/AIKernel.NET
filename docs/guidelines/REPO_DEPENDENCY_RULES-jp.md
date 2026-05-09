@@ -38,7 +38,7 @@ updated: 2026-05-06
 
 ## 2. レイヤ（層）定義
 
-- Core（syscall）: Abstractions / Contracts / Dtos / Enums / Events / KernelContext / VFS
+- Core（syscall）: Abstractions / Contracts / Dtos / Enums / Events / KernelContext / Vfs
 - Kernel（実装）: Scheduler / Router / Controller / Pipeline / RagEngine / Rules
 - Providers（ドライバ）: Capability 実装
 - VfsProviders（外部データ）: Git 等のデータソース
@@ -58,7 +58,7 @@ updated: 2026-05-06
 - AIKernel.Enums         : RejectCode / PdpDecision
 - AIKernel.Events        : AuditEvent / GuardEvent
 - AIKernel.KernelContext : Identity / Permission / Budget / DataClassification
-- AIKernel.VFS           : VFS 抽象（外部データ境界）
+- AIKernel.Vfs           : Vfs 抽象（外部データ境界）
 
 ---
 
@@ -76,7 +76,7 @@ updated: 2026-05-06
 | AIKernel.Dtos | AIKernel.Enums |
 | AIKernel.Events | AIKernel.Enums, AIKernel.Dtos |
 | AIKernel.KernelContext | AIKernel.Enums |
-| AIKernel.VFS | AIKernel.Dtos |
+| AIKernel.Vfs | AIKernel.Dtos |
 | tests/* | 参照自由（逆流禁止） |
 
 ### 4.2 禁止事項（Forbidden）
@@ -84,7 +84,7 @@ updated: 2026-05-06
 - 循環依存（A → B → A）
 - src が tests を参照すること（逆流）
 - Core が Kernel/Providers/Server/Hosting/Enterprise を参照すること
-- VFS インターフェースに具象データ型を内包すること（具象データは AIKernel.Dtos に定義する）
+- Vfs インターフェースに具象データ型を内包すること（具象データは AIKernel.Dtos に定義する）
 
 ---
 

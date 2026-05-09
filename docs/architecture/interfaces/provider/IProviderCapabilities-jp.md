@@ -4,7 +4,7 @@ version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "IProviderCapabilities"
 created: 2026-05-03
-updated: 2026-05-06
+updated: 2026-05-09
 tags:
   - aikernel
   - architecture
@@ -20,7 +20,7 @@ tags:
 `IProviderCapabilities` は、プロバイダーの機能・制約・性能特性を宣言し、ルーティング判断のスペックシートとなる境界インターフェースです。
 
 - 役割:
-  対応操作、対応データ型、同時接続上限、レート制限、静的能力ベクトル、動的能力情報を提供します。
+  対応操作、対応データ型、同時接続上限、レート制限、静的能力ベクトル、動的能力情報、query-processing support、embedding metadata を提供します。
 - 非役割:
   推論実行そのものは責務外であり、能力宣言の提供に徹します。
 
@@ -30,18 +30,33 @@ namespace AIKernel.Abstractions.Providers;
 
 using AIKernel.Abstractions.Models;
 
-public interface IProviderCapabilities
+public interface IProviderCapabilities :
+    IProviderOperationCapabilities,
+    IProviderConnectionCapabilities,
+    IProviderCapacityVectorSource,
+    IDynamicProviderCapacitySource,
+    IProviderProfileSource,
+    IQuantizationSupport,
+    IQueryProcessingCapabilities,
+    IEmbeddingCapabilityMetadata
 {
-    IReadOnlyList<string> SupportedOperations { get; }
-    IReadOnlyList<string> SupportedDataTypes { get; }
-    int MaxConcurrentConnections { get; }
-    RateLimitInfo? RateLimit { get; }
-    ModelCapacityVector Vector { get; }
-    IDictionary<string, float>? GetDynamicCapacities(IExecutionConstraints constraints);
-    ICapabilityProfile? GetCapabilityProfile();
-    bool SupportsOperation(string operation);
-    bool SupportsDataType(string dataType);
-    bool SupportsQuantization(string quantizationLevel);
+}
+
+public interface IQueryProcessingCapabilities
+{
+    bool SupportsQueryAugmentation { get; }
+    bool SupportsQueryDecomposition { get; }
+    bool SupportsQueryRouting { get; }
+    int MaxQueryParts { get; }
+    IReadOnlyList<string> SupportedQueryProcessingOperations { get; }
+    bool SupportsQueryProcessingOperation(string operation);
+}
+
+public interface IEmbeddingCapabilityMetadata
+{
+    bool SupportsEmbedding { get; }
+    int? EmbeddingDimensions { get; }
+    IReadOnlyList<string> SupportedEmbeddingModels { get; }
 }
 ```
 
@@ -50,6 +65,8 @@ public interface IProviderCapabilities
   `Vector` と動的能力を用いて最適候補を照合します。
 - `UC-22` 動的キャパシティ制御:
   `RateLimit` と `GetDynamicCapacities(...)` で流量制御と候補重み付けを行います。
+- Phase 1 Query Processing:
+  query / embedding capability metadata を `IQueryRouter` の候補選定に使用します。
 
 ## 4. 統治上の制約 (Governance & Determinism)
 - 能力宣言の正確性:
@@ -58,6 +75,8 @@ public interface IProviderCapabilities
   動的能力値は実行時スナップショットに残し、再現可能性を確保します。
 - 透過性:
   クラウド/ローカル実装差異に依存せず、共通指標を返す必要があります。
+- Query 境界:
+  query-processing capability metadata は、Core が retrieval や indexing を実装することを意味しません。
 
 ## 5. 実装時の注意 (Notes)
 - ベクトル次元管理:
@@ -69,3 +88,4 @@ public interface IProviderCapabilities
 # 変更履歴
 - v0.0.0 / v0.0.0.0: 初期ドラフト
 - v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新
+- v0.0.1 (2026-05-09): query-processing と embedding capability metadata を追加

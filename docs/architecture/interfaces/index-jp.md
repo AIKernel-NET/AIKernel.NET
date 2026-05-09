@@ -28,6 +28,7 @@ tags:
 - [pipeline/index-jp.md](pipeline/index-jp.md)
 - [prompt/index-jp.md](prompt/index-jp.md)
 - [provider/index-jp.md](provider/index-jp.md)
+- [query/index-jp.md](query/index-jp.md)
 - [rom/index-jp.md](rom/index-jp.md)
 - [routing/index-jp.md](routing/index-jp.md)
 - [rules/index-jp.md](rules/index-jp.md)
@@ -40,6 +41,7 @@ tags:
 ## 名前空間概要
 - `kernel`: カーネル本体の実行入口とライフサイクル契約。
 - `models`: 能力軸・動的容量・実行制約のベースモデル契約。
+- `query`: Phase 1 query 補間・分解・routing 契約。
 - `security`: PDP/Guard による決定論的アクセス判定契約。
 - `tasks`: タスク実行単位とパイプライン結果契約。
 - `scheduling`: スケジュール実行ジョブと実行結果契約。
@@ -50,3 +52,4 @@ tags:
 # 変更履歴
 - v0.0.0 / v0.0.0.0: 初期ドラフト
 - v0.0.1 (2026-05-06): src整合に伴うカテゴリ追加とリンク更新
+- v0.0.1 (2026-05-09): query interface category を追加

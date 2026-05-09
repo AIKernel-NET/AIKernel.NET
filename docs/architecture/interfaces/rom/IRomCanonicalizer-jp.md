@@ -1,7 +1,7 @@
 ---
 version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
-title: 'IROMCanonicalizer'
+title: 'IRomCanonicalizer'
 created: 2026-05-06
 tags:
   - aikernel
@@ -11,12 +11,12 @@ tags:
 updated: 2026-05-06
 ---
 
-英語版は [IROMCanonicalizer.md](./IROMCanonicalizer.md) を参照。
+英語版は [IRomCanonicalizer.md](./IRomCanonicalizer.md) を参照。
 
-# IROMCanonicalizer (ROM 正準化インターフェース仕様)
+# IRomCanonicalizer (ROM 正準化インターフェース仕様)
 
 ## 1. 責務の境界 (Responsibility Boundary)
-`IROMCanonicalizer` は、多様なROM表現を意味保存した正準形へ変換し、比較・署名・検証の基盤となるハッシュ不変性を担保する境界インターフェースです。
+`IRomCanonicalizer` は、多様なROM表現を意味保存した正準形へ変換し、比較・署名・検証の基盤となるハッシュ不変性を担保する境界インターフェースです。
 
 - 役割:
   改行・順序・空白・参照表現を正規化し、同一意味の入力から同一正準出力を生成します。
@@ -27,7 +27,7 @@ updated: 2026-05-06
 ```csharp
 namespace AIKernel.Abstractions.Rom;
 
-public interface IROMCanonicalizer
+public interface IRomCanonicalizer
 {
     CanonicalizedRomDto Canonicalize(IRomDocument document);
 

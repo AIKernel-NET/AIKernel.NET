@@ -28,7 +28,7 @@ updated: 2026-05-06
 - **IModelProvider**: モデル推論を行うインターフェイス。Singleton 推奨。
 - **IRagProvider**: 検索・取得（RAG）インターフェイス。Singleton 推奨。
 - **IEmbeddingProvider**: 埋め込み生成インターフェイス。Singleton 推奨。
-- **IVirtualFileProvider**: VFS 抽象（Git/S3/Blob 等）。Singleton 推奨。
+- **IVirtualFileProvider**: Vfs 抽象（Git/S3/Blob 等）。Singleton 推奨。
 - **IScheduler**: ジョブスケジューラ。Singleton 推奨。
 - **IEventBus**: イベント配信。Singleton 推奨。
 

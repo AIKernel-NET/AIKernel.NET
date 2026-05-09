@@ -1,21 +1,10 @@
-namespace AIKernel.VFS;
+namespace AIKernel.Vfs;
 
 /// <summary>
-/// VFS ファイルのインターフェースを定義します。
-/// UC-08（コンテキストスナップショットと永続化）, UC-18（Chat Persistence）
+/// 読み取り可能な Vfs ファイル能力を定義します。
 /// </summary>
-public interface IVfsFile
+public interface IReadableVfsFile : IVfsEntryInfo
 {
-    /// <summary>
-    /// ファイルの名前を取得します。
-    /// </summary>
-    string Name { get; }
-
-    /// <summary>
-    /// ファイルパスを取得します。
-    /// </summary>
-    string Path { get; }
-
     /// <summary>
     /// ファイルサイズ（バイト）を取得します。
     /// </summary>
@@ -46,11 +35,4 @@ public interface IVfsFile
     /// <exception cref="IOException">読み取り中に I/O エラーが発生した場合にスローされます。</exception>
     /// <exception cref="UnauthorizedAccessException">読み取り権限がない場合にスローされます。</exception>
     Task<string> ReadAsTextAsync();
-
-    /// <summary>
-    /// ファイルメタデータを取得します。
-    /// </summary>
-    /// <returns>メタデータ。未設定の場合は null。</returns>
-    IReadOnlyDictionary<string, string>? GetMetadata();
 }
-
