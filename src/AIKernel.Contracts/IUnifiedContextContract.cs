@@ -16,7 +16,7 @@ public interface IUnifiedContextContract
     /// <summary>
     /// 統合コンテキストの一意識別子を取得します。
     /// </summary>
-    /// <returns>統合コンテキスト ID</returns>
+    /// <returns>統合コンテキスト Id</returns>
     string GetId();
 
     /// <summary>

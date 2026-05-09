@@ -17,7 +17,7 @@ In `v0.0.1`, the architecture was rebuilt around `Determinism` and `Non-LLM Gove
 - `DTO purification`:
   business logic and custom exceptions were removed from the DTO layer.
 - `Trust-chain enforcement`:
-  ROM processing is now standardized as `IROMCanonicalizer` first, then `ISemanticHasher`.
+  ROM processing is now standardized as `IRomCanonicalizer` first, then `ISemanticHasher`.
 
 ## 2. Interface Replacement Mapping
 Replacement rules from old terms to canonical terms:
@@ -35,14 +35,14 @@ Replacement rules from old terms to canonical terms:
 2. `Exception relocation`:
    remove DTO-layer exception assumptions and enforce fail-closed behavior in Provider/Kernel execution layers.
 3. `ROM pipeline update`:
-   always call `IROMCanonicalizer.Canonicalize()` before hash/signature verification.
+   always call `IRomCanonicalizer.Canonicalize()` before hash/signature verification.
 4. `Test realignment`:
    remap use-case-driven tests to canonical interfaces and `UC-xx` definitions.
 
 ## 4. Verification Checklist
 - `Abstractions` do not expose external SDK-specific types in signatures.
 - `Dtos` do not contain business logic or exception contracts.
-- `IRomDocument -> IROMCanonicalizer -> ISemanticHasher` order is enforced.
+- `IRomDocument -> IRomCanonicalizer -> ISemanticHasher` order is enforced.
 - `IPdp` remains deterministic with `Indeterminate => Deny` behavior.
 
 ## 5. Migrating to v0.0.2: Vfs Naming Convention
@@ -57,6 +57,7 @@ This is a breaking change that affects namespaces, project/package names, and pu
 | `AIKernel.VFS.csproj` | `AIKernel.Vfs.csproj` | Update ProjectReference and solution entries. |
 | `VFS` | `Vfs` | Canonical spelling for code identifiers and package/docs references. |
 | `ProviderID` | `ProviderId` | `Id` is normalized as a two-letter word. |
+| `IROMCanonicalizer` | `IRomCanonicalizer` | Treat three-letter acronyms as PascalCase words. |
 
 Types that already use the canonical spelling, such as `IVfsProvider`, `IVfsSession`, `VfsProviderHealth`, and `VfsEntry`, remain unchanged.
 
@@ -65,7 +66,7 @@ Types that already use the canonical spelling, such as `IVfsProvider`, `IVfsSess
 2. Update `.csproj` / `.slnx` references to `AIKernel.Vfs/AIKernel.Vfs.csproj`.
 3. If NuGet package references are used, replace `AIKernel.VFS` with `AIKernel.Vfs`.
 4. Normalize remaining `VFS` references in README, design docs, and operational docs to `Vfs`.
-5. Run a case-sensitive search to confirm that `VFS`, `AIKernel.VFS`, and `ProviderID` no longer remain.
+5. Excluding migration examples, run a case-sensitive search to confirm that `VFS`, `AIKernel.VFS`, `ProviderID`, and `IROMCanonicalizer` no longer remain.
 
 ## 6. Migrating to v0.0.2: Vfs Capability Contracts
 This section corresponds to Issue #4, `[RFC] Interface Segregation for VFS: Transitioning to Capability-Based Abstractions`.
@@ -109,15 +110,72 @@ if (session is not IWritableVfsSession writable)
 await writable.WriteFileAsync(path, content);
 ```
 
-## 7. v0.0.2 Verification Checklist
+## 7. Migrating to v0.0.2: Provider and Security Capability Contracts
+After Issue #4, capability-based contracts are also applied to provider and security abstractions where one interface previously exposed unrelated authority surfaces.
+
+### 7.1 Provider Lifecycle Contracts
+`IProvider` remains as a composite compatibility contract, but provider identity, capability metadata, availability, lifecycle, and health are now independently expressible.
+
+| Capability | Purpose |
+|---|---|
+| `IProviderIdentity` | Provider Id, display name, and version. |
+| `IProviderCapabilitySource` | Static or dynamic provider capability metadata. |
+| `IProviderAvailabilityProbe` | Availability checks. |
+| `IProviderLifecycle` | Initialize and shutdown operations. |
+| `IProviderHealthProbe` | Health check reporting. |
+
+### 7.2 Provider Router Contracts
+`IProviderRouter` remains as a composite compatibility contract, but retrieval, cache, and registry responsibilities are separated.
+
+| Capability | Purpose |
+|---|---|
+| `IProviderMaterialRetriever` | Retrieve Material Context from one or more sources. |
+| `IMaterialCacheReader` | Read Material Context from cache. |
+| `IMaterialCacheWriter` | Write Material Context to cache. |
+| `IProviderRegistry` | Register, unregister, and enumerate providers. |
+
+Read-only cache adapters should implement `IMaterialCacheReader` without exposing cache write or provider registry capabilities.
+
+### 7.3 Tool Access Validation
+`IToolAccessValidator` remains as a composite compatibility contract, but the authority checks are now split into capability interfaces:
+
+| Capability | Purpose |
+|---|---|
+| `IToolExecutionAccessValidator` | Validate tool execution. |
+| `IFileReadAccessValidator` | Validate file reads. |
+| `IFileWriteAccessValidator` | Validate file writes. |
+| `INetworkAccessValidator` | Validate network access. |
+| `IEnvironmentAccessValidator` | Validate environment variable access. |
+| `ISystemCommandAccessValidator` | Validate system command execution. |
+| `IPermissionLifecycleValidator` | Validate permission lifetime. |
+| `IPermissionConstraintValidator` | Validate runtime constraints. |
+
+Callers should depend on the smallest validator capability needed for the operation. Missing capability means denial before execution begins.
+
+### 7.4 RAG Provider Contracts
+`IRagProvider` remains as a composite compatibility contract over `IProvider`, search, and index mutation capabilities.
+
+| Capability | Purpose |
+|---|---|
+| `IRagSearchProvider` | Search RAG material. |
+| `IRagIndexWriter` | Add or update indexed documents. |
+| `IRagIndexDeleter` | Delete indexed documents. |
+| `IRagIndexManager` | Perform whole-index management operations such as clear. |
+
+Read-only RAG providers should implement `IRagSearchProvider` only, plus `IProvider` when provider lifecycle metadata is required. They should not implement write/delete/clear capabilities just to throw `NotSupportedException`.
+
+## 8. v0.0.2 Verification Checklist
 - No `using AIKernel.VFS;` remains.
 - ProjectReference / solution entries point to `AIKernel.Vfs/AIKernel.Vfs.csproj`.
-- Public docs / README / csproj metadata no longer contain `VFS`.
+- Excluding migration examples, public docs / README / csproj metadata no longer contain `VFS`, `ProviderID`, or `IROMCanonicalizer`.
 - Read-only Vfs implementations do not expose mutation capabilities.
 - Missing capabilities are handled as pre-execution denial, not late `NotSupportedException` failures.
+- Read-only RAG providers expose `IRagSearchProvider` without index mutation capabilities.
+- Provider/router dependencies are narrowed to identity, lifecycle, retrieval, cache, or registry capabilities where possible.
+- Tool access validation dependencies are narrowed to the required capability interface where possible.
 ---
 
 # Changelog
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
-- v0.0.2 (2026-05-09): Added Issue #4 Vfs capability contract migration steps and Issue #7 Vfs naming normalization
+- v0.0.2 (2026-05-09): Added Issue #4 Vfs capability contract migration steps, Issue #7 Vfs naming normalization, and provider/security capability contract guidance

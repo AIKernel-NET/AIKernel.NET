@@ -12,7 +12,7 @@ public sealed class RomCoreSpecAlignmentTests
     public async Task RCS_CANON_001_003_Canonical_First_Is_Required_Before_Hashing()
     {
         // RCS-CANON-001/002/003:
-        // ハッシュ計算は必ず IROMCanonicalizer の出力のみを入力にする
+        // ハッシュ計算は必ず IRomCanonicalizer の出力のみを入力にする
         IRomDocument rom = new StubRomDocument();
         var canonicalizer = new RecordingCanonicalizer();
         var hasher = new RecordingSemanticHasher();
@@ -106,7 +106,7 @@ public sealed class RomCoreSpecAlignmentTests
             Task.FromResult(false);
     }
 
-    private sealed class RecordingCanonicalizer : IROMCanonicalizer
+    private sealed class RecordingCanonicalizer : IRomCanonicalizer
     {
         public bool WasCalled { get; private set; }
         public CanonicalizedRomDto? LastCanonicalized { get; private set; }

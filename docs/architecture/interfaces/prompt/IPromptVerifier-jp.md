@@ -49,7 +49,7 @@ public interface IPromptVerifier
 - Fail-Closed の遵守:
   `PromptVerificationResult.Decision` が許可条件を満たさない場合、実行を継続してはなりません。
 - 正準化前提:
-  署名・ハッシュ照合は、署名時と同一の正準化規約（`IROMCanonicalizer`）を前提とします。
+  署名・ハッシュ照合は、署名時と同一の正準化規約（`IRomCanonicalizer`）を前提とします。
 
 ## 5. 実装時の注意 (Notes)
 - 信頼ストア連携:

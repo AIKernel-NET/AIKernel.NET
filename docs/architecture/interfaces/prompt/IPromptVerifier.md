@@ -49,7 +49,7 @@ public interface IPromptVerifier
 - Enforce Fail-Closed:
   Execution must not continue when `PromptVerificationResult.Decision` does not satisfy permit criteria.
 - Canonicalization precondition:
-  Signature/hash validation assumes the same canonicalization rules (`IROMCanonicalizer`) used at signing time.
+  Signature/hash validation assumes the same canonicalization rules (`IRomCanonicalizer`) used at signing time.
 
 ## 5. Implementation Notes
 - Trust-store integration:

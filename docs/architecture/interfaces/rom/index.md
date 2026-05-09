@@ -16,7 +16,7 @@ For Japanese version, see index-jp.md.
 # rom Interfaces
 
 ## 1. Responsibility Boundary
-ROM is the boundary for canonical intelligence artifacts and validation. Around `IRomDocument`, `IROMCanonicalizer`, `ISemanticHasher`, `IRomValidator`, and `IRelationResolver` handle normalization, integrity checks, and relation resolution.
+ROM is the boundary for canonical intelligence artifacts and validation. Around `IRomDocument`, `IRomCanonicalizer`, `ISemanticHasher`, `IRomValidator`, and `IRelationResolver` handle normalization, integrity checks, and relation resolution.
 
 ## 2. Related Use Cases
 - `UC-01` ROM Loading and Parsing
@@ -32,7 +32,7 @@ ROM is the boundary for canonical intelligence artifacts and validation. Around 
 - Called by: `AIKernel.Abstractions.Prompt`, `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Governance`
 
 ## Documents
-- IROMCanonicalizer.md
+- IRomCanonicalizer.md
 - ISemanticHasher.md
 - IRomDocument.md
 - IRomValidator.md
