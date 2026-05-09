@@ -1,4 +1,3 @@
-using AIKernel.Dtos;
 using AIKernel.Dtos.Context;
 using AIKernel.Enums;
 
@@ -43,19 +42,6 @@ public interface IOrchestrationContract
     /// </summary>
     /// <returns>推論パターン。未設定の場合は null。</returns>
     string? GetReasoningPattern();
-
-    /// <summary>
-    /// このコントラクトが有効であることを確認します。
-    /// Attention 汚染の検出も行います。
-    /// </summary>
-    /// <returns>検証結果</returns>
-    ValidationResult Validate();
-
-    /// <summary>
-    /// Signal-to-Noise Ratio（SNR）を計算します。
-    /// </summary>
-    /// <returns>算出された SNR 値</returns>
-    double CalculateSignalToNoiseRatio();
 }
 
 /// <summary>

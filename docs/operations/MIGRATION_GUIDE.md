@@ -252,9 +252,154 @@ Read-only RAG providers should implement `IRagSearchProvider` only, plus `IProvi
 - Signature trust dependencies are narrowed to trust resolver, revocation checker, expiry reader, chain verifier, anchor reader, or health probe capabilities where possible.
 - Kernel dependencies are narrowed to execution, analysis, preprocessing, provider-router access, guard access, or PDP access capabilities where possible.
 - Tool access validation dependencies are narrowed to the required capability interface where possible.
+
+## 9. Migrating to v0.0.2: Contract Purity
+This section corresponds to Issue #8, `Contract Purity`.
+
+Contracts now represent immutable views/descriptors only. Mutation, validation, transformation, canonicalization, hashing, extraction, and analysis responsibilities are moved into explicit service interfaces.
+
+### 9.1 Removed from Contract Objects
+| Contract | Removed Members | Replacement Service Interfaces |
+|---|---|---|
+| `IMaterialContract` | `Normalize`, `Structurize`, `ExtractEssentialContent`, `ValidateQuarantine` | `IMaterialNormalizer`, `IMaterialStructurizer`, `IEssentialMaterialExtractor`, `IMaterialQuarantineValidator` |
+| `IUnifiedContextContract` | `ValidateAll`, `ValidateLayerSeparation`, `DetectPollution`, `CalculateSignalToNoiseRatio` | `IUnifiedContextContractValidator`, `ILayerSeparationValidator`, `IAttentionPollutionDetector`, `ISignalToNoiseRatioCalculator` |
+| `IOrchestrationContract` | `Validate`, `CalculateSignalToNoiseRatio` | `IOrchestrationContractValidator`, `ISignalToNoiseRatioCalculator` |
+| `IExpressionContract` | `ValidateIsolation`, `CanApplyAfterInference` | `IExpressionIsolationValidator`, `IExpressionApplicationGate` |
+
+### 9.2 New Material Processing Services
+| Service | Purpose |
+|---|---|
+| `IMaterialNormalizer` | Normalize material into a new `MaterialContextDto`. |
+| `IMaterialStructurizer` | Produce structured material data without mutating the contract. |
+| `IMaterialCanonicalizer` | Produce canonical material text. |
+| `IMaterialHashProvider` | Compute material hash. |
+| `IEssentialMaterialExtractor` | Extract orchestration-safe essential content. |
+| `IMaterialQuarantineValidator` | Validate material quarantine state. |
+
+Contract implementations should not mutate themselves. A transformation must return a new DTO/value or derived representation.
+
+## 10. Migrating to v0.0.2: Capability-Driven Providers
+This section corresponds to Issue #9, `Capability-Driven Providers`.
+
+Provider contracts now expose optional operations as explicit capability interfaces. Existing broad interfaces remain as composite compatibility contracts.
+
+### 10.1 Model Provider Capabilities
+| Capability | Purpose |
+|---|---|
+| `ITextGenerationProvider` | Text generation via `GenerateAsync`. |
+| `IStreamingGenerationProvider` | Streaming text generation via `StreamGenerateAsync`. |
+| `IQuestionAnsweringProvider` | Direct question answering via `AnswerAsync`. |
+| `IModelProvider` | Composite compatibility contract over all model capabilities plus `IProvider`. |
+
+Text-only providers should implement `ITextGenerationProvider` without pretending to support streaming or question answering.
+
+### 10.2 Embedding Provider Capabilities
+| Capability | Purpose |
+|---|---|
+| `ITextEmbeddingProvider` | Single text embedding. |
+| `IBatchEmbeddingProvider` | Batch embedding. |
+| `IEmbeddingDimensionProvider` | Embedding dimension metadata. |
+| `IEmbeddingProvider` | Composite compatibility contract over all embedding capabilities plus `IProvider`. |
+
+### 10.3 Provider Capability Metadata
+| Capability | Purpose |
+|---|---|
+| `IProviderOperationCapabilities` | Static operation and data-type support. |
+| `IProviderConnectionCapabilities` | Concurrency and rate-limit metadata. |
+| `IProviderCapacityVectorSource` | Static capacity vector. |
+| `IDynamicProviderCapacitySource` | Constraint-dependent dynamic capacities. |
+| `IProviderProfileSource` | Capability profile metadata. |
+| `IQuantizationSupport` | Quantization support checks. |
+| `IProviderCapabilities` | Composite compatibility contract over all provider capability metadata. |
+
+Routers should select providers by the capability interface they actually require.
+
+## 11. Migrating to v0.0.2: Security and Policy Separation
+This section corresponds to Issue #10, `Security & Policy Separation`.
+
+Security contracts now separate decision, enforcement, registry, validation, failure handling, and audit category responsibilities. Missing or indeterminate authority must fail closed at the caller boundary.
+
+### 11.1 Guard Capabilities
+| Capability | Purpose |
+|---|---|
+| `IGuardEvaluator` | Execution and context-access checks. |
+| `IResourceAccessGuard` | Read/write resource checks. |
+| `IGuardEnforcer` | Enforce guard decisions and return fail-closed actions. |
+| `IGuardFailureHandler` | Failure-mode handling and fail-closed actions. |
+| `IGuard` | Composite compatibility contract. |
+
+### 11.2 PDP Capabilities
+| Capability | Purpose |
+|---|---|
+| `IPolicyDecisionPoint` | Deterministic access decision evaluation. |
+| `IPolicyRegistry` | Add/remove policy registry operations. |
+| `IPolicySource` | Read registered policies. |
+| `IPolicyDecisionEvaluator` | Evaluate policies for a unified context. |
+| `IPdp` | Composite compatibility contract. |
+
+### 11.3 Rules Engine Capabilities
+| Capability | Purpose |
+|---|---|
+| `IRuleRegistry` | Register, read, delete, and list prompt rules. |
+| `IRuleEvaluator` | Evaluate a rule. |
+| `IPreExecutionRuleValidator` | Validate pre-prompt context. |
+| `IPostExecutionRuleValidator` | Validate post-prompt context. |
+| `IRulesEngine` | Composite compatibility contract. |
+
+### 11.4 Audit Capabilities
+| Capability | Purpose |
+|---|---|
+| `IAuditEventWriter` | Generic audit event logging. |
+| `IExecutionAuditLogger` | Execution event logging. |
+| `IGuardAuditLogger` | Guard event logging. |
+| `IPipelineAuditLogger` | Pipeline event logging. |
+| `IProviderAuditLogger` | Provider event logging. |
+| `ITransferTraceLogger` | Transfer trace logging. |
+| `IAuditLogger` | Composite compatibility contract. |
+
+## 12. Migrating to v0.0.2: Sandbox and Validator Isolation
+This section corresponds to Issue #11, `Sandbox & Validator Isolation`.
+
+Execution, file transfer, cleanup, observation, validation, store mutation, and context-buffer access are now separated into capability interfaces. Existing broad interfaces remain as composite compatibility contracts.
+
+### 12.1 Tool Sandbox Capabilities
+| Capability | Purpose |
+|---|---|
+| `IToolSandboxIdentity` | Sandbox identity. |
+| `IToolExecutor` | Execute tools in a sandbox. |
+| `IToolFileUploadSink` | Upload files into a sandbox. |
+| `IToolFileDownloadSource` | Download files from a sandbox. |
+| `IToolSandboxCleanup` | Cleanup sandbox state. |
+| `IToolResourceUsageSource` | Read sandbox resource usage. |
+| `IToolSandbox` | Composite compatibility contract. |
+
+### 12.2 ROM Validator Capabilities
+| Capability | Purpose |
+|---|---|
+| `IRomSchemaValidator` | ROM schema validation. |
+| `IRomLinkageValidator` | ROM linkage validation. |
+| `IRomTypeConsistencyValidator` | ROM type consistency validation. |
+| `IRomCircularReferenceValidator` | ROM circular reference detection. |
+| `IRomValidator` | Composite compatibility contract. |
+
+### 12.3 Store, Collection, and Compute Capabilities
+| Capability | Purpose |
+|---|---|
+| `IConversationSnapshotWriter` | Save conversation snapshots. |
+| `IConversationSnapshotReader` | Read conversation snapshots. |
+| `IConversationBranchLister` | List conversation branches. |
+| `IConversationSnapshotDeleter` | Delete conversation snapshots. |
+| `IContextFragmentCollection` | Read context fragments. |
+| `IPhaseBufferCollection` | Read phase buffers. |
+| `IComputeCardinalityAdvisor` | Cardinality advice. |
+| `IComputePaddingAdvisor` | Padding strategy and overhead advice. |
+| `IQuantizationAdvisor` | Quantization advice. |
+| `IComputeShapeOptimizer` | Constraint-based shape optimization. |
+
+Read-only stores and schema-only validators should implement only the capability they actually support.
 ---
 
 # Changelog
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
-- v0.0.2 (2026-05-09): Added Issue #4 Vfs capability contract migration steps, Issue #7 Vfs naming normalization, and provider/security capability contract guidance
+- v0.0.2 (2026-05-09): Added Issue #4 Vfs capability contract migration steps, Issue #7 Vfs naming normalization, provider/security capability contract guidance, Issue #8 contract purity migration, Issue #9 provider capability migration, Issue #10 security/policy separation migration, and Issue #11 sandbox/validator isolation migration

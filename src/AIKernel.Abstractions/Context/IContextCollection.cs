@@ -2,10 +2,9 @@ namespace AIKernel.Abstractions.Context;
 
 /// <summary>
 /// UC-06/UC-08 に基づく契約です。
-/// コンテキスト断片の集合を管理するインターフェースです。
-/// カテゴリ別アクセスと各フェーズ向けバッファ取得を提供します。
+/// コンテキスト断片へのアクセスを提供します。
 /// </summary>
-public interface IContextCollection
+public interface IContextFragmentCollection
 {
     /// <summary>
     /// すべてのコンテキストフラグメントを取得します。
@@ -19,7 +18,14 @@ public interface IContextCollection
     /// <param name="category">対象カテゴリ</param>
     /// <returns>カテゴリに一致するコンテキストフラグメント一覧</returns>
     IEnumerable<ContextFragment> GetByCategory(ContextCategory category);
+}
 
+/// <summary>
+/// UC-06/UC-08 に基づく契約です。
+/// フェーズ別 buffer へのアクセスを提供します。
+/// </summary>
+public interface IPhaseBufferCollection
+{
     /// <summary>
     /// Orchestration フェーズ向けバッファを取得します。
     /// </summary>
@@ -45,3 +51,13 @@ public interface IContextCollection
     HistoryBuffer GetHistoryBuffer();
 }
 
+/// <summary>
+/// UC-06/UC-08 に基づく契約です。
+/// コンテキスト断片の集合を管理する互換合成インターフェースです。
+/// カテゴリ別アクセスと各フェーズ向けバッファ取得を提供します。
+/// </summary>
+public interface IContextCollection :
+    IContextFragmentCollection,
+    IPhaseBufferCollection
+{
+}

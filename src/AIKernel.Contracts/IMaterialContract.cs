@@ -1,6 +1,4 @@
-using AIKernel.Dtos;
 using AIKernel.Dtos.Context;
-using AIKernel.Enums;
 
 namespace AIKernel.Contracts;
 
@@ -49,27 +47,5 @@ public interface IMaterialContract
     /// </summary>
     /// <returns>関連性スコア</returns>
     double GetRelevanceScore();
-
-    /// <summary>
-    /// 素材を正規化します。
-    /// </summary>
-    void Normalize();
-
-    /// <summary>
-    /// 素材を構造化します。
-    /// </summary>
-    void Structurize();
-
-    /// <summary>
-    /// 必要な部分のみを抽出して OrchestrationContext に転写可能な形にします。
-    /// </summary>
-    /// <returns>抽出済みの必須コンテンツ</returns>
-    string ExtractEssentialContent();
-
-    /// <summary>
-    /// 生データが OrchestrationContext に直接渡されていないことを確認します。
-    /// </summary>
-    /// <returns>検疫検証結果</returns>
-    ValidationResult ValidateQuarantine();
 }
 

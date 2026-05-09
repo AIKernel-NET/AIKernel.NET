@@ -252,9 +252,154 @@ Application code は必要な kernel capability のみに依存します。`IKer
 - Signature trust の依存先が、可能な限り trust resolver、revocation checker、expiry reader、chain verifier、anchor reader、health probe capability に縮小されている。
 - Kernel の依存先が、可能な限り execution、analysis、preprocessing、provider-router access、guard access、PDP access capability に縮小されている。
 - Tool access validation の依存先が、可能な限り必要最小の capability interface に縮小されている。
+
+## 9. v0.0.2 への移行: Contract Purity
+本節は Issue #8 `Contract Purity` に対応します。
+
+Contract は immutable view / descriptor のみを表現します。mutation、validation、transformation、canonicalization、hashing、extraction、analysis の責務は、明示的な service interface へ移動します。
+
+### 9.1 Contract object から削除された member
+| Contract | 削除 member | 代替 service interface |
+|---|---|---|
+| `IMaterialContract` | `Normalize`, `Structurize`, `ExtractEssentialContent`, `ValidateQuarantine` | `IMaterialNormalizer`, `IMaterialStructurizer`, `IEssentialMaterialExtractor`, `IMaterialQuarantineValidator` |
+| `IUnifiedContextContract` | `ValidateAll`, `ValidateLayerSeparation`, `DetectPollution`, `CalculateSignalToNoiseRatio` | `IUnifiedContextContractValidator`, `ILayerSeparationValidator`, `IAttentionPollutionDetector`, `ISignalToNoiseRatioCalculator` |
+| `IOrchestrationContract` | `Validate`, `CalculateSignalToNoiseRatio` | `IOrchestrationContractValidator`, `ISignalToNoiseRatioCalculator` |
+| `IExpressionContract` | `ValidateIsolation`, `CanApplyAfterInference` | `IExpressionIsolationValidator`, `IExpressionApplicationGate` |
+
+### 9.2 新規 Material processing service
+| Service | 用途 |
+|---|---|
+| `IMaterialNormalizer` | material を新しい `MaterialContextDto` として正規化。 |
+| `IMaterialStructurizer` | contract を変更せず structured material data を生成。 |
+| `IMaterialCanonicalizer` | canonical material text を生成。 |
+| `IMaterialHashProvider` | material hash を計算。 |
+| `IEssentialMaterialExtractor` | orchestration-safe な essential content を抽出。 |
+| `IMaterialQuarantineValidator` | material quarantine state を検証。 |
+
+Contract 実装は自分自身を変更しません。変換は新しい DTO/value または派生表現を返します。
+
+## 10. v0.0.2 への移行: Capability-Driven Providers
+本節は Issue #9 `Capability-Driven Providers` に対応します。
+
+Provider contract は optional operation を明示的な capability interface として公開します。既存の広い interface は互換合成 contract として残ります。
+
+### 10.1 Model Provider Capability
+| Capability | 用途 |
+|---|---|
+| `ITextGenerationProvider` | `GenerateAsync` による text generation。 |
+| `IStreamingGenerationProvider` | `StreamGenerateAsync` による streaming text generation。 |
+| `IQuestionAnsweringProvider` | `AnswerAsync` による直接 question answering。 |
+| `IModelProvider` | すべての model capability と `IProvider` を合成する互換 contract。 |
+
+text-only provider は `ITextGenerationProvider` のみを実装し、streaming や question answering を実装しているように見せません。
+
+### 10.2 Embedding Provider Capability
+| Capability | 用途 |
+|---|---|
+| `ITextEmbeddingProvider` | 単一 text embedding。 |
+| `IBatchEmbeddingProvider` | batch embedding。 |
+| `IEmbeddingDimensionProvider` | embedding dimension metadata。 |
+| `IEmbeddingProvider` | すべての embedding capability と `IProvider` を合成する互換 contract。 |
+
+### 10.3 Provider Capability Metadata
+| Capability | 用途 |
+|---|---|
+| `IProviderOperationCapabilities` | 静的な operation / data-type support。 |
+| `IProviderConnectionCapabilities` | concurrency / rate-limit metadata。 |
+| `IProviderCapacityVectorSource` | 静的 capacity vector。 |
+| `IDynamicProviderCapacitySource` | constraint-dependent dynamic capacities。 |
+| `IProviderProfileSource` | capability profile metadata。 |
+| `IQuantizationSupport` | quantization support check。 |
+| `IProviderCapabilities` | すべての provider capability metadata を合成する互換 contract。 |
+
+Router は、実際に必要な capability interface によって provider を選択します。
+
+## 11. v0.0.2 への移行: Security and Policy Separation
+本節は Issue #10 `Security & Policy Separation` に対応します。
+
+Security contract は、decision、enforcement、registry、validation、failure handling、audit category の責務を分離します。必要な権限が存在しない、または indeterminate の場合、呼び出し側境界で fail closed として扱います。
+
+### 11.1 Guard Capability
+| Capability | 用途 |
+|---|---|
+| `IGuardEvaluator` | execution / context-access check。 |
+| `IResourceAccessGuard` | read/write resource check。 |
+| `IGuardEnforcer` | guard decision を強制し fail-closed action を返す。 |
+| `IGuardFailureHandler` | failure-mode handling と fail-closed action。 |
+| `IGuard` | 互換合成 contract。 |
+
+### 11.2 PDP Capability
+| Capability | 用途 |
+|---|---|
+| `IPolicyDecisionPoint` | 決定論的 access decision evaluation。 |
+| `IPolicyRegistry` | policy registry の add/remove operation。 |
+| `IPolicySource` | registered policy の参照。 |
+| `IPolicyDecisionEvaluator` | unified context に対する policy evaluation。 |
+| `IPdp` | 互換合成 contract。 |
+
+### 11.3 Rules Engine Capability
+| Capability | 用途 |
+|---|---|
+| `IRuleRegistry` | prompt rule の register / read / delete / list。 |
+| `IRuleEvaluator` | rule evaluation。 |
+| `IPreExecutionRuleValidator` | pre-prompt context validation。 |
+| `IPostExecutionRuleValidator` | post-prompt context validation。 |
+| `IRulesEngine` | 互換合成 contract。 |
+
+### 11.4 Audit Capability
+| Capability | 用途 |
+|---|---|
+| `IAuditEventWriter` | generic audit event logging。 |
+| `IExecutionAuditLogger` | execution event logging。 |
+| `IGuardAuditLogger` | guard event logging。 |
+| `IPipelineAuditLogger` | pipeline event logging。 |
+| `IProviderAuditLogger` | provider event logging。 |
+| `ITransferTraceLogger` | transfer trace logging。 |
+| `IAuditLogger` | 互換合成 contract。 |
+
+## 12. v0.0.2 への移行: Sandbox and Validator Isolation
+本節は Issue #11 `Sandbox & Validator Isolation` に対応します。
+
+Execution、file transfer、cleanup、observation、validation、store mutation、context-buffer access を capability interface として分離します。既存の広い interface は互換合成 contract として残ります。
+
+### 12.1 Tool Sandbox Capability
+| Capability | 用途 |
+|---|---|
+| `IToolSandboxIdentity` | sandbox identity。 |
+| `IToolExecutor` | sandbox 内での tool execution。 |
+| `IToolFileUploadSink` | sandbox への file upload。 |
+| `IToolFileDownloadSource` | sandbox からの file download。 |
+| `IToolSandboxCleanup` | sandbox state の cleanup。 |
+| `IToolResourceUsageSource` | sandbox resource usage の参照。 |
+| `IToolSandbox` | 互換合成 contract。 |
+
+### 12.2 ROM Validator Capability
+| Capability | 用途 |
+|---|---|
+| `IRomSchemaValidator` | ROM schema validation。 |
+| `IRomLinkageValidator` | ROM linkage validation。 |
+| `IRomTypeConsistencyValidator` | ROM type consistency validation。 |
+| `IRomCircularReferenceValidator` | ROM circular reference detection。 |
+| `IRomValidator` | 互換合成 contract。 |
+
+### 12.3 Store / Collection / Compute Capability
+| Capability | 用途 |
+|---|---|
+| `IConversationSnapshotWriter` | conversation snapshot の保存。 |
+| `IConversationSnapshotReader` | conversation snapshot の参照。 |
+| `IConversationBranchLister` | conversation branch の列挙。 |
+| `IConversationSnapshotDeleter` | conversation snapshot の削除。 |
+| `IContextFragmentCollection` | context fragment の参照。 |
+| `IPhaseBufferCollection` | phase buffer の参照。 |
+| `IComputeCardinalityAdvisor` | cardinality advice。 |
+| `IComputePaddingAdvisor` | padding strategy / overhead advice。 |
+| `IQuantizationAdvisor` | quantization advice。 |
+| `IComputeShapeOptimizer` | constraint-based shape optimization。 |
+
+Read-only store や schema-only validator は、実際にサポートする capability のみを実装します。
 ---
 
 # 変更履歴
 - v0.0.0 / v0.0.0.0: 初期ドラフト
 - v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新
-- v0.0.2 (2026-05-09): Issue #4 の Vfs capability contract 移行手順、Issue #7 の Vfs 命名規約統一、provider/security capability contract 指針を追加
+- v0.0.2 (2026-05-09): Issue #4 の Vfs capability contract 移行手順、Issue #7 の Vfs 命名規約統一、provider/security capability contract 指針、Issue #8 の contract purity 移行、Issue #9 の provider capability 移行、Issue #10 の security/policy separation 移行、Issue #11 の sandbox/validator isolation 移行を追加

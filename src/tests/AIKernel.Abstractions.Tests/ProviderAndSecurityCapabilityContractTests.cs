@@ -46,6 +46,62 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     }
 
     [Fact]
+    public void CompositeModelProviderExposesGranularModelCapabilities()
+    {
+        IModelProvider provider = new FullModelProvider();
+
+        Assert.IsAssignableFrom<IProvider>(provider);
+        Assert.IsAssignableFrom<ITextGenerationProvider>(provider);
+        Assert.IsAssignableFrom<IStreamingGenerationProvider>(provider);
+        Assert.IsAssignableFrom<IQuestionAnsweringProvider>(provider);
+    }
+
+    [Fact]
+    public void TextOnlyModelProviderDoesNotExposeStreamingOrQuestionAnswering()
+    {
+        ITextGenerationProvider provider = new TextOnlyModelProvider();
+
+        Assert.False(provider is IStreamingGenerationProvider);
+        Assert.False(provider is IQuestionAnsweringProvider);
+    }
+
+    [Fact]
+    public void CompositeEmbeddingProviderExposesGranularEmbeddingCapabilities()
+    {
+        IEmbeddingProvider provider = new FullEmbeddingProvider();
+
+        Assert.IsAssignableFrom<IProvider>(provider);
+        Assert.IsAssignableFrom<ITextEmbeddingProvider>(provider);
+        Assert.IsAssignableFrom<IBatchEmbeddingProvider>(provider);
+        Assert.IsAssignableFrom<IEmbeddingDimensionProvider>(provider);
+    }
+
+    [Fact]
+    public void SingleEmbeddingProviderDoesNotExposeBatchCapability()
+    {
+        ITextEmbeddingProvider provider = new SingleEmbeddingProvider();
+
+        Assert.False(provider is IBatchEmbeddingProvider);
+        Assert.False(provider is IEmbeddingDimensionProvider);
+    }
+
+    [Fact]
+    public void ProviderCapabilitiesCanBeExposedAsSeparateCapabilitySources()
+    {
+        IProviderCapabilities capabilities = new EmptyProviderCapabilities();
+        IProviderOperationCapabilities operationCapabilities = new StaticOperationCapabilities();
+
+        Assert.IsAssignableFrom<IProviderOperationCapabilities>(capabilities);
+        Assert.IsAssignableFrom<IProviderConnectionCapabilities>(capabilities);
+        Assert.IsAssignableFrom<IProviderCapacityVectorSource>(capabilities);
+        Assert.IsAssignableFrom<IDynamicProviderCapacitySource>(capabilities);
+        Assert.IsAssignableFrom<IProviderProfileSource>(capabilities);
+        Assert.IsAssignableFrom<IQuantizationSupport>(capabilities);
+        Assert.False(operationCapabilities is IDynamicProviderCapacitySource);
+        Assert.False(operationCapabilities is IQuantizationSupport);
+    }
+
+    [Fact]
     public void CompositeProviderExposesGranularLifecycleCapabilities()
     {
         IProvider provider = new FullRagProvider();
@@ -214,6 +270,64 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         }
     }
 
+    private sealed class TextOnlyModelProvider : ITextGenerationProvider
+    {
+        public Task<string> GenerateAsync(IReadOnlyList<IModelMessage> messages, CancellationToken cancellationToken = default)
+        {
+            return Task.FromResult(string.Empty);
+        }
+    }
+
+    private sealed class FullModelProvider : FullProviderBase, IModelProvider
+    {
+        public Task<string> GenerateAsync(IReadOnlyList<IModelMessage> messages, CancellationToken cancellationToken = default)
+        {
+            return Task.FromResult(string.Empty);
+        }
+
+        public Task StreamGenerateAsync(
+            IReadOnlyList<IModelMessage> messages,
+            Func<string, Task> onChunk,
+            CancellationToken cancellationToken = default)
+        {
+            return Task.CompletedTask;
+        }
+
+        public Task<string> AnswerAsync(string question, string? context = null, CancellationToken cancellationToken = default)
+        {
+            return Task.FromResult(string.Empty);
+        }
+    }
+
+    private sealed class SingleEmbeddingProvider : ITextEmbeddingProvider
+    {
+        public Task<float[]> EmbedAsync(string text, CancellationToken cancellationToken = default)
+        {
+            return Task.FromResult(Array.Empty<float>());
+        }
+    }
+
+    private sealed class FullEmbeddingProvider : FullProviderBase, IEmbeddingProvider
+    {
+        public Task<float[]> EmbedAsync(string text, CancellationToken cancellationToken = default)
+        {
+            return Task.FromResult(Array.Empty<float>());
+        }
+
+        public Task<IReadOnlyList<float[]>> EmbedBatchAsync(
+            IReadOnlyList<string> texts,
+            CancellationToken cancellationToken = default)
+        {
+            IReadOnlyList<float[]> results = [];
+            return Task.FromResult(results);
+        }
+
+        public int GetDimension()
+        {
+            return 0;
+        }
+    }
+
     private sealed class EmptyProviderCapabilities : IProviderCapabilities
     {
         public IReadOnlyList<string> SupportedOperations => [];
@@ -247,6 +361,23 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         }
 
         public bool SupportsQuantization(string quantizationLevel)
+        {
+            return false;
+        }
+    }
+
+    private sealed class StaticOperationCapabilities : IProviderOperationCapabilities
+    {
+        public IReadOnlyList<string> SupportedOperations => [];
+
+        public IReadOnlyList<string> SupportedDataTypes => [];
+
+        public bool SupportsOperation(string operation)
+        {
+            return false;
+        }
+
+        public bool SupportsDataType(string dataType)
         {
             return false;
         }
