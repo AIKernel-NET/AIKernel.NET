@@ -12,32 +12,45 @@
 	<Copyright>Copyright © 2026 Takuya Sogawa of AIKernel-NET</Copyright>
     <PackageTags>aikernel;aikernel-core;ai-os;architecture;category-separation;context-isolation;contract-driven;governance;preprocessing;semantic-context-os;deterministic-replay;fail-closed;rom;canonicalization;pdp;signed-prompt;interface-contracts;dto;enum</PackageTags>
 	  <PackageReleaseNotes>
-AIKernel.NET v0.0.x — Interface Rectification Release
+		  <![CDATA[
+AIKernel.NET v0.0.2 — Interface Rectification & Contract Stabilization Release
 
 May 9th —
-The day the Kernel received its proper names and boundaries.
-5月9日 — Kernel に正しい名前と境界を与える日。
+The day the Kernel received its proper names, boundaries, and Phase 1 slots.
+5月9日 — Kernel に正しい名前・境界・Phase 1 の抽象スロットを与えた日。
 
-This release is a structural refinement of the AIKernel.NET abstract contract layer.
+This release is a structural refinement release for stabilizing the AIKernel.NET abstract contract layer before v0.1.0.
 
 Key changes:
-- Normalized .NET naming conventions for acronym-based identifiers.
+- Normalized acronym-based identifiers according to .NET naming conventions.
 - Renamed AIKernel.VFS to AIKernel.Vfs.
-- Updated namespaces, project references, documentation, and package metadata.
 - Renamed IROMCanonicalizer to IRomCanonicalizer.
-- Refined interface boundaries.
-- Added migration guidance.
+- Refined contract purity and immutable contract boundaries.
+- Split provider contracts by capability.
+- Split embedding abstractions into ITextEmbeddingProvider / IBatchEmbeddingProvider / IEmbeddingDimensionProvider.
+- Extended provider capability metadata for query-processing and embedding.
+- Added Phase 1 Query Processing abstractions:
+  - IQueryAugmentor
+  - IQueryDecomposer
+  - IQueryRouter
+  - QueryPart
+- Clarified that RAG remains a provider / pipeline strategy, not Core retrieval.
+- Updated README, architecture docs, pipeline specs, provider docs, capability docs, query docs, and migration guides.
 
 Verification:
-- Build succeeded with 0 warnings and 0 errors.
-- Abstractions tests succeeded: 29 tests passed.
+- dotnet build src\AIKernel.NET.slnx succeeded.
+- dotnet test src\tests\AIKernel.Abstractions.Tests\AIKernel.Abstractions.Tests.csproj --no-build succeeded: 73 tests passed.
 
-This release changes no runtime behavior.
-It corrects the language and boundaries of the architecture before implementation proceeds further.
+This release changes little runtime behavior, but significantly improves the ABI surface before v0.1.0.
+
+Names define boundaries.
+Boundaries define contracts.
+Contracts define execution.
 
 名前は境界を定義する。
 境界は契約を定義する。
 契約は実行を定義する。
+]]>
 	  </PackageReleaseNotes>
   </PropertyGroup>
 </Project>
