@@ -1,8 +1,10 @@
 using AIKernel.Abstractions.Models;
 using AIKernel.Abstractions.Events;
 using AIKernel.Abstractions.Providers;
+using AIKernel.Abstractions.Query;
 using AIKernel.Abstractions.Security;
 using AIKernel.Abstractions.Tooling;
+using AIKernel.Dtos.Query;
 
 namespace AIKernel.Abstractions.Tests;
 
@@ -97,8 +99,37 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         Assert.IsAssignableFrom<IDynamicProviderCapacitySource>(capabilities);
         Assert.IsAssignableFrom<IProviderProfileSource>(capabilities);
         Assert.IsAssignableFrom<IQuantizationSupport>(capabilities);
+        Assert.IsAssignableFrom<IQueryProcessingCapabilities>(capabilities);
+        Assert.IsAssignableFrom<IEmbeddingCapabilityMetadata>(capabilities);
         Assert.False(operationCapabilities is IDynamicProviderCapacitySource);
         Assert.False(operationCapabilities is IQuantizationSupport);
+        Assert.False(operationCapabilities is IQueryProcessingCapabilities);
+    }
+
+    [Fact]
+    public void QueryProcessingAbstractionsRequireKernelContext()
+    {
+        var augmentorMethod = typeof(IQueryAugmentor).GetMethod(nameof(IQueryAugmentor.AugmentAsync));
+        var decomposerMethod = typeof(IQueryDecomposer).GetMethod(nameof(IQueryDecomposer.DecomposeAsync));
+        var routerMethod = typeof(IQueryRouter).GetMethod(nameof(IQueryRouter.RouteAsync));
+
+        Assert.Contains(augmentorMethod!.GetParameters(), parameter => parameter.ParameterType.Name == "IKernelContext");
+        Assert.Contains(decomposerMethod!.GetParameters(), parameter => parameter.ParameterType.Name == "IKernelContext");
+        Assert.Contains(routerMethod!.GetParameters(), parameter => parameter.ParameterType.Name == "IKernelContext");
+    }
+
+    [Fact]
+    public void QueryPartUsesImmutableMetadata()
+    {
+        var queryPart = new QueryPart
+        {
+            QueryPartId = "query-part-1",
+            Text = "normalized query",
+            Order = 0
+        };
+
+        Assert.Empty(queryPart.Metadata);
+        Assert.Equal("query-part-1", queryPart.QueryPartId);
     }
 
     [Fact]
@@ -364,6 +395,27 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         {
             return false;
         }
+
+        public bool SupportsQueryAugmentation => false;
+
+        public bool SupportsQueryDecomposition => false;
+
+        public bool SupportsQueryRouting => false;
+
+        public int MaxQueryParts => 0;
+
+        public IReadOnlyList<string> SupportedQueryProcessingOperations => [];
+
+        public bool SupportsQueryProcessingOperation(string operation)
+        {
+            return false;
+        }
+
+        public bool SupportsEmbedding => false;
+
+        public int? EmbeddingDimensions => null;
+
+        public IReadOnlyList<string> SupportedEmbeddingModels => [];
     }
 
     private sealed class StaticOperationCapabilities : IProviderOperationCapabilities

@@ -108,6 +108,68 @@ public interface IQuantizationSupport
 }
 
 /// <summary>
+/// Phase 1 Query Processing に関する Provider capability を公開します。
+/// Query 補間・分解・ルーティングは Core 実装ではなく、Provider または拡張実装が宣言する能力として扱います。
+/// </summary>
+public interface IQueryProcessingCapabilities
+{
+    /// <summary>
+    /// Query 補間または正規化をサポートしているかどうかを取得します。
+    /// </summary>
+    bool SupportsQueryAugmentation { get; }
+
+    /// <summary>
+    /// Query 分解をサポートしているかどうかを取得します。
+    /// </summary>
+    bool SupportsQueryDecomposition { get; }
+
+    /// <summary>
+    /// Query routing をサポートしているかどうかを取得します。
+    /// </summary>
+    bool SupportsQueryRouting { get; }
+
+    /// <summary>
+    /// 一度に扱える QueryPart の最大数を取得します。
+    /// </summary>
+    int MaxQueryParts { get; }
+
+    /// <summary>
+    /// サポートされている query processing operation の一覧を取得します。
+    /// </summary>
+    IReadOnlyList<string> SupportedQueryProcessingOperations { get; }
+
+    /// <summary>
+    /// 指定された query processing operation をサポートしているか確認します。
+    /// </summary>
+    /// <param name="operation">操作名。</param>
+    /// <returns>サポートしている場合は true。</returns>
+    bool SupportsQueryProcessingOperation(string operation);
+}
+
+/// <summary>
+/// Embedding に関する Provider capability metadata を公開します。
+/// 実際の embedding 生成は ITextEmbeddingProvider / IBatchEmbeddingProvider / IEmbeddingProvider が担います。
+/// </summary>
+public interface IEmbeddingCapabilityMetadata
+{
+    /// <summary>
+    /// Embedding 生成をサポートしているかどうかを取得します。
+    /// </summary>
+    bool SupportsEmbedding { get; }
+
+    /// <summary>
+    /// Embedding vector の次元数を取得します。
+    /// 次元が固定でない場合、または未公開の場合は null を返します。
+    /// </summary>
+    int? EmbeddingDimensions { get; }
+
+    /// <summary>
+    /// サポートされている embedding model 名の一覧を取得します。
+    /// </summary>
+    IReadOnlyList<string> SupportedEmbeddingModels { get; }
+}
+
+/// <summary>
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// プロバイダーの機能情報を定義する互換合成インターフェースです。
 /// 静的な能力情報と、実行制約に基づく動的能力に対応します。
@@ -118,6 +180,8 @@ public interface IProviderCapabilities :
     IProviderCapacityVectorSource,
     IDynamicProviderCapacitySource,
     IProviderProfileSource,
-    IQuantizationSupport
+    IQuantizationSupport,
+    IQueryProcessingCapabilities,
+    IEmbeddingCapabilityMetadata
 {
 }

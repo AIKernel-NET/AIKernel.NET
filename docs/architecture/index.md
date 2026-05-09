@@ -170,6 +170,15 @@ This document is the north star that constrains AIKernel as an OS that places AI
 
 ---
 
+## 1.16 Phase 1 Query Processing
+**File:** `17.QUERY_PROCESSING_PHASE1.md`
+
+Defines query augmentation, decomposition, semantic projection, and query routing as Phase 1 context-build responsibilities.
+
+This chapter keeps RAG outside Core retrieval implementation and aligns Query Processing with ROM, CacheDB, Material Quarantine, and Governance.
+
+---
+
 # 2. Comparative Architecture
 
 ## 2.1 AIKernel vs LangChain
@@ -222,7 +231,7 @@ Reading this index and the linked documents in order will help you understand **
 
 # 5. Recommended Reading Order
 
-Note: `16` is the last chapter in `architecture/`; `18` is intentionally reserved as a cross-reference to `/design/DESIGN_INTENT`.
+Note: `17` is the last chapter in `architecture/`; `18` is intentionally reserved as a cross-reference to `/design/DESIGN_INTENT`.
 
 1. CATEGORY_SEPARATION_PRINCIPLES
 2. CONTEXT_ISOLATION_SPEC
@@ -240,6 +249,7 @@ Note: `16` is the last chapter in `architecture/`; `18` is intentionally reserve
 14. SIGNED_PROMPT_GOVERNANCE_WORKFLOW
 15. REPLAYABLE_EXECUTION_DUMP_FORMAT
 16. SEMANTIC_CONTEXT_OS_VISION
+17. QUERY_PROCESSING_PHASE1
 18. /design/DESIGN_INTENT
 
 ---

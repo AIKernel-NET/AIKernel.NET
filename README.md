@@ -219,7 +219,23 @@ Prompts are the final formatting step.
 
 ---
 
-### 4.3 Attention Pollution Prevention
+### 4.3 Query Processing as Phase 1 Context Build
+
+Query augmentation, decomposition, semantic conversion, and query routing are Phase 1 preprocessing responsibilities.
+
+AIKernel treats these as context-build operations, not as Core knowledge retrieval. RAG remains a provider or pipeline strategy that can supply material, while Core keeps the abstract contracts for shaping query intent before ROM, CacheDB, and Governance participate.
+
+Core abstractions:
+
+- `IQueryAugmentor`
+- `IQueryDecomposer`
+- `IEmbeddingProvider`
+- `IQueryRouter`
+- `QueryPart`
+
+---
+
+### 4.4 Attention Pollution Prevention
 
 Mixing examples, RAG material, and history can break inference.
 
@@ -228,14 +244,14 @@ Mixing examples, RAG material, and history can break inference.
 
 ---
 
-### 4.4 LLM as Suggestor, PDP as Decision-Maker
+### 4.5 LLM as Suggestor, PDP as Decision-Maker
 
 The LLM is a suggestor.  
 The Policy Decision Point (PDP) makes final decisions.
 
 ---
 
-### 4.5 Signed Prompt Governance and Fail-Closed
+### 4.6 Signed Prompt Governance and Fail-Closed
 
 Prompts carry authority equivalent to code execution.
 
@@ -257,7 +273,7 @@ Detailed spec:
 
 ---
 
-### 4.6 Relation-Oriented Data Structure (ROM)
+### 4.7 Relation-Oriented Data Structure (ROM)
 
 AIKernel treats knowledge not as linear text, but as a set of relations.
 
@@ -273,7 +289,7 @@ With ROM, human-authored notes can be transformed directly into an LLM-reasonabl
 
 ---
 
-### 4.7 Git-Managed Reasoning (ConversationStore)
+### 4.8 Git-Managed Reasoning (ConversationStore)
 
 AI conversations are managed not as linear logs, but as tree-structured Git commits.
 
@@ -310,6 +326,9 @@ Examples:
 
 - chat
 - embedding
+- query-augmentation
+- query-decomposition
+- query-routing
 - multimodal
 - reasoning
 - vector-search

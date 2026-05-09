@@ -4,7 +4,7 @@ version: 0.0.1
 issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "IProviderCapabilities"
 created: 2026-05-03
-updated: 2026-05-06
+updated: 2026-05-09
 tags:
   - aikernel
   - architecture
@@ -20,7 +20,7 @@ For Japanese version, see [IProviderCapabilities-jp.md](./IProviderCapabilities-
 `IProviderCapabilities` is the capability specification sheet used by routing/governance to evaluate what a provider can do and under which constraints.
 
 - Role:
-  Expose supported operations/data types, concurrency ceilings, rate limits, static capacity vector, and dynamic capacity views.
+  Expose supported operations/data types, concurrency ceilings, rate limits, static capacity vector, dynamic capacity views, query-processing support, and embedding metadata.
 - Non-role:
   It does not execute inference; it declares capability metadata only.
 
@@ -30,18 +30,33 @@ namespace AIKernel.Abstractions.Providers;
 
 using AIKernel.Abstractions.Models;
 
-public interface IProviderCapabilities
+public interface IProviderCapabilities :
+    IProviderOperationCapabilities,
+    IProviderConnectionCapabilities,
+    IProviderCapacityVectorSource,
+    IDynamicProviderCapacitySource,
+    IProviderProfileSource,
+    IQuantizationSupport,
+    IQueryProcessingCapabilities,
+    IEmbeddingCapabilityMetadata
 {
-    IReadOnlyList<string> SupportedOperations { get; }
-    IReadOnlyList<string> SupportedDataTypes { get; }
-    int MaxConcurrentConnections { get; }
-    RateLimitInfo? RateLimit { get; }
-    ModelCapacityVector Vector { get; }
-    IDictionary<string, float>? GetDynamicCapacities(IExecutionConstraints constraints);
-    ICapabilityProfile? GetCapabilityProfile();
-    bool SupportsOperation(string operation);
-    bool SupportsDataType(string dataType);
-    bool SupportsQuantization(string quantizationLevel);
+}
+
+public interface IQueryProcessingCapabilities
+{
+    bool SupportsQueryAugmentation { get; }
+    bool SupportsQueryDecomposition { get; }
+    bool SupportsQueryRouting { get; }
+    int MaxQueryParts { get; }
+    IReadOnlyList<string> SupportedQueryProcessingOperations { get; }
+    bool SupportsQueryProcessingOperation(string operation);
+}
+
+public interface IEmbeddingCapabilityMetadata
+{
+    bool SupportsEmbedding { get; }
+    int? EmbeddingDimensions { get; }
+    IReadOnlyList<string> SupportedEmbeddingModels { get; }
 }
 ```
 
@@ -50,6 +65,8 @@ public interface IProviderCapabilities
   Uses `Vector` and dynamic capacities for candidate matching.
 - `UC-22` Dynamic capacity control:
   Uses `RateLimit` and runtime capacities for throttling and route weighting.
+- Phase 1 Query Processing:
+  Uses query and embedding capability metadata for `IQueryRouter` candidate selection.
 
 ## 4. Governance & Determinism
 - Capability accuracy:
@@ -58,6 +75,8 @@ public interface IProviderCapabilities
   Snapshot dynamic capacity values at execution time for deterministic audit/replay reasoning.
 - Backend transparency:
   Return comparable metrics regardless of cloud API vs local runtime backend.
+- Query boundary:
+  Query-processing capability metadata must not imply that Core implements retrieval or indexing.
 
 ## 5. Implementation Notes
 - Vector dimension discipline:
@@ -69,3 +88,4 @@ public interface IProviderCapabilities
 # Changelog
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
+- v0.0.1 (2026-05-09): Added query-processing and embedding capability metadata
