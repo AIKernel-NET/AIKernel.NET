@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "pipeline Interfaces"
 created: 2026-05-03
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版は index.md を参照。
+英語版: [Specification Index](specs/index.md)
 
 # pipeline Interfaces
 
@@ -28,11 +32,11 @@ Pipeline はステートフル実行遷移を制御する境界です。`IPipeli
 - `docs/specs/04.MODEL_ROUTING_SPEC-jp.md`
 
 ## ドキュメント一覧
-- IPipelineOrchestrator-jp.md
-- IPipelineStep-jp.md
-- IStructurePlanner-jp.md
-- ITaskManager-jp.md
-- ITaskVectorEstimator-jp.md
+- [IPipelineOrchestrator](architecture/interfaces/pipeline/IPipelineOrchestrator-jp.md)
+- [IPipelineStep](architecture/interfaces/pipeline/IPipelineStep-jp.md)
+- [IStructurePlanner](architecture/interfaces/pipeline/IStructurePlanner-jp.md)
+- [ITaskManager](architecture/interfaces/pipeline/ITaskManager-jp.md)
+- [ITaskVectorEstimator](architecture/interfaces/pipeline/ITaskVectorEstimator-jp.md)
 
 ---
 

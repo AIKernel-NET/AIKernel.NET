@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "security Interfaces"
 created: 2026-05-06
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版は index.md を参照。
+英語版: [Specification Index](specs/index.md)
 
 # security Interfaces
 
@@ -19,10 +23,10 @@ tags:
 PDP/Guard による実行許可判定契約。
 
 ## ドキュメント一覧
-- IGuard-jp.md
-- IPdp-jp.md
-- IPolicy-jp.md
-- IPrincipal-jp.md
+- [IGuard](architecture/interfaces/security/IGuard-jp.md)
+- [IPdp](architecture/interfaces/security/IPdp-jp.md)
+- [IPolicy](architecture/interfaces/security/IPolicy-jp.md)
+- [IPrincipal](architecture/interfaces/security/IPrincipal-jp.md)
 
 ---
 

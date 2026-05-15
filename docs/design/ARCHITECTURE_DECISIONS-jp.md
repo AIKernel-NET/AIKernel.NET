@@ -1,16 +1,20 @@
 ---
 id: architecture-decisions
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "ARCHITECTURE_DECISIONS — 主要設計決定（ADR集約）"
 created: 2026-05-01
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 tags:
 - aikernel
 - design
 - adr
 - governance
 - japanese
-updated: 2026-05-06
 ---
 
 # ARCHITECTURE_DECISIONS — 主要設計決定（ADR集約）

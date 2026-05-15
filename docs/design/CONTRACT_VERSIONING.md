@@ -1,9 +1,14 @@
 ---
 id: contract-versioning
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "CONTRACT_VERSIONING — Contract (Interface/DTO/Enum) Versioning Policy"
 created: 2026-05-01
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
 - aikernel
 - design
@@ -11,7 +16,6 @@ tags:
 - versioning
 - governance
 - english
-updated: 2026-05-06
 ---
 
 # CONTRACT_VERSIONING — Contract (Interface/DTO/Enum) Versioning Policy

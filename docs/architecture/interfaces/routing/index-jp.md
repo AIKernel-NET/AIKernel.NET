@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "routing Interfaces"
 created: 2026-05-06
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版は index.md を参照。
+英語版: [Specification Index](specs/index.md)
 
 # routing Interfaces
 
@@ -32,8 +36,8 @@ Routing は、要求能力・制約・実行状況に基づくモデル選定の
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Hosting`
 
 ## ドキュメント一覧
-- ICapabilityRegistry-jp.md
-- IModelVectorRouter-jp.md
+- [ICapabilityRegistry (インターフェース仕様)](architecture/interfaces/routing/ICapabilityRegistry-jp.md)
+- [IModelVectorRouter (インターフェース仕様)](architecture/interfaces/routing/IModelVectorRouter-jp.md)
 ---
 
 # 変更履歴

@@ -1,3 +1,13 @@
+---
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
+---
+
 # AIKernel.NET
 
 ![AIKernel.NET Logo](docs/assets/aikernel-logo.png)

@@ -1,17 +1,21 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: 'IExpressionContract'
 created: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
   - aikernel
   - architecture
   - interfaces
   - english
-updated: 2026-05-06
 ---
 
-For Japanese version, see IExpressionContract-jp.md.
+Japanese version: [IExpressionContract (契約仕様)](architecture/interfaces/contracts/IExpressionContract-jp.md)
 
 # IExpressionContract (Contract Specification)
 

@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "pipeline Interfaces"
 created: 2026-05-03
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - english
 ---
 
-For Japanese version, see index-jp.md.
+Japanese version: [Specification Index](specs/index-jp.md)
 
 # pipeline Interfaces
 
@@ -28,11 +32,11 @@ Pipeline controls stateful execution transitions. `IPipelineOrchestrator` and `I
 - `docs/specs/04.MODEL_ROUTING_SPEC.md`
 
 ## Documents
-- IPipelineOrchestrator.md
-- IPipelineStep.md
-- IStructurePlanner.md
-- ITaskManager.md
-- ITaskVectorEstimator.md
+- [IPipelineOrchestrator](architecture/interfaces/pipeline/IPipelineOrchestrator.md)
+- [IPipelineStep](architecture/interfaces/pipeline/IPipelineStep.md)
+- [IStructurePlanner](architecture/interfaces/pipeline/IStructurePlanner.md)
+- [ITaskManager](architecture/interfaces/pipeline/ITaskManager.md)
+- [ITaskVectorEstimator](architecture/interfaces/pipeline/ITaskVectorEstimator.md)
 
 ---
 

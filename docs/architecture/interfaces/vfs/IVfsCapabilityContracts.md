@@ -1,10 +1,14 @@
 ---
 id: ivfscapabilitycontracts
-version: 0.0.2
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "Vfs Capability Contracts"
 created: 2026-05-09
-updated: 2026-05-09
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
   - aikernel
   - architecture
@@ -14,7 +18,7 @@ tags:
   - english
 ---
 
-For Japanese version, see IVfsCapabilityContracts-jp.md.
+Japanese version: [Vfs Capability Contracts](architecture/interfaces/vfs/IVfsCapabilityContracts-jp.md)
 
 # Vfs Capability Contracts
 

@@ -1,16 +1,20 @@
 ---
 id: extension-points
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "EXTENSION_POINTS — 拡張ポイント仕様（Provider/Vfs/Policy 等）"
 created: 2026-05-01
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 tags:
 - aikernel
 - design
 - extension
 - capabilities
 - japanese
-updated: 2026-05-09
 ---
 
 # EXTENSION_POINTS — 拡張ポイント仕様（Provider/Vfs/Policy 等）

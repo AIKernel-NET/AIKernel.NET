@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "material Interfaces"
 created: 2026-05-03
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版は index.md を参照。
+英語版: [Specification Index](specs/index.md)
 
 # material Interfaces
 
@@ -32,8 +36,8 @@ Material は外部由来データの取り込み境界です。`IMaterialQuarant
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Providers`
 
 ## ドキュメント一覧
-- IMaterialQuarantine-jp.md
-- IStructuredMaterial-jp.md
+- [IMaterialQuarantine (インターフェース仕様)](architecture/interfaces/material/IMaterialQuarantine-jp.md)
+- [IStructuredMaterial](architecture/interfaces/material/IStructuredMaterial-jp.md)
 ---
 
 # 変更履歴

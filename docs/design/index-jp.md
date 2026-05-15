@@ -1,16 +1,14 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
-title: "Design Documentation Index"
-created: 2026-05-03
-updated: 2026-05-06
-tags:
-  - aikernel
-  - design
-  - japanese
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 ---
 
-英語版は index.md を参照。
+英語版: [Specification Index](specs/index.md)
 
 # Design Documentation Index
 

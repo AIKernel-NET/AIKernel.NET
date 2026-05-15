@@ -1,8 +1,12 @@
 ---
 title: "Migration Guide"
-status: "Planned"
-version: 0.0.2
-updated: 2026-05-09
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 ---
 
 # Migration Guide

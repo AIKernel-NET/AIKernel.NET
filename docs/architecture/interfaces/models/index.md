@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "models Interfaces"
 created: 2026-05-06
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - english
 ---
 
-For Japanese version, see index-jp.md.
+Japanese version: [Specification Index](specs/index-jp.md)
 
 # models Interfaces
 
@@ -19,13 +23,13 @@ For Japanese version, see index-jp.md.
 Capability axis, dynamic capacity, and execution constraint contracts.
 
 ## Documents
-- ICapabilityProfile.md
-- ICapacityAxis.md
-- IDynamicCapacityAxis.md
-- IDynamicCapacityProvider.md
-- IDynamicCapacityVector.md
-- IExecutionConstraints.md
-- IVectorMatcher.md
+- [ICapabilityProfile](architecture/interfaces/models/ICapabilityProfile.md)
+- [ICapacityAxis](architecture/interfaces/models/ICapacityAxis.md)
+- [IDynamicCapacityAxis](architecture/interfaces/models/IDynamicCapacityAxis.md)
+- [IDynamicCapacityProvider](architecture/interfaces/models/IDynamicCapacityProvider.md)
+- [IDynamicCapacityVector](architecture/interfaces/models/IDynamicCapacityVector.md)
+- [IExecutionConstraints](architecture/interfaces/models/IExecutionConstraints.md)
+- [IVectorMatcher](architecture/interfaces/models/IVectorMatcher.md)
 
 ---
 

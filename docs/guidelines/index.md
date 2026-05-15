@@ -1,15 +1,11 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
-title: "AIKernel Guidelines — Index"
-created: 2026-05-01
-tags:
-  - aikernel
-  - guideline
-  - documentation
-  - governance
-  - english
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 ---
 
 # AIKernel Guidelines — Index
@@ -25,8 +21,7 @@ with **English as the canonical version** and **Japanese as the deep-dive versio
 
 ## Guideline Documents
 
-### 1. Documentation Guidelines  
-**File:** `DOCUMENTATION_GUIDELINES(.jp).md`  
+### 1. [Documentation Guidelines](DOCUMENTATION_GUIDELINES.md)  
 **Contents:**  
 - Markdown-first principle  
 - English as canonical  
@@ -40,8 +35,7 @@ All AIKernel documentation must follow this guideline.
 
 ---
 
-### 2. Docs Contributing Guide  
-**File:** `DOCS_CONTRIBUTING(.jp).md`  
+### 2. [Docs Contributing Guide](DOCS_CONTRIBUTING.md)  
 **Contents:**  
 - Rules for documentation PRs  
 - CI checks (lint, link-check, build)  
@@ -53,8 +47,7 @@ Defines the **operational rules** for contributing documentation.
 
 ---
 
-### 3. Repository Dependency Rules  
-**File:** `REPO_DEPENDENCY_RULES(.jp).md`  
+### 3. [Repository Dependency Rules](REPO_DEPENDENCY_RULES.md)  
 **Contents:**  
 - Allowed dependency directions (Core → Kernel → Providers)  
 - Prohibition of circular dependencies  
@@ -66,7 +59,6 @@ Ensures the **architectural integrity** of the entire AIKernel ecosystem.
 ---
 
 ### 4. Contract Versioning Policy  
-**File:** `CONTRACT_VERSIONING(.jp).md`  
 **Contents:**  
 - Versioning rules for Interfaces / DTOs / Enums  
 - Definition of breaking changes  
@@ -79,7 +71,6 @@ Defines governance for safely evolving **Contracts**, the foundation of AIKernel
 ---
 
 ### 5. Migration Guide (Planned)  
-**File:** `MIGRATION_GUIDE(.jp).md`  
 **Contents:**  
 - Migration steps across breaking contract changes  
 - Classification of changes (Breaking / Non-breaking)  

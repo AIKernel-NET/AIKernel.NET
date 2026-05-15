@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "execution Interfaces"
 created: 2026-05-03
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - english
 ---
 
-For Japanese version, see index-jp.md.
+Japanese version: [Specification Index](specs/index-jp.md)
 
 # execution Interfaces
 
@@ -32,10 +36,10 @@ Execution is the core boundary of inference runtime. `IThoughtProcess` handles s
 - Called by: `AIKernel.Abstractions.Hosting`, `AIKernel.Abstractions.Routing`
 
 ## Documents
-- IComputeShapeAdvisor.md
-- IOutputPolisher.md
-- IThoughtProcess.md
-- ITokenizer.md
+- [IComputeShapeAdvisor](architecture/interfaces/execution/IComputeShapeAdvisor.md)
+- [IOutputPolisher (Interface Specification)](architecture/interfaces/execution/IOutputPolisher.md)
+- [IThoughtProcess (Interface Specification)](architecture/interfaces/execution/IThoughtProcess.md)
+- [ITokenizer](architecture/interfaces/execution/ITokenizer.md)
 ---
 
 # Changelog

@@ -1,10 +1,14 @@
 ---
 id: ivfsprovider
-version: 0.0.2
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "IVfsProvider"
 created: 2026-05-03
-updated: 2026-05-09
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 tags:
   - aikernel
   - architecture
@@ -12,7 +16,7 @@ tags:
   - japanese
 ---
 
-英語版は IVfsProvider.md を参照。
+英語版: [IVfsProvider](architecture/interfaces/vfs/IVfsProvider.md)
 
 # IVfsProvider
 

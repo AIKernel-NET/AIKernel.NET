@@ -1,22 +1,14 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
-title: "Semantic Snapshot Markdown 形式"
-description: AIKernel の意味的メモリスナップショットの標準 Markdown 形式
-lang: ja
-last_updated: 2026-05-04
-updated: 2026-05-06
-owners:
-  - AIKernel Architecture Team
-tags:
-  - aikernel
-  - design
-  - snapshot
-  - markdown
-  - japanese
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 ---
 
-英語版は `SEMANTIC_SNAPSHOT_FORMAT.md` を参照。
+英語版: [Purpose](design/SEMANTIC_SNAPSHOT_FORMAT.md)
 
 # Purpose
 AIKernel が推論途中状態を統治メタデータ付きで保持するための **Semantic Snapshot** 標準 Markdown 形式を定義する。
@@ -156,11 +148,11 @@ Fail-Closed:
 - リンク未解決（孤立 ID）が必須参照に含まれる場合、実行を停止する。
 
 # References
-- ../architecture/16.SEMANTIC_CONTEXT_OS_VISION-jp.md
-- ../architecture/2.CONTEXT_ISOLATION_SPEC-jp.md
-- ../architecture/3.ATTENTION_POLLUTION_THEORY-jp.md
-- ../architecture/11.MATERIAL_QUARANTINE_TRUST_MODEL-jp.md
-- DESIGN_INTENT-jp.md
+- [Semantic Context OS ビジョン](architecture/16.SEMANTIC_CONTEXT_OS_VISION-jp.md)
+- [コンテキスト分離仕様](architecture/2.CONTEXT_ISOLATION_SPEC-jp.md)
+- [Attention Pollution 理論](architecture/3.ATTENTION_POLLUTION_THEORY-jp.md)
+- [Material Quarantine Trust Model](architecture/11.MATERIAL_QUARANTINE_TRUST_MODEL-jp.md)
+- [Design Intent](design/DESIGN_INTENT-jp.md)
 
 # Changelog
 - 2026-05-03 v0.0.0 Initial draft

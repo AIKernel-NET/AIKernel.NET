@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "rom Interfaces"
 created: 2026-05-06
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - english
 ---
 
-For Japanese version, see index-jp.md.
+Japanese version: [Specification Index](specs/index-jp.md)
 
 # rom Interfaces
 
@@ -32,11 +36,11 @@ ROM is the boundary for canonical intelligence artifacts and validation. Around 
 - Called by: `AIKernel.Abstractions.Prompt`, `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Governance`
 
 ## Documents
-- IRomCanonicalizer.md
-- ISemanticHasher.md
-- IRomDocument.md
-- IRomValidator.md
-- IRelationResolver.md
+- [IRomCanonicalizer (ROM Canonicalization Interface Specification)](architecture/interfaces/rom/IRomCanonicalizer.md)
+- [ISemanticHasher (Semantic Hash Interface Specification)](architecture/interfaces/rom/ISemanticHasher.md)
+- [IRomDocument (ROM Document Specification)](architecture/interfaces/rom/IRomDocument.md)
+- [IRomValidator (ROM Validator Specification)](architecture/interfaces/rom/IRomValidator.md)
+- [IRelationResolver (Relation Resolution Interface Specification)](architecture/interfaces/rom/IRelationResolver.md)
 ---
 
 # Changelog

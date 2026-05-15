@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "conversation Interfaces"
 created: 2026-05-03
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - english
 ---
 
-For Japanese version, see index-jp.md.
+Japanese version: [Specification Index](specs/index-jp.md)
 
 # conversation Interfaces
 
@@ -32,13 +36,13 @@ Conversation covers branching, diffing, and timeline reconstruction of dialogue 
 - Called by: `AIKernel.Abstractions.Hosting`, `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Vfs`
 
 ## Documents
-- IConversationBranch.md
-- IConversationCheckpoint.md
-- IConversationDiff.md
-- IConversationSnapshot.md
-- IConversationStore.md
-- IConversationTimeline.md
-- IDiffFormatter.md
+- [IConversationBranch](architecture/interfaces/conversation/IConversationBranch.md)
+- [IConversationCheckpoint](architecture/interfaces/conversation/IConversationCheckpoint.md)
+- [IConversationDiff](architecture/interfaces/conversation/IConversationDiff.md)
+- [IConversationSnapshot](architecture/interfaces/conversation/IConversationSnapshot.md)
+- [IConversationStore](architecture/interfaces/conversation/IConversationStore.md)
+- [IConversationTimeline](architecture/interfaces/conversation/IConversationTimeline.md)
+- [IDiffFormatter](architecture/interfaces/conversation/IDiffFormatter.md)
 ---
 
 # Changelog

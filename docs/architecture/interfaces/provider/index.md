@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "provider Interfaces"
 created: 2026-05-03
-updated: 2026-05-09
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - english
 ---
 
-For Japanese version, see index-jp.md.
+Japanese version: [Specification Index](specs/index-jp.md)
 
 # provider Interfaces
 
@@ -32,20 +36,20 @@ Provider is the runtime boundary for external LLM/Embedding/RAG systems. Paths s
 - `docs/architecture/17.QUERY_PROCESSING_PHASE1.md`
 
 ## Documents
-- IProvider.md
-- IModelProvider.md
-- IModelMessage.md
-- IEmbeddingProvider.md
-- IRagProvider.md
-- IEventBus.md
-- IScheduler.md
-- IProviderCapabilities.md
-- IProviderCostProfile.md
-- IProviderCreditInfo.md
-- IProviderBillingInfo.md
-- IProviderUsageStats.md
-- IProviderResourceProfile.md
-- IProviderRouter.md
+- [IProvider (Interface Specification)](architecture/interfaces/provider/IProvider.md)
+- [IModelProvider (Interface Specification)](architecture/interfaces/provider/IModelProvider.md)
+- [IModelMessage (Interface Specification)](architecture/interfaces/provider/IModelMessage.md)
+- [IEmbeddingProvider (Interface Specification)](architecture/interfaces/provider/IEmbeddingProvider.md)
+- [IRagProvider (Interface Specification)](architecture/interfaces/provider/IRagProvider.md)
+- [IEventBus (Interface Specification)](architecture/interfaces/provider/IEventBus.md)
+- [IScheduler (Interface Specification)](architecture/interfaces/provider/IScheduler.md)
+- [IProviderCapabilities (Interface Specification)](architecture/interfaces/provider/IProviderCapabilities.md)
+- [IProviderCostProfile (Interface Specification)](architecture/interfaces/provider/IProviderCostProfile.md)
+- [IProviderCreditInfo (Interface Specification)](architecture/interfaces/provider/IProviderCreditInfo.md)
+- [IProviderBillingInfo (Interface Specification)](architecture/interfaces/provider/IProviderBillingInfo.md)
+- [IProviderUsageStats (Usage Telemetry Interface Specification)](architecture/interfaces/provider/IProviderUsageStats.md)
+- [IProviderResourceProfile (Unified Resource Profile Specification)](architecture/interfaces/provider/IProviderResourceProfile.md)
+- [IProviderRouter](architecture/interfaces/provider/IProviderRouter.md)
 
 ---
 

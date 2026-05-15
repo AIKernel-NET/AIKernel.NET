@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "tasks Interfaces"
 created: 2026-05-06
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版は index.md を参照。
+英語版: [Specification Index](specs/index.md)
 
 # tasks Interfaces
 
@@ -19,12 +23,12 @@ tags:
 タスクとパイプライン実行結果の基本契約。
 
 ## ドキュメント一覧
-- IPipeline-jp.md
-- IPipelineExecutionResult-jp.md
-- ITask-jp.md
-- ITaskContext-jp.md
-- ITaskExecutionResult-jp.md
-- ITaskSchema-jp.md
+- [IPipeline](architecture/interfaces/tasks/IPipeline-jp.md)
+- [IPipelineExecutionResult](architecture/interfaces/tasks/IPipelineExecutionResult-jp.md)
+- [ITask](architecture/interfaces/tasks/ITask-jp.md)
+- [ITaskContext](architecture/interfaces/tasks/ITaskContext-jp.md)
+- [ITaskExecutionResult](architecture/interfaces/tasks/ITaskExecutionResult-jp.md)
+- [ITaskSchema](architecture/interfaces/tasks/ITaskSchema-jp.md)
 
 ---
 

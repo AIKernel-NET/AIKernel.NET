@@ -1,9 +1,14 @@
 ---
 id: repo-dependency-rules
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel.NET Repository Dependency Rules"
 created: 2026-04-30
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
 - aikernel
 - repository
@@ -11,7 +16,6 @@ tags:
 - architecture
 - governance
 - english
-updated: 2026-05-06
 ---
 
 ## Overview

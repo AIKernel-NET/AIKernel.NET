@@ -1,13 +1,17 @@
 ---
 id: contributing
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel Contributing Guide"
 scope:
   - repo: AIKernel.NET
 createdAt: 2026-04-28T00:00:00Z
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 signature: ""
-updated: 2026-05-06
 ---
 
 # CONTRIBUTING

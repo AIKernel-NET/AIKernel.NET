@@ -1,15 +1,11 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
-title: "AIKernel Operations — Index"
-created: 2026-05-01
-tags:
-  - aikernel
-  - operations
-  - runbook
-  - governance
-  - japanese
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 ---
 
 # AIKernel Operations — Index
@@ -25,8 +21,7 @@ Operations は、アーキテクチャ思想（architecture）や実装方針（
 
 ## Operations 文書一覧（Planned）
 
-### 1. Migration Guide（移行ガイド）  
-**ファイル:** `MIGRATION_GUIDE-jp.md`  
+### 1. [Migration Guide](MIGRATION_GUIDE-jp.md)（移行ガイド）  
 **ステータス:** Planned  
 **内容（予定）:**  
 - 契約（Interface / DTO / Enum）の破壊的変更を跨ぐ際の移行手順  
@@ -39,7 +34,6 @@ Contracts が安定した段階で正式に作成される。
 ---
 
 ### 2. Release Operations（リリース運用）  
-**ファイル:** `RELEASE_OPERATIONS-jp.md`（予定）  
 **ステータス:** Planned  
 **内容（予定）:**  
 - リリースフロー（tag → build → publish → announce）  
@@ -50,7 +44,6 @@ Contracts が安定した段階で正式に作成される。
 ---
 
 ### 3. Monitoring & Observability（監視・可観測性）  
-**ファイル:** `OBSERVABILITY_GUIDE-jp.md`（予定）  
 **ステータス:** Planned  
 **内容（予定）:**  
 - メトリクス（latency / cost / retry / cache / provider health）  
@@ -61,7 +54,6 @@ Contracts が安定した段階で正式に作成される。
 ---
 
 ### 4. Incident Response（障害対応）  
-**ファイル:** `INCIDENT_RESPONSE-jp.md`（予定）  
 **ステータス:** Planned  
 **内容（予定）:**  
 - 障害検知 → 初動 → 切り分け → 復旧 → 事後分析  
@@ -72,7 +64,6 @@ Contracts が安定した段階で正式に作成される。
 ---
 
 ### 5. Security Operations（セキュリティ運用）  
-**ファイル:** `SECURITY_OPERATIONS-jp.md`（予定）  
 **ステータス:** Planned  
 **内容（予定）:**  
 - 署名検証（PromptRules / Contracts / Policies）  
