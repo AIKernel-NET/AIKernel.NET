@@ -1,0 +1,48 @@
+{
+  "title": "AIKernel Phase-1 Paper 01: ROM Format and Knowledge Snapshot Model: Invariant Knowledge Substrate for Deterministic AIOS Governance",
+  "upload_type": "publication",
+  "publication_type": "technicalnote",
+  "creators": [
+    {
+      "name": "Sogawa, Takuya",
+      "orcid": "0009-0009-7499-2595"
+    }
+  ],
+  "description": "This technical note is Part I-1 of the AIKernel / AIOS Phase-1 Specification Series. It defines the ROM Format and Knowledge Snapshot Model as the invariant knowledge substrate for deterministic AIOS governance. The English manuscript is the canonical version and the Japanese manuscript is included as a companion translation.",
+  "keywords": [
+    "AIKernel",
+    "AIOS",
+    "Relation-Oriented Markdown",
+    "ROM",
+    "Knowledge Snapshot",
+    "Semantic Hash",
+    "Causal Semantic Identity",
+    "Deterministic Governance",
+    "Replayable Context",
+    "Prompt Governance",
+    "Knowledge Graph Governance",
+    "Fail-Closed",
+    "Content Addressing",
+    "AI Operating System"
+  ],
+  "license": "cc-by-4.0",
+  "version": "0.2.0",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20290614",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/AIKernel-NET/AIKernel.NET",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://aikernel.net/",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "title": "AIKernel Phase-1 Paper 04: Trajectory Governance Model: A Formal Specification for Deterministic Execution Control over Stochastic AI Agents",
+  "upload_type": "publication",
+  "publication_type": "technicalnote",
+  "creators": [
+    {
+      "name": "Sogawa, Takuya",
+      "orcid": "0009-0009-7499-2595"
+    }
+  ],
+  "description": "This technical note is Part II-4 of the AIKernel / AIOS Phase-1 specification series. It defines Trajectory Governance as a deterministic governance model for evaluating semantic state transitions, candidate actions, convergence, goal alignment, risk, uncertainty, and repetition after inference has begun. The English manuscript is the canonical version, and the Japanese manuscript is included as a companion translation.",
+  "keywords": [
+    "AIKernel",
+    "AIOS",
+    "Trajectory Governance",
+    "Semantic Trajectory",
+    "Semantic Ellipsoid",
+    "Convergence Score",
+    "Anomaly Score",
+    "Goal Governance",
+    "RootGoal",
+    "Policy Decision Point",
+    "ReplayLog",
+    "Deterministic Replay",
+    "Fail-Closed",
+    "Governed AI Inference"
+  ],
+  "license": "cc-by-4.0",
+  "version": "0.2.0",
+  "language": "eng",
+  "publication_date": "2026-05-26",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.20290614",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.20308639",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.20223205",
+      "relation": "isNewVersionOf",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/AIKernel-NET/AIKernel.NET",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://aikernel.net/",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    }
+  ]
+}

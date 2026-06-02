@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use or refer to this work, please cite it using the metadata below."
+type: report
+title: "AIKernel Phase-1 Paper 04: Trajectory Governance Model"
+abstract: "A formal specification for deterministic execution control over stochastic AI agents."
+authors:
+  - family-names: "Sogawa"
+    given-names: "Takuya"
+    orcid: "https://orcid.org/0009-0009-7499-2595"
+year: 2026
+date-released: "2026-05-26"
+version: "0.2.0"
+doi: "10.5281/zenodo.20309510"
+license: "CC-BY-4.0"
+repository-code: "https://github.com/AIKernel-NET/AIKernel.NET"
+url: "https://aikernel.net/"
+keywords:
+  - "AIKernel"
+  - "AIOS"
+  - "Trajectory Governance"
+  - "Semantic Trajectory"
+  - "Deterministic Governance"
+  - "Policy Decision Point"
+  - "ReplayLog"
+  - "Fail-Closed"

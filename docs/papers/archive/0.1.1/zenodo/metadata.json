@@ -1,0 +1,48 @@
+{
+  "title": "AIKernel: Formal Foundations for Trajectory Governance and the AIKernel.NET Runtime",
+  "version": "v0.1.1",
+  "doi": "10.5281/zenodo.20223205",
+  "upload_type": "publication",
+  "publication_type": "technicalnote",
+  "creators": [
+    {
+      "name": "Sogawa, Takuya",
+      "affiliation": "AIKernel Project"
+    }
+  ],
+  "keywords": [
+    "AIKernel",
+    "Trajectory Governance",
+    "Large Language Models",
+    "LLM Agents",
+    "AI Safety",
+    "AI Governance",
+    "Semantic Context",
+    "Deterministic Execution",
+    "Fail-Closed",
+    "Replay Log",
+    "Semantic Ellipsoid",
+    "Goal Drift",
+    "Tool Risk",
+    "AI Runtime",
+    "AIKernel.NET"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/AIKernel-NET/AIKernel.NET",
+      "relation": "issupplementedby",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://aikernel.net/",
+      "relation": "isdocumentedby",
+      "resource_type": "other"
+    },
+    {
+      "identifier": "https://www.nuget.org/profiles/AIKernel-NET",
+      "relation": "issupplementedby",
+      "resource_type": "software"
+    }
+  ],
+  "license": "MIT"
+}
