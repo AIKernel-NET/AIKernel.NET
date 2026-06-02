@@ -1,14 +1,11 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
-title: "AIKernel Architecture — Index"
-created: 2026-04-30
-updated: 2026-05-06
-tags:
-  - aikernel
-  - architecture
-  - index
-  - english
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 ---
 
 # AIKernel Architecture Index
@@ -22,8 +19,7 @@ This index functions as a guide to understand AIKernel's design principles, theo
 
 # 1. Core Architectural Principles
 
-## 1.1 Principles of Category Separation
-**File:** `1.CATEGORY_SEPARATION_PRINCIPLES.md`
+## [1.1 Principles of Category Separation](./1.CATEGORY_SEPARATION_PRINCIPLES.md)
 
 Information passed to an LLM must not be mixed into a single context. Mixing information destroys attention, halts inference, and triggers surface-mode behavior.
 
@@ -37,12 +33,11 @@ Information passed to an LLM must not be mixed into a single context. Mixing inf
 - metadata
 
 > "Information passed to an LLM must not be mixed into a single context."
-> — 1.CATEGORY_SEPARATION_PRINCIPLES.md
+> — Category Separation Principles
 
 ---
 
-## 1.2 Context Isolation Specification
-**File:** `2.CONTEXT_ISOLATION_SPEC.md`
+## [1.2 Context Isolation Specification](./2.CONTEXT_ISOLATION_SPEC.md)
 
 AIKernel separates information into three layers before passing it to an LLM:
 
@@ -54,32 +49,28 @@ Examples, stylistic instructions, and RAG fragments must not be mixed into infer
 
 ---
 
-## 1.3 Theory of Attention Pollution
-**File:** `3.ATTENTION_POLLUTION_THEORY.md`
+## [1.3 Theory of Attention Pollution](./3.ATTENTION_POLLUTION_THEORY.md)
 
 An LLM's inference capability depends on the purity of attention. Examples, stylistic mimicry, RAG fragments, and history divert attention to surface structures and halt inference.
 
 > "When attention is drawn to surface structures, inference halts, and the system falls into surface-mode failure."
-> — 3.ATTENTION_POLLUTION_THEORY.md
+> — Theory of Attention Pollution
 
 ---
 
-## 1.4 Risks of Surface-Mode Failure
-**File:** `4.LLM_SURFACE_MODE_FAILURE.md`
+## [1.4 Risks of Surface-Mode Failure](./4.LLM_SURFACE_MODE_FAILURE.md)
 
 When exposed to examples, LLMs can enter a "non-inferential mode." This is one reason AIKernel isolates examples.
 
 ---
 
-## 1.5 Preprocessing vs Prompting
-**File:** `5.PREPROCESSING_VS_PROMPTING.md`
+## [1.5 Preprocessing vs Prompting](./5.PREPROCESSING_VS_PROMPTING.md)
 
 The essence is **structuring preprocessing**, not prompt design. What is included in attention and what is isolated determines inference accuracy.
 
 ---
 
-## 1.6 DI Composition and Pipeline Bootstrap
-**File:** `7.DI_COMPOSITION_AND_PIPELINE_BOOTSTRAP.md`
+## [1.6 DI Composition and Pipeline Bootstrap](./7.DI_COMPOSITION_AND_PIPELINE_BOOTSTRAP.md)
 
 Defines how AIKernel composes model routing, provider binding, and pipeline execution through DI:
 - `IServiceRegistrar` / `IProviderRegistrar`
@@ -91,15 +82,13 @@ It also specifies `IPromptVerifier` as a fail-closed startup gate.
 
 ---
 
-## 1.7 Execution Contract Architecture
-**File:** `8.EXECUTION_CONTRACT_ARCHITECTURE.md`
+## [1.7 Execution Contract Architecture](./8.EXECUTION_CONTRACT_ARCHITECTURE.md)
 
 Defines phase boundaries for `Structure -> Generation -> Polish` and prevents phase leakage between reasoning and expression.
 
 ---
 
-## 1.8 PDP Guard Decision Plane
-**File:** `9.PDP_GUARD_DECISION_PLANE.md`
+## [1.8 PDP Guard Decision Plane](./9.PDP_GUARD_DECISION_PLANE.md)
 
 Defines governance responsibilities and enforces the operating rule:
 - LLM suggests
@@ -107,8 +96,7 @@ Defines governance responsibilities and enforces the operating rule:
 
 ---
 
-## 1.9 Dynamic Capacity Routing
-**File:** `10.DYNAMIC_CAPACITY_ROUTING.md`
+## [1.9 Dynamic Capacity Routing](./10.DYNAMIC_CAPACITY_ROUTING.md)
 
 Defines capability-vector-driven routing with dynamic axes:
 - `ModelCapacityVector`
@@ -118,15 +106,13 @@ Defines capability-vector-driven routing with dynamic axes:
 
 ---
 
-## 1.10 Material Quarantine Trust Model
-**File:** `11.MATERIAL_QUARANTINE_TRUST_MODEL.md`
+## [1.10 Material Quarantine Trust Model](./11.MATERIAL_QUARANTINE_TRUST_MODEL.md)
 
 Defines how external material is quarantined and normalized before entering reasoning paths.
 
 ---
 
-## 1.11 Semantic Memory Management Spec
-**File:** `12.SEMANTIC_MEMORY_MANAGEMENT_SPEC.md`
+## [1.11 Semantic Memory Management Spec](./12.SEMANTIC_MEMORY_MANAGEMENT_SPEC.md)
 
 Defines token-budget-aware semantic memory management:
 - layer-aware purge/swap priority
@@ -135,29 +121,25 @@ Defines token-budget-aware semantic memory management:
 
 ---
 
-## 1.12 Capability Definition Schema
-**File:** `13.CAPABILITY_DEFINITION_SCHEMA.md`
+## [1.12 Capability Definition Schema](./13.CAPABILITY_DEFINITION_SCHEMA.md)
 
 Defines capability dimensions and declaration schema for model/provider onboarding and routing integrity.
 
 ---
 
-## 1.13 Signed Prompt Governance Workflow
-**File:** `14.SIGNED_PROMPT_GOVERNANCE_WORKFLOW.md`
+## [1.13 Signed Prompt Governance Workflow](./14.SIGNED_PROMPT_GOVERNANCE_WORKFLOW.md)
 
 Defines sequence-level fail-closed verification from prompt artifact load to execution allow/deny decision.
 
 ---
 
-## 1.14 Replayable Execution Dump Format
-**File:** `15.REPLAYABLE_EXECUTION_DUMP_FORMAT.md`
+## [1.14 Replayable Execution Dump Format](./15.REPLAYABLE_EXECUTION_DUMP_FORMAT.md)
 
 Defines deterministic replay dump structure (seed, hashes, provider manifest, execution outcome chain).
 
 ---
 
-## 1.15 Semantic Context OS Vision
-**File:** `16.SEMANTIC_CONTEXT_OS_VISION.md`
+## [1.15 Semantic Context OS Vision](./16.SEMANTIC_CONTEXT_OS_VISION.md)
 
 AIKernel's final architecture target is the **Semantic Context OS**, governing reasoning, material, and expression as independent objects.
 
@@ -170,8 +152,7 @@ This document is the north star that constrains AIKernel as an OS that places AI
 
 ---
 
-## 1.16 Phase 1 Query Processing
-**File:** `17.QUERY_PROCESSING_PHASE1.md`
+## [1.16 Phase 1 Query Processing](./17.QUERY_PROCESSING_PHASE1.md)
 
 Defines query augmentation, decomposition, semantic projection, and query routing as Phase 1 context-build responsibilities.
 
@@ -181,8 +162,7 @@ This chapter keeps RAG outside Core retrieval implementation and aligns Query Pr
 
 # 2. Comparative Architecture
 
-## 2.1 AIKernel vs LangChain
-**File:** `6.AIKERNEL_VS_LANGCHAIN.md`
+## [2.1 AIKernel vs LangChain](./6.AIKERNEL_VS_LANGCHAIN.md)
 
 Issues with LangChain:
 - All information is mixed into a single context.
@@ -204,7 +184,8 @@ Features of AIKernel:
 # 3. Architectural Philosophy
 
 ## 3.1 Design Intent
-**File:** `../design/DESIGN_INTENT.md`
+
+Design Intent belongs to the design layer. This architecture index keeps its navigation flow inside the architecture specification space and describes the relationship without introducing an upward or lateral jump.
 
 AIKernel's design philosophy:
 - Markdown-first principle (human readability)
@@ -231,26 +212,25 @@ Reading this index and the linked documents in order will help you understand **
 
 # 5. Recommended Reading Order
 
-Note: `17` is the last chapter in `architecture/`; `18` is intentionally reserved as a cross-reference to `/design/DESIGN_INTENT`.
+Read the architecture documents in this order. Each item points downward into the architecture specification space.
 
-1. CATEGORY_SEPARATION_PRINCIPLES
-2. CONTEXT_ISOLATION_SPEC
-3. ATTENTION_POLLUTION_THEORY
-4. LLM_SURFACE_MODE_FAILURE
-5. PREPROCESSING_VS_PROMPTING
-6. AIKERNEL_VS_LANGCHAIN
-7. DI_COMPOSITION_AND_PIPELINE_BOOTSTRAP
-8. EXECUTION_CONTRACT_ARCHITECTURE
-9. PDP_GUARD_DECISION_PLANE
-10. DYNAMIC_CAPACITY_ROUTING
-11. MATERIAL_QUARANTINE_TRUST_MODEL
-12. SEMANTIC_MEMORY_MANAGEMENT_SPEC
-13. CAPABILITY_DEFINITION_SCHEMA
-14. SIGNED_PROMPT_GOVERNANCE_WORKFLOW
-15. REPLAYABLE_EXECUTION_DUMP_FORMAT
-16. SEMANTIC_CONTEXT_OS_VISION
-17. QUERY_PROCESSING_PHASE1
-18. /design/DESIGN_INTENT
+- [Category Separation Principles](./1.CATEGORY_SEPARATION_PRINCIPLES.md)
+- [Context Isolation Specification](./2.CONTEXT_ISOLATION_SPEC.md)
+- [Theory of Attention Pollution](./3.ATTENTION_POLLUTION_THEORY.md)
+- [Risks of Surface-Mode Failure](./4.LLM_SURFACE_MODE_FAILURE.md)
+- [Preprocessing vs Prompting](./5.PREPROCESSING_VS_PROMPTING.md)
+- [AIKernel vs LangChain](./6.AIKERNEL_VS_LANGCHAIN.md)
+- [DI Composition and Pipeline Bootstrap](./7.DI_COMPOSITION_AND_PIPELINE_BOOTSTRAP.md)
+- [Execution Contract Architecture](./8.EXECUTION_CONTRACT_ARCHITECTURE.md)
+- [PDP Guard Decision Plane](./9.PDP_GUARD_DECISION_PLANE.md)
+- [Dynamic Capacity Routing](./10.DYNAMIC_CAPACITY_ROUTING.md)
+- [Material Quarantine Trust Model](./11.MATERIAL_QUARANTINE_TRUST_MODEL.md)
+- [Semantic Memory Management Spec](./12.SEMANTIC_MEMORY_MANAGEMENT_SPEC.md)
+- [Capability Definition Schema](./13.CAPABILITY_DEFINITION_SCHEMA.md)
+- [Signed Prompt Governance Workflow](./14.SIGNED_PROMPT_GOVERNANCE_WORKFLOW.md)
+- [Replayable Execution Dump Format](./15.REPLAYABLE_EXECUTION_DUMP_FORMAT.md)
+- [Semantic Context OS Vision](./16.SEMANTIC_CONTEXT_OS_VISION.md)
+- [Phase 1 Query Processing](./17.QUERY_PROCESSING_PHASE1.md)
 
 ---
 

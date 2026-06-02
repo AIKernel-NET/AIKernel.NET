@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "AIKernel Core Specification: Chat-Turn HashChain Governance"
+authors:
+  - family-names: Sogawa
+    given-names: Takuya
+    orcid: "https://orcid.org/0009-0009-7499-2595"
+version: "v0.1.0"
+doi: "10.5281/zenodo.20471345"
+date-released: "2026-06-01"
+license: "CC-BY-4.0"

@@ -1,0 +1,57 @@
+{
+  "title": "AIKernel Core Specification: Chat-Turn HashChain Governance",
+  "upload_type": "publication",
+  "publication_type": "technicalnote",
+  "description": "This technical note defines Chat-Turn HashChain Governance as an AIKernel Core specification for converting chat-based interaction histories into causally linked, tamper-evident, and replayable semantic execution records. It is subtitled: Deterministic Chat-Turn Identity and Replayable Causal Trace Model for AIKernel.NET. The English manuscript is the canonical version. The Japanese manuscript is included as a companion translation.",
+  "creators": [
+    {
+      "name": "Sogawa, Takuya",
+      "orcid": "0009-0009-7499-2595",
+      "affiliation": "AIKernel Project"
+    }
+  ],
+  "publication_date": "2026-06-01",
+  "version": "v0.1.0",
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "keywords": [
+    "AIKernel",
+    "HashChain",
+    "Chat-Turn Governance",
+    "ReplayLog",
+    "Cryptographic Agility",
+    "Semantic Context OS",
+    "Interface-Led Architecture",
+    "VFS",
+    "ROM",
+    "Fail-Closed"
+  ],
+  "doi": "10.5281/zenodo.20471345",
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20290614",
+      "relation": "cites",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20322690",
+      "relation": "cites",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20460322",
+      "relation": "cites",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/AIKernel-NET/AIKernel.NET",
+      "relation": "issupplementedby",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://aikernel.net/",
+      "relation": "issupplementedby",
+      "scheme": "url"
+    }
+  ]
+}

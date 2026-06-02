@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aikernel.net/schemas/hatl-block-mac.schema.json",
+  "title": "HatlBlockMac",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sequence_number",
+    "epoch_id",
+    "previous_block_mac",
+    "event_hash",
+    "execution_outcome_hash",
+    "capability_scope_hash",
+    "hmac_signature"
+  ],
+  "properties": {
+    "sequence_number": { "type": "integer", "minimum": 0 },
+    "epoch_id": { "type": "integer", "minimum": 0 },
+    "previous_block_mac": { "type": "string", "pattern": "^[0-9a-fA-F]{128}$" },
+    "event_hash": { "type": "string", "pattern": "^[0-9a-fA-F]{128}$" },
+    "execution_outcome_hash": { "type": "string", "pattern": "^[0-9a-fA-F]{128}$" },
+    "capability_scope_hash": { "type": "string", "pattern": "^[0-9a-fA-F]{128}$" },
+    "hmac_signature": { "type": "string", "pattern": "^[0-9a-fA-F]{128}$" }
+  }
+}

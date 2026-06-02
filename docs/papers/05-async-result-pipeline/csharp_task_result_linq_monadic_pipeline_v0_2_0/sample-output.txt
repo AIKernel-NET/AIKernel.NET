@@ -1,0 +1,2 @@
+Success([Parsed] AI Response to 'Q: Hello AI')
+Failure(LLM refused the request)

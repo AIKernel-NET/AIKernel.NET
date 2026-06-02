@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "A Dependency-Minimized Parallel Computing Architecture Based on the AIKernel Operator Model"
+authors:
+  - family-names: Sogawa
+    given-names: Takuya
+    orcid: "https://orcid.org/0009-0009-7499-2595"
+version: "v0.1.0"
+doi: "10.5281/zenodo.20493017"
+date-released: "2026-06-02"
+license: "CC-BY-4.0"
+abstract: "This technical note presents the AIKernel Operator Model as a dependency-minimized parallel computation architecture using the Prime Phase Generator as a Lean-C-C# externalized Operator case study."
+keywords:
+  - AIKernel
+  - Operator Model
+  - Parallel Computing
+  - Lean 4
+  - Native Operator
+  - Prime Phase Generator
+  - Interface-Led Architecture
+  - TensorKernel

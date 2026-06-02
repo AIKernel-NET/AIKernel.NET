@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "rules Interfaces"
 created: 2026-05-06
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - english
 ---
 
-For Japanese version, see index-jp.md.
+Japanese version: [Specification Index](specs/index-jp.md)
 
 # rules Interfaces
 
@@ -32,7 +36,7 @@ The Rules category is AIKernel's governance decision layer. Centered on `IRuleEn
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Security`, `AIKernel.Abstractions.Governance`
 
 ## Documents
-- IRuleEngine.md
+- [IRuleEngine (Rule Engine Specification)](architecture/interfaces/rules/IRuleEngine.md)
 ---
 
 # Changelog

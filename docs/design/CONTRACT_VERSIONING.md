@@ -1,9 +1,14 @@
 ---
 id: contract-versioning
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "CONTRACT_VERSIONING — Contract (Interface/DTO/Enum) Versioning Policy"
 created: 2026-05-01
+updated: 2026-06-02
+published: 2026-05-16
+version: "0.0.3"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
 - aikernel
 - design
@@ -11,7 +16,6 @@ tags:
 - versioning
 - governance
 - english
-updated: 2026-05-06
 ---
 
 # CONTRACT_VERSIONING — Contract (Interface/DTO/Enum) Versioning Policy
@@ -58,9 +62,11 @@ Generally considered non-breaking:
 - Adding optional fields to DTOs
 - Adding enum values (without changing existing meanings)
 - Adding interface members in ways that do not break existing implementations
+- Moving public contract ownership between packages when namespace, type identity compatibility, and migration guidance are preserved through type forwarding
 
 Note:
 - Adding interfaces can affect implementers; always document compatibility impact.
+- Compatibility facades, such as `AIKernel.Vfs` in v0.0.3, must clearly state the new owning package and the unsupported dependency direction.
 
 ---
 
@@ -98,3 +104,4 @@ For each release, publish:
 # Changelog
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
+- v0.0.3 (2026-06-02): Added package ownership/type-forwarding compatibility guidance

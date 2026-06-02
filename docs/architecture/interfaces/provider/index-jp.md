@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "provider Interfaces"
 created: 2026-05-03
-updated: 2026-05-09
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版は index.md を参照。
+英語版: [Specification Index](specs/index.md)
 
 # provider Interfaces
 
@@ -32,20 +36,20 @@ Provider は外部LLM/Embedding/RAG 実行境界です。`IModelVectorRouter` �
 - `docs/architecture/17.QUERY_PROCESSING_PHASE1-jp.md`
 
 ## ドキュメント一覧
-- IProvider-jp.md
-- IModelProvider-jp.md
-- IModelMessage-jp.md
-- IEmbeddingProvider-jp.md
-- IRagProvider-jp.md
-- IEventBus-jp.md
-- IScheduler-jp.md
-- IProviderCapabilities-jp.md
-- IProviderCostProfile-jp.md
-- IProviderCreditInfo-jp.md
-- IProviderBillingInfo-jp.md
-- IProviderUsageStats-jp.md
-- IProviderResourceProfile-jp.md
-- IProviderRouter-jp.md
+- [IProvider (インターフェース仕様)](architecture/interfaces/provider/IProvider-jp.md)
+- [IModelProvider (インターフェース仕様)](architecture/interfaces/provider/IModelProvider-jp.md)
+- [IModelMessage (インターフェース仕様)](architecture/interfaces/provider/IModelMessage-jp.md)
+- [IEmbeddingProvider (インターフェース仕様)](architecture/interfaces/provider/IEmbeddingProvider-jp.md)
+- [IRagProvider (インターフェース仕様)](architecture/interfaces/provider/IRagProvider-jp.md)
+- [IEventBus (インターフェース仕様)](architecture/interfaces/provider/IEventBus-jp.md)
+- [IScheduler (インターフェース仕様)](architecture/interfaces/provider/IScheduler-jp.md)
+- [IProviderCapabilities (インターフェース仕様)](architecture/interfaces/provider/IProviderCapabilities-jp.md)
+- [IProviderCostProfile (インターフェース仕様)](architecture/interfaces/provider/IProviderCostProfile-jp.md)
+- [IProviderCreditInfo (インターフェース仕様)](architecture/interfaces/provider/IProviderCreditInfo-jp.md)
+- [IProviderBillingInfo (インターフェース仕様)](architecture/interfaces/provider/IProviderBillingInfo-jp.md)
+- [IProviderUsageStats (利用統計インターフェース仕様)](architecture/interfaces/provider/IProviderUsageStats-jp.md)
+- [IProviderResourceProfile (統合リソースプロファイル仕様)](architecture/interfaces/provider/IProviderResourceProfile-jp.md)
+- [IProviderRouter](architecture/interfaces/provider/IProviderRouter-jp.md)
 
 ---
 

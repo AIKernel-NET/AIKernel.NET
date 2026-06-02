@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "hosting Interfaces"
 created: 2026-05-03
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版は index.md を参照。
+英語版: [Specification Index](specs/index.md)
 
 # hosting Interfaces
 
@@ -32,11 +36,11 @@ Hosting はカーネルの起動・モジュール登録・ライフサイクル
 - Called by: `AIKernel.Core`（実装層）, `Host Applications`
 
 ## ドキュメント一覧
-- IKernelContext-jp.md
-- IKernelHost-jp.md
-- IKernelModule-jp.md
-- IProviderRegistrar-jp.md
-- IServiceRegistrar-jp.md
+- [IKernelContext](architecture/interfaces/hosting/IKernelContext-jp.md)
+- [IKernelHost](architecture/interfaces/hosting/IKernelHost-jp.md)
+- [IKernelModule](architecture/interfaces/hosting/IKernelModule-jp.md)
+- [IProviderRegistrar](architecture/interfaces/hosting/IProviderRegistrar-jp.md)
+- [IServiceRegistrar](architecture/interfaces/hosting/IServiceRegistrar-jp.md)
 ---
 
 # 変更履歴

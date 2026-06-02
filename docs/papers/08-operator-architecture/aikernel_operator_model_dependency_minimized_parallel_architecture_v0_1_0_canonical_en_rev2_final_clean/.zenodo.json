@@ -1,0 +1,81 @@
+{
+  "title": "A Dependency-Minimized Parallel Computing Architecture Based on the AIKernel Operator Model",
+  "upload_type": "publication",
+  "publication_type": "technicalnote",
+  "description": "This technical note presents the AIKernel Operator Model as a design discipline for dependency-minimized parallel computation, using the Prime Phase Generator as a Lean-C-C# externalized Operator case study. The English manuscript is canonical; the Japanese manuscript is a companion translation.",
+  "creators": [
+    {
+      "name": "Sogawa, Takuya",
+      "affiliation": "AIKernel Project",
+      "orcid": "0009-0009-7499-2595"
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "publication_date": "2026-06-02",
+  "version": "v0.1.0",
+  "doi": "10.5281/zenodo.20493017",
+  "language": "eng",
+  "keywords": [
+    "AIKernel",
+    "Operator Model",
+    "Interface-Led Architecture",
+    "Parallel Computing",
+    "Lean 4",
+    "Native Operator",
+    "Prime Phase Generator",
+    "Phase Interference",
+    "C#",
+    "P/Invoke",
+    "Lock-Free Computation",
+    "TensorKernel"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.1145/1465482.1465560",
+      "relation": "cites",
+      "resource_type": "publication-conferencepaper"
+    },
+    {
+      "identifier": "https://doi.org/10.1145/42411.42415",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "https://doi.org/10.1007/978-3-319-21401-6_26",
+      "relation": "cites",
+      "resource_type": "publication-conferencepaper"
+    },
+    {
+      "identifier": "https://doi.org/10.1145/3372885.3373824",
+      "relation": "cites",
+      "resource_type": "publication-conferencepaper"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20483437",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20290614",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20460322",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://github.com/AIKernel-NET/AIKernel.NET",
+      "relation": "issupplementedby",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://aikernel.net/",
+      "relation": "issupplementedby",
+      "resource_type": "other"
+    }
+  ],
+  "notes": "The English manuscript is canonical. The Japanese manuscript is included as a companion translation."
+}

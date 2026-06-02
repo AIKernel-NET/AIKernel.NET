@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use or refer to this work, please cite it using the metadata below."
+type: report
+title: "Deterministic Tensor Governance via Interface-Led Architecture: A Contract-First Architecture for Governing LLM and Quantum Tensor Providers"
+authors:
+  - family-names: "Sogawa"
+    given-names: "Takuya"
+    orcid: "https://orcid.org/0009-0009-7499-2595"
+year: 2026
+date-released: "2026-05-20"
+version: "0.1.0"
+doi: "10.5281/zenodo.20303497"
+license: "CC-BY-4.0"
+repository-code: "https://github.com/AIKernel-NET/AIKernel.NET"
+url: "https://aikernel.net/"
+keywords:
+  - "Deterministic Tensor Governance"
+  - "Interface-Led Architecture"
+  - "AIKernel"
+  - "TensorKernel"
+  - "LLM Governance"
+  - "Quantum Governance"
+  - "Contract-First Architecture"
+  - "Fail-Closed"
+  - "ReplayLog"
+  - "Non-Deterministic Systems"

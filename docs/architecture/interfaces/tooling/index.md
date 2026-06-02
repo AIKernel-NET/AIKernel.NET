@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "tooling Interfaces"
 created: 2026-05-03
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - english
 ---
 
-For Japanese version, see index-jp.md.
+Japanese version: [Specification Index](specs/index-jp.md)
 
 # tooling Interfaces
 
@@ -31,9 +35,9 @@ Tooling is the safety boundary for external tool invocation. `IToolAccessValidat
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Security`, `AIKernel.Abstractions.Hosting`
 
 ## Documents
-- IToolAccessValidator.md
-- IToolPermission.md
-- IToolSandbox.md
+- [IToolAccessValidator](architecture/interfaces/tooling/IToolAccessValidator.md)
+- [IToolPermission](architecture/interfaces/tooling/IToolPermission.md)
+- [IToolSandbox](architecture/interfaces/tooling/IToolSandbox.md)
 ---
 
 # Changelog

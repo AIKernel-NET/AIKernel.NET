@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "contracts Interfaces"
 created: 2026-05-06
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - english
 ---
 
-For Japanese version, see index-jp.md.
+Japanese version: [Specification Index](specs/index-jp.md)
 
 # contracts Interfaces
 
@@ -32,13 +36,13 @@ Contracts serve as the cross-module ABI for AIKernel. Through Orchestration, Exp
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Context`, `AIKernel.Abstractions.Governance`
 
 ## Documents
-- IExpressionContract.md
-- IMaterialContract.md
-- IOrchestrationContract.md
-- IKernelContextContract.md
-- IMessageContract.md
-- ITokenizerProfile.md
-- IUnifiedContextContract.md
+- [IExpressionContract (Contract Specification)](architecture/interfaces/contracts/IExpressionContract.md)
+- [IMaterialContract](architecture/interfaces/contracts/IMaterialContract.md)
+- [IOrchestrationContract (Contract Specification)](architecture/interfaces/contracts/IOrchestrationContract.md)
+- [IKernelContextContract (Contract Specification)](architecture/interfaces/contracts/IKernelContextContract.md)
+- [IMessageContract (Contract Specification)](architecture/interfaces/contracts/IMessageContract.md)
+- [ITokenizerProfile (Contract Specification)](architecture/interfaces/contracts/ITokenizerProfile.md)
+- [IUnifiedContextContract (Unified Contract Specification)](architecture/interfaces/contracts/IUnifiedContextContract.md)
 ---
 
 # Changelog

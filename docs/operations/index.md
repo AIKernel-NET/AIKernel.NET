@@ -1,15 +1,11 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
-title: "AIKernel Operations — Index"
-created: 2026-05-01
-tags:
-  - aikernel
-  - operations
-  - runbook
-  - governance
-  - english
-updated: 2026-05-06
+updated: 2026-06-02
+published: 2026-05-16
+version: "0.0.3"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 ---
 
 # AIKernel Operations — Index
@@ -23,23 +19,22 @@ incident response, and SLO/SLA management.
 
 ---
 
-## Operations Documents (Planned)
+## Operations Documents
 
-### 1. Migration Guide  
-**File:** `MIGRATION_GUIDE(.jp).md`  
-**Status:** Planned  
-**Planned contents:**  
+### 1. [Migration Guide](MIGRATION_GUIDE.md)  
+**Status:** Active  
+**Current contents:**  
 - Migration steps across breaking contract changes  
 - Classification of changes (Breaking / Non-breaking)  
-- Automated conversion tools and compatibility checks  
+- Compatibility and dependency checks  
 - Upgrade checklists  
+- v0.0.2 -> v0.0.3 dependency-layer migration for Vfs contract ownership
 
-This guide will be created once Contracts stabilize.
+Use this guide when upgrading package references or validating contract-layer dependencies.
 
 ---
 
 ### 2. Release Operations  
-**File:** `RELEASE_OPERATIONS(.jp).md` (planned)  
 **Status:** Planned  
 **Planned contents:**  
 - Release workflow (tag → build → publish → verify)  
@@ -50,7 +45,6 @@ This guide will be created once Contracts stabilize.
 ---
 
 ### 3. Monitoring & Observability  
-**File:** `OBSERVABILITY_GUIDE(.jp).md` (planned)  
 **Status:** Planned  
 **Planned contents:**  
 - Metrics (latency, cost, retries, cache, provider health)  
@@ -61,7 +55,6 @@ This guide will be created once Contracts stabilize.
 ---
 
 ### 4. Incident Response  
-**File:** `INCIDENT_RESPONSE(.jp).md` (planned)  
 **Status:** Planned  
 **Planned contents:**  
 - Detection → Triage → Isolation → Recovery → Postmortem  
@@ -72,7 +65,6 @@ This guide will be created once Contracts stabilize.
 ---
 
 ### 5. Security Operations  
-**File:** `SECURITY_OPERATIONS(.jp).md` (planned)  
 **Status:** Planned  
 **Planned contents:**  
 - Signature verification (PromptRules / Contracts / Policies)  
@@ -109,11 +101,10 @@ Operations provide the foundation for running AIKernel as a long-term, reliable 
 
 ## Current Status
 
-Operations documentation is **Planned** and will be developed after  
-the core components (Contracts / Kernel / Providers) reach stability.
+Operations documentation is being expanded as contract and packaging boundaries stabilize.
 
 Currently:
-- Only the outline of the Migration Guide exists  
+- The Migration Guide contains concrete steps through v0.0.3  
 - All other documents remain Planned  
 
 Future versions will expand this directory.
@@ -131,3 +122,4 @@ Future versions will expand this directory.
 # Changelog
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
+- v0.0.3 (2026-06-02): Marked Migration Guide as active and added v0.0.3 dependency-layer migration coverage

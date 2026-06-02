@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "scheduling Interfaces"
 created: 2026-05-06
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - english
 ---
 
-For Japanese version, see index-jp.md.
+Japanese version: [Specification Index](specs/index-jp.md)
 
 # scheduling Interfaces
 
@@ -19,9 +23,9 @@ For Japanese version, see index-jp.md.
 Scheduled job contracts.
 
 ## Documents
-- IScheduledJob.md
-- IScheduleSpec.md
-- IExecutionResult.md
+- [IScheduledJob](architecture/interfaces/scheduling/IScheduledJob.md)
+- [IScheduleSpec](architecture/interfaces/scheduling/IScheduleSpec.md)
+- [IExecutionResult](architecture/interfaces/scheduling/IExecutionResult.md)
 
 ---
 

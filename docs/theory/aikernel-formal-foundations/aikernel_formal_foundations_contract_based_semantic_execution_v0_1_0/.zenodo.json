@@ -1,0 +1,62 @@
+{
+  "title": "AIKernel Formal Foundations: Contract-Based Semantic Execution for Governed AI Systems",
+  "upload_type": "publication",
+  "publication_type": "technicalnote",
+  "description": "This technical note defines the formal foundations of AIKernel as a contract-based semantic execution model for governed AI systems. The English manuscript is the canonical version and the Japanese manuscript is included as a companion translation.",
+  "creators": [
+    {
+      "name": "Sogawa, Takuya",
+      "orcid": "0009-0009-7499-2595"
+    }
+  ],
+  "keywords": [
+    "AIKernel",
+    "Interface-Led Architecture",
+    "Semantic Context OS",
+    "Contract-Based Execution",
+    "Semantic Runtime",
+    "Governance",
+    "Trajectory Governance",
+    "Fail-Closed",
+    "Result Pipeline",
+    "Provider-Observer-Operator",
+    "AIKernel.NET"
+  ],
+  "license": "cc-by-4.0",
+  "version": "v0.1.0",
+  "publication_date": "2026-05-31",
+  "doi": "10.5281/zenodo.20460322",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20290614",
+      "relation": "cites",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20322690",
+      "relation": "cites",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20323512",
+      "relation": "cites",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20458492",
+      "relation": "cites",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/AIKernel-NET/AIKernel.NET",
+      "relation": "issupplementedby",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://aikernel.net/",
+      "relation": "issupplementedby",
+      "scheme": "url"
+    }
+  ]
+}

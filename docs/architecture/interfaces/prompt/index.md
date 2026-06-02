@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "prompt Interfaces"
 created: 2026-05-03
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - english
 ---
 
-For Japanese version, see index-jp.md.
+Japanese version: [Specification Index](specs/index-jp.md)
 
 # prompt Interfaces
 
@@ -32,11 +36,11 @@ Prompt is the boundary that elevates signed input artifacts into executable cont
 - Called by: `AIKernel.Abstractions.Hosting`, `AIKernel.Abstractions.Governance`, `AIKernel.Abstractions.Execution`
 
 ## Documents
-- IPromptRepository.md
-- IPromptSignatureProvider.md
-- ISignatureTrustStore.md
-- IPromptValidator.md
-- IPromptVerifier.md
+- [IPromptRepository](architecture/interfaces/prompt/IPromptRepository.md)
+- [IPromptSignatureProvider](architecture/interfaces/prompt/IPromptSignatureProvider.md)
+- [ISignatureTrustStore (Interface Specification)](architecture/interfaces/governance/ISignatureTrustStore.md)
+- [IPromptValidator](architecture/interfaces/prompt/IPromptValidator.md)
+- [IPromptVerifier (Interface Specification)](architecture/interfaces/prompt/IPromptVerifier.md)
 ---
 
 # Changelog

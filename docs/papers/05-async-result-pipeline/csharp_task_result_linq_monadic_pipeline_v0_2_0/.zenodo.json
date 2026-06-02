@@ -1,0 +1,56 @@
+{
+  "title": "Asynchronous Result Pipelines in C#: Task<Result<T>> and LINQ-Based Monadic Composition for AI Applications",
+  "upload_type": "publication",
+  "publication_type": "technicalnote",
+  "description": "This technical note defines an asynchronous Result pipeline pattern for C# using Task<Result<T>> and LINQ-based monadic composition. It treats predictable AI application failures as explicit result values rather than exceptional control flow. The English manuscript is the canonical version. The Japanese manuscript is included as a companion translation.",
+  "creators": [
+    {
+      "name": "Sogawa, Takuya",
+      "orcid": "0009-0009-7499-2595"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "version": "v0.2.0",
+  "publication_date": "2026-05-30",
+  "doi": "10.5281/zenodo.20458492",
+  "keywords": [
+    "AIKernel",
+    "Interface-Led Architecture",
+    "C#",
+    "Task<Result<T>>",
+    "LINQ",
+    "SelectMany",
+    "Monad",
+    "Async",
+    "Result",
+    "Fail-Closed",
+    "AI Applications"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20290614",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20322690",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20323512",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://github.com/AIKernel-NET/AIKernel.NET",
+      "relation": "issupplementedby",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://aikernel.net/",
+      "relation": "issupplementedby",
+      "resource_type": "other"
+    }
+  ]
+}

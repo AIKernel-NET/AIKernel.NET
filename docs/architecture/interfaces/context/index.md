@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "context Interfaces"
 created: 2026-05-03
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - english
 ---
 
-For Japanese version, see index-jp.md.
+Japanese version: [Specification Index](specs/index-jp.md)
 
 # context Interfaces
 
@@ -32,8 +36,8 @@ Context manages working memory within a single inference cycle. `IContextCollect
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Hosting`, `AIKernel.Abstractions.Conversation`
 
 ## Documents
-- IContextCollection.md
-- IContextSnapshot.md
+- [IContextCollection (Interface Specification)](architecture/interfaces/context/IContextCollection.md)
+- [IContextSnapshot (Interface Specification)](architecture/interfaces/context/IContextSnapshot.md)
 ---
 
 # Changelog

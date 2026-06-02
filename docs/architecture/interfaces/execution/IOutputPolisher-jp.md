@@ -1,10 +1,14 @@
 ---
 id: ioutputpolisher
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "IOutputPolisher"
 created: 2026-05-03
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 tags:
   - aikernel
   - architecture

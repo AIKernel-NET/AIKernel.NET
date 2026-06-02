@@ -1,0 +1,3 @@
+IsSupplementedBy: https://github.com/AIKernel-NET/AIKernel.NET (Software)
+IsDocumentedBy: https://aikernel.net/ (Other)
+IsSupplementedBy: https://www.nuget.org/profiles/AIKernel-NET (Software)

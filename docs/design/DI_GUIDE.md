@@ -1,16 +1,11 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
-title: "DI Guide"
-description: Extension points and DI registration patterns for AIKernel.Core (for integrators)
-created: 2026-01-01
-tags:
-  - aikernel
-  - architecture
-  - preprocessing
-  - prompt-design
-  - english
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 ---
 
 # Purpose
@@ -75,8 +70,8 @@ Core provides NoOp/Stub implementations for initial startup. NoOp is for test st
  Breaking changes use major versions and migration steps documented in design/MIGRATION_GUIDE.md
 
 # References
-- AIKernel.NET/docs/design/DESIGN_INTENT.md
-- AIKernel.Core/docs/NOOP_IMPLEMENTATION.md
+- [Design Intent](design/DESIGN_INTENT.md)
+- AIKernel.Core/Docs/NOOP IMPLEMENTATION
 
 # Changelog
 - 2026-05-01 Initial version

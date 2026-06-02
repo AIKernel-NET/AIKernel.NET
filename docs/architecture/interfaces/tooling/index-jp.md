@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "tooling Interfaces"
 created: 2026-05-03
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版は index.md を参照。
+英語版: [Specification Index](specs/index.md)
 
 # tooling Interfaces
 
@@ -31,9 +35,9 @@ Tooling は外部ツール呼び出しの安全境界です。`IToolAccessValida
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Security`, `AIKernel.Abstractions.Hosting`
 
 ## ドキュメント一覧
-- IToolAccessValidator-jp.md
-- IToolPermission-jp.md
-- IToolSandbox-jp.md
+- [IToolAccessValidator](architecture/interfaces/tooling/IToolAccessValidator-jp.md)
+- [IToolPermission](architecture/interfaces/tooling/IToolPermission-jp.md)
+- [IToolSandbox](architecture/interfaces/tooling/IToolSandbox-jp.md)
 ---
 
 # 変更履歴

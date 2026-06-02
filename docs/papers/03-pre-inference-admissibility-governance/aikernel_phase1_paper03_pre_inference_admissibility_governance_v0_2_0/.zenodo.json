@@ -1,0 +1,59 @@
+{
+  "title": "AIKernel Phase-1 Paper 03: Pre-Inference Admissibility Governance: A Deterministic Admission-Control Model for Governed AI Inference",
+  "upload_type": "publication",
+  "publication_type": "technicalnote",
+  "creators": [
+    {
+      "name": "Sogawa, Takuya",
+      "orcid": "0009-0009-7499-2595"
+    }
+  ],
+  "description": "This technical note is Part II-3 of the AIKernel / AIOS Phase-1 specification series. It defines Pre-Inference Admissibility Governance as the deterministic admission-control layer that determines whether an inference request may enter the AIKernel execution pipeline. The English manuscript is the canonical version, and the Japanese manuscript is included as a companion translation.",
+  "keywords": [
+    "AIKernel",
+    "AIOS",
+    "Pre-Inference Governance",
+    "Admissibility",
+    "Admission Control",
+    "Critical Operation Gate",
+    "Computational Complexity Gate",
+    "Capability Admission",
+    "Prompt Injection Defense",
+    "Fail-Closed",
+    "Deterministic Replay",
+    "ReplayLog",
+    "Policy Decision Point",
+    "Governed AI Inference"
+  ],
+  "license": "cc-by-4.0",
+  "version": "0.2.0",
+  "language": "eng",
+  "publication_date": "2026-05-25",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.20290614",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.20306539",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.20307891",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/AIKernel-NET/AIKernel.NET",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://aikernel.net/",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    }
+  ]
+}

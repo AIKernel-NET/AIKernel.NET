@@ -1,10 +1,14 @@
 ---
 id: itaskmanager
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "ITaskManager"
 created: 2026-05-03
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
   - aikernel
   - architecture
@@ -12,7 +16,7 @@ tags:
   - english
 ---
 
-For Japanese version, see $(System.Collections.Hashtable.name)-jp.md.
+Japanese version: $(System.Collections.Hashtable.Name)
 
 # ITaskManager
 

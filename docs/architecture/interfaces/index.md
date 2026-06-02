@@ -1,9 +1,13 @@
 ---
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "AIKernel Architecture Interfaces — Index"
 created: 2026-05-03
-updated: 2026-05-06
+updated: 2026-06-02
+published: 2026-05-16
+version: "0.0.3"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
   - aikernel
   - architecture
@@ -11,7 +15,7 @@ tags:
   - english
 ---
 
-For Japanese version, see index-jp.md.
+Japanese version: [Specification Index](specs/index-jp.md)
 
 # AIKernel Architecture Interfaces — Index
 
@@ -45,6 +49,7 @@ For Japanese version, see index-jp.md.
 - `security`: deterministic authorization contracts via PDP/Guard.
 - `tasks`: task units and pipeline result contracts.
 - `scheduling`: scheduled job and execution-result contracts.
+- `vfs`: Vfs contracts are owned by `AIKernel.Abstractions` while preserving the public `AIKernel.Vfs` namespace.
 - Existing categories (context to vfs) now include responsibility/UC/spec linkage in each index.
 
 ---
@@ -53,3 +58,4 @@ For Japanese version, see index-jp.md.
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Added categories and synchronized links with src
 - v0.0.1 (2026-05-09): Added query interface category
+- v0.0.3 (2026-06-02): Added Vfs contract ownership note

@@ -1,0 +1,13 @@
+{
+  "note": "Placeholder benchmark profile schema. Future releases should include raw reproducible data.",
+  "profiles": [
+    {
+      "name": "inner-ledger-blockmac-throughput",
+      "metrics": ["events_per_second", "p50_latency_us", "p99_latency_us", "allocated_bytes_per_event"]
+    },
+    {
+      "name": "merkle-anchor-window",
+      "metrics": ["window_size", "build_ms", "root_size_bytes", "proof_size_bytes"]
+    }
+  ]
+}

@@ -1,10 +1,14 @@
 ---
 id: istructuredmaterial
-version: 0.0.1
-issuer: ai-kernel@tkysoftware.xsrv.jp
 title: "IStructuredMaterial"
 created: 2026-05-03
-updated: 2026-05-06
+updated: 2026-05-16
+published: 2026-05-16
+version: "0.0.2"
+edition: "Draft"
+status: "Refactor"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
 tags:
   - aikernel
   - architecture
@@ -12,7 +16,7 @@ tags:
   - english
 ---
 
-For Japanese version, see IStructuredMaterial-jp.md.
+Japanese version: [IStructuredMaterial](architecture/interfaces/material/IStructuredMaterial-jp.md)
 
 # IStructuredMaterial
 

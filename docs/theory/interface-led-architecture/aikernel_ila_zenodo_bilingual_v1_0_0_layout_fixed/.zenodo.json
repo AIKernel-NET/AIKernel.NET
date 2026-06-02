@@ -1,0 +1,44 @@
+{
+  "title": "Interface-Led Architecture (ILA): A Software Development Methodology for the AI Era, Validated by the AIKernel Execution Model",
+  "upload_type": "publication",
+  "publication_type": "technicalnote",
+  "creators": [
+    {
+      "name": "Sogawa, Takuya",
+      "orcid": "0009-0009-7499-2595"
+    }
+  ],
+  "description": "This bilingual technical report proposes Interface-Led Architecture (ILA), a software development methodology for the age of AI-assisted implementation. ILA builds software from interfaces, contracts, and responsibility boundaries rather than from implementation-first code, and positions AIKernel as a validation environment for deterministic execution boundaries, ROM-based design knowledge, Provider separation, and ReplayLog-based reproducibility. The package includes both Japanese and reviewed English manuscripts.",
+  "keywords": [
+    "Interface-Led Architecture",
+    "AI-assisted software development",
+    "Contract-first development",
+    "Software architecture",
+    "AIKernel",
+    "Deterministic execution",
+    "ReplayLog",
+    "ROM",
+    "Human-AI collaboration",
+    "Software governance"
+  ],
+  "license": "cc-by-4.0",
+  "version": "1.0.0",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/AIKernel-NET/AIKernel.NET",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://aikernel.net/",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://orcid.org/0009-0009-7499-2595",
+      "relation": "isIdenticalTo",
+      "scheme": "url"
+    }
+  ]
+}

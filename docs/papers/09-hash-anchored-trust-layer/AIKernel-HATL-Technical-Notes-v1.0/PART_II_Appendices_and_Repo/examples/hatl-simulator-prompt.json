@@ -1,0 +1,11 @@
+{
+  "component": "HatlStateTransitionSimulator",
+  "purpose": "Visualize BlockMAC chaining, HKDF key ratcheting, Merkle accumulation, public anchoring, and Digital Deed revocation.",
+  "anchor_window": 5,
+  "events": [
+    "execute_inference_transaction",
+    "force_anchor_window_completion",
+    "simulate_current_key_leak",
+    "submit_digital_deed_revocation"
+  ]
+}

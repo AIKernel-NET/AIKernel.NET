@@ -1,0 +1,2 @@
+Code specimens, schemas, interface sketches, and smart-contract examples in this package are licensed under Apache License, Version 2.0 (Apache-2.0).
+See: https://www.apache.org/licenses/LICENSE-2.0
