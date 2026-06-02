@@ -39,7 +39,6 @@ AIKernel OS の syscall レベルの抽象を定義します。IKernel、IProvid
   <ItemGroup>
     <ProjectReference Include="..\AIKernel.Dtos\AIKernel.Dtos.csproj" />
     <ProjectReference Include="..\AIKernel.Enums\AIKernel.Enums.csproj" />
-    <ProjectReference Include="..\AIKernel.Vfs\AIKernel.Vfs.csproj" />
   </ItemGroup>
 
 </Project>

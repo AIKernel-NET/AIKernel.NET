@@ -1,7 +1,7 @@
 ---
-updated: 2026-05-16
+updated: 2026-06-02
 published: 2026-05-16
-version: "0.0.2"
+version: "0.0.3"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -35,6 +35,9 @@ Each layer is published as a separate NuGet package.
 | Contracts | `AIKernel.Contracts` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Contracts.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Contracts/) |
 | Abstractions | `AIKernel.Abstractions` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Abstractions.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Abstractions/) |
 | Virtual File System | `AIKernel.Vfs` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Vfs.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Vfs/) |
+
+As of `v0.0.3`, Vfs interface contracts are owned by `AIKernel.Abstractions`.
+The public namespace remains `AIKernel.Vfs`, and the `AIKernel.Vfs` package remains as a compatibility facade through type forwarding.
 
 ---
 

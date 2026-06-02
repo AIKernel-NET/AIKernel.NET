@@ -28,6 +28,7 @@ The `src` tree contains the canonical specification projects that define interfa
   - `AIKernel.Abstractions.Security`
   - `AIKernel.Abstractions.Tasks`
   - `AIKernel.Abstractions.Tooling`
+  - `AIKernel.Vfs` (Vfs contracts, owned by the Abstractions assembly)
 - Project references: `AIKernel.Dtos`, `AIKernel.Enums`
 
 ### AIKernel.Contracts
@@ -62,9 +63,10 @@ The `src` tree contains the canonical specification projects that define interfa
 - Project references: none
 
 ### AIKernel.Vfs
-- Purpose: Provider-agnostic Virtual File System contracts.
+- Purpose: Compatibility facade for provider-agnostic Virtual File System contracts.
 - Main namespace: `AIKernel.Vfs`
-- Project references: `AIKernel.Dtos`
+- Project references: `AIKernel.Abstractions`
+- Notes: Vfs contract definitions are owned by `AIKernel.Abstractions` as of v0.0.3. This project preserves package compatibility through type forwarding.
 
 ---
 
@@ -74,12 +76,12 @@ The `src` tree contains the canonical specification projects that define interfa
 - `AIKernel.Contracts` -> `AIKernel.Dtos`, `AIKernel.Enums`
 - `AIKernel.Dtos` -> `AIKernel.Enums`
 - `AIKernel.Enums` -> (none)
-- `AIKernel.Vfs` -> `AIKernel.Dtos`
+- `AIKernel.Vfs` -> `AIKernel.Abstractions`
 
 Prohibited examples:
 - `Abstractions` -> `Contracts`
 - `Contracts` -> `Abstractions`
-- `Vfs` -> `Abstractions`
+- `Abstractions` -> `Vfs`
 
 ---
 

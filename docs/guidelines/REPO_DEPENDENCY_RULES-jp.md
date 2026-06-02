@@ -2,9 +2,9 @@
 id: repo-dependency-rules
 title: "AIKernel.NET Repository Dependency Rules — 依存方向規約"
 created: 2026-04-30
-updated: 2026-05-16
+updated: 2026-06-02
 published: 2026-05-16
-version: "0.0.2"
+version: "0.0.3"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -42,7 +42,7 @@ tags:
 
 ## 2. レイヤ（層）定義
 
-- Core（syscall）: Abstractions / Contracts / Dtos / Enums / Events / KernelContext / Vfs
+- Core（syscall）: Abstractions / Contracts / Dtos / Enums / Vfs facade
 - Kernel（実装）: Scheduler / Router / Controller / Pipeline / RagEngine / Rules
 - Providers（ドライバ）: Capability 実装
 - VfsProviders（外部データ）: Git 等のデータソース
@@ -56,13 +56,11 @@ tags:
 
 ### 3.1 モジュール一覧（例）
 
-- AIKernel.Abstractions  : IKernel / IProvider / IGuard / IPdp
+- AIKernel.Abstractions  : IKernel / IProvider / IGuard / IPdp / Vfs contract ownership
 - AIKernel.Contracts     : OrchestrationContext / Contract Schema
 - AIKernel.Dtos          : MaterialItem / TransferTrace / Purpose
 - AIKernel.Enums         : RejectCode / PdpDecision
-- AIKernel.Events        : AuditEvent / GuardEvent
-- AIKernel.KernelContext : Identity / Permission / Budget / DataClassification
-- AIKernel.Vfs           : Vfs 抽象（外部データ境界）
+- AIKernel.Vfs           : type forwarding による Vfs 互換 facade
 
 ---
 
@@ -75,12 +73,13 @@ tags:
 
 | Project | Allowed References |
 |---|---|
-| AIKernel.Abstractions | AIKernel.Contracts, AIKernel.Enums |
-| AIKernel.Contracts | AIKernel.Enums |
+| AIKernel.Enums | なし |
 | AIKernel.Dtos | AIKernel.Enums |
-| AIKernel.Events | AIKernel.Enums, AIKernel.Dtos |
-| AIKernel.KernelContext | AIKernel.Enums |
-| AIKernel.Vfs | AIKernel.Dtos |
+| AIKernel.Contracts | AIKernel.Enums, AIKernel.Dtos |
+| AIKernel.Abstractions | AIKernel.Dtos, AIKernel.Enums |
+| AIKernel.Vfs | AIKernel.Abstractions |
+| Providers / VfsProviders | AIKernel.Abstractions, AIKernel.Core |
+| Core | AIKernel.Abstractions |
 | tests/* | 参照自由（逆流禁止） |
 
 ### 4.2 禁止事項（Forbidden）
@@ -88,7 +87,24 @@ tags:
 - 循環依存（A → B → A）
 - src が tests を参照すること（逆流）
 - Core が Kernel/Providers/Server/Hosting/Enterprise を参照すること
+- AIKernel.Abstractions が AIKernel.Vfs、AIKernel.Core、Providers を参照すること
 - Vfs インターフェースに具象データ型を内包すること（具象データは AIKernel.Dtos に定義する）
+
+### 4.3 v0.0.3 Vfs Contract Ownership
+
+v0.0.3 以降、Vfs interface contract の所有元は `AIKernel.Abstractions` である。
+公開 namespace は source compatibility のため `AIKernel.Vfs` のままとする。
+`AIKernel.Vfs` package は contract 定義の所有元ではなく、type forwarding による互換 facade として `AIKernel.Abstractions` を参照してよい。
+
+Phase-1 の必須 package graph は次の通り。
+
+```text
+AIKernel.Enums -> (none)
+AIKernel.Dtos -> AIKernel.Enums
+AIKernel.Contracts -> AIKernel.Enums, AIKernel.Dtos
+AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
+AIKernel.Vfs -> AIKernel.Abstractions
+```
 
 ---
 
@@ -119,3 +135,4 @@ AIKernel.NET は OS として、境界と依存方向を最初に固定し、以
 # 変更履歴
 - v0.0.0 / v0.0.0.0: 初期ドラフト
 - v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新
+- v0.0.3 (2026-06-02): Phase-1 依存グラフと Vfs contract 所有元/type-forwarding 規約を修正

@@ -2,9 +2,9 @@
 id: repo-dependency-rules
 title: "AIKernel.NET Repository Dependency Rules"
 created: 2026-04-30
-updated: 2026-05-16
+updated: 2026-06-02
 published: 2026-05-16
-version: "0.0.2"
+version: "0.0.3"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -41,7 +41,7 @@ This rule set is an OS rule to "first create layers, then fix dependency directi
 
 ## 2. Layer Definitions
 
-- Core (syscall): Abstractions / Contracts / Dtos / Enums / Events / KernelContext / Vfs
+- Core (syscall): Abstractions / Contracts / Dtos / Enums / Vfs facade
 - Kernel (implementation): Scheduler / Router / Controller / Pipeline / RagEngine / Rules
 - Providers (drivers): Capability implementations
 - VfsProviders (external data): Git and other data sources
@@ -55,13 +55,11 @@ This rule set is an OS rule to "first create layers, then fix dependency directi
 
 ### 3.1 Example Modules
 
-- AIKernel.Abstractions  : IKernel / IProvider / IGuard / IPdp
+- AIKernel.Abstractions  : IKernel / IProvider / IGuard / IPdp / Vfs contract ownership
 - AIKernel.Contracts     : OrchestrationContext / Contract Schema
 - AIKernel.Dtos          : MaterialItem / TransferTrace / Purpose
 - AIKernel.Enums         : RejectCode / PdpDecision
-- AIKernel.Events        : AuditEvent / GuardEvent
-- AIKernel.KernelContext : Identity / Permission / Budget / DataClassification
-- AIKernel.Vfs           : Vfs abstractions (external data boundary)
+- AIKernel.Vfs           : Vfs compatibility facade through type forwarding
 
 ---
 
@@ -74,12 +72,13 @@ Dependencies not listed here are generally forbidden; exceptions must be documen
 
 | Project | Allowed References |
 |---|---|
-| AIKernel.Abstractions | AIKernel.Contracts, AIKernel.Enums |
-| AIKernel.Contracts | AIKernel.Enums |
+| AIKernel.Enums | none |
 | AIKernel.Dtos | AIKernel.Enums |
-| AIKernel.Events | AIKernel.Enums, AIKernel.Dtos |
-| AIKernel.KernelContext | AIKernel.Enums |
-| AIKernel.Vfs | AIKernel.Dtos |
+| AIKernel.Contracts | AIKernel.Enums, AIKernel.Dtos |
+| AIKernel.Abstractions | AIKernel.Dtos, AIKernel.Enums |
+| AIKernel.Vfs | AIKernel.Abstractions |
+| Providers / VfsProviders | AIKernel.Abstractions, AIKernel.Core |
+| Core | AIKernel.Abstractions |
 | tests/* | free to reference (no reverse flow) |
 
 ### 4.2 Forbidden
@@ -87,7 +86,24 @@ Dependencies not listed here are generally forbidden; exceptions must be documen
 - Circular dependencies (A → B → A)
 - src referencing tests (reverse flow)
 - Core referencing Kernel/Providers/Server/Hosting/Enterprise
+- AIKernel.Abstractions referencing AIKernel.Vfs, AIKernel.Core, or Providers
 - Concrete data carriers in Vfs interfaces (must be defined in AIKernel.Dtos)
+
+### 4.3 v0.0.3 Vfs Contract Ownership
+
+Vfs interface contracts are owned by `AIKernel.Abstractions` as of v0.0.3.
+Their public namespace remains `AIKernel.Vfs` for source compatibility.
+The `AIKernel.Vfs` package must not own contract definitions; it provides a compatibility facade through type forwarding and may reference `AIKernel.Abstractions`.
+
+The required Phase-1 package graph is:
+
+```text
+AIKernel.Enums -> (none)
+AIKernel.Dtos -> AIKernel.Enums
+AIKernel.Contracts -> AIKernel.Enums, AIKernel.Dtos
+AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
+AIKernel.Vfs -> AIKernel.Abstractions
+```
 
 ---
 
@@ -117,3 +133,4 @@ Dependency direction is design. AIKernel.NET, as an OS, fixes boundaries and dep
 # Changelog
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
+- v0.0.3 (2026-06-02): Corrected Phase-1 dependency graph and Vfs contract ownership/type-forwarding rule

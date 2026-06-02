@@ -1,8 +1,8 @@
 ---
 title: "Migration Guide"
-updated: 2026-05-16
+updated: 2026-06-02
 published: 2026-05-16
-version: "0.0.2"
+version: "0.0.3"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -11,7 +11,7 @@ maintainer: "Takuya (AIKernel Project Maintainer)"
 
 # Migration Guide
 
-This guide defines migration steps from the initial concept baseline (`v0.0.0`) to the canonical architecture baseline (`v0.0.1`), and to the naming/capability contract changes introduced in `v0.0.2`.
+This guide defines migration steps from the initial concept baseline (`v0.0.0`) to the canonical architecture baseline (`v0.0.1`), to the naming/capability contract changes introduced in `v0.0.2`, and to the dependency-layer correction introduced in `v0.0.3`.
 
 ## 1. Fundamental Changes
 In `v0.0.1`, the architecture was rebuilt around `Determinism` and `Non-LLM Governance`.
@@ -401,9 +401,105 @@ Execution, file transfer, cleanup, observation, validation, store mutation, and 
 | `IComputeShapeOptimizer` | Constraint-based shape optimization. |
 
 Read-only stores and schema-only validators should implement only the capability they actually support.
+
+## 13. Migrating from v0.0.2 to v0.0.3: Dependency Layer Correction
+v0.0.3 corrects the package dependency graph around Vfs contracts.
+
+The main change is that Vfs interface contracts are now owned by `AIKernel.Abstractions`. The `AIKernel.Vfs` package remains as a compatibility facade through type forwarding, but it is no longer the owner of the contract definitions.
+
+### 13.1 Target Layering
+The expected Phase-1 dependency direction is:
+
+```text
+AIKernel.Enums -> (none)
+AIKernel.Dtos -> AIKernel.Enums
+AIKernel.Contracts -> AIKernel.Enums, AIKernel.Dtos
+AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
+AIKernel.Vfs -> AIKernel.Abstractions
+```
+
+The forbidden direction is:
+
+```text
+AIKernel.Abstractions -> AIKernel.Vfs
+AIKernel.Abstractions -> AIKernel.Core
+AIKernel.Abstractions -> Providers
+```
+
+### 13.2 Moved Vfs Contracts
+The following contracts moved from the `AIKernel.Vfs` project to the `AIKernel.Abstractions` project:
+
+| Contract | New owner | Compatibility |
+|---|---|---|
+| `IVfsProvider` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
+| `IVfsSession` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
+| `IReadableVfsSession` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
+| `IWritableVfsSession` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
+| `IDeletableVfsSession` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
+| `INavigableVfsSession` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
+| `IQueryableVfsSession` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
+| `IVfsCredentials` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
+| `IVfsFile`, `IVfsDirectory` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
+| `IReadableVfsFile`, `IWritableVfsFile` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
+| `INavigableVfsDirectory` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
+| `IVfsEntryInfo` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
+| `IVfsQuery`, `IVfsQueryResult` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
+| `VfsAuthenticationFailedException` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
+
+The public namespace remains `AIKernel.Vfs` for compatibility. The ownership change is at the assembly/package layer.
+
+### 13.3 Project Reference Updates
+Consumers should update project references as follows:
+
+```diff
+AIKernel.Abstractions.csproj
+- <ProjectReference Include="..\AIKernel.Vfs\AIKernel.Vfs.csproj" />
+
+AIKernel.Vfs.csproj
+- <ProjectReference Include="..\AIKernel.Dtos\AIKernel.Dtos.csproj" />
++ <ProjectReference Include="..\AIKernel.Abstractions\AIKernel.Abstractions.csproj" />
+```
+
+Application projects that only use Vfs contracts can reference `AIKernel.Abstractions` directly. Projects that require the compatibility facade may continue to reference `AIKernel.Vfs`.
+
+### 13.4 NuGet Package Updates
+When upgrading package references:
+
+```xml
+<PackageReference Include="AIKernel.Abstractions" Version="0.0.3" />
+<PackageReference Include="AIKernel.Vfs" Version="0.0.3" />
+```
+
+Do not mix `AIKernel.Abstractions` `0.0.3` with `AIKernel.Vfs` `0.0.2`; the facade expects the Vfs contract types to be provided by the `0.0.3` Abstractions assembly.
+
+### 13.5 Source Migration Steps
+1. Keep existing `using AIKernel.Vfs;` directives unless you are intentionally removing the compatibility facade.
+2. Remove any direct `AIKernel.Abstractions -> AIKernel.Vfs` project reference.
+3. If a library defines only contracts, prefer referencing `AIKernel.Abstractions` rather than `AIKernel.Vfs`.
+4. If a runtime/provider package implements Vfs contracts and wants compatibility with existing code, reference `AIKernel.Vfs` or `AIKernel.Abstractions` according to the packaging boundary.
+5. Rebuild all packages so type-forwarding metadata is emitted consistently.
+
+### 13.6 Verification Commands
+Run:
+
+```powershell
+dotnet build src\AIKernel.NET.slnx
+dotnet test src\tests\AIKernel.Abstractions.Tests\AIKernel.Abstractions.Tests.csproj --no-build
+```
+
+Check the project-reference graph:
+
+```text
+AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
+AIKernel.Vfs -> AIKernel.Abstractions
+CYCLE CHECK: OK (no ProjectReference cycles)
+```
+
+Also verify that `AIKernel.Abstractions.csproj` contains no reference to `AIKernel.Vfs`.
 ---
 
 # Changelog
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.2 (2026-05-09): Added Issue #4 Vfs capability contract migration steps, Issue #7 Vfs naming normalization, provider/security capability contract guidance, Issue #8 contract purity migration, Issue #9 provider capability migration, Issue #10 security/policy separation migration, and Issue #11 sandbox/validator isolation migration
+- v0.0.3 (2026-06-02): Added dependency-layer migration for Vfs contract ownership, `AIKernel.Vfs` type-forwarding compatibility, package-reference guidance, and cycle-verification steps

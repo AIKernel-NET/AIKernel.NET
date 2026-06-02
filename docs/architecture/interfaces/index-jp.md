@@ -1,9 +1,9 @@
 ---
 title: "AIKernel Architecture Interfaces — Index"
 created: 2026-05-03
-updated: 2026-05-16
+updated: 2026-06-02
 published: 2026-05-16
-version: "0.0.2"
+version: "0.0.3"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -49,6 +49,7 @@ tags:
 - `security`: PDP/Guard による決定論的アクセス判定契約。
 - `tasks`: タスク実行単位とパイプライン結果契約。
 - `scheduling`: スケジュール実行ジョブと実行結果契約。
+- `vfs`: Vfs contract は公開 namespace `AIKernel.Vfs` を維持しつつ、`AIKernel.Abstractions` が所有する。
 - 既存カテゴリ（context〜vfs）は各 index に責務境界・関連UC・関連Spec を明記。
 
 ---
@@ -57,3 +58,4 @@ tags:
 - v0.0.0 / v0.0.0.0: 初期ドラフト
 - v0.0.1 (2026-05-06): src整合に伴うカテゴリ追加とリンク更新
 - v0.0.1 (2026-05-09): query interface category を追加
+- v0.0.3 (2026-06-02): Vfs contract 所有元の注記を追加
