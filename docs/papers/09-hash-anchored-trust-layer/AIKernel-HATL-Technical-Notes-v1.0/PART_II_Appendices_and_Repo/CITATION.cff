@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this appendix package or the HATL specification, please cite the Zenodo release."
+title: "AIKernel Hash-Anchored Trust Layer (HATL): Technical Appendices and Repository Specifications"
+version: "1.0"
+doi: "10.5281/zenodo.20502685"
+date-released: "2026-06-02"
+license: "Apache-2.0"
+authors:
+  - family-names: "Sogawa"
+    given-names: "Takuya"
+    orcid: "https://orcid.org/0009-0009-7499-2595"
+    affiliation: "AIKernel Project"
+    roles:
+      - "Conceptualization"
+      - "Architecture design"
+      - "Specification authoring"
+      - "Reference implementation planning"

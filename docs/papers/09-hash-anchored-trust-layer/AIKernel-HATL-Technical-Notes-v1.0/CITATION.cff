@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use HATL or cite this technical note, please cite this Zenodo release."
+title: "AIKernel Hash-Anchored Trust Layer (HATL): A Hybrid Symmetric Ledger with Hash-Based Public Anchors"
+version: "1.0"
+doi: "10.5281/zenodo.20502685"
+date-released: "2026-06-02"
+license: "CC-BY-4.0"
+authors:
+  - family-names: "Sogawa"
+    given-names: "Takuya"
+    orcid: "https://orcid.org/0009-0009-7499-2595"
+    affiliation: "AIKernel Project"
+    roles:
+      - "Conceptualization"
+      - "Architecture design"
+      - "Methodology"
+      - "Specification authoring"
+      - "Writing - original draft"
+      - "Writing - review and editing"
+      - "Software architecture"
+repository-code: "https://github.com/AIKernel-NET/AIKernel.NET"
+url: "https://aikernel.net/"
+abstract: >-
+  This technical note introduces the AIKernel Hash-Anchored Trust Layer (HATL),
+  a hybrid trust architecture that combines a high-frequency symmetric ratcheted
+  micro-ledger with lower-frequency hash-based public anchors for securing
+  stochastic AI inference tracks and ReplayLogs.
+keywords:
+  - AIKernel
+  - HATL
+  - Hash-Based Signatures
+  - HMAC
+  - HKDF
+  - Merkle Tree
+  - ReplayLog
+  - Digital Deed
+  - Semantic Context Operating System
+  - AI Governance

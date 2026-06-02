@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aikernel.net/schemas/hatl-public-anchor.schema.json",
+  "title": "HatlPublicAnchor",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "anchor_id",
+    "ledger_identity",
+    "policy_epoch",
+    "batch_start_seq",
+    "batch_end_seq",
+    "accumulated_merkle_root",
+    "previous_anchor_hash",
+    "hbs_signature_type",
+    "hbs_signature_raw"
+  ],
+  "properties": {
+    "anchor_id": { "type": "integer", "minimum": 0 },
+    "ledger_identity": { "type": "string", "minLength": 1 },
+    "policy_epoch": { "type": "integer", "minimum": 0 },
+    "batch_start_seq": { "type": "integer", "minimum": 0 },
+    "batch_end_seq": { "type": "integer", "minimum": 0 },
+    "accumulated_merkle_root": { "type": "string", "pattern": "^[0-9a-fA-F]{128}$" },
+    "previous_anchor_hash": { "type": "string", "pattern": "^[0-9a-fA-F]{128}$" },
+    "hbs_signature_type": { "type": "string", "enum": ["LMS", "XMSS", "SLH-DSA"] },
+    "hbs_signature_raw": { "type": "string", "minLength": 1 }
+  }
+}

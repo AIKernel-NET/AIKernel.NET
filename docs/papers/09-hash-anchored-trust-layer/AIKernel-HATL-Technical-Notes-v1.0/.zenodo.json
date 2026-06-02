@@ -1,0 +1,37 @@
+{
+  "title": "AIKernel Hash-Anchored Trust Layer (HATL): A Hybrid Symmetric Ledger with Hash-Based Public Anchors",
+  "version": "v1.0",
+  "publication_date": "2026-06-02",
+  "description": "This technical note introduces the AIKernel Hash-Anchored Trust Layer (HATL), a hybrid trust architecture for Semantic Context Operating Systems. HATL separates high-frequency local commitments from lower-frequency public anchoring. Part I is the canonical English manuscript, Part II contains technical appendices and repository specifications, and Part III is the Japanese technical translation.",
+  "creators": [
+    {
+      "name": "Sogawa, Takuya",
+      "orcid": "0009-0009-7499-2595",
+      "affiliation": "AIKernel Project"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "keywords": [
+    "AIKernel",
+    "HATL",
+    "Hash-Based Signatures",
+    "HMAC",
+    "HKDF",
+    "Merkle Tree",
+    "ReplayLog",
+    "Digital Deed",
+    "Semantic Context Operating System",
+    "AI Governance"
+  ],
+  "related_identifiers": [
+    { "identifier": "https://doi.org/10.6028/NIST.FIPS.180-4", "relation": "cites", "resource_type": "publication-standard" },
+    { "identifier": "https://doi.org/10.6028/NIST.FIPS.198-1", "relation": "cites", "resource_type": "publication-standard" },
+    { "identifier": "https://doi.org/10.6028/NIST.FIPS.205", "relation": "cites", "resource_type": "publication-standard" },
+    { "identifier": "https://doi.org/10.6028/NIST.SP.800-208", "relation": "cites", "resource_type": "publication-standard" },
+    { "identifier": "https://doi.org/10.17487/RFC5869", "relation": "cites", "resource_type": "publication-standard" },
+    { "identifier": "https://doi.org/10.17487/RFC8391", "relation": "cites", "resource_type": "publication-standard" },
+    { "identifier": "https://doi.org/10.17487/RFC8554", "relation": "cites", "resource_type": "publication-standard" },
+    { "identifier": "https://doi.org/10.5281/zenodo.20290614", "relation": "cites", "resource_type": "publication-technicalnote" },
+    { "identifier": "https://doi.org/10.5281/zenodo.20460322", "relation": "cites", "resource_type": "publication-technicalnote" }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aikernel.net/schemas/hatl-digital-deed.schema.json",
+  "title": "HatlDigitalDeed",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "node_uuid",
+    "rom_identity_commitment",
+    "assigned_public_anchor_key",
+    "capability_contract_hash",
+    "status",
+    "policy_epoch"
+  ],
+  "properties": {
+    "node_uuid": { "type": "string", "format": "uuid" },
+    "rom_identity_commitment": { "type": "string", "pattern": "^[0-9a-fA-F]{128}$" },
+    "assigned_public_anchor_key": { "type": "string", "minLength": 1 },
+    "capability_contract_hash": { "type": "string", "pattern": "^[0-9a-fA-F]{128}$" },
+    "status": { "type": "string", "enum": ["ACTIVE", "SUSPENDED", "REVOKED"] },
+    "policy_epoch": { "type": "integer", "minimum": 0 }
+  }
+}
