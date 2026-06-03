@@ -167,7 +167,7 @@ Query 補間・分解・意味空間化・query routing を Phase 1 Context Buil
 
 ## [1.17 DSL Pipeline and ROM Specification](./18.DSL_PIPELINE_AND_ROM_SPEC-jp.md)
 
-標準 JSON DSL pipeline IR、決定論的 loop / suspend semantics、DSL ROM 保存、`dsl://` capability 呼び出し、再利用可能な AI 生成 capability の replay metadata を定義する。
+標準 JSON DSL pipeline IR、決定論的 loop / suspend semantics、DSL ROM 保存、`dsl://` capability 呼び出し、`history://` による HistoryROM 保存、再利用可能な AI 生成 capability の replay metadata を定義する。
 
 ---
 

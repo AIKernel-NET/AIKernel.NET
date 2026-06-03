@@ -162,7 +162,7 @@ This chapter keeps RAG outside Core retrieval implementation and aligns Query Pr
 
 ## [1.17 DSL Pipeline and ROM Specification](./18.DSL_PIPELINE_AND_ROM_SPEC.md)
 
-Defines the standard JSON DSL pipeline IR, deterministic loop and suspend semantics, DSL ROM storage, `dsl://` capability invocation, and replay metadata for reusable AI-generated capabilities.
+Defines the standard JSON DSL pipeline IR, deterministic loop and suspend semantics, DSL ROM storage, `dsl://` capability invocation, HistoryROM storage under `history://`, and replay metadata for reusable AI-generated capabilities.
 
 ---
 
