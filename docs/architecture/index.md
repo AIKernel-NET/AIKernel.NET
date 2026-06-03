@@ -160,6 +160,12 @@ This chapter keeps RAG outside Core retrieval implementation and aligns Query Pr
 
 ---
 
+## [1.17 DSL Pipeline and ROM Specification](./18.DSL_PIPELINE_AND_ROM_SPEC.md)
+
+Defines the standard JSON DSL pipeline IR, deterministic loop and suspend semantics, DSL ROM storage, `dsl://` capability invocation, and replay metadata for reusable AI-generated capabilities.
+
+---
+
 # 2. Comparative Architecture
 
 ## [2.1 AIKernel vs LangChain](./6.AIKERNEL_VS_LANGCHAIN.md)
@@ -231,6 +237,7 @@ Read the architecture documents in this order. Each item points downward into th
 - [Replayable Execution Dump Format](./15.REPLAYABLE_EXECUTION_DUMP_FORMAT.md)
 - [Semantic Context OS Vision](./16.SEMANTIC_CONTEXT_OS_VISION.md)
 - [Phase 1 Query Processing](./17.QUERY_PROCESSING_PHASE1.md)
+- [DSL Pipeline and ROM Specification](./18.DSL_PIPELINE_AND_ROM_SPEC.md)
 
 ---
 
