@@ -40,6 +40,7 @@ Governance covers execution authorization, auditability, and attention-quality s
 - [IAttentionGuard](IAttentionGuard.md)
 - [IAttentionObserver](IAttentionObserver.md)
 - [IAuditEvent](IAuditEvent.md)
+- [IAuditLogger](IAuditLogger.md)
 - [IAuditEventContract](IAuditEventContract.md)
 - [IContextLifecycleManager](IContextLifecycleManager.md)
 - [IChatTurn HashChain Contracts](IChatTurnHashChainContracts.md)
@@ -51,3 +52,4 @@ Governance covers execution authorization, auditability, and attention-quality s
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.4 (2026-06-04): Moved IHistorySummarizer documentation to the history interface category.
 - v0.0.4 (2026-06-04): Added ChatChain governance contract documentation.
+- v0.0.4 (2026-06-04): Added IAuditLogger to the governance interface index.

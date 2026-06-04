@@ -40,6 +40,7 @@ Governance は実行許可・監査・注意品質監視を担う境界です。
 - [IAttentionGuard](IAttentionGuard-jp.md)
 - [IAttentionObserver](IAttentionObserver-jp.md)
 - [IAuditEvent](IAuditEvent-jp.md)
+- [IAuditLogger](IAuditLogger-jp.md)
 - [IAuditEventContract](IAuditEventContract-jp.md)
 - [IContextLifecycleManager](IContextLifecycleManager-jp.md)
 - [IChatTurn HashChain Contracts](IChatTurnHashChainContracts-jp.md)
@@ -51,3 +52,4 @@ Governance は実行許可・監査・注意品質監視を担う境界です。
 - v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新
 - v0.0.4 (2026-06-04): IHistorySummarizer documentation を history interface category へ移動。
 - v0.0.4 (2026-06-04): ChatChain governance contract documentation を追加。
+- v0.0.4 (2026-06-04): IAuditLogger を governance interface index に追加。
