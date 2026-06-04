@@ -94,4 +94,29 @@ public sealed class ExtractedInterfaceContractTests
 
         Assert.Empty(duplicates);
     }
+
+    [Fact]
+    public void SharedInterfaceSurfaceDoesNotUseAmbiguousGenericNames()
+    {
+        var interfaces = typeof(IKernelPipeline)
+            .Assembly
+            .GetExportedTypes()
+            .Where(type => type.IsInterface)
+            .ToArray();
+
+        var names = interfaces
+            .Select(type => type.FullName)
+            .ToArray();
+
+        Assert.DoesNotContain("AIKernel.Abstractions.Scheduling.IExecutionResult", names);
+        Assert.DoesNotContain("AIKernel.Abstractions.Governance.ChatChain.IResult", names);
+        Assert.Contains("AIKernel.Abstractions.Scheduling.IScheduledExecutionResult", names);
+
+        var semanticHashers = interfaces
+            .Where(type => type.Name == "ISemanticHasher")
+            .Select(type => type.FullName!)
+            .ToArray();
+
+        Assert.Equal(["AIKernel.Abstractions.Rom.ISemanticHasher"], semanticHashers);
+    }
 }
