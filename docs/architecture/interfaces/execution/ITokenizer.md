@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: $(System.Collections.Hashtable.Name)
+Japanese version: [ITokenizer-jp.md](ITokenizer-jp.md)
 
 # ITokenizer
 
@@ -31,7 +31,7 @@ Define the contract boundary for ITokenizer within AIKernel orchestration, gover
 | `Decode(IReadOnlyList<int> tokens)` | `string` | Decode token ids into text. |
 
 ## Related Use Cases
-See ../../use-cases/AIKernel_UseCaseCatalog.md for references where $(System.Collections.Hashtable.name) appears.
+See ../../use-cases/AIKernel_UseCaseCatalog.md for references where ITokenizer appears.
 
 ## Notes
 - This interface is currently extension-point oriented and may not yet be referenced by runtime implementations.

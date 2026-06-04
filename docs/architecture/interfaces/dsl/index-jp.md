@@ -26,11 +26,11 @@ DSL contract は、AI が生成した JSON plan を governed pipeline へ compil
 parse、validation、ResultStep 展開、provider 実行は implementation 側の責務である。
 
 ## 2. 公開 Contract
-- `IDslPipelineCompiler`
-- `IDslCapabilityRegistry`
-- `IKernelPipeline`
-- `IDslRomRegistry`
-- `IDslRomStore`
+- [IDslPipelineCompiler](IDslPipelineCompiler-jp.md)
+- [IDslCapabilityRegistry](IDslCapabilityRegistry-jp.md)
+- [IKernelPipeline](IKernelPipeline-jp.md)
+- [IDslRomRegistry](IDslRomRegistry-jp.md)
+- [IDslRomStore](IDslRomStore-jp.md)
 
 ## 3. DTO Surface
 - `DslDocument`

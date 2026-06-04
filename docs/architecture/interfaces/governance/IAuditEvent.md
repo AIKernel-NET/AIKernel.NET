@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: $(System.Collections.Hashtable.Name)
+Japanese version: [IAuditEvent-jp.md](IAuditEvent-jp.md)
 
 # IAuditEvent
 
@@ -32,7 +32,7 @@ Define the contract boundary for IAuditEvent within AIKernel orchestration, gove
 | `Metadata` | `IReadOnlyDictionary<string, object>` | Structured audit metadata. |
 
 ## Related Use Cases
-See ../../use-cases/AIKernel_UseCaseCatalog.md for references where $(System.Collections.Hashtable.name) appears.
+See ../../use-cases/AIKernel_UseCaseCatalog.md for references where IAuditEvent appears.
 
 ## Notes
 - This interface is currently extension-point oriented and may not yet be referenced by runtime implementations.

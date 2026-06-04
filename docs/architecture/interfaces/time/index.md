@@ -25,7 +25,7 @@ Time contracts provide deterministic Kernel time without binding hosts to
 `DateTimeOffset.UtcNow`, `TimeProvider.System`, or Core-specific clocks.
 
 ## 2. Public Contracts
-- `IKernelClock`
+- [IKernelClock](IKernelClock.md)
 
 ## 3. DTO Surface
 - `KernelTimestamp`

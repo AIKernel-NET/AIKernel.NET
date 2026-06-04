@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: $(System.Collections.Hashtable.Name)
+Japanese version: [IToolSandbox-jp.md](IToolSandbox-jp.md)
 
 # IToolSandbox
 
@@ -34,7 +34,7 @@ Define the contract boundary for IToolSandbox within AIKernel orchestration, gov
 | `GetResourceUsageAsync()` | `Task<SandboxResourceUsage>` | Get sandbox resource usage. |
 
 ## Related Use Cases
-See ../../use-cases/AIKernel_UseCaseCatalog.md for references where $(System.Collections.Hashtable.name) appears.
+See ../../use-cases/AIKernel_UseCaseCatalog.md for references where IToolSandbox appears.
 
 ## Notes
 - This interface is currently extension-point oriented and may not yet be referenced by runtime implementations.

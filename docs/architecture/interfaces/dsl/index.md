@@ -27,11 +27,11 @@ validation, ResultStep expansion, and provider execution remain implementation
 responsibilities.
 
 ## 2. Public Contracts
-- `IDslPipelineCompiler`
-- `IDslCapabilityRegistry`
-- `IKernelPipeline`
-- `IDslRomRegistry`
-- `IDslRomStore`
+- [IDslPipelineCompiler](IDslPipelineCompiler.md)
+- [IDslCapabilityRegistry](IDslCapabilityRegistry.md)
+- [IKernelPipeline](IKernelPipeline.md)
+- [IDslRomRegistry](IDslRomRegistry.md)
+- [IDslRomStore](IDslRomStore.md)
 
 ## 3. DTO Surface
 - `DslDocument`

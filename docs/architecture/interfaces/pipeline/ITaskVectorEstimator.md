@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: $(System.Collections.Hashtable.Name)
+Japanese version: [ITaskVectorEstimator-jp.md](ITaskVectorEstimator-jp.md)
 
 # ITaskVectorEstimator
 
@@ -29,7 +29,7 @@ Define the contract boundary for ITaskVectorEstimator within AIKernel orchestrat
 | `EstimateTaskVector(string taskDescription)` | `ModelCapacityVector` | Estimate required capacity vector from task description. |
 
 ## Related Use Cases
-See ../../use-cases/AIKernel_UseCaseCatalog.md for references where $(System.Collections.Hashtable.name) appears.
+See ../../use-cases/AIKernel_UseCaseCatalog.md for references where ITaskVectorEstimator appears.
 
 ## Notes
 - This interface is currently extension-point oriented and may not yet be referenced by runtime implementations.

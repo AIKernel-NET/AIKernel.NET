@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: $(System.Collections.Hashtable.Name)
+Japanese version: [IToolAccessValidator-jp.md](IToolAccessValidator-jp.md)
 
 # IToolAccessValidator
 
@@ -36,7 +36,7 @@ Define the contract boundary for IToolAccessValidator within AIKernel orchestrat
 | `ValidateConstraints(IToolPermission permission, IReadOnlyDictionary<string, string> context)` | `bool` | Validate runtime constraints. |
 
 ## Related Use Cases
-See ../../use-cases/AIKernel_UseCaseCatalog.md for references where $(System.Collections.Hashtable.name) appears.
+See ../../use-cases/AIKernel_UseCaseCatalog.md for references where IToolAccessValidator appears.
 
 ## Notes
 - This interface is currently extension-point oriented and may not yet be referenced by runtime implementations.

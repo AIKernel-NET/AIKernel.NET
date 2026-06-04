@@ -25,7 +25,7 @@ Time contract は、host を `DateTimeOffset.UtcNow`、`TimeProvider.System`、
 Core 固有 clock に結合せず、決定論的 Kernel time を提供する。
 
 ## 2. 公開 Contract
-- `IKernelClock`
+- [IKernelClock](IKernelClock-jp.md)
 
 ## 3. DTO Surface
 - `KernelTimestamp`

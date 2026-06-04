@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: $(System.Collections.Hashtable.Name)
+Japanese version: [IAttentionObserver-jp.md](IAttentionObserver-jp.md)
 
 # IAttentionObserver
 
@@ -30,7 +30,7 @@ Define the contract boundary for IAttentionObserver within AIKernel orchestratio
 | `OnPollutionDetected(string reason)` | `void` | Receive pollution detection events. |
 
 ## Related Use Cases
-See ../../use-cases/AIKernel_UseCaseCatalog.md for references where $(System.Collections.Hashtable.name) appears.
+See ../../use-cases/AIKernel_UseCaseCatalog.md for references where IAttentionObserver appears.
 
 ## Notes
 - This interface is currently extension-point oriented and may not yet be referenced by runtime implementations.

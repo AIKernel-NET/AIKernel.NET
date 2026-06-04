@@ -42,10 +42,10 @@ Governance は実行許可・監査・注意品質監視を担う境界です。
 - [IAuditEvent](IAuditEvent-jp.md)
 - [IAuditEventContract](IAuditEventContract-jp.md)
 - [IContextLifecycleManager](IContextLifecycleManager-jp.md)
-- [IHistorySummarizer](IHistorySummarizer-jp.md)
 
 ---
 
 # 変更履歴
 - v0.0.0 / v0.0.0.0: 初期ドラフト
 - v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新
+- v0.0.4 (2026-06-04): IHistorySummarizer documentation を history interface category へ移動。

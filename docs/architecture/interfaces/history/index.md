@@ -26,10 +26,10 @@ They do not own conversation storage internals, Vfs implementation details, or
 Core-specific Result monads.
 
 ## 2. Public Contracts
-- `IHistorySummarizer`
-- `IChatHistoryRomExporter`
-- `IHistoryRomRegistry`
-- `IHistoryRomStore`
+- [IHistorySummarizer](IHistorySummarizer.md)
+- [IChatHistoryRomExporter](IChatHistoryRomExporter.md)
+- [IHistoryRomRegistry](IHistoryRomRegistry.md)
+- [IHistoryRomStore](IHistoryRomStore.md)
 
 ## 3. DTO Surface
 - `ChatHistoryRomRecord`

@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: $(System.Collections.Hashtable.Name)
+Japanese version: [IToolPermission-jp.md](IToolPermission-jp.md)
 
 # IToolPermission
 
@@ -31,7 +31,7 @@ Define the contract boundary for IToolPermission within AIKernel orchestration, 
 | `ExpiresAt` | `DateTimeOffset?` | Optional expiration time. |
 
 ## Related Use Cases
-See ../../use-cases/AIKernel_UseCaseCatalog.md for references where $(System.Collections.Hashtable.name) appears.
+See ../../use-cases/AIKernel_UseCaseCatalog.md for references where IToolPermission appears.
 
 ## Notes
 - This interface is currently extension-point oriented and may not yet be referenced by runtime implementations.

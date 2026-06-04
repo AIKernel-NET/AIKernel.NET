@@ -16,7 +16,7 @@ tags:
   - japanese
 ---
 
-英語版: $(System.Collections.Hashtable.Name)
+英語版: [ITaskManager.md](ITaskManager.md)
 
 # ITaskManager
 
@@ -35,7 +35,7 @@ ITaskManager が AIKernel のオーケストレーション、統治、ランタ
 | `GetExecutionResultAsync(string executionId)` | `Task<IPipelineExecutionResult?>` | Get pipeline result by execution id. |
 
 ## 関連ユースケース
-../../use-cases/AIKernel_UseCaseCatalog-jp.md の $(System.Collections.Hashtable.name) 参照箇所を基準とする。
+../../use-cases/AIKernel_UseCaseCatalog-jp.md の ITaskManager 参照箇所を基準とする。
 
 ## Notes
 - 本 Interface は拡張ポイント用途が中心で、現時点でランタイム参照が未接続のものを含む。
