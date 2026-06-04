@@ -1,0 +1,61 @@
+{
+  "title": "AIKernel Semantic DSL Compiler and Deterministic Agent Execution Architecture",
+  "upload_type": "publication",
+  "publication_type": "technicalnote",
+  "description": "This technical note introduces the AIKernel Semantic DSL Compiler, an OS-level mechanism for governing probabilistic LLM-generated plans through deterministic compilation rather than direct execution. The compilation path is Semantic IR -> Admissibility Checking -> Governed Pipeline -> ResultStep / SemanticDelta -> hash-linked ReplayLog. The English manuscript is canonical; the Japanese manuscript is included as a companion translation.",
+  "creators": [
+    {
+      "name": "Sogawa, Takuya",
+      "orcid": "0009-0009-7499-2595",
+      "affiliation": "AIKernel Project"
+    }
+  ],
+  "version": "v0.1.0-rev1",
+  "publication_date": "2026-06-04",
+  "doi": "10.5281/zenodo.20534341",
+  "language": "eng",
+  "keywords": [
+    "AIKernel",
+    "Semantic DSL",
+    "Semantic IR",
+    "Deterministic Agent Execution",
+    "Governed Pipeline",
+    "ReplayLog",
+    "Fail-Closed Governance",
+    "Capability Resolution",
+    "Semantic Compiler",
+    "C#",
+    "LINQ",
+    "Result Monad",
+    "Autonomous AI Agents",
+    "Phase-2.5"
+  ],
+  "license": "cc-by-4.0",
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20290614",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20460322",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20502685",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://github.com/AIKernel-NET/AIKernel.NET",
+      "relation": "isSupplementedBy",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://aikernel.net/",
+      "relation": "isSupplementedBy",
+      "resource_type": "other"
+    }
+  ]
+}
