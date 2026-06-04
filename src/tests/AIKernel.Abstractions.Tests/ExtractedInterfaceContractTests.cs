@@ -16,6 +16,7 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(IDslPipelineCompiler).IsInterface);
         Assert.True(typeof(IDslCapabilityRegistry).IsInterface);
         Assert.True(typeof(IDslRomRegistry).IsInterface);
+        Assert.True(typeof(IDslRomStore).IsInterface);
 
         Assert.Equal("Pipeline", new PipelineRootNode([]).Type);
         Assert.Equal("CallCapability", new CallCapabilityNode("demo", new Dictionary<string, string>()).Type);
@@ -26,6 +27,7 @@ public sealed class ExtractedInterfaceContractTests
     public void HistoryRomContractsAreOwnedByAbstractions()
     {
         Assert.True(typeof(IHistoryRomRegistry).IsInterface);
+        Assert.True(typeof(IHistoryRomStore).IsInterface);
         Assert.True(typeof(IChatHistoryRomExporter).IsInterface);
 
         var record = new ChatHistoryRomRecord(
@@ -76,5 +78,20 @@ public sealed class ExtractedInterfaceContractTests
         Assert.DoesNotContain("AIKernel.Abstractions", dtoReferences);
         Assert.DoesNotContain("AIKernel.Core", dtoReferences);
         Assert.DoesNotContain("AIKernel.Common", dtoReferences);
+    }
+
+    [Fact]
+    public void PublicInterfacesHaveUniqueSimpleNamesInsideAbstractions()
+    {
+        var duplicates = typeof(IKernelPipeline)
+            .Assembly
+            .GetExportedTypes()
+            .Where(type => type.IsInterface)
+            .GroupBy(type => type.Name, StringComparer.Ordinal)
+            .Where(group => group.Count() > 1)
+            .Select(group => group.Key)
+            .ToArray();
+
+        Assert.Empty(duplicates);
     }
 }

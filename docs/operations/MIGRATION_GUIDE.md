@@ -220,7 +220,7 @@ Health-only checks should depend on `ITrustStoreHealthProbe` and should not rece
 | Capability | Purpose |
 |---|---|
 | `IKernelVersionProvider` | Read kernel version. |
-| `IKernelExecutor` | Execute a unified context contract. |
+| `IKernelContextExecutor` | Execute a unified context contract. |
 | `IKernelAttentionAnalyzer` | Analyze orchestration attention pollution. |
 | `IKernelMaterialPreprocessor` | Normalize and structure Material Context. |
 | `IKernelExpressionPreparer` | Prepare Expression Context. |
@@ -513,8 +513,8 @@ This release intentionally keeps `AIKernel.Abstractions` independent from `AIKer
 | Area | New contracts |
 |---|---|
 | `AIKernel.Abstractions.Time` | `IKernelClock` |
-| `AIKernel.Abstractions.Dsl` | `IKernelPipeline`, `IDslPipelineCompiler`, `IDslCapabilityRegistry`, `IDslRomRegistry` |
-| `AIKernel.Abstractions.History` | `IChatHistoryRomExporter`, `IHistoryRomRegistry` |
+| `AIKernel.Abstractions.Dsl` | `IKernelPipeline`, `IDslPipelineCompiler`, `IDslCapabilityRegistry`, `IDslRomRegistry`, `IDslRomStore` |
+| `AIKernel.Abstractions.History` | `IChatHistoryRomExporter`, `IHistoryRomRegistry`, `IHistoryRomStore` |
 
 ### 14.3 Breaking Migration Notes for Core Adapters
 Core-side implementations should no longer require downstream consumers to reference Core-only DSL, History ROM, or clock contracts.
@@ -528,7 +528,20 @@ Recommended replacements:
 | Core DSL IR records | `AIKernel.Dtos.Dsl` records |
 | Core DSL pipeline interface | `AIKernel.Abstractions.Dsl.IKernelPipeline` |
 | Core DSL ROM registry interface | `AIKernel.Abstractions.Dsl.IDslRomRegistry` |
+| Core DSL ROM store class boundary | `AIKernel.Abstractions.Dsl.IDslRomStore` |
 | Core History ROM registry interface | `AIKernel.Abstractions.History.IHistoryRomRegistry` |
+| Core History ROM store class boundary | `AIKernel.Abstractions.History.IHistoryRomStore` |
+
+### 14.4 Ambiguous Interface Renames
+v0.0.4 removes public interface names that were too broad for a shared package surface.
+
+| Removed / renamed contract | Replacement |
+|---|---|
+| `AIKernel.Abstractions.Kernel.IKernelExecutor` | `AIKernel.Abstractions.Kernel.IKernelContextExecutor` |
+| `AIKernel.Abstractions.Governance.ChatChain.IResult` | `AIKernel.Abstractions.Governance.ChatChain.IChatTurnVerificationResult` |
+| `AIKernel.Abstractions.Governance.ChatChain.ISemanticHasher` | `AIKernel.Abstractions.Governance.ChatChain.IChatTurnSemanticHasher` |
+
+`AIKernel.Abstractions.Execution.IKernelExecutor` and `AIKernel.Abstractions.Rom.ISemanticHasher` remain unchanged. The renamed contracts were facade/chat-chain-specific names that collided with broader execution and ROM concepts.
 
 When a Core implementation still uses `AIKernel.Common.Results.Result<T>` internally, unwrap it at the package boundary into either:
 
@@ -537,7 +550,7 @@ When a Core implementation still uses `AIKernel.Common.Results.Result<T>` intern
 
 The `AIKernel.NET` contract packages deliberately do not expose `Result<T>` until `AIKernel.Common` is published as a stable package.
 
-### 14.4 NuGet Package Updates
+### 14.5 NuGet Package Updates
 Use a consistent package set:
 
 ```xml
@@ -549,7 +562,7 @@ Use a consistent package set:
 
 Do not mix `AIKernel.Abstractions` `0.0.4` with `AIKernel.Dtos` `0.0.3`; the new DSL, History ROM, and time contracts require the v0.0.4 DTO surface.
 
-### 14.5 Verification Commands
+### 14.6 Verification Commands
 Run:
 
 ```powershell
@@ -575,4 +588,4 @@ CYCLE CHECK: OK
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.2 (2026-05-09): Added Issue #4 Vfs capability contract migration steps, Issue #7 Vfs naming normalization, provider/security capability contract guidance, Issue #8 contract purity migration, Issue #9 provider capability migration, Issue #10 security/policy separation migration, and Issue #11 sandbox/validator isolation migration
 - v0.0.3 (2026-06-02): Added dependency-layer migration for Vfs contract ownership, `AIKernel.Vfs` type-forwarding compatibility, package-reference guidance, and cycle-verification steps
-- v0.0.4 (2026-06-04): Added DSL pipeline, DSL ROM, History ROM, and Kernel clock contract extraction guidance for AIKernel.Core adapter migration
+- v0.0.4 (2026-06-04): Added DSL pipeline, DSL ROM, History ROM, Kernel clock contract extraction, ROM store contracts, and ambiguous-interface rename guidance for AIKernel.Core adapter migration

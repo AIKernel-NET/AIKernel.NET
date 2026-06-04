@@ -9,6 +9,7 @@ namespace AIKernel.Abstractions.Governance.ChatChain;
 /// </summary>
 public interface IChatTurnChainVerifier
 {
-    IResult VerifyChain(IEnumerable<IHashChainNode> turns);
-    IResult VerifyNextTurn(IHashChainNode nextTurn, string currentTailHash);
+    IChatTurnVerificationResult VerifyChain(IEnumerable<IHashChainNode> turns);
+
+    IChatTurnVerificationResult VerifyNextTurn(IHashChainNode nextTurn, string currentTailHash);
 }
