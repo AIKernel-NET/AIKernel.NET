@@ -25,7 +25,7 @@ Japanese version: [Vfs Capability Contracts](../vfs/IVfsCapabilityContracts-jp.m
 ## Responsibility
 Vfs capability contracts express file-system authority at the type-system level. Implementations expose only the interfaces that correspond to operations they can perform.
 
-As of v0.0.3, these contracts are owned by `AIKernel.Abstractions` while preserving the public `AIKernel.Vfs` namespace. The `AIKernel.Vfs` package remains a type-forwarding compatibility facade.
+These contracts are owned by `AIKernel.Abstractions` while preserving the public `AIKernel.Vfs` namespace. The separate `AIKernel.Vfs` compatibility package was removed in v0.0.4.
 
 ## Capability Interfaces
 | Interface | Responsibility |
@@ -57,4 +57,4 @@ Unsupported capabilities must not be represented by methods that partially execu
 # Changelog
 - v0.0.2 (2026-05-09): Initial capability-based Vfs contract definition
 - v0.0.3 (2026-06-02): Added Abstractions ownership and type-forwarding compatibility note
-- v0.0.4 (2026-06-04): Confirmed Vfs capability contracts remain stable for DSL / History ROM stores
+- v0.0.4 (2026-06-04): Removed the separate AIKernel.Vfs compatibility package note while preserving the public namespace

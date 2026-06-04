@@ -66,7 +66,7 @@ Generally considered non-breaking:
 
 Note:
 - Adding interfaces can affect implementers; always document compatibility impact.
-- Compatibility facades, such as `AIKernel.Vfs` in v0.0.3, must clearly state the new owning package and the unsupported dependency direction.
+- Compatibility facades must clearly state the new owning package and the unsupported dependency direction. The temporary `AIKernel.Vfs` facade from v0.0.3 was removed in v0.0.4; consumers now reference `AIKernel.Abstractions` directly.
 - Breaking interface renames, such as the v0.0.4 `IKernelContextExecutor` / `IChatTurnVerificationResult` / `IChatTurnSemanticHasher` cleanup, must be listed in the migration guide before package publication.
 
 ---

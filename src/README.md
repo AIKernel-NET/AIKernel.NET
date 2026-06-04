@@ -67,26 +67,19 @@ The `src` tree contains the canonical specification projects that define interfa
 - Main namespace: `AIKernel.Enums`
 - Project references: none
 
-### AIKernel.Vfs
-- Purpose: Compatibility facade for provider-agnostic Virtual File System contracts.
-- Main namespace: `AIKernel.Vfs`
-- Project references: `AIKernel.Abstractions`
-- Notes: Vfs contract definitions are owned by `AIKernel.Abstractions` as of v0.0.3. This project preserves package compatibility through type forwarding. v0.0.4 adds DSL, DSL ROM, History ROM, and Kernel clock contract surfaces for Core and external capability modules.
-
----
-
 ## Dependency Rules (Normative)
 
 - `AIKernel.Abstractions` -> `AIKernel.Dtos`, `AIKernel.Enums`
 - `AIKernel.Contracts` -> `AIKernel.Dtos`, `AIKernel.Enums`
 - `AIKernel.Dtos` -> `AIKernel.Enums`
 - `AIKernel.Enums` -> (none)
-- `AIKernel.Vfs` -> `AIKernel.Abstractions`
 
 Prohibited examples:
 - `Abstractions` -> `Contracts`
 - `Contracts` -> `Abstractions`
-- `Abstractions` -> `Vfs`
+- `Abstractions` -> separate Vfs package/project
+
+`AIKernel.Vfs` is a public namespace inside `AIKernel.Abstractions`; the separate `AIKernel.Vfs` compatibility project was removed in v0.0.4.
 
 ---
 

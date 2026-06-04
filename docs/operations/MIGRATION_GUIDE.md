@@ -405,6 +405,8 @@ Read-only stores and schema-only validators should implement only the capability
 ## 13. Migrating from v0.0.2 to v0.0.3: Dependency Layer Correction
 v0.0.3 corrects the package dependency graph around Vfs contracts.
 
+> v0.0.4 supersedes this compatibility facade. If you are upgrading directly to v0.0.4 or later, follow section 14.6 and remove the separate `AIKernel.Vfs` package/project.
+
 The main change is that Vfs interface contracts are now owned by `AIKernel.Abstractions`. The `AIKernel.Vfs` package remains as a compatibility facade through type forwarding, but it is no longer the owner of the contract definitions.
 
 ### 13.1 Target Layering
@@ -558,12 +560,22 @@ Use a consistent package set:
 <PackageReference Include="AIKernel.Abstractions" Version="0.0.4" />
 <PackageReference Include="AIKernel.Dtos" Version="0.0.4" />
 <PackageReference Include="AIKernel.Enums" Version="0.0.4" />
-<PackageReference Include="AIKernel.Vfs" Version="0.0.4" />
 ```
 
 Do not mix `AIKernel.Abstractions` `0.0.4` with `AIKernel.Dtos` `0.0.3`; the new DSL, History ROM, and time contracts require the v0.0.4 DTO surface.
 
-### 14.6 Verification Commands
+### 14.6 AIKernel.Vfs Package Removal
+v0.0.4 removes the separate `AIKernel.Vfs` compatibility package/project.
+Vfs contracts remain available from `AIKernel.Abstractions`, and their public namespace remains `AIKernel.Vfs`.
+
+Migration steps:
+
+1. Remove `PackageReference Include="AIKernel.Vfs"` from application, provider, and test projects.
+2. Add or keep `PackageReference Include="AIKernel.Abstractions" Version="0.0.4"` where Vfs contracts are used.
+3. Keep source imports such as `using AIKernel.Vfs;`; the namespace is still correct.
+4. Remove project references to `AIKernel.Vfs/AIKernel.Vfs.csproj` in local source builds.
+
+### 14.7 Verification Commands
 Run:
 
 ```powershell
@@ -579,7 +591,6 @@ AIKernel.Enums -> (none)
 AIKernel.Dtos -> AIKernel.Enums
 AIKernel.Contracts -> AIKernel.Enums, AIKernel.Dtos
 AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
-AIKernel.Vfs -> AIKernel.Abstractions
 CYCLE CHECK: OK
 ```
 ---
@@ -589,4 +600,4 @@ CYCLE CHECK: OK
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.2 (2026-05-09): Added Issue #4 Vfs capability contract migration steps, Issue #7 Vfs naming normalization, provider/security capability contract guidance, Issue #8 contract purity migration, Issue #9 provider capability migration, Issue #10 security/policy separation migration, and Issue #11 sandbox/validator isolation migration
 - v0.0.3 (2026-06-02): Added dependency-layer migration for Vfs contract ownership, `AIKernel.Vfs` type-forwarding compatibility, package-reference guidance, and cycle-verification steps
-- v0.0.4 (2026-06-04): Added DSL pipeline, DSL ROM, History ROM, Kernel clock contract extraction, ROM store contracts, and ambiguous-interface rename guidance for AIKernel.Core adapter migration
+- v0.0.4 (2026-06-04): Added DSL pipeline, DSL ROM, History ROM, Kernel clock contract extraction, ROM store contracts, ambiguous-interface rename guidance, and AIKernel.Vfs package removal steps for AIKernel.Core adapter migration

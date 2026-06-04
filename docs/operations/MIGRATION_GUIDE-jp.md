@@ -405,6 +405,8 @@ Read-only store や schema-only validator は、実際にサポートする capa
 ## 13. v0.0.2 から v0.0.3 への移行: 依存レイヤ修正
 v0.0.3 では、Vfs contract 周辺の package 依存グラフを修正します。
 
+> v0.0.4 では、この互換 facade は置き換え済みです。v0.0.4 以降へ直接移行する場合は、14.6 に従い、個別の `AIKernel.Vfs` package/project を削除してください。
+
 主な変更は、Vfs interface contract の所有元が `AIKernel.Abstractions` になったことです。`AIKernel.Vfs` package は type forwarding による互換 facade として残りますが、contract 定義そのものの所有元ではなくなります。
 
 ### 13.1 目標レイヤ構造
@@ -558,12 +560,22 @@ package set は必ず揃えてください。
 <PackageReference Include="AIKernel.Abstractions" Version="0.0.4" />
 <PackageReference Include="AIKernel.Dtos" Version="0.0.4" />
 <PackageReference Include="AIKernel.Enums" Version="0.0.4" />
-<PackageReference Include="AIKernel.Vfs" Version="0.0.4" />
 ```
 
 `AIKernel.Abstractions` `0.0.4` と `AIKernel.Dtos` `0.0.3` を混在させないでください。DSL、History ROM、time contract は v0.0.4 の DTO surface を前提にします。
 
-### 14.6 検証コマンド
+### 14.6 AIKernel.Vfs package の削除
+v0.0.4 では、個別の `AIKernel.Vfs` 互換 package/project を削除します。
+Vfs contract は引き続き `AIKernel.Abstractions` から利用でき、公開 namespace は `AIKernel.Vfs` のままです。
+
+移行手順:
+
+1. application、provider、test project から `PackageReference Include="AIKernel.Vfs"` を削除します。
+2. Vfs contract を利用する project では `PackageReference Include="AIKernel.Abstractions" Version="0.0.4"` を追加または維持します。
+3. `using AIKernel.Vfs;` は維持して構いません。namespace は引き続き正しいです。
+4. local source build では `AIKernel.Vfs/AIKernel.Vfs.csproj` への project reference を削除します。
+
+### 14.7 検証コマンド
 次を実行します。
 
 ```powershell
@@ -579,7 +591,6 @@ AIKernel.Enums -> (none)
 AIKernel.Dtos -> AIKernel.Enums
 AIKernel.Contracts -> AIKernel.Enums, AIKernel.Dtos
 AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
-AIKernel.Vfs -> AIKernel.Abstractions
 CYCLE CHECK: OK
 ```
 ---
@@ -589,4 +600,4 @@ CYCLE CHECK: OK
 - v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新
 - v0.0.2 (2026-05-09): Issue #4 の Vfs capability contract 移行手順、Issue #7 の Vfs 命名規約統一、provider/security capability contract 指針、Issue #8 の contract purity 移行、Issue #9 の provider capability 移行、Issue #10 の security/policy separation 移行、Issue #11 の sandbox/validator isolation 移行を追加
 - v0.0.3 (2026-06-02): Vfs contract 所有元の Abstractions への移動、`AIKernel.Vfs` type-forwarding 互換、package reference 指針、循環依存検証手順を追加
-- v0.0.4 (2026-06-04): AIKernel.Core adapter 移行に向け、DSL pipeline、DSL ROM、History ROM、Kernel clock contract 抽出、ROM store contract、曖昧な interface 改名ガイドを追加
+- v0.0.4 (2026-06-04): AIKernel.Core adapter 移行に向け、DSL pipeline、DSL ROM、History ROM、Kernel clock contract 抽出、ROM store contract、曖昧な interface 改名ガイド、AIKernel.Vfs package 削除手順を追加
