@@ -39,7 +39,7 @@ The `src` tree contains the canonical specification projects that define interfa
 - Project references: `AIKernel.Dtos`, `AIKernel.Enums`
 
 ### AIKernel.Dtos
-- Purpose: POCO/record data carriers only (no business logic).
+- Purpose: POCO/record data carriers and wire metadata key constants only (no business logic).
 - Main namespaces:
   - `AIKernel.Dtos.Context`
   - `AIKernel.Dtos.Core`
@@ -61,6 +61,9 @@ The `src` tree contains the canonical specification projects that define interfa
   - `AIKernel.Dtos.Time`
   - `AIKernel.Dtos.Vfs`
 - Project references: `AIKernel.Enums`
+
+DTO packages may expose stable metadata key constants for wire formats such as DSL ROM and History ROM.
+Those constants are part of the serialized contract surface; parsing, validation, and runtime behavior still belong to Core/Common or host implementations.
 
 ### AIKernel.Enums
 - Purpose: Shared enum primitives used across the specification layer.
