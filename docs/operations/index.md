@@ -1,7 +1,7 @@
 ---
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -28,7 +28,7 @@ incident response, and SLO/SLA management.
 - Classification of changes (Breaking / Non-breaking)  
 - Compatibility and dependency checks  
 - Upgrade checklists  
-- v0.0.2 -> v0.0.3 dependency-layer migration for Vfs contract ownership
+- v0.0.3 -> v0.0.4 contract extraction for DSL, DSL ROM, History ROM, and Kernel clock
 
 Use this guide when upgrading package references or validating contract-layer dependencies.
 
@@ -104,7 +104,7 @@ Operations provide the foundation for running AIKernel as a long-term, reliable 
 Operations documentation is being expanded as contract and packaging boundaries stabilize.
 
 Currently:
-- The Migration Guide contains concrete steps through v0.0.3  
+- The Migration Guide contains concrete steps through v0.0.4  
 - All other documents remain Planned  
 
 Future versions will expand this directory.
@@ -123,3 +123,4 @@ Future versions will expand this directory.
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.3 (2026-06-02): Marked Migration Guide as active and added v0.0.3 dependency-layer migration coverage
+- v0.0.4 (2026-06-04): Added DSL / History ROM contract extraction migration coverage

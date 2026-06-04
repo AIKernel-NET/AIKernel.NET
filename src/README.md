@@ -12,6 +12,7 @@ The `src` tree contains the canonical specification projects that define interfa
 - Main namespaces:
   - `AIKernel.Abstractions.Context`
   - `AIKernel.Abstractions.Conversation`
+  - `AIKernel.Abstractions.Dsl`
   - `AIKernel.Abstractions.Events`
   - `AIKernel.Abstractions.Execution`
   - `AIKernel.Abstractions.Governance`
@@ -27,6 +28,7 @@ The `src` tree contains the canonical specification projects that define interfa
   - `AIKernel.Abstractions.Scheduling`
   - `AIKernel.Abstractions.Security`
   - `AIKernel.Abstractions.Tasks`
+  - `AIKernel.Abstractions.Time`
   - `AIKernel.Abstractions.Tooling`
   - `AIKernel.Vfs` (Vfs contracts, owned by the Abstractions assembly)
 - Project references: `AIKernel.Dtos`, `AIKernel.Enums`
@@ -41,11 +43,13 @@ The `src` tree contains the canonical specification projects that define interfa
 - Main namespaces:
   - `AIKernel.Dtos.Context`
   - `AIKernel.Dtos.Core`
+  - `AIKernel.Dtos.Dsl`
   - `AIKernel.Dtos.Events`
   - `AIKernel.Dtos.Execution`
   - `AIKernel.Dtos.Governance`
   - `AIKernel.Dtos.Kernel`
   - `AIKernel.Dtos.KernelContext`
+  - `AIKernel.Dtos.History`
   - `AIKernel.Dtos.Material`
   - `AIKernel.Dtos.Prompt`
   - `AIKernel.Dtos.Rom`
@@ -54,6 +58,7 @@ The `src` tree contains the canonical specification projects that define interfa
   - `AIKernel.Dtos.Sandbox`
   - `AIKernel.Dtos.Security`
   - `AIKernel.Dtos.Tokenization`
+  - `AIKernel.Dtos.Time`
   - `AIKernel.Dtos.Vfs`
 - Project references: `AIKernel.Enums`
 

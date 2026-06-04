@@ -1,8 +1,8 @@
 ---
 title: "Migration Guide"
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -11,7 +11,7 @@ maintainer: "Takuya (AIKernel Project Maintainer)"
 
 # Migration Guide
 
-This guide defines migration steps from the initial concept baseline (`v0.0.0`) to the canonical architecture baseline (`v0.0.1`), to the naming/capability contract changes introduced in `v0.0.2`, and to the dependency-layer correction introduced in `v0.0.3`.
+This guide defines migration steps from the initial concept baseline (`v0.0.0`) to the canonical architecture baseline (`v0.0.1`, `v0.0.2`, `v0.0.3`), and to the DSL / History ROM contract extraction introduced in `v0.0.4`.
 
 ## 1. Fundamental Changes
 In `v0.0.1`, the architecture was rebuilt around `Determinism` and `Non-LLM Governance`.
@@ -496,6 +496,78 @@ CYCLE CHECK: OK (no ProjectReference cycles)
 ```
 
 Also verify that `AIKernel.Abstractions.csproj` contains no reference to `AIKernel.Vfs`.
+
+## 14. Migrating from v0.0.3 to v0.0.4: DSL / History ROM Contract Extraction
+v0.0.4 promotes public contracts that had started inside `AIKernel.Core` into the `AIKernel.NET` contract packages. This prepares external capability modules, server hosts, WASM clients, and future Core packages to share the same interface surface.
+
+This release intentionally keeps `AIKernel.Abstractions` independent from `AIKernel.Core` and `AIKernel.Common`. Core implementations that currently expose `Result<T>` or `ResultStep<TState,TValue>` should adapt those internal results to the DTO contract surface described below.
+
+### 14.1 New DTO Areas
+| Area | New DTOs |
+|---|---|
+| `AIKernel.Dtos.Time` | `KernelTimestamp` |
+| `AIKernel.Dtos.Dsl` | `DslDocument`, `PipelineNode`, `PipelineRootNode`, `StepNode`, `CallCapabilityNode`, `LoopNode`, `LoopUntilNode`, `SuspendNode`, `DslPipelineValue`, `DslPipelineState`, `DslPipelineExecutionContext`, `DslPipelineExecutionResult`, `DslRomMetadata`, `DslRomSnapshot` |
+| `AIKernel.Dtos.History` | `ChatHistoryRomRecord`, `ChatHistoryRomOptions`, `HistoryRomMetadata`, `HistoryRomSnapshot` |
+
+### 14.2 New Abstraction Areas
+| Area | New contracts |
+|---|---|
+| `AIKernel.Abstractions.Time` | `IKernelClock` |
+| `AIKernel.Abstractions.Dsl` | `IKernelPipeline`, `IDslPipelineCompiler`, `IDslCapabilityRegistry`, `IDslRomRegistry` |
+| `AIKernel.Abstractions.History` | `IChatHistoryRomExporter`, `IHistoryRomRegistry` |
+
+### 14.3 Breaking Migration Notes for Core Adapters
+Core-side implementations should no longer require downstream consumers to reference Core-only DSL, History ROM, or clock contracts.
+
+Recommended replacements:
+
+| Core-local concept | v0.0.4 public contract |
+|---|---|
+| `AIKernel.Core.Time.IKernelClock` | `AIKernel.Abstractions.Time.IKernelClock` |
+| `AIKernel.Core.Time.KernelTimestamp` | `AIKernel.Dtos.Time.KernelTimestamp` |
+| Core DSL IR records | `AIKernel.Dtos.Dsl` records |
+| Core DSL pipeline interface | `AIKernel.Abstractions.Dsl.IKernelPipeline` |
+| Core DSL ROM registry interface | `AIKernel.Abstractions.Dsl.IDslRomRegistry` |
+| Core History ROM registry interface | `AIKernel.Abstractions.History.IHistoryRomRegistry` |
+
+When a Core implementation still uses `AIKernel.Common.Results.Result<T>` internally, unwrap it at the package boundary into either:
+
+- a successful DTO return value, or
+- an implementation-defined fail-closed exception/result adapter appropriate to the host.
+
+The `AIKernel.NET` contract packages deliberately do not expose `Result<T>` until `AIKernel.Common` is published as a stable package.
+
+### 14.4 NuGet Package Updates
+Use a consistent package set:
+
+```xml
+<PackageReference Include="AIKernel.Abstractions" Version="0.0.4" />
+<PackageReference Include="AIKernel.Dtos" Version="0.0.4" />
+<PackageReference Include="AIKernel.Enums" Version="0.0.4" />
+<PackageReference Include="AIKernel.Vfs" Version="0.0.4" />
+```
+
+Do not mix `AIKernel.Abstractions` `0.0.4` with `AIKernel.Dtos` `0.0.3`; the new DSL, History ROM, and time contracts require the v0.0.4 DTO surface.
+
+### 14.5 Verification Commands
+Run:
+
+```powershell
+dotnet build src\AIKernel.NET.slnx
+dotnet test src\tests\AIKernel.Abstractions.Tests\AIKernel.Abstractions.Tests.csproj --no-build
+dotnet pack src\AIKernel.NET.slnx --no-build
+```
+
+Check the project-reference graph remains:
+
+```text
+AIKernel.Enums -> (none)
+AIKernel.Dtos -> AIKernel.Enums
+AIKernel.Contracts -> AIKernel.Enums, AIKernel.Dtos
+AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
+AIKernel.Vfs -> AIKernel.Abstractions
+CYCLE CHECK: OK
+```
 ---
 
 # Changelog
@@ -503,3 +575,4 @@ Also verify that `AIKernel.Abstractions.csproj` contains no reference to `AIKern
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.2 (2026-05-09): Added Issue #4 Vfs capability contract migration steps, Issue #7 Vfs naming normalization, provider/security capability contract guidance, Issue #8 contract purity migration, Issue #9 provider capability migration, Issue #10 security/policy separation migration, and Issue #11 sandbox/validator isolation migration
 - v0.0.3 (2026-06-02): Added dependency-layer migration for Vfs contract ownership, `AIKernel.Vfs` type-forwarding compatibility, package-reference guidance, and cycle-verification steps
+- v0.0.4 (2026-06-04): Added DSL pipeline, DSL ROM, History ROM, and Kernel clock contract extraction guidance for AIKernel.Core adapter migration

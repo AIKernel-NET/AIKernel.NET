@@ -1,9 +1,9 @@
 <Project>
   <PropertyGroup>
-    <Version>0.0.3</Version>
-    <AssemblyVersion>0.0.3.0</AssemblyVersion>
-    <FileVersion>0.0.3.0</FileVersion>
-    <InformationalVersion>0.0.3.0</InformationalVersion>
+    <Version>0.0.4</Version>
+    <AssemblyVersion>0.0.4.0</AssemblyVersion>
+    <FileVersion>0.0.4.0</FileVersion>
+    <InformationalVersion>0.0.4.0</InformationalVersion>
 	<Authors>Takuya Sogawa</Authors>
 	<Company>AIKernel-NET</Company>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -13,23 +13,23 @@
     <PackageTags>aikernel;aikernel-core;ai-os;architecture;category-separation;context-isolation;contract-driven;governance;preprocessing;semantic-context-os;deterministic-replay;fail-closed;rom;canonicalization;pdp;signed-prompt;interface-contracts;dto;enum</PackageTags>
 	  <PackageReleaseNotes>
 		  <![CDATA[
-AIKernel.NET v0.0.3 — Context/Execution Consolidation & VFS Contract Finalization
+AIKernel.NET v0.0.4 — DSL / History ROM Contract Extraction
 
-• Finalized Context/Execution boundaries and canonicalization rules.
-• Introduced IKernelClock and removed TimeProvider.System dependency.
-• Promoted VFS contract to first-class boundary with session capabilities.
-• Updated Query Processing abstractions (Augmentor/Decomposer/Router).
-• Refined Provider capability model and embedding provider split.
-• No breaking changes; ABI surface stabilized for v0.1.0.
+• Promoted deterministic DSL pipeline contracts into AIKernel.Abstractions.
+• Added DTOs for DSL IR, DSL pipeline execution, DSL ROM metadata, and DSL ROM snapshots.
+• Added History ROM DTOs and registry/exporter contracts for reusable chat-history ROMs.
+• Added Kernel timestamp and clock contracts without binding Abstractions to Core/Common.
+• Preserved the package DAG: Abstractions depends only on DTOs/Enums.
+• Breaking change for Core adapters: Core Result-based DSL/ROM interfaces should adapt to the v0.0.4 DTO contract surface.
 
-AIKernel.NET v0.0.3 — Context/Execution/VFS 境界の確定リリース
+AIKernel.NET v0.0.4 — DSL / History ROM 契約抽出
 
-• Context/Execution の境界と正準化ルールを確定。
-• IKernelClock を導入し TimeProvider.System 依存を排除。
-• VFS 契約を正式境界として昇格（Readable/Writable/Deletable）。
-• Query Processing 抽象（Augmentor/Decomposer/Router）を更新。
-• Provider Capability と Embedding Provider を純化。
-• 破壊的変更なし。v0.1.0 に向け ABI を安定化。
+• 決定論的 DSL pipeline 契約を AIKernel.Abstractions に昇格。
+• DSL IR、DSL pipeline execution、DSL ROM metadata/snapshot DTO を追加。
+• 再利用可能な chat-history ROM のための History ROM DTO と registry/exporter contract を追加。
+• Abstractions を Core/Common に結合せず Kernel timestamp / clock contract を追加。
+• package DAG は Abstractions -> DTOs/Enums のまま維持。
+• Core adapter 向け破壊的変更: Core の Result ベース DSL/ROM interface は v0.0.4 DTO contract surface へ適応してください。
 
 ]]>
 	  </PackageReleaseNotes>

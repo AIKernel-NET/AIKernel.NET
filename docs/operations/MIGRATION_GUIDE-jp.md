@@ -1,8 +1,8 @@
 ---
 title: "移行ガイド（Migration Guide）"
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -11,7 +11,7 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 
 # 移行ガイド（Migration Guide）
 
-本ガイドは、初期コンセプト版（v0.0.0）から、正典化されたアーキテクチャ（v0.0.1）、v0.0.2 の命名規約・Vfs capability contract、および v0.0.3 の依存レイヤ修正へ移行するための手順を定義します。
+本ガイドは、初期コンセプト版（v0.0.0）から、正典化されたアーキテクチャ（v0.0.1、v0.0.2、v0.0.3）、および v0.0.4 の DSL / History ROM contract 抽出へ移行するための手順を定義します。
 
 ## 1. 根本的な変更点
 v0.0.1 では、`決定論（Determinism）` と `非推論型ガバナンス` を軸に、全体設計が再編されました。
@@ -496,6 +496,78 @@ CYCLE CHECK: OK (no ProjectReference cycles)
 ```
 
 加えて、`AIKernel.Abstractions.csproj` に `AIKernel.Vfs` への参照が残っていないことを確認します。
+
+## 14. v0.0.3 から v0.0.4 への移行: DSL / History ROM Contract 抽出
+v0.0.4 では、`AIKernel.Core` 内で先行して増えていた公開境界候補を `AIKernel.NET` の contract package に昇格します。これにより、外部 Capability module、Server host、WASM client、今後の Core package が同じ interface surface を共有できます。
+
+このリリースでは、`AIKernel.Abstractions` が `AIKernel.Core` や `AIKernel.Common` に依存しない構造を維持します。Core 実装で `Result<T>` や `ResultStep<TState,TValue>` を使っている場合は、以下の DTO contract surface へ adapter 変換してください。
+
+### 14.1 新しい DTO 領域
+| 領域 | 追加 DTO |
+|---|---|
+| `AIKernel.Dtos.Time` | `KernelTimestamp` |
+| `AIKernel.Dtos.Dsl` | `DslDocument`, `PipelineNode`, `PipelineRootNode`, `StepNode`, `CallCapabilityNode`, `LoopNode`, `LoopUntilNode`, `SuspendNode`, `DslPipelineValue`, `DslPipelineState`, `DslPipelineExecutionContext`, `DslPipelineExecutionResult`, `DslRomMetadata`, `DslRomSnapshot` |
+| `AIKernel.Dtos.History` | `ChatHistoryRomRecord`, `ChatHistoryRomOptions`, `HistoryRomMetadata`, `HistoryRomSnapshot` |
+
+### 14.2 新しい Abstraction 領域
+| 領域 | 追加 contract |
+|---|---|
+| `AIKernel.Abstractions.Time` | `IKernelClock` |
+| `AIKernel.Abstractions.Dsl` | `IKernelPipeline`, `IDslPipelineCompiler`, `IDslCapabilityRegistry`, `IDslRomRegistry` |
+| `AIKernel.Abstractions.History` | `IChatHistoryRomExporter`, `IHistoryRomRegistry` |
+
+### 14.3 Core Adapter 向け破壊的移行ポイント
+Core 側実装は、下流 consumer に Core 専用の DSL、History ROM、clock contract 参照を要求しない形へ移行してください。
+
+推奨置換は次の通りです。
+
+| Core-local concept | v0.0.4 public contract |
+|---|---|
+| `AIKernel.Core.Time.IKernelClock` | `AIKernel.Abstractions.Time.IKernelClock` |
+| `AIKernel.Core.Time.KernelTimestamp` | `AIKernel.Dtos.Time.KernelTimestamp` |
+| Core DSL IR records | `AIKernel.Dtos.Dsl` records |
+| Core DSL pipeline interface | `AIKernel.Abstractions.Dsl.IKernelPipeline` |
+| Core DSL ROM registry interface | `AIKernel.Abstractions.Dsl.IDslRomRegistry` |
+| Core History ROM registry interface | `AIKernel.Abstractions.History.IHistoryRomRegistry` |
+
+Core 実装が内部で `AIKernel.Common.Results.Result<T>` を使い続ける場合、package 境界では次のいずれかへ変換してください。
+
+- 成功時は DTO 戻り値
+- 失敗時は host が採用する fail-closed exception / result adapter
+
+`AIKernel.Common` が安定 package として公開されるまで、`AIKernel.NET` の contract package は `Result<T>` を公開しません。
+
+### 14.4 NuGet Package 更新
+package set は必ず揃えてください。
+
+```xml
+<PackageReference Include="AIKernel.Abstractions" Version="0.0.4" />
+<PackageReference Include="AIKernel.Dtos" Version="0.0.4" />
+<PackageReference Include="AIKernel.Enums" Version="0.0.4" />
+<PackageReference Include="AIKernel.Vfs" Version="0.0.4" />
+```
+
+`AIKernel.Abstractions` `0.0.4` と `AIKernel.Dtos` `0.0.3` を混在させないでください。DSL、History ROM、time contract は v0.0.4 の DTO surface を前提にします。
+
+### 14.5 検証コマンド
+次を実行します。
+
+```powershell
+dotnet build src\AIKernel.NET.slnx
+dotnet test src\tests\AIKernel.Abstractions.Tests\AIKernel.Abstractions.Tests.csproj --no-build
+dotnet pack src\AIKernel.NET.slnx --no-build
+```
+
+ProjectReference graph が次のままであることを確認します。
+
+```text
+AIKernel.Enums -> (none)
+AIKernel.Dtos -> AIKernel.Enums
+AIKernel.Contracts -> AIKernel.Enums, AIKernel.Dtos
+AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
+AIKernel.Vfs -> AIKernel.Abstractions
+CYCLE CHECK: OK
+```
 ---
 
 # 変更履歴
@@ -503,3 +575,4 @@ CYCLE CHECK: OK (no ProjectReference cycles)
 - v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新
 - v0.0.2 (2026-05-09): Issue #4 の Vfs capability contract 移行手順、Issue #7 の Vfs 命名規約統一、provider/security capability contract 指針、Issue #8 の contract purity 移行、Issue #9 の provider capability 移行、Issue #10 の security/policy separation 移行、Issue #11 の sandbox/validator isolation 移行を追加
 - v0.0.3 (2026-06-02): Vfs contract 所有元の Abstractions への移動、`AIKernel.Vfs` type-forwarding 互換、package reference 指針、循環依存検証手順を追加
+- v0.0.4 (2026-06-04): AIKernel.Core adapter 移行に向け、DSL pipeline、DSL ROM、History ROM、Kernel clock contract 抽出ガイドを追加
