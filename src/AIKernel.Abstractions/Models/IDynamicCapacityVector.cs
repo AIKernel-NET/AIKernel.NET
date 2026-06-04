@@ -33,7 +33,6 @@ public interface IDynamicCapacityVector
     /// <param name="constraints">実行制約条件</param>
     /// <param name="axisId">評価軸ID</param>
     /// <returns>軸の値（0.0 ~ 1.0）</returns>
-    /// <exception cref="ArgumentException">AxisId が登録されていない場合</exception>
     float GetAxisValue(IExecutionConstraints constraints, string axisId);
 
     /// <summary>

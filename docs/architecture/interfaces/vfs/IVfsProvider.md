@@ -2,9 +2,9 @@
 id: ivfsprovider
 title: "IVfsProvider"
 created: 2026-05-03
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IVfsProvider](architecture/interfaces/vfs/IVfsProvider-jp.md)
+Japanese version: [IVfsProvider](../vfs/IVfsProvider-jp.md)
 
 # IVfsProvider
 
@@ -39,7 +39,7 @@ See ../../use-cases/AIKernel_UseCaseCatalog.md for references where IVfsProvider
 
 ## Notes
 - This document is an interface-level draft.
-- As of v0.0.3, `IVfsProvider` is owned by the `AIKernel.Abstractions` assembly while keeping the public `AIKernel.Vfs` namespace. The `AIKernel.Vfs` package preserves compatibility through type forwarding.
+- `IVfsProvider` is owned by the `AIKernel.Abstractions` assembly while keeping the public `AIKernel.Vfs` namespace. The separate `AIKernel.Vfs` compatibility package was removed in v0.0.4.
 - Implementations must preserve fail-closed and deterministic replay principles.
 - Concrete Vfs data carriers (for example `VfsProviderHealth`) are defined in `AIKernel.Dtos.Vfs`.
 - Missing capabilities must be detected before execution by checking the required capability interface. Providers should not expose unsupported write/delete/query members that fail late.
@@ -50,3 +50,4 @@ See ../../use-cases/AIKernel_UseCaseCatalog.md for references where IVfsProvider
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.2 (2026-05-09): Clarified session capability boundary
 - v0.0.3 (2026-06-02): Added Abstractions ownership and type-forwarding compatibility note
+- v0.0.4 (2026-06-04): Removed the separate AIKernel.Vfs compatibility package note while preserving namespace ownership

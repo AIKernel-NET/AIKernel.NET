@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # security Interfaces
 
@@ -23,10 +23,10 @@ Japanese version: [Specification Index](specs/index-jp.md)
 Execution authorization contracts via PDP/Guard.
 
 ## Documents
-- [IGuard](architecture/interfaces/security/IGuard.md)
-- [IPdp](architecture/interfaces/security/IPdp.md)
-- [IPolicy](architecture/interfaces/security/IPolicy.md)
-- [IPrincipal](architecture/interfaces/security/IPrincipal.md)
+- [IGuard](../security/IGuard.md)
+- [IPdp](../security/IPdp.md)
+- [IPolicy](../security/IPolicy.md)
+- [IPrincipal](../security/IPrincipal.md)
 
 ---
 

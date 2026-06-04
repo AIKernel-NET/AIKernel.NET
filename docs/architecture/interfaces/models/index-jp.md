@@ -15,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版: [Specification Index](specs/index.md)
+英語版: [Index](index.md)
 
 # models Interfaces
 
@@ -23,13 +23,13 @@ tags:
 能力軸・動的容量・制約ベクトル契約。
 
 ## ドキュメント一覧
-- [ICapabilityProfile](architecture/interfaces/models/ICapabilityProfile-jp.md)
-- [ICapacityAxis](architecture/interfaces/models/ICapacityAxis-jp.md)
-- [IDynamicCapacityAxis](architecture/interfaces/models/IDynamicCapacityAxis-jp.md)
-- [IDynamicCapacityProvider](architecture/interfaces/models/IDynamicCapacityProvider-jp.md)
-- [IDynamicCapacityVector](architecture/interfaces/models/IDynamicCapacityVector-jp.md)
-- [IExecutionConstraints](architecture/interfaces/models/IExecutionConstraints-jp.md)
-- [IVectorMatcher](architecture/interfaces/models/IVectorMatcher-jp.md)
+- [ICapabilityProfile](../models/ICapabilityProfile-jp.md)
+- [ICapacityAxis](../models/ICapacityAxis-jp.md)
+- [IDynamicCapacityAxis](../models/IDynamicCapacityAxis-jp.md)
+- [IDynamicCapacityProvider](../models/IDynamicCapacityProvider-jp.md)
+- [IDynamicCapacityVector](../models/IDynamicCapacityVector-jp.md)
+- [IExecutionConstraints](../models/IExecutionConstraints-jp.md)
+- [IVectorMatcher](../models/IVectorMatcher-jp.md)
 
 ---
 

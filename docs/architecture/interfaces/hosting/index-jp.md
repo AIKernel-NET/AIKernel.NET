@@ -15,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版: [Specification Index](specs/index.md)
+英語版: [Index](index.md)
 
 # hosting Interfaces
 
@@ -36,11 +36,11 @@ Hosting はカーネルの起動・モジュール登録・ライフサイクル
 - Called by: `AIKernel.Core`（実装層）, `Host Applications`
 
 ## ドキュメント一覧
-- [IKernelContext](architecture/interfaces/hosting/IKernelContext-jp.md)
-- [IKernelHost](architecture/interfaces/hosting/IKernelHost-jp.md)
-- [IKernelModule](architecture/interfaces/hosting/IKernelModule-jp.md)
-- [IProviderRegistrar](architecture/interfaces/hosting/IProviderRegistrar-jp.md)
-- [IServiceRegistrar](architecture/interfaces/hosting/IServiceRegistrar-jp.md)
+- [IKernelContext](../hosting/IKernelContext-jp.md)
+- [IKernelHost](../hosting/IKernelHost-jp.md)
+- [IKernelModule](../hosting/IKernelModule-jp.md)
+- [IProviderRegistrar](../hosting/IProviderRegistrar-jp.md)
+- [IServiceRegistrar](../hosting/IServiceRegistrar-jp.md)
 ---
 
 # 変更履歴

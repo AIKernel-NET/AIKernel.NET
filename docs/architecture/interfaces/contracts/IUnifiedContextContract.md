@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [IUnifiedContextContract (統合契約仕様)](architecture/interfaces/contracts/IUnifiedContextContract-jp.md)
+Japanese version: [IUnifiedContextContract (統合契約仕様)](../contracts/IUnifiedContextContract-jp.md)
 
 # IUnifiedContextContract (Unified Contract Specification)
 
@@ -23,15 +23,14 @@ Japanese version: [IUnifiedContextContract (統合契約仕様)](architecture/in
 `IUnifiedContextContract` is the top-level governance contract that composes Orchestration/Expression/Material contracts and enforces three-layer buffer isolation end-to-end.
 
 - Role:
-  Provide unified access, holistic validation, layer-separation checks, pollution detection, and global SNR evaluation.
+  Provide unified access to the orchestration, expression, and material contract views.
 - Non-role:
-  Detailed semantics of each sub-contract and concrete payload management are delegated to specialized contracts.
+  Validation, layer-separation checks, pollution detection, global SNR evaluation, and concrete payload
+  management are delegated to specialized service interfaces and DTO boundaries.
 
 ## 2. Contract Signature
 ```csharp
-using AIKernel.Dtos;
 using AIKernel.Dtos.Context;
-using AIKernel.Enums;
 
 namespace AIKernel.Contracts;
 
@@ -67,27 +66,6 @@ public interface IUnifiedContextContract
     /// 統合コンテキストのデータを取得します。
     /// </summary>
     UnifiedContextDto GetContext();
-
-    /// <summary>
-    /// 全体の検証を実行します。
-    /// カテゴリ分離、コンテキスト隔離、Attention 汚染検出を行います。
-    /// </summary>
-    ValidationResult ValidateAll();
-
-    /// <summary>
-    /// 3 層分離が正しく保たれていることを確認します。
-    /// </summary>
-    bool ValidateLayerSeparation();
-
-    /// <summary>
-    /// Attention 汚染の可能性を評価します。
-    /// </summary>
-    IReadOnlyList<FailureMode> DetectPollution();
-
-    /// <summary>
-    /// Signal-to-Noise Ratio（SNR）を計算します。
-    /// </summary>
-    double CalculateSignalToNoiseRatio();
 }
 ```
 
@@ -99,15 +77,15 @@ public interface IUnifiedContextContract
 
 ## 4. Governance & Determinism
 - Cross-layer validation:
-  `ValidateAll()` is expected to detect inter-layer contradictions and contamination.
+  `IUnifiedContextContractValidator.ValidateAll()` is expected to detect inter-layer contradictions and contamination.
 - Immutability chain:
   While unified contract is active, subordinate contracts are expected to remain stable.
 - Fail-Closed:
-  Reject transition to reasoning when `ValidateLayerSeparation()` fails or critical pollution is detected.
+  Reject transition to reasoning when `ILayerSeparationValidator.ValidateLayerSeparation()` fails or critical pollution is detected.
 
 ## 5. Metric: SNR (Signal-to-Noise Ratio)
 - Unified measurement:
-  `CalculateSignalToNoiseRatio()` evaluates signal density across the whole context window, not per layer only.
+  `ISignalToNoiseRatioCalculator.CalculateSignalToNoiseRatio()` evaluates signal density across the whole context window, not per layer only.
 - Threshold governance:
   Use low-SNR outcomes for warnings, routing escalation, or execution denial policies.
 

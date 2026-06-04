@@ -1,7 +1,7 @@
 ---
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -34,7 +34,11 @@ Each layer is published as a separate NuGet package.
 | Data Models | `AIKernel.Dtos` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Dtos.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Dtos/) |
 | Contracts | `AIKernel.Contracts` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Contracts.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Contracts/) |
 | Abstractions | `AIKernel.Abstractions` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Abstractions.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Abstractions/) |
-| Virtual File System | `AIKernel.Vfs` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Vfs.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Vfs/) |
+
+As of `v0.0.4`, Vfs interface contracts are published through `AIKernel.Abstractions`.
+The public namespace remains `AIKernel.Vfs`, but the separate `AIKernel.Vfs` compatibility package/project has been removed.
+
+As of `v0.0.4`, deterministic DSL, DSL ROM, History ROM, and Kernel clock contracts are also published through `AIKernel.Abstractions` / `AIKernel.Dtos`.
 
 As of `v0.0.3`, Vfs interface contracts are owned by `AIKernel.Abstractions`.
 The public namespace remains `AIKernel.Vfs`, and the `AIKernel.Vfs` package remains as a compatibility facade through type forwarding.
@@ -179,10 +183,13 @@ The documentation is organized into four foundational categories:
 | `docs/specs` | What: normative contracts and acceptance criteria |
 | `docs/guidelines` | Rules: repository and contribution policies |
 
-For the latest structure and cross-links, use:
+For the latest structure and cross-links, use the category indexes:
 
-- `docs/index.md`
-- `docs/index-jp.md`
+- `docs/architecture/index.md` / `docs/architecture/index-jp.md`
+- `docs/design/index.md` / `docs/design/index-jp.md`
+- `docs/specs/index.md` / `docs/specs/index-jp.md`
+- `docs/guidelines/index.md` / `docs/guidelines/index-jp.md`
+- `docs/operations/index.md` / `docs/operations/index-jp.md`
 
 ---
 

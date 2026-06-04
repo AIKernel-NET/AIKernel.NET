@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [IExpressionContract (契約仕様)](architecture/interfaces/contracts/IExpressionContract-jp.md)
+Japanese version: [IExpressionContract (契約仕様)](../contracts/IExpressionContract-jp.md)
 
 # IExpressionContract (Contract Specification)
 
@@ -26,12 +26,12 @@ Japanese version: [IExpressionContract (契約仕様)](architecture/interfaces/c
   Provide expression-time conventions such as style, examples, templates, and analogies.
 - Non-role:
   It must not generate or alter reasoning logic. Expression metadata must not leak into reasoning inputs.
+  Isolation checks and application gates belong to service interfaces such as
+  `IExpressionIsolationValidator` and `IExpressionApplicationGate`.
 
 ## 2. Contract Signature
 ```csharp
-using AIKernel.Dtos;
 using AIKernel.Dtos.Context;
-using AIKernel.Enums;
 
 namespace AIKernel.Contracts;
 
@@ -68,16 +68,6 @@ public interface IExpressionContract
     /// 比喩・類推を取得します。
     /// </summary>
     IReadOnlyList<string> GetAnalogies();
-
-    /// <summary>
-    /// このコントラクトが推論結果に混入していないことを確認します。
-    /// </summary>
-    ValidationResult ValidateIsolation();
-
-    /// <summary>
-    /// 推論後の適用タイミングを確認します。
-    /// </summary>
-    bool CanApplyAfterInference();
 }
 ```
 
@@ -89,9 +79,9 @@ public interface IExpressionContract
 
 ## 4. Governance & Determinism
 - Isolation enforcement:
-  `ValidateIsolation()` is a mandatory gate to detect expression-data leakage into reasoning context.
+  `IExpressionIsolationValidator.ValidateIsolation()` is the gate for detecting expression-data leakage into reasoning context.
 - Post-inference application:
-  `CanApplyAfterInference()` should only allow application after Structure phase completion.
+  `IExpressionApplicationGate.CanApplyAfterInference()` should only allow application after Structure phase completion.
 - Deterministic rendering policy:
   The same inputs should yield the same expression behavior under this contract.
 

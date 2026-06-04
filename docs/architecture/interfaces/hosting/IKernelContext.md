@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IKernelContext](architecture/interfaces/hosting/IKernelContext-jp.md)
+Japanese version: [IKernelContext](../hosting/IKernelContext-jp.md)
 
 # IKernelContext
 

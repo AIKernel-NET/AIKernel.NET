@@ -10,7 +10,5 @@ public interface INavigableVfsSession
     /// </summary>
     /// <param name="path">ディレクトリパス</param>
     /// <returns>階層移動可能なディレクトリ</returns>
-    /// <exception cref="ArgumentException">path が不正な場合にスローされます。</exception>
-    /// <exception cref="DirectoryNotFoundException">対象ディレクトリが存在しない場合にスローされます。</exception>
     Task<INavigableVfsDirectory> GetNavigableDirectoryAsync(string path);
 }

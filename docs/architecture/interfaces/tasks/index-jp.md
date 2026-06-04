@@ -15,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版: [Specification Index](specs/index.md)
+英語版: [Index](index.md)
 
 # tasks Interfaces
 
@@ -23,12 +23,12 @@ tags:
 タスクとパイプライン実行結果の基本契約。
 
 ## ドキュメント一覧
-- [IPipeline](architecture/interfaces/tasks/IPipeline-jp.md)
-- [IPipelineExecutionResult](architecture/interfaces/tasks/IPipelineExecutionResult-jp.md)
-- [ITask](architecture/interfaces/tasks/ITask-jp.md)
-- [ITaskContext](architecture/interfaces/tasks/ITaskContext-jp.md)
-- [ITaskExecutionResult](architecture/interfaces/tasks/ITaskExecutionResult-jp.md)
-- [ITaskSchema](architecture/interfaces/tasks/ITaskSchema-jp.md)
+- [IPipeline](../tasks/IPipeline-jp.md)
+- [IPipelineExecutionResult](../tasks/IPipelineExecutionResult-jp.md)
+- [ITask](../tasks/ITask-jp.md)
+- [ITaskContext](../tasks/ITaskContext-jp.md)
+- [ITaskExecutionResult](../tasks/ITaskExecutionResult-jp.md)
+- [ITaskSchema](../tasks/ITaskSchema-jp.md)
 
 ---
 

@@ -2,9 +2,9 @@
 id: repo-dependency-rules
 title: "AIKernel.NET Repository Dependency Rules — 依存方向規約"
 created: 2026-04-30
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -42,7 +42,7 @@ tags:
 
 ## 2. レイヤ（層）定義
 
-- Core（syscall）: Abstractions / Contracts / Dtos / Enums / Vfs facade
+- Core（syscall）: Abstractions / Contracts / Dtos / Enums
 - Kernel（実装）: Scheduler / Router / Controller / Pipeline / RagEngine / Rules
 - Providers（ドライバ）: Capability 実装
 - VfsProviders（外部データ）: Git 等のデータソース
@@ -60,7 +60,6 @@ tags:
 - AIKernel.Contracts     : OrchestrationContext / Contract Schema
 - AIKernel.Dtos          : MaterialItem / TransferTrace / Purpose
 - AIKernel.Enums         : RejectCode / PdpDecision
-- AIKernel.Vfs           : type forwarding による Vfs 互換 facade
 
 ---
 
@@ -77,7 +76,6 @@ tags:
 | AIKernel.Dtos | AIKernel.Enums |
 | AIKernel.Contracts | AIKernel.Enums, AIKernel.Dtos |
 | AIKernel.Abstractions | AIKernel.Dtos, AIKernel.Enums |
-| AIKernel.Vfs | AIKernel.Abstractions |
 | Providers / VfsProviders | AIKernel.Abstractions, AIKernel.Core |
 | Core | AIKernel.Abstractions |
 | tests/* | 参照自由（逆流禁止） |
@@ -87,14 +85,15 @@ tags:
 - 循環依存（A → B → A）
 - src が tests を参照すること（逆流）
 - Core が Kernel/Providers/Server/Hosting/Enterprise を参照すること
-- AIKernel.Abstractions が AIKernel.Vfs、AIKernel.Core、Providers を参照すること
+- AIKernel.Abstractions が AIKernel.Core、Providers、または separate Vfs package/project を参照すること
 - Vfs インターフェースに具象データ型を内包すること（具象データは AIKernel.Dtos に定義する）
 
-### 4.3 v0.0.3 Vfs Contract Ownership
+### 4.3 v0.0.4 Vfs Contract Ownership
 
-v0.0.3 以降、Vfs interface contract の所有元は `AIKernel.Abstractions` である。
+Vfs interface contract の所有元は `AIKernel.Abstractions` である。
 公開 namespace は source compatibility のため `AIKernel.Vfs` のままとする。
-`AIKernel.Vfs` package は contract 定義の所有元ではなく、type forwarding による互換 facade として `AIKernel.Abstractions` を参照してよい。
+個別の `AIKernel.Vfs` 互換 package/project は v0.0.4 で削除された。
+下流 package は `AIKernel.Abstractions` を直接参照し、Vfs contract 利用時の `using AIKernel.Vfs;` は維持してよい。
 
 Phase-1 の必須 package graph は次の通り。
 
@@ -103,8 +102,12 @@ AIKernel.Enums -> (none)
 AIKernel.Dtos -> AIKernel.Enums
 AIKernel.Contracts -> AIKernel.Enums, AIKernel.Dtos
 AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
-AIKernel.Vfs -> AIKernel.Abstractions
 ```
+
+### 4.4 v0.0.4 Contract 抽出ルール
+
+v0.0.4 以降、DSL、DSL ROM、History ROM、Kernel clock contract は `AIKernel.Abstractions` と `AIKernel.Dtos` が所有する。
+Core 実装は内部でこれらを `AIKernel.Common.Results` に adapter してよいが、Common が安定 contract package として公開されるまで、`AIKernel.Abstractions` は `AIKernel.Common` を参照してはならない。
 
 ---
 
@@ -136,3 +139,5 @@ AIKernel.NET は OS として、境界と依存方向を最初に固定し、以
 - v0.0.0 / v0.0.0.0: 初期ドラフト
 - v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新
 - v0.0.3 (2026-06-02): Phase-1 依存グラフと Vfs contract 所有元/type-forwarding 規約を修正
+- v0.0.4 (2026-06-04): DSL / History ROM / Kernel clock contract 抽出に関する依存ルールを追加
+- v0.0.4 (2026-06-04): 個別の AIKernel.Vfs 互換 facade を package graph から削除

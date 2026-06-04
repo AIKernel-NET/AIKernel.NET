@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IDiffFormatter](architecture/interfaces/conversation/IDiffFormatter-jp.md)
+Japanese version: [IDiffFormatter](../conversation/IDiffFormatter-jp.md)
 
 # IDiffFormatter
 

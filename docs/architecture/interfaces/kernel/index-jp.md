@@ -15,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版: [Specification Index](specs/index.md)
+英語版: [Index](index.md)
 
 # kernel Interfaces
 
@@ -23,7 +23,7 @@ tags:
 Kernel 実行入口と起動ライフサイクル契約。
 
 ## ドキュメント一覧
-- [IKernel](architecture/interfaces/kernel/IKernel-jp.md)
+- [IKernel](../kernel/IKernel-jp.md)
 
 ---
 

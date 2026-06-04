@@ -18,7 +18,7 @@ public interface IKernelVersionProvider
 /// UC-09 に基づく契約です。
 /// 統合コンテキスト契約を実行する capability interface です。
 /// </summary>
-public interface IKernelExecutor
+public interface IKernelContextExecutor
 {
     /// <summary>
     /// 統合コンテキスト契約を処理します。
@@ -113,7 +113,7 @@ public interface IKernelPdpAccessor
 /// </summary>
 public interface IKernel :
     IKernelVersionProvider,
-    IKernelExecutor,
+    IKernelContextExecutor,
     IKernelAttentionAnalyzer,
     IKernelMaterialPreprocessor,
     IKernelExpressionPreparer,

@@ -2,9 +2,9 @@
 id: ivfscapabilitycontracts
 title: "Vfs Capability Contracts"
 created: 2026-05-09
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -18,14 +18,14 @@ tags:
   - english
 ---
 
-Japanese version: [Vfs Capability Contracts](architecture/interfaces/vfs/IVfsCapabilityContracts-jp.md)
+Japanese version: [Vfs Capability Contracts](../vfs/IVfsCapabilityContracts-jp.md)
 
 # Vfs Capability Contracts
 
 ## Responsibility
 Vfs capability contracts express file-system authority at the type-system level. Implementations expose only the interfaces that correspond to operations they can perform.
 
-As of v0.0.3, these contracts are owned by `AIKernel.Abstractions` while preserving the public `AIKernel.Vfs` namespace. The `AIKernel.Vfs` package remains a type-forwarding compatibility facade.
+These contracts are owned by `AIKernel.Abstractions` while preserving the public `AIKernel.Vfs` namespace. The separate `AIKernel.Vfs` compatibility package was removed in v0.0.4.
 
 ## Capability Interfaces
 | Interface | Responsibility |
@@ -57,3 +57,4 @@ Unsupported capabilities must not be represented by methods that partially execu
 # Changelog
 - v0.0.2 (2026-05-09): Initial capability-based Vfs contract definition
 - v0.0.3 (2026-06-02): Added Abstractions ownership and type-forwarding compatibility note
+- v0.0.4 (2026-06-04): Removed the separate AIKernel.Vfs compatibility package note while preserving the public namespace

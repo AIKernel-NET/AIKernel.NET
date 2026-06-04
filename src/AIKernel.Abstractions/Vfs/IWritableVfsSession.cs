@@ -11,7 +11,5 @@ public interface IWritableVfsSession
     /// <param name="path">ファイルパス</param>
     /// <param name="content">ファイル内容</param>
     /// <returns>書き込み完了を表すタスク</returns>
-    /// <exception cref="ArgumentException">path が不正な場合にスローされます。</exception>
-    /// <exception cref="UnauthorizedAccessException">書き込み権限がない場合にスローされます。</exception>
     Task WriteFileAsync(string path, byte[] content);
 }

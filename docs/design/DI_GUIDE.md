@@ -70,7 +70,7 @@ Core provides NoOp/Stub implementations for initial startup. NoOp is for test st
  Breaking changes use major versions and migration steps documented in design/MIGRATION_GUIDE.md
 
 # References
-- [Design Intent](design/DESIGN_INTENT.md)
+- [Design Intent](DESIGN_INTENT.md)
 - AIKernel.Core/Docs/NOOP IMPLEMENTATION
 
 # Changelog

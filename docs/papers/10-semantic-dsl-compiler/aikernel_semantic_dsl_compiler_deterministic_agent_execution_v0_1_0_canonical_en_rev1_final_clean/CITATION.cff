@@ -1,0 +1,29 @@
+
+cff-version: 1.2.0
+title: "AIKernel Semantic DSL Compiler and Deterministic Agent Execution Architecture"
+message: "If you use this work, please cite it using the metadata from this file."
+type: article
+authors:
+  - family-names: Sogawa
+    given-names: Takuya
+    orcid: "https://orcid.org/0009-0009-7499-2595"
+    affiliation: "AIKernel Project"
+doi: "10.5281/zenodo.20534341"
+version: "v0.1.0-rev1"
+date-released: "2026-06-04"
+license: "CC-BY-4.0"
+keywords:
+  - AIKernel
+  - Semantic DSL
+  - Semantic IR
+  - Deterministic Agent Execution
+  - Governed Pipeline
+  - ReplayLog
+  - Fail-Closed Governance
+  - Capability Resolution
+  - Semantic Compiler
+  - C#
+  - LINQ
+  - Phase-2.5
+abstract: >-
+  This technical note introduces the AIKernel Semantic DSL Compiler, an OS-level mechanism for governing probabilistic LLM-generated plans through deterministic compilation rather than direct execution. The model treats LLM-generated plans as non-Turing-complete structured intent, compiles them through formal admissibility checks into governed pipelines, and records execution through ResultStep, SemanticDelta, and hash-linked ReplayLog artifacts.

@@ -15,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版: [Specification Index](specs/index.md)
+英語版: [Index](index.md)
 
 # security Interfaces
 
@@ -23,10 +23,10 @@ tags:
 PDP/Guard による実行許可判定契約。
 
 ## ドキュメント一覧
-- [IGuard](architecture/interfaces/security/IGuard-jp.md)
-- [IPdp](architecture/interfaces/security/IPdp-jp.md)
-- [IPolicy](architecture/interfaces/security/IPolicy-jp.md)
-- [IPrincipal](architecture/interfaces/security/IPrincipal-jp.md)
+- [IGuard](../security/IGuard-jp.md)
+- [IPdp](../security/IPdp-jp.md)
+- [IPolicy](../security/IPolicy-jp.md)
+- [IPrincipal](../security/IPrincipal-jp.md)
 
 ---
 

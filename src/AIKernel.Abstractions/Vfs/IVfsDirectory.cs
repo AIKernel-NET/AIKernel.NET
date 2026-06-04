@@ -17,7 +17,6 @@ public interface IVfsDirectory : INavigableVfsDirectory
     /// </summary>
     /// <param name="recursive">再帰的に列挙するかどうか</param>
     /// <returns>ファイル一覧</returns>
-    /// <exception cref="UnauthorizedAccessException">参照権限がない場合にスローされます。</exception>
     Task<IReadOnlyList<IVfsFile>> GetFilesAsync(bool recursive = false);
 
     /// <summary>
@@ -31,7 +30,6 @@ public interface IVfsDirectory : INavigableVfsDirectory
     /// </summary>
     /// <param name="name">サブディレクトリ名</param>
     /// <returns>見つかったサブディレクトリ。存在しない場合は null。</returns>
-    /// <exception cref="ArgumentException">name が不正な場合にスローされます。</exception>
     Task<IVfsDirectory?> GetSubdirectoryAsync(string name);
 
     async Task<IReadOnlyList<IReadableVfsFile>> INavigableVfsDirectory.GetReadableFilesAsync(bool recursive)

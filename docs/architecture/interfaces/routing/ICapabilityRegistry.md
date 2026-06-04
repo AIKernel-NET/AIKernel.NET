@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [ICapabilityRegistry (インターフェース仕様)](architecture/interfaces/routing/ICapabilityRegistry-jp.md)
+Japanese version: [ICapabilityRegistry (インターフェース仕様)](../routing/ICapabilityRegistry-jp.md)
 
 # ICapabilityRegistry (Interface Specification)
 

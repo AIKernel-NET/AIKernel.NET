@@ -26,12 +26,12 @@ tags:
   文体、例示、テンプレート、比喩など、出力現像時にのみ使用する表現規約を提供します。
 - 非役割:
   推論ロジックの生成・改変は責務外です。表現データを推論入力へ混入させてはなりません。
+  隔離検証と適用可否判定は `IExpressionIsolationValidator` や
+  `IExpressionApplicationGate` などの service interface 側の責務です。
 
 ## 2. 契約シグネチャ (Signature)
 ```csharp
-using AIKernel.Dtos;
 using AIKernel.Dtos.Context;
-using AIKernel.Enums;
 
 namespace AIKernel.Contracts;
 
@@ -68,16 +68,6 @@ public interface IExpressionContract
     /// 比喩・類推を取得します。
     /// </summary>
     IReadOnlyList<string> GetAnalogies();
-
-    /// <summary>
-    /// このコントラクトが推論結果に混入していないことを確認します。
-    /// </summary>
-    ValidationResult ValidateIsolation();
-
-    /// <summary>
-    /// 推論後の適用タイミングを確認します。
-    /// </summary>
-    bool CanApplyAfterInference();
 }
 ```
 
@@ -89,9 +79,9 @@ public interface IExpressionContract
 
 ## 4. 統治上の制約 (Governance & Determinism)
 - 隔離の徹底:
-  `ValidateIsolation()` は表現データの推論側リークを検知するための必須ゲートです。
+  `IExpressionIsolationValidator.ValidateIsolation()` は表現データの推論側リークを検知するためのゲートです。
 - 後置適用:
-  `CanApplyAfterInference()` は Structure フェーズ完了後にのみ true となる運用を前提とします。
+  `IExpressionApplicationGate.CanApplyAfterInference()` は Structure フェーズ完了後にのみ true となる運用を前提とします。
 - 決定論的整形:
   同一入力に対して同一の表現結果を導く、再現可能な適用規約が必要です。
 

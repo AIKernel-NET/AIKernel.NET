@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # kernel Interfaces
 
@@ -23,7 +23,7 @@ Japanese version: [Specification Index](specs/index-jp.md)
 Kernel entry and lifecycle contracts.
 
 ## Documents
-- [IKernel](architecture/interfaces/kernel/IKernel.md)
+- [IKernel](../kernel/IKernel.md)
 
 ---
 

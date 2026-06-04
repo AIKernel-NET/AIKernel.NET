@@ -1,9 +1,9 @@
 ---
 title: "vfs Interfaces"
 created: 2026-05-03
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # vfs Interfaces
 
@@ -37,18 +37,18 @@ Vfs permissions are expressed through capability interfaces rather than late run
 - Contract owner: `AIKernel.Abstractions`
 - Public namespace: `AIKernel.Vfs`
 - DTO dependency: `AIKernel.Dtos.Vfs`
-- Compatibility package: `AIKernel.Vfs` type-forwards these contracts to preserve existing package references
+- Package: `AIKernel.Abstractions` publishes these contracts directly; the separate `AIKernel.Vfs` compatibility package was removed in v0.0.4
 - Called by: `AIKernel.Abstractions.Rom`, `AIKernel.Abstractions.Hosting`, `AIKernel.Abstractions.Execution`
 
 ## Boundary Rule
 - Vfs interface contracts are owned by the Abstractions assembly; concrete data carriers are defined in `AIKernel.Dtos.Vfs`.
-- The `AIKernel.Vfs` package is a compatibility facade and must not become a reverse dependency of `AIKernel.Abstractions`.
+- `AIKernel.Vfs` is a public namespace, not a separate package/project dependency.
 - Capability availability must be represented by implemented interfaces, not by placeholder methods that throw `NotSupportedException`.
 - `IVfsFile`, `IVfsDirectory`, and `IVfsSession` remain composite compatibility contracts for callers that require the legacy full surface.
 
 ## Documents
-- [IVfsProvider](architecture/interfaces/vfs/IVfsProvider.md)
-- [Vfs Capability Contracts](architecture/interfaces/vfs/IVfsCapabilityContracts.md)
+- [IVfsProvider](../vfs/IVfsProvider.md)
+- [Vfs Capability Contracts](../vfs/IVfsCapabilityContracts.md)
 ---
 
 # Changelog
@@ -56,3 +56,4 @@ Vfs permissions are expressed through capability interfaces rather than late run
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.2 (2026-05-09): Added capability-based Vfs interface segregation
 - v0.0.3 (2026-06-02): Clarified Abstractions ownership and AIKernel.Vfs type-forwarding facade
+- v0.0.4 (2026-06-04): Removed the separate AIKernel.Vfs compatibility package while preserving the public namespace

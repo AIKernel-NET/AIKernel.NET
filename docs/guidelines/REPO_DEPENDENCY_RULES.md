@@ -2,9 +2,9 @@
 id: repo-dependency-rules
 title: "AIKernel.NET Repository Dependency Rules"
 created: 2026-04-30
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -41,7 +41,7 @@ This rule set is an OS rule to "first create layers, then fix dependency directi
 
 ## 2. Layer Definitions
 
-- Core (syscall): Abstractions / Contracts / Dtos / Enums / Vfs facade
+- Core (syscall): Abstractions / Contracts / Dtos / Enums
 - Kernel (implementation): Scheduler / Router / Controller / Pipeline / RagEngine / Rules
 - Providers (drivers): Capability implementations
 - VfsProviders (external data): Git and other data sources
@@ -59,7 +59,6 @@ This rule set is an OS rule to "first create layers, then fix dependency directi
 - AIKernel.Contracts     : OrchestrationContext / Contract Schema
 - AIKernel.Dtos          : MaterialItem / TransferTrace / Purpose
 - AIKernel.Enums         : RejectCode / PdpDecision
-- AIKernel.Vfs           : Vfs compatibility facade through type forwarding
 
 ---
 
@@ -76,7 +75,6 @@ Dependencies not listed here are generally forbidden; exceptions must be documen
 | AIKernel.Dtos | AIKernel.Enums |
 | AIKernel.Contracts | AIKernel.Enums, AIKernel.Dtos |
 | AIKernel.Abstractions | AIKernel.Dtos, AIKernel.Enums |
-| AIKernel.Vfs | AIKernel.Abstractions |
 | Providers / VfsProviders | AIKernel.Abstractions, AIKernel.Core |
 | Core | AIKernel.Abstractions |
 | tests/* | free to reference (no reverse flow) |
@@ -86,14 +84,15 @@ Dependencies not listed here are generally forbidden; exceptions must be documen
 - Circular dependencies (A → B → A)
 - src referencing tests (reverse flow)
 - Core referencing Kernel/Providers/Server/Hosting/Enterprise
-- AIKernel.Abstractions referencing AIKernel.Vfs, AIKernel.Core, or Providers
+- AIKernel.Abstractions referencing AIKernel.Core, Providers, or a separate Vfs package/project
 - Concrete data carriers in Vfs interfaces (must be defined in AIKernel.Dtos)
 
-### 4.3 v0.0.3 Vfs Contract Ownership
+### 4.3 v0.0.4 Vfs Contract Ownership
 
-Vfs interface contracts are owned by `AIKernel.Abstractions` as of v0.0.3.
+Vfs interface contracts are owned by `AIKernel.Abstractions`.
 Their public namespace remains `AIKernel.Vfs` for source compatibility.
-The `AIKernel.Vfs` package must not own contract definitions; it provides a compatibility facade through type forwarding and may reference `AIKernel.Abstractions`.
+The separate `AIKernel.Vfs` compatibility package/project was removed in v0.0.4.
+Downstream packages should reference `AIKernel.Abstractions` directly while keeping existing `using AIKernel.Vfs;` source imports when they consume Vfs contracts.
 
 The required Phase-1 package graph is:
 
@@ -102,8 +101,12 @@ AIKernel.Enums -> (none)
 AIKernel.Dtos -> AIKernel.Enums
 AIKernel.Contracts -> AIKernel.Enums, AIKernel.Dtos
 AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
-AIKernel.Vfs -> AIKernel.Abstractions
 ```
+
+### 4.4 v0.0.4 Contract Extraction Rule
+
+DSL, DSL ROM, History ROM, and Kernel clock contracts are owned by `AIKernel.Abstractions` and `AIKernel.Dtos` as of v0.0.4.
+Core implementations may adapt these contracts internally to `AIKernel.Common.Results`, but `AIKernel.Abstractions` must not reference `AIKernel.Common` until Common is published as a stable contract package.
 
 ---
 
@@ -134,3 +137,5 @@ Dependency direction is design. AIKernel.NET, as an OS, fixes boundaries and dep
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.3 (2026-06-02): Corrected Phase-1 dependency graph and Vfs contract ownership/type-forwarding rule
+- v0.0.4 (2026-06-04): Added DSL / History ROM / Kernel clock contract extraction dependency rule
+- v0.0.4 (2026-06-04): Removed the separate AIKernel.Vfs compatibility facade from the package graph

@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # models Interfaces
 
@@ -23,13 +23,13 @@ Japanese version: [Specification Index](specs/index-jp.md)
 Capability axis, dynamic capacity, and execution constraint contracts.
 
 ## Documents
-- [ICapabilityProfile](architecture/interfaces/models/ICapabilityProfile.md)
-- [ICapacityAxis](architecture/interfaces/models/ICapacityAxis.md)
-- [IDynamicCapacityAxis](architecture/interfaces/models/IDynamicCapacityAxis.md)
-- [IDynamicCapacityProvider](architecture/interfaces/models/IDynamicCapacityProvider.md)
-- [IDynamicCapacityVector](architecture/interfaces/models/IDynamicCapacityVector.md)
-- [IExecutionConstraints](architecture/interfaces/models/IExecutionConstraints.md)
-- [IVectorMatcher](architecture/interfaces/models/IVectorMatcher.md)
+- [ICapabilityProfile](../models/ICapabilityProfile.md)
+- [ICapacityAxis](../models/ICapacityAxis.md)
+- [IDynamicCapacityAxis](../models/IDynamicCapacityAxis.md)
+- [IDynamicCapacityProvider](../models/IDynamicCapacityProvider.md)
+- [IDynamicCapacityVector](../models/IDynamicCapacityVector.md)
+- [IExecutionConstraints](../models/IExecutionConstraints.md)
+- [IVectorMatcher](../models/IVectorMatcher.md)
 
 ---
 

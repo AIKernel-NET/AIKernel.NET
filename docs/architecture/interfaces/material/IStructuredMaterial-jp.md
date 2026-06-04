@@ -16,7 +16,7 @@ tags:
   - japanese
 ---
 
-英語版: [IStructuredMaterial](architecture/interfaces/material/IStructuredMaterial.md)
+英語版: [IStructuredMaterial](../material/IStructuredMaterial.md)
 
 # IStructuredMaterial
 

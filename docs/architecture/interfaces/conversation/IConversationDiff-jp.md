@@ -16,7 +16,7 @@ tags:
   - japanese
 ---
 
-英語版: [IConversationDiff](architecture/interfaces/conversation/IConversationDiff.md)
+英語版: [IConversationDiff](../conversation/IConversationDiff.md)
 
 # IConversationDiff
 

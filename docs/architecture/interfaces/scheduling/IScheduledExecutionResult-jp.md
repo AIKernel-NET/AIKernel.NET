@@ -1,9 +1,9 @@
 ---
-title: "IExecutionResult"
+title: "IScheduledExecutionResult"
 created: 2026-05-06
-updated: 2026-05-16
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.2"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -15,12 +15,12 @@ tags:
   - japanese
 ---
 
-英語版は [IExecutionResult.md](./IExecutionResult.md) を参照。
+英語版は [IScheduledExecutionResult.md](./IScheduledExecutionResult.md) を参照。
 
-# IExecutionResult
+# IScheduledExecutionResult
 
 ## 1. 責務の境界 (Responsibility Boundary)
-$n は次を定義します: スケジュールジョブが返す実行結果抽象。
+スケジュールジョブが返す実行結果抽象を定義します。Kernel / Pipeline の実行結果 DTO と衝突しないよう、Scheduling 境界に限定した名前にしています。
 
 ## 2. 関連ユースケース (Related UCs)
 - UC-19, UC-29
@@ -40,3 +40,4 @@ $n は次を定義します: スケジュールジョブが返す実行結果抽
 # 変更履歴
 - v0.0.0 / v0.0.0.0: 初期ドラフト
 - v0.0.1 (2026-05-06): ソース整合最終化タスクボードに基づき追加
+- v0.0.4 (2026-06-04): Scheduling 境界を明示するため IExecutionResult から IScheduledExecutionResult へ改名。

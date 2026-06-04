@@ -8,7 +8,7 @@ issuer: ai-kernel@aikernel.net
 maintainer: "Takuya (AIKernel Project Maintainer)"
 ---
 
-Japanese version: [Purpose](design/SEMANTIC_SNAPSHOT_FORMAT-jp.md)
+Japanese version: [Purpose](SEMANTIC_SNAPSHOT_FORMAT-jp.md)
 
 # Purpose
 Define a canonical Markdown format for **Semantic Snapshot** records used by AIKernel to preserve intermediate reasoning state with governance metadata.
@@ -148,11 +148,11 @@ Fail-Closed:
 - If unresolved links (orphan IDs) exist in mandatory references, execution is halted.
 
 # References
-- [Semantic Context OS Vision](architecture/16.SEMANTIC_CONTEXT_OS_VISION.md)
-- [Context Isolation Specification](architecture/2.CONTEXT_ISOLATION_SPEC.md)
-- [Attention Pollution Theory](architecture/3.ATTENTION_POLLUTION_THEORY.md)
-- [Material Quarantine Trust Model](architecture/11.MATERIAL_QUARANTINE_TRUST_MODEL.md)
-- [Design Intent](design/DESIGN_INTENT.md)
+- [Semantic Context OS Vision](../architecture/16.SEMANTIC_CONTEXT_OS_VISION.md)
+- [Context Isolation Specification](../architecture/2.CONTEXT_ISOLATION_SPEC.md)
+- [Attention Pollution Theory](../architecture/3.ATTENTION_POLLUTION_THEORY.md)
+- [Material Quarantine Trust Model](../architecture/11.MATERIAL_QUARANTINE_TRUST_MODEL.md)
+- [Design Intent](DESIGN_INTENT.md)
 
 # Changelog
 - 2026-05-03 v0.0.0 Initial draft

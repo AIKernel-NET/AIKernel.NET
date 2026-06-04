@@ -16,8 +16,6 @@ public interface IKernelReplayer
     /// <param name="traceContext">トレース情報</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>再実行結果</returns>
-    /// <exception cref="ArgumentNullException">必須引数が null の場合にスローされます。</exception>
-    /// <exception cref="InvalidOperationException">ダンプの整合性が検証に失敗した場合にスローされます。</exception>
     ValueTask<ExecutionResult> ReplayAsync(
         ReplayDump replayDump,
         TraceContext traceContext,

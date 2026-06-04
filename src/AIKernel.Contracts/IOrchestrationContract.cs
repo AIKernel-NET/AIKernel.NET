@@ -1,5 +1,4 @@
 using AIKernel.Dtos.Context;
-using AIKernel.Enums;
 
 namespace AIKernel.Contracts;
 
@@ -42,31 +41,5 @@ public interface IOrchestrationContract
     /// </summary>
     /// <returns>推論パターン。未設定の場合は null。</returns>
     string? GetReasoningPattern();
-}
-
-/// <summary>
-/// OrchestrationContract の検証結果を表現します。
-/// </summary>
-public sealed class ValidationResult
-{
-    /// <summary>
-    /// 検証が成功したかどうかを取得します。
-    /// </summary>
-    public bool IsValid { get; init; }
-
-    /// <summary>
-    /// 検出されたエラーメッセージを取得します。
-    /// </summary>
-    public List<string> Errors { get; init; } = new();
-
-    /// <summary>
-    /// 警告メッセージを取得します。
-    /// </summary>
-    public List<string> Warnings { get; init; } = new();
-
-    /// <summary>
-    /// 検出された attention 汚染を取得します。
-    /// </summary>
-    public List<FailureMode> DetectedFailureModes { get; init; } = new();
 }
 

@@ -15,8 +15,6 @@ public interface IReadableVfsSession
     /// </summary>
     /// <param name="path">ファイルパス</param>
     /// <returns>読み取り可能なファイル</returns>
-    /// <exception cref="ArgumentException">path が不正な場合にスローされます。</exception>
-    /// <exception cref="FileNotFoundException">対象ファイルが存在しない場合にスローされます。</exception>
     Task<IReadableVfsFile> ReadReadableFileAsync(string path);
 
     /// <summary>

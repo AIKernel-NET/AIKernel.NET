@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # tasks Interfaces
 
@@ -23,12 +23,12 @@ Japanese version: [Specification Index](specs/index-jp.md)
 Core task and pipeline result contracts.
 
 ## Documents
-- [IPipeline](architecture/interfaces/tasks/IPipeline.md)
-- [IPipelineExecutionResult](architecture/interfaces/tasks/IPipelineExecutionResult.md)
-- [ITask](architecture/interfaces/tasks/ITask.md)
-- [ITaskContext](architecture/interfaces/tasks/ITaskContext.md)
-- [ITaskExecutionResult](architecture/interfaces/tasks/ITaskExecutionResult.md)
-- [ITaskSchema](architecture/interfaces/tasks/ITaskSchema.md)
+- [IPipeline](../tasks/IPipeline.md)
+- [IPipelineExecutionResult](../tasks/IPipelineExecutionResult.md)
+- [ITask](../tasks/ITask.md)
+- [ITaskContext](../tasks/ITaskContext.md)
+- [ITaskExecutionResult](../tasks/ITaskExecutionResult.md)
+- [ITaskSchema](../tasks/ITaskSchema.md)
 
 ---
 

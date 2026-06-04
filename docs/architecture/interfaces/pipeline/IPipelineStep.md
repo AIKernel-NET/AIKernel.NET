@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IPipelineStep](architecture/interfaces/pipeline/IPipelineStep-jp.md)
+Japanese version: [IPipelineStep](../pipeline/IPipelineStep-jp.md)
 
 # IPipelineStep
 

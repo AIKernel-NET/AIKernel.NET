@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IAttentionGuard](architecture/interfaces/governance/IAttentionGuard-jp.md)
+Japanese version: [IAttentionGuard](../governance/IAttentionGuard-jp.md)
 
 # IAttentionGuard
 

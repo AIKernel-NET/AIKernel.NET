@@ -12,6 +12,7 @@ The `src` tree contains the canonical specification projects that define interfa
 - Main namespaces:
   - `AIKernel.Abstractions.Context`
   - `AIKernel.Abstractions.Conversation`
+  - `AIKernel.Abstractions.Dsl`
   - `AIKernel.Abstractions.Events`
   - `AIKernel.Abstractions.Execution`
   - `AIKernel.Abstractions.Governance`
@@ -27,6 +28,7 @@ The `src` tree contains the canonical specification projects that define interfa
   - `AIKernel.Abstractions.Scheduling`
   - `AIKernel.Abstractions.Security`
   - `AIKernel.Abstractions.Tasks`
+  - `AIKernel.Abstractions.Time`
   - `AIKernel.Abstractions.Tooling`
   - `AIKernel.Vfs` (Vfs contracts, owned by the Abstractions assembly)
 - Project references: `AIKernel.Dtos`, `AIKernel.Enums`
@@ -37,15 +39,17 @@ The `src` tree contains the canonical specification projects that define interfa
 - Project references: `AIKernel.Dtos`, `AIKernel.Enums`
 
 ### AIKernel.Dtos
-- Purpose: POCO/record data carriers only (no business logic).
+- Purpose: POCO/record data carriers and wire metadata key constants only (no business logic).
 - Main namespaces:
   - `AIKernel.Dtos.Context`
   - `AIKernel.Dtos.Core`
+  - `AIKernel.Dtos.Dsl`
   - `AIKernel.Dtos.Events`
   - `AIKernel.Dtos.Execution`
   - `AIKernel.Dtos.Governance`
   - `AIKernel.Dtos.Kernel`
   - `AIKernel.Dtos.KernelContext`
+  - `AIKernel.Dtos.History`
   - `AIKernel.Dtos.Material`
   - `AIKernel.Dtos.Prompt`
   - `AIKernel.Dtos.Rom`
@@ -54,21 +58,17 @@ The `src` tree contains the canonical specification projects that define interfa
   - `AIKernel.Dtos.Sandbox`
   - `AIKernel.Dtos.Security`
   - `AIKernel.Dtos.Tokenization`
+  - `AIKernel.Dtos.Time`
   - `AIKernel.Dtos.Vfs`
 - Project references: `AIKernel.Enums`
+
+DTO packages may expose stable metadata key constants for wire formats such as DSL ROM and History ROM.
+Those constants are part of the serialized contract surface; parsing, validation, and runtime behavior still belong to Core/Common or host implementations.
 
 ### AIKernel.Enums
 - Purpose: Shared enum primitives used across the specification layer.
 - Main namespace: `AIKernel.Enums`
 - Project references: none
-
-### AIKernel.Vfs
-- Purpose: Compatibility facade for provider-agnostic Virtual File System contracts.
-- Main namespace: `AIKernel.Vfs`
-- Project references: `AIKernel.Abstractions`
-- Notes: Vfs contract definitions are owned by `AIKernel.Abstractions` as of v0.0.3. This project preserves package compatibility through type forwarding.
-
----
 
 ## Dependency Rules (Normative)
 
@@ -76,12 +76,13 @@ The `src` tree contains the canonical specification projects that define interfa
 - `AIKernel.Contracts` -> `AIKernel.Dtos`, `AIKernel.Enums`
 - `AIKernel.Dtos` -> `AIKernel.Enums`
 - `AIKernel.Enums` -> (none)
-- `AIKernel.Vfs` -> `AIKernel.Abstractions`
 
 Prohibited examples:
 - `Abstractions` -> `Contracts`
 - `Contracts` -> `Abstractions`
-- `Abstractions` -> `Vfs`
+- `Abstractions` -> separate Vfs package/project
+
+`AIKernel.Vfs` is a public namespace inside `AIKernel.Abstractions`; the separate `AIKernel.Vfs` compatibility project was removed in v0.0.4.
 
 ---
 

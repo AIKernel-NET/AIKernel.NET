@@ -38,7 +38,7 @@ public interface IScheduler : IProvider
     Task<IScheduledJob> ScheduleAsync(IScheduleSpec job);
     Task<bool> CancelAsync(string jobId);
     Task<IReadOnlyList<IScheduledJob>> ListJobsAsync();
-    Task<IExecutionResult?> GetExecutionResultAsync(string jobId);
+    Task<IScheduledExecutionResult?> GetExecutionResultAsync(string jobId);
 }
 ```
 

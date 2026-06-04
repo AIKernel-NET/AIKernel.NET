@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: $(System.Collections.Hashtable.Name)
+Japanese version: [ITaskManager-jp.md](ITaskManager-jp.md)
 
 # ITaskManager
 
@@ -35,7 +35,7 @@ Define the contract boundary for ITaskManager within AIKernel orchestration, gov
 | `GetExecutionResultAsync(string executionId)` | `Task<IPipelineExecutionResult?>` | Get pipeline result by execution id. |
 
 ## Related Use Cases
-See ../../use-cases/AIKernel_UseCaseCatalog.md for references where $(System.Collections.Hashtable.name) appears.
+See ../../use-cases/AIKernel_UseCaseCatalog.md for references where ITaskManager appears.
 
 ## Notes
 - This interface is currently extension-point oriented and may not yet be referenced by runtime implementations.

@@ -1,8 +1,8 @@
 ---
 title: "移行ガイド（Migration Guide）"
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -11,7 +11,7 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 
 # 移行ガイド（Migration Guide）
 
-本ガイドは、初期コンセプト版（v0.0.0）から、正典化されたアーキテクチャ（v0.0.1）、v0.0.2 の命名規約・Vfs capability contract、および v0.0.3 の依存レイヤ修正へ移行するための手順を定義します。
+本ガイドは、初期コンセプト版（v0.0.0）から、正典化されたアーキテクチャ（v0.0.1、v0.0.2、v0.0.3）、および v0.0.4 の DSL / History ROM contract 抽出へ移行するための手順を定義します。
 
 ## 1. 根本的な変更点
 v0.0.1 では、`決定論（Determinism）` と `非推論型ガバナンス` を軸に、全体設計が再編されました。
@@ -220,7 +220,7 @@ health check 専用の処理は `ITrustStoreHealthProbe` に依存し、trust re
 | Capability | 用途 |
 |---|---|
 | `IKernelVersionProvider` | kernel version の参照。 |
-| `IKernelExecutor` | unified context contract の実行。 |
+| `IKernelContextExecutor` | unified context contract の実行。 |
 | `IKernelAttentionAnalyzer` | orchestration attention pollution の解析。 |
 | `IKernelMaterialPreprocessor` | Material Context の正規化・構造化。 |
 | `IKernelExpressionPreparer` | Expression Context の準備。 |
@@ -405,6 +405,8 @@ Read-only store や schema-only validator は、実際にサポートする capa
 ## 13. v0.0.2 から v0.0.3 への移行: 依存レイヤ修正
 v0.0.3 では、Vfs contract 周辺の package 依存グラフを修正します。
 
+> v0.0.4 では、この互換 facade は置き換え済みです。v0.0.4 以降へ直接移行する場合は、14.6 に従い、個別の `AIKernel.Vfs` package/project を削除してください。
+
 主な変更は、Vfs interface contract の所有元が `AIKernel.Abstractions` になったことです。`AIKernel.Vfs` package は type forwarding による互換 facade として残りますが、contract 定義そのものの所有元ではなくなります。
 
 ### 13.1 目標レイヤ構造
@@ -444,7 +446,7 @@ AIKernel.Abstractions -> Providers
 | `INavigableVfsDirectory` | `AIKernel.Abstractions` | `AIKernel.Vfs` が type-forwarding。 |
 | `IVfsEntryInfo` | `AIKernel.Abstractions` | `AIKernel.Vfs` が type-forwarding。 |
 | `IVfsQuery`, `IVfsQueryResult` | `AIKernel.Abstractions` | `AIKernel.Vfs` が type-forwarding。 |
-| `VfsAuthenticationFailedException` | `AIKernel.Abstractions` | `AIKernel.Vfs` が type-forwarding。 |
+| `VfsAuthenticationFailedException` | `v0.0.4` で削除 | `v0.0.3` では facade 対象でしたが、`v0.0.4` では runtime/Core adapter 側で失敗を扱います。 |
 
 公開 namespace は互換性のため `AIKernel.Vfs` のままです。変更されたのは assembly/package レイヤでの所有関係です。
 
@@ -496,6 +498,148 @@ CYCLE CHECK: OK (no ProjectReference cycles)
 ```
 
 加えて、`AIKernel.Abstractions.csproj` に `AIKernel.Vfs` への参照が残っていないことを確認します。
+
+## 14. v0.0.3 から v0.0.4 への移行: DSL / History ROM Contract 抽出
+v0.0.4 では、`AIKernel.Core` 内で先行して増えていた公開境界候補を `AIKernel.NET` の contract package に昇格します。これにより、外部 Capability module、Server host、WASM client、今後の Core package が同じ interface surface を共有できます。
+
+このリリースでは、`AIKernel.Abstractions` が `AIKernel.Core` や `AIKernel.Common` に依存しない構造を維持します。Core 実装で `Result<T>` や `ResultStep<TState,TValue>` を使っている場合は、以下の DTO contract surface へ adapter 変換してください。
+
+### 14.1 新しい DTO 領域
+| 領域 | 追加 DTO |
+|---|---|
+| `AIKernel.Dtos.Time` | `KernelTimestamp` |
+| `AIKernel.Dtos.Dsl` | `DslDocument`, `PipelineNode`, `PipelineRootNode`, `StepNode`, `CallCapabilityNode`, `LoopNode`, `LoopUntilNode`, `SuspendNode`, `DslPipelineValue`, `DslPipelineState`, `DslPipelineExecutionContext`, `DslPipelineExecutionResult`, `DslRomMetadata`, `DslRomSnapshot` |
+| `AIKernel.Dtos.History` | `ChatHistoryRomRecord`, `ChatHistoryRomOptions`, `HistoryRomMetadata`, `HistoryRomSnapshot` |
+
+### 14.2 新しい Abstraction 領域
+| 領域 | 追加 contract |
+|---|---|
+| `AIKernel.Abstractions.Time` | `IKernelClock` |
+| `AIKernel.Abstractions.Dsl` | `IKernelPipeline`, `IDslPipelineCompiler`, `IDslCapabilityRegistry`, `IDslRomRegistry`, `IDslRomStore` |
+| `AIKernel.Abstractions.History` | `IChatHistoryRomExporter`, `IHistoryRomRegistry`, `IHistoryRomStore` |
+
+### 14.3 Core Adapter 向け破壊的移行ポイント
+Core 側実装は、下流 consumer に Core 専用の DSL、History ROM、clock contract 参照を要求しない形へ移行してください。
+
+推奨置換は次の通りです。
+
+| Core-local concept | v0.0.4 public contract |
+|---|---|
+| `AIKernel.Core.Time.IKernelClock` | `AIKernel.Abstractions.Time.IKernelClock` |
+| `AIKernel.Core.Time.KernelTimestamp` | `AIKernel.Dtos.Time.KernelTimestamp` |
+| Core DSL IR records | `AIKernel.Dtos.Dsl` records |
+| Core DSL pipeline interface | `AIKernel.Abstractions.Dsl.IKernelPipeline` |
+| Core DSL ROM registry interface | `AIKernel.Abstractions.Dsl.IDslRomRegistry` |
+| Core DSL ROM store class boundary | `AIKernel.Abstractions.Dsl.IDslRomStore` |
+| Core History ROM registry interface | `AIKernel.Abstractions.History.IHistoryRomRegistry` |
+| Core History ROM store class boundary | `AIKernel.Abstractions.History.IHistoryRomStore` |
+
+### 14.4 曖昧な Interface 名の変更
+v0.0.4 では、共有 package surface として広すぎた public interface 名を整理します。
+
+| 削除 / 改名された contract | 置換先 |
+|---|---|
+| `AIKernel.Abstractions.Kernel.IKernelExecutor` | `AIKernel.Abstractions.Kernel.IKernelContextExecutor` |
+| `AIKernel.Abstractions.Governance.ChatChain.IResult` | `AIKernel.Abstractions.Governance.ChatChain.IChatTurnVerificationResult` |
+| `AIKernel.Abstractions.Governance.ChatChain.ISemanticHasher` | `AIKernel.Abstractions.Governance.ChatChain.IChatTurnSemanticHasher` |
+| `AIKernel.Abstractions.Scheduling.IExecutionResult` | `AIKernel.Abstractions.Scheduling.IScheduledExecutionResult` |
+
+`AIKernel.Abstractions.Execution.IKernelExecutor` と `AIKernel.Abstractions.Rom.ISemanticHasher` は変更しません。改名対象は、facade / chat-chain / scheduling 専用でありながら、実行境界や ROM 概念と名前衝突していた contract です。
+
+Core 実装が内部で `AIKernel.Common.Results.Result<T>` を使い続ける場合、package 境界では次のいずれかへ変換してください。
+
+- 成功時は DTO 戻り値
+- 失敗時は host が採用する fail-closed exception / result adapter
+
+`AIKernel.Common` が安定 package として公開されるまで、`AIKernel.NET` の contract package は `Result<T>` を公開しません。
+
+### 14.5 NuGet Package 更新
+package set は必ず揃えてください。
+
+```xml
+<PackageReference Include="AIKernel.Abstractions" Version="0.0.4" />
+<PackageReference Include="AIKernel.Dtos" Version="0.0.4" />
+<PackageReference Include="AIKernel.Enums" Version="0.0.4" />
+```
+
+`AIKernel.Abstractions` `0.0.4` と `AIKernel.Dtos` `0.0.3` を混在させないでください。DSL、History ROM、time contract は v0.0.4 の DTO surface を前提にします。
+
+### 14.6 AIKernel.Vfs package の削除
+v0.0.4 では、個別の `AIKernel.Vfs` 互換 package/project を削除します。
+Vfs contract は引き続き `AIKernel.Abstractions` から利用でき、公開 namespace は `AIKernel.Vfs` のままです。
+
+移行手順:
+
+1. application、provider、test project から `PackageReference Include="AIKernel.Vfs"` を削除します。
+2. Vfs contract を利用する project では `PackageReference Include="AIKernel.Abstractions" Version="0.0.4"` を追加または維持します。
+3. `using AIKernel.Vfs;` は維持して構いません。namespace は引き続き正しいです。
+4. local source build では `AIKernel.Vfs/AIKernel.Vfs.csproj` への project reference を削除します。
+
+### 14.7 Interface-only contract package
+v0.0.4 では `AIKernel.Abstractions` と `AIKernel.Contracts` を interface-only package とします。
+DTO、enum、例外型、factory、parse helper、runtime behavior はこれらの contract package へ配置しません。
+
+#### 移動された DTO / value type
+| 旧配置 | 新配置 |
+|---|---|
+| `AIKernel.Contracts.ValidationResult` | `AIKernel.Dtos.Context.ValidationResult` |
+| `AIKernel.Abstractions.Context.ContextAssemblyRequest` | `AIKernel.Dtos.Context.ContextAssemblyRequest` |
+| `AIKernel.Abstractions.Context.ContextAssemblyScope` | `AIKernel.Dtos.Context.ContextAssemblyScope` |
+| `AIKernel.Abstractions.Context.ContextAssemblyDecision` | `AIKernel.Dtos.Context.ContextAssemblyDecision` |
+| `AIKernel.Abstractions.DtoContracts.Execution.GeneratedPrompt` | `AIKernel.Dtos.Execution.GeneratedPrompt` |
+| `AIKernel.Abstractions.DtoContracts.Execution.KernelExecutionRequest` | `AIKernel.Dtos.Execution.KernelExecutionRequest` |
+| `AIKernel.Abstractions.DtoContracts.Execution.PromptGenerationRequest` | `AIKernel.Dtos.Execution.PromptGenerationRequest` |
+| `AIKernel.Abstractions.DtoContracts.Kernel.KernelRequest` | `AIKernel.Dtos.Kernel.KernelRequest` |
+| `AIKernel.Abstractions.Vfs.VfsCredentials` | `AIKernel.Dtos.Vfs.VfsCredentials` |
+
+#### 移動された enum
+| 旧配置 | 新配置 |
+|---|---|
+| `AIKernel.Dtos.Execution.ExecutionStatus` | `AIKernel.Enums.ExecutionStatus` |
+| `AIKernel.Dtos.Execution.PromptMessageFormat` | `AIKernel.Enums.PromptMessageFormat` |
+| `AIKernel.Dtos.Execution.PromptOverflowPolicy` | `AIKernel.Enums.PromptOverflowPolicy` |
+
+#### contract package から削除された例外型
+以下の例外型は public contract package から削除されました。
+
+- `ContextAssemblyException`
+- `ContextAssemblyGovernanceException`
+- `PromptGenerationException`
+- `PromptTokenBudgetExceededException`
+- `UnsupportedPromptCapabilityException`
+- `VfsAuthenticationFailedException`
+
+runtime 実装は、これらの失敗を `AIKernel.Core`、host code、または将来の `AIKernel.Common`
+result/failure package 側で表現してください。`AIKernel.Abstractions` や `AIKernel.Contracts` に
+例外実装を戻さないでください。
+
+#### DTO の pure-data 化
+DTO package を data-oriented に保つため、以下の helper を削除しました。
+
+- `RawLogic.IsEmpty`
+- `RomId.Parse`
+- execution / DSL DTO の static default/factory member
+
+convenience helper は application code、`AIKernel.Core`、または `AIKernel.Common` に配置してください。
+
+### 14.8 検証コマンド
+次を実行します。
+
+```powershell
+dotnet build src\AIKernel.NET.slnx
+dotnet test src\tests\AIKernel.Abstractions.Tests\AIKernel.Abstractions.Tests.csproj --no-build
+dotnet pack src\AIKernel.NET.slnx --no-build
+```
+
+ProjectReference graph が次のままであることを確認します。
+
+```text
+AIKernel.Enums -> (none)
+AIKernel.Dtos -> AIKernel.Enums
+AIKernel.Contracts -> AIKernel.Enums, AIKernel.Dtos
+AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
+CYCLE CHECK: OK
+```
 ---
 
 # 変更履歴
@@ -503,3 +647,4 @@ CYCLE CHECK: OK (no ProjectReference cycles)
 - v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新
 - v0.0.2 (2026-05-09): Issue #4 の Vfs capability contract 移行手順、Issue #7 の Vfs 命名規約統一、provider/security capability contract 指針、Issue #8 の contract purity 移行、Issue #9 の provider capability 移行、Issue #10 の security/policy separation 移行、Issue #11 の sandbox/validator isolation 移行を追加
 - v0.0.3 (2026-06-02): Vfs contract 所有元の Abstractions への移動、`AIKernel.Vfs` type-forwarding 互換、package reference 指針、循環依存検証手順を追加
+- v0.0.4 (2026-06-04): AIKernel.Core adapter 移行に向け、DSL pipeline、DSL ROM、History ROM、Kernel clock contract 抽出、ROM store contract、曖昧な interface 改名ガイド、AIKernel.Vfs package 削除手順、interface-only contract package 移行手順を追加

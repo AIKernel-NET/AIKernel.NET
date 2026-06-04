@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # rules Interfaces
 
@@ -36,7 +36,7 @@ The Rules category is AIKernel's governance decision layer. Centered on `IRuleEn
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Security`, `AIKernel.Abstractions.Governance`
 
 ## Documents
-- [IRuleEngine (Rule Engine Specification)](architecture/interfaces/rules/IRuleEngine.md)
+- [IRuleEngine (Rule Engine Specification)](../rules/IRuleEngine.md)
 ---
 
 # Changelog

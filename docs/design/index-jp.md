@@ -8,7 +8,7 @@ issuer: ai-kernel@aikernel.net
 maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 ---
 
-英語版: [Specification Index](specs/index.md)
+英語版: [Design Index](index.md)
 
 # Design Documentation Index
 

@@ -17,8 +17,6 @@ public interface IMaterialQuarantine
     /// <param name="rawFragment">検疫対象のフラグメント</param>
     /// <param name="ct">キャンセルトークン</param>
     /// <returns>正規化されたコンテンツを含む IStructuredMaterial</returns>
-    /// <exception cref="FormatException">正規化不可能なフォーマットの場合にスローされます。</exception>
-    /// <exception cref="InvalidOperationException">検疫ポリシーに違反した場合にスローされます。</exception>
     Task<IStructuredMaterial> QuarantineAsync(ContextFragment rawFragment, CancellationToken ct = default);
 }
 

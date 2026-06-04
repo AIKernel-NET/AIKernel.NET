@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # context Interfaces
 
@@ -36,8 +36,8 @@ Context manages working memory within a single inference cycle. `IContextCollect
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Hosting`, `AIKernel.Abstractions.Conversation`
 
 ## Documents
-- [IContextCollection (Interface Specification)](architecture/interfaces/context/IContextCollection.md)
-- [IContextSnapshot (Interface Specification)](architecture/interfaces/context/IContextSnapshot.md)
+- [IContextCollection (Interface Specification)](../context/IContextCollection.md)
+- [IContextSnapshot (Interface Specification)](../context/IContextSnapshot.md)
 ---
 
 # Changelog

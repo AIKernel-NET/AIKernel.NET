@@ -16,7 +16,7 @@ tags:
   - japanese
 ---
 
-英語版: [IMaterialQuarantine (Interface Specification)](architecture/interfaces/material/IMaterialQuarantine.md)
+英語版: [IMaterialQuarantine (Interface Specification)](../material/IMaterialQuarantine.md)
 
 # IMaterialQuarantine (インターフェース仕様)
 

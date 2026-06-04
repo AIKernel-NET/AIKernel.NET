@@ -1,7 +1,7 @@
 ---
-updated: 2026-05-16
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.2"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -160,6 +160,14 @@ This chapter keeps RAG outside Core retrieval implementation and aligns Query Pr
 
 ---
 
+## [1.17 DSL Pipeline and ROM Specification](./18.DSL_PIPELINE_AND_ROM_SPEC.md)
+
+Defines the standard JSON DSL pipeline IR, deterministic loop and suspend semantics, DSL ROM storage, `dsl://` capability invocation, HistoryROM storage under `history://`, and replay metadata for reusable AI-generated capabilities.
+
+v0.0.4 publishes the shared contract surface for this model through `AIKernel.Abstractions.Dsl`, `AIKernel.Abstractions.History`, `AIKernel.Abstractions.Time`, and the corresponding DTO namespaces.
+
+---
+
 # 2. Comparative Architecture
 
 ## [2.1 AIKernel vs LangChain](./6.AIKERNEL_VS_LANGCHAIN.md)
@@ -231,6 +239,7 @@ Read the architecture documents in this order. Each item points downward into th
 - [Replayable Execution Dump Format](./15.REPLAYABLE_EXECUTION_DUMP_FORMAT.md)
 - [Semantic Context OS Vision](./16.SEMANTIC_CONTEXT_OS_VISION.md)
 - [Phase 1 Query Processing](./17.QUERY_PROCESSING_PHASE1.md)
+- [DSL Pipeline and ROM Specification](./18.DSL_PIPELINE_AND_ROM_SPEC.md)
 
 ---
 
@@ -247,3 +256,4 @@ This index is the entry point to understanding AIKernel's overall design.
 # Changelog
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
+- v0.0.4 (2026-06-04): Updated architecture index for DSL / History ROM / Time contract publication

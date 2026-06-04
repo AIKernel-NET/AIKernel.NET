@@ -15,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版: [Specification Index](specs/index.md)
+英語版: [Index](index.md)
 
 # material Interfaces
 
@@ -36,8 +36,8 @@ Material は外部由来データの取り込み境界です。`IMaterialQuarant
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Providers`
 
 ## ドキュメント一覧
-- [IMaterialQuarantine (インターフェース仕様)](architecture/interfaces/material/IMaterialQuarantine-jp.md)
-- [IStructuredMaterial](architecture/interfaces/material/IStructuredMaterial-jp.md)
+- [IMaterialQuarantine (インターフェース仕様)](../material/IMaterialQuarantine-jp.md)
+- [IStructuredMaterial](../material/IStructuredMaterial-jp.md)
 ---
 
 # 変更履歴

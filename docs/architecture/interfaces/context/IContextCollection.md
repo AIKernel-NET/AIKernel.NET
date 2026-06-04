@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IContextCollection (インターフェース仕様)](architecture/interfaces/context/IContextCollection-jp.md)
+Japanese version: [IContextCollection (インターフェース仕様)](../context/IContextCollection-jp.md)
 
 # IContextCollection (Interface Specification)
 

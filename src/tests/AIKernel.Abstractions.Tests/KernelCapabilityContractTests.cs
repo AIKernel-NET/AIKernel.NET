@@ -3,7 +3,7 @@ using AIKernel.Abstractions.Providers;
 using AIKernel.Abstractions.Rules;
 using AIKernel.Abstractions.Security;
 using AIKernel.Dtos.Kernel;
-using KernelExecutor = AIKernel.Abstractions.Kernel.IKernelExecutor;
+using KernelContextExecutor = AIKernel.Abstractions.Kernel.IKernelContextExecutor;
 
 namespace AIKernel.Abstractions.Tests;
 
@@ -15,7 +15,7 @@ public sealed class KernelCapabilityContractTests
         IKernel kernel = new FullKernel();
 
         Assert.IsAssignableFrom<IKernelVersionProvider>(kernel);
-        Assert.IsAssignableFrom<KernelExecutor>(kernel);
+        Assert.IsAssignableFrom<KernelContextExecutor>(kernel);
         Assert.IsAssignableFrom<IKernelAttentionAnalyzer>(kernel);
         Assert.IsAssignableFrom<IKernelMaterialPreprocessor>(kernel);
         Assert.IsAssignableFrom<IKernelExpressionPreparer>(kernel);
@@ -27,14 +27,14 @@ public sealed class KernelCapabilityContractTests
     [Fact]
     public void KernelExecutorDoesNotExposeGovernanceAccessors()
     {
-        KernelExecutor executor = new ExecuteOnlyKernel();
+        KernelContextExecutor executor = new ExecuteOnlyKernel();
 
         Assert.False(executor is IKernelGuardAccessor);
         Assert.False(executor is IKernelPdpAccessor);
         Assert.False(executor is IKernelProviderRouterAccessor);
     }
 
-    private sealed class ExecuteOnlyKernel : KernelExecutor
+    private sealed class ExecuteOnlyKernel : KernelContextExecutor
     {
         public Task<KernelExecutionResult> ExecuteAsync(UnifiedContextDto contract)
         {

@@ -10,6 +10,5 @@ public interface IQueryableVfsSession
     /// </summary>
     /// <param name="query">Vfs クエリ</param>
     /// <returns>クエリ結果</returns>
-    /// <exception cref="ArgumentNullException">query が null の場合にスローされます。</exception>
     Task<IVfsQueryResult> QueryAsync(IVfsQuery query);
 }

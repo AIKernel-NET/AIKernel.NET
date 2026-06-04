@@ -373,7 +373,7 @@ Orchestration, Provider
 Run periodic and asynchronous jobs with lifecycle state and execution results.
 
 **Required Interfaces**  
-`IScheduler`, `IScheduleSpec`, `IScheduledJob`, `IExecutionResult`
+`IScheduler`, `IScheduleSpec`, `IScheduledJob`, `IScheduledExecutionResult`
 
 **Context**  
 UC-09 (Deterministic Pipeline Execution), UC-18 (Chat Persistence)

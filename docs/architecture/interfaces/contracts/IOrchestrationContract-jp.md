@@ -23,15 +23,15 @@ tags:
 `IOrchestrationContract` は、Structure フェーズに投入する純粋推論入力を定義し、推論層と表現層の境界を強制する契約です。
 
 - 役割:
-  目的、制約、抽象構造、推論パターン、および整合性検証情報を提供します。
+  目的、制約、抽象構造、推論パターンを不変 view として提供します。
 - 非役割:
   文体・例示など出力装飾情報の供給は責務外です（`IExpressionContract` 側の責務）。
+  検証、SNR 計算、hash、変換は `IOrchestrationContractValidator` や
+  `ISignalToNoiseRatioCalculator` などの service interface 側の責務です。
 
 ## 2. 契約シグネチャ (Signature)
 ```csharp
-using AIKernel.Dtos;
 using AIKernel.Dtos.Context;
-using AIKernel.Enums;
 
 namespace AIKernel.Contracts;
 
@@ -68,43 +68,6 @@ public interface IOrchestrationContract
     /// 推論パターンを取得します。
     /// </summary>
     string? GetReasoningPattern();
-
-    /// <summary>
-    /// このコントラクトが有効であることを確認します。
-    /// Attention 汚染の検出も行います。
-    /// </summary>
-    ValidationResult Validate();
-
-    /// <summary>
-    /// Signal-to-Noise Ratio（SNR）を計算します。
-    /// </summary>
-    double CalculateSignalToNoiseRatio();
-}
-
-/// <summary>
-/// OrchestrationContract の検証結果を表現します。
-/// </summary>
-public sealed class ValidationResult
-{
-    /// <summary>
-    /// 検証が成功したかどうかを取得します。
-    /// </summary>
-    public bool IsValid { get; init; }
-
-    /// <summary>
-    /// 検出されたエラーメッセージを取得します。
-    /// </summary>
-    public List<string> Errors { get; init; } = new();
-
-    /// <summary>
-    /// 警告メッセージを取得します。
-    /// </summary>
-    public List<string> Warnings { get; init; } = new();
-
-    /// <summary>
-    /// 検出された attention 汚染を取得します。
-    /// </summary>
-    public List<FailureMode> DetectedFailureModes { get; init; } = new();
 }
 ```
 
@@ -116,14 +79,14 @@ public sealed class ValidationResult
 
 ## 4. 統治上の制約 (Governance & Determinism)
 - Attention 汚染拒絶:
-  `Validate()` は表現層語彙の混入や不要装飾を検知し、拒否側判断を可能にします。
+  `IOrchestrationContractValidator.Validate()` は表現層語彙の混入や不要装飾を検知し、拒否側判断を可能にします。
 - 決定論的入力:
   同一コンテキスト状態では、各メソッドが同一値を返す運用が必要です。
 - Fail-Closed:
   重大な整合違反検知時は実行継続ではなく停止を優先します。
 
 ## 5. 指標と品質 (Metrics)
-- `CalculateSignalToNoiseRatio()`:
+- `ISignalToNoiseRatioCalculator.CalculateSignalToNoiseRatio()`:
   推論入力の信号密度（目的/制約/構造の明確性）を評価する補助指標です。
 - 低SNR対応:
   低SNRは曖昧推論や逸脱の温床となるため、警告または拒否判定の材料とします。

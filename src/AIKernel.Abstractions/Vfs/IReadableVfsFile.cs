@@ -24,15 +24,11 @@ public interface IReadableVfsFile : IVfsEntryInfo
     /// ファイル内容を読み取ります。
     /// </summary>
     /// <returns>ファイルのバイト列</returns>
-    /// <exception cref="IOException">読み取り中に I/O エラーが発生した場合にスローされます。</exception>
-    /// <exception cref="UnauthorizedAccessException">読み取り権限がない場合にスローされます。</exception>
     Task<byte[]> ReadAsync();
 
     /// <summary>
     /// ファイル内容をテキストとして読み取ります。
     /// </summary>
     /// <returns>ファイルテキスト</returns>
-    /// <exception cref="IOException">読み取り中に I/O エラーが発生した場合にスローされます。</exception>
-    /// <exception cref="UnauthorizedAccessException">読み取り権限がない場合にスローされます。</exception>
     Task<string> ReadAsTextAsync();
 }

@@ -2,9 +2,9 @@
 id: contract-versioning
 title: "CONTRACT_VERSIONING — Contract (Interface/DTO/Enum) Versioning Policy"
 created: 2026-05-01
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -66,7 +66,8 @@ Generally considered non-breaking:
 
 Note:
 - Adding interfaces can affect implementers; always document compatibility impact.
-- Compatibility facades, such as `AIKernel.Vfs` in v0.0.3, must clearly state the new owning package and the unsupported dependency direction.
+- Compatibility facades must clearly state the new owning package and the unsupported dependency direction. The temporary `AIKernel.Vfs` facade from v0.0.3 was removed in v0.0.4; consumers now reference `AIKernel.Abstractions` directly.
+- Breaking interface renames, such as the v0.0.4 `IKernelContextExecutor` / `IChatTurnVerificationResult` / `IChatTurnSemanticHasher` cleanup, must be listed in the migration guide before package publication.
 
 ---
 
@@ -105,3 +106,4 @@ For each release, publish:
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.3 (2026-06-02): Added package ownership/type-forwarding compatibility guidance
+- v0.0.4 (2026-06-04): Added explicit guidance for ambiguous-interface renames and contract extraction releases

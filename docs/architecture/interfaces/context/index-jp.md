@@ -15,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版: [Specification Index](specs/index.md)
+英語版: [Index](index.md)
 
 # context Interfaces
 
@@ -36,8 +36,8 @@ Context は推論サイクル内の作業記憶を管理します。`IContextCol
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Hosting`, `AIKernel.Abstractions.Conversation`
 
 ## ドキュメント一覧
-- [IContextCollection (インターフェース仕様)](architecture/interfaces/context/IContextCollection-jp.md)
-- [IContextSnapshot (インターフェース仕様)](architecture/interfaces/context/IContextSnapshot-jp.md)
+- [IContextCollection (インターフェース仕様)](../context/IContextCollection-jp.md)
+- [IContextSnapshot (インターフェース仕様)](../context/IContextSnapshot-jp.md)
 ---
 
 # 変更履歴

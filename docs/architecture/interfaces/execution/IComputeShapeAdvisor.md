@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IComputeShapeAdvisor](architecture/interfaces/execution/IComputeShapeAdvisor-jp.md)
+Japanese version: [IComputeShapeAdvisor](../execution/IComputeShapeAdvisor-jp.md)
 
 # IComputeShapeAdvisor
 

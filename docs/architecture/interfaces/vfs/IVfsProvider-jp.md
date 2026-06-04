@@ -2,9 +2,9 @@
 id: ivfsprovider
 title: "IVfsProvider"
 created: 2026-05-03
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -16,7 +16,7 @@ tags:
   - japanese
 ---
 
-英語版: [IVfsProvider](architecture/interfaces/vfs/IVfsProvider.md)
+英語版: [IVfsProvider](../vfs/IVfsProvider.md)
 
 # IVfsProvider
 
@@ -39,7 +39,7 @@ IVfsProvider が AIKernel のオーケストレーションおよび統治フロ
 
 ## Notes
 - 本文書は Interface レベルのドラフトである。
-- v0.0.3 以降、`IVfsProvider` は公開 namespace `AIKernel.Vfs` を維持したまま、`AIKernel.Abstractions` assembly が所有する。`AIKernel.Vfs` package は type forwarding により互換性を維持する。
+- `IVfsProvider` は公開 namespace `AIKernel.Vfs` を維持したまま、`AIKernel.Abstractions` assembly が所有する。個別の `AIKernel.Vfs` 互換 package は v0.0.4 で削除された。
 - 実装は fail-closed と deterministic replay の原則を維持すること。
 - `VfsProviderHealth` などの具象データキャリアは `AIKernel.Dtos.Vfs` に定義する。
 - 不足している capability は、実行前に必要な capability interface を確認して検出すること。Provider は未対応の write/delete/query member を公開して遅延失敗させてはならない。
@@ -50,3 +50,4 @@ IVfsProvider が AIKernel のオーケストレーションおよび統治フロ
 - v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新
 - v0.0.2 (2026-05-09): Session capability boundary を明確化
 - v0.0.3 (2026-06-02): Abstractions 所有と type-forwarding 互換の注記を追加
+- v0.0.4 (2026-06-04): namespace ownership を維持したまま個別の AIKernel.Vfs 互換 package 注記を削除

@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # routing Interfaces
 
@@ -36,8 +36,8 @@ Routing is the boundary for model/provider selection based on required capabilit
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Hosting`
 
 ## Documents
-- [ICapabilityRegistry (Interface Specification)](architecture/interfaces/routing/ICapabilityRegistry.md)
-- [IModelVectorRouter (Interface Specification)](architecture/interfaces/routing/IModelVectorRouter.md)
+- [ICapabilityRegistry (Interface Specification)](../routing/ICapabilityRegistry.md)
+- [IModelVectorRouter (Interface Specification)](../routing/IModelVectorRouter.md)
 ---
 
 # Changelog

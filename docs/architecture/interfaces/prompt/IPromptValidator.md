@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IPromptValidator](architecture/interfaces/prompt/IPromptValidator-jp.md)
+Japanese version: [IPromptValidator](../prompt/IPromptValidator-jp.md)
 
 # IPromptValidator
 

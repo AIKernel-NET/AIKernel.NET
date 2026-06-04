@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IContextSnapshot (インターフェース仕様)](architecture/interfaces/context/IContextSnapshot-jp.md)
+Japanese version: [IContextSnapshot (インターフェース仕様)](../context/IContextSnapshot-jp.md)
 
 # IContextSnapshot (Interface Specification)
 

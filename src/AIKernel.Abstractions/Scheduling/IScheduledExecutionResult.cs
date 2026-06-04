@@ -1,9 +1,9 @@
 namespace AIKernel.Abstractions.Scheduling;
 
 /// <summary>
-/// UC-28 に基づく ISchedulerExecutionResult の契約を定義します。
+/// UC-28 に基づく scheduled execution result の契約を定義します。
 /// </summary>
-public interface IExecutionResult
+public interface IScheduledExecutionResult
 {
     string ExecutionId { get; }
     string JobId { get; }

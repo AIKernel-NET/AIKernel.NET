@@ -16,7 +16,7 @@ tags:
   - japanese
 ---
 
-英語版: [IConversationBranch](architecture/interfaces/conversation/IConversationBranch.md)
+英語版: [IConversationBranch](../conversation/IConversationBranch.md)
 
 # IConversationBranch
 

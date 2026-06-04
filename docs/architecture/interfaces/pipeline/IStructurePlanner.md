@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IStructurePlanner](architecture/interfaces/pipeline/IStructurePlanner-jp.md)
+Japanese version: [IStructurePlanner](../pipeline/IStructurePlanner-jp.md)
 
 # IStructurePlanner
 

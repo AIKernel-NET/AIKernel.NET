@@ -16,7 +16,7 @@ tags:
   - japanese
 ---
 
-英語版: [IServiceRegistrar](architecture/interfaces/hosting/IServiceRegistrar.md)
+英語版: [IServiceRegistrar](../hosting/IServiceRegistrar.md)
 
 # IServiceRegistrar
 
