@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # material Interfaces
 
@@ -36,8 +36,8 @@ Material is the ingestion boundary for external data. Through `IMaterialQuaranti
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Providers`
 
 ## Documents
-- [IMaterialQuarantine (Interface Specification)](architecture/interfaces/material/IMaterialQuarantine.md)
-- [IStructuredMaterial](architecture/interfaces/material/IStructuredMaterial.md)
+- [IMaterialQuarantine (Interface Specification)](../material/IMaterialQuarantine.md)
+- [IStructuredMaterial](../material/IStructuredMaterial.md)
 ---
 
 # Changelog

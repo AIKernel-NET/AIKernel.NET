@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # conversation Interfaces
 
@@ -36,13 +36,13 @@ Conversation covers branching, diffing, and timeline reconstruction of dialogue 
 - Called by: `AIKernel.Abstractions.Hosting`, `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Vfs`
 
 ## Documents
-- [IConversationBranch](architecture/interfaces/conversation/IConversationBranch.md)
-- [IConversationCheckpoint](architecture/interfaces/conversation/IConversationCheckpoint.md)
-- [IConversationDiff](architecture/interfaces/conversation/IConversationDiff.md)
-- [IConversationSnapshot](architecture/interfaces/conversation/IConversationSnapshot.md)
-- [IConversationStore](architecture/interfaces/conversation/IConversationStore.md)
-- [IConversationTimeline](architecture/interfaces/conversation/IConversationTimeline.md)
-- [IDiffFormatter](architecture/interfaces/conversation/IDiffFormatter.md)
+- [IConversationBranch](../conversation/IConversationBranch.md)
+- [IConversationCheckpoint](../conversation/IConversationCheckpoint.md)
+- [IConversationDiff](../conversation/IConversationDiff.md)
+- [IConversationSnapshot](../conversation/IConversationSnapshot.md)
+- [IConversationStore](../conversation/IConversationStore.md)
+- [IConversationTimeline](../conversation/IConversationTimeline.md)
+- [IDiffFormatter](../conversation/IDiffFormatter.md)
 ---
 
 # Changelog

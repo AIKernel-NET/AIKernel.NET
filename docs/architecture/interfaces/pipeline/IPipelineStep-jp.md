@@ -16,7 +16,7 @@ tags:
   - japanese
 ---
 
-英語版: [IPipelineStep](architecture/interfaces/pipeline/IPipelineStep.md)
+英語版: [IPipelineStep](../pipeline/IPipelineStep.md)
 
 # IPipelineStep
 

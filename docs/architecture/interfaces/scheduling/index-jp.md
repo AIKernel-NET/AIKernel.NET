@@ -15,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版: [Specification Index](specs/index.md)
+英語版: [Index](index.md)
 
 # scheduling Interfaces
 
@@ -23,9 +23,9 @@ tags:
 スケジュール実行ジョブの契約。
 
 ## ドキュメント一覧
-- [IScheduledJob](architecture/interfaces/scheduling/IScheduledJob-jp.md)
-- [IScheduleSpec](architecture/interfaces/scheduling/IScheduleSpec-jp.md)
-- [IScheduledExecutionResult](architecture/interfaces/scheduling/IScheduledExecutionResult-jp.md)
+- [IScheduledJob](../scheduling/IScheduledJob-jp.md)
+- [IScheduleSpec](../scheduling/IScheduleSpec-jp.md)
+- [IScheduledExecutionResult](../scheduling/IScheduledExecutionResult-jp.md)
 
 ---
 

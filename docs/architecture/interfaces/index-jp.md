@@ -15,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版: [Specification Index](specs/index.md)
+英語版: [Index](index.md)
 
 # AIKernel Architecture Interfaces — Index
 

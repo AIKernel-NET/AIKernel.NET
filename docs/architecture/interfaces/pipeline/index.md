@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # pipeline Interfaces
 
@@ -32,11 +32,11 @@ Pipeline controls stateful execution transitions. `IPipelineOrchestrator` and `I
 - `docs/specs/04.MODEL_ROUTING_SPEC.md`
 
 ## Documents
-- [IPipelineOrchestrator](architecture/interfaces/pipeline/IPipelineOrchestrator.md)
-- [IPipelineStep](architecture/interfaces/pipeline/IPipelineStep.md)
-- [IStructurePlanner](architecture/interfaces/pipeline/IStructurePlanner.md)
-- [ITaskManager](architecture/interfaces/pipeline/ITaskManager.md)
-- [ITaskVectorEstimator](architecture/interfaces/pipeline/ITaskVectorEstimator.md)
+- [IPipelineOrchestrator](../pipeline/IPipelineOrchestrator.md)
+- [IPipelineStep](../pipeline/IPipelineStep.md)
+- [IStructurePlanner](../pipeline/IStructurePlanner.md)
+- [ITaskManager](../pipeline/ITaskManager.md)
+- [ITaskVectorEstimator](../pipeline/ITaskVectorEstimator.md)
 
 ---
 

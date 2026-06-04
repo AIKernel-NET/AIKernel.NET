@@ -8,7 +8,7 @@ issuer: ai-kernel@aikernel.net
 maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 ---
 
-英語版: [Purpose](design/SEMANTIC_SNAPSHOT_FORMAT.md)
+英語版: [Purpose](SEMANTIC_SNAPSHOT_FORMAT.md)
 
 # Purpose
 AIKernel が推論途中状態を統治メタデータ付きで保持するための **Semantic Snapshot** 標準 Markdown 形式を定義する。
@@ -148,11 +148,11 @@ Fail-Closed:
 - リンク未解決（孤立 ID）が必須参照に含まれる場合、実行を停止する。
 
 # References
-- [Semantic Context OS ビジョン](architecture/16.SEMANTIC_CONTEXT_OS_VISION-jp.md)
-- [コンテキスト分離仕様](architecture/2.CONTEXT_ISOLATION_SPEC-jp.md)
-- [Attention Pollution 理論](architecture/3.ATTENTION_POLLUTION_THEORY-jp.md)
-- [Material Quarantine Trust Model](architecture/11.MATERIAL_QUARANTINE_TRUST_MODEL-jp.md)
-- [Design Intent](design/DESIGN_INTENT-jp.md)
+- [Semantic Context OS ビジョン](../architecture/16.SEMANTIC_CONTEXT_OS_VISION-jp.md)
+- [コンテキスト分離仕様](../architecture/2.CONTEXT_ISOLATION_SPEC-jp.md)
+- [Attention Pollution 理論](../architecture/3.ATTENTION_POLLUTION_THEORY-jp.md)
+- [Material Quarantine Trust Model](../architecture/11.MATERIAL_QUARANTINE_TRUST_MODEL-jp.md)
+- [Design Intent](DESIGN_INTENT-jp.md)
 
 # Changelog
 - 2026-05-03 v0.0.0 Initial draft

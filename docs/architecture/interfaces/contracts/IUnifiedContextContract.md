@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [IUnifiedContextContract (統合契約仕様)](architecture/interfaces/contracts/IUnifiedContextContract-jp.md)
+Japanese version: [IUnifiedContextContract (統合契約仕様)](../contracts/IUnifiedContextContract-jp.md)
 
 # IUnifiedContextContract (Unified Contract Specification)
 

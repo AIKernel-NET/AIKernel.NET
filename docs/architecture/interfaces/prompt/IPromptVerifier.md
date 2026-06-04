@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IPromptVerifier (インターフェース仕様)](architecture/interfaces/prompt/IPromptVerifier-jp.md)
+Japanese version: [IPromptVerifier (インターフェース仕様)](../prompt/IPromptVerifier-jp.md)
 
 # IPromptVerifier (Interface Specification)
 

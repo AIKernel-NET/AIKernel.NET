@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [IKernelContextContract (契約仕様)](architecture/interfaces/contracts/IKernelContextContract-jp.md)
+Japanese version: [IKernelContextContract (契約仕様)](../contracts/IKernelContextContract-jp.md)
 
 # IKernelContextContract (Contract Specification)
 

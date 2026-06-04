@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IConversationTimeline](architecture/interfaces/conversation/IConversationTimeline-jp.md)
+Japanese version: [IConversationTimeline](../conversation/IConversationTimeline-jp.md)
 
 # IConversationTimeline
 

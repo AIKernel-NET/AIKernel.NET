@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # prompt Interfaces
 
@@ -36,11 +36,11 @@ Prompt is the boundary that elevates signed input artifacts into executable cont
 - Called by: `AIKernel.Abstractions.Hosting`, `AIKernel.Abstractions.Governance`, `AIKernel.Abstractions.Execution`
 
 ## Documents
-- [IPromptRepository](architecture/interfaces/prompt/IPromptRepository.md)
-- [IPromptSignatureProvider](architecture/interfaces/prompt/IPromptSignatureProvider.md)
-- [ISignatureTrustStore (Interface Specification)](architecture/interfaces/governance/ISignatureTrustStore.md)
-- [IPromptValidator](architecture/interfaces/prompt/IPromptValidator.md)
-- [IPromptVerifier (Interface Specification)](architecture/interfaces/prompt/IPromptVerifier.md)
+- [IPromptRepository](../prompt/IPromptRepository.md)
+- [IPromptSignatureProvider](../prompt/IPromptSignatureProvider.md)
+- [ISignatureTrustStore (Interface Specification)](../governance/ISignatureTrustStore.md)
+- [IPromptValidator](../prompt/IPromptValidator.md)
+- [IPromptVerifier (Interface Specification)](../prompt/IPromptVerifier.md)
 ---
 
 # Changelog

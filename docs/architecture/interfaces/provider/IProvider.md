@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IProvider (インターフェース仕様)](architecture/interfaces/provider/IProvider-jp.md)
+Japanese version: [IProvider (インターフェース仕様)](../provider/IProvider-jp.md)
 
 # IProvider (Interface Specification)
 

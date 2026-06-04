@@ -16,7 +16,7 @@ tags:
   - japanese
 ---
 
-英語版: [IVfsProvider](architecture/interfaces/vfs/IVfsProvider.md)
+英語版: [IVfsProvider](../vfs/IVfsProvider.md)
 
 # IVfsProvider
 

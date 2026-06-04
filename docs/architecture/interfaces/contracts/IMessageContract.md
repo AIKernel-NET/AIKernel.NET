@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [IMessageContract (契約仕様)](architecture/interfaces/contracts/IMessageContract-jp.md)
+Japanese version: [IMessageContract (契約仕様)](../contracts/IMessageContract-jp.md)
 
 # IMessageContract (Contract Specification)
 

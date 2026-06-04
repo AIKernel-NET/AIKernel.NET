@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [IExpressionContract (契約仕様)](architecture/interfaces/contracts/IExpressionContract-jp.md)
+Japanese version: [IExpressionContract (契約仕様)](../contracts/IExpressionContract-jp.md)
 
 # IExpressionContract (Contract Specification)
 

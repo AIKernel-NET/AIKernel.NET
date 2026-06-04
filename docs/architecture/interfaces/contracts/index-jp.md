@@ -15,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版: [Specification Index](specs/index.md)
+英語版: [Index](index.md)
 
 # contracts Interfaces
 
@@ -36,13 +36,13 @@ Contracts はモジュール横断 ABI として機能します。Orchestration 
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Context`, `AIKernel.Abstractions.Governance`
 
 ## ドキュメント一覧
-- [IExpressionContract (契約仕様)](architecture/interfaces/contracts/IExpressionContract-jp.md)
-- [IMaterialContract](architecture/interfaces/contracts/IMaterialContract-jp.md)
-- [IOrchestrationContract (契約仕様)](architecture/interfaces/contracts/IOrchestrationContract-jp.md)
-- [IKernelContextContract (契約仕様)](architecture/interfaces/contracts/IKernelContextContract-jp.md)
-- [IMessageContract (契約仕様)](architecture/interfaces/contracts/IMessageContract-jp.md)
-- [ITokenizerProfile (契約仕様)](architecture/interfaces/contracts/ITokenizerProfile-jp.md)
-- [IUnifiedContextContract (統合契約仕様)](architecture/interfaces/contracts/IUnifiedContextContract-jp.md)
+- [IExpressionContract (契約仕様)](../contracts/IExpressionContract-jp.md)
+- [IMaterialContract](../contracts/IMaterialContract-jp.md)
+- [IOrchestrationContract (契約仕様)](../contracts/IOrchestrationContract-jp.md)
+- [IKernelContextContract (契約仕様)](../contracts/IKernelContextContract-jp.md)
+- [IMessageContract (契約仕様)](../contracts/IMessageContract-jp.md)
+- [ITokenizerProfile (契約仕様)](../contracts/ITokenizerProfile-jp.md)
+- [IUnifiedContextContract (統合契約仕様)](../contracts/IUnifiedContextContract-jp.md)
 ---
 
 # 変更履歴

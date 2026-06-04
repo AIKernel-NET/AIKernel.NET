@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # execution Interfaces
 
@@ -36,10 +36,10 @@ Execution is the core boundary of inference runtime. `IThoughtProcess` handles s
 - Called by: `AIKernel.Abstractions.Hosting`, `AIKernel.Abstractions.Routing`
 
 ## Documents
-- [IComputeShapeAdvisor](architecture/interfaces/execution/IComputeShapeAdvisor.md)
-- [IOutputPolisher (Interface Specification)](architecture/interfaces/execution/IOutputPolisher.md)
-- [IThoughtProcess (Interface Specification)](architecture/interfaces/execution/IThoughtProcess.md)
-- [ITokenizer](architecture/interfaces/execution/ITokenizer.md)
+- [IComputeShapeAdvisor](../execution/IComputeShapeAdvisor.md)
+- [IOutputPolisher (Interface Specification)](../execution/IOutputPolisher.md)
+- [IThoughtProcess (Interface Specification)](../execution/IThoughtProcess.md)
+- [ITokenizer](../execution/ITokenizer.md)
 ---
 
 # Changelog

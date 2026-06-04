@@ -16,7 +16,7 @@ tags:
   - japanese
 ---
 
-英語版: [IPipelineOrchestrator](architecture/interfaces/pipeline/IPipelineOrchestrator.md)
+英語版: [IPipelineOrchestrator](../pipeline/IPipelineOrchestrator.md)
 
 # IPipelineOrchestrator
 

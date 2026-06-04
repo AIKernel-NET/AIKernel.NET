@@ -16,7 +16,7 @@ tags:
   - japanese
 ---
 
-英語版: [IStructurePlanner](architecture/interfaces/pipeline/IStructurePlanner.md)
+英語版: [IStructurePlanner](../pipeline/IStructurePlanner.md)
 
 # IStructurePlanner
 

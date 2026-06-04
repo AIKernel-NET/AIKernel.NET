@@ -28,7 +28,7 @@ Governance は実行許可・監査・注意品質監視を担う境界です。
 - `UC-21` ポリシー実行
 
 ## 3. 関連仕様 (Related Specs)
-- [署名付きプロンプトガバナンス仕様](../../02.SIGNED_PROMPT_GOVERNANCE_SPEC-jp.md)
+- [署名付きプロンプトガバナンス仕様](../../../specs/02.SIGNED_PROMPT_GOVERNANCE_SPEC-jp.md)
 - [Semantic Context OS Vision](../../16.SEMANTIC_CONTEXT_OS_VISION-jp.md)
 
 ## 4. 依存境界 (Dependency Boundary)

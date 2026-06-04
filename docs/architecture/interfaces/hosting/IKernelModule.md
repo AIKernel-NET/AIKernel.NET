@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IKernelModule](architecture/interfaces/hosting/IKernelModule-jp.md)
+Japanese version: [IKernelModule](../hosting/IKernelModule-jp.md)
 
 # IKernelModule
 

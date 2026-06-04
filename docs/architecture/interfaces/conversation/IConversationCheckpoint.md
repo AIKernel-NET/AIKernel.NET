@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IConversationCheckpoint](architecture/interfaces/conversation/IConversationCheckpoint-jp.md)
+Japanese version: [IConversationCheckpoint](../conversation/IConversationCheckpoint-jp.md)
 
 # IConversationCheckpoint
 

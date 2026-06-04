@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [IOrchestrationContract (契約仕様)](architecture/interfaces/contracts/IOrchestrationContract-jp.md)
+Japanese version: [IOrchestrationContract (契約仕様)](../contracts/IOrchestrationContract-jp.md)
 
 # IOrchestrationContract (Contract Specification)
 

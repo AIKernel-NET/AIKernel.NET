@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IStructuredMaterial](architecture/interfaces/material/IStructuredMaterial-jp.md)
+Japanese version: [IStructuredMaterial](../material/IStructuredMaterial-jp.md)
 
 # IStructuredMaterial
 

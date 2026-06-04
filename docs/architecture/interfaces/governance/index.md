@@ -28,7 +28,7 @@ Governance covers execution authorization, auditability, and attention-quality s
 - `UC-21` Policy Enforcement
 
 ## 3. Related Specs
-- [Signed Prompt Governance Spec](../../02.SIGNED_PROMPT_GOVERNANCE_SPEC.md)
+- [Signed Prompt Governance Spec](../../../specs/02.SIGNED_PROMPT_GOVERNANCE_SPEC.md)
 - [Semantic Context OS Vision](../../16.SEMANTIC_CONTEXT_OS_VISION.md)
 
 ## 4. Dependency Boundary

@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # contracts Interfaces
 
@@ -36,13 +36,13 @@ Contracts serve as the cross-module ABI for AIKernel. Through Orchestration, Exp
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Context`, `AIKernel.Abstractions.Governance`
 
 ## Documents
-- [IExpressionContract (Contract Specification)](architecture/interfaces/contracts/IExpressionContract.md)
-- [IMaterialContract](architecture/interfaces/contracts/IMaterialContract.md)
-- [IOrchestrationContract (Contract Specification)](architecture/interfaces/contracts/IOrchestrationContract.md)
-- [IKernelContextContract (Contract Specification)](architecture/interfaces/contracts/IKernelContextContract.md)
-- [IMessageContract (Contract Specification)](architecture/interfaces/contracts/IMessageContract.md)
-- [ITokenizerProfile (Contract Specification)](architecture/interfaces/contracts/ITokenizerProfile.md)
-- [IUnifiedContextContract (Unified Contract Specification)](architecture/interfaces/contracts/IUnifiedContextContract.md)
+- [IExpressionContract (Contract Specification)](../contracts/IExpressionContract.md)
+- [IMaterialContract](../contracts/IMaterialContract.md)
+- [IOrchestrationContract (Contract Specification)](../contracts/IOrchestrationContract.md)
+- [IKernelContextContract (Contract Specification)](../contracts/IKernelContextContract.md)
+- [IMessageContract (Contract Specification)](../contracts/IMessageContract.md)
+- [ITokenizerProfile (Contract Specification)](../contracts/ITokenizerProfile.md)
+- [IUnifiedContextContract (Unified Contract Specification)](../contracts/IUnifiedContextContract.md)
 ---
 
 # Changelog

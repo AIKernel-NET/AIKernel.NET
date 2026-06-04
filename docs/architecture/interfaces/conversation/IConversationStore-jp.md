@@ -16,7 +16,7 @@ tags:
   - japanese
 ---
 
-英語版: [IConversationStore](architecture/interfaces/conversation/IConversationStore.md)
+英語版: [IConversationStore](../conversation/IConversationStore.md)
 
 # IConversationStore
 

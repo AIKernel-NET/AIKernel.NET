@@ -15,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版: [IMaterialContract](architecture/interfaces/contracts/IMaterialContract.md)
+英語版: [IMaterialContract](../contracts/IMaterialContract.md)
 
 # IMaterialContract
 

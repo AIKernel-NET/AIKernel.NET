@@ -18,7 +18,7 @@ tags:
   - japanese
 ---
 
-英語版: [Vfs Capability Contracts](architecture/interfaces/vfs/IVfsCapabilityContracts.md)
+英語版: [Vfs Capability Contracts](../vfs/IVfsCapabilityContracts.md)
 
 # Vfs Capability Contracts
 

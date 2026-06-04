@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IConversationDiff](architecture/interfaces/conversation/IConversationDiff-jp.md)
+Japanese version: [IConversationDiff](../conversation/IConversationDiff-jp.md)
 
 # IConversationDiff
 

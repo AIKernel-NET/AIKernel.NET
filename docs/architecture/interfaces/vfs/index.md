@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # vfs Interfaces
 
@@ -47,8 +47,8 @@ Vfs permissions are expressed through capability interfaces rather than late run
 - `IVfsFile`, `IVfsDirectory`, and `IVfsSession` remain composite compatibility contracts for callers that require the legacy full surface.
 
 ## Documents
-- [IVfsProvider](architecture/interfaces/vfs/IVfsProvider.md)
-- [Vfs Capability Contracts](architecture/interfaces/vfs/IVfsCapabilityContracts.md)
+- [IVfsProvider](../vfs/IVfsProvider.md)
+- [Vfs Capability Contracts](../vfs/IVfsCapabilityContracts.md)
 ---
 
 # Changelog

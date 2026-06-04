@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # hosting Interfaces
 
@@ -36,11 +36,11 @@ Hosting manages kernel startup, module registration, and lifecycle transitions. 
 - Called by: `AIKernel.Core` (implementation layer), `Host Applications`
 
 ## Documents
-- [IKernelContext](architecture/interfaces/hosting/IKernelContext.md)
-- [IKernelHost](architecture/interfaces/hosting/IKernelHost.md)
-- [IKernelModule](architecture/interfaces/hosting/IKernelModule.md)
-- [IProviderRegistrar](architecture/interfaces/hosting/IProviderRegistrar.md)
-- [IServiceRegistrar](architecture/interfaces/hosting/IServiceRegistrar.md)
+- [IKernelContext](../hosting/IKernelContext.md)
+- [IKernelHost](../hosting/IKernelHost.md)
+- [IKernelModule](../hosting/IKernelModule.md)
+- [IProviderRegistrar](../hosting/IProviderRegistrar.md)
+- [IServiceRegistrar](../hosting/IServiceRegistrar.md)
 ---
 
 # Changelog

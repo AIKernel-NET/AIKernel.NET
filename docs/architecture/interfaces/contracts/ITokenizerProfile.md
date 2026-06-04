@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [ITokenizerProfile (契約仕様)](architecture/interfaces/contracts/ITokenizerProfile-jp.md)
+Japanese version: [ITokenizerProfile (契約仕様)](../contracts/ITokenizerProfile-jp.md)
 
 # ITokenizerProfile (Contract Specification)
 

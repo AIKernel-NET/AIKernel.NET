@@ -16,7 +16,7 @@ tags:
   - japanese
 ---
 
-英語版: [IProviderRegistrar](architecture/interfaces/hosting/IProviderRegistrar.md)
+英語版: [IProviderRegistrar](../hosting/IProviderRegistrar.md)
 
 # IProviderRegistrar
 

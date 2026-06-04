@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IThoughtProcess (インターフェース仕様)](architecture/interfaces/execution/IThoughtProcess-jp.md)
+Japanese version: [IThoughtProcess (インターフェース仕様)](../execution/IThoughtProcess-jp.md)
 
 # IThoughtProcess (Interface Specification)
 

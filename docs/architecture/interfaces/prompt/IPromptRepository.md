@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IPromptRepository](architecture/interfaces/prompt/IPromptRepository-jp.md)
+Japanese version: [IPromptRepository](../prompt/IPromptRepository-jp.md)
 
 # IPromptRepository
 

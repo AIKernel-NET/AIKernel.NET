@@ -15,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版: [Specification Index](specs/index.md)
+英語版: [Index](index.md)
 
 # routing Interfaces
 
@@ -36,8 +36,8 @@ Routing は、要求能力・制約・実行状況に基づくモデル選定の
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Hosting`
 
 ## ドキュメント一覧
-- [ICapabilityRegistry (インターフェース仕様)](architecture/interfaces/routing/ICapabilityRegistry-jp.md)
-- [IModelVectorRouter (インターフェース仕様)](architecture/interfaces/routing/IModelVectorRouter-jp.md)
+- [ICapabilityRegistry (インターフェース仕様)](../routing/ICapabilityRegistry-jp.md)
+- [IModelVectorRouter (インターフェース仕様)](../routing/IModelVectorRouter-jp.md)
 ---
 
 # 変更履歴

@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # tooling Interfaces
 
@@ -35,9 +35,9 @@ Tooling is the safety boundary for external tool invocation. `IToolAccessValidat
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Security`, `AIKernel.Abstractions.Hosting`
 
 ## Documents
-- [IToolAccessValidator](architecture/interfaces/tooling/IToolAccessValidator.md)
-- [IToolPermission](architecture/interfaces/tooling/IToolPermission.md)
-- [IToolSandbox](architecture/interfaces/tooling/IToolSandbox.md)
+- [IToolAccessValidator](../tooling/IToolAccessValidator.md)
+- [IToolPermission](../tooling/IToolPermission.md)
+- [IToolSandbox](../tooling/IToolSandbox.md)
 ---
 
 # Changelog

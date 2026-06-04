@@ -16,7 +16,7 @@ tags:
   - japanese
 ---
 
-英語版: [IPromptSignatureProvider](architecture/interfaces/prompt/IPromptSignatureProvider.md)
+英語版: [IPromptSignatureProvider](../prompt/IPromptSignatureProvider.md)
 
 # IPromptSignatureProvider
 

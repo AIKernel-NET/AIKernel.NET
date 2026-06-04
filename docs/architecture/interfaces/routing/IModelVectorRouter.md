@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [IModelVectorRouter (インターフェース仕様)](architecture/interfaces/routing/IModelVectorRouter-jp.md)
+Japanese version: [IModelVectorRouter (インターフェース仕様)](../routing/IModelVectorRouter-jp.md)
 
 # IModelVectorRouter (Interface Specification)
 

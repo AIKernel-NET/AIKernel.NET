@@ -16,7 +16,7 @@ tags:
   - english
 ---
 
-Japanese version: [IConversationSnapshot](architecture/interfaces/conversation/IConversationSnapshot-jp.md)
+Japanese version: [IConversationSnapshot](../conversation/IConversationSnapshot-jp.md)
 
 # IConversationSnapshot
 

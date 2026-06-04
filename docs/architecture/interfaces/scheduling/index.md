@@ -15,7 +15,7 @@ tags:
   - english
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Index](index-jp.md)
 
 # scheduling Interfaces
 
@@ -23,9 +23,9 @@ Japanese version: [Specification Index](specs/index-jp.md)
 Scheduled job contracts.
 
 ## Documents
-- [IScheduledJob](architecture/interfaces/scheduling/IScheduledJob.md)
-- [IScheduleSpec](architecture/interfaces/scheduling/IScheduleSpec.md)
-- [IScheduledExecutionResult](architecture/interfaces/scheduling/IScheduledExecutionResult.md)
+- [IScheduledJob](../scheduling/IScheduledJob.md)
+- [IScheduleSpec](../scheduling/IScheduleSpec.md)
+- [IScheduledExecutionResult](../scheduling/IScheduledExecutionResult.md)
 
 ---
 

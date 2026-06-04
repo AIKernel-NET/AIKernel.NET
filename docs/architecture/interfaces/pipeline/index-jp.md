@@ -15,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版: [Specification Index](specs/index.md)
+英語版: [Index](index.md)
 
 # pipeline Interfaces
 
@@ -32,11 +32,11 @@ Pipeline はステートフル実行遷移を制御する境界です。`IPipeli
 - `docs/specs/04.MODEL_ROUTING_SPEC-jp.md`
 
 ## ドキュメント一覧
-- [IPipelineOrchestrator](architecture/interfaces/pipeline/IPipelineOrchestrator-jp.md)
-- [IPipelineStep](architecture/interfaces/pipeline/IPipelineStep-jp.md)
-- [IStructurePlanner](architecture/interfaces/pipeline/IStructurePlanner-jp.md)
-- [ITaskManager](architecture/interfaces/pipeline/ITaskManager-jp.md)
-- [ITaskVectorEstimator](architecture/interfaces/pipeline/ITaskVectorEstimator-jp.md)
+- [IPipelineOrchestrator](../pipeline/IPipelineOrchestrator-jp.md)
+- [IPipelineStep](../pipeline/IPipelineStep-jp.md)
+- [IStructurePlanner](../pipeline/IStructurePlanner-jp.md)
+- [ITaskManager](../pipeline/ITaskManager-jp.md)
+- [ITaskVectorEstimator](../pipeline/ITaskVectorEstimator-jp.md)
 
 ---
 

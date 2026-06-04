@@ -15,7 +15,7 @@ tags:
   - japanese
 ---
 
-英語版: [Specification Index](specs/index.md)
+英語版: [Index](index.md)
 
 # tooling Interfaces
 
@@ -35,9 +35,9 @@ Tooling は外部ツール呼び出しの安全境界です。`IToolAccessValida
 - Called by: `AIKernel.Abstractions.Execution`, `AIKernel.Abstractions.Security`, `AIKernel.Abstractions.Hosting`
 
 ## ドキュメント一覧
-- [IToolAccessValidator](architecture/interfaces/tooling/IToolAccessValidator-jp.md)
-- [IToolPermission](architecture/interfaces/tooling/IToolPermission-jp.md)
-- [IToolSandbox](architecture/interfaces/tooling/IToolSandbox-jp.md)
+- [IToolAccessValidator](../tooling/IToolAccessValidator-jp.md)
+- [IToolPermission](../tooling/IToolPermission-jp.md)
+- [IToolSandbox](../tooling/IToolSandbox-jp.md)
 ---
 
 # 変更履歴
