@@ -48,6 +48,7 @@ Japanese version: [Index](index-jp.md)
 ## Namespace Overview
 - `kernel`: execution entry and lifecycle contracts.
 - `dsl`: deterministic semantic IR, DSL pipeline, DSL ROM registry, and VFS-backed DSL ROM store contracts.
+- `governance`: attention guard, audit logger, signature trust, context lifecycle, and ChatChain hash-chain contracts.
 - `history`: history summarization and History ROM registry/export/store contracts.
 - `models`: capability axes, dynamic capacity, and execution constraints.
 - `query`: Phase 1 query augmentation, decomposition, and routing contracts.
@@ -66,3 +67,4 @@ Japanese version: [Index](index-jp.md)
 - v0.0.1 (2026-05-09): Added query interface category
 - v0.0.3 (2026-06-02): Added Vfs contract ownership note
 - v0.0.4 (2026-06-04): Added DSL, History ROM, and Time interface categories
+- v0.0.4 (2026-06-04): Clarified governance coverage for audit and ChatChain contracts

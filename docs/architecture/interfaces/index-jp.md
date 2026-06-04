@@ -48,6 +48,7 @@ tags:
 ## 名前空間概要
 - `kernel`: カーネル本体の実行入口とライフサイクル契約。
 - `dsl`: 決定論的 semantic IR、DSL pipeline、DSL ROM registry、VFS-backed DSL ROM store 契約。
+- `governance`: attention guard、audit logger、signature trust、context lifecycle、ChatChain hash-chain 契約。
 - `history`: history summarization と History ROM registry/export/store 契約。
 - `models`: 能力軸・動的容量・実行制約のベースモデル契約。
 - `query`: Phase 1 query 補間・分解・routing 契約。
@@ -66,3 +67,4 @@ tags:
 - v0.0.1 (2026-05-09): query interface category を追加
 - v0.0.3 (2026-06-02): Vfs contract 所有元の注記を追加
 - v0.0.4 (2026-06-04): DSL、History ROM、Time interface category を追加
+- v0.0.4 (2026-06-04): audit / ChatChain contract を含む governance coverage を明確化
