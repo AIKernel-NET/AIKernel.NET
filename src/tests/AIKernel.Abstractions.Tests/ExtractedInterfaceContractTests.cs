@@ -77,8 +77,29 @@ public sealed class ExtractedInterfaceContractTests
             .ToArray();
 
         Assert.DoesNotContain("AIKernel.Abstractions", dtoReferences);
+        Assert.DoesNotContain("AIKernel.Contracts", dtoReferences);
         Assert.DoesNotContain("AIKernel.Core", dtoReferences);
         Assert.DoesNotContain("AIKernel.Common", dtoReferences);
+
+        var contractReferences = typeof(IUnifiedContextContract)
+            .Assembly
+            .GetReferencedAssemblies()
+            .Select(name => name.Name)
+            .ToArray();
+
+        Assert.DoesNotContain("AIKernel.Abstractions", contractReferences);
+        Assert.DoesNotContain("AIKernel.Core", contractReferences);
+        Assert.DoesNotContain("AIKernel.Common", contractReferences);
+        Assert.DoesNotContain("AIKernel.Vfs", contractReferences);
+
+        var enumReferences = typeof(AIKernel.Enums.FailureMode)
+            .Assembly
+            .GetReferencedAssemblies()
+            .Select(name => name.Name)
+            .Where(name => name is not "System.Runtime")
+            .ToArray();
+
+        Assert.Empty(enumReferences);
     }
 
     [Fact]
