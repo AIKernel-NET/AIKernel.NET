@@ -371,7 +371,7 @@ Orchestration, Provider
 定期・非同期ジョブを実行し、状態遷移と実行結果を管理する。
 
 **必要なインタフェース**  
-`IScheduler`, `IScheduleSpec`, `IScheduledJob`, `IExecutionResult`
+`IScheduler`, `IScheduleSpec`, `IScheduledJob`, `IScheduledExecutionResult`
 
 **コンテキスト**  
 UC-09（Deterministic Pipeline Execution）, UC-18（Chat Persistence）

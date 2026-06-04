@@ -35,7 +35,7 @@ public interface IScheduledJobCanceller
 /// </summary>
 public interface IScheduledExecutionResultReader
 {
-    Task<IExecutionResult?> GetExecutionResultAsync(string jobId);
+    Task<IScheduledExecutionResult?> GetExecutionResultAsync(string jobId);
 }
 
 /// <summary>

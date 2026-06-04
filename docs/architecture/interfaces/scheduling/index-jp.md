@@ -1,9 +1,9 @@
 ---
 title: "scheduling Interfaces"
 created: 2026-05-06
-updated: 2026-05-16
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.2"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -25,7 +25,7 @@ tags:
 ## ドキュメント一覧
 - [IScheduledJob](architecture/interfaces/scheduling/IScheduledJob-jp.md)
 - [IScheduleSpec](architecture/interfaces/scheduling/IScheduleSpec-jp.md)
-- [IExecutionResult](architecture/interfaces/scheduling/IExecutionResult-jp.md)
+- [IScheduledExecutionResult](architecture/interfaces/scheduling/IScheduledExecutionResult-jp.md)
 
 ---
 

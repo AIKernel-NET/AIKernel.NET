@@ -169,9 +169,9 @@ public sealed class TaskAndSchedulingCapabilityContractTests
             return Task.FromResult(jobs);
         }
 
-        public Task<IExecutionResult?> GetExecutionResultAsync(string jobId)
+        public Task<IScheduledExecutionResult?> GetExecutionResultAsync(string jobId)
         {
-            return Task.FromResult<IExecutionResult?>(null);
+            return Task.FromResult<IScheduledExecutionResult?>(null);
         }
     }
 }

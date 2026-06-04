@@ -540,8 +540,9 @@ v0.0.4 removes public interface names that were too broad for a shared package s
 | `AIKernel.Abstractions.Kernel.IKernelExecutor` | `AIKernel.Abstractions.Kernel.IKernelContextExecutor` |
 | `AIKernel.Abstractions.Governance.ChatChain.IResult` | `AIKernel.Abstractions.Governance.ChatChain.IChatTurnVerificationResult` |
 | `AIKernel.Abstractions.Governance.ChatChain.ISemanticHasher` | `AIKernel.Abstractions.Governance.ChatChain.IChatTurnSemanticHasher` |
+| `AIKernel.Abstractions.Scheduling.IExecutionResult` | `AIKernel.Abstractions.Scheduling.IScheduledExecutionResult` |
 
-`AIKernel.Abstractions.Execution.IKernelExecutor` and `AIKernel.Abstractions.Rom.ISemanticHasher` remain unchanged. The renamed contracts were facade/chat-chain-specific names that collided with broader execution and ROM concepts.
+`AIKernel.Abstractions.Execution.IKernelExecutor` and `AIKernel.Abstractions.Rom.ISemanticHasher` remain unchanged. The renamed contracts were facade/chat-chain/scheduling-specific names that collided with broader execution and ROM concepts.
 
 When a Core implementation still uses `AIKernel.Common.Results.Result<T>` internally, unwrap it at the package boundary into either:
 

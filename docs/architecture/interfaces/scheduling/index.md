@@ -1,9 +1,9 @@
 ---
 title: "scheduling Interfaces"
 created: 2026-05-06
-updated: 2026-05-16
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.2"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -25,7 +25,7 @@ Scheduled job contracts.
 ## Documents
 - [IScheduledJob](architecture/interfaces/scheduling/IScheduledJob.md)
 - [IScheduleSpec](architecture/interfaces/scheduling/IScheduleSpec.md)
-- [IExecutionResult](architecture/interfaces/scheduling/IExecutionResult.md)
+- [IScheduledExecutionResult](architecture/interfaces/scheduling/IScheduledExecutionResult.md)
 
 ---
 
