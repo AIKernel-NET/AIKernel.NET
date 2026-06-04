@@ -1,7 +1,7 @@
 ---
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -38,6 +38,8 @@ Each layer is published as a separate NuGet package.
 
 As of `v0.0.3`, Vfs interface contracts are owned by `AIKernel.Abstractions`.
 The public namespace remains `AIKernel.Vfs`, and the `AIKernel.Vfs` package remains as a compatibility facade through type forwarding.
+
+As of `v0.0.4`, deterministic DSL, DSL ROM, History ROM, and Kernel clock contracts are also published through `AIKernel.Abstractions` / `AIKernel.Dtos`.
 
 ---
 

@@ -2,9 +2,9 @@
 id: ivfscapabilitycontracts
 title: "Vfs Capability Contracts"
 created: 2026-05-09
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -57,3 +57,4 @@ Unsupported capabilities must not be represented by methods that partially execu
 # Changelog
 - v0.0.2 (2026-05-09): Initial capability-based Vfs contract definition
 - v0.0.3 (2026-06-02): Added Abstractions ownership and type-forwarding compatibility note
+- v0.0.4 (2026-06-04): Confirmed Vfs capability contracts remain stable for DSL / History ROM stores

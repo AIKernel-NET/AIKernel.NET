@@ -1,9 +1,9 @@
 ---
 title: "vfs Interfaces"
 created: 2026-05-03
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -56,3 +56,4 @@ Vfs permissions are expressed through capability interfaces rather than late run
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.2 (2026-05-09): Added capability-based Vfs interface segregation
 - v0.0.3 (2026-06-02): Clarified Abstractions ownership and AIKernel.Vfs type-forwarding facade
+- v0.0.4 (2026-06-04): Confirmed Vfs facade remains unchanged after DSL / History ROM contract extraction

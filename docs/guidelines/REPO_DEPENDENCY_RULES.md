@@ -2,9 +2,9 @@
 id: repo-dependency-rules
 title: "AIKernel.NET Repository Dependency Rules"
 created: 2026-04-30
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -105,6 +105,11 @@ AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
 AIKernel.Vfs -> AIKernel.Abstractions
 ```
 
+### 4.4 v0.0.4 Contract Extraction Rule
+
+DSL, DSL ROM, History ROM, and Kernel clock contracts are owned by `AIKernel.Abstractions` and `AIKernel.Dtos` as of v0.0.4.
+Core implementations may adapt these contracts internally to `AIKernel.Common.Results`, but `AIKernel.Abstractions` must not reference `AIKernel.Common` until Common is published as a stable contract package.
+
 ---
 
 ## 5. Kernel / Providers / VfsProviders Dependency Rules (Summary)
@@ -134,3 +139,4 @@ Dependency direction is design. AIKernel.NET, as an OS, fixes boundaries and dep
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.3 (2026-06-02): Corrected Phase-1 dependency graph and Vfs contract ownership/type-forwarding rule
+- v0.0.4 (2026-06-04): Added DSL / History ROM / Kernel clock contract extraction dependency rule

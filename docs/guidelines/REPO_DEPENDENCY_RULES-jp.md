@@ -2,9 +2,9 @@
 id: repo-dependency-rules
 title: "AIKernel.NET Repository Dependency Rules — 依存方向規約"
 created: 2026-04-30
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -106,6 +106,11 @@ AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
 AIKernel.Vfs -> AIKernel.Abstractions
 ```
 
+### 4.4 v0.0.4 Contract 抽出ルール
+
+v0.0.4 以降、DSL、DSL ROM、History ROM、Kernel clock contract は `AIKernel.Abstractions` と `AIKernel.Dtos` が所有する。
+Core 実装は内部でこれらを `AIKernel.Common.Results` に adapter してよいが、Common が安定 contract package として公開されるまで、`AIKernel.Abstractions` は `AIKernel.Common` を参照してはならない。
+
 ---
 
 ## 5. Kernel / Providers / VfsProviders の依存規約（概要）
@@ -136,3 +141,4 @@ AIKernel.NET は OS として、境界と依存方向を最初に固定し、以
 - v0.0.0 / v0.0.0.0: 初期ドラフト
 - v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新
 - v0.0.3 (2026-06-02): Phase-1 依存グラフと Vfs contract 所有元/type-forwarding 規約を修正
+- v0.0.4 (2026-06-04): DSL / History ROM / Kernel clock contract 抽出に関する依存ルールを追加

@@ -2,9 +2,9 @@
 id: ivfsprovider
 title: "IVfsProvider"
 created: 2026-05-03
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -50,3 +50,4 @@ See ../../use-cases/AIKernel_UseCaseCatalog.md for references where IVfsProvider
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.2 (2026-05-09): Clarified session capability boundary
 - v0.0.3 (2026-06-02): Added Abstractions ownership and type-forwarding compatibility note
+- v0.0.4 (2026-06-04): Confirmed IVfsProvider ownership remains unchanged

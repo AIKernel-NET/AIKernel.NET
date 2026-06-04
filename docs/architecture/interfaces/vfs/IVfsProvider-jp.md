@@ -2,9 +2,9 @@
 id: ivfsprovider
 title: "IVfsProvider"
 created: 2026-05-03
-updated: 2026-06-02
+updated: 2026-06-04
 published: 2026-05-16
-version: "0.0.3"
+version: "0.0.4"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -50,3 +50,4 @@ IVfsProvider が AIKernel のオーケストレーションおよび統治フロ
 - v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新
 - v0.0.2 (2026-05-09): Session capability boundary を明確化
 - v0.0.3 (2026-06-02): Abstractions 所有と type-forwarding 互換の注記を追加
+- v0.0.4 (2026-06-04): IVfsProvider の所有元が変更なしであることを確認
