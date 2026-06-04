@@ -11,8 +11,6 @@ public interface IMaterialScanner
     /// <param name="rawMaterial">スキャン対象の生素材</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>検出事項の一覧</returns>
-    /// <exception cref="ArgumentException">入力素材が空の場合にスローされます。</exception>
-    /// <exception cref="UnauthorizedAccessException">危険な素材が検出された場合にスローされます。</exception>
     ValueTask<IReadOnlyList<string>> ScanAsync(
         string rawMaterial,
         CancellationToken cancellationToken = default);
@@ -23,7 +21,6 @@ public interface IMaterialScanner
     /// <param name="rawMaterial">評価対象の生素材</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>信頼評価結果</returns>
-    /// <exception cref="InvalidOperationException">信頼評価に必要な検証基盤が利用できない場合にスローされます。</exception>
     ValueTask<TrustContext> EvaluateTrustAsync(
         string rawMaterial,
         CancellationToken cancellationToken = default);

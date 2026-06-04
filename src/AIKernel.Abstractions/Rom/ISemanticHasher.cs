@@ -18,7 +18,6 @@ public interface ISemanticHasher
     /// </summary>
     /// <param name="canonicalized">正準化済み ROM データ</param>
     /// <returns>計算されたハッシュ値</returns>
-    /// <exception cref="ArgumentNullException">引数が null の場合にスローされます。</exception>
     string ComputeHash(CanonicalizedRomDto canonicalized);
 
     /// <summary>
@@ -27,7 +26,6 @@ public interface ISemanticHasher
     /// <param name="canonicalized">正準化済み ROM データ</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>計算されたハッシュ値</returns>
-    /// <exception cref="ArgumentNullException">引数が null の場合にスローされます。</exception>
     Task<string> ComputeHashAsync(CanonicalizedRomDto canonicalized, CancellationToken cancellationToken = default);
 
     /// <summary>

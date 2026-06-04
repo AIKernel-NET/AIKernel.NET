@@ -26,8 +26,6 @@ public interface IVfsProvider
     /// </summary>
     /// <param name="credentials">認証情報</param>
     /// <returns>Vfs セッション</returns>
-    /// <exception cref="ArgumentNullException">credentials が null の場合にスローされます。</exception>
-    /// <exception cref="UnauthorizedAccessException">認証に失敗した場合にスローされます。</exception>
     Task<IVfsSession> OpenSessionAsync(IVfsCredentials credentials);
 
     /// <summary>

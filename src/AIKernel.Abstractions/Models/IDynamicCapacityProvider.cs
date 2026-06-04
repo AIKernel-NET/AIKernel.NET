@@ -22,7 +22,6 @@ public interface IDynamicCapacityProvider
     /// <param name="constraints">実行制約条件</param>
     /// <param name="requirement">要求される能力ベクトル</param>
     /// <returns>最適なモデルタイプ</returns>
-    /// <exception cref="ArgumentException">候補が空、または要求を満たすモデルがない場合</exception>
     ModelType SelectOptimalModelForConstraints(
         IEnumerable<ModelType> candidates,
         IExecutionConstraints constraints,
@@ -40,7 +39,6 @@ public interface IDynamicCapacityProvider
     /// </summary>
     /// <param name="modelType">モデルタイプ</param>
     /// <returns>能力プロファイル</returns>
-    /// <exception cref="ArgumentException">モデルが登録されていない場合</exception>
     ICapabilityProfile GetCapabilityProfile(ModelType modelType);
 
     /// <summary>

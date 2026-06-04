@@ -42,7 +42,6 @@ public interface IExecutionOutput
     /// </summary>
     /// <typeparam name="TOutput">変換先の出力型</typeparam>
     /// <returns>変換後の出力オブジェクト</returns>
-    /// <exception cref="InvalidOperationException">変換が不可能な場合</exception>
     TOutput ConvertTo<TOutput>() where TOutput : class, IExecutionOutput;
 }
 

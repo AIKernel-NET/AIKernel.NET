@@ -17,7 +17,6 @@ public interface ITaskVectorEstimator
     /// <param name="constraints">制約条件のリスト（RAGコンテキストなど）</param>
     /// <param name="cancellationToken">キャンセルトークン</param>
     /// <returns>推定された要求ベクトル</returns>
-    /// <exception cref="ArgumentNullException">purpose または constraints が null の場合</exception>
     Task<ModelCapacityVector> EstimateAsync(
         Purpose purpose,
         IEnumerable<ContextFragment> constraints,

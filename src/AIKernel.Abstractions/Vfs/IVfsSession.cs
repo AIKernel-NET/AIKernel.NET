@@ -21,8 +21,6 @@ public interface IVfsSession :
     /// </summary>
     /// <param name="path">ファイルパス</param>
     /// <returns>ファイル</returns>
-    /// <exception cref="ArgumentException">path が不正な場合にスローされます。</exception>
-    /// <exception cref="FileNotFoundException">対象ファイルが存在しない場合にスローされます。</exception>
     Task<IVfsFile> ReadFileAsync(string path);
 
     /// <summary>
@@ -30,8 +28,6 @@ public interface IVfsSession :
     /// </summary>
     /// <param name="path">ディレクトリパス</param>
     /// <returns>ディレクトリ</returns>
-    /// <exception cref="ArgumentException">path が不正な場合にスローされます。</exception>
-    /// <exception cref="DirectoryNotFoundException">対象ディレクトリが存在しない場合にスローされます。</exception>
     Task<IVfsDirectory> GetDirectoryAsync(string path);
 
     async Task<IReadableVfsFile> IReadableVfsSession.ReadReadableFileAsync(string path)
