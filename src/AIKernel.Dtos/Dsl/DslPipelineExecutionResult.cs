@@ -2,6 +2,7 @@ namespace AIKernel.Dtos.Dsl;
 
 using System.Collections.Immutable;
 using AIKernel.Dtos.Execution;
+using AIKernel.Enums;
 
 public sealed record DslPipelineExecutionResult
 {

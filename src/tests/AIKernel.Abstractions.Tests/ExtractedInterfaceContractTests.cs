@@ -1,6 +1,7 @@
 using AIKernel.Abstractions.Dsl;
 using AIKernel.Abstractions.History;
 using AIKernel.Abstractions.Time;
+using AIKernel.Contracts;
 using AIKernel.Dtos.Dsl;
 using AIKernel.Dtos.History;
 using AIKernel.Dtos.Time;
@@ -93,6 +94,27 @@ public sealed class ExtractedInterfaceContractTests
             .ToArray();
 
         Assert.Empty(duplicates);
+    }
+
+    [Fact]
+    public void AbstractionsAndContractsExportInterfacesOnly()
+    {
+        var abstractionNonInterfaces = typeof(IKernelPipeline)
+            .Assembly
+            .GetExportedTypes()
+            .Where(type => !type.IsInterface)
+            .Select(type => type.FullName)
+            .ToArray();
+
+        var contractNonInterfaces = typeof(IUnifiedContextContract)
+            .Assembly
+            .GetExportedTypes()
+            .Where(type => !type.IsInterface)
+            .Select(type => type.FullName)
+            .ToArray();
+
+        Assert.Empty(abstractionNonInterfaces);
+        Assert.Empty(contractNonInterfaces);
     }
 
     [Fact]

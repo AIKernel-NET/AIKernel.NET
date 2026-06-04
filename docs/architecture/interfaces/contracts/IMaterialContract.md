@@ -21,9 +21,7 @@ Japanese version: [IMaterialContract](../contracts/IMaterialContract-jp.md)
 
 ## Signature
 ```csharp
-using AIKernel.Dtos;
 using AIKernel.Dtos.Context;
-using AIKernel.Enums;
 
 namespace AIKernel.Contracts;
 
@@ -65,28 +63,13 @@ public interface IMaterialContract
     /// 関連性スコアを取得します（0.0 ～ 1.0）。
     /// </summary>
     double GetRelevanceScore();
-
-    /// <summary>
-    /// 素材を正規化します。
-    /// </summary>
-    void Normalize();
-
-    /// <summary>
-    /// 素材を構造化します。
-    /// </summary>
-    void Structurize();
-
-    /// <summary>
-    /// 必要な部分のみを抽出して OrchestrationContext に転写可能な形にします。
-    /// </summary>
-    string ExtractEssentialContent();
-
-    /// <summary>
-    /// 生データが OrchestrationContext に直接渡されていないことを確認します。
-    /// </summary>
-    ValidationResult ValidateQuarantine();
 }
 ```
+
+Normalization, structurization, essential-content extraction, canonicalization, hashing, and quarantine
+validation are service responsibilities. Use `IMaterialNormalizer`, `IMaterialStructurizer`,
+`IEssentialMaterialExtractor`, `IMaterialCanonicalizer`, `IMaterialHashProvider`, and
+`IMaterialQuarantineValidator` instead of adding behavior to the contract object.
 
 ## Exception Contract
 This interface does not mandate a specific thrown exception type by itself. Exception guarantees are implementation-defined.

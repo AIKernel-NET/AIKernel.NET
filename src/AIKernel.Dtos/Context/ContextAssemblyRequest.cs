@@ -1,4 +1,4 @@
-namespace AIKernel.Abstractions.Context;
+namespace AIKernel.Dtos.Context;
 
 using AIKernel.Dtos.Rom;
 using System.Collections.Immutable;

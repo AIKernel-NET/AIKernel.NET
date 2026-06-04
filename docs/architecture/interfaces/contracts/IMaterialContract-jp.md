@@ -21,9 +21,7 @@ tags:
 
 ## Signature
 ```csharp
-using AIKernel.Dtos;
 using AIKernel.Dtos.Context;
-using AIKernel.Enums;
 
 namespace AIKernel.Contracts;
 
@@ -65,28 +63,13 @@ public interface IMaterialContract
     /// 関連性スコアを取得します（0.0 ～ 1.0）。
     /// </summary>
     double GetRelevanceScore();
-
-    /// <summary>
-    /// 素材を正規化します。
-    /// </summary>
-    void Normalize();
-
-    /// <summary>
-    /// 素材を構造化します。
-    /// </summary>
-    void Structurize();
-
-    /// <summary>
-    /// 必要な部分のみを抽出して OrchestrationContext に転写可能な形にします。
-    /// </summary>
-    string ExtractEssentialContent();
-
-    /// <summary>
-    /// 生データが OrchestrationContext に直接渡されていないことを確認します。
-    /// </summary>
-    ValidationResult ValidateQuarantine();
 }
 ```
+
+正規化、構造化、必須 content 抽出、正準化、hash、検疫検証は service 側の責務です。
+`IMaterialNormalizer`、`IMaterialStructurizer`、`IEssentialMaterialExtractor`、
+`IMaterialCanonicalizer`、`IMaterialHashProvider`、`IMaterialQuarantineValidator` を使用し、
+contract object に振る舞いを追加しないでください。
 
 ## Exception Contract
 本インターフェース自体は、特定の例外型の送出を規定しません。例外契約は実装側で明示します。

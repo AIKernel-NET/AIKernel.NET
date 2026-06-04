@@ -446,7 +446,7 @@ The following contracts moved from the `AIKernel.Vfs` project to the `AIKernel.A
 | `INavigableVfsDirectory` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
 | `IVfsEntryInfo` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
 | `IVfsQuery`, `IVfsQueryResult` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
-| `VfsAuthenticationFailedException` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
+| `VfsAuthenticationFailedException` | Removed in `v0.0.4` | In `v0.0.3` this was part of the facade; in `v0.0.4` failures are handled by runtime/Core adapters. |
 
 The public namespace remains `AIKernel.Vfs` for compatibility. The ownership change is at the assembly/package layer.
 
@@ -575,7 +575,56 @@ Migration steps:
 3. Keep source imports such as `using AIKernel.Vfs;`; the namespace is still correct.
 4. Remove project references to `AIKernel.Vfs/AIKernel.Vfs.csproj` in local source builds.
 
-### 14.7 Verification Commands
+### 14.7 Interface-Only Contract Packages
+v0.0.4 also makes `AIKernel.Abstractions` and `AIKernel.Contracts` interface-only packages.
+DTOs, enums, exception types, factories, parsing helpers, and runtime behavior must live outside those
+contract packages.
+
+#### Moved DTO / Value Types
+| Previous type location | New location |
+|---|---|
+| `AIKernel.Contracts.ValidationResult` | `AIKernel.Dtos.Context.ValidationResult` |
+| `AIKernel.Abstractions.Context.ContextAssemblyRequest` | `AIKernel.Dtos.Context.ContextAssemblyRequest` |
+| `AIKernel.Abstractions.Context.ContextAssemblyScope` | `AIKernel.Dtos.Context.ContextAssemblyScope` |
+| `AIKernel.Abstractions.Context.ContextAssemblyDecision` | `AIKernel.Dtos.Context.ContextAssemblyDecision` |
+| `AIKernel.Abstractions.DtoContracts.Execution.GeneratedPrompt` | `AIKernel.Dtos.Execution.GeneratedPrompt` |
+| `AIKernel.Abstractions.DtoContracts.Execution.KernelExecutionRequest` | `AIKernel.Dtos.Execution.KernelExecutionRequest` |
+| `AIKernel.Abstractions.DtoContracts.Execution.PromptGenerationRequest` | `AIKernel.Dtos.Execution.PromptGenerationRequest` |
+| `AIKernel.Abstractions.DtoContracts.Kernel.KernelRequest` | `AIKernel.Dtos.Kernel.KernelRequest` |
+| `AIKernel.Abstractions.Vfs.VfsCredentials` | `AIKernel.Dtos.Vfs.VfsCredentials` |
+
+#### Moved Enums
+| Previous type location | New location |
+|---|---|
+| `AIKernel.Dtos.Execution.ExecutionStatus` | `AIKernel.Enums.ExecutionStatus` |
+| `AIKernel.Dtos.Execution.PromptMessageFormat` | `AIKernel.Enums.PromptMessageFormat` |
+| `AIKernel.Dtos.Execution.PromptOverflowPolicy` | `AIKernel.Enums.PromptOverflowPolicy` |
+
+#### Removed Contract-Package Exceptions
+The following exception types were removed from public contract packages:
+
+- `ContextAssemblyException`
+- `ContextAssemblyGovernanceException`
+- `PromptGenerationException`
+- `PromptTokenBudgetExceededException`
+- `UnsupportedPromptCapabilityException`
+- `VfsAuthenticationFailedException`
+
+Runtime implementations should map these failures inside `AIKernel.Core`, host code, or a future
+`AIKernel.Common` result/failure package. Do not reintroduce exception implementations into
+`AIKernel.Abstractions` or `AIKernel.Contracts`.
+
+#### DTO Pure-Data Cleanup
+Several DTO helpers were removed to keep DTO packages data-oriented:
+
+- `RawLogic.IsEmpty`
+- `RomId.Parse`
+- static default/factory members on execution and DSL DTOs
+
+Move convenience helpers to application code, `AIKernel.Core`, or `AIKernel.Common` rather than placing
+behavior in DTO packages.
+
+### 14.8 Verification Commands
 Run:
 
 ```powershell
@@ -600,4 +649,4 @@ CYCLE CHECK: OK
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.2 (2026-05-09): Added Issue #4 Vfs capability contract migration steps, Issue #7 Vfs naming normalization, provider/security capability contract guidance, Issue #8 contract purity migration, Issue #9 provider capability migration, Issue #10 security/policy separation migration, and Issue #11 sandbox/validator isolation migration
 - v0.0.3 (2026-06-02): Added dependency-layer migration for Vfs contract ownership, `AIKernel.Vfs` type-forwarding compatibility, package-reference guidance, and cycle-verification steps
-- v0.0.4 (2026-06-04): Added DSL pipeline, DSL ROM, History ROM, Kernel clock contract extraction, ROM store contracts, ambiguous-interface rename guidance, and AIKernel.Vfs package removal steps for AIKernel.Core adapter migration
+- v0.0.4 (2026-06-04): Added DSL pipeline, DSL ROM, History ROM, Kernel clock contract extraction, ROM store contracts, ambiguous-interface rename guidance, AIKernel.Vfs package removal steps, and interface-only contract package migration for AIKernel.Core adapter migration

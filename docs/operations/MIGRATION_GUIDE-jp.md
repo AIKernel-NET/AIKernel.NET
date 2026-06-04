@@ -446,7 +446,7 @@ AIKernel.Abstractions -> Providers
 | `INavigableVfsDirectory` | `AIKernel.Abstractions` | `AIKernel.Vfs` が type-forwarding。 |
 | `IVfsEntryInfo` | `AIKernel.Abstractions` | `AIKernel.Vfs` が type-forwarding。 |
 | `IVfsQuery`, `IVfsQueryResult` | `AIKernel.Abstractions` | `AIKernel.Vfs` が type-forwarding。 |
-| `VfsAuthenticationFailedException` | `AIKernel.Abstractions` | `AIKernel.Vfs` が type-forwarding。 |
+| `VfsAuthenticationFailedException` | `v0.0.4` で削除 | `v0.0.3` では facade 対象でしたが、`v0.0.4` では runtime/Core adapter 側で失敗を扱います。 |
 
 公開 namespace は互換性のため `AIKernel.Vfs` のままです。変更されたのは assembly/package レイヤでの所有関係です。
 
@@ -575,7 +575,54 @@ Vfs contract は引き続き `AIKernel.Abstractions` から利用でき、公開
 3. `using AIKernel.Vfs;` は維持して構いません。namespace は引き続き正しいです。
 4. local source build では `AIKernel.Vfs/AIKernel.Vfs.csproj` への project reference を削除します。
 
-### 14.7 検証コマンド
+### 14.7 Interface-only contract package
+v0.0.4 では `AIKernel.Abstractions` と `AIKernel.Contracts` を interface-only package とします。
+DTO、enum、例外型、factory、parse helper、runtime behavior はこれらの contract package へ配置しません。
+
+#### 移動された DTO / value type
+| 旧配置 | 新配置 |
+|---|---|
+| `AIKernel.Contracts.ValidationResult` | `AIKernel.Dtos.Context.ValidationResult` |
+| `AIKernel.Abstractions.Context.ContextAssemblyRequest` | `AIKernel.Dtos.Context.ContextAssemblyRequest` |
+| `AIKernel.Abstractions.Context.ContextAssemblyScope` | `AIKernel.Dtos.Context.ContextAssemblyScope` |
+| `AIKernel.Abstractions.Context.ContextAssemblyDecision` | `AIKernel.Dtos.Context.ContextAssemblyDecision` |
+| `AIKernel.Abstractions.DtoContracts.Execution.GeneratedPrompt` | `AIKernel.Dtos.Execution.GeneratedPrompt` |
+| `AIKernel.Abstractions.DtoContracts.Execution.KernelExecutionRequest` | `AIKernel.Dtos.Execution.KernelExecutionRequest` |
+| `AIKernel.Abstractions.DtoContracts.Execution.PromptGenerationRequest` | `AIKernel.Dtos.Execution.PromptGenerationRequest` |
+| `AIKernel.Abstractions.DtoContracts.Kernel.KernelRequest` | `AIKernel.Dtos.Kernel.KernelRequest` |
+| `AIKernel.Abstractions.Vfs.VfsCredentials` | `AIKernel.Dtos.Vfs.VfsCredentials` |
+
+#### 移動された enum
+| 旧配置 | 新配置 |
+|---|---|
+| `AIKernel.Dtos.Execution.ExecutionStatus` | `AIKernel.Enums.ExecutionStatus` |
+| `AIKernel.Dtos.Execution.PromptMessageFormat` | `AIKernel.Enums.PromptMessageFormat` |
+| `AIKernel.Dtos.Execution.PromptOverflowPolicy` | `AIKernel.Enums.PromptOverflowPolicy` |
+
+#### contract package から削除された例外型
+以下の例外型は public contract package から削除されました。
+
+- `ContextAssemblyException`
+- `ContextAssemblyGovernanceException`
+- `PromptGenerationException`
+- `PromptTokenBudgetExceededException`
+- `UnsupportedPromptCapabilityException`
+- `VfsAuthenticationFailedException`
+
+runtime 実装は、これらの失敗を `AIKernel.Core`、host code、または将来の `AIKernel.Common`
+result/failure package 側で表現してください。`AIKernel.Abstractions` や `AIKernel.Contracts` に
+例外実装を戻さないでください。
+
+#### DTO の pure-data 化
+DTO package を data-oriented に保つため、以下の helper を削除しました。
+
+- `RawLogic.IsEmpty`
+- `RomId.Parse`
+- execution / DSL DTO の static default/factory member
+
+convenience helper は application code、`AIKernel.Core`、または `AIKernel.Common` に配置してください。
+
+### 14.8 検証コマンド
 次を実行します。
 
 ```powershell
@@ -600,4 +647,4 @@ CYCLE CHECK: OK
 - v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新
 - v0.0.2 (2026-05-09): Issue #4 の Vfs capability contract 移行手順、Issue #7 の Vfs 命名規約統一、provider/security capability contract 指針、Issue #8 の contract purity 移行、Issue #9 の provider capability 移行、Issue #10 の security/policy separation 移行、Issue #11 の sandbox/validator isolation 移行を追加
 - v0.0.3 (2026-06-02): Vfs contract 所有元の Abstractions への移動、`AIKernel.Vfs` type-forwarding 互換、package reference 指針、循環依存検証手順を追加
-- v0.0.4 (2026-06-04): AIKernel.Core adapter 移行に向け、DSL pipeline、DSL ROM、History ROM、Kernel clock contract 抽出、ROM store contract、曖昧な interface 改名ガイド、AIKernel.Vfs package 削除手順を追加
+- v0.0.4 (2026-06-04): AIKernel.Core adapter 移行に向け、DSL pipeline、DSL ROM、History ROM、Kernel clock contract 抽出、ROM store contract、曖昧な interface 改名ガイド、AIKernel.Vfs package 削除手順、interface-only contract package 移行手順を追加

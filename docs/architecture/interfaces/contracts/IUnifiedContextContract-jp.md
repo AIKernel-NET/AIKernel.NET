@@ -23,15 +23,14 @@ tags:
 `IUnifiedContextContract` は、Orchestration / Expression / Material の各契約を束ね、3層バッファ境界の維持を全域で統治する上位契約です。
 
 - 役割:
-  契約群の統合参照、全体整合性検証、レイヤー分離検証、汚染検知、統合SNR評価を提供します。
+  Orchestration / Expression / Material の各契約 view への統合参照を提供します。
 - 非役割:
-  個別契約の詳細定義や実データ操作は各専門契約へ委譲します。
+  全体整合性検証、レイヤー分離検証、汚染検知、統合SNR評価、実データ操作は
+  専門の service interface と DTO 境界へ委譲します。
 
 ## 2. 契約シグネチャ (Signature)
 ```csharp
-using AIKernel.Dtos;
 using AIKernel.Dtos.Context;
-using AIKernel.Enums;
 
 namespace AIKernel.Contracts;
 
@@ -67,27 +66,6 @@ public interface IUnifiedContextContract
     /// 統合コンテキストのデータを取得します。
     /// </summary>
     UnifiedContextDto GetContext();
-
-    /// <summary>
-    /// 全体の検証を実行します。
-    /// カテゴリ分離、コンテキスト隔離、Attention 汚染検出を行います。
-    /// </summary>
-    ValidationResult ValidateAll();
-
-    /// <summary>
-    /// 3 層分離が正しく保たれていることを確認します。
-    /// </summary>
-    bool ValidateLayerSeparation();
-
-    /// <summary>
-    /// Attention 汚染の可能性を評価します。
-    /// </summary>
-    IReadOnlyList<FailureMode> DetectPollution();
-
-    /// <summary>
-    /// Signal-to-Noise Ratio（SNR）を計算します。
-    /// </summary>
-    double CalculateSignalToNoiseRatio();
 }
 ```
 
@@ -99,15 +77,15 @@ public interface IUnifiedContextContract
 
 ## 4. 統治上の制約 (Governance & Determinism)
 - クロスレイヤー検証:
-  `ValidateAll()` は層間矛盾や混入を包括検知する前提です。
+  `IUnifiedContextContractValidator.ValidateAll()` は層間矛盾や混入を包括検知する前提です。
 - 不変性連鎖:
   統合契約が有効な間、下位契約群も不変運用を前提とします。
 - Fail-Closed:
-  `ValidateLayerSeparation()` 失敗や重大汚染検知時は推論移行を拒否します。
+  `ILayerSeparationValidator.ValidateLayerSeparation()` 失敗や重大汚染検知時は推論移行を拒否します。
 
 ## 5. 指標: SNR (Signal-to-Noise Ratio)
 - 統合評価:
-  `CalculateSignalToNoiseRatio()` は単層ではなく全コンテキスト窓の信号密度を測定します。
+  `ISignalToNoiseRatioCalculator.CalculateSignalToNoiseRatio()` は単層ではなく全コンテキスト窓の信号密度を測定します。
 - 閾値運用:
   低SNR時の警告、ルーティング戦略変更、実行抑止などの統治判断に活用します。
 

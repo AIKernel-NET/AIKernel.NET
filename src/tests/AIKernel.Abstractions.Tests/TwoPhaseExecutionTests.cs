@@ -10,6 +10,11 @@ namespace AIKernel.Abstractions.Tests;
 /// </summary>
 public class TwoPhaseExecutionTests
 {
+    private static bool IsEmpty(RawLogic logic)
+    {
+        return string.IsNullOrWhiteSpace(logic.SerializedRepresentation);
+    }
+
     /// <summary>
     /// テスト用の IThoughtProcess 実装
     /// </summary>
@@ -34,7 +39,7 @@ public class TwoPhaseExecutionTests
 
         public Task<string> RenderAsync(RawLogic logic, ExpressionContext expressionContext, CancellationToken ct = default)
         {
-            if (logic.IsEmpty)
+            if (IsEmpty(logic))
                 throw new InvalidOperationException("Logic is empty");
 
             var buffer = expressionContext.ExpressionBuffer;
@@ -95,7 +100,7 @@ public class TwoPhaseExecutionTests
 
         // Assert
         Assert.NotNull(logic);
-        Assert.False(logic.IsEmpty);
+        Assert.False(IsEmpty(logic));
         Assert.Contains("Do something", logic.SerializedRepresentation);
     }
 
@@ -141,7 +146,7 @@ public class TwoPhaseExecutionTests
     }
 
     [Fact]
-    public void RawLogic_IsEmpty_ShouldReturnTrueForWhitespace()
+    public void RawLogicSerializedRepresentation_ShouldSupportWhitespaceChecks()
     {
         // Act
         var emptyLogic1 = new RawLogic(string.Empty);
@@ -149,9 +154,9 @@ public class TwoPhaseExecutionTests
         var nonEmptyLogic = new RawLogic("content");
 
         // Assert
-        Assert.True(emptyLogic1.IsEmpty);
-        Assert.True(emptyLogic2.IsEmpty);
-        Assert.False(nonEmptyLogic.IsEmpty);
+        Assert.True(IsEmpty(emptyLogic1));
+        Assert.True(IsEmpty(emptyLogic2));
+        Assert.False(IsEmpty(nonEmptyLogic));
     }
 
     [Fact]
@@ -223,7 +228,7 @@ public class TwoPhaseExecutionTests
 
         // Assert
         Assert.NotNull(result);
-        Assert.False(result.Logic.IsEmpty);
+        Assert.False(IsEmpty(result.Logic));
         Assert.NotEmpty(result.FinalOutput);
         Assert.True(result.IsSuccessful);
         Assert.True(result.ElapsedMilliseconds >= 0);

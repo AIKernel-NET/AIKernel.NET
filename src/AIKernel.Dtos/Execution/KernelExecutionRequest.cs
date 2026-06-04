@@ -1,10 +1,12 @@
 namespace AIKernel.Dtos.Execution;
 
-using AIKernel.Abstractions.Context;
-
 public sealed record KernelExecutionRequest
 {
-    public required IContextSnapshot ContextSnapshot { get; init; }
+    public required string ContextSnapshotId { get; init; }
+
+    public required string ContextHash { get; init; }
+
+    public required IReadOnlyList<ContextPromptBlock> ContextBlocks { get; init; }
 
     public required string UserInstruction { get; init; }
 

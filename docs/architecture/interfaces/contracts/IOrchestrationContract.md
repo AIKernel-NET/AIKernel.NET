@@ -23,15 +23,15 @@ Japanese version: [IOrchestrationContract (契約仕様)](../contracts/IOrchestr
 `IOrchestrationContract` defines pure reasoning inputs for the Structure phase and enforces separation between reasoning and expression layers.
 
 - Role:
-  Provide purpose, constraints, abstract structure, reasoning pattern, and integrity checks.
+  Provide purpose, constraints, abstract structure, and reasoning pattern as an immutable view.
 - Non-role:
   Output decoration data (style/examples) must not be supplied here and belongs to `IExpressionContract`.
+  Validation, SNR calculation, hashing, and transformation belong to service interfaces such as
+  `IOrchestrationContractValidator` and `ISignalToNoiseRatioCalculator`.
 
 ## 2. Contract Signature
 ```csharp
-using AIKernel.Dtos;
 using AIKernel.Dtos.Context;
-using AIKernel.Enums;
 
 namespace AIKernel.Contracts;
 
@@ -68,43 +68,6 @@ public interface IOrchestrationContract
     /// 推論パターンを取得します。
     /// </summary>
     string? GetReasoningPattern();
-
-    /// <summary>
-    /// このコントラクトが有効であることを確認します。
-    /// Attention 汚染の検出も行います。
-    /// </summary>
-    ValidationResult Validate();
-
-    /// <summary>
-    /// Signal-to-Noise Ratio（SNR）を計算します。
-    /// </summary>
-    double CalculateSignalToNoiseRatio();
-}
-
-/// <summary>
-/// OrchestrationContract の検証結果を表現します。
-/// </summary>
-public sealed class ValidationResult
-{
-    /// <summary>
-    /// 検証が成功したかどうかを取得します。
-    /// </summary>
-    public bool IsValid { get; init; }
-
-    /// <summary>
-    /// 検出されたエラーメッセージを取得します。
-    /// </summary>
-    public List<string> Errors { get; init; } = new();
-
-    /// <summary>
-    /// 警告メッセージを取得します。
-    /// </summary>
-    public List<string> Warnings { get; init; } = new();
-
-    /// <summary>
-    /// 検出された attention 汚染を取得します。
-    /// </summary>
-    public List<FailureMode> DetectedFailureModes { get; init; } = new();
 }
 ```
 
@@ -116,14 +79,14 @@ public sealed class ValidationResult
 
 ## 4. Governance & Determinism
 - Reject attention pollution:
-  `Validate()` should detect expression-layer contamination and enable deny-side handling.
+  `IOrchestrationContractValidator.Validate()` should detect expression-layer contamination and enable deny-side handling.
 - Deterministic inputs:
   For identical context state, methods should return identical values.
 - Fail-Closed:
   Critical integrity violations should stop execution rather than degrade silently.
 
 ## 5. Metrics & Quality
-- `CalculateSignalToNoiseRatio()`:
+- `ISignalToNoiseRatioCalculator.CalculateSignalToNoiseRatio()`:
   Measures signal density of purpose/constraints/structure in reasoning input.
 - Low-SNR handling:
   Low SNR should be treated as a risk indicator for ambiguity and reasoning drift.

@@ -1,5 +1,6 @@
 namespace AIKernel.Dtos.Execution;
 
+using AIKernel.Enums;
 using System.Collections.Immutable;
 
 public sealed record KernelRequestExecutionResult

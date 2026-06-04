@@ -1,9 +1,9 @@
 namespace AIKernel.Dtos.Kernel;
 
-using AIKernel.Abstractions.Context;
+using AIKernel.Dtos.Context;
 using AIKernel.Dtos.Execution;
 using AIKernel.Dtos.Rom;
-using AIKernel.Vfs;
+using AIKernel.Dtos.Vfs;
 using System.Collections.Immutable;
 
 public sealed record KernelRequest
@@ -14,7 +14,7 @@ public sealed record KernelRequest
 
     public required string VfsProviderId { get; init; }
 
-    public required IVfsCredentials VfsCredentials { get; init; }
+    public required VfsCredentials Credentials { get; init; }
 
     public required ContextAssemblyScope Scope { get; init; }
 

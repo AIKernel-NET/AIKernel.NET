@@ -1,5 +1,6 @@
 namespace AIKernel.Dtos.Execution;
 
+using AIKernel.Enums;
 using System.Collections.Immutable;
 
 public sealed record ModelPromptCapability
@@ -20,14 +21,14 @@ public sealed record ModelPromptCapability
 
     public bool RequiresAlternatingUserAssistantMessages { get; init; }
 
-    public string SystemInstructionRole { get; init; } = ModelMessageRoles.System;
+    public string SystemInstructionRole { get; init; } = "system";
 
     public ImmutableArray<string> SupportedRoles { get; init; }
         =
         [
-            ModelMessageRoles.System,
-            ModelMessageRoles.User,
-            ModelMessageRoles.Assistant
+            "system",
+            "user",
+            "assistant"
         ];
 
     public ImmutableDictionary<string, string> Metadata { get; init; }

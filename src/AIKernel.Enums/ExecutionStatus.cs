@@ -1,4 +1,4 @@
-namespace AIKernel.Dtos.Execution;
+namespace AIKernel.Enums;
 
 public enum ExecutionStatus
 {
