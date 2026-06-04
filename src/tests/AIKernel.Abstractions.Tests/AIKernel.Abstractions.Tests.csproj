@@ -11,11 +11,11 @@
 
     <!-- Description: English then Japanese -->
     <Description>
-AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orchestration. This package is part of the AIKernel Core and provides foundational components required by Kernel, Providers, and Vfs layers.
+AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orchestration. This test project verifies the AIKernel.NET contract surface, package dependency DAG, and interface composition.
 
 Contains contract-level unit tests for AIKernel abstractions. These tests verify specification alignment, fail-closed behavior, and interface-level use-case composition without concrete implementation dependencies.
 
-AIKernel は AI アプリケーション向けの OS 的フレームワークであり、カテゴリ分離、コンテキスト隔離、契約駆動の設計思想に基づいています。本パッケージは AIKernel Core の一部であり、Kernel、Provider、Vfs 層が利用する基盤コンポーネントを提供します。
+AIKernel は AI アプリケーション向けの OS 的フレームワークであり、カテゴリ分離、コンテキスト隔離、契約駆動の設計思想に基づいています。本テスト project は AIKernel.NET contract surface、package dependency DAG、interface composition を検証します。
 
 AIKernel 抽象契約のユニットテストを収容します。実装依存を持たず、仕様整合性、fail-closed 動作、インターフェースレベルのユースケース連結を検証します。
     </Description>
