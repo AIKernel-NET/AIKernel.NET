@@ -1,3 +1,4 @@
+using AIKernel.Abstractions.Capabilities;
 using AIKernel.Abstractions.DynamicSlm;
 using AIKernel.Abstractions.Dsl;
 using AIKernel.Abstractions.Governance;
@@ -5,6 +6,7 @@ using AIKernel.Abstractions.Hatl;
 using AIKernel.Abstractions.History;
 using AIKernel.Abstractions.Time;
 using AIKernel.Contracts;
+using AIKernel.Dtos.Capabilities;
 using AIKernel.Dtos.Context;
 using AIKernel.Dtos.Core;
 using AIKernel.Dtos.DynamicSlm;
@@ -756,6 +758,64 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    public void CapabilityModuleContractsSupportCliAndAssemblyBoundaries()
+    {
+        Assert.True(typeof(ICapabilityModuleRegistry).IsInterface);
+        Assert.True(typeof(ICapabilityModuleInvoker).IsInterface);
+
+        var cliModule = new CapabilityModuleDescriptor(
+            "cap.cli.scrape",
+            "scrape",
+            CapabilityModuleKind.CliExecutable,
+            CapabilityInvocationMode.Sandbox,
+            "0.0.1",
+            "aik-scrape",
+            "file://tools/aik-scrape.exe",
+            "sha256-cli",
+            ["scrape"],
+            ["network.read"],
+            new Dictionary<string, string>());
+
+        var assemblyModule = new CapabilityModuleDescriptor(
+            "cap.lib.rh",
+            "rh",
+            CapabilityModuleKind.ManagedAssembly,
+            CapabilityInvocationMode.AssemblyReference,
+            "0.0.1",
+            "AIKernel.RH.Operator",
+            "nuget://AIKernel.RH",
+            "sha256-assembly",
+            ["prime_phase"],
+            ["native.invoke"],
+            new Dictionary<string, string>());
+
+        var request = new CapabilityInvocationRequest(
+            "invoke-1",
+            cliModule.CapabilityId,
+            cliModule.ProvidedOperations[0],
+            new Dictionary<string, string> { ["url"] = "https://example.test" },
+            "input-hash",
+            "replay-hash",
+            new Dictionary<string, string>());
+
+        var result = new CapabilityInvocationResult(
+            request.InvocationId,
+            request.CapabilityId,
+            true,
+            "output-hash",
+            null,
+            null,
+            "next-replay-hash",
+            new Dictionary<string, string>());
+
+        Assert.Equal(CapabilityModuleKind.CliExecutable, cliModule.Kind);
+        Assert.Equal(CapabilityInvocationMode.Sandbox, cliModule.InvocationMode);
+        Assert.Equal(CapabilityInvocationMode.AssemblyReference, assemblyModule.InvocationMode);
+        Assert.Equal("scrape", request.Operation);
+        Assert.True(result.Succeeded);
+    }
+
+    [Fact]
     public void KernelClockContractUsesDtoTimestamp()
     {
         Assert.True(typeof(IKernelClock).IsInterface);
@@ -891,6 +951,8 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(HatlAnchorProfile).IsEnum);
         Assert.True(typeof(HatlDeedStatus).IsEnum);
         Assert.True(typeof(HatlVerificationStatus).IsEnum);
+        Assert.True(typeof(CapabilityModuleKind).IsEnum);
+        Assert.True(typeof(CapabilityInvocationMode).IsEnum);
     }
 
     [Fact]

@@ -192,7 +192,7 @@ Maps each DOI-backed paper to the current AIKernel.NET contract surface and iden
 
 ## 1.21 Governance Admission Vocabulary
 
-v0.0.5 adds shared DTO/enum vocabulary for pre-inference admissibility replay/profile/budget/result records, trajectory governance evidence records, and Semantic IR G/T/C/B slots.
+v0.0.5 adds shared DTO/enum vocabulary for external Capability module manifests/invocation envelopes, pre-inference admissibility replay/profile/budget/result records, trajectory governance evidence records, and Semantic IR G/T/C/B slots.
 This gives Core semantic compilers a stable contract surface for admission evidence while keeping gate execution, policy evaluation, ResultStep composition, and ReplayLog hashing outside AIKernel.NET.
 Semantic Compilation DTOs also provide contract-only carriers for observable semantic states, Semantic IR elements, governed circuit descriptors, finite prototype spaces, semantic distance reports, deterministic synthesis descriptors, and semantic transitions.
 
@@ -270,6 +270,7 @@ Read the architecture documents in this order. Each item points downward into th
 - [Semantic Context OS Vision](./16.SEMANTIC_CONTEXT_OS_VISION.md)
 - [Phase 1 Query Processing](./17.QUERY_PROCESSING_PHASE1.md)
 - [DSL Pipeline and ROM Specification](./18.DSL_PIPELINE_AND_ROM_SPEC.md)
+- [Capabilities Interfaces](./interfaces/capabilities/index.md)
 - [HATL Interface Contracts](./interfaces/hatl/index.md)
 - [DynamicSLM Interface Contracts](./interfaces/dynamicslm/index.md)
 - [Governance Interfaces](./interfaces/governance/index.md)
@@ -296,3 +297,4 @@ This index is the entry point to understanding AIKernel's overall design.
 - v0.0.5 (2026-06-05): Added HATL external cryptographic operator contract navigation
 - v0.0.5 (2026-06-05): Added governance admission and Semantic IR vocabulary navigation
 - v0.0.5 (2026-06-05): Added Semantic Compilation DTO vocabulary navigation
+- v0.0.5 (2026-06-05): Added external Capability module contract navigation

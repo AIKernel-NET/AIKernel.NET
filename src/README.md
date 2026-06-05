@@ -24,6 +24,7 @@ Keep all AIKernel.NET packages on the same version line. Do not mix `AIKernel.Ab
 ### AIKernel.Abstractions
 - Purpose: Interface layer (no concrete business logic).
 - Main namespaces:
+  - `AIKernel.Abstractions.Capabilities`
   - `AIKernel.Abstractions.Context`
   - `AIKernel.Abstractions.Conversation`
   - `AIKernel.Abstractions.DynamicSlm`
@@ -56,6 +57,7 @@ Keep all AIKernel.NET packages on the same version line. Do not mix `AIKernel.Ab
 ### AIKernel.Dtos
 - Purpose: POCO/record data carriers and wire metadata key constants only (no business logic).
 - Main namespaces:
+  - `AIKernel.Dtos.Capabilities`
   - `AIKernel.Dtos.Context`
   - `AIKernel.Dtos.Core`
   - `AIKernel.Dtos.DynamicSlm`
@@ -82,6 +84,7 @@ Keep all AIKernel.NET packages on the same version line. Do not mix `AIKernel.Ab
 DTO packages may expose stable metadata key constants for wire formats such as DSL ROM and History ROM.
 Those constants are part of the serialized contract surface; parsing, validation, and runtime behavior still belong to Core/Common or host implementations.
 Shared enums such as execution status and prompt option primitives belong to `AIKernel.Enums`, not `AIKernel.Dtos`.
+Capability DTOs describe external module manifests and invocation envelopes for CLI executable, managed assembly, native ABI, DSL ROM, and remote endpoint boundaries. Runtime loading, sandboxing, assembly resolution, and native invocation remain Core/Tools/provider responsibilities.
 DynamicSLM DTOs describe Model ABI records only. Registry, lineage verification, payload materialization, scheduling, differential distillation planning, SeedSLM discipline enforcement, delegation, thought-artifact dumping, and memory placement belong to Core/Provider implementations behind `AIKernel.Abstractions.DynamicSlm`.
 Distillation execution itself is represented as a background offload job so loaders do not block on training work.
 HATL DTOs describe ledger entries, public anchors, Digital Deeds, verification results, and external cryptographic operator request/result records. Cryptographic runtime belongs to AIKernel.RH-backed operators or other audited Core/HATL modules.
