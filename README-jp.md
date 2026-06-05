@@ -47,6 +47,10 @@ DTO は `AIKernel.Dtos`、共有 Enum は `AIKernel.Enums` が所有します。
 `AIKernel.Abstractions.DynamicSlm`、`AIKernel.Dtos.DynamicSlm`、および `AIKernel.Enums` の DynamicSLM enum primitive として公開されます。
 これにより、Core / Provider 実装は contract package に runtime behavior を持ち込まずに、capability-modular SLM artifact、lineage 検証、payload loading、scheduling、differential distillation を実装できます。
 
+`v0.0.5` 以降、HATL contract foundation も
+`AIKernel.Abstractions.Hatl`、`AIKernel.Dtos.Hatl`、および `AIKernel.Enums` の HATL enum primitive として公開されます。
+cryptographic runtime は意図的に外部に残し、AIKernel.RH ベース operator または監査済み module が提供できるようにします。
+
 ---
 
 設計思想は `docs/design/DESIGN_INTENT.md` を参照してください。  

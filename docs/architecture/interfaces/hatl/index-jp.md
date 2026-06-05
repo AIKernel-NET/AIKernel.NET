@@ -46,7 +46,15 @@ Core または host application は、AIKernel.RH ベース native module、hard
 contract surface が運ぶのは hash、MAC、commitment、anchor document、receipt、verification outcome、metadata のみです。
 raw secret、mutable key material、secret-erasure behavior はこの repository 外の runtime concern です。
 
+## ResultStep / LINQ Boundary
+
+HATL contract は、意図的に `Result<T>` や `ResultStep<TState, TValue>` ではなく DTO ベースの `ValueTask` result を返します。
+これにより、`AIKernel.Abstractions` は `AIKernel.Common` および Core runtime package から独立したままになります。
+
+Monad LINQ composition が必要な Core 実装は、Core 側で `IHatlCryptographicOperator` を adapter で包んでください。
+その adapter が、HATL DTO outcome を fail-closed な `Result<T>` または `ResultStep<TState, TValue>` へ変換し、`SemanticDelta`、replay metadata、`hatl_anchor_id` や `hatl_merkle_root_hash` などの HATL metadata key を付与します。
+
 ---
 
 # 変更履歴
-- v0.0.5 (2026-06-05): HATL ledger、anchor、deed、外部 cryptographic operator contract category を追加。
+- v0.0.5 (2026-06-05): HATL external cryptographic operator と Core/Common LINQ adapter の境界を明確化。

@@ -46,7 +46,15 @@ It allows Core or host applications to bind an AIKernel.RH-based native module, 
 The contract surface carries hashes, MACs, commitments, anchor documents, receipts, verification outcomes, and metadata only.
 Raw secrets, mutable key material, and secret-erasure behavior are runtime concerns outside this repository.
 
+## ResultStep / LINQ Boundary
+
+HATL contracts intentionally return DTO-based `ValueTask` results rather than `Result<T>` or `ResultStep<TState, TValue>`.
+This keeps `AIKernel.Abstractions` independent from `AIKernel.Common` and Core runtime packages.
+
+Core implementations that need monadic LINQ composition should wrap `IHatlCryptographicOperator` calls in a Core-owned adapter.
+That adapter is responsible for converting HATL DTO outcomes into fail-closed `Result<T>` or `ResultStep<TState, TValue>` values, attaching `SemanticDelta`, replay metadata, and HATL metadata keys such as `hatl_anchor_id` or `hatl_merkle_root_hash`.
+
 ---
 
 # Changelog
-- v0.0.5 (2026-06-05): Added HATL ledger, anchor, deed, and external cryptographic operator contract category.
+- v0.0.5 (2026-06-05): Clarified HATL external cryptographic operator and Core/Common LINQ adapter boundaries.
