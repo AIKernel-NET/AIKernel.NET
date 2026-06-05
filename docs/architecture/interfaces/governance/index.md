@@ -52,6 +52,8 @@ For v0.0.5, governance DTOs also expose admission replay records and Semantic IR
 - `AdmissibilityDecisionKind`: admit, deny, suspend for approval, clarify, read-only, delegate, and quarantine decisions.
 - `SemanticIrSlot`: the G/T/C/B Semantic IR slot vocabulary used by semantic compilation and DSL admission.
 
+`AdmissibilityReplayRecord.Metadata` is the extension point for paper-level fields such as validator versions, budget, complexity profile, attached requirements, delegated solver identity, timestamp, and trace identifiers. Runtime packages should canonicalize and hash those metadata values before attaching them to ReplayLog.
+
 ---
 
 # Changelog

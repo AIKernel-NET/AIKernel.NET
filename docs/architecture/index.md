@@ -190,6 +190,13 @@ Maps each DOI-backed paper to the current AIKernel.NET contract surface and iden
 
 ---
 
+## 1.21 Governance Admission Vocabulary
+
+v0.0.5 adds shared DTO/enum vocabulary for pre-inference admissibility replay records and Semantic IR G/T/C/B slots.
+This gives Core semantic compilers a stable contract surface for admission evidence while keeping gate execution, policy evaluation, ResultStep composition, and ReplayLog hashing outside AIKernel.NET.
+
+---
+
 # 2. Comparative Architecture
 
 ## [2.1 AIKernel vs LangChain](./6.AIKERNEL_VS_LANGCHAIN.md)
@@ -264,6 +271,7 @@ Read the architecture documents in this order. Each item points downward into th
 - [DSL Pipeline and ROM Specification](./18.DSL_PIPELINE_AND_ROM_SPEC.md)
 - [HATL Interface Contracts](./interfaces/hatl/index.md)
 - [DynamicSLM Interface Contracts](./interfaces/dynamicslm/index.md)
+- [Governance Interfaces](./interfaces/governance/index.md)
 - [Paper Implementation Status](./PAPER_IMPLEMENTATION_STATUS.md)
 
 ---
@@ -285,3 +293,4 @@ This index is the entry point to understanding AIKernel's overall design.
 - v0.0.5 (2026-06-05): Added DynamicSLM Model ABI, distillation offload, and SeedSLM discipline contract navigation
 - v0.0.5 (2026-06-05): Added paper implementation status navigation
 - v0.0.5 (2026-06-05): Added HATL external cryptographic operator contract navigation
+- v0.0.5 (2026-06-05): Added governance admission and Semantic IR vocabulary navigation
