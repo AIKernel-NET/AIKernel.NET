@@ -14,5 +14,7 @@ public enum AdmissibilityDecisionKind
     Delegate = 6,
     Quarantine = 7,
     Transform = 8,
-    Decompose = 9
+    Decompose = 9,
+    DelegateToSolver = 10,
+    NoExecution = 11
 }

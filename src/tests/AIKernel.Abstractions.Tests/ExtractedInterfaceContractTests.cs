@@ -1,5 +1,6 @@
 using AIKernel.Abstractions.DynamicSlm;
 using AIKernel.Abstractions.Dsl;
+using AIKernel.Abstractions.Governance;
 using AIKernel.Abstractions.Hatl;
 using AIKernel.Abstractions.History;
 using AIKernel.Abstractions.Time;
@@ -75,6 +76,9 @@ public sealed class ExtractedInterfaceContractTests
     [Fact]
     public void AdmissibilityAndSemanticIrVocabulariesAreSharedContracts()
     {
+        Assert.True(typeof(ICriticalOperationGate).IsInterface);
+        Assert.True(typeof(IComputationalComplexityGate).IsInterface);
+
         var record = new AdmissibilityReplayRecord(
             "admission-1",
             "step-1",
@@ -87,11 +91,60 @@ public sealed class ExtractedInterfaceContractTests
             "replay-hash",
             new Dictionary<string, string> { ["capability"] = "Observe" });
 
+        var criticalProfile = new CriticalOperationProfile(
+            "critical-profile-1",
+            "file.delete",
+            true,
+            true,
+            false,
+            false,
+            ["delete"],
+            new Dictionary<string, string>());
+
+        var criticalResult = new CriticalOperationGateResult(
+            AdmissibilityDecisionKind.NoExecution,
+            [CriticalOperationRequirement.NoExecution, CriticalOperationRequirement.ReplayRequired],
+            "destructive operation blocked",
+            "evidence-hash",
+            new Dictionary<string, string>());
+
+        var complexityProfile = new TaskComplexityProfile(
+            "complexity-profile-1",
+            2048,
+            TaskCostClass.VerificationHard,
+            3,
+            1000,
+            true,
+            false,
+            new Dictionary<string, string>());
+
+        var budget = new ModelExecutionBudget(
+            "budget-1",
+            8192,
+            1024,
+            ["sat", "smt"],
+            "profile-v1",
+            new Dictionary<string, string>());
+
+        var complexityResult = new ComplexityGateResult(
+            AdmissibilityDecisionKind.DelegateToSolver,
+            "smt",
+            ["split verification obligations"],
+            "verification hard",
+            "complexity-evidence-hash",
+            new Dictionary<string, string>());
+
         Assert.Equal(SemanticIrSlot.G, record.Slot);
         Assert.Equal(AdmissibilityGateKind.CapabilityAdmission, record.GateKind);
         Assert.Equal(AdmissibilityDecisionKind.Admit, record.Decision);
         Assert.Equal(8, (int)AdmissibilityDecisionKind.Transform);
         Assert.Equal(9, (int)AdmissibilityDecisionKind.Decompose);
+        Assert.Equal(11, (int)AdmissibilityDecisionKind.NoExecution);
+        Assert.True(criticalProfile.HasDestructiveEffect);
+        Assert.Contains(CriticalOperationRequirement.ReplayRequired, criticalResult.Requirements);
+        Assert.Equal(TaskCostClass.VerificationHard, complexityProfile.EstimatedCostClass);
+        Assert.Equal(8192, budget.ContextWindow);
+        Assert.Equal("smt", complexityResult.RecommendedSolver);
         Assert.True(typeof(SemanticIrSlot).IsEnum);
         Assert.True(typeof(AdmissibilityGateKind).IsEnum);
         Assert.True(typeof(AdmissibilityDecisionKind).IsEnum);
@@ -832,6 +885,8 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(SemanticIrSlot).IsEnum);
         Assert.True(typeof(AdmissibilityGateKind).IsEnum);
         Assert.True(typeof(AdmissibilityDecisionKind).IsEnum);
+        Assert.True(typeof(TaskCostClass).IsEnum);
+        Assert.True(typeof(CriticalOperationRequirement).IsEnum);
         Assert.True(typeof(FailClosedDecision).IsEnum);
         Assert.True(typeof(HatlAnchorProfile).IsEnum);
         Assert.True(typeof(HatlDeedStatus).IsEnum);

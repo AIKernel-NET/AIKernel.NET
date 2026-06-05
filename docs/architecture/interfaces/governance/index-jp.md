@@ -20,7 +20,7 @@ tags:
 # Governance Interfaces
 
 ## 1. 責務の境界 (Responsibility Boundary)
-Governance は実行許可・監査・注意品質監視・trajectory evidence 交換を担う境界です。`IAttentionGuard` と `IAttentionObserver` が推論品質を監視し、trajectory governance DTO が semantic ellipsoid と score evidence を運び、`IAuditEvent` 系が追跡可能な監査証跡を確立します。
+Governance は実行許可・監査・注意品質監視・admission gating・trajectory evidence 交換を担う境界です。`ICriticalOperationGate` と `IComputationalComplexityGate` が pre-inference entry を境界化し、`IAttentionGuard` と `IAttentionObserver` が推論品質を監視し、trajectory governance DTO が semantic ellipsoid と score evidence を運び、`IAuditEvent` 系が追跡可能な監査証跡を確立します。
 v0.0.5 では、Core/runtime package が fail-closed な pre-inference evidence を ReplayLog へ接続できるように、admission replay record と Semantic IR slot vocabulary も contract package 側で公開します。ただし実装挙動は AIKernel.NET には置きません。
 
 ## 2. 関連ユースケース (Related UCs)
@@ -40,6 +40,8 @@ v0.0.5 では、Core/runtime package が fail-closed な pre-inference evidence 
 - [ISignatureTrustStore](ISignatureTrustStore-jp.md)
 - [IAttentionGuard](IAttentionGuard-jp.md)
 - [IAttentionObserver](IAttentionObserver-jp.md)
+- [ICriticalOperationGate](ICriticalOperationGate-jp.md)
+- [IComputationalComplexityGate](IComputationalComplexityGate-jp.md)
 - [IAuditEvent](IAuditEvent-jp.md)
 - [IAuditLogger](IAuditLogger-jp.md)
 - [IAuditEventContract](IAuditEventContract-jp.md)

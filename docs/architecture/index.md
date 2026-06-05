@@ -192,7 +192,7 @@ Maps each DOI-backed paper to the current AIKernel.NET contract surface and iden
 
 ## 1.21 Governance Admission Vocabulary
 
-v0.0.5 adds shared DTO/enum vocabulary for pre-inference admissibility replay records, trajectory governance evidence records, and Semantic IR G/T/C/B slots.
+v0.0.5 adds shared DTO/enum vocabulary for pre-inference admissibility replay/profile/budget/result records, trajectory governance evidence records, and Semantic IR G/T/C/B slots.
 This gives Core semantic compilers a stable contract surface for admission evidence while keeping gate execution, policy evaluation, ResultStep composition, and ReplayLog hashing outside AIKernel.NET.
 Semantic Compilation DTOs also provide contract-only carriers for observable semantic states, Semantic IR elements, governed circuit descriptors, finite prototype spaces, semantic distance reports, deterministic synthesis descriptors, and semantic transitions.
 
