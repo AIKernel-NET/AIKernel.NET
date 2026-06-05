@@ -53,6 +53,8 @@ As of `v0.0.5`, HATL contract foundations are also available through
 `AIKernel.Abstractions.Hatl`, `AIKernel.Dtos.Hatl`, and HATL enum primitives in `AIKernel.Enums`.
 Cryptographic runtime is intentionally external and can be provided by AIKernel.RH-backed operators or other audited modules.
 
+As of `v0.0.5`, governance and semantic-compilation vocabulary also includes `AdmissibilityReplayRecord`, `AdmissibilityGateKind`, `AdmissibilityDecisionKind`, and `SemanticIrSlot` for Core-side admission ReplayLog evidence.
+
 ---
 
 See `docs/design/DESIGN_INTENT.md` for design philosophy.  

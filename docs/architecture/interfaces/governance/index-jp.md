@@ -21,6 +21,7 @@ tags:
 
 ## 1. 責務の境界 (Responsibility Boundary)
 Governance は実行許可・監査・注意品質監視を担う境界です。`IAttentionGuard` と `IAttentionObserver` が推論品質を監視し、`IAuditEvent` 系が追跡可能な監査証跡を確立します。
+v0.0.5 では、Core/runtime package が fail-closed な pre-inference evidence を ReplayLog へ接続できるように、admission replay record と Semantic IR slot vocabulary も contract package 側で公開します。ただし実装挙動は AIKernel.NET には置きません。
 
 ## 2. 関連ユースケース (Related UCs)
 - `UC-13` 実行時署名検証とガバナンス
@@ -45,6 +46,12 @@ Governance は実行許可・監査・注意品質監視を担う境界です。
 - [IContextLifecycleManager](IContextLifecycleManager-jp.md)
 - [IChatTurn HashChain Contracts](IChatTurnHashChainContracts-jp.md)
 
+## 6. Shared DTO / Enum Vocabulary
+- `AdmissibilityReplayRecord`: pre-inference admission gate が出力する ReplayLog-compatible evidence。
+- `AdmissibilityGateKind`: prompt override、capability admission、critical operation、computational complexity、policy decision、context integrity、runtime invariant の gate vocabulary。
+- `AdmissibilityDecisionKind`: admit、deny、suspend for approval、clarify、read-only、delegate、quarantine の decision vocabulary。
+- `SemanticIrSlot`: semantic compilation と DSL admission が共有する G/T/C/B Semantic IR slot vocabulary。
+
 ---
 
 # 変更履歴
@@ -53,3 +60,4 @@ Governance は実行許可・監査・注意品質監視を担う境界です。
 - v0.0.4 (2026-06-04): IHistorySummarizer documentation を history interface category へ移動。
 - v0.0.4 (2026-06-04): ChatChain governance contract documentation を追加。
 - v0.0.4 (2026-06-04): IAuditLogger を governance interface index に追加。
+- v0.0.5 (2026-06-05): admission replay と Semantic IR slot vocabulary の説明を追加。

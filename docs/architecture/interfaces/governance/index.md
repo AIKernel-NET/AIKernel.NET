@@ -21,6 +21,7 @@ Japanese version: [Governance Interfaces](index-jp.md)
 
 ## 1. Responsibility Boundary
 Governance covers execution authorization, auditability, and attention-quality supervision. `IAttentionGuard` and `IAttentionObserver` monitor reasoning integrity, while the `IAuditEvent` family establishes traceable audit evidence.
+For v0.0.5, governance DTOs also expose admission replay records and Semantic IR slot vocabulary so Core/runtime packages can attach fail-closed pre-inference evidence to ReplayLog without adding implementation behavior to the contract package.
 
 ## 2. Related Use Cases
 - `UC-13` Runtime Signature Verification and Governance
@@ -45,6 +46,12 @@ Governance covers execution authorization, auditability, and attention-quality s
 - [IContextLifecycleManager](IContextLifecycleManager.md)
 - [IChatTurn HashChain Contracts](IChatTurnHashChainContracts.md)
 
+## 6. Shared DTO / Enum Vocabulary
+- `AdmissibilityReplayRecord`: replay-compatible evidence emitted by a pre-inference admission gate.
+- `AdmissibilityGateKind`: prompt override, capability admission, critical operation, computational complexity, policy decision, context integrity, and runtime invariant gates.
+- `AdmissibilityDecisionKind`: admit, deny, suspend for approval, clarify, read-only, delegate, and quarantine decisions.
+- `SemanticIrSlot`: the G/T/C/B Semantic IR slot vocabulary used by semantic compilation and DSL admission.
+
 ---
 
 # Changelog
@@ -53,3 +60,4 @@ Governance covers execution authorization, auditability, and attention-quality s
 - v0.0.4 (2026-06-04): Moved IHistorySummarizer documentation to the history interface category.
 - v0.0.4 (2026-06-04): Added ChatChain governance contract documentation.
 - v0.0.4 (2026-06-04): Added IAuditLogger to the governance interface index.
+- v0.0.5 (2026-06-05): Added admission replay and Semantic IR slot vocabulary notes.

@@ -8,6 +8,7 @@ using AIKernel.Dtos.Context;
 using AIKernel.Dtos.Core;
 using AIKernel.Dtos.DynamicSlm;
 using AIKernel.Dtos.Dsl;
+using AIKernel.Dtos.Governance;
 using AIKernel.Dtos.Hatl;
 using AIKernel.Dtos.History;
 using AIKernel.Dtos.Time;
@@ -68,6 +69,29 @@ public sealed class ExtractedInterfaceContractTests
         Assert.Equal("Suspend", DslNodeTypes.Suspend);
         Assert.Equal("SuspendForApproval", DslNodeTypes.SuspendForApprovalAlias);
         Assert.Equal("dsl_rom_hash", DslRomMetadataKeys.RomHash);
+    }
+
+    [Fact]
+    public void AdmissibilityAndSemanticIrVocabulariesAreSharedContracts()
+    {
+        var record = new AdmissibilityReplayRecord(
+            "admission-1",
+            "step-1",
+            null,
+            AdmissibilityGateKind.CapabilityAdmission,
+            SemanticIrSlot.G,
+            AdmissibilityDecisionKind.Admit,
+            "capability admitted",
+            "evidence-hash",
+            "replay-hash",
+            new Dictionary<string, string> { ["capability"] = "Observe" });
+
+        Assert.Equal(SemanticIrSlot.G, record.Slot);
+        Assert.Equal(AdmissibilityGateKind.CapabilityAdmission, record.GateKind);
+        Assert.Equal(AdmissibilityDecisionKind.Admit, record.Decision);
+        Assert.True(typeof(SemanticIrSlot).IsEnum);
+        Assert.True(typeof(AdmissibilityGateKind).IsEnum);
+        Assert.True(typeof(AdmissibilityDecisionKind).IsEnum);
     }
 
     [Fact]
@@ -676,6 +700,9 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(DynamicSlmReasoningTraceFormat).IsEnum);
         Assert.True(typeof(DynamicSlmBaseModelStateKind).IsEnum);
         Assert.True(typeof(DynamicSlmHotSwapPolicy).IsEnum);
+        Assert.True(typeof(SemanticIrSlot).IsEnum);
+        Assert.True(typeof(AdmissibilityGateKind).IsEnum);
+        Assert.True(typeof(AdmissibilityDecisionKind).IsEnum);
         Assert.True(typeof(HatlAnchorProfile).IsEnum);
         Assert.True(typeof(HatlDeedStatus).IsEnum);
         Assert.True(typeof(HatlVerificationStatus).IsEnum);
