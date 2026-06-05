@@ -20,6 +20,7 @@ Japanese version: [Index](index-jp.md)
 # AIKernel Architecture Interfaces — Index
 
 ## Namespaces
+- [capabilities/index.md](capabilities/index.md)
 - [context/index.md](context/index.md)
 - [contracts/index.md](contracts/index.md)
 - [conversation/index.md](conversation/index.md)
@@ -48,6 +49,7 @@ Japanese version: [Index](index-jp.md)
 - [vfs/index.md](vfs/index.md)
 
 ## Namespace Overview
+- `capabilities`: external Capability module registry and invocation boundary contracts for CLI, managed assembly, native ABI, DSL ROM, and remote endpoint modules.
 - `kernel`: execution entry and lifecycle contracts.
 - `dsl`: deterministic semantic IR, DSL pipeline, DSL ROM registry, and VFS-backed DSL ROM store contracts.
 - `dynamicslm`: Model ABI, capability subgraph resolution, lineage verification, payload materialization, scheduling, differential distillation planning, and background offload contracts for capability-modular SLM artifacts.
@@ -75,3 +77,4 @@ Japanese version: [Index](index-jp.md)
 - v0.0.5 (2026-06-05): Added DynamicSLM Model ABI, distillation offload, and SeedSLM discipline interface category
 - v0.0.5 (2026-06-05): Added HATL interface category for external cryptographic operators
 - v0.0.5 (2026-06-05): Added governance vocabulary for admission replay and Semantic IR slots
+- v0.0.5 (2026-06-05): Added external Capability module interface category

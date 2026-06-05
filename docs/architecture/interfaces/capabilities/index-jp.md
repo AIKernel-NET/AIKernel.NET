@@ -29,8 +29,8 @@ Capabilities は、直接呼び出し、sandboxed CLI executable、managed assem
 - Called by: Core, Tools, DSL compiler/runtime, provider packages, host applications
 
 ## Documents
-- `ICapabilityModuleRegistry`
-- `ICapabilityModuleInvoker`
+- [ICapabilityModuleRegistry](ICapabilityModuleRegistry-jp.md)
+- [ICapabilityModuleInvoker](ICapabilityModuleInvoker-jp.md)
 ---
 
 # Changelog

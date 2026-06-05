@@ -29,8 +29,8 @@ Capabilities define the contract boundary for reusable external modules that may
 - Called by: Core, Tools, DSL compiler/runtime, provider packages, and host applications
 
 ## Documents
-- `ICapabilityModuleRegistry`
-- `ICapabilityModuleInvoker`
+- [ICapabilityModuleRegistry](ICapabilityModuleRegistry.md)
+- [ICapabilityModuleInvoker](ICapabilityModuleInvoker.md)
 ---
 
 # Changelog

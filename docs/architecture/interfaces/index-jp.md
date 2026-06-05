@@ -20,6 +20,7 @@ tags:
 # AIKernel Architecture Interfaces — Index
 
 ## 名前空間別インデックス
+- [capabilities/index-jp.md](capabilities/index-jp.md)
 - [context/index-jp.md](context/index-jp.md)
 - [contracts/index-jp.md](contracts/index-jp.md)
 - [conversation/index-jp.md](conversation/index-jp.md)
@@ -48,6 +49,7 @@ tags:
 - [vfs/index-jp.md](vfs/index-jp.md)
 
 ## 名前空間概要
+- `capabilities`: CLI、managed assembly、native ABI、DSL ROM、remote endpoint module 向け external Capability module registry / invocation boundary 契約。
 - `kernel`: カーネル本体の実行入口とライフサイクル契約。
 - `dsl`: 決定論的 semantic IR、DSL pipeline、DSL ROM registry、VFS-backed DSL ROM store 契約。
 - `dynamicslm`: Capability modular SLM artifact 向けの Model ABI、capability subgraph 解決、lineage 検証、payload materialization、scheduling、differential distillation planning、background offload 契約。
@@ -75,3 +77,4 @@ tags:
 - v0.0.5 (2026-06-05): DynamicSLM Model ABI / distillation offload / SeedSLM discipline interface category を追加
 - v0.0.5 (2026-06-05): 外部 cryptographic operator 向け HATL interface category を追加
 - v0.0.5 (2026-06-05): admission replay と Semantic IR slot の governance vocabulary を追加
+- v0.0.5 (2026-06-05): external Capability module interface category を追加
