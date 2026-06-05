@@ -81,6 +81,8 @@ SeedSLM の memory 前提は runtime handle とは分離して表現します。
 `DynamicSlmMemoryPlacementMetadata` は resident descriptor と swap descriptor を placement decision に結びます。
 `DynamicSlmHotSwapPolicy` は Core 実装が prefetch、page-in、page-out、hot-swap のどれを意図したかを記録します。
 
+`DynamicSlmModelAbi` は optional な `SeedSlmProfile` を運び、`DynamicSlmPipelineContext` は optional な delegation、thought-artifact、memory-placement state を運びます。`DynamicSlmPipelineMetadata` はそれらの stable identifier を mirror し、Core が runtime behavior を contract package に入れずに ResultStep metadata へ投影できるようにします。
+
 テキストフロー:
 
 ```text

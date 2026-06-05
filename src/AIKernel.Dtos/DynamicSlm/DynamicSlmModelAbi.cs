@@ -8,4 +8,5 @@ public sealed record DynamicSlmModelAbi(
     DynamicSlmExecutionProfile ExecutionProfile,
     DynamicSlmLineage Lineage,
     IReadOnlyList<DynamicSlmPayloadDescriptor> Payloads,
+    SeedSlmProfile? SeedProfile,
     IReadOnlyDictionary<string, string> Metadata);

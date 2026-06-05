@@ -77,6 +77,7 @@ public sealed class ExtractedInterfaceContractTests
             new DynamicSlmExecutionProfile(1024, 10, null, [DynamicSlmAcceleratorKind.Cpu], "int8", true, true),
             new DynamicSlmLineage("artifact-hash", null, "teacher-1", ["replay-hash"], "training-hash", "sig"),
             [payload],
+            null,
             new Dictionary<string, string>());
 
         Assert.Equal("model-1", abi.ModelId);
@@ -107,6 +108,11 @@ public sealed class ExtractedInterfaceContractTests
             "lineage-hash",
             "placement-1",
             new DynamicSlmDistillationJobId("distill-job-1"),
+            null,
+            null,
+            null,
+            null,
+            null,
             true,
             true,
             new Dictionary<string, string>());
@@ -156,6 +162,9 @@ public sealed class ExtractedInterfaceContractTests
                 "gap_detected",
                 new Dictionary<string, string>()),
             null,
+            [],
+            null,
+            null,
             null,
             [],
             metadata,
@@ -175,6 +184,11 @@ public sealed class ExtractedInterfaceContractTests
         Assert.Equal(DynamicSlmDistillationJobStatus.Pending, result.Offload?.Status);
         Assert.Equal(11, (int)DynamicSlmPipelineStage.DistillationOffload);
         Assert.Equal(12, (int)DynamicSlmPipelineStage.FallbackSelection);
+        Assert.Null(abi.SeedProfile);
+        Assert.Null(context.DelegationRequest);
+        Assert.Empty(context.ThoughtArtifacts);
+        Assert.Null(context.MemoryPlacement);
+        Assert.Null(metadata.StrictOutputMode);
         Assert.Equal("true", context.DistillationPlan?.Metadata[DynamicSlmMetadataKeys.GapDetected]);
         Assert.Equal(DynamicSlmFallbackKind.Teacher, context.FallbackStrategy?.Kind);
         Assert.Equal(DynamicSlmPipelineStage.CompatibilityVerification, result.Trace[0].Stage);
@@ -281,6 +295,66 @@ public sealed class ExtractedInterfaceContractTests
             resident,
             new Dictionary<string, string>());
 
+        var seedPayload = new DynamicSlmPayloadDescriptor(
+            "seed-payload-1",
+            DynamicSlmPayloadKind.SeedBase,
+            "rom://model/demo/seed.bin",
+            "sha256",
+            1024,
+            "int8",
+            new Dictionary<string, string>());
+
+        var seedGraph = new DynamicSlmCapabilityGraph(
+            [new DynamicSlmCapabilityNode("cap-1", "Plan", "profile-1", [seedPayload.PayloadId], ["planning"])],
+            []);
+
+        var seedAbi = new DynamicSlmModelAbi(
+            profile.SeedModelId,
+            "0.0.1",
+            new DynamicSlmSemanticProfile("profile-1", "planning", ["agent"], ["json"], "schema", ["replay-v1"]),
+            seedGraph,
+            new DynamicSlmExecutionProfile(1024, 10, null, [DynamicSlmAcceleratorKind.Gpu], "int8", true, true),
+            new DynamicSlmLineage("artifact-hash", null, "teacher-1", ["replay-hash"], "training-hash", "sig"),
+            [seedPayload],
+            profile,
+            new Dictionary<string, string>());
+
+        var seedMetadata = new DynamicSlmPipelineMetadata(
+            "pipeline-seed",
+            "replay-hash",
+            "abi-hash",
+            "graph-hash",
+            "lineage-hash",
+            "placement-1",
+            null,
+            delegation.DelegationId,
+            thought.ArtifactId,
+            trajectory.TrajectoryId,
+            "memory-placement-1",
+            DynamicSlmStrictOutputMode.ZeroSlop,
+            true,
+            true,
+            new Dictionary<string, string>());
+
+        var seedContext = new DynamicSlmPipelineContext(
+            seedAbi,
+            null,
+            null,
+            null,
+            [],
+            null,
+            null,
+            null,
+            null,
+            delegation,
+            [thought],
+            memory,
+            null,
+            null,
+            [],
+            seedMetadata,
+            [new DynamicSlmPipelineTrace(DynamicSlmPipelineStage.ThoughtArtifactDump, "step-seed", null, "replay-hash", new Dictionary<string, string>())]);
+
         Assert.Equal(DynamicSlmStrictOutputMode.ZeroSlop, profile.OutputDisciplinePolicy.Mode);
         Assert.Equal(DynamicSlmDelegationKind.Teacher, delegation.Kind);
         Assert.Equal(DynamicSlmDelegationReason.CapabilityGap, delegation.Reason);
@@ -288,6 +362,12 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(trajectory.DistillationEligible);
         Assert.Equal(DynamicSlmBaseModelStateKind.Null, profile.Neutrality.BaseModelState);
         Assert.Equal(DynamicSlmHotSwapPolicy.HotSwap, memory.HotSwapPolicy);
+        Assert.Equal(profile.SeedModelId, seedAbi.SeedProfile?.SeedModelId);
+        Assert.Equal(delegation.DelegationId, seedContext.DelegationRequest?.DelegationId);
+        Assert.Equal(thought.ArtifactId, seedContext.ThoughtArtifacts[0].ArtifactId);
+        Assert.Equal(memory.HotSwapPolicy, seedContext.MemoryPlacement?.HotSwapPolicy);
+        Assert.Equal(DynamicSlmStrictOutputMode.ZeroSlop, seedMetadata.StrictOutputMode);
+        Assert.Equal(trajectory.TrajectoryId, seedMetadata.TrajectoryId);
         Assert.Equal("dynamicslm_thought_artifact_id", DynamicSlmMetadataKeys.ThoughtArtifactId);
     }
 

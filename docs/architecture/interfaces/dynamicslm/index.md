@@ -81,6 +81,8 @@ SeedSLM memory assumptions are represented separately from runtime handles.
 `DynamicSlmMemoryPlacementMetadata` ties resident and swap descriptors to placement decisions.
 `DynamicSlmHotSwapPolicy` records whether a Core implementation intends prefetch, page-in, page-out, or hot-swap behavior.
 
+`DynamicSlmModelAbi` carries an optional `SeedSlmProfile`, and `DynamicSlmPipelineContext` carries optional delegation, thought-artifact, and memory-placement state. `DynamicSlmPipelineMetadata` mirrors their stable identifiers so Core can project them into ResultStep metadata without putting runtime behavior into the contract packages.
+
 Text flow:
 
 ```text
