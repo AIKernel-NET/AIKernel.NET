@@ -177,6 +177,12 @@ The contracts cover Model ABI descriptors, capability subgraph resolution, linea
 
 ---
 
+## [1.19 Paper Implementation Status](./PAPER_IMPLEMENTATION_STATUS.md)
+
+Maps each DOI-backed paper to the current AIKernel.NET contract surface and identifies which runtime behavior belongs to Core, Provider, RH, Tools, or future HATL work.
+
+---
+
 # 2. Comparative Architecture
 
 ## [2.1 AIKernel vs LangChain](./6.AIKERNEL_VS_LANGCHAIN.md)
@@ -250,6 +256,7 @@ Read the architecture documents in this order. Each item points downward into th
 - [Phase 1 Query Processing](./17.QUERY_PROCESSING_PHASE1.md)
 - [DSL Pipeline and ROM Specification](./18.DSL_PIPELINE_AND_ROM_SPEC.md)
 - [DynamicSLM Interface Contracts](./interfaces/dynamicslm/index.md)
+- [Paper Implementation Status](./PAPER_IMPLEMENTATION_STATUS.md)
 
 ---
 
@@ -268,3 +275,4 @@ This index is the entry point to understanding AIKernel's overall design.
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.4 (2026-06-04): Updated architecture index for DSL / History ROM / Time contract publication
 - v0.0.5 (2026-06-05): Added DynamicSLM Model ABI and distillation offload contract navigation
+- v0.0.5 (2026-06-05): Added paper implementation status navigation
