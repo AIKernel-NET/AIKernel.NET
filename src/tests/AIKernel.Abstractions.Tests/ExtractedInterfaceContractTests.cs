@@ -33,6 +33,7 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(IDynamicSlmModelAbiProvider).IsInterface);
         Assert.True(typeof(IDynamicSlmModuleRegistry).IsInterface);
         Assert.True(typeof(IDynamicSlmCapabilityGraphResolver).IsInterface);
+        Assert.True(typeof(IDynamicSlmCompatibilityVerifier).IsInterface);
         Assert.True(typeof(IDynamicSlmLineageVerifier).IsInterface);
         Assert.True(typeof(IDynamicSlmPayloadLoader).IsInterface);
         Assert.True(typeof(IDynamicSlmScheduler).IsInterface);
@@ -65,6 +66,14 @@ public sealed class ExtractedInterfaceContractTests
 
         Assert.Equal("model-1", abi.ModelId);
         Assert.Equal("dynamicslm_model_abi_hash", DynamicSlmMetadataKeys.ModelAbiHash);
+        Assert.Equal(
+            DynamicSlmCompatibilityStatus.Compatible,
+            new DynamicSlmCompatibilityResult(
+                DynamicSlmCompatibilityStatus.Compatible,
+                abi.ModelId,
+                ["cap-1"],
+                null,
+                new Dictionary<string, string>()).Status);
     }
 
     [Fact]
@@ -197,6 +206,7 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(AIKernel.Enums.PromptOverflowPolicy).IsEnum);
         Assert.True(typeof(DynamicSlmPayloadKind).IsEnum);
         Assert.True(typeof(DynamicSlmAcceleratorKind).IsEnum);
+        Assert.True(typeof(DynamicSlmCompatibilityStatus).IsEnum);
     }
 
     [Fact]

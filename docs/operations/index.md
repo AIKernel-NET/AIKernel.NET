@@ -30,6 +30,7 @@ incident response, and SLO/SLA management.
 - Upgrade checklists  
 - v0.0.3 -> v0.0.4 contract extraction for DSL, DSL ROM, History ROM, and Kernel clock
 - v0.0.4 -> v0.0.5 contract-surface purity cleanup for interface-only packages
+- v0.0.5 DynamicSLM Model ABI contract preparation
 
 Use this guide when upgrading package references or validating contract-layer dependencies.
 
@@ -125,4 +126,4 @@ Future versions will expand this directory.
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.3 (2026-06-02): Marked Migration Guide as active and added v0.0.3 dependency-layer migration coverage
 - v0.0.4 (2026-06-04): Added DSL / History ROM contract extraction migration coverage
-- v0.0.5 (2026-06-05): Added contract-surface purity cleanup migration coverage
+- v0.0.5 (2026-06-05): Added contract-surface purity cleanup and DynamicSLM contract preparation migration coverage

@@ -29,6 +29,7 @@ DynamicSLM 論文で示された Model ABI、すなわち Semantic Profile、Cap
 | `IDynamicSlmModelAbiProvider` | model id から Model ABI descriptor を読み取る。 |
 | `IDynamicSlmModuleRegistry` | admission 済み DynamicSLM model artifact の登録、解決、列挙。 |
 | `IDynamicSlmCapabilityGraphResolver` | task に必要な最小 capability subgraph を解決する。 |
+| `IDynamicSlmCompatibilityVerifier` | payload loading 前に semantic profile と governance compatibility を検証する。 |
 | `IDynamicSlmLineageVerifier` | payload 利用前に lineage、artifact hash、admission metadata を検証する。 |
 | `IDynamicSlmPayloadLoader` | runtime implementation type を公開せず payload descriptor を materialize / unload する。 |
 | `IDynamicSlmScheduler` | execution profile から accelerator placement と prefetch plan を作る。 |

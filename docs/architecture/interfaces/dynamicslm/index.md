@@ -29,6 +29,7 @@ They are based on the Model ABI described by the DynamicSLM paper: Semantic Prof
 | `IDynamicSlmModelAbiProvider` | Read a Model ABI descriptor by model id. |
 | `IDynamicSlmModuleRegistry` | Register, resolve, and enumerate admitted DynamicSLM model artifacts. |
 | `IDynamicSlmCapabilityGraphResolver` | Resolve the minimum capability subgraph required for a task. |
+| `IDynamicSlmCompatibilityVerifier` | Verify semantic profile and governance compatibility before payload loading. |
 | `IDynamicSlmLineageVerifier` | Verify lineage, artifact hashes, and admission metadata before payload use. |
 | `IDynamicSlmPayloadLoader` | Materialize and unload payload descriptors without exposing runtime implementation types. |
 | `IDynamicSlmScheduler` | Produce accelerator placement and prefetch plans from execution profiles. |
