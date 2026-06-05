@@ -90,6 +90,8 @@ public sealed class ExtractedInterfaceContractTests
         Assert.Equal(SemanticIrSlot.G, record.Slot);
         Assert.Equal(AdmissibilityGateKind.CapabilityAdmission, record.GateKind);
         Assert.Equal(AdmissibilityDecisionKind.Admit, record.Decision);
+        Assert.Equal(8, (int)AdmissibilityDecisionKind.Transform);
+        Assert.Equal(9, (int)AdmissibilityDecisionKind.Decompose);
         Assert.True(typeof(SemanticIrSlot).IsEnum);
         Assert.True(typeof(AdmissibilityGateKind).IsEnum);
         Assert.True(typeof(AdmissibilityDecisionKind).IsEnum);

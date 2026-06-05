@@ -49,7 +49,7 @@ v0.0.5 では、Core/runtime package が fail-closed な pre-inference evidence 
 ## 6. Shared DTO / Enum Vocabulary
 - `AdmissibilityReplayRecord`: pre-inference admission gate が出力する ReplayLog-compatible evidence。
 - `AdmissibilityGateKind`: prompt override、capability admission、critical operation、computational complexity、policy decision、context integrity、runtime invariant の gate vocabulary。
-- `AdmissibilityDecisionKind`: admit、deny、suspend for approval、clarify、read-only、delegate、quarantine の decision vocabulary。
+- `AdmissibilityDecisionKind`: admit、deny、transform、delegate、decompose、suspend for approval、clarify、read-only、quarantine の decision vocabulary。
 - `SemanticIrSlot`: semantic compilation と DSL admission が共有する G/T/C/B Semantic IR slot vocabulary。
 
 `AdmissibilityReplayRecord.Metadata` は、validator version、budget、complexity profile、attached requirement、delegated solver identity、timestamp、trace identifier など、論文レベルの field を運ぶ拡張点です。Runtime package は ReplayLog へ接続する前に、これらの metadata を正準化・hash 化してください。

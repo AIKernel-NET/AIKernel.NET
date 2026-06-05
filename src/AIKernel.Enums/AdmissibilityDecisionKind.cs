@@ -12,5 +12,7 @@ public enum AdmissibilityDecisionKind
     Clarify = 4,
     ReadOnly = 5,
     Delegate = 6,
-    Quarantine = 7
+    Quarantine = 7,
+    Transform = 8,
+    Decompose = 9
 }
