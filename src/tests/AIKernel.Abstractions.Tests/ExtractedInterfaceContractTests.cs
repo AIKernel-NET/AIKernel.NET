@@ -4,6 +4,8 @@ using AIKernel.Abstractions.Hatl;
 using AIKernel.Abstractions.History;
 using AIKernel.Abstractions.Time;
 using AIKernel.Contracts;
+using AIKernel.Dtos.Context;
+using AIKernel.Dtos.Core;
 using AIKernel.Dtos.DynamicSlm;
 using AIKernel.Dtos.Dsl;
 using AIKernel.Dtos.Hatl;
@@ -15,6 +17,41 @@ namespace AIKernel.Abstractions.Tests;
 
 public sealed class ExtractedInterfaceContractTests
 {
+    [Fact]
+    public void ContractDtosDoNotInjectRuntimeTimestamps()
+    {
+        var purpose = new Purpose
+        {
+            PurposeId = "purpose-1",
+            Description = "demo"
+        };
+
+        var fragment = new ContextFragment();
+        var expression = new ExpressionContextDto();
+        var material = new MaterialContextDto
+        {
+            Source = "source",
+            RawData = "raw"
+        };
+        var orchestration = new OrchestrationContextDto
+        {
+            Purpose = "purpose",
+            Structure = "structure"
+        };
+        var unified = new UnifiedContextDto
+        {
+            Id = "context-1",
+            Orchestration = orchestration
+        };
+
+        Assert.Equal(default, purpose.CreatedAt);
+        Assert.Equal(default, fragment.CreatedAt);
+        Assert.Equal(default, expression.CreatedAt);
+        Assert.Equal(default, material.RetrievedAt);
+        Assert.Equal(default, orchestration.CreatedAt);
+        Assert.Equal(default, unified.CreatedAt);
+    }
+
     [Fact]
     public void DslContractsAreOwnedByAbstractions()
     {

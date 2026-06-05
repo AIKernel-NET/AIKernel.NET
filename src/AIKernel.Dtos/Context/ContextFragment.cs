@@ -11,7 +11,7 @@ public class ContextFragment
     public ContextCategory Category { get; init; }
     public string Content { get; init; } = string.Empty;
     public double Priority { get; init; } = 0.5;
-    public DateTime CreatedAt { get; init; } = DateTime.UtcNow;
+    public DateTime CreatedAt { get; init; }
     public IReadOnlyDictionary<string, string>? Metadata { get; init; }
 }
 

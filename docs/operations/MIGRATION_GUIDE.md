@@ -686,6 +686,7 @@ Distillation planning may run in the load pipeline, but distillation execution m
 SeedSLM discipline, delegation, thought-artifact, and memory-placement contracts are also DTO/interface-only. Core should adapt them to ResultStep/ReplayLog/SemanticDelta pipelines and must not embed runtime behavior in contract packages.
 `DynamicSlmModelAbi`, `DynamicSlmPipelineContext`, and `DynamicSlmPipelineMetadata` include SeedSLM extension fields while retaining constructor compatibility for callers that do not provide SeedSLM state; missing SeedSLM fields are interpreted as absent contract metadata, not as runtime failure.
 HATL cryptographic operations are also contract-only in `AIKernel.NET`. Bind `IHatlCryptographicOperator` to an AIKernel.RH-backed operator, hardware provider, or audited module in Core/host code.
+DTO timestamp properties no longer inject `DateTime.UtcNow` by default. Core/provider implementations should assign deterministic timestamps through their clock or semantic-state materialization boundary.
 
 ### 15.7 Verification Commands
 Run:

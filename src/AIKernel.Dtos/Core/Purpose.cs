@@ -11,7 +11,7 @@ public sealed class Purpose
     public int Priority { get; init; } = 5;
     public List<string> Tags { get; init; } = new();
     public string? SuccessCriteria { get; init; }
-    public DateTime CreatedAt { get; init; } = DateTime.UtcNow;
+    public DateTime CreatedAt { get; init; }
 }
 
 

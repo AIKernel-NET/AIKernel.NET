@@ -45,7 +45,7 @@ public sealed class MaterialContextDto
     /// <summary>
     /// 取得日時を取得または設定します。
     /// </summary>
-    public DateTime RetrievedAt { get; init; } = DateTime.UtcNow;
+    public DateTime RetrievedAt { get; init; }
 }
 
 
