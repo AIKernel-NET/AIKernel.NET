@@ -83,4 +83,4 @@ var result =
 
 # 変更履歴
 - v0.0.5 (2026-06-05): DynamicSLM distillation offload contracts と metadata shape を追加。
-- v0.0.5 (2026-06-05): DynamicSLM Model ABI contract index を追加。
+- v0.0.5 (2026-06-05): DynamicSLM Model ABI contract index と distillation offload metadata を追加。

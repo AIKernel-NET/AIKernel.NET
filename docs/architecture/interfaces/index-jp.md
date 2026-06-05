@@ -70,4 +70,4 @@ tags:
 - v0.0.3 (2026-06-02): Vfs contract 所有元の注記を追加
 - v0.0.4 (2026-06-04): DSL、History ROM、Time interface category を追加
 - v0.0.4 (2026-06-04): audit / ChatChain contract を含む governance coverage を明確化
-- v0.0.5 (2026-06-05): DynamicSLM Model ABI interface category を追加
+- v0.0.5 (2026-06-05): DynamicSLM Model ABI / distillation offload interface category を追加

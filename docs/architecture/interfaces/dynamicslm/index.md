@@ -83,4 +83,4 @@ var result =
 
 # Changelog
 - v0.0.5 (2026-06-05): Added DynamicSLM distillation offload contracts and metadata shape.
-- v0.0.5 (2026-06-05): Added DynamicSLM Model ABI contract index.
+- v0.0.5 (2026-06-05): Added DynamicSLM Model ABI contract index with distillation offload metadata.
