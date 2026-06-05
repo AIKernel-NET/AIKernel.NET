@@ -21,4 +21,12 @@ public static class DynamicSlmMetadataKeys
     public const string PipelineTraceCount = "dynamicslm_pipeline_trace_count";
 
     public const string FailureKind = "dynamicslm_failure_kind";
+
+    public const string DistillationJobId = "dynamicslm_distillation_job_id";
+
+    public const string OffloadStatus = "dynamicslm_offload_status";
+
+    public const string TeacherFallbackUsed = "dynamicslm_teacher_fallback_used";
+
+    public const string GapDetected = "dynamicslm_gap_detected";
 }

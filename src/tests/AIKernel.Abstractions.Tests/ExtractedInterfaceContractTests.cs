@@ -46,6 +46,8 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(IDynamicSlmCapabilityGapDetector).IsInterface);
         Assert.True(typeof(IDynamicSlmCapabilityGraphEvolutionPlanner).IsInterface);
         Assert.True(typeof(IDynamicSlmDistillationPlanner).IsInterface);
+        Assert.True(typeof(IDynamicSlmDistillationJobScheduler).IsInterface);
+        Assert.True(typeof(IDynamicSlmBackgroundDistillationService).IsInterface);
         Assert.True(typeof(IDynamicSlmArtifactPublisher).IsInterface);
 
         var payload = new DynamicSlmPayloadDescriptor(
@@ -98,6 +100,16 @@ public sealed class ExtractedInterfaceContractTests
             "graph-hash",
             "lineage-hash",
             "placement-1",
+            new DynamicSlmDistillationJobId("distill-job-1"),
+            true,
+            true,
+            new Dictionary<string, string>());
+
+        var offload = new DynamicSlmPipelineOffloadInfo(
+            new DynamicSlmDistillationJobId("distill-job-1"),
+            DynamicSlmDistillationJobStatus.Pending,
+            "teacher-1",
+            "replay-hash",
             new Dictionary<string, string>());
 
         var context = new DynamicSlmPipelineContext(
@@ -110,18 +122,24 @@ public sealed class ExtractedInterfaceContractTests
             null,
             null,
             null,
+            null,
+            null,
             [],
             metadata,
             [new DynamicSlmPipelineTrace(DynamicSlmPipelineStage.CompatibilityVerification, "step-1", null, "replay-hash", new Dictionary<string, string>())]);
 
         var result = new DynamicSlmPipelineResult<DynamicSlmPipelineContext>(
+            DynamicSlmPipelineStatus.OffloadPending,
             true,
             context,
             null,
+            offload,
             context.Trace,
             metadata);
 
         Assert.True(result.IsSuccess);
+        Assert.Equal(DynamicSlmPipelineStatus.OffloadPending, result.Status);
+        Assert.Equal(DynamicSlmDistillationJobStatus.Pending, result.Offload?.Status);
         Assert.Equal(DynamicSlmPipelineStage.CompatibilityVerification, result.Trace[0].Stage);
     }
 
@@ -259,6 +277,9 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(DynamicSlmGraphUpdateKind).IsEnum);
         Assert.True(typeof(DynamicSlmPipelineStage).IsEnum);
         Assert.True(typeof(DynamicSlmFailureKind).IsEnum);
+        Assert.True(typeof(DynamicSlmDistillationJobStatus).IsEnum);
+        Assert.True(typeof(DynamicSlmFallbackKind).IsEnum);
+        Assert.True(typeof(DynamicSlmPipelineStatus).IsEnum);
     }
 
     [Fact]

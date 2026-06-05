@@ -45,7 +45,8 @@ DTOs are owned by `AIKernel.Dtos`, and shared enums are owned by `AIKernel.Enums
 
 As of `v0.0.5`, DynamicSLM Model ABI contracts are available through
 `AIKernel.Abstractions.DynamicSlm`, `AIKernel.Dtos.DynamicSlm`, and DynamicSLM enum primitives in `AIKernel.Enums`.
-These contracts prepare Core/Provider implementations for capability-modular SLM artifacts, lineage verification, payload loading, scheduling, and differential distillation without introducing runtime behavior into the contract packages.
+These contracts prepare Core/Provider implementations for capability-modular SLM artifacts, lineage verification, payload loading, scheduling, and differential distillation planning without introducing runtime behavior into the contract packages.
+Heavy differential distillation execution is modeled as a background offload through scheduler/service interfaces so the load pipeline can continue through teacher, remote, or cached fallback paths.
 
 ---
 

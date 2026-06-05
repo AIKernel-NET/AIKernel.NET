@@ -49,7 +49,7 @@ Japanese version: [Index](index-jp.md)
 ## Namespace Overview
 - `kernel`: execution entry and lifecycle contracts.
 - `dsl`: deterministic semantic IR, DSL pipeline, DSL ROM registry, and VFS-backed DSL ROM store contracts.
-- `dynamicslm`: Model ABI, capability subgraph resolution, lineage verification, payload materialization, scheduling, and differential distillation contracts for capability-modular SLM artifacts.
+- `dynamicslm`: Model ABI, capability subgraph resolution, lineage verification, payload materialization, scheduling, differential distillation planning, and background offload contracts for capability-modular SLM artifacts.
 - `governance`: attention guard, audit logger, signature trust, context lifecycle, and ChatChain hash-chain contracts.
 - `history`: history summarization and History ROM registry/export/store contracts.
 - `models`: capability axes, dynamic capacity, and execution constraints.

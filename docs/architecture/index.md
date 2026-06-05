@@ -173,7 +173,7 @@ v0.0.4 publishes the shared contract surface for this model through `AIKernel.Ab
 v0.0.5 adds the first public contract surface for DynamicSLM capability-modular SLM artifacts.
 The interface index is available at [interfaces/dynamicslm/index.md](./interfaces/dynamicslm/index.md).
 
-The contracts cover Model ABI descriptors, capability subgraph resolution, lineage verification, payload materialization, scheduler placement, and differential distillation planning while keeping runtime behavior in Core/Provider implementations.
+The contracts cover Model ABI descriptors, capability subgraph resolution, lineage verification, payload materialization, scheduler placement, differential distillation planning, and background distillation offload while keeping runtime behavior in Core/Provider implementations.
 
 ---
 

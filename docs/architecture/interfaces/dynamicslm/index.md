@@ -41,7 +41,9 @@ They are based on the Model ABI described by the DynamicSLM paper: Semantic Prof
 | `IDynamicSlmScheduler` | Produce accelerator placement and prefetch plans from execution profiles. |
 | `IDynamicSlmCapabilityGapDetector` | Detect capability gaps from verified ReplayLog traces. |
 | `IDynamicSlmCapabilityGraphEvolutionPlanner` | Propose governed Capability Graph updates from recurring verified gaps. |
-| `IDynamicSlmDistillationPlanner` | Create differential distillation plans for targeted capability modules. |
+| `IDynamicSlmDistillationPlanner` | Create differential distillation plans only; it must not execute heavy distillation inline. |
+| `IDynamicSlmDistillationJobScheduler` | Schedule offloaded distillation jobs and read job status through a host/Core boundary. |
+| `IDynamicSlmBackgroundDistillationService` | Represent the background service boundary that accepts distillation offload requests. |
 | `IDynamicSlmArtifactPublisher` | Publish validated distilled artifacts through the registry boundary. |
 
 ## DTO Ownership
@@ -55,6 +57,7 @@ Runtime implementations, verification logic, payload handles, and result pipelin
 `AIKernel.NET` does not expose `AIKernel.Common.Result<T>`, `Option<T>`, or `Either<L,R>`.
 The DynamicSLM pipeline DTOs provide a package-boundary shape that Core can adapt into its Result monad.
 `DynamicSlmPipelineResult<T>` carries success/failure, trace, and metadata without implementing monadic behavior in the contract package.
+Differential distillation is offloaded: the load pipeline records a plan and job descriptor, falls back to a Teacher/remote/cached strategy when needed, and continues without waiting for training work.
 
 Pseudo-code for a Core implementation:
 
@@ -65,8 +68,10 @@ var result =
     from graph in ResolveCapabilityGraph(lineage)
     from gaps in DetectCapabilityGaps(graph)
     from evolution in PlanGraphEvolution(gaps)
-    from distillation in PlanDistillation(evolution)
-    from placement in PlanPlacement(distillation)
+    from distillPlan in PlanDistillation(evolution)
+    from offload in OffloadDistillation(distillPlan)
+    from fallback in SelectFallbackStrategy(offload)
+    from placement in PlanPlacement(evolution)
     from admission in Admit(placement)
     from payloads in LoadPayloads(admission)
     select payloads;
@@ -75,4 +80,5 @@ var result =
 ---
 
 # Changelog
+- v0.0.5 (2026-06-05): Added DynamicSLM distillation offload contracts and metadata shape.
 - v0.0.5 (2026-06-05): Added DynamicSLM Model ABI contract index.

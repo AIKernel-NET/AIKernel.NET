@@ -8,6 +8,8 @@ public sealed record DynamicSlmPipelineContext(
     IReadOnlyList<DynamicSlmCapabilityGap> CapabilityGaps,
     DynamicSlmCapabilityGraphUpdatePlan? GraphUpdatePlan,
     DynamicSlmDistillationPlan? DistillationPlan,
+    DynamicSlmDistillationJobDescriptor? DistillationJob,
+    DynamicSlmFallbackStrategy? FallbackStrategy,
     DynamicSlmPlacementPlan? PlacementPlan,
     DynamicSlmAdmissionResult? Admission,
     IReadOnlyList<DynamicSlmLoadedPayload> LoadedPayloads,

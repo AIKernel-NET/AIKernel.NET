@@ -7,4 +7,7 @@ public sealed record DynamicSlmPipelineMetadata(
     string? CapabilityGraphHash,
     string? LineageHash,
     string? PlacementPlanId,
+    DynamicSlmDistillationJobId? DistillationJobId,
+    bool GapDetected,
+    bool TeacherFallbackUsed,
     IReadOnlyDictionary<string, string> Values);

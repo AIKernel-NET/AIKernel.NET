@@ -178,7 +178,7 @@ v0.0.4 では、このモデルの共有 contract surface を `AIKernel.Abstract
 v0.0.5 では、DynamicSLM capability-modular SLM artifact 向けの最初の公開 contract surface を追加する。
 Interface index は [interfaces/dynamicslm/index-jp.md](./interfaces/dynamicslm/index-jp.md) にある。
 
-この contract は、Model ABI descriptor、capability subgraph 解決、lineage 検証、payload materialization、scheduler placement、differential distillation planning を扱い、runtime behavior は Core / Provider 実装へ残す。
+この contract は、Model ABI descriptor、capability subgraph 解決、lineage 検証、payload materialization、scheduler placement、differential distillation planning、background distillation offload を扱い、runtime behavior は Core / Provider 実装へ残す。
 
 ---
 
