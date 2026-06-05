@@ -2,9 +2,9 @@
 id: repo-dependency-rules
 title: "AIKernel.NET Repository Dependency Rules"
 created: 2026-04-30
-updated: 2026-06-04
+updated: 2026-06-05
 published: 2026-05-16
-version: "0.0.4"
+version: "0.0.5"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -42,6 +42,7 @@ This rule set is an OS rule to "first create layers, then fix dependency directi
 ## 2. Layer Definitions
 
 - Core (syscall): Abstractions / Contracts / Dtos / Enums
+- Common (functional primitives): dependency-free Result / Option / Either / utility layer used by implementation packages
 - Kernel (implementation): Scheduler / Router / Controller / Pipeline / RagEngine / Rules
 - Providers (drivers): Capability implementations
 - VfsProviders (external data): Git and other data sources
@@ -75,8 +76,9 @@ Dependencies not listed here are generally forbidden; exceptions must be documen
 | AIKernel.Dtos | AIKernel.Enums |
 | AIKernel.Contracts | AIKernel.Enums, AIKernel.Dtos |
 | AIKernel.Abstractions | AIKernel.Dtos, AIKernel.Enums |
-| Providers / VfsProviders | AIKernel.Abstractions, AIKernel.Core |
-| Core | AIKernel.Abstractions |
+| AIKernel.Common | none |
+| Providers / VfsProviders | AIKernel.Abstractions, AIKernel.Core, AIKernel.Common |
+| Core | AIKernel.Abstractions, AIKernel.Common |
 | tests/* | free to reference (no reverse flow) |
 
 ### 4.2 Forbidden
@@ -84,6 +86,7 @@ Dependencies not listed here are generally forbidden; exceptions must be documen
 - Circular dependencies (A → B → A)
 - src referencing tests (reverse flow)
 - Core referencing Kernel/Providers/Server/Hosting/Enterprise
+- AIKernel.Common referencing AIKernel contract, DTO, Core, Provider, Vfs, Hosting, or application-specific types
 - AIKernel.Abstractions referencing AIKernel.Core, Providers, or a separate Vfs package/project
 - Concrete data carriers in Vfs interfaces (must be defined in AIKernel.Dtos)
 
@@ -106,14 +109,26 @@ AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
 ### 4.4 v0.0.4 Contract Extraction Rule
 
 DSL, DSL ROM, History ROM, and Kernel clock contracts are owned by `AIKernel.Abstractions` and `AIKernel.Dtos` as of v0.0.4.
-Core implementations may adapt these contracts internally to `AIKernel.Common.Results`, but `AIKernel.Abstractions` must not reference `AIKernel.Common` until Common is published as a stable contract package.
+Core implementations may adapt these contracts internally to `AIKernel.Common.Results`, but `AIKernel.Abstractions` must not reference `AIKernel.Common`.
+
+### 4.5 v0.0.5 Contract Surface Purity Rule
+
+`AIKernel.Abstractions` and `AIKernel.Contracts` must export public interfaces only.
+DTOs must be owned by `AIKernel.Dtos`, and shared enums must be owned by `AIKernel.Enums`.
+Runtime exception implementations and result/failure adapters belong to implementation packages such as `AIKernel.Core` or `AIKernel.Common`, not to contract packages.
+
+DynamicSLM, SeedSLM, and HATL additions follow the same contract-only rule.
+`AIKernel.Abstractions.DynamicSlm` and `AIKernel.Abstractions.Hatl` define only package-boundary interfaces.
+`AIKernel.Dtos.DynamicSlm` and `AIKernel.Dtos.Hatl` carry boundary records.
+`AIKernel.Enums` owns the shared DynamicSLM and HATL enum primitives.
+Result/ResultStep/LINQ adapters, model loading, SeedSLM discipline enforcement, thought-artifact persistence, delegation execution, memory placement execution, distillation execution, HATL cryptography, key handling, ratchets, Merkle construction, and public-anchor runtime behavior belong to `AIKernel.Common`, `AIKernel.Core`, provider packages, host applications, or external operator modules such as AIKernel.RH-backed components.
 
 ---
 
 ## 5. Kernel / Providers / VfsProviders Dependency Rules (Summary)
 
-- Kernel may only reference Core
-- Providers / VfsProviders may depend only on Core (primarily Abstractions) and must not depend on Kernel concrete implementations
+- Kernel may reference Core and AIKernel.Common functional primitives
+- Providers / VfsProviders may depend only on Core, AIKernel.Abstractions, and AIKernel.Common, and must not depend on Kernel concrete implementations
 - External SDKs must be contained within Providers/VfsProviders and not leak into Core
 
 (Details may be split into separate documents during implementation.)
@@ -139,3 +154,5 @@ Dependency direction is design. AIKernel.NET, as an OS, fixes boundaries and dep
 - v0.0.3 (2026-06-02): Corrected Phase-1 dependency graph and Vfs contract ownership/type-forwarding rule
 - v0.0.4 (2026-06-04): Added DSL / History ROM / Kernel clock contract extraction dependency rule
 - v0.0.4 (2026-06-04): Removed the separate AIKernel.Vfs compatibility facade from the package graph
+- v0.0.5 (2026-06-05): Added contract-surface purity rule for interface-only packages
+- v0.0.5 (2026-06-05): Clarified Core/Common dependency allowance and DynamicSLM/SeedSLM/HATL contract-only ownership

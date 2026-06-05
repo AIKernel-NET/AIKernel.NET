@@ -2,9 +2,9 @@
 id: repo-dependency-rules
 title: "AIKernel.NET Repository Dependency Rules — 依存方向規約"
 created: 2026-04-30
-updated: 2026-06-04
+updated: 2026-06-05
 published: 2026-05-16
-version: "0.0.4"
+version: "0.0.5"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -43,6 +43,7 @@ tags:
 ## 2. レイヤ（層）定義
 
 - Core（syscall）: Abstractions / Contracts / Dtos / Enums
+- Common（functional primitives）: 実装 package が利用する dependency-free な Result / Option / Either / utility layer
 - Kernel（実装）: Scheduler / Router / Controller / Pipeline / RagEngine / Rules
 - Providers（ドライバ）: Capability 実装
 - VfsProviders（外部データ）: Git 等のデータソース
@@ -76,8 +77,9 @@ tags:
 | AIKernel.Dtos | AIKernel.Enums |
 | AIKernel.Contracts | AIKernel.Enums, AIKernel.Dtos |
 | AIKernel.Abstractions | AIKernel.Dtos, AIKernel.Enums |
-| Providers / VfsProviders | AIKernel.Abstractions, AIKernel.Core |
-| Core | AIKernel.Abstractions |
+| AIKernel.Common | なし |
+| Providers / VfsProviders | AIKernel.Abstractions, AIKernel.Core, AIKernel.Common |
+| Core | AIKernel.Abstractions, AIKernel.Common |
 | tests/* | 参照自由（逆流禁止） |
 
 ### 4.2 禁止事項（Forbidden）
@@ -85,6 +87,7 @@ tags:
 - 循環依存（A → B → A）
 - src が tests を参照すること（逆流）
 - Core が Kernel/Providers/Server/Hosting/Enterprise を参照すること
+- AIKernel.Common が AIKernel contract、DTO、Core、Provider、Vfs、Hosting、または application-specific type を参照すること
 - AIKernel.Abstractions が AIKernel.Core、Providers、または separate Vfs package/project を参照すること
 - Vfs インターフェースに具象データ型を内包すること（具象データは AIKernel.Dtos に定義する）
 
@@ -107,14 +110,26 @@ AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
 ### 4.4 v0.0.4 Contract 抽出ルール
 
 v0.0.4 以降、DSL、DSL ROM、History ROM、Kernel clock contract は `AIKernel.Abstractions` と `AIKernel.Dtos` が所有する。
-Core 実装は内部でこれらを `AIKernel.Common.Results` に adapter してよいが、Common が安定 contract package として公開されるまで、`AIKernel.Abstractions` は `AIKernel.Common` を参照してはならない。
+Core 実装は内部でこれらを `AIKernel.Common.Results` に adapter してよいが、`AIKernel.Abstractions` は `AIKernel.Common` を参照してはならない。
+
+### 4.5 v0.0.5 Contract Surface Purity ルール
+
+`AIKernel.Abstractions` と `AIKernel.Contracts` は public interface のみを export する。
+DTO は `AIKernel.Dtos`、共有 enum は `AIKernel.Enums` が所有する。
+runtime exception 実装や result/failure adapter は `AIKernel.Core` や `AIKernel.Common` などの実装 package に配置し、contract package には置かない。
+
+DynamicSLM、SeedSLM、HATL の追加も同じ contract-only rule に従う。
+`AIKernel.Abstractions.DynamicSlm` と `AIKernel.Abstractions.Hatl` は package-boundary interface のみを定義する。
+`AIKernel.Dtos.DynamicSlm` と `AIKernel.Dtos.Hatl` は境界 record を運ぶ。
+`AIKernel.Enums` は共有 DynamicSLM / HATL enum primitive を所有する。
+Result / ResultStep / LINQ adapter、model loading、SeedSLM discipline enforcement、thought-artifact persistence、delegation execution、memory placement execution、distillation execution、HATL cryptography、key handling、ratchet、Merkle construction、public-anchor runtime behavior は `AIKernel.Common`、`AIKernel.Core`、provider package、host application、または AIKernel.RH ベース component などの外部 operator module が所有する。
 
 ---
 
 ## 5. Kernel / Providers / VfsProviders の依存規約（概要）
 
-- Kernel は Core のみ参照できる
-- Providers / VfsProviders は Core（主に Abstractions）にのみ依存し、Kernel の具象に依存しない
+- Kernel は Core と AIKernel.Common functional primitive を参照できる
+- Providers / VfsProviders は Core、AIKernel.Abstractions、AIKernel.Common にのみ依存し、Kernel の具象に依存しない
 - 外部 SDK は Providers/VfsProviders 側に閉じ込め、Core へ漏らさない
 
 （詳細は実装フェーズで別文書に分離してもよい）
@@ -141,3 +156,5 @@ AIKernel.NET は OS として、境界と依存方向を最初に固定し、以
 - v0.0.3 (2026-06-02): Phase-1 依存グラフと Vfs contract 所有元/type-forwarding 規約を修正
 - v0.0.4 (2026-06-04): DSL / History ROM / Kernel clock contract 抽出に関する依存ルールを追加
 - v0.0.4 (2026-06-04): 個別の AIKernel.Vfs 互換 facade を package graph から削除
+- v0.0.5 (2026-06-05): interface-only package のための contract-surface purity ルールを追加
+- v0.0.5 (2026-06-05): Core/Common dependency allowance と DynamicSLM/SeedSLM/HATL contract-only ownership を明確化

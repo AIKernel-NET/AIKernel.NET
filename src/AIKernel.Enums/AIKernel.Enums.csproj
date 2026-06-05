@@ -11,11 +11,11 @@
     <Description>
 AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orchestration. This package is part of the AIKernel contract surface and provides dependency-free shared enum primitives.
 
-Defines core enumerations used throughout the AIKernel OS, including RejectCode, PdpDecision, DataClassification, and VfsEntryType. These enums form the shared vocabulary across contracts, DTOs, and interface layers.
+Defines core enumerations used throughout the AIKernel OS, including RejectCode, PdpDecision, DataClassification, VfsEntryType, Semantic IR slot vocabulary, external capability module/invocation primitives, governance admissibility gate/decision/task-cost/critical-operation primitives, DynamicSLM/SeedSLM status primitives, and HATL anchor/deed/verification primitives. These enums form the shared vocabulary across contracts, DTOs, and interface layers.
 
 AIKernel は AI アプリケーション向けの OS 的フレームワークであり、カテゴリ分離、コンテキスト隔離、契約駆動の設計思想に基づいています。本パッケージは AIKernel contract surface の一部であり、依存を持たない共有 enum primitive を提供します。
 
-RejectCode、PdpDecision、DataClassification、VfsEntryType など、AIKernel OS 全体で使用されるコア列挙型を定義します。これらは契約層・DTO 層・インターフェース層を横断する共通語彙を形成します。
+RejectCode、PdpDecision、DataClassification、VfsEntryType、Semantic IR slot vocabulary、external capability module / invocation primitive、governance admissibility gate / decision / task-cost / critical-operation primitive、DynamicSLM / SeedSLM status primitive、HATL anchor / deed / verification primitive など、AIKernel OS 全体で使用されるコア列挙型を定義します。これらは契約層・DTO 層・インターフェース層を横断する共通語彙を形成します。
     </Description>
 
     <!-- Package settings -->

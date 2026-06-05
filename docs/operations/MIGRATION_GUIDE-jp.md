@@ -1,8 +1,8 @@
 ---
 title: "移行ガイド（Migration Guide）"
-updated: 2026-06-04
+updated: 2026-06-05
 published: 2026-05-16
-version: "0.0.4"
+version: "0.0.5"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -11,7 +11,7 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 
 # 移行ガイド（Migration Guide）
 
-本ガイドは、初期コンセプト版（v0.0.0）から、正典化されたアーキテクチャ（v0.0.1、v0.0.2、v0.0.3）、および v0.0.4 の DSL / History ROM contract 抽出へ移行するための手順を定義します。
+本ガイドは、初期コンセプト版（v0.0.0）から、正典化されたアーキテクチャ（v0.0.1、v0.0.2、v0.0.3）、v0.0.4 の DSL / History ROM contract 抽出、および v0.0.5 の contract-surface purity cleanup、external Capability module contract、DynamicSLM Model ABI / SeedSLM discipline / distillation offload、HATL external cryptographic operator contract 準備、governance admissibility gate / trajectory vocabulary、Semantic Compilation DTO vocabulary へ移行するための手順を定義します。
 
 ## 1. 根本的な変更点
 v0.0.1 では、`決定論（Determinism）` と `非推論型ガバナンス` を軸に、全体設計が再編されました。
@@ -407,7 +407,7 @@ v0.0.3 では、Vfs contract 周辺の package 依存グラフを修正します
 
 > v0.0.4 では、この互換 facade は置き換え済みです。v0.0.4 以降へ直接移行する場合は、14.6 に従い、個別の `AIKernel.Vfs` package/project を削除してください。
 
-主な変更は、Vfs interface contract の所有元が `AIKernel.Abstractions` になったことです。`AIKernel.Vfs` package は type forwarding による互換 facade として残りますが、contract 定義そのものの所有元ではなくなります。
+v0.0.3 の主な変更は、Vfs interface contract の所有元が `AIKernel.Abstractions` になったことです。v0.0.3 でのみ、個別の `AIKernel.Vfs` package は type forwarding による互換 facade として機能しましたが、contract 定義そのものの所有元ではなくなりました。v0.0.4 以降では、その個別 package/project は削除します。
 
 ### 13.1 目標レイヤ構造
 Phase-1 の期待される依存方向は次の通りです。
@@ -462,7 +462,7 @@ AIKernel.Vfs.csproj
 + <ProjectReference Include="..\AIKernel.Abstractions\AIKernel.Abstractions.csproj" />
 ```
 
-Vfs contract だけを利用する application project は、`AIKernel.Abstractions` を直接参照できます。互換 facade が必要な project は、引き続き `AIKernel.Vfs` を参照できます。
+Vfs contract だけを利用する application project は、`AIKernel.Abstractions` を直接参照できます。v0.0.3 に固定され、互換 facade が必要な project は `AIKernel.Vfs` を参照できましたが、v0.0.4 以降の consumer はその個別 package/project を削除してください。
 
 ### 13.4 NuGet Package の更新
 package reference を更新する場合は、次のように揃えます。
@@ -475,11 +475,11 @@ package reference を更新する場合は、次のように揃えます。
 `AIKernel.Abstractions` `0.0.3` と `AIKernel.Vfs` `0.0.2` を混在させないでください。互換 facade は、Vfs contract 型が `0.0.3` の Abstractions assembly から提供されることを前提にします。
 
 ### 13.5 Source Migration 手順
-1. 互換 facade を意図的に外す場合を除き、既存の `using AIKernel.Vfs;` は維持します。
+1. 公開 namespace は引き続き有効なため、既存の `using AIKernel.Vfs;` は維持します。
 2. `AIKernel.Abstractions -> AIKernel.Vfs` の直接 ProjectReference を削除します。
 3. contract のみを定義する library は、`AIKernel.Vfs` ではなく `AIKernel.Abstractions` への依存を優先します。
-4. runtime/provider package が Vfs contract を実装し、既存コードとの互換性も必要とする場合は、package 境界に応じて `AIKernel.Vfs` または `AIKernel.Abstractions` を参照します。
-5. type-forwarding metadata が一貫して出力されるよう、すべての package を再ビルドします。
+4. runtime/provider package が Vfs contract を実装する場合、v0.0.4 以降の package graph では `AIKernel.Abstractions` を参照します。
+5. v0.0.3 専用の互換 build では、type-forwarding metadata が一貫して出力されるよう、すべての package を再ビルドします。
 
 ### 13.6 検証コマンド
 次を実行します。
@@ -520,6 +520,7 @@ v0.0.4 では、`AIKernel.Core` 内で先行して増えていた公開境界候
 
 ### 14.3 Core Adapter 向け破壊的移行ポイント
 Core 側実装は、下流 consumer に Core 専用の DSL、History ROM、clock contract 参照を要求しない形へ移行してください。
+`DslNodeTypes` は DSL node type string の canonical vocabulary を定義します。parser は `CapabilityCall` や `SuspendForApproval` のような論文・例の alias を受け付けてよいですが、保存や replay hash 前に `CallCapability` と `Suspend` へ正規化してください。
 
 推奨置換は次の通りです。
 
@@ -576,51 +577,16 @@ Vfs contract は引き続き `AIKernel.Abstractions` から利用でき、公開
 4. local source build では `AIKernel.Vfs/AIKernel.Vfs.csproj` への project reference を削除します。
 
 ### 14.7 Interface-only contract package
-v0.0.4 では `AIKernel.Abstractions` と `AIKernel.Contracts` を interface-only package とします。
+v0.0.4 では `AIKernel.Abstractions` と `AIKernel.Contracts` の interface-only 化方針を導入します。
 DTO、enum、例外型、factory、parse helper、runtime behavior はこれらの contract package へ配置しません。
 
-#### 移動された DTO / value type
-| 旧配置 | 新配置 |
-|---|---|
-| `AIKernel.Contracts.ValidationResult` | `AIKernel.Dtos.Context.ValidationResult` |
-| `AIKernel.Abstractions.Context.ContextAssemblyRequest` | `AIKernel.Dtos.Context.ContextAssemblyRequest` |
-| `AIKernel.Abstractions.Context.ContextAssemblyScope` | `AIKernel.Dtos.Context.ContextAssemblyScope` |
-| `AIKernel.Abstractions.Context.ContextAssemblyDecision` | `AIKernel.Dtos.Context.ContextAssemblyDecision` |
-| `AIKernel.Abstractions.DtoContracts.Execution.GeneratedPrompt` | `AIKernel.Dtos.Execution.GeneratedPrompt` |
-| `AIKernel.Abstractions.DtoContracts.Execution.KernelExecutionRequest` | `AIKernel.Dtos.Execution.KernelExecutionRequest` |
-| `AIKernel.Abstractions.DtoContracts.Execution.PromptGenerationRequest` | `AIKernel.Dtos.Execution.PromptGenerationRequest` |
-| `AIKernel.Abstractions.DtoContracts.Kernel.KernelRequest` | `AIKernel.Dtos.Kernel.KernelRequest` |
-| `AIKernel.Abstractions.Vfs.VfsCredentials` | `AIKernel.Dtos.Vfs.VfsCredentials` |
+> v0.0.5 では、この規則の強制を完了し、contract surface に物理的に残っていた DTO、enum、例外実装を削除します。v0.0.5 以降へ直接移行する場合は 15 章も参照してください。
 
-#### 移動された enum
-| 旧配置 | 新配置 |
-|---|---|
-| `AIKernel.Dtos.Execution.ExecutionStatus` | `AIKernel.Enums.ExecutionStatus` |
-| `AIKernel.Dtos.Execution.PromptMessageFormat` | `AIKernel.Enums.PromptMessageFormat` |
-| `AIKernel.Dtos.Execution.PromptOverflowPolicy` | `AIKernel.Enums.PromptOverflowPolicy` |
+v0.0.4 では、DSL、History ROM、time contract の抽出に合わせてこの所有ルールを導入しました。
+代表例として、`AIKernel.Contracts.ValidationResult` は `AIKernel.Dtos.Context.ValidationResult` へ、
+`AIKernel.Abstractions.Vfs.VfsCredentials` は `AIKernel.Dtos.Vfs.VfsCredentials` へ移動します。
 
-#### contract package から削除された例外型
-以下の例外型は public contract package から削除されました。
-
-- `ContextAssemblyException`
-- `ContextAssemblyGovernanceException`
-- `PromptGenerationException`
-- `PromptTokenBudgetExceededException`
-- `UnsupportedPromptCapabilityException`
-- `VfsAuthenticationFailedException`
-
-runtime 実装は、これらの失敗を `AIKernel.Core`、host code、または将来の `AIKernel.Common`
-result/failure package 側で表現してください。`AIKernel.Abstractions` や `AIKernel.Contracts` に
-例外実装を戻さないでください。
-
-#### DTO の pure-data 化
-DTO package を data-oriented に保つため、以下の helper を削除しました。
-
-- `RawLogic.IsEmpty`
-- `RomId.Parse`
-- execution / DSL DTO の static default/factory member
-
-convenience helper は application code、`AIKernel.Core`、または `AIKernel.Common` に配置してください。
+残りの Abstractions-local DTO、DTO enum 重複、contract-package exception の v0.0.5 cleanup 詳細は 15 章を参照してください。
 
 ### 14.8 検証コマンド
 次を実行します。
@@ -640,6 +606,111 @@ AIKernel.Contracts -> AIKernel.Enums, AIKernel.Dtos
 AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
 CYCLE CHECK: OK
 ```
+
+## 15. v0.0.4 から v0.0.5 への移行: Contract Surface Purity Cleanup
+v0.0.5 では、`AIKernel.Abstractions` と `AIKernel.Contracts` の `interface-only` 原則を完了します。
+v0.0.4 の抽出後も contract package 内に物理的に残っていた DTO、enum、例外実装を削除します。
+
+### 15.1 削除された Abstractions-local DTO
+代わりに DTO package の型を使用してください。
+
+| 削除された型 | 置換先 |
+|---|---|
+| `AIKernel.Abstractions.Context.ContextAssemblyRequest` | `AIKernel.Dtos.Context.ContextAssemblyRequest` |
+| `AIKernel.Abstractions.Context.ContextAssemblyScope` | `AIKernel.Dtos.Context.ContextAssemblyScope` |
+| `AIKernel.Abstractions.Context.ContextAssemblyDecision` | `AIKernel.Dtos.Context.ContextAssemblyDecision` |
+| `AIKernel.Abstractions.DtoContracts.Execution.GeneratedPrompt` | `AIKernel.Dtos.Execution.GeneratedPrompt` |
+| `AIKernel.Abstractions.DtoContracts.Execution.KernelExecutionRequest` | `AIKernel.Dtos.Execution.KernelExecutionRequest` |
+| `AIKernel.Abstractions.DtoContracts.Execution.PromptGenerationRequest` | `AIKernel.Dtos.Execution.PromptGenerationRequest` |
+| `AIKernel.Abstractions.DtoContracts.Kernel.KernelRequest` | `AIKernel.Dtos.Kernel.KernelRequest` |
+
+### 15.2 削除された DTO enum 重複
+代わりに enum package の型を使用してください。
+
+| 削除された型 | 置換先 |
+|---|---|
+| `AIKernel.Dtos.Execution.ExecutionStatus` | `AIKernel.Enums.ExecutionStatus` |
+| `AIKernel.Dtos.Execution.PromptMessageFormat` | `AIKernel.Enums.PromptMessageFormat` |
+| `AIKernel.Dtos.Execution.PromptOverflowPolicy` | `AIKernel.Enums.PromptOverflowPolicy` |
+
+### 15.3 contract package から削除された例外型
+以下の例外実装は `AIKernel.Abstractions` から export されなくなります。
+
+- `ContextAssemblyException`
+- `ContextAssemblyGovernanceException`
+- `PromptGenerationException`
+- `PromptTokenBudgetExceededException`
+- `UnsupportedPromptCapabilityException`
+- `VfsAuthenticationFailedException`
+
+これらの例外または result/failure adapter 型は、`AIKernel.Core` などの runtime package 側で所有してください。
+
+### 15.4 削除された曖昧な ChatChain interface
+以下の旧 interface は、共有 contract surface で simple name が曖昧だったため削除されます。
+
+| 削除された型 | 置換先 |
+|---|---|
+| `AIKernel.Abstractions.Governance.ChatChain.IResult` | `AIKernel.Abstractions.Governance.ChatChain.IChatTurnVerificationResult` |
+| `AIKernel.Abstractions.Governance.ChatChain.ISemanticHasher` | `AIKernel.Abstractions.Governance.ChatChain.IChatTurnSemanticHasher` |
+
+`AIKernel.Abstractions.Rom.ISemanticHasher` は ROM semantic hash contract として維持されます。
+
+### 15.5 Package 更新
+contract package set は必ず揃えてください。
+
+```xml
+<PackageReference Include="AIKernel.Abstractions" Version="0.0.5" />
+<PackageReference Include="AIKernel.Dtos" Version="0.0.5" />
+<PackageReference Include="AIKernel.Enums" Version="0.0.5" />
+<PackageReference Include="AIKernel.Contracts" Version="0.0.5" />
+```
+
+`AIKernel.Abstractions` `0.0.5` と `AIKernel.Dtos` / `AIKernel.Enums` `0.0.4` を混在させないでください。
+
+### 15.6 DynamicSLM / SeedSLM / HATL / governance / Semantic Compilation vocabulary contract 準備
+v0.0.5 では、将来の external Capability module、DynamicSLM capability module、SeedSLM discipline surface、HATL external cryptographic operator、pre-inference governance admission evidence、trajectory governance evidence、Semantic Compilation descriptor 向けに runtime を持たない contract を追加します。
+既存 consumer には source-compatible な追加ですが、capability-modular SLM artifact、HATL-backed trust layer、Semantic DSL admission evidence、semantic compiler runtime artifact を扱う Core / Provider 実装は新しい namespace を対象にしてください。
+
+| 領域 | 新しい public surface |
+|---|---|
+| `AIKernel.Abstractions.Capabilities` | `ICapabilityModuleRegistry`, `ICapabilityModuleInvoker` |
+| `AIKernel.Abstractions.Governance` | `ICriticalOperationGate`, `IComputationalComplexityGate` |
+| `AIKernel.Abstractions.DynamicSlm` | `IDynamicSlmModelAbiProvider`, `IDynamicSlmModuleRegistry`, `IDynamicSlmPipelineContextFactory`, `IDynamicSlmPipelineStep<TInput,TOutput>`, `IDynamicSlmAsyncPipelineStep<TInput,TOutput>`, `IDynamicSlmAsyncPipeline`, `IDynamicSlmPipelineBuilder`, `IDynamicSlmFailure`, `IDynamicSlmCapabilityGraphResolver`, `IDynamicSlmCompatibilityVerifier`, `IDynamicSlmLineageVerifier`, `IDynamicSlmPayloadLoader`, `IDynamicSlmScheduler`, `IDynamicSlmCapabilityGapDetector`, `IDynamicSlmCapabilityGraphEvolutionPlanner`, `IDynamicSlmDistillationPlanner`, `IDynamicSlmDistillationJobScheduler`, `IDynamicSlmBackgroundDistillationService`, `IDynamicSlmArtifactPublisher`, `ISeedSlmDisciplineVerifier`, `IDynamicSlmDelegationPlanner`, `IDynamicSlmThoughtArtifactSink`, `IDynamicSlmMemoryPlacementPlanner` |
+| `AIKernel.Abstractions.Hatl` | `IHatlLedgerStore`, `IHatlAnchorPublisher`, `IHatlAnchorVerifier`, `IHatlDigitalDeedResolver`, `IHatlCryptographicOperator` |
+| `AIKernel.Dtos.Capabilities` | CLI executable、managed assembly、native ABI、DSL ROM、remote endpoint capability 境界向けの `CapabilityModuleDescriptor`、`CapabilityInvocationRequest`、`CapabilityInvocationResult` |
+| `AIKernel.Dtos.DynamicSlm` | semantic profile、capability graph、execution profile、lineage、payload descriptor、pipeline context/result/failure/trace metadata、resolved subgraph、placement plan、capability gap、graph update plan、metadata 付き distillation request/plan、distillation job descriptor、offload request、fallback strategy、pipeline offload info、admission result、SeedSLM structural constraint、output discipline policy、delegation request、thought artifact、ReplayLog entry、trajectory metadata、adapter compatibility、neutrality、resident model descriptor、capability swap descriptor、memory placement metadata の Model ABI record |
+| `AIKernel.Dtos.Governance` | replay-compatible な pre-inference admission evidence を運ぶ `AdmissibilityReplayRecord`、`CriticalOperationProfile`、`CriticalOperationGateResult`、`TaskComplexityProfile`、`ModelExecutionBudget`、`ComplexityGateResult`、trajectory governance evidence を運ぶ `SemanticEllipsoidDescriptor`、`TrajectoryGovernanceScoreReport`、`CandidateActionEvaluation` |
+| `AIKernel.Dtos.Hatl` | ledger entry、anchor document、Digital Deed、public anchor receipt、verification result、BlockMAC request/result、ratchet step request/result、HATL metadata key |
+| `AIKernel.Dtos.SemanticCompilation` | semantic state snapshot、Semantic IR element、governed circuit descriptor、prototype space descriptor、semantic distance report、deterministic synthesis descriptor、semantic transition descriptor |
+| `AIKernel.Enums` | Capability module / invocation primitive、DynamicSLM payload、accelerator、distillation offload / fallback selection / strict output / delegation / thought dump / memory placement を含む pipeline stage、failure kind、capability relation、compatibility status、graph update、admission status、distillation job status、fallback kind、pipeline status、SeedSLM strict output / delegation / reasoning / base-state / hot-swap primitive、HATL anchor/deed/verification primitive、`SemanticIrSlot`、`AdmissibilityGateKind`、`AdmissibilityDecisionKind`、`TaskCostClass`、`CriticalOperationRequirement` |
+
+これらの contract は `AIKernel.Common.Result<T>` や Core runtime handle を公開しません。実装側は内部 Result pipeline を DTO / interface 境界へ adapter 変換してください。
+LINQ `SelectMany`、`Bind`、`Map` の実装は `AIKernel.NET` ではなく、`AIKernel.Common` または Core package が所有します。
+distillation planning は load pipeline 内で実行できますが、distillation execution は `IDynamicSlmDistillationJobScheduler` または `IDynamicSlmBackgroundDistillationService` 経由で offload してください。pipeline は training work を待たず、Teacher / remote / cached fallback metadata によって継続する想定です。
+SeedSLM discipline、delegation、thought-artifact、memory-placement contract も DTO/interface-only です。Core はこれらを ResultStep / ReplayLog / SemanticDelta pipeline へ adapter し、contract package に runtime behavior を入れないでください。
+`DynamicSlmModelAbi`、`DynamicSlmPipelineContext`、`DynamicSlmPipelineMetadata` は SeedSLM 拡張 field を含みますが、SeedSLM state を渡さない caller 向けの constructor 互換性を維持します。欠落した SeedSLM field は runtime failure ではなく、contract metadata が存在しない状態として扱います。
+HATL cryptographic operation も `AIKernel.NET` では contract-only です。Core/host 側で `IHatlCryptographicOperator` を AIKernel.RH ベース operator、hardware provider、または監査済み module に bind してください。
+DTO の timestamp property は既定で `DateTime.UtcNow` を注入しません。Core/provider 実装は clock または semantic-state materialization 境界から決定論的 timestamp を明示的に設定してください。
+Governance admission record も DTO/enum-only です。Core semantic compiler は `AdmissibilityReplayRecord` を自身の ResultStep / ReplayLog pipeline へ接続し、`SemanticIrSlot` は共有 G/T/C/B vocabulary としてのみ扱ってください。runtime graph executor ではありません。
+Semantic Compilation DTO も contract-only です。prototype-space search、semantic distance evaluation、admissibility function、deterministic synthesis、graph execution は Core/runtime の責務に残します。
+
+### 15.7 検証コマンド
+次を実行します。
+
+```powershell
+dotnet build src\AIKernel.NET.slnx -c Release
+dotnet test src\AIKernel.NET.slnx -c Release --no-build
+```
+
+以下を確認してください。
+
+```text
+AIKernel.Abstractions exports interfaces only.
+AIKernel.Contracts exports interfaces only.
+AIKernel.Dtos exports no enums.
+AIKernel.Enums owns shared enums.
+CYCLE CHECK: OK
+```
 ---
 
 # 変更履歴
@@ -648,3 +719,4 @@ CYCLE CHECK: OK
 - v0.0.2 (2026-05-09): Issue #4 の Vfs capability contract 移行手順、Issue #7 の Vfs 命名規約統一、provider/security capability contract 指針、Issue #8 の contract purity 移行、Issue #9 の provider capability 移行、Issue #10 の security/policy separation 移行、Issue #11 の sandbox/validator isolation 移行を追加
 - v0.0.3 (2026-06-02): Vfs contract 所有元の Abstractions への移動、`AIKernel.Vfs` type-forwarding 互換、package reference 指針、循環依存検証手順を追加
 - v0.0.4 (2026-06-04): AIKernel.Core adapter 移行に向け、DSL pipeline、DSL ROM、History ROM、Kernel clock contract 抽出、ROM store contract、曖昧な interface 改名ガイド、AIKernel.Vfs package 削除手順、interface-only contract package 移行手順を追加
+- v0.0.5 (2026-06-05): Abstractions-local DTO/例外実装、DTO enum 重複、旧 ChatChain 曖昧 interface を削除し、external Capability module contract、DynamicSLM Model ABI / SeedSLM discipline / distillation offload / HATL external cryptographic operator / governance admissibility gate・trajectory / Semantic Compilation DTO vocabulary contract 準備を追加

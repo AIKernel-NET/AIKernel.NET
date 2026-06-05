@@ -1,7 +1,7 @@
 ---
-updated: 2026-06-04
+updated: 2026-06-05
 published: 2026-05-16
-version: "0.0.4"
+version: "0.0.5"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -29,6 +29,13 @@ incident response, and SLO/SLA management.
 - Compatibility and dependency checks  
 - Upgrade checklists  
 - v0.0.3 -> v0.0.4 contract extraction for DSL, DSL ROM, History ROM, and Kernel clock
+- v0.0.4 -> v0.0.5 contract-surface purity cleanup for interface-only packages
+- v0.0.5 external Capability module contract preparation
+- v0.0.5 DynamicSLM Model ABI and distillation offload contract preparation
+- v0.0.5 SeedSLM discipline, delegation, thought artifact, and memory placement contract preparation
+- v0.0.5 HATL external cryptographic operator contract preparation
+- v0.0.5 governance admissibility replay and Semantic IR slot vocabulary
+- v0.0.5 Semantic Compilation DTO vocabulary
 
 Use this guide when upgrading package references or validating contract-layer dependencies.
 
@@ -104,7 +111,7 @@ Operations provide the foundation for running AIKernel as a long-term, reliable 
 Operations documentation is being expanded as contract and packaging boundaries stabilize.
 
 Currently:
-- The Migration Guide contains concrete steps through v0.0.4  
+- The Migration Guide contains concrete steps through v0.0.5
 - All other documents remain Planned  
 
 Future versions will expand this directory.
@@ -124,3 +131,4 @@ Future versions will expand this directory.
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.3 (2026-06-02): Marked Migration Guide as active and added v0.0.3 dependency-layer migration coverage
 - v0.0.4 (2026-06-04): Added DSL / History ROM contract extraction migration coverage
+- v0.0.5 (2026-06-05): Added contract-surface purity cleanup, external Capability module, DynamicSLM Model ABI / SeedSLM discipline / distillation offload, HATL external cryptographic operator, governance admissibility, and Semantic Compilation DTO vocabulary migration coverage

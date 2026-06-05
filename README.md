@@ -1,7 +1,7 @@
 ---
-updated: 2026-06-04
+updated: 2026-06-05
 published: 2026-05-16
-version: "0.0.4"
+version: "0.0.5"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -40,8 +40,26 @@ The public namespace remains `AIKernel.Vfs`, but the separate `AIKernel.Vfs` com
 
 As of `v0.0.4`, deterministic DSL, DSL ROM, History ROM, and Kernel clock contracts are also published through `AIKernel.Abstractions` / `AIKernel.Dtos`.
 
-As of `v0.0.3`, Vfs interface contracts are owned by `AIKernel.Abstractions`.
-The public namespace remains `AIKernel.Vfs`, and the `AIKernel.Vfs` package remains as a compatibility facade through type forwarding.
+As of `v0.0.5`, `AIKernel.Abstractions` and `AIKernel.Contracts` export interfaces only.
+DTOs are owned by `AIKernel.Dtos`, and shared enums are owned by `AIKernel.Enums`.
+
+As of `v0.0.5`, external Capability module contracts are available through
+`AIKernel.Abstractions.Capabilities`, `AIKernel.Dtos.Capabilities`, and capability module enum primitives in `AIKernel.Enums`.
+These contracts distinguish CLI executable, managed assembly, native ABI, DSL ROM, and remote endpoint capability boundaries without introducing runtime loading behavior into the contract packages.
+
+As of `v0.0.5`, DynamicSLM Model ABI contracts are available through
+`AIKernel.Abstractions.DynamicSlm`, `AIKernel.Dtos.DynamicSlm`, and DynamicSLM enum primitives in `AIKernel.Enums`.
+These contracts prepare Core/Provider implementations for capability-modular SLM artifacts, lineage verification, payload loading, scheduling, and differential distillation planning without introducing runtime behavior into the contract packages.
+Heavy differential distillation execution is modeled as a background offload through scheduler/service interfaces so the load pipeline can continue through teacher, remote, or cached fallback paths.
+SeedSLM contract vocabulary extends this surface with strict output discipline, fail-closed delegation, ReplayLog-compatible thought artifacts, and resident SeedSLM / paged CapabilitySLM memory placement metadata.
+
+As of `v0.0.5`, HATL contract foundations are also available through
+`AIKernel.Abstractions.Hatl`, `AIKernel.Dtos.Hatl`, and HATL enum primitives in `AIKernel.Enums`.
+Cryptographic runtime is intentionally external and can be provided by AIKernel.RH-backed operators or other audited modules.
+
+As of `v0.0.5`, governance and semantic-compilation vocabulary also includes `AdmissibilityReplayRecord`, `AdmissibilityGateKind`, `AdmissibilityDecisionKind`, `TaskCostClass`, `CriticalOperationRequirement`, and `SemanticIrSlot` for Core-side admission ReplayLog evidence.
+Semantic Compilation DTOs provide contract-only carriers for semantic states, Semantic IR elements, governed circuits, prototype spaces, semantic distance reports, deterministic synthesis descriptors, and semantic transitions. Governance DTOs also include trajectory governance carriers for semantic ellipsoids, convergence/anomaly score reports, and candidate action evaluations.
+Pre-inference admissibility contracts include critical-operation and computational-complexity gate interfaces, side-effect profiles, model execution budgets, and fail-closed gate results.
 
 ---
 
@@ -174,7 +192,7 @@ Enterprise   = operations extensions
 
 To keep documentation and source synchronized, this README intentionally avoids deep file-by-file listings.
 
-The documentation is organized into four foundational categories:
+The documentation is organized into the following categories:
 
 | Directory | Role |
 | --- | --- |
@@ -182,6 +200,9 @@ The documentation is organized into four foundational categories:
 | `docs/design` | How: design decisions and implementation strategy |
 | `docs/specs` | What: normative contracts and acceptance criteria |
 | `docs/guidelines` | Rules: repository and contribution policies |
+| `docs/operations` | Release, migration, and package-public operation guides |
+| `docs/papers` | DOI-backed AIKernel / AIOS paper series |
+| `docs/theory` | Work-in-progress research notes before paper/spec promotion |
 
 For the latest structure and cross-links, use the category indexes:
 
@@ -190,6 +211,8 @@ For the latest structure and cross-links, use the category indexes:
 - `docs/specs/index.md` / `docs/specs/index-jp.md`
 - `docs/guidelines/index.md` / `docs/guidelines/index-jp.md`
 - `docs/operations/index.md` / `docs/operations/index-jp.md`
+- `docs/papers/README.md`
+- `docs/theory/README.md` / `docs/theory/README-jp.md`
 
 ---
 

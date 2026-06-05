@@ -39,7 +39,7 @@ public sealed class ExpressionContextDto
     /// <summary>
     /// 作成日時を取得または設定します。
     /// </summary>
-    public DateTime CreatedAt { get; init; } = DateTime.UtcNow;
+    public DateTime CreatedAt { get; init; }
 }
 
 

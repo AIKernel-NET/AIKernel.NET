@@ -1,0 +1,69 @@
+{
+  "title": "AIKernel Phase-2 Theory: Semantic Compilation Architecture",
+  "description": "This technical note defines Semantic Compilation Architecture as the Phase-2 theory of the AIKernel / AIOS paper series. It explains how the static boundaries defined in Phase-1 become a semantic runtime theory of observable semantic state, governed transition, runtime policy, and deterministic synthesis. The English manuscript is the canonical version, and the Japanese manuscript is included as a companion translation.",
+  "creators": [
+    {
+      "name": "Sogawa, Takuya",
+      "orcid": "0009-0009-7499-2595"
+    }
+  ],
+  "keywords": [
+    "AIKernel",
+    "AIOS",
+    "Semantic Compilation Architecture",
+    "Semantic Runtime Theory",
+    "Semantic State",
+    "Semantic IR",
+    "Governed Circuit",
+    "Observability",
+    "Runtime Policy",
+    "Deterministic Synthesis",
+    "Interface-Led Architecture"
+  ],
+  "publication_date": "2026-06-06",
+  "version": "v0.2.0",
+  "license": "cc-by-4.0",
+  "doi": "10.5281/zenodo.20312092",
+  "resource_type": {
+    "type": "publication",
+    "subtype": "technicalnote"
+  },
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20290614",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20306539",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20307891",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20308639",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20309510",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://github.com/AIKernel-NET/AIKernel.NET",
+      "relation": "issupplementedby",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://aikernel.net/",
+      "relation": "issupplementedby",
+      "resource_type": "other"
+    }
+  ],
+  "language": "eng"
+}
