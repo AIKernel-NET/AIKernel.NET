@@ -34,6 +34,7 @@ They are based on the Model ABI described by the DynamicSLM paper: Semantic Prof
 | `IDynamicSlmPayloadLoader` | Materialize and unload payload descriptors without exposing runtime implementation types. |
 | `IDynamicSlmScheduler` | Produce accelerator placement and prefetch plans from execution profiles. |
 | `IDynamicSlmCapabilityGapDetector` | Detect capability gaps from verified ReplayLog traces. |
+| `IDynamicSlmCapabilityGraphEvolutionPlanner` | Propose governed Capability Graph updates from recurring verified gaps. |
 | `IDynamicSlmDistillationPlanner` | Create differential distillation plans for targeted capability modules. |
 | `IDynamicSlmArtifactPublisher` | Publish validated distilled artifacts through the registry boundary. |
 

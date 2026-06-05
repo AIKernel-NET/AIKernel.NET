@@ -34,6 +34,7 @@ DynamicSLM 論文で示された Model ABI、すなわち Semantic Profile、Cap
 | `IDynamicSlmPayloadLoader` | runtime implementation type を公開せず payload descriptor を materialize / unload する。 |
 | `IDynamicSlmScheduler` | execution profile から accelerator placement と prefetch plan を作る。 |
 | `IDynamicSlmCapabilityGapDetector` | 検証済み ReplayLog trace から capability gap を検出する。 |
+| `IDynamicSlmCapabilityGraphEvolutionPlanner` | 繰り返し検証された gap から、governed Capability Graph update を提案する。 |
 | `IDynamicSlmDistillationPlanner` | 対象 capability module 向けの differential distillation plan を作る。 |
 | `IDynamicSlmArtifactPublisher` | 検証済み distilled artifact を registry 境界から公開する。 |
 

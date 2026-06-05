@@ -38,6 +38,7 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(IDynamicSlmPayloadLoader).IsInterface);
         Assert.True(typeof(IDynamicSlmScheduler).IsInterface);
         Assert.True(typeof(IDynamicSlmCapabilityGapDetector).IsInterface);
+        Assert.True(typeof(IDynamicSlmCapabilityGraphEvolutionPlanner).IsInterface);
         Assert.True(typeof(IDynamicSlmDistillationPlanner).IsInterface);
         Assert.True(typeof(IDynamicSlmArtifactPublisher).IsInterface);
 
@@ -74,6 +75,14 @@ public sealed class ExtractedInterfaceContractTests
                 ["cap-1"],
                 null,
                 new Dictionary<string, string>()).Status);
+        Assert.Equal(
+            DynamicSlmGraphUpdateKind.AddCapabilityNode,
+            new DynamicSlmCapabilityGraphUpdate(
+                DynamicSlmGraphUpdateKind.AddCapabilityNode,
+                graph.Nodes[0],
+                null,
+                null,
+                new Dictionary<string, string>()).Kind);
     }
 
     [Fact]
@@ -207,6 +216,7 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(DynamicSlmPayloadKind).IsEnum);
         Assert.True(typeof(DynamicSlmAcceleratorKind).IsEnum);
         Assert.True(typeof(DynamicSlmCompatibilityStatus).IsEnum);
+        Assert.True(typeof(DynamicSlmGraphUpdateKind).IsEnum);
     }
 
     [Fact]
