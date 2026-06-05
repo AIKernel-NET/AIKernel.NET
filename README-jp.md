@@ -180,7 +180,7 @@ Enterprise   = 運用拡張
 
 ドキュメントとソースの同期を維持するため、この README ではファイル単位の詳細列挙を行いません。
 
-ドキュメントは次の 4 つの基盤カテゴリで構成されます。
+ドキュメントは次のカテゴリで構成されます。
 
 | ディレクトリ | 役割 |
 | --- | --- |
@@ -188,11 +188,19 @@ Enterprise   = 運用拡張
 | `docs/design` | How: 設計判断・実装方針 |
 | `docs/specs` | What: 規範契約・受け入れ基準 |
 | `docs/guidelines` | Rules: リポジトリ運用・寄稿規約 |
+| `docs/operations` | Release、migration、package 公開運用 |
+| `docs/papers` | DOI 付き AIKernel / AIOS 論文シリーズ |
+| `docs/theory` | Paper / Spec 昇格前の研究ノート |
 
-最新の構成と相互参照は以下を参照してください。
+最新の構成と相互参照は、カテゴリ別 index を参照してください。
 
-- `docs/index.md`
-- `docs/index-jp.md`
+- `docs/architecture/index.md` / `docs/architecture/index-jp.md`
+- `docs/design/index.md` / `docs/design/index-jp.md`
+- `docs/specs/index.md` / `docs/specs/index-jp.md`
+- `docs/guidelines/index.md` / `docs/guidelines/index-jp.md`
+- `docs/operations/index.md` / `docs/operations/index-jp.md`
+- `docs/papers/README.md`
+- `docs/theory/README.md` / `docs/theory/README-jp.md`
 
 ---
 
