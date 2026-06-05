@@ -199,7 +199,7 @@ DOI 付き論文ごとに、現在の AIKernel.NET contract surface への反映
 
 v0.0.5 では、pre-inference admissibility replay record と Semantic IR G/T/C/B slot の共有 DTO / enum vocabulary を追加する。
 これにより、Core semantic compiler は admission evidence の安定した contract surface を利用できる。一方で、gate execution、policy evaluation、ResultStep composition、ReplayLog hashing は AIKernel.NET の外に残す。
-Semantic Compilation DTO は、observable semantic state、Semantic IR element、governed circuit descriptor、semantic transition を運ぶ contract-only carrier も提供する。
+Semantic Compilation DTO は、observable semantic state、Semantic IR element、governed circuit descriptor、finite prototype space、semantic distance report、deterministic synthesis descriptor、semantic transition を運ぶ contract-only carrier も提供する。
 
 ---
 

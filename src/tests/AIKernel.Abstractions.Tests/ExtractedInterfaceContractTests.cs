@@ -137,10 +137,42 @@ public sealed class ExtractedInterfaceContractTests
             "replay-hash",
             new Dictionary<string, string>());
 
+        var prototypeSpace = new PrototypeSpaceDescriptor(
+            "prototype-space-1",
+            [circuit],
+            "v1",
+            "prototype-space-hash",
+            new Dictionary<string, string>());
+
+        var distance = new SemanticDistanceReport(
+            "distance-1",
+            ir.IrId,
+            circuit.CircuitId,
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            1.5,
+            "profile-1",
+            new Dictionary<string, string>());
+
+        var synthesis = new DeterministicSynthesisDescriptor(
+            "synthesis-1",
+            ir.IrId,
+            circuit.CircuitId,
+            ["artifact://policy/runtime-policy-1"],
+            circuit.RuntimePolicyId,
+            "replay-config-hash",
+            new Dictionary<string, string>());
+
         Assert.Equal("ir-1", circuit.Ir.IrId);
         Assert.Equal("state-1", ir.AssociatedSemanticStateId);
         Assert.Equal(AdmissibilityDecisionKind.Admit, transition.AdmissionDecision);
         Assert.Equal(2, state.CenterVector.Count);
+        Assert.Equal(circuit.CircuitId, prototypeSpace.Circuits[0].CircuitId);
+        Assert.Equal(1.5, distance.CompositeScore);
+        Assert.Equal(circuit.RuntimePolicyId, synthesis.RuntimePolicyId);
     }
 
     [Fact]
