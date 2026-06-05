@@ -708,4 +708,4 @@ CYCLE CHECK: OK
 - v0.0.2 (2026-05-09): Issue #4 の Vfs capability contract 移行手順、Issue #7 の Vfs 命名規約統一、provider/security capability contract 指針、Issue #8 の contract purity 移行、Issue #9 の provider capability 移行、Issue #10 の security/policy separation 移行、Issue #11 の sandbox/validator isolation 移行を追加
 - v0.0.3 (2026-06-02): Vfs contract 所有元の Abstractions への移動、`AIKernel.Vfs` type-forwarding 互換、package reference 指針、循環依存検証手順を追加
 - v0.0.4 (2026-06-04): AIKernel.Core adapter 移行に向け、DSL pipeline、DSL ROM、History ROM、Kernel clock contract 抽出、ROM store contract、曖昧な interface 改名ガイド、AIKernel.Vfs package 削除手順、interface-only contract package 移行手順を追加
-- v0.0.5 (2026-06-05): Abstractions-local DTO/例外実装、DTO enum 重複、旧 ChatChain 曖昧 interface を削除し、DynamicSLM Model ABI / distillation offload contract 準備を追加
+- v0.0.5 (2026-06-05): Abstractions-local DTO/例外実装、DTO enum 重複、旧 ChatChain 曖昧 interface を削除し、DynamicSLM Model ABI / distillation offload / HATL external cryptographic operator contract 準備を追加
