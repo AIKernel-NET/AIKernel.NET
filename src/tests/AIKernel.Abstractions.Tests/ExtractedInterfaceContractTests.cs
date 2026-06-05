@@ -1,10 +1,13 @@
+using AIKernel.Abstractions.DynamicSlm;
 using AIKernel.Abstractions.Dsl;
 using AIKernel.Abstractions.History;
 using AIKernel.Abstractions.Time;
 using AIKernel.Contracts;
+using AIKernel.Dtos.DynamicSlm;
 using AIKernel.Dtos.Dsl;
 using AIKernel.Dtos.History;
 using AIKernel.Dtos.Time;
+using AIKernel.Enums;
 
 namespace AIKernel.Abstractions.Tests;
 
@@ -22,6 +25,46 @@ public sealed class ExtractedInterfaceContractTests
         Assert.Equal("Pipeline", new PipelineRootNode([]).Type);
         Assert.Equal("CallCapability", new CallCapabilityNode("demo", new Dictionary<string, string>()).Type);
         Assert.Equal("dsl_rom_hash", DslRomMetadataKeys.RomHash);
+    }
+
+    [Fact]
+    public void DynamicSlmContractsAreOwnedByAbstractions()
+    {
+        Assert.True(typeof(IDynamicSlmModelAbiProvider).IsInterface);
+        Assert.True(typeof(IDynamicSlmModuleRegistry).IsInterface);
+        Assert.True(typeof(IDynamicSlmCapabilityGraphResolver).IsInterface);
+        Assert.True(typeof(IDynamicSlmLineageVerifier).IsInterface);
+        Assert.True(typeof(IDynamicSlmPayloadLoader).IsInterface);
+        Assert.True(typeof(IDynamicSlmScheduler).IsInterface);
+        Assert.True(typeof(IDynamicSlmCapabilityGapDetector).IsInterface);
+        Assert.True(typeof(IDynamicSlmDistillationPlanner).IsInterface);
+        Assert.True(typeof(IDynamicSlmArtifactPublisher).IsInterface);
+
+        var payload = new DynamicSlmPayloadDescriptor(
+            "payload-1",
+            DynamicSlmPayloadKind.LoRaDelta,
+            "rom://model/demo/payload-1.bin",
+            "sha256",
+            1024,
+            "int8",
+            new Dictionary<string, string>());
+
+        var graph = new DynamicSlmCapabilityGraph(
+            [new DynamicSlmCapabilityNode("cap-1", "Plan", "profile-1", [payload.PayloadId], ["planning"])],
+            []);
+
+        var abi = new DynamicSlmModelAbi(
+            "model-1",
+            "0.0.1",
+            new DynamicSlmSemanticProfile("profile-1", "planning", ["agent"], ["json"], "schema", ["replay-v1"]),
+            graph,
+            new DynamicSlmExecutionProfile(1024, 10, null, [DynamicSlmAcceleratorKind.Cpu], "int8", true, true),
+            new DynamicSlmLineage("artifact-hash", null, "teacher-1", ["replay-hash"], "training-hash", "sig"),
+            [payload],
+            new Dictionary<string, string>());
+
+        Assert.Equal("model-1", abi.ModelId);
+        Assert.Equal("dynamicslm_model_abi_hash", DynamicSlmMetadataKeys.ModelAbiHash);
     }
 
     [Fact]
@@ -152,6 +195,8 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(AIKernel.Enums.ExecutionStatus).IsEnum);
         Assert.True(typeof(AIKernel.Enums.PromptMessageFormat).IsEnum);
         Assert.True(typeof(AIKernel.Enums.PromptOverflowPolicy).IsEnum);
+        Assert.True(typeof(DynamicSlmPayloadKind).IsEnum);
+        Assert.True(typeof(DynamicSlmAcceleratorKind).IsEnum);
     }
 
     [Fact]

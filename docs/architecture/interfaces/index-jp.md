@@ -1,9 +1,9 @@
 ---
 title: "AIKernel Architecture Interfaces — Index"
 created: 2026-05-03
-updated: 2026-06-04
+updated: 2026-06-05
 published: 2026-05-16
-version: "0.0.4"
+version: "0.0.5"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -23,6 +23,7 @@ tags:
 - [context/index-jp.md](context/index-jp.md)
 - [contracts/index-jp.md](contracts/index-jp.md)
 - [conversation/index-jp.md](conversation/index-jp.md)
+- [dynamicslm/index-jp.md](dynamicslm/index-jp.md)
 - [dsl/index-jp.md](dsl/index-jp.md)
 - [execution/index-jp.md](execution/index-jp.md)
 - [governance/index-jp.md](governance/index-jp.md)
@@ -48,6 +49,7 @@ tags:
 ## 名前空間概要
 - `kernel`: カーネル本体の実行入口とライフサイクル契約。
 - `dsl`: 決定論的 semantic IR、DSL pipeline、DSL ROM registry、VFS-backed DSL ROM store 契約。
+- `dynamicslm`: Capability modular SLM artifact 向けの Model ABI、capability subgraph 解決、lineage 検証、payload materialization、scheduling、differential distillation 契約。
 - `governance`: attention guard、audit logger、signature trust、context lifecycle、ChatChain hash-chain 契約。
 - `history`: history summarization と History ROM registry/export/store 契約。
 - `models`: 能力軸・動的容量・実行制約のベースモデル契約。
@@ -68,3 +70,4 @@ tags:
 - v0.0.3 (2026-06-02): Vfs contract 所有元の注記を追加
 - v0.0.4 (2026-06-04): DSL、History ROM、Time interface category を追加
 - v0.0.4 (2026-06-04): audit / ChatChain contract を含む governance coverage を明確化
+- v0.0.5 (2026-06-05): DynamicSLM Model ABI interface category を追加

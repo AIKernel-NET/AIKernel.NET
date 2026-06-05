@@ -1,7 +1,7 @@
 ---
-updated: 2026-06-04
+updated: 2026-06-05
 published: 2026-05-16
-version: "0.0.4"
+version: "0.0.5"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -168,6 +168,15 @@ v0.0.4 publishes the shared contract surface for this model through `AIKernel.Ab
 
 ---
 
+## 1.18 DynamicSLM Model ABI Contracts
+
+v0.0.5 adds the first public contract surface for DynamicSLM capability-modular SLM artifacts.
+The interface index is available at [interfaces/dynamicslm/index.md](./interfaces/dynamicslm/index.md).
+
+The contracts cover Model ABI descriptors, capability subgraph resolution, lineage verification, payload materialization, scheduler placement, and differential distillation planning while keeping runtime behavior in Core/Provider implementations.
+
+---
+
 # 2. Comparative Architecture
 
 ## [2.1 AIKernel vs LangChain](./6.AIKERNEL_VS_LANGCHAIN.md)
@@ -240,6 +249,7 @@ Read the architecture documents in this order. Each item points downward into th
 - [Semantic Context OS Vision](./16.SEMANTIC_CONTEXT_OS_VISION.md)
 - [Phase 1 Query Processing](./17.QUERY_PROCESSING_PHASE1.md)
 - [DSL Pipeline and ROM Specification](./18.DSL_PIPELINE_AND_ROM_SPEC.md)
+- [DynamicSLM Interface Contracts](./interfaces/dynamicslm/index.md)
 
 ---
 
@@ -257,3 +267,4 @@ This index is the entry point to understanding AIKernel's overall design.
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.4 (2026-06-04): Updated architecture index for DSL / History ROM / Time contract publication
+- v0.0.5 (2026-06-05): Added DynamicSLM Model ABI contract navigation

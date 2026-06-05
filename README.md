@@ -43,6 +43,10 @@ As of `v0.0.4`, deterministic DSL, DSL ROM, History ROM, and Kernel clock contra
 As of `v0.0.5`, `AIKernel.Abstractions` and `AIKernel.Contracts` export interfaces only.
 DTOs are owned by `AIKernel.Dtos`, and shared enums are owned by `AIKernel.Enums`.
 
+As of `v0.0.5`, DynamicSLM Model ABI contracts are available through
+`AIKernel.Abstractions.DynamicSlm`, `AIKernel.Dtos.DynamicSlm`, and DynamicSLM enum primitives in `AIKernel.Enums`.
+These contracts prepare Core/Provider implementations for capability-modular SLM artifacts, lineage verification, payload loading, scheduling, and differential distillation without introducing runtime behavior into the contract packages.
+
 ---
 
 See `docs/design/DESIGN_INTENT.md` for design philosophy.  
