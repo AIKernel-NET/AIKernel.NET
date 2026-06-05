@@ -12,5 +12,7 @@ public enum DynamicSlmPipelineStage
     PlacementPlanning = 7,
     Admission = 8,
     PayloadLoading = 9,
-    SchedulingExecution = 10
+    SchedulingExecution = 10,
+    DistillationOffload = 11,
+    FallbackSelection = 12
 }

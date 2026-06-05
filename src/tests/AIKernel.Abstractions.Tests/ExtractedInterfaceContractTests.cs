@@ -105,6 +105,28 @@ public sealed class ExtractedInterfaceContractTests
             true,
             new Dictionary<string, string>());
 
+        var distillationRequest = new DynamicSlmDistillationRequest(
+            "distill-request-1",
+            "cap-1",
+            "teacher-1",
+            ["replay-hash"],
+            new Dictionary<string, string>(),
+            new Dictionary<string, string> { [DynamicSlmMetadataKeys.TeacherFallbackUsed] = "true" });
+
+        var distillationPlan = new DynamicSlmDistillationPlan(
+            "distill-plan-1",
+            distillationRequest,
+            [payload],
+            new Dictionary<string, string>(),
+            new Dictionary<string, string> { [DynamicSlmMetadataKeys.GapDetected] = "true" });
+
+        var distillationJob = new DynamicSlmDistillationJobDescriptor(
+            new DynamicSlmDistillationJobId("distill-job-1"),
+            distillationPlan,
+            DynamicSlmDistillationJobStatus.Pending,
+            ["replay-hash"],
+            new Dictionary<string, string>());
+
         var offload = new DynamicSlmPipelineOffloadInfo(
             new DynamicSlmDistillationJobId("distill-job-1"),
             DynamicSlmDistillationJobStatus.Pending,
@@ -119,9 +141,14 @@ public sealed class ExtractedInterfaceContractTests
             null,
             [],
             null,
-            null,
-            null,
-            null,
+            distillationPlan,
+            distillationJob,
+            new DynamicSlmFallbackStrategy(
+                DynamicSlmFallbackKind.Teacher,
+                null,
+                "teacher-1",
+                "gap_detected",
+                new Dictionary<string, string>()),
             null,
             null,
             [],
@@ -140,6 +167,10 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(result.IsSuccess);
         Assert.Equal(DynamicSlmPipelineStatus.OffloadPending, result.Status);
         Assert.Equal(DynamicSlmDistillationJobStatus.Pending, result.Offload?.Status);
+        Assert.Equal(11, (int)DynamicSlmPipelineStage.DistillationOffload);
+        Assert.Equal(12, (int)DynamicSlmPipelineStage.FallbackSelection);
+        Assert.Equal("true", context.DistillationPlan?.Metadata[DynamicSlmMetadataKeys.GapDetected]);
+        Assert.Equal(DynamicSlmFallbackKind.Teacher, context.FallbackStrategy?.Kind);
         Assert.Equal(DynamicSlmPipelineStage.CompatibilityVerification, result.Trace[0].Stage);
     }
 

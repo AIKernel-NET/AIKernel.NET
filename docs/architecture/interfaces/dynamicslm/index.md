@@ -58,6 +58,8 @@ Runtime implementations, verification logic, payload handles, and result pipelin
 The DynamicSLM pipeline DTOs provide a package-boundary shape that Core can adapt into its Result monad.
 `DynamicSlmPipelineResult<T>` carries success/failure, trace, and metadata without implementing monadic behavior in the contract package.
 Differential distillation is offloaded: the load pipeline records a plan and job descriptor, falls back to a Teacher/remote/cached strategy when needed, and continues without waiting for training work.
+`DynamicSlmDistillationRequest` and `DynamicSlmDistillationPlan` carry metadata for job descriptors, teacher fallback, ReplayLog references, and validation policy hints; they do not represent inline training execution.
+`DynamicSlmPipelineStage` includes dedicated `DistillationOffload` and `FallbackSelection` stages so Core implementations can record deterministic trace entries for offload and fallback decisions.
 
 Pseudo-code for a Core implementation:
 

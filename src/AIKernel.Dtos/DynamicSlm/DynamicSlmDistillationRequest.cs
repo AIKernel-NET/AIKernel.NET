@@ -5,4 +5,5 @@ public sealed record DynamicSlmDistillationRequest(
     string TargetCapabilityId,
     string TeacherModelId,
     IReadOnlyList<string> ReplayLogHashes,
-    IReadOnlyDictionary<string, string> Constraints);
+    IReadOnlyDictionary<string, string> Constraints,
+    IReadOnlyDictionary<string, string> Metadata);

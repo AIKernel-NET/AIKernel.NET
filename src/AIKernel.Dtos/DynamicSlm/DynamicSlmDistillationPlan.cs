@@ -4,4 +4,5 @@ public sealed record DynamicSlmDistillationPlan(
     string PlanId,
     DynamicSlmDistillationRequest Request,
     IReadOnlyList<DynamicSlmPayloadDescriptor> ExpectedOutputs,
-    IReadOnlyDictionary<string, string> ValidationPolicy);
+    IReadOnlyDictionary<string, string> ValidationPolicy,
+    IReadOnlyDictionary<string, string> Metadata);
