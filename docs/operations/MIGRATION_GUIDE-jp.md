@@ -11,7 +11,7 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 
 # 移行ガイド（Migration Guide）
 
-本ガイドは、初期コンセプト版（v0.0.0）から、正典化されたアーキテクチャ（v0.0.1、v0.0.2、v0.0.3）、v0.0.4 の DSL / History ROM contract 抽出、および v0.0.5 の contract-surface purity cleanup と DynamicSLM contract 準備へ移行するための手順を定義します。
+本ガイドは、初期コンセプト版（v0.0.0）から、正典化されたアーキテクチャ（v0.0.1、v0.0.2、v0.0.3）、v0.0.4 の DSL / History ROM contract 抽出、および v0.0.5 の contract-surface purity cleanup と DynamicSLM Model ABI / distillation offload contract 準備へ移行するための手順を定義します。
 
 ## 1. 根本的な変更点
 v0.0.1 では、`決定論（Determinism）` と `非推論型ガバナンス` を軸に、全体設計が再編されました。
@@ -666,7 +666,7 @@ contract package set は必ず揃えてください。
 
 `AIKernel.Abstractions` `0.0.5` と `AIKernel.Dtos` / `AIKernel.Enums` `0.0.4` を混在させないでください。
 
-### 15.6 DynamicSLM Model ABI contract 準備
+### 15.6 DynamicSLM Model ABI / distillation offload contract 準備
 v0.0.5 では、将来の DynamicSLM capability module 向けに runtime を持たない contract を追加します。
 既存 consumer には source-compatible な追加ですが、capability-modular SLM artifact を扱う Core / Provider 実装は新しい namespace を対象にしてください。
 
@@ -705,4 +705,4 @@ CYCLE CHECK: OK
 - v0.0.2 (2026-05-09): Issue #4 の Vfs capability contract 移行手順、Issue #7 の Vfs 命名規約統一、provider/security capability contract 指針、Issue #8 の contract purity 移行、Issue #9 の provider capability 移行、Issue #10 の security/policy separation 移行、Issue #11 の sandbox/validator isolation 移行を追加
 - v0.0.3 (2026-06-02): Vfs contract 所有元の Abstractions への移動、`AIKernel.Vfs` type-forwarding 互換、package reference 指針、循環依存検証手順を追加
 - v0.0.4 (2026-06-04): AIKernel.Core adapter 移行に向け、DSL pipeline、DSL ROM、History ROM、Kernel clock contract 抽出、ROM store contract、曖昧な interface 改名ガイド、AIKernel.Vfs package 削除手順、interface-only contract package 移行手順を追加
-- v0.0.5 (2026-06-05): Abstractions-local DTO/例外実装、DTO enum 重複、旧 ChatChain 曖昧 interface を削除し、DynamicSLM Model ABI contract 準備を追加
+- v0.0.5 (2026-06-05): Abstractions-local DTO/例外実装、DTO enum 重複、旧 ChatChain 曖昧 interface を削除し、DynamicSLM Model ABI / distillation offload contract 準備を追加

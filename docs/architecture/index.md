@@ -267,4 +267,4 @@ This index is the entry point to understanding AIKernel's overall design.
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.4 (2026-06-04): Updated architecture index for DSL / History ROM / Time contract publication
-- v0.0.5 (2026-06-05): Added DynamicSLM Model ABI contract navigation
+- v0.0.5 (2026-06-05): Added DynamicSLM Model ABI and distillation offload contract navigation
