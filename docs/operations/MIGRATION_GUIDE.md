@@ -11,7 +11,7 @@ maintainer: "Takuya (AIKernel Project Maintainer)"
 
 # Migration Guide
 
-This guide defines migration steps from the initial concept baseline (`v0.0.0`) to the canonical architecture baseline (`v0.0.1`, `v0.0.2`, `v0.0.3`), to the DSL / History ROM contract extraction introduced in `v0.0.4`, and to the contract-surface purity cleanup plus DynamicSLM Model ABI / distillation offload contract preparation introduced in `v0.0.5`.
+This guide defines migration steps from the initial concept baseline (`v0.0.0`) to the canonical architecture baseline (`v0.0.1`, `v0.0.2`, `v0.0.3`), to the DSL / History ROM contract extraction introduced in `v0.0.4`, and to the contract-surface purity cleanup plus DynamicSLM Model ABI / distillation offload and HATL external cryptographic operator contract preparation introduced in `v0.0.5`.
 
 ## 1. Fundamental Changes
 In `v0.0.1`, the architecture was rebuilt around `Determinism` and `Non-LLM Governance`.
@@ -668,9 +668,9 @@ Keep the contract package set aligned.
 
 Do not mix `AIKernel.Abstractions` `0.0.5` with `AIKernel.Dtos` or `AIKernel.Enums` `0.0.4`.
 
-### 15.6 DynamicSLM Model ABI and distillation offload contract preparation
-v0.0.5 adds non-runtime contracts for future DynamicSLM capability modules.
-These additions are source-compatible for existing consumers, but Core/Provider implementations that plan to support capability-modular SLM artifacts should target the new namespaces.
+### 15.6 DynamicSLM and HATL contract preparation
+v0.0.5 adds non-runtime contracts for future DynamicSLM capability modules and HATL external cryptographic operators.
+These additions are source-compatible for existing consumers, but Core/Provider implementations that plan to support capability-modular SLM artifacts or HATL-backed trust layers should target the new namespaces.
 
 | Area | New public surface |
 |---|---|

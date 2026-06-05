@@ -11,7 +11,7 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 
 # 移行ガイド（Migration Guide）
 
-本ガイドは、初期コンセプト版（v0.0.0）から、正典化されたアーキテクチャ（v0.0.1、v0.0.2、v0.0.3）、v0.0.4 の DSL / History ROM contract 抽出、および v0.0.5 の contract-surface purity cleanup と DynamicSLM Model ABI / distillation offload contract 準備へ移行するための手順を定義します。
+本ガイドは、初期コンセプト版（v0.0.0）から、正典化されたアーキテクチャ（v0.0.1、v0.0.2、v0.0.3）、v0.0.4 の DSL / History ROM contract 抽出、および v0.0.5 の contract-surface purity cleanup、DynamicSLM Model ABI / distillation offload、HATL external cryptographic operator contract 準備へ移行するための手順を定義します。
 
 ## 1. 根本的な変更点
 v0.0.1 では、`決定論（Determinism）` と `非推論型ガバナンス` を軸に、全体設計が再編されました。
@@ -666,9 +666,9 @@ contract package set は必ず揃えてください。
 
 `AIKernel.Abstractions` `0.0.5` と `AIKernel.Dtos` / `AIKernel.Enums` `0.0.4` を混在させないでください。
 
-### 15.6 DynamicSLM Model ABI / distillation offload contract 準備
-v0.0.5 では、将来の DynamicSLM capability module 向けに runtime を持たない contract を追加します。
-既存 consumer には source-compatible な追加ですが、capability-modular SLM artifact を扱う Core / Provider 実装は新しい namespace を対象にしてください。
+### 15.6 DynamicSLM / HATL contract 準備
+v0.0.5 では、将来の DynamicSLM capability module と HATL external cryptographic operator 向けに runtime を持たない contract を追加します。
+既存 consumer には source-compatible な追加ですが、capability-modular SLM artifact または HATL-backed trust layer を扱う Core / Provider 実装は新しい namespace を対象にしてください。
 
 | 領域 | 新しい public surface |
 |---|---|
