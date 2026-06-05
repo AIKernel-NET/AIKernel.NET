@@ -80,7 +80,8 @@ AIKernel.NET の各 package は同じ version line に揃えてください。`A
 
 DTO package は DSL ROM / History ROM などの wire format に必要な安定 metadata key 定数を公開できます。
 これらの定数は直列化 contract surface の一部です。parse、validation、runtime behavior は Core/Common または host 実装側の責務です。
-DynamicSLM DTO は Model ABI record のみを表現します。Registry、lineage 検証、payload materialization、scheduling、differential distillation の振る舞いは、`AIKernel.Abstractions.DynamicSlm` の背後にある Core / Provider 実装が所有します。
+DynamicSLM DTO は Model ABI record のみを表現します。Registry、lineage 検証、payload materialization、scheduling、differential distillation planning は、`AIKernel.Abstractions.DynamicSlm` の背後にある Core / Provider 実装が所有します。
+distillation execution 自体は background offload job として表現し、loader が training work でブロックしないようにします。
 
 ### AIKernel.Enums
 - 役割: 仕様層全体で共有する enum プリミティブ。
