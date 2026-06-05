@@ -34,6 +34,7 @@ incident response, and SLO/SLA management.
 - v0.0.5 SeedSLM discipline, delegation, thought artifact, and memory placement contract preparation
 - v0.0.5 HATL external cryptographic operator contract preparation
 - v0.0.5 governance admissibility replay and Semantic IR slot vocabulary
+- v0.0.5 Semantic Compilation DTO vocabulary
 
 Use this guide when upgrading package references or validating contract-layer dependencies.
 
@@ -129,4 +130,4 @@ Future versions will expand this directory.
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.3 (2026-06-02): Marked Migration Guide as active and added v0.0.3 dependency-layer migration coverage
 - v0.0.4 (2026-06-04): Added DSL / History ROM contract extraction migration coverage
-- v0.0.5 (2026-06-05): Added contract-surface purity cleanup, DynamicSLM Model ABI / SeedSLM discipline / distillation offload, HATL external cryptographic operator, and governance admissibility / Semantic IR vocabulary migration coverage
+- v0.0.5 (2026-06-05): Added contract-surface purity cleanup, DynamicSLM Model ABI / SeedSLM discipline / distillation offload, HATL external cryptographic operator, governance admissibility, and Semantic Compilation DTO vocabulary migration coverage

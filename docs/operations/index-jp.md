@@ -34,6 +34,7 @@ Operations は、アーキテクチャ思想（architecture）や実装方針（
 - v0.0.5 の SeedSLM discipline、delegation、thought artifact、memory placement contract 準備
 - v0.0.5 の HATL external cryptographic operator contract 準備
 - v0.0.5 の governance admissibility replay と Semantic IR slot vocabulary
+- v0.0.5 の Semantic Compilation DTO vocabulary
 
 package reference の更新や contract-layer dependency の検証時に、このガイドを参照する。
 
@@ -128,4 +129,4 @@ Operations 文書は、contract と package 境界の安定化に合わせて順
 - v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新
 - v0.0.3 (2026-06-02): Migration Guide を Active とし、v0.0.3 の依存レイヤ移行内容を反映
 - v0.0.4 (2026-06-04): DSL / History ROM contract 抽出の移行内容を反映
-- v0.0.5 (2026-06-05): contract-surface purity cleanup、DynamicSLM Model ABI / SeedSLM discipline / distillation offload、HATL external cryptographic operator、governance admissibility / Semantic IR vocabulary contract 準備の移行内容を反映
+- v0.0.5 (2026-06-05): contract-surface purity cleanup、DynamicSLM Model ABI / SeedSLM discipline / distillation offload、HATL external cryptographic operator、governance admissibility、Semantic Compilation DTO vocabulary contract 準備の移行内容を反映

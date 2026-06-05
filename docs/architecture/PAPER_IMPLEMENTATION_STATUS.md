@@ -41,7 +41,7 @@ The status below therefore distinguishes:
 | 03 | Pre-Inference Admissibility Governance | **Partially contracted** through PDP, Guard, prompt validation, policy evaluation, fail-closed DTOs/enums, and admissibility replay vocabulary (`AdmissibilityGateKind`, `AdmissibilityDecisionKind`, `AdmissibilityReplayRecord`). | Complete admission orchestration belongs to Core/runtime packages. |
 | 04 | Trajectory Governance Model | **Partially contracted** through attention observer/guard, lifecycle, governance stats, failure enums, DynamicSLM trajectory metadata, and ReplayLog-compatible thought-artifact records. | Full semantic-trajectory / ellipsoid runtime and trajectory scoring are not implemented in AIKernel.NET; Core/runtime packages own those behaviors. |
 | 05 | Async Result Pipeline | **Intentionally not exposed** as `Result<T>` in AIKernel.NET. Contract DTOs carry boundary results only. | `AIKernel.Common` / Core owns Result, Option, Either, ResultStep, LINQ composition, and exception capture behavior. |
-| 06 | Semantic Compilation Architecture | **Partially contracted** through context, routing, DSL, pipeline, replay-related DTOs/interfaces, and the shared `SemanticIrSlot` G/T/C/B vocabulary. | Semantic compiler runtime and graph execution belong to Core/runtime packages. |
+| 06 | Semantic Compilation Architecture | **Partially contracted** through context, routing, DSL, pipeline, replay-related DTOs/interfaces, `SemanticIrSlot`, and Semantic Compilation DTOs for semantic states, IR elements, governed circuits, and transitions. | Semantic compiler runtime, prototype-space search, semantic distance evaluation, and graph execution belong to Core/runtime packages. |
 | 07 | Chat-Turn HashChain Governance | **Contracted** through specific ChatChain governance interfaces and replay/hash DTOs. | Canonicalization, hashing, signature verification, quarantine, and replay behavior belong to Core/runtime packages. |
 | 08 | Operator Architecture | **Out of AIKernel.NET scope** except for external capability/provider integration contracts. | Lean/C/C# operator export and native execution belong to `AIKernel.RH` and host/native packages. |
 | 09 | Hash-Anchored Trust Layer (HATL) | **Contract foundation added** through HATL ledger entries, anchor documents, Digital Deeds, verification results, and external cryptographic operator interfaces. | Cryptographic runtime, ratchets, Merkle proof construction, public-anchor publication, and secret handling belong to AIKernel.RH-backed operators or other audited Core/HATL modules. |
@@ -52,7 +52,7 @@ The status below therefore distinguishes:
 
 - Phase-1 contract foundations are mostly present as interface/DTO boundaries.
 - Runtime behavior is deliberately outside this repository.
-- Papers 03, 06, 10, and 11 now expose shared contract vocabulary for admission evidence, Semantic IR slots, DSL compilation, and DynamicSLM/SeedSLM discipline without moving runtime behavior into AIKernel.NET.
+- Papers 03, 06, 10, and 11 now expose shared contract vocabulary for admission evidence, Semantic IR/state/circuit/transition descriptors, DSL compilation, and DynamicSLM/SeedSLM discipline without moving runtime behavior into AIKernel.NET.
 - Paper 09 (HATL) now has a contract foundation, but the cryptographic runtime remains external.
 - Paper 05 remains intentionally delegated to `AIKernel.Common` and Core rather than exposed through contract packages.
 

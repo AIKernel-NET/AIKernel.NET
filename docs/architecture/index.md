@@ -194,6 +194,7 @@ Maps each DOI-backed paper to the current AIKernel.NET contract surface and iden
 
 v0.0.5 adds shared DTO/enum vocabulary for pre-inference admissibility replay records and Semantic IR G/T/C/B slots.
 This gives Core semantic compilers a stable contract surface for admission evidence while keeping gate execution, policy evaluation, ResultStep composition, and ReplayLog hashing outside AIKernel.NET.
+Semantic Compilation DTOs also provide contract-only carriers for observable semantic states, Semantic IR elements, governed circuit descriptors, and semantic transitions.
 
 ---
 
@@ -294,3 +295,4 @@ This index is the entry point to understanding AIKernel's overall design.
 - v0.0.5 (2026-06-05): Added paper implementation status navigation
 - v0.0.5 (2026-06-05): Added HATL external cryptographic operator contract navigation
 - v0.0.5 (2026-06-05): Added governance admission and Semantic IR vocabulary navigation
+- v0.0.5 (2026-06-05): Added Semantic Compilation DTO vocabulary navigation

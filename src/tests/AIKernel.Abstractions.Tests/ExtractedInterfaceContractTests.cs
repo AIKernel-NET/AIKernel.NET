@@ -11,6 +11,7 @@ using AIKernel.Dtos.Dsl;
 using AIKernel.Dtos.Governance;
 using AIKernel.Dtos.Hatl;
 using AIKernel.Dtos.History;
+using AIKernel.Dtos.SemanticCompilation;
 using AIKernel.Dtos.Time;
 using AIKernel.Enums;
 
@@ -92,6 +93,52 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(SemanticIrSlot).IsEnum);
         Assert.True(typeof(AdmissibilityGateKind).IsEnum);
         Assert.True(typeof(AdmissibilityDecisionKind).IsEnum);
+    }
+
+    [Fact]
+    public void SemanticCompilationDtosAreContractOnly()
+    {
+        var state = new SemanticStateSnapshot(
+            "state-1",
+            [0.1, 0.2],
+            [0.01, 0.02],
+            "embedding-model",
+            "state-hash",
+            new Dictionary<string, string>());
+
+        var ir = new SemanticIrElement(
+            "ir-1",
+            "G:graph",
+            "T:transition",
+            "C:constraints",
+            "B:invariants",
+            state.StateId,
+            new Dictionary<string, string>());
+
+        var circuit = new GovernedCircuitDescriptor(
+            "circuit-1",
+            ir,
+            "runtime-policy-1",
+            ["capability.read"],
+            ["fail_closed"],
+            "prototype-space-1",
+            new Dictionary<string, string>());
+
+        var transition = new SemanticTransitionDescriptor(
+            "transition-1",
+            ir.IrId,
+            "ir-2",
+            state.StateId,
+            "state-2",
+            circuit.CircuitId,
+            AdmissibilityDecisionKind.Admit,
+            "replay-hash",
+            new Dictionary<string, string>());
+
+        Assert.Equal("ir-1", circuit.Ir.IrId);
+        Assert.Equal("state-1", ir.AssociatedSemanticStateId);
+        Assert.Equal(AdmissibilityDecisionKind.Admit, transition.AdmissionDecision);
+        Assert.Equal(2, state.CenterVector.Count);
     }
 
     [Fact]
