@@ -10,10 +10,10 @@
 	<PackageProjectUrl>https://aikernel.net/</PackageProjectUrl>
 	<RepositoryUrl>https://github.com/AIKernel-NET/AIKernel.NET</RepositoryUrl>
 	<Copyright>Copyright © 2026 Takuya Sogawa of AIKernel-NET</Copyright>
-    <PackageTags>aikernel;aikernel-core;ai-os;architecture;category-separation;context-isolation;contract-driven;governance;preprocessing;semantic-context-os;deterministic-replay;fail-closed;rom;canonicalization;pdp;signed-prompt;interface-contracts;dto;enum</PackageTags>
+    <PackageTags>aikernel;aikernel-core;ai-os;architecture;category-separation;context-isolation;contract-driven;governance;preprocessing;semantic-context-os;deterministic-replay;fail-closed;rom;canonicalization;pdp;signed-prompt;interface-contracts;dto;enum;dynamicslm;hatl</PackageTags>
 	  <PackageReleaseNotes>
 		  <![CDATA[
-AIKernel.NET v0.0.5 — Contract Surface Purity Cleanup
+AIKernel.NET v0.0.5 — Contract Surface Purity Cleanup, DynamicSLM, and HATL
 
 • Completed the interface-only guarantee for AIKernel.Abstractions and AIKernel.Contracts.
 • Removed leftover DTO and exception implementations from AIKernel.Abstractions.
@@ -23,9 +23,12 @@ AIKernel.NET v0.0.5 — Contract Surface Purity Cleanup
 • Removed legacy ambiguous ChatChain interfaces IResult and ISemanticHasher.
 • Kept chat-turn hashing on IChatTurnSemanticHasher and ROM hashing on AIKernel.Abstractions.Rom.ISemanticHasher.
 • Preserved the package DAG: Enums -> none, Dtos -> Enums, Contracts -> Dtos/Enums, Abstractions -> Dtos/Enums.
+• Added contract-only DynamicSLM Model ABI and distillation offload interfaces, DTOs, and enum primitives.
+• Added contract-only HATL ledger, anchor, Digital Deed, verification, and external cryptographic operator interfaces, DTOs, and enum primitives.
+• Kept Result/ResultStep/LINQ composition and HATL cryptographic runtime ownership in AIKernel.Common, Core, host, or external operator packages.
 • Breaking change: consumers must use DTO and enum types from AIKernel.Dtos and AIKernel.Enums rather than leftover Abstractions-local duplicates.
 
-AIKernel.NET v0.0.5 — Contract Surface Purity Cleanup
+AIKernel.NET v0.0.5 — Contract Surface Purity Cleanup、DynamicSLM、HATL
 
 • AIKernel.Abstractions / AIKernel.Contracts の interface-only 保証を完了。
 • AIKernel.Abstractions に残っていた DTO / 例外実装を削除。
@@ -35,6 +38,9 @@ AIKernel.NET v0.0.5 — Contract Surface Purity Cleanup
 • 旧 ChatChain interface の IResult / ISemanticHasher を削除。
 • chat-turn hash は IChatTurnSemanticHasher、ROM hash は AIKernel.Abstractions.Rom.ISemanticHasher に整理。
 • package DAG は Enums -> none、Dtos -> Enums、Contracts -> Dtos/Enums、Abstractions -> Dtos/Enums を維持。
+• contract-only の DynamicSLM Model ABI / distillation offload interface、DTO、enum primitive を追加。
+• contract-only の HATL ledger、anchor、Digital Deed、verification、external cryptographic operator interface、DTO、enum primitive を追加。
+• Result / ResultStep / LINQ composition と HATL cryptographic runtime の所有は AIKernel.Common、Core、host、外部 operator package に残す。
 • 破壊的変更: consumer は Abstractions に残っていた重複型ではなく、AIKernel.Dtos / AIKernel.Enums の DTO / enum を使用してください。
 
 ]]>
