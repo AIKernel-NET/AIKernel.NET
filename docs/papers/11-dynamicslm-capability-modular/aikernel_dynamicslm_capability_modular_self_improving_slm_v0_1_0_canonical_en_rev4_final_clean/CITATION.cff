@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: "DynamicSLM: Capability-Modular, Self-Improving Small Language Models for AIKernel"
+message: "If you use this work, please cite it using the metadata from this file."
+type: article
+authors:
+  - family-names: Sogawa
+    given-names: Takuya
+    orcid: "https://orcid.org/0009-0009-7499-2595"
+    affiliation: "AIKernel Project"
+doi: "10.5281/zenodo.20550614"
+version: "v0.1.0"
+date-released: "2026-06-05"
+license: "CC-BY-4.0"
+keywords:
+  - AIKernel
+  - DynamicSLM
+  - Small Language Models
+  - Capability Graph
+  - Model ABI
+  - Semantic Profile
+  - Execution Profile
+  - Differential Distillation
+  - ReplayLog
+  - Heterogeneous Compute
+  - Modular LLM
+  - Mixture of Experts
+  - LoRA
+  - QLoRA
+abstract: >-
+  This technical note proposes DynamicSLM, a capability-modular and self-improving small language model architecture for AIKernel. DynamicSLM defines model artifacts through an AIKernel Model ABI and enables dynamic capability loading, capability-level differential distillation, and hot-swappable runtime scheduling under AIKernel governance. This work is conceptual and architectural in nature; it does not present empirical benchmarks.
