@@ -24,6 +24,7 @@ AIKernel.NET の各 package は同じ version line に揃えてください。`A
 ### AIKernel.Abstractions
 - 役割: インターフェース層（具象ビジネスロジックを持たない）。
 - 主な名前空間:
+  - `AIKernel.Abstractions.Capabilities`
   - `AIKernel.Abstractions.Context`
   - `AIKernel.Abstractions.Conversation`
   - `AIKernel.Abstractions.DynamicSlm`
@@ -56,6 +57,7 @@ AIKernel.NET の各 package は同じ version line に揃えてください。`A
 ### AIKernel.Dtos
 - 役割: POCO/record のデータ運搬体、および wire metadata key 定数のみ（ビジネスロジックなし）。
 - 主な名前空間:
+  - `AIKernel.Dtos.Capabilities`
   - `AIKernel.Dtos.Context`
   - `AIKernel.Dtos.Core`
   - `AIKernel.Dtos.DynamicSlm`
@@ -73,6 +75,7 @@ AIKernel.NET の各 package は同じ version line に揃えてください。`A
   - `AIKernel.Dtos.Rules`
   - `AIKernel.Dtos.Sandbox`
   - `AIKernel.Dtos.Security`
+  - `AIKernel.Dtos.SemanticCompilation`
   - `AIKernel.Dtos.Tokenization`
   - `AIKernel.Dtos.Time`
   - `AIKernel.Dtos.Vfs`
@@ -80,9 +83,12 @@ AIKernel.NET の各 package は同じ version line に揃えてください。`A
 
 DTO package は DSL ROM / History ROM などの wire format に必要な安定 metadata key 定数を公開できます。
 これらの定数は直列化 contract surface の一部です。parse、validation、runtime behavior は Core/Common または host 実装側の責務です。
+Capability DTO は CLI executable、managed assembly、native ABI、DSL ROM、remote endpoint 境界向けの external module manifest と invocation envelope を表現します。Runtime loading、sandboxing、assembly resolution、native invocation は Core / Tools / provider の責務です。
 DynamicSLM DTO は Model ABI record のみを表現します。Registry、lineage 検証、payload materialization、scheduling、differential distillation planning、SeedSLM discipline enforcement、delegation、thought-artifact dump、memory placement は、`AIKernel.Abstractions.DynamicSlm` の背後にある Core / Provider 実装が所有します。
 distillation execution 自体は background offload job として表現し、loader が training work でブロックしないようにします。
 HATL DTO は ledger entry、public anchor、Digital Deed、verification result、外部 cryptographic operator request/result record を表現します。cryptographic runtime は AIKernel.RH ベース operator または監査済み Core/HATL module が所有します。
+Governance DTO は admission replay evidence、critical-operation / computational-complexity gate evidence、trajectory governance ellipsoid / score / action evaluation record を運搬できます。`AIKernel.Enums` は Core 側 ResultStep / ReplayLog adapter のための Semantic IR slot、admission decision / gate、task cost class、critical-operation requirement vocabulary を所有します。
+Semantic Compilation DTO は observable semantic state、structural Semantic IR、governed circuit descriptor、finite prototype space、semantic distance report、deterministic synthesis descriptor、replay-addressable transition descriptor を表現します。Compiler execution と graph search は Core/runtime の責務です。
 
 ### AIKernel.Enums
 - 役割: 仕様層全体で共有する enum プリミティブ。
