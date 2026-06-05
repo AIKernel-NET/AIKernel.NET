@@ -32,6 +32,11 @@ public sealed class ExtractedInterfaceContractTests
     {
         Assert.True(typeof(IDynamicSlmModelAbiProvider).IsInterface);
         Assert.True(typeof(IDynamicSlmModuleRegistry).IsInterface);
+        Assert.True(typeof(IDynamicSlmPipelineContextFactory).IsInterface);
+        Assert.True(typeof(IDynamicSlmPipelineStep<,>).IsInterface);
+        Assert.True(typeof(IDynamicSlmAsyncPipelineStep<,>).IsInterface);
+        Assert.True(typeof(IDynamicSlmAsyncPipeline).IsInterface);
+        Assert.True(typeof(IDynamicSlmPipelineBuilder).IsInterface);
         Assert.True(typeof(IDynamicSlmCapabilityGraphResolver).IsInterface);
         Assert.True(typeof(IDynamicSlmCompatibilityVerifier).IsInterface);
         Assert.True(typeof(IDynamicSlmLineageVerifier).IsInterface);
@@ -67,6 +72,7 @@ public sealed class ExtractedInterfaceContractTests
 
         Assert.Equal("model-1", abi.ModelId);
         Assert.Equal("dynamicslm_model_abi_hash", DynamicSlmMetadataKeys.ModelAbiHash);
+        Assert.Equal("dynamicslm_pipeline_id", DynamicSlmMetadataKeys.PipelineId);
         Assert.Equal(
             DynamicSlmCompatibilityStatus.Compatible,
             new DynamicSlmCompatibilityResult(
@@ -83,6 +89,39 @@ public sealed class ExtractedInterfaceContractTests
                 null,
                 null,
                 new Dictionary<string, string>()).Kind);
+
+        var metadata = new DynamicSlmPipelineMetadata(
+            "pipeline-1",
+            "replay-hash",
+            "abi-hash",
+            "graph-hash",
+            "lineage-hash",
+            "placement-1",
+            new Dictionary<string, string>());
+
+        var context = new DynamicSlmPipelineContext(
+            abi,
+            null,
+            null,
+            null,
+            [],
+            null,
+            null,
+            null,
+            null,
+            [],
+            metadata,
+            [new DynamicSlmPipelineTrace(DynamicSlmPipelineStage.CompatibilityVerification, "step-1", null, "replay-hash", new Dictionary<string, string>())]);
+
+        var result = new DynamicSlmPipelineResult<DynamicSlmPipelineContext>(
+            true,
+            context,
+            null,
+            context.Trace,
+            metadata);
+
+        Assert.True(result.IsSuccess);
+        Assert.Equal(DynamicSlmPipelineStage.CompatibilityVerification, result.Trace[0].Stage);
     }
 
     [Fact]
@@ -217,6 +256,8 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(DynamicSlmAcceleratorKind).IsEnum);
         Assert.True(typeof(DynamicSlmCompatibilityStatus).IsEnum);
         Assert.True(typeof(DynamicSlmGraphUpdateKind).IsEnum);
+        Assert.True(typeof(DynamicSlmPipelineStage).IsEnum);
+        Assert.True(typeof(DynamicSlmFailureKind).IsEnum);
     }
 
     [Fact]

@@ -13,4 +13,12 @@ public static class DynamicSlmMetadataKeys
     public const string ReplayLogHash = "dynamicslm_replay_log_hash";
 
     public const string DistillationRequestId = "dynamicslm_distillation_request_id";
+
+    public const string PipelineId = "dynamicslm_pipeline_id";
+
+    public const string PipelineStage = "dynamicslm_pipeline_stage";
+
+    public const string PipelineTraceCount = "dynamicslm_pipeline_trace_count";
+
+    public const string FailureKind = "dynamicslm_failure_kind";
 }

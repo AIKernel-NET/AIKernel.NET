@@ -674,11 +674,12 @@ These additions are source-compatible for existing consumers, but Core/Provider 
 
 | Area | New public surface |
 |---|---|
-| `AIKernel.Abstractions.DynamicSlm` | `IDynamicSlmModelAbiProvider`, `IDynamicSlmModuleRegistry`, `IDynamicSlmCapabilityGraphResolver`, `IDynamicSlmCompatibilityVerifier`, `IDynamicSlmLineageVerifier`, `IDynamicSlmPayloadLoader`, `IDynamicSlmScheduler`, `IDynamicSlmCapabilityGapDetector`, `IDynamicSlmCapabilityGraphEvolutionPlanner`, `IDynamicSlmDistillationPlanner`, `IDynamicSlmArtifactPublisher` |
-| `AIKernel.Dtos.DynamicSlm` | Model ABI records for semantic profile, capability graph, execution profile, lineage, payload descriptors, resolved subgraphs, placement plans, capability gaps, graph update plans, distillation plans, and admission results |
-| `AIKernel.Enums` | DynamicSLM payload, accelerator, capability relation, compatibility status, graph update, and admission status primitives |
+| `AIKernel.Abstractions.DynamicSlm` | `IDynamicSlmModelAbiProvider`, `IDynamicSlmModuleRegistry`, `IDynamicSlmPipelineContextFactory`, `IDynamicSlmPipelineStep<TInput,TOutput>`, `IDynamicSlmAsyncPipelineStep<TInput,TOutput>`, `IDynamicSlmAsyncPipeline`, `IDynamicSlmPipelineBuilder`, `IDynamicSlmCapabilityGraphResolver`, `IDynamicSlmCompatibilityVerifier`, `IDynamicSlmLineageVerifier`, `IDynamicSlmPayloadLoader`, `IDynamicSlmScheduler`, `IDynamicSlmCapabilityGapDetector`, `IDynamicSlmCapabilityGraphEvolutionPlanner`, `IDynamicSlmDistillationPlanner`, `IDynamicSlmArtifactPublisher` |
+| `AIKernel.Dtos.DynamicSlm` | Model ABI records for semantic profile, capability graph, execution profile, lineage, payload descriptors, pipeline context/result/failure/trace metadata, resolved subgraphs, placement plans, capability gaps, graph update plans, distillation plans, and admission results |
+| `AIKernel.Enums` | DynamicSLM payload, accelerator, pipeline stage, failure kind, capability relation, compatibility status, graph update, and admission status primitives |
 
 These contracts intentionally do not expose `AIKernel.Common.Result<T>` or Core runtime handles. Implementations should adapt their internal result pipeline to the DTO/interface boundary.
+LINQ `SelectMany`, `Bind`, and `Map` implementations belong to `AIKernel.Common` or Core packages, not to `AIKernel.NET`.
 
 ### 15.7 Verification Commands
 Run:
