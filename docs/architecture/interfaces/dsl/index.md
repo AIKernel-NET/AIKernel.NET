@@ -51,6 +51,7 @@ responsibilities.
 - `AIKernel.Abstractions.Dsl` must not depend on `AIKernel.Core` or `AIKernel.Common`.
 - Core may adapt internal `Result<T>` / `ResultStep<TState,TValue>` values to these DTO contracts at the package boundary.
 - DSL ROM publication must use caller-provided Vfs sessions; runtime implementations must not hide writable global state behind the contract.
+- `DslNodeTypes` defines canonical serialized node names. Parser aliases such as `CapabilityCall` and `SuspendForApproval` are compatibility vocabulary and should normalize to `CallCapability` and `Suspend`.
 
 ---
 

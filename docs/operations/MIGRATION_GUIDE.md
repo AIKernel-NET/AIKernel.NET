@@ -520,6 +520,7 @@ This release intentionally keeps `AIKernel.Abstractions` independent from `AIKer
 
 ### 14.3 Breaking Migration Notes for Core Adapters
 Core-side implementations should no longer require downstream consumers to reference Core-only DSL, History ROM, or clock contracts.
+`DslNodeTypes` defines canonical DSL node type strings. Parsers may accept paper/example aliases such as `CapabilityCall` and `SuspendForApproval`, but should normalize them to `CallCapability` and `Suspend` before storage or replay hashing.
 
 Recommended replacements:
 

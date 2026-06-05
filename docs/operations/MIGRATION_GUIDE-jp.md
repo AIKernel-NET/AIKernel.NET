@@ -520,6 +520,7 @@ v0.0.4 では、`AIKernel.Core` 内で先行して増えていた公開境界候
 
 ### 14.3 Core Adapter 向け破壊的移行ポイント
 Core 側実装は、下流 consumer に Core 専用の DSL、History ROM、clock contract 参照を要求しない形へ移行してください。
+`DslNodeTypes` は DSL node type string の canonical vocabulary を定義します。parser は `CapabilityCall` や `SuspendForApproval` のような論文・例の alias を受け付けてよいですが、保存や replay hash 前に `CallCapability` と `Suspend` へ正規化してください。
 
 推奨置換は次の通りです。
 

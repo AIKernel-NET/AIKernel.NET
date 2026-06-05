@@ -63,6 +63,10 @@ public sealed class ExtractedInterfaceContractTests
 
         Assert.Equal("Pipeline", new PipelineRootNode([]).Type);
         Assert.Equal("CallCapability", new CallCapabilityNode("demo", new Dictionary<string, string>()).Type);
+        Assert.Equal("CallCapability", DslNodeTypes.CallCapability);
+        Assert.Equal("CapabilityCall", DslNodeTypes.CapabilityCallAlias);
+        Assert.Equal("Suspend", DslNodeTypes.Suspend);
+        Assert.Equal("SuspendForApproval", DslNodeTypes.SuspendForApprovalAlias);
         Assert.Equal("dsl_rom_hash", DslRomMetadataKeys.RomHash);
     }
 
