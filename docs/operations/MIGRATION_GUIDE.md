@@ -1,8 +1,8 @@
 ---
 title: "Migration Guide"
-updated: 2026-06-04
+updated: 2026-06-05
 published: 2026-05-16
-version: "0.0.4"
+version: "0.0.5"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -11,7 +11,7 @@ maintainer: "Takuya (AIKernel Project Maintainer)"
 
 # Migration Guide
 
-This guide defines migration steps from the initial concept baseline (`v0.0.0`) to the canonical architecture baseline (`v0.0.1`, `v0.0.2`, `v0.0.3`), and to the DSL / History ROM contract extraction introduced in `v0.0.4`.
+This guide defines migration steps from the initial concept baseline (`v0.0.0`) to the canonical architecture baseline (`v0.0.1`, `v0.0.2`, `v0.0.3`), to the DSL / History ROM contract extraction introduced in `v0.0.4`, and to the contract-surface purity cleanup introduced in `v0.0.5`.
 
 ## 1. Fundamental Changes
 In `v0.0.1`, the architecture was rebuilt around `Determinism` and `Non-LLM Governance`.
@@ -407,7 +407,7 @@ v0.0.3 corrects the package dependency graph around Vfs contracts.
 
 > v0.0.4 supersedes this compatibility facade. If you are upgrading directly to v0.0.4 or later, follow section 14.6 and remove the separate `AIKernel.Vfs` package/project.
 
-The main change is that Vfs interface contracts are now owned by `AIKernel.Abstractions`. The `AIKernel.Vfs` package remains as a compatibility facade through type forwarding, but it is no longer the owner of the contract definitions.
+The main v0.0.3 change was that Vfs interface contracts became owned by `AIKernel.Abstractions`. In v0.0.3 only, the separate `AIKernel.Vfs` package acted as a compatibility facade through type forwarding, but it was no longer the owner of the contract definitions. v0.0.4 and later remove that separate package/project.
 
 ### 13.1 Target Layering
 The expected Phase-1 dependency direction is:
@@ -462,7 +462,7 @@ AIKernel.Vfs.csproj
 + <ProjectReference Include="..\AIKernel.Abstractions\AIKernel.Abstractions.csproj" />
 ```
 
-Application projects that only use Vfs contracts can reference `AIKernel.Abstractions` directly. Projects that require the compatibility facade may continue to reference `AIKernel.Vfs`.
+Application projects that only use Vfs contracts can reference `AIKernel.Abstractions` directly. Projects pinned to v0.0.3 and requiring the compatibility facade could reference `AIKernel.Vfs`; v0.0.4 and later consumers should remove that separate package/project.
 
 ### 13.4 NuGet Package Updates
 When upgrading package references:
@@ -475,11 +475,11 @@ When upgrading package references:
 Do not mix `AIKernel.Abstractions` `0.0.3` with `AIKernel.Vfs` `0.0.2`; the facade expects the Vfs contract types to be provided by the `0.0.3` Abstractions assembly.
 
 ### 13.5 Source Migration Steps
-1. Keep existing `using AIKernel.Vfs;` directives unless you are intentionally removing the compatibility facade.
+1. Keep existing `using AIKernel.Vfs;` directives because the public namespace remains valid.
 2. Remove any direct `AIKernel.Abstractions -> AIKernel.Vfs` project reference.
 3. If a library defines only contracts, prefer referencing `AIKernel.Abstractions` rather than `AIKernel.Vfs`.
-4. If a runtime/provider package implements Vfs contracts and wants compatibility with existing code, reference `AIKernel.Vfs` or `AIKernel.Abstractions` according to the packaging boundary.
-5. Rebuild all packages so type-forwarding metadata is emitted consistently.
+4. If a runtime/provider package implements Vfs contracts, reference `AIKernel.Abstractions` for v0.0.4 and later package graphs.
+5. For v0.0.3-only compatibility builds, rebuild all packages so type-forwarding metadata is emitted consistently.
 
 ### 13.6 Verification Commands
 Run:
@@ -576,53 +576,18 @@ Migration steps:
 4. Remove project references to `AIKernel.Vfs/AIKernel.Vfs.csproj` in local source builds.
 
 ### 14.7 Interface-Only Contract Packages
-v0.0.4 also makes `AIKernel.Abstractions` and `AIKernel.Contracts` interface-only packages.
+v0.0.4 introduces the target that `AIKernel.Abstractions` and `AIKernel.Contracts` are interface-only packages.
 DTOs, enums, exception types, factories, parsing helpers, and runtime behavior must live outside those
 contract packages.
 
-#### Moved DTO / Value Types
-| Previous type location | New location |
-|---|---|
-| `AIKernel.Contracts.ValidationResult` | `AIKernel.Dtos.Context.ValidationResult` |
-| `AIKernel.Abstractions.Context.ContextAssemblyRequest` | `AIKernel.Dtos.Context.ContextAssemblyRequest` |
-| `AIKernel.Abstractions.Context.ContextAssemblyScope` | `AIKernel.Dtos.Context.ContextAssemblyScope` |
-| `AIKernel.Abstractions.Context.ContextAssemblyDecision` | `AIKernel.Dtos.Context.ContextAssemblyDecision` |
-| `AIKernel.Abstractions.DtoContracts.Execution.GeneratedPrompt` | `AIKernel.Dtos.Execution.GeneratedPrompt` |
-| `AIKernel.Abstractions.DtoContracts.Execution.KernelExecutionRequest` | `AIKernel.Dtos.Execution.KernelExecutionRequest` |
-| `AIKernel.Abstractions.DtoContracts.Execution.PromptGenerationRequest` | `AIKernel.Dtos.Execution.PromptGenerationRequest` |
-| `AIKernel.Abstractions.DtoContracts.Kernel.KernelRequest` | `AIKernel.Dtos.Kernel.KernelRequest` |
-| `AIKernel.Abstractions.Vfs.VfsCredentials` | `AIKernel.Dtos.Vfs.VfsCredentials` |
+> v0.0.5 completes enforcement of this rule by removing the remaining physical DTO, enum, and exception implementations from the contract surface. See section 15 when migrating directly to v0.0.5 or later.
 
-#### Moved Enums
-| Previous type location | New location |
-|---|---|
-| `AIKernel.Dtos.Execution.ExecutionStatus` | `AIKernel.Enums.ExecutionStatus` |
-| `AIKernel.Dtos.Execution.PromptMessageFormat` | `AIKernel.Enums.PromptMessageFormat` |
-| `AIKernel.Dtos.Execution.PromptOverflowPolicy` | `AIKernel.Enums.PromptOverflowPolicy` |
+v0.0.4 introduced this ownership rule while extracting DSL, History ROM, and time contracts.
+Representative moves include `AIKernel.Contracts.ValidationResult` to `AIKernel.Dtos.Context.ValidationResult`
+and `AIKernel.Abstractions.Vfs.VfsCredentials` to `AIKernel.Dtos.Vfs.VfsCredentials`.
 
-#### Removed Contract-Package Exceptions
-The following exception types were removed from public contract packages:
-
-- `ContextAssemblyException`
-- `ContextAssemblyGovernanceException`
-- `PromptGenerationException`
-- `PromptTokenBudgetExceededException`
-- `UnsupportedPromptCapabilityException`
-- `VfsAuthenticationFailedException`
-
-Runtime implementations should map these failures inside `AIKernel.Core`, host code, or a future
-`AIKernel.Common` result/failure package. Do not reintroduce exception implementations into
-`AIKernel.Abstractions` or `AIKernel.Contracts`.
-
-#### DTO Pure-Data Cleanup
-Several DTO helpers were removed to keep DTO packages data-oriented:
-
-- `RawLogic.IsEmpty`
-- `RomId.Parse`
-- static default/factory members on execution and DSL DTOs
-
-Move convenience helpers to application code, `AIKernel.Core`, or `AIKernel.Common` rather than placing
-behavior in DTO packages.
+For the complete v0.0.5 cleanup of remaining Abstractions-local DTOs, duplicate DTO enums,
+and contract-package exceptions, use section 15.
 
 ### 14.8 Verification Commands
 Run:
@@ -642,6 +607,84 @@ AIKernel.Contracts -> AIKernel.Enums, AIKernel.Dtos
 AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
 CYCLE CHECK: OK
 ```
+
+## 15. Migrating from v0.0.4 to v0.0.5: Contract Surface Purity Cleanup
+v0.0.5 completes the `interface-only` rule for `AIKernel.Abstractions` and `AIKernel.Contracts`.
+The release removes remaining DTO, enum, and exception implementations that were still physically located in contract packages after the v0.0.4 extraction.
+
+### 15.1 Removed Abstractions-local DTOs
+Use DTO package types instead.
+
+| Removed type | Replacement |
+|---|---|
+| `AIKernel.Abstractions.Context.ContextAssemblyRequest` | `AIKernel.Dtos.Context.ContextAssemblyRequest` |
+| `AIKernel.Abstractions.Context.ContextAssemblyScope` | `AIKernel.Dtos.Context.ContextAssemblyScope` |
+| `AIKernel.Abstractions.Context.ContextAssemblyDecision` | `AIKernel.Dtos.Context.ContextAssemblyDecision` |
+| `AIKernel.Abstractions.DtoContracts.Execution.GeneratedPrompt` | `AIKernel.Dtos.Execution.GeneratedPrompt` |
+| `AIKernel.Abstractions.DtoContracts.Execution.KernelExecutionRequest` | `AIKernel.Dtos.Execution.KernelExecutionRequest` |
+| `AIKernel.Abstractions.DtoContracts.Execution.PromptGenerationRequest` | `AIKernel.Dtos.Execution.PromptGenerationRequest` |
+| `AIKernel.Abstractions.DtoContracts.Kernel.KernelRequest` | `AIKernel.Dtos.Kernel.KernelRequest` |
+
+### 15.2 Removed duplicate DTO enums
+Use enum package types instead.
+
+| Removed type | Replacement |
+|---|---|
+| `AIKernel.Dtos.Execution.ExecutionStatus` | `AIKernel.Enums.ExecutionStatus` |
+| `AIKernel.Dtos.Execution.PromptMessageFormat` | `AIKernel.Enums.PromptMessageFormat` |
+| `AIKernel.Dtos.Execution.PromptOverflowPolicy` | `AIKernel.Enums.PromptOverflowPolicy` |
+
+### 15.3 Removed contract-package exceptions
+The following exception implementations are no longer exported from `AIKernel.Abstractions`.
+
+- `ContextAssemblyException`
+- `ContextAssemblyGovernanceException`
+- `PromptGenerationException`
+- `PromptTokenBudgetExceededException`
+- `UnsupportedPromptCapabilityException`
+- `VfsAuthenticationFailedException`
+
+Runtime packages such as `AIKernel.Core` should own these exception or result/failure adapter types.
+
+### 15.4 Removed ambiguous ChatChain interfaces
+The following legacy interfaces were removed because their simple names were ambiguous on the shared contract surface.
+
+| Removed type | Replacement |
+|---|---|
+| `AIKernel.Abstractions.Governance.ChatChain.IResult` | `AIKernel.Abstractions.Governance.ChatChain.IChatTurnVerificationResult` |
+| `AIKernel.Abstractions.Governance.ChatChain.ISemanticHasher` | `AIKernel.Abstractions.Governance.ChatChain.IChatTurnSemanticHasher` |
+
+`AIKernel.Abstractions.Rom.ISemanticHasher` remains the ROM semantic hash contract.
+
+### 15.5 Package update
+Keep the contract package set aligned.
+
+```xml
+<PackageReference Include="AIKernel.Abstractions" Version="0.0.5" />
+<PackageReference Include="AIKernel.Dtos" Version="0.0.5" />
+<PackageReference Include="AIKernel.Enums" Version="0.0.5" />
+<PackageReference Include="AIKernel.Contracts" Version="0.0.5" />
+```
+
+Do not mix `AIKernel.Abstractions` `0.0.5` with `AIKernel.Dtos` or `AIKernel.Enums` `0.0.4`.
+
+### 15.6 Verification Commands
+Run:
+
+```powershell
+dotnet build src\AIKernel.NET.slnx -c Release
+dotnet test src\AIKernel.NET.slnx -c Release --no-build
+```
+
+Confirm:
+
+```text
+AIKernel.Abstractions exports interfaces only.
+AIKernel.Contracts exports interfaces only.
+AIKernel.Dtos exports no enums.
+AIKernel.Enums owns shared enums.
+CYCLE CHECK: OK
+```
 ---
 
 # Changelog
@@ -650,3 +693,4 @@ CYCLE CHECK: OK
 - v0.0.2 (2026-05-09): Added Issue #4 Vfs capability contract migration steps, Issue #7 Vfs naming normalization, provider/security capability contract guidance, Issue #8 contract purity migration, Issue #9 provider capability migration, Issue #10 security/policy separation migration, and Issue #11 sandbox/validator isolation migration
 - v0.0.3 (2026-06-02): Added dependency-layer migration for Vfs contract ownership, `AIKernel.Vfs` type-forwarding compatibility, package-reference guidance, and cycle-verification steps
 - v0.0.4 (2026-06-04): Added DSL pipeline, DSL ROM, History ROM, Kernel clock contract extraction, ROM store contracts, ambiguous-interface rename guidance, AIKernel.Vfs package removal steps, and interface-only contract package migration for AIKernel.Core adapter migration
+- v0.0.5 (2026-06-05): Removed remaining Abstractions-local DTO/exception implementations, duplicate DTO enums, and legacy ambiguous ChatChain interfaces

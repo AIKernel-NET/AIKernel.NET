@@ -1,9 +1,9 @@
 <Project>
   <PropertyGroup>
-    <Version>0.0.4</Version>
-    <AssemblyVersion>0.0.4.0</AssemblyVersion>
-    <FileVersion>0.0.4.0</FileVersion>
-    <InformationalVersion>0.0.4.0</InformationalVersion>
+    <Version>0.0.5</Version>
+    <AssemblyVersion>0.0.5.0</AssemblyVersion>
+    <FileVersion>0.0.5.0</FileVersion>
+    <InformationalVersion>0.0.5.0</InformationalVersion>
 	<Authors>Takuya Sogawa</Authors>
 	<Company>AIKernel-NET</Company>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -13,37 +13,29 @@
     <PackageTags>aikernel;aikernel-core;ai-os;architecture;category-separation;context-isolation;contract-driven;governance;preprocessing;semantic-context-os;deterministic-replay;fail-closed;rom;canonicalization;pdp;signed-prompt;interface-contracts;dto;enum</PackageTags>
 	  <PackageReleaseNotes>
 		  <![CDATA[
-AIKernel.NET v0.0.4 — DSL / History ROM Contract Extraction
+AIKernel.NET v0.0.5 — Contract Surface Purity Cleanup
 
-• Promoted deterministic DSL pipeline contracts into AIKernel.Abstractions.
-• Added DTOs for DSL IR, DSL pipeline execution, DSL ROM metadata, and DSL ROM snapshots.
-• Added History ROM DTOs and registry/exporter contracts for reusable chat-history ROMs.
-• Added DSL ROM and History ROM store contracts for VFS-backed ROM publication.
-• Removed the separate AIKernel.Vfs compatibility package/project; Vfs contracts remain in AIKernel.Abstractions with the AIKernel.Vfs public namespace.
-• Made AIKernel.Abstractions and AIKernel.Contracts interface-only packages.
-• Moved Context Assembly, prompt generation, KernelRequest, and VfsCredentials DTOs into AIKernel.Dtos.
-• Moved execution status and prompt option enums into AIKernel.Enums.
-• Removed contract-package exception implementations; runtime/Core adapters should own failure mapping.
-• Removed ambiguous ChatChain interface names by replacing IResult and ISemanticHasher with chat-turn-specific names.
-• Added Kernel timestamp and clock contracts without binding Abstractions to Core/Common.
-• Preserved the package DAG: Abstractions depends only on DTOs/Enums.
-• Breaking change for Core adapters: Core Result-based DSL/ROM interfaces should adapt to the v0.0.4 DTO contract surface and remove any dependency on the old AIKernel.Vfs compatibility package.
+• Completed the interface-only guarantee for AIKernel.Abstractions and AIKernel.Contracts.
+• Removed leftover DTO and exception implementations from AIKernel.Abstractions.
+• Unified Context Assembly, prompt generation, and Kernel request DTO usage on AIKernel.Dtos.
+• Removed duplicate execution and prompt option enums from AIKernel.Dtos.
+• Kept execution status and prompt option enums owned by AIKernel.Enums.
+• Removed legacy ambiguous ChatChain interfaces IResult and ISemanticHasher.
+• Kept chat-turn hashing on IChatTurnSemanticHasher and ROM hashing on AIKernel.Abstractions.Rom.ISemanticHasher.
+• Preserved the package DAG: Enums -> none, Dtos -> Enums, Contracts -> Dtos/Enums, Abstractions -> Dtos/Enums.
+• Breaking change: consumers must use DTO and enum types from AIKernel.Dtos and AIKernel.Enums rather than leftover Abstractions-local duplicates.
 
-AIKernel.NET v0.0.4 — DSL / History ROM 契約抽出
+AIKernel.NET v0.0.5 — Contract Surface Purity Cleanup
 
-• 決定論的 DSL pipeline 契約を AIKernel.Abstractions に昇格。
-• DSL IR、DSL pipeline execution、DSL ROM metadata/snapshot DTO を追加。
-• 再利用可能な chat-history ROM のための History ROM DTO と registry/exporter contract を追加。
-• VFS-backed ROM 公開のため、DSL ROM / History ROM store contract を追加。
-• 個別の AIKernel.Vfs 互換 package/project を削除。Vfs contract は AIKernel.Vfs 公開 namespace を維持したまま AIKernel.Abstractions に残存。
-• AIKernel.Abstractions / AIKernel.Contracts を interface-only package 化。
-• Context Assembly、prompt generation、KernelRequest、VfsCredentials DTO を AIKernel.Dtos へ移動。
-• execution status / prompt option enum を AIKernel.Enums へ移動。
-• contract package 内の例外実装を削除。failure mapping は runtime/Core adapter 側の責務。
-• ChatChain の曖昧な IResult / ISemanticHasher を chat-turn 専用名へ置換。
-• Abstractions を Core/Common に結合せず Kernel timestamp / clock contract を追加。
-• package DAG は Abstractions -> DTOs/Enums のまま維持。
-• Core adapter 向け破壊的変更: Core の Result ベース DSL/ROM interface は v0.0.4 DTO contract surface へ適応し、旧 AIKernel.Vfs 互換 package への依存を削除してください。
+• AIKernel.Abstractions / AIKernel.Contracts の interface-only 保証を完了。
+• AIKernel.Abstractions に残っていた DTO / 例外実装を削除。
+• Context Assembly、prompt generation、Kernel request DTO の利用元を AIKernel.Dtos に統一。
+• AIKernel.Dtos に残っていた execution / prompt option enum 重複を削除。
+• execution status / prompt option enum の所有元を AIKernel.Enums に一本化。
+• 旧 ChatChain interface の IResult / ISemanticHasher を削除。
+• chat-turn hash は IChatTurnSemanticHasher、ROM hash は AIKernel.Abstractions.Rom.ISemanticHasher に整理。
+• package DAG は Enums -> none、Dtos -> Enums、Contracts -> Dtos/Enums、Abstractions -> Dtos/Enums を維持。
+• 破壊的変更: consumer は Abstractions に残っていた重複型ではなく、AIKernel.Dtos / AIKernel.Enums の DTO / enum を使用してください。
 
 ]]>
 	  </PackageReleaseNotes>

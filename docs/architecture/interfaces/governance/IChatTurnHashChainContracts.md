@@ -1,9 +1,9 @@
 ---
 title: "IChatTurn HashChain Contracts"
 created: 2026-06-04
-updated: 2026-06-04
+updated: 2026-06-05
 published: 2026-06-04
-version: "0.0.4"
+version: "0.0.5"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -56,14 +56,15 @@ Verification must fail closed. A malformed chain, mismatched previous hash, inva
 - Must not depend on: Core executor implementations, provider implementations, VFS implementations, or hosting-specific services.
 
 ## 5. Migration Notes
-v0.0.4 renamed the ambiguous ChatChain contracts:
+v0.0.4 introduced specific names for the ambiguous ChatChain contracts, and v0.0.5 removes the legacy ambiguous interface names from the package surface:
 
 - `AIKernel.Abstractions.Governance.ChatChain.IResult` -> `IChatTurnVerificationResult`
 - `AIKernel.Abstractions.Governance.ChatChain.ISemanticHasher` -> `IChatTurnSemanticHasher`
 
-Use the specific ChatChain names when integrating deterministic replay or chat-history ROM validation.
+Use the specific ChatChain names when integrating deterministic replay or chat-history ROM validation. Do not consume or reintroduce the legacy `IResult` or `ISemanticHasher` names inside the ChatChain namespace.
 
 ---
 
 # Changelog
 - v0.0.4 (2026-06-04): Added ChatChain governance contract documentation.
+- v0.0.5 (2026-06-05): Clarified removal of the legacy ambiguous ChatChain interface names.

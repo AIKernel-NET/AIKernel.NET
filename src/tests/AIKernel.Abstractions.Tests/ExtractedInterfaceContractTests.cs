@@ -139,6 +139,50 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    public void DtosDoNotOwnSharedEnums()
+    {
+        var dtoEnums = typeof(DslDocument)
+            .Assembly
+            .GetExportedTypes()
+            .Where(type => type.IsEnum)
+            .Select(type => type.FullName)
+            .ToArray();
+
+        Assert.Empty(dtoEnums);
+        Assert.True(typeof(AIKernel.Enums.ExecutionStatus).IsEnum);
+        Assert.True(typeof(AIKernel.Enums.PromptMessageFormat).IsEnum);
+        Assert.True(typeof(AIKernel.Enums.PromptOverflowPolicy).IsEnum);
+    }
+
+    [Fact]
+    public void RemovedImplementationTypesAreNotExportedFromContractAssemblies()
+    {
+        var abstractionTypes = typeof(IKernelPipeline)
+            .Assembly
+            .GetExportedTypes()
+            .Select(type => type.FullName)
+            .ToHashSet(StringComparer.Ordinal);
+
+        var dtoTypes = typeof(DslDocument)
+            .Assembly
+            .GetExportedTypes()
+            .Select(type => type.FullName)
+            .ToHashSet(StringComparer.Ordinal);
+
+        Assert.DoesNotContain("AIKernel.Abstractions.Context.ContextAssemblyRequest", abstractionTypes);
+        Assert.DoesNotContain("AIKernel.Abstractions.Context.ContextAssemblyScope", abstractionTypes);
+        Assert.DoesNotContain("AIKernel.Abstractions.Context.ContextAssemblyDecision", abstractionTypes);
+        Assert.DoesNotContain("AIKernel.Abstractions.Execution.PromptGenerationException", abstractionTypes);
+        Assert.DoesNotContain("AIKernel.Abstractions.Execution.PromptTokenBudgetExceededException", abstractionTypes);
+        Assert.DoesNotContain("AIKernel.Abstractions.Execution.UnsupportedPromptCapabilityException", abstractionTypes);
+        Assert.DoesNotContain("AIKernel.Abstractions.Vfs.VfsAuthenticationFailedException", abstractionTypes);
+
+        Assert.DoesNotContain("AIKernel.Dtos.Execution.ExecutionStatus", dtoTypes);
+        Assert.DoesNotContain("AIKernel.Dtos.Execution.PromptMessageFormat", dtoTypes);
+        Assert.DoesNotContain("AIKernel.Dtos.Execution.PromptOverflowPolicy", dtoTypes);
+    }
+
+    [Fact]
     public void SharedInterfaceSurfaceDoesNotUseAmbiguousGenericNames()
     {
         var interfaces = typeof(IKernelPipeline)

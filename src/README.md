@@ -5,6 +5,20 @@ The `src` tree contains the canonical specification projects that define interfa
 
 ---
 
+## Current Package Baseline
+
+As of v0.0.5:
+
+- `AIKernel.Abstractions` and `AIKernel.Contracts` export interfaces only.
+- DTOs are owned by `AIKernel.Dtos`.
+- Shared enum primitives are owned by `AIKernel.Enums`.
+- `AIKernel.Vfs` remains a public namespace inside `AIKernel.Abstractions`; there is no separate `AIKernel.Vfs` package/project.
+- Legacy ambiguous ChatChain names such as `IResult` and `ISemanticHasher` are not exported from the ChatChain namespace. Use `IChatTurnVerificationResult` and `IChatTurnSemanticHasher`.
+
+Keep all AIKernel.NET packages on the same version line. Do not mix `AIKernel.Abstractions` v0.0.5 with older `AIKernel.Dtos` or `AIKernel.Enums` packages.
+
+---
+
 ## Projects
 
 ### AIKernel.Abstractions
@@ -34,7 +48,7 @@ The `src` tree contains the canonical specification projects that define interfa
 - Project references: `AIKernel.Dtos`, `AIKernel.Enums`
 
 ### AIKernel.Contracts
-- Purpose: Cross-boundary contract interfaces for orchestration/context projections.
+- Purpose: Cross-boundary contract interfaces for orchestration/context projections. This package exports interfaces only.
 - Main namespace: `AIKernel.Contracts`
 - Project references: `AIKernel.Dtos`, `AIKernel.Enums`
 
@@ -64,6 +78,7 @@ The `src` tree contains the canonical specification projects that define interfa
 
 DTO packages may expose stable metadata key constants for wire formats such as DSL ROM and History ROM.
 Those constants are part of the serialized contract surface; parsing, validation, and runtime behavior still belong to Core/Common or host implementations.
+Shared enums such as execution status and prompt option primitives belong to `AIKernel.Enums`, not `AIKernel.Dtos`.
 
 ### AIKernel.Enums
 - Purpose: Shared enum primitives used across the specification layer.

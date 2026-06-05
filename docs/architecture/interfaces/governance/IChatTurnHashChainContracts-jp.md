@@ -1,9 +1,9 @@
 ---
 title: "IChatTurn HashChain Contracts"
 created: 2026-06-04
-updated: 2026-06-04
+updated: 2026-06-05
 published: 2026-06-04
-version: "0.0.4"
+version: "0.0.5"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -56,14 +56,15 @@ Chat-turn governance は次の順序に固定されます。
 - Must not depend on: Core executor 実装、provider 実装、VFS 実装、hosting 固有 service。
 
 ## 5. 移行メモ
-v0.0.4 では曖昧だった ChatChain 契約名を次のように変更しました。
+v0.0.4 では曖昧だった ChatChain 契約名に専用名を導入し、v0.0.5 では旧来の曖昧な interface 名を package surface から削除します。
 
 - `AIKernel.Abstractions.Governance.ChatChain.IResult` -> `IChatTurnVerificationResult`
 - `AIKernel.Abstractions.Governance.ChatChain.ISemanticHasher` -> `IChatTurnSemanticHasher`
 
-決定論的リプレイや chat-history ROM 検証では、具体的な ChatChain 名を使用してください。
+決定論的リプレイや chat-history ROM 検証では、具体的な ChatChain 名を使用してください。ChatChain namespace 内の旧 `IResult` / `ISemanticHasher` 名は利用・再導入しないでください。
 
 ---
 
 # 変更履歴
 - v0.0.4 (2026-06-04): ChatChain governance contract documentation を追加。
+- v0.0.5 (2026-06-05): 旧 ChatChain 曖昧 interface 名の削除を明確化。

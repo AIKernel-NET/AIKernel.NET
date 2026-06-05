@@ -1,5 +1,6 @@
 namespace AIKernel.Abstractions.Context;
 
+using AIKernel.Dtos.Context;
 using AIKernel.Dtos.Rom;
 
 public interface IContextAssemblyGovernancePolicy

@@ -2,9 +2,9 @@
 id: repo-dependency-rules
 title: "AIKernel.NET Repository Dependency Rules"
 created: 2026-04-30
-updated: 2026-06-04
+updated: 2026-06-05
 published: 2026-05-16
-version: "0.0.4"
+version: "0.0.5"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -108,6 +108,12 @@ AIKernel.Abstractions -> AIKernel.Dtos, AIKernel.Enums
 DSL, DSL ROM, History ROM, and Kernel clock contracts are owned by `AIKernel.Abstractions` and `AIKernel.Dtos` as of v0.0.4.
 Core implementations may adapt these contracts internally to `AIKernel.Common.Results`, but `AIKernel.Abstractions` must not reference `AIKernel.Common` until Common is published as a stable contract package.
 
+### 4.5 v0.0.5 Contract Surface Purity Rule
+
+`AIKernel.Abstractions` and `AIKernel.Contracts` must export public interfaces only.
+DTOs must be owned by `AIKernel.Dtos`, and shared enums must be owned by `AIKernel.Enums`.
+Runtime exception implementations and result/failure adapters belong to implementation packages such as `AIKernel.Core` or `AIKernel.Common`, not to contract packages.
+
 ---
 
 ## 5. Kernel / Providers / VfsProviders Dependency Rules (Summary)
@@ -139,3 +145,4 @@ Dependency direction is design. AIKernel.NET, as an OS, fixes boundaries and dep
 - v0.0.3 (2026-06-02): Corrected Phase-1 dependency graph and Vfs contract ownership/type-forwarding rule
 - v0.0.4 (2026-06-04): Added DSL / History ROM / Kernel clock contract extraction dependency rule
 - v0.0.4 (2026-06-04): Removed the separate AIKernel.Vfs compatibility facade from the package graph
+- v0.0.5 (2026-06-05): Added contract-surface purity rule for interface-only packages

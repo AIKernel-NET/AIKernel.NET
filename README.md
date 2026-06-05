@@ -1,7 +1,7 @@
 ---
-updated: 2026-06-04
+updated: 2026-06-05
 published: 2026-05-16
-version: "0.0.4"
+version: "0.0.5"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -40,8 +40,8 @@ The public namespace remains `AIKernel.Vfs`, but the separate `AIKernel.Vfs` com
 
 As of `v0.0.4`, deterministic DSL, DSL ROM, History ROM, and Kernel clock contracts are also published through `AIKernel.Abstractions` / `AIKernel.Dtos`.
 
-As of `v0.0.3`, Vfs interface contracts are owned by `AIKernel.Abstractions`.
-The public namespace remains `AIKernel.Vfs`, and the `AIKernel.Vfs` package remains as a compatibility facade through type forwarding.
+As of `v0.0.5`, `AIKernel.Abstractions` and `AIKernel.Contracts` export interfaces only.
+DTOs are owned by `AIKernel.Dtos`, and shared enums are owned by `AIKernel.Enums`.
 
 ---
 
@@ -174,7 +174,7 @@ Enterprise   = operations extensions
 
 To keep documentation and source synchronized, this README intentionally avoids deep file-by-file listings.
 
-The documentation is organized into four foundational categories:
+The documentation is organized into the following categories:
 
 | Directory | Role |
 | --- | --- |
@@ -182,6 +182,9 @@ The documentation is organized into four foundational categories:
 | `docs/design` | How: design decisions and implementation strategy |
 | `docs/specs` | What: normative contracts and acceptance criteria |
 | `docs/guidelines` | Rules: repository and contribution policies |
+| `docs/operations` | Release, migration, and package-public operation guides |
+| `docs/papers` | DOI-backed AIKernel / AIOS paper series |
+| `docs/theory` | Work-in-progress research notes before paper/spec promotion |
 
 For the latest structure and cross-links, use the category indexes:
 
@@ -190,6 +193,8 @@ For the latest structure and cross-links, use the category indexes:
 - `docs/specs/index.md` / `docs/specs/index-jp.md`
 - `docs/guidelines/index.md` / `docs/guidelines/index-jp.md`
 - `docs/operations/index.md` / `docs/operations/index-jp.md`
+- `docs/papers/README.md`
+- `docs/theory/README.md` / `docs/theory/README-jp.md`
 
 ---
 
