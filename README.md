@@ -54,7 +54,7 @@ As of `v0.0.5`, HATL contract foundations are also available through
 Cryptographic runtime is intentionally external and can be provided by AIKernel.RH-backed operators or other audited modules.
 
 As of `v0.0.5`, governance and semantic-compilation vocabulary also includes `AdmissibilityReplayRecord`, `AdmissibilityGateKind`, `AdmissibilityDecisionKind`, and `SemanticIrSlot` for Core-side admission ReplayLog evidence.
-Semantic Compilation DTOs provide contract-only carriers for semantic states, Semantic IR elements, governed circuits, prototype spaces, semantic distance reports, deterministic synthesis descriptors, and semantic transitions.
+Semantic Compilation DTOs provide contract-only carriers for semantic states, Semantic IR elements, governed circuits, prototype spaces, semantic distance reports, deterministic synthesis descriptors, and semantic transitions. Governance DTOs also include trajectory governance carriers for semantic ellipsoids, convergence/anomaly score reports, and candidate action evaluations.
 
 ---
 

@@ -98,6 +98,54 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    public void TrajectoryGovernanceDtosAreContractOnly()
+    {
+        var ellipsoid = new SemanticEllipsoidDescriptor(
+            "ellipsoid-1",
+            "state-1",
+            [0.1, 0.2],
+            [0.01, 0.02],
+            "embedding-model",
+            "diagonal-covariance",
+            new Dictionary<string, string>());
+
+        var scoreReport = new TrajectoryGovernanceScoreReport(
+            "score-1",
+            "trajectory-1",
+            ellipsoid.StateId,
+            "root-goal-1",
+            0.9,
+            0.1,
+            0.95,
+            0.05,
+            0.2,
+            0.1,
+            FailClosedDecision.Allow,
+            "boundary-1",
+            new Dictionary<string, string>());
+
+        var actionEvaluation = new CandidateActionEvaluation(
+            "candidate-eval-1",
+            scoreReport.TrajectoryId,
+            "candidate-action-1",
+            "tool-call",
+            0.8,
+            0.2,
+            0.6,
+            false,
+            FailClosedDecision.Allow,
+            null,
+            new Dictionary<string, string>());
+
+        Assert.Equal("state-1", ellipsoid.StateId);
+        Assert.Equal(2, ellipsoid.DiagonalCovariance.Count);
+        Assert.Equal(FailClosedDecision.Allow, scoreReport.Decision);
+        Assert.Equal(0.1, scoreReport.AnomalyScore);
+        Assert.False(actionEvaluation.ExcludedByRiskThreshold);
+        Assert.Equal(scoreReport.TrajectoryId, actionEvaluation.TrajectoryId);
+    }
+
+    [Fact]
     public void SemanticCompilationDtosAreContractOnly()
     {
         var state = new SemanticStateSnapshot(
@@ -784,6 +832,7 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(SemanticIrSlot).IsEnum);
         Assert.True(typeof(AdmissibilityGateKind).IsEnum);
         Assert.True(typeof(AdmissibilityDecisionKind).IsEnum);
+        Assert.True(typeof(FailClosedDecision).IsEnum);
         Assert.True(typeof(HatlAnchorProfile).IsEnum);
         Assert.True(typeof(HatlDeedStatus).IsEnum);
         Assert.True(typeof(HatlVerificationStatus).IsEnum);

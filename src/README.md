@@ -85,7 +85,7 @@ Shared enums such as execution status and prompt option primitives belong to `AI
 DynamicSLM DTOs describe Model ABI records only. Registry, lineage verification, payload materialization, scheduling, differential distillation planning, SeedSLM discipline enforcement, delegation, thought-artifact dumping, and memory placement belong to Core/Provider implementations behind `AIKernel.Abstractions.DynamicSlm`.
 Distillation execution itself is represented as a background offload job so loaders do not block on training work.
 HATL DTOs describe ledger entries, public anchors, Digital Deeds, verification results, and external cryptographic operator request/result records. Cryptographic runtime belongs to AIKernel.RH-backed operators or other audited Core/HATL modules.
-Governance DTOs may carry admission replay evidence, while `AIKernel.Enums` owns Semantic IR slot and admission decision/gate vocabulary for Core-side ResultStep/ReplayLog adapters.
+Governance DTOs may carry admission replay evidence and trajectory governance ellipsoid/score/action evaluation records, while `AIKernel.Enums` owns Semantic IR slot and admission decision/gate vocabulary for Core-side ResultStep/ReplayLog adapters.
 Semantic Compilation DTOs describe observable semantic state, structural Semantic IR, governed circuit descriptors, finite prototype spaces, semantic distance reports, deterministic synthesis descriptors, and replay-addressable transition descriptors; compiler execution and graph search remain Core/runtime responsibilities.
 
 ### AIKernel.Enums

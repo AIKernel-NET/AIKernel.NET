@@ -20,7 +20,7 @@ Japanese version: [Governance Interfaces](index-jp.md)
 # Governance Interfaces
 
 ## 1. Responsibility Boundary
-Governance covers execution authorization, auditability, and attention-quality supervision. `IAttentionGuard` and `IAttentionObserver` monitor reasoning integrity, while the `IAuditEvent` family establishes traceable audit evidence.
+Governance covers execution authorization, auditability, attention-quality supervision, and trajectory evidence exchange. `IAttentionGuard` and `IAttentionObserver` monitor reasoning integrity, trajectory governance DTOs carry semantic ellipsoid and score evidence, and the `IAuditEvent` family establishes traceable audit records.
 For v0.0.5, governance DTOs also expose admission replay records and Semantic IR slot vocabulary so Core/runtime packages can attach fail-closed pre-inference evidence to ReplayLog without adding implementation behavior to the contract package.
 
 ## 2. Related Use Cases
