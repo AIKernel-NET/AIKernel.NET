@@ -17,4 +17,41 @@ public sealed record DynamicSlmPipelineContext(
     DynamicSlmAdmissionResult? Admission,
     IReadOnlyList<DynamicSlmLoadedPayload> LoadedPayloads,
     DynamicSlmPipelineMetadata Metadata,
-    IReadOnlyList<DynamicSlmPipelineTrace> Trace);
+    IReadOnlyList<DynamicSlmPipelineTrace> Trace)
+{
+    public DynamicSlmPipelineContext(
+        DynamicSlmModelAbi modelAbi,
+        DynamicSlmResolvedSubgraph? resolvedSubgraph,
+        DynamicSlmCompatibilityResult? compatibility,
+        DynamicSlmAdmissionResult? lineageAdmission,
+        IReadOnlyList<DynamicSlmCapabilityGap> capabilityGaps,
+        DynamicSlmCapabilityGraphUpdatePlan? graphUpdatePlan,
+        DynamicSlmDistillationPlan? distillationPlan,
+        DynamicSlmDistillationJobDescriptor? distillationJob,
+        DynamicSlmFallbackStrategy? fallbackStrategy,
+        DynamicSlmPlacementPlan? placementPlan,
+        DynamicSlmAdmissionResult? admission,
+        IReadOnlyList<DynamicSlmLoadedPayload> loadedPayloads,
+        DynamicSlmPipelineMetadata metadata,
+        IReadOnlyList<DynamicSlmPipelineTrace> trace)
+        : this(
+            modelAbi,
+            resolvedSubgraph,
+            compatibility,
+            lineageAdmission,
+            capabilityGaps,
+            graphUpdatePlan,
+            distillationPlan,
+            distillationJob,
+            fallbackStrategy,
+            null,
+            Array.Empty<DynamicSlmThoughtArtifact>(),
+            null,
+            placementPlan,
+            admission,
+            loadedPayloads,
+            metadata,
+            trace)
+    {
+    }
+}

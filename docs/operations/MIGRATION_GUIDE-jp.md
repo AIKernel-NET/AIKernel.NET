@@ -682,6 +682,7 @@ v0.0.5 では、将来の DynamicSLM capability module、SeedSLM discipline surf
 LINQ `SelectMany`、`Bind`、`Map` の実装は `AIKernel.NET` ではなく、`AIKernel.Common` または Core package が所有します。
 distillation planning は load pipeline 内で実行できますが、distillation execution は `IDynamicSlmDistillationJobScheduler` または `IDynamicSlmBackgroundDistillationService` 経由で offload してください。pipeline は training work を待たず、Teacher / remote / cached fallback metadata によって継続する想定です。
 SeedSLM discipline、delegation、thought-artifact、memory-placement contract も DTO/interface-only です。Core はこれらを ResultStep / ReplayLog / SemanticDelta pipeline へ adapter し、contract package に runtime behavior を入れないでください。
+`DynamicSlmModelAbi`、`DynamicSlmPipelineContext`、`DynamicSlmPipelineMetadata` は SeedSLM 拡張 field を含みますが、SeedSLM state を渡さない caller 向けの constructor 互換性を維持します。欠落した SeedSLM field は runtime failure ではなく、contract metadata が存在しない状態として扱います。
 HATL cryptographic operation も `AIKernel.NET` では contract-only です。Core/host 側で `IHatlCryptographicOperator` を AIKernel.RH ベース operator、hardware provider、または監査済み module に bind してください。
 
 ### 15.7 検証コマンド

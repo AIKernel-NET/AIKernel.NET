@@ -192,6 +192,51 @@ public sealed class ExtractedInterfaceContractTests
         Assert.Equal("true", context.DistillationPlan?.Metadata[DynamicSlmMetadataKeys.GapDetected]);
         Assert.Equal(DynamicSlmFallbackKind.Teacher, context.FallbackStrategy?.Kind);
         Assert.Equal(DynamicSlmPipelineStage.CompatibilityVerification, result.Trace[0].Stage);
+
+        var legacyAbi = new DynamicSlmModelAbi(
+            "legacy-model",
+            "0.0.1",
+            abi.SemanticProfile,
+            abi.CapabilityGraph,
+            abi.ExecutionProfile,
+            abi.Lineage,
+            abi.Payloads,
+            new Dictionary<string, string>());
+
+        var legacyMetadata = new DynamicSlmPipelineMetadata(
+            "legacy-pipeline",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            false,
+            false,
+            new Dictionary<string, string>());
+
+        var legacyContext = new DynamicSlmPipelineContext(
+            legacyAbi,
+            null,
+            null,
+            null,
+            [],
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            [],
+            legacyMetadata,
+            []);
+
+        Assert.Null(legacyAbi.SeedProfile);
+        Assert.Null(legacyMetadata.DelegationId);
+        Assert.Null(legacyMetadata.StrictOutputMode);
+        Assert.Null(legacyContext.DelegationRequest);
+        Assert.Empty(legacyContext.ThoughtArtifacts);
+        Assert.Null(legacyContext.MemoryPlacement);
     }
 
     [Fact]

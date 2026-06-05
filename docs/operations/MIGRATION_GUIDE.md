@@ -684,6 +684,7 @@ These contracts intentionally do not expose `AIKernel.Common.Result<T>` or Core 
 LINQ `SelectMany`, `Bind`, and `Map` implementations belong to `AIKernel.Common` or Core packages, not to `AIKernel.NET`.
 Distillation planning may run in the load pipeline, but distillation execution must be offloaded through `IDynamicSlmDistillationJobScheduler` or `IDynamicSlmBackgroundDistillationService`. Pipelines should continue through teacher, remote, or cached fallback metadata instead of blocking on training work.
 SeedSLM discipline, delegation, thought-artifact, and memory-placement contracts are also DTO/interface-only. Core should adapt them to ResultStep/ReplayLog/SemanticDelta pipelines and must not embed runtime behavior in contract packages.
+`DynamicSlmModelAbi`, `DynamicSlmPipelineContext`, and `DynamicSlmPipelineMetadata` include SeedSLM extension fields while retaining constructor compatibility for callers that do not provide SeedSLM state; missing SeedSLM fields are interpreted as absent contract metadata, not as runtime failure.
 HATL cryptographic operations are also contract-only in `AIKernel.NET`. Bind `IHatlCryptographicOperator` to an AIKernel.RH-backed operator, hardware provider, or audited module in Core/host code.
 
 ### 15.7 Verification Commands
