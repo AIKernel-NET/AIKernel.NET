@@ -1,5 +1,5 @@
 ---
-title: "capabilities Interfaces"
+title: "Capabilities Interfaces"
 created: 2026-06-05
 updated: 2026-06-05
 published: 2026-06-05
@@ -17,7 +17,7 @@ tags:
 
 Japanese version: [Index](index-jp.md)
 
-# capabilities Interfaces
+# Capabilities Interfaces
 
 ## 1. Responsibility Boundary
 Capabilities define the contract boundary for reusable external modules that may be invoked directly, through a sandboxed CLI executable, as a managed assembly reference, through a native ABI, as DSL ROM, or as a remote endpoint.

@@ -1,5 +1,5 @@
 ---
-title: "capabilities Interfaces"
+title: "Capabilities Interfaces"
 created: 2026-06-05
 updated: 2026-06-05
 published: 2026-06-05
@@ -17,7 +17,7 @@ tags:
 
 English version: [Index](index.md)
 
-# capabilities Interfaces
+# Capabilities Interfaces
 
 ## 1. Responsibility Boundary
 Capabilities は、直接呼び出し、sandboxed CLI executable、managed assembly reference、native ABI、DSL ROM、remote endpoint として呼び出される再利用可能な外部 module の契約境界を定義します。
