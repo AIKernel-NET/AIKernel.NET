@@ -45,6 +45,10 @@ They are based on the Model ABI described by the DynamicSLM paper: Semantic Prof
 | `IDynamicSlmDistillationJobScheduler` | Schedule offloaded distillation jobs and read job status through a host/Core boundary. |
 | `IDynamicSlmBackgroundDistillationService` | Represent the background service boundary that accepts distillation offload requests. |
 | `IDynamicSlmArtifactPublisher` | Publish validated distilled artifacts through the registry boundary. |
+| `ISeedSlmDisciplineVerifier` | Verify SeedSLM structural adherence, contract fidelity, fail-closed behavior, and zero-slop output policy. |
+| `IDynamicSlmDelegationPlanner` | Convert capability gaps into fail-closed delegation requests for Teacher, Solver, or Remote targets. |
+| `IDynamicSlmThoughtArtifactSink` | Persist SeedSLM thought artifacts as ReplayLog-compatible entries before final output. |
+| `IDynamicSlmMemoryPlacementPlanner` | Plan resident SeedSLM placement and paged CapabilitySLM swaps without exposing runtime handles. |
 
 ## DTO Ownership
 
@@ -61,6 +65,34 @@ Differential distillation is offloaded: the load pipeline records a plan and job
 `DynamicSlmDistillationRequest` and `DynamicSlmDistillationPlan` carry metadata for job descriptors, teacher fallback, ReplayLog references, and validation policy hints; they do not represent inline training execution.
 `DynamicSlmPipelineStage` includes dedicated `DistillationOffload` and `FallbackSelection` stages so Core implementations can record deterministic trace entries for offload and fallback decisions.
 
+## SeedSLM Contract Additions
+
+SeedSLM is modeled as a neutral, resident base model that learns discipline rather than domain knowledge.
+The contract additions express four requirements:
+
+- Structural adherence and contract fidelity through `SeedSlmStructuralConstraints`.
+- Zero-slop strict output through `SeedSlmOutputDisciplinePolicy` and `DynamicSlmStrictOutputMode`.
+- Immediate fail-closed delegation through `DynamicSlmDelegationRequest`, `DynamicSlmDelegationKind`, and `DynamicSlmDelegationReason`.
+- ReplayLog-compatible thought artifacts through `DynamicSlmThoughtArtifact`, `DynamicSlmReplayLogEntry`, and `DynamicSlmTrajectoryMetadata`.
+
+SeedSLM memory assumptions are represented separately from runtime handles.
+`DynamicSlmResidentModelDescriptor` describes the VRAM-resident seed base.
+`DynamicSlmCapabilitySwapDescriptor` describes CapabilitySLM page-in/page-out material.
+`DynamicSlmMemoryPlacementMetadata` ties resident and swap descriptors to placement decisions.
+`DynamicSlmHotSwapPolicy` records whether a Core implementation intends prefetch, page-in, page-out, or hot-swap behavior.
+
+Text flow:
+
+```text
+SeedSLM strict output
+  -> DynamicSlmThoughtArtifact
+  -> DynamicSlmReplayLogEntry
+  -> DynamicSlmTrajectoryMetadata
+  -> DynamicSlmDistillationRequest
+  -> DynamicSlmDistillationPlan
+  -> DynamicSlmDistillationOffloadRequest
+```
+
 Pseudo-code for a Core implementation:
 
 ```csharp
@@ -73,7 +105,11 @@ var result =
     from distillPlan in PlanDistillation(evolution)
     from offload in OffloadDistillation(distillPlan)
     from fallback in SelectFallbackStrategy(offload)
+    from discipline in VerifySeedDiscipline(fallback)
+    from delegation in PlanDelegationIfNeeded(discipline)
+    from thought in DumpThoughtArtifact(delegation)
     from placement in PlanPlacement(evolution)
+    from memory in PlanResidentSeedAndCapabilitySwaps(placement)
     from admission in Admit(placement)
     from payloads in LoadPayloads(admission)
     select payloads;
@@ -84,3 +120,4 @@ var result =
 # Changelog
 - v0.0.5 (2026-06-05): Added DynamicSLM distillation offload contracts and metadata shape.
 - v0.0.5 (2026-06-05): Added DynamicSLM Model ABI contract index with distillation offload metadata.
+- v0.0.5 (2026-06-05): Added SeedSLM discipline, delegation, thought artifact, and resident memory contract vocabulary.

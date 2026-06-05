@@ -177,10 +177,10 @@ Cryptographic implementation remains outside AIKernel.NET and can be provided by
 
 ## 1.19 DynamicSLM Model ABI Contracts
 
-v0.0.5 adds the first public contract surface for DynamicSLM capability-modular SLM artifacts.
+v0.0.5 adds the first public contract surface for DynamicSLM capability-modular SLM artifacts and SeedSLM discipline surfaces.
 The interface index is available at [interfaces/dynamicslm/index.md](./interfaces/dynamicslm/index.md).
 
-The contracts cover Model ABI descriptors, capability subgraph resolution, lineage verification, payload materialization, scheduler placement, differential distillation planning, and background distillation offload while keeping runtime behavior in Core/Provider implementations.
+The contracts cover Model ABI descriptors, capability subgraph resolution, lineage verification, payload materialization, scheduler placement, differential distillation planning, and background distillation offload while keeping runtime behavior in Core/Provider implementations. SeedSLM additions cover strict output discipline, fail-closed delegation, ReplayLog-compatible thought artifacts, and resident SeedSLM / paged CapabilitySLM memory placement metadata.
 
 ---
 
@@ -282,6 +282,6 @@ This index is the entry point to understanding AIKernel's overall design.
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.4 (2026-06-04): Updated architecture index for DSL / History ROM / Time contract publication
-- v0.0.5 (2026-06-05): Added DynamicSLM Model ABI and distillation offload contract navigation
+- v0.0.5 (2026-06-05): Added DynamicSLM Model ABI, distillation offload, and SeedSLM discipline contract navigation
 - v0.0.5 (2026-06-05): Added paper implementation status navigation
 - v0.0.5 (2026-06-05): Added HATL external cryptographic operator contract navigation

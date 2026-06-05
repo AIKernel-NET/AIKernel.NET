@@ -29,4 +29,26 @@ public static class DynamicSlmMetadataKeys
     public const string TeacherFallbackUsed = "dynamicslm_teacher_fallback_used";
 
     public const string GapDetected = "dynamicslm_gap_detected";
+
+    public const string StrictOutputMode = "dynamicslm_strict_output_mode";
+
+    public const string DelegationId = "dynamicslm_delegation_id";
+
+    public const string DelegationKind = "dynamicslm_delegation_kind";
+
+    public const string DelegationReason = "dynamicslm_delegation_reason";
+
+    public const string ThoughtArtifactId = "dynamicslm_thought_artifact_id";
+
+    public const string ReasoningTraceFormat = "dynamicslm_reasoning_trace_format";
+
+    public const string TrajectoryId = "dynamicslm_trajectory_id";
+
+    public const string BaseModelState = "dynamicslm_base_model_state";
+
+    public const string ResidentModelId = "dynamicslm_resident_model_id";
+
+    public const string HotSwapPolicy = "dynamicslm_hot_swap_policy";
+
+    public const string MemoryPlacementId = "dynamicslm_memory_placement_id";
 }

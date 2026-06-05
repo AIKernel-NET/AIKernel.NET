@@ -51,6 +51,10 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(IDynamicSlmDistillationJobScheduler).IsInterface);
         Assert.True(typeof(IDynamicSlmBackgroundDistillationService).IsInterface);
         Assert.True(typeof(IDynamicSlmArtifactPublisher).IsInterface);
+        Assert.True(typeof(ISeedSlmDisciplineVerifier).IsInterface);
+        Assert.True(typeof(IDynamicSlmDelegationPlanner).IsInterface);
+        Assert.True(typeof(IDynamicSlmThoughtArtifactSink).IsInterface);
+        Assert.True(typeof(IDynamicSlmMemoryPlacementPlanner).IsInterface);
 
         var payload = new DynamicSlmPayloadDescriptor(
             "payload-1",
@@ -174,6 +178,117 @@ public sealed class ExtractedInterfaceContractTests
         Assert.Equal("true", context.DistillationPlan?.Metadata[DynamicSlmMetadataKeys.GapDetected]);
         Assert.Equal(DynamicSlmFallbackKind.Teacher, context.FallbackStrategy?.Kind);
         Assert.Equal(DynamicSlmPipelineStage.CompatibilityVerification, result.Trace[0].Stage);
+    }
+
+    [Fact]
+    public void SeedSlmDisciplineContractsAreOwnedByAbstractions()
+    {
+        var constraints = new SeedSlmStructuralConstraints(
+            true,
+            true,
+            true,
+            true,
+            DynamicSlmStrictOutputMode.ZeroSlop,
+            DynamicSlmReasoningTraceFormat.HashLinkedJson,
+            new Dictionary<string, string>());
+
+        var policy = new SeedSlmOutputDisciplinePolicy(
+            DynamicSlmStrictOutputMode.ZeroSlop,
+            true,
+            true,
+            true,
+            "schema-hash",
+            new Dictionary<string, string>());
+
+        var delegation = new DynamicSlmDelegationRequest(
+            "delegation-1",
+            DynamicSlmDelegationKind.Teacher,
+            DynamicSlmDelegationReason.CapabilityGap,
+            "cap-1",
+            "teacher-1",
+            "replay-hash",
+            "thought-1",
+            new Dictionary<string, string>());
+
+        var thought = new DynamicSlmThoughtArtifact(
+            "thought-1",
+            DynamicSlmReasoningTraceFormat.HashLinkedJson,
+            "delegate unsupported capability",
+            ["gap detected"],
+            ["delegate_to_teacher"],
+            "output-hash",
+            "replay-hash",
+            new Dictionary<string, string>());
+
+        var replayEntry = new DynamicSlmReplayLogEntry(
+            "entry-1",
+            null,
+            DynamicSlmPipelineStage.ThoughtArtifactDump,
+            thought.ArtifactId,
+            "delta-hash",
+            "replay-hash",
+            new Dictionary<string, string>());
+
+        var trajectory = new DynamicSlmTrajectoryMetadata(
+            "trajectory-1",
+            thought.ArtifactId,
+            replayEntry.ReplayLogHash,
+            true,
+            new Dictionary<string, string>());
+
+        var adapter = new DynamicSlmAdapterCompatibilityProfile(
+            "seed-1",
+            DynamicSlmBaseModelStateKind.Null,
+            [DynamicSlmPayloadKind.LoRaDelta, DynamicSlmPayloadKind.CapabilityPage],
+            ["lora"],
+            "0.125",
+            new Dictionary<string, string>());
+
+        var neutrality = new DynamicSlmNeutralityMetadata(
+            DynamicSlmBaseModelStateKind.Null,
+            true,
+            "1.0",
+            new Dictionary<string, string>());
+
+        var resident = new DynamicSlmResidentModelDescriptor(
+            "seed-1",
+            DynamicSlmBaseModelStateKind.Null,
+            DynamicSlmAcceleratorKind.Gpu,
+            "vram://seed/base",
+            1024,
+            new Dictionary<string, string>());
+
+        var swap = new DynamicSlmCapabilitySwapDescriptor(
+            "cap-1",
+            "payload-1",
+            DynamicSlmHotSwapPolicy.PageIn,
+            "vmem://cap/payload-1",
+            128,
+            new Dictionary<string, string>());
+
+        var memory = new DynamicSlmMemoryPlacementMetadata(
+            resident,
+            [swap],
+            DynamicSlmHotSwapPolicy.HotSwap,
+            new Dictionary<string, string>());
+
+        var profile = new SeedSlmProfile(
+            resident.ModelId,
+            constraints,
+            policy,
+            adapter,
+            neutrality,
+            resident,
+            new Dictionary<string, string>());
+
+        Assert.Equal(DynamicSlmStrictOutputMode.ZeroSlop, profile.OutputDisciplinePolicy.Mode);
+        Assert.Equal(DynamicSlmDelegationKind.Teacher, delegation.Kind);
+        Assert.Equal(DynamicSlmDelegationReason.CapabilityGap, delegation.Reason);
+        Assert.Equal(DynamicSlmPipelineStage.ThoughtArtifactDump, replayEntry.Stage);
+        Assert.True(trajectory.DistillationEligible);
+        Assert.Equal(DynamicSlmBaseModelStateKind.Null, profile.Neutrality.BaseModelState);
+        Assert.Equal(DynamicSlmHotSwapPolicy.HotSwap, memory.HotSwapPolicy);
+        Assert.Equal("dynamicslm_thought_artifact_id", DynamicSlmMetadataKeys.ThoughtArtifactId);
     }
 
     [Fact]
@@ -389,6 +504,12 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(DynamicSlmDistillationJobStatus).IsEnum);
         Assert.True(typeof(DynamicSlmFallbackKind).IsEnum);
         Assert.True(typeof(DynamicSlmPipelineStatus).IsEnum);
+        Assert.True(typeof(DynamicSlmStrictOutputMode).IsEnum);
+        Assert.True(typeof(DynamicSlmDelegationKind).IsEnum);
+        Assert.True(typeof(DynamicSlmDelegationReason).IsEnum);
+        Assert.True(typeof(DynamicSlmReasoningTraceFormat).IsEnum);
+        Assert.True(typeof(DynamicSlmBaseModelStateKind).IsEnum);
+        Assert.True(typeof(DynamicSlmHotSwapPolicy).IsEnum);
         Assert.True(typeof(HatlAnchorProfile).IsEnum);
         Assert.True(typeof(HatlDeedStatus).IsEnum);
         Assert.True(typeof(HatlVerificationStatus).IsEnum);

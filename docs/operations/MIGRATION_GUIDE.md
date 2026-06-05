@@ -11,7 +11,7 @@ maintainer: "Takuya (AIKernel Project Maintainer)"
 
 # Migration Guide
 
-This guide defines migration steps from the initial concept baseline (`v0.0.0`) to the canonical architecture baseline (`v0.0.1`, `v0.0.2`, `v0.0.3`), to the DSL / History ROM contract extraction introduced in `v0.0.4`, and to the contract-surface purity cleanup plus DynamicSLM Model ABI / distillation offload and HATL external cryptographic operator contract preparation introduced in `v0.0.5`.
+This guide defines migration steps from the initial concept baseline (`v0.0.0`) to the canonical architecture baseline (`v0.0.1`, `v0.0.2`, `v0.0.3`), to the DSL / History ROM contract extraction introduced in `v0.0.4`, and to the contract-surface purity cleanup plus DynamicSLM Model ABI / SeedSLM discipline / distillation offload and HATL external cryptographic operator contract preparation introduced in `v0.0.5`.
 
 ## 1. Fundamental Changes
 In `v0.0.1`, the architecture was rebuilt around `Determinism` and `Non-LLM Governance`.
@@ -668,21 +668,22 @@ Keep the contract package set aligned.
 
 Do not mix `AIKernel.Abstractions` `0.0.5` with `AIKernel.Dtos` or `AIKernel.Enums` `0.0.4`.
 
-### 15.6 DynamicSLM and HATL contract preparation
-v0.0.5 adds non-runtime contracts for future DynamicSLM capability modules and HATL external cryptographic operators.
+### 15.6 DynamicSLM / SeedSLM and HATL contract preparation
+v0.0.5 adds non-runtime contracts for future DynamicSLM capability modules, SeedSLM discipline surfaces, and HATL external cryptographic operators.
 These additions are source-compatible for existing consumers, but Core/Provider implementations that plan to support capability-modular SLM artifacts or HATL-backed trust layers should target the new namespaces.
 
 | Area | New public surface |
 |---|---|
-| `AIKernel.Abstractions.DynamicSlm` | `IDynamicSlmModelAbiProvider`, `IDynamicSlmModuleRegistry`, `IDynamicSlmPipelineContextFactory`, `IDynamicSlmPipelineStep<TInput,TOutput>`, `IDynamicSlmAsyncPipelineStep<TInput,TOutput>`, `IDynamicSlmAsyncPipeline`, `IDynamicSlmPipelineBuilder`, `IDynamicSlmFailure`, `IDynamicSlmCapabilityGraphResolver`, `IDynamicSlmCompatibilityVerifier`, `IDynamicSlmLineageVerifier`, `IDynamicSlmPayloadLoader`, `IDynamicSlmScheduler`, `IDynamicSlmCapabilityGapDetector`, `IDynamicSlmCapabilityGraphEvolutionPlanner`, `IDynamicSlmDistillationPlanner`, `IDynamicSlmDistillationJobScheduler`, `IDynamicSlmBackgroundDistillationService`, `IDynamicSlmArtifactPublisher` |
+| `AIKernel.Abstractions.DynamicSlm` | `IDynamicSlmModelAbiProvider`, `IDynamicSlmModuleRegistry`, `IDynamicSlmPipelineContextFactory`, `IDynamicSlmPipelineStep<TInput,TOutput>`, `IDynamicSlmAsyncPipelineStep<TInput,TOutput>`, `IDynamicSlmAsyncPipeline`, `IDynamicSlmPipelineBuilder`, `IDynamicSlmFailure`, `IDynamicSlmCapabilityGraphResolver`, `IDynamicSlmCompatibilityVerifier`, `IDynamicSlmLineageVerifier`, `IDynamicSlmPayloadLoader`, `IDynamicSlmScheduler`, `IDynamicSlmCapabilityGapDetector`, `IDynamicSlmCapabilityGraphEvolutionPlanner`, `IDynamicSlmDistillationPlanner`, `IDynamicSlmDistillationJobScheduler`, `IDynamicSlmBackgroundDistillationService`, `IDynamicSlmArtifactPublisher`, `ISeedSlmDisciplineVerifier`, `IDynamicSlmDelegationPlanner`, `IDynamicSlmThoughtArtifactSink`, `IDynamicSlmMemoryPlacementPlanner` |
 | `AIKernel.Abstractions.Hatl` | `IHatlLedgerStore`, `IHatlAnchorPublisher`, `IHatlAnchorVerifier`, `IHatlDigitalDeedResolver`, `IHatlCryptographicOperator` |
-| `AIKernel.Dtos.DynamicSlm` | Model ABI records for semantic profile, capability graph, execution profile, lineage, payload descriptors, pipeline context/result/failure/trace metadata, resolved subgraphs, placement plans, capability gaps, graph update plans, distillation requests/plans with metadata, distillation job descriptors, offload requests, fallback strategies, pipeline offload info, and admission results |
+| `AIKernel.Dtos.DynamicSlm` | Model ABI records for semantic profile, capability graph, execution profile, lineage, payload descriptors, pipeline context/result/failure/trace metadata, resolved subgraphs, placement plans, capability gaps, graph update plans, distillation requests/plans with metadata, distillation job descriptors, offload requests, fallback strategies, pipeline offload info, admission results, SeedSLM structural constraints, output discipline policies, delegation requests, thought artifacts, ReplayLog entries, trajectory metadata, adapter compatibility, neutrality, resident model descriptors, capability swap descriptors, and memory placement metadata |
 | `AIKernel.Dtos.Hatl` | Ledger entries, anchor documents, Digital Deeds, public anchor receipts, verification results, BlockMAC requests/results, ratchet step requests/results, and HATL metadata keys |
-| `AIKernel.Enums` | DynamicSLM payload, accelerator, pipeline stage including distillation offload/fallback selection, failure kind, capability relation, compatibility status, graph update, admission status, distillation job status, fallback kind, pipeline status primitives, and HATL anchor/deed/verification primitives |
+| `AIKernel.Enums` | DynamicSLM payload, accelerator, pipeline stage including distillation offload/fallback selection/strict output/delegation/thought dump/memory placement, failure kind, capability relation, compatibility status, graph update, admission status, distillation job status, fallback kind, pipeline status, SeedSLM strict output/delegation/reasoning/base-state/hot-swap primitives, and HATL anchor/deed/verification primitives |
 
 These contracts intentionally do not expose `AIKernel.Common.Result<T>` or Core runtime handles. Implementations should adapt their internal result pipeline to the DTO/interface boundary.
 LINQ `SelectMany`, `Bind`, and `Map` implementations belong to `AIKernel.Common` or Core packages, not to `AIKernel.NET`.
 Distillation planning may run in the load pipeline, but distillation execution must be offloaded through `IDynamicSlmDistillationJobScheduler` or `IDynamicSlmBackgroundDistillationService`. Pipelines should continue through teacher, remote, or cached fallback metadata instead of blocking on training work.
+SeedSLM discipline, delegation, thought-artifact, and memory-placement contracts are also DTO/interface-only. Core should adapt them to ResultStep/ReplayLog/SemanticDelta pipelines and must not embed runtime behavior in contract packages.
 HATL cryptographic operations are also contract-only in `AIKernel.NET`. Bind `IHatlCryptographicOperator` to an AIKernel.RH-backed operator, hardware provider, or audited module in Core/host code.
 
 ### 15.7 Verification Commands
@@ -710,4 +711,4 @@ CYCLE CHECK: OK
 - v0.0.2 (2026-05-09): Added Issue #4 Vfs capability contract migration steps, Issue #7 Vfs naming normalization, provider/security capability contract guidance, Issue #8 contract purity migration, Issue #9 provider capability migration, Issue #10 security/policy separation migration, and Issue #11 sandbox/validator isolation migration
 - v0.0.3 (2026-06-02): Added dependency-layer migration for Vfs contract ownership, `AIKernel.Vfs` type-forwarding compatibility, package-reference guidance, and cycle-verification steps
 - v0.0.4 (2026-06-04): Added DSL pipeline, DSL ROM, History ROM, Kernel clock contract extraction, ROM store contracts, ambiguous-interface rename guidance, AIKernel.Vfs package removal steps, and interface-only contract package migration for AIKernel.Core adapter migration
-- v0.0.5 (2026-06-05): Removed remaining Abstractions-local DTO/exception implementations, duplicate DTO enums, and legacy ambiguous ChatChain interfaces; added DynamicSLM Model ABI, distillation offload, and HATL external cryptographic operator contract preparation
+- v0.0.5 (2026-06-05): Removed remaining Abstractions-local DTO/exception implementations, duplicate DTO enums, and legacy ambiguous ChatChain interfaces; added DynamicSLM Model ABI, SeedSLM discipline, distillation offload, and HATL external cryptographic operator contract preparation

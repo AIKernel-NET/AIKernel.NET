@@ -81,7 +81,7 @@ Keep all AIKernel.NET packages on the same version line. Do not mix `AIKernel.Ab
 DTO packages may expose stable metadata key constants for wire formats such as DSL ROM and History ROM.
 Those constants are part of the serialized contract surface; parsing, validation, and runtime behavior still belong to Core/Common or host implementations.
 Shared enums such as execution status and prompt option primitives belong to `AIKernel.Enums`, not `AIKernel.Dtos`.
-DynamicSLM DTOs describe Model ABI records only. Registry, lineage verification, payload materialization, scheduling, and differential distillation planning belong to Core/Provider implementations behind `AIKernel.Abstractions.DynamicSlm`.
+DynamicSLM DTOs describe Model ABI records only. Registry, lineage verification, payload materialization, scheduling, differential distillation planning, SeedSLM discipline enforcement, delegation, thought-artifact dumping, and memory placement belong to Core/Provider implementations behind `AIKernel.Abstractions.DynamicSlm`.
 Distillation execution itself is represented as a background offload job so loaders do not block on training work.
 HATL DTOs describe ledger entries, public anchors, Digital Deeds, verification results, and external cryptographic operator request/result records. Cryptographic runtime belongs to AIKernel.RH-backed operators or other audited Core/HATL modules.
 

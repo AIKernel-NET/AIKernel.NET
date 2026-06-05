@@ -118,11 +118,11 @@ Core 実装は内部でこれらを `AIKernel.Common.Results` に adapter して
 DTO は `AIKernel.Dtos`、共有 enum は `AIKernel.Enums` が所有する。
 runtime exception 実装や result/failure adapter は `AIKernel.Core` や `AIKernel.Common` などの実装 package に配置し、contract package には置かない。
 
-DynamicSLM と HATL の追加も同じ contract-only rule に従う。
+DynamicSLM、SeedSLM、HATL の追加も同じ contract-only rule に従う。
 `AIKernel.Abstractions.DynamicSlm` と `AIKernel.Abstractions.Hatl` は package-boundary interface のみを定義する。
 `AIKernel.Dtos.DynamicSlm` と `AIKernel.Dtos.Hatl` は境界 record を運ぶ。
 `AIKernel.Enums` は共有 DynamicSLM / HATL enum primitive を所有する。
-Result / ResultStep / LINQ adapter、model loading、distillation execution、HATL cryptography、key handling、ratchet、Merkle construction、public-anchor runtime behavior は `AIKernel.Common`、`AIKernel.Core`、provider package、host application、または AIKernel.RH ベース component などの外部 operator module が所有する。
+Result / ResultStep / LINQ adapter、model loading、SeedSLM discipline enforcement、thought-artifact persistence、delegation execution、memory placement execution、distillation execution、HATL cryptography、key handling、ratchet、Merkle construction、public-anchor runtime behavior は `AIKernel.Common`、`AIKernel.Core`、provider package、host application、または AIKernel.RH ベース component などの外部 operator module が所有する。
 
 ---
 
@@ -157,4 +157,4 @@ AIKernel.NET は OS として、境界と依存方向を最初に固定し、以
 - v0.0.4 (2026-06-04): DSL / History ROM / Kernel clock contract 抽出に関する依存ルールを追加
 - v0.0.4 (2026-06-04): 個別の AIKernel.Vfs 互換 facade を package graph から削除
 - v0.0.5 (2026-06-05): interface-only package のための contract-surface purity ルールを追加
-- v0.0.5 (2026-06-05): Core/Common dependency allowance と DynamicSLM/HATL contract-only ownership を明確化
+- v0.0.5 (2026-06-05): Core/Common dependency allowance と DynamicSLM/SeedSLM/HATL contract-only ownership を明確化

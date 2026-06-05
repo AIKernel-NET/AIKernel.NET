@@ -31,6 +31,7 @@ incident response, and SLO/SLA management.
 - v0.0.3 -> v0.0.4 contract extraction for DSL, DSL ROM, History ROM, and Kernel clock
 - v0.0.4 -> v0.0.5 contract-surface purity cleanup for interface-only packages
 - v0.0.5 DynamicSLM Model ABI and distillation offload contract preparation
+- v0.0.5 SeedSLM discipline, delegation, thought artifact, and memory placement contract preparation
 - v0.0.5 HATL external cryptographic operator contract preparation
 
 Use this guide when upgrading package references or validating contract-layer dependencies.
@@ -127,4 +128,4 @@ Future versions will expand this directory.
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
 - v0.0.3 (2026-06-02): Marked Migration Guide as active and added v0.0.3 dependency-layer migration coverage
 - v0.0.4 (2026-06-04): Added DSL / History ROM contract extraction migration coverage
-- v0.0.5 (2026-06-05): Added contract-surface purity cleanup, DynamicSLM Model ABI / distillation offload, and HATL external cryptographic operator migration coverage
+- v0.0.5 (2026-06-05): Added contract-surface purity cleanup, DynamicSLM Model ABI / SeedSLM discipline / distillation offload, and HATL external cryptographic operator migration coverage

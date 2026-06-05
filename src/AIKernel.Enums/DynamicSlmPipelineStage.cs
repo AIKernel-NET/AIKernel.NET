@@ -14,5 +14,9 @@ public enum DynamicSlmPipelineStage
     PayloadLoading = 9,
     SchedulingExecution = 10,
     DistillationOffload = 11,
-    FallbackSelection = 12
+    FallbackSelection = 12,
+    StrictOutputValidation = 13,
+    Delegation = 14,
+    ThoughtArtifactDump = 15,
+    MemoryPlacement = 16
 }

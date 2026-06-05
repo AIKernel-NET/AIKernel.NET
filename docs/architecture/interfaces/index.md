@@ -72,5 +72,5 @@ Japanese version: [Index](index-jp.md)
 - v0.0.3 (2026-06-02): Added Vfs contract ownership note
 - v0.0.4 (2026-06-04): Added DSL, History ROM, and Time interface categories
 - v0.0.4 (2026-06-04): Clarified governance coverage for audit and ChatChain contracts
-- v0.0.5 (2026-06-05): Added DynamicSLM Model ABI and distillation offload interface category
+- v0.0.5 (2026-06-05): Added DynamicSLM Model ABI, distillation offload, and SeedSLM discipline interface category
 - v0.0.5 (2026-06-05): Added HATL interface category for external cryptographic operators

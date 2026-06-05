@@ -46,6 +46,7 @@ DTO は `AIKernel.Dtos`、共有 Enum は `AIKernel.Enums` が所有します。
 `v0.0.5` 以降、DynamicSLM Model ABI contract は
 `AIKernel.Abstractions.DynamicSlm`、`AIKernel.Dtos.DynamicSlm`、および `AIKernel.Enums` の DynamicSLM enum primitive として公開されます。
 これにより、Core / Provider 実装は contract package に runtime behavior を持ち込まずに、capability-modular SLM artifact、lineage 検証、payload loading、scheduling、differential distillation を実装できます。
+SeedSLM contract vocabulary は、strict output discipline、fail-closed delegation、ReplayLog-compatible thought artifact、resident SeedSLM / paged CapabilitySLM memory placement metadata を追加します。
 
 `v0.0.5` 以降、HATL contract foundation も
 `AIKernel.Abstractions.Hatl`、`AIKernel.Dtos.Hatl`、および `AIKernel.Enums` の HATL enum primitive として公開されます。

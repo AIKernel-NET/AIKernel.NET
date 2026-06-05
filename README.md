@@ -47,6 +47,7 @@ As of `v0.0.5`, DynamicSLM Model ABI contracts are available through
 `AIKernel.Abstractions.DynamicSlm`, `AIKernel.Dtos.DynamicSlm`, and DynamicSLM enum primitives in `AIKernel.Enums`.
 These contracts prepare Core/Provider implementations for capability-modular SLM artifacts, lineage verification, payload loading, scheduling, and differential distillation planning without introducing runtime behavior into the contract packages.
 Heavy differential distillation execution is modeled as a background offload through scheduler/service interfaces so the load pipeline can continue through teacher, remote, or cached fallback paths.
+SeedSLM contract vocabulary extends this surface with strict output discipline, fail-closed delegation, ReplayLog-compatible thought artifacts, and resident SeedSLM / paged CapabilitySLM memory placement metadata.
 
 As of `v0.0.5`, HATL contract foundations are also available through
 `AIKernel.Abstractions.Hatl`, `AIKernel.Dtos.Hatl`, and HATL enum primitives in `AIKernel.Enums`.

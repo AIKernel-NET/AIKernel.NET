@@ -10,5 +10,9 @@ public enum DynamicSlmFailureKind
     AdmissionRejected = 5,
     PayloadLoadFailed = 6,
     SchedulingFailed = 7,
-    Quarantined = 8
+    Quarantined = 8,
+    StrictOutputViolation = 9,
+    Delegated = 10,
+    ThoughtArtifactMissing = 11,
+    MemoryPlacementRejected = 12
 }

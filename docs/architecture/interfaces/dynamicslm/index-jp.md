@@ -45,6 +45,10 @@ DynamicSLM 論文で示された Model ABI、すなわち Semantic Profile、Cap
 | `IDynamicSlmDistillationJobScheduler` | offload された distillation job をスケジュールし、host/Core 境界から status を読む。 |
 | `IDynamicSlmBackgroundDistillationService` | distillation offload request を受け取る background service 境界を表現する。 |
 | `IDynamicSlmArtifactPublisher` | 検証済み distilled artifact を registry 境界から公開する。 |
+| `ISeedSlmDisciplineVerifier` | SeedSLM の structural adherence、contract fidelity、fail-closed behavior、zero-slop output policy を検証する。 |
+| `IDynamicSlmDelegationPlanner` | capability gap を Teacher / Solver / Remote target への fail-closed delegation request に変換する。 |
+| `IDynamicSlmThoughtArtifactSink` | final output 前に SeedSLM thought artifact を ReplayLog-compatible entry として保存する。 |
+| `IDynamicSlmMemoryPlacementPlanner` | runtime handle を公開せず、resident SeedSLM placement と paged CapabilitySLM swap を計画する。 |
 
 ## DTO Ownership
 
@@ -61,6 +65,34 @@ differential distillation は offload されます。load pipeline は plan と 
 `DynamicSlmDistillationRequest` と `DynamicSlmDistillationPlan` は job descriptor、teacher fallback、ReplayLog 参照、validation policy hint のための metadata を運びます。inline training execution は表現しません。
 `DynamicSlmPipelineStage` には `DistillationOffload` と `FallbackSelection` の専用 stage があり、Core 実装は offload / fallback 判断を決定論的 trace entry として記録できます。
 
+## SeedSLM Contract Additions
+
+SeedSLM は domain knowledge ではなく discipline を学習する neutral resident base model として扱います。
+追加 contract は次の 4 つの要件を表現します。
+
+- `SeedSlmStructuralConstraints` による structural adherence と contract fidelity。
+- `SeedSlmOutputDisciplinePolicy` と `DynamicSlmStrictOutputMode` による zero-slop strict output。
+- `DynamicSlmDelegationRequest`、`DynamicSlmDelegationKind`、`DynamicSlmDelegationReason` による即時 fail-closed delegation。
+- `DynamicSlmThoughtArtifact`、`DynamicSlmReplayLogEntry`、`DynamicSlmTrajectoryMetadata` による ReplayLog-compatible thought artifact。
+
+SeedSLM の memory 前提は runtime handle とは分離して表現します。
+`DynamicSlmResidentModelDescriptor` は VRAM resident な seed base を記述します。
+`DynamicSlmCapabilitySwapDescriptor` は CapabilitySLM の page-in / page-out material を記述します。
+`DynamicSlmMemoryPlacementMetadata` は resident descriptor と swap descriptor を placement decision に結びます。
+`DynamicSlmHotSwapPolicy` は Core 実装が prefetch、page-in、page-out、hot-swap のどれを意図したかを記録します。
+
+テキストフロー:
+
+```text
+SeedSLM strict output
+  -> DynamicSlmThoughtArtifact
+  -> DynamicSlmReplayLogEntry
+  -> DynamicSlmTrajectoryMetadata
+  -> DynamicSlmDistillationRequest
+  -> DynamicSlmDistillationPlan
+  -> DynamicSlmDistillationOffloadRequest
+```
+
 Core 実装側の擬似コード:
 
 ```csharp
@@ -73,7 +105,11 @@ var result =
     from distillPlan in PlanDistillation(evolution)
     from offload in OffloadDistillation(distillPlan)
     from fallback in SelectFallbackStrategy(offload)
+    from discipline in VerifySeedDiscipline(fallback)
+    from delegation in PlanDelegationIfNeeded(discipline)
+    from thought in DumpThoughtArtifact(delegation)
     from placement in PlanPlacement(evolution)
+    from memory in PlanResidentSeedAndCapabilitySwaps(placement)
     from admission in Admit(placement)
     from payloads in LoadPayloads(admission)
     select payloads;
@@ -84,3 +120,4 @@ var result =
 # 変更履歴
 - v0.0.5 (2026-06-05): DynamicSLM distillation offload contracts と metadata shape を追加。
 - v0.0.5 (2026-06-05): DynamicSLM Model ABI contract index と distillation offload metadata を追加。
+- v0.0.5 (2026-06-05): SeedSLM discipline、delegation、thought artifact、resident memory contract vocabulary を追加。

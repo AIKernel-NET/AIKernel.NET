@@ -9,5 +9,7 @@ public enum DynamicSlmPayloadKind
     QLoRaDelta = 4,
     QuantizedBlock = 5,
     TokenizerFragment = 6,
-    ExecutableSegment = 7
+    ExecutableSegment = 7,
+    SeedBase = 8,
+    CapabilityPage = 9
 }

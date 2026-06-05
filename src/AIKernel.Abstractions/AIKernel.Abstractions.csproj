@@ -11,11 +11,11 @@
     <Description>
 AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orchestration. This package is part of the AIKernel contract surface and provides foundational interfaces required by runtime, provider, and storage adapters.
 
-Defines the syscall-level abstractions of the AIKernel OS, including IKernel, IProvider, IGuard, IPdp, Vfs, DSL/History ROM, DynamicSLM, and HATL external cryptographic operator contracts. These interfaces form the stable execution boundary for Kernel, Provider, storage, model, and operator implementations.
+Defines the syscall-level abstractions of the AIKernel OS, including IKernel, IProvider, IGuard, IPdp, Vfs, DSL/History ROM, DynamicSLM, SeedSLM, and HATL external cryptographic operator contracts. These interfaces form the stable execution boundary for Kernel, Provider, storage, model, and operator implementations.
 
 AIKernel は AI アプリケーション向けの OS 的フレームワークであり、カテゴリ分離、コンテキスト隔離、契約駆動の設計思想に基づいています。本パッケージは AIKernel contract surface の一部であり、runtime、provider、storage adapter が利用する基盤 interface を提供します。
 
-AIKernel OS の syscall レベルの抽象を定義します。IKernel、IProvider、IGuard、IPdp、Vfs、DSL/History ROM、DynamicSLM、HATL external cryptographic operator contract などを含み、Kernel、Provider、storage、model、operator 実装の安定した実行境界を提供します。
+AIKernel OS の syscall レベルの抽象を定義します。IKernel、IProvider、IGuard、IPdp、Vfs、DSL/History ROM、DynamicSLM、SeedSLM、HATL external cryptographic operator contract などを含み、Kernel、Provider、storage、model、operator 実装の安定した実行境界を提供します。
     </Description>
 
     <!-- Package settings -->
