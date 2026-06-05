@@ -82,6 +82,7 @@ DTO package は DSL ROM / History ROM などの wire format に必要な安定 m
 これらの定数は直列化 contract surface の一部です。parse、validation、runtime behavior は Core/Common または host 実装側の責務です。
 DynamicSLM DTO は Model ABI record のみを表現します。Registry、lineage 検証、payload materialization、scheduling、differential distillation planning は、`AIKernel.Abstractions.DynamicSlm` の背後にある Core / Provider 実装が所有します。
 distillation execution 自体は background offload job として表現し、loader が training work でブロックしないようにします。
+HATL DTO は ledger entry、public anchor、Digital Deed、verification result、外部 cryptographic operator request/result record を表現します。cryptographic runtime は AIKernel.RH ベース operator または監査済み Core/HATL module が所有します。
 
 ### AIKernel.Enums
 - 役割: 仕様層全体で共有する enum プリミティブ。

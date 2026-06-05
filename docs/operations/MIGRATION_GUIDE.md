@@ -675,12 +675,15 @@ These additions are source-compatible for existing consumers, but Core/Provider 
 | Area | New public surface |
 |---|---|
 | `AIKernel.Abstractions.DynamicSlm` | `IDynamicSlmModelAbiProvider`, `IDynamicSlmModuleRegistry`, `IDynamicSlmPipelineContextFactory`, `IDynamicSlmPipelineStep<TInput,TOutput>`, `IDynamicSlmAsyncPipelineStep<TInput,TOutput>`, `IDynamicSlmAsyncPipeline`, `IDynamicSlmPipelineBuilder`, `IDynamicSlmFailure`, `IDynamicSlmCapabilityGraphResolver`, `IDynamicSlmCompatibilityVerifier`, `IDynamicSlmLineageVerifier`, `IDynamicSlmPayloadLoader`, `IDynamicSlmScheduler`, `IDynamicSlmCapabilityGapDetector`, `IDynamicSlmCapabilityGraphEvolutionPlanner`, `IDynamicSlmDistillationPlanner`, `IDynamicSlmDistillationJobScheduler`, `IDynamicSlmBackgroundDistillationService`, `IDynamicSlmArtifactPublisher` |
+| `AIKernel.Abstractions.Hatl` | `IHatlLedgerStore`, `IHatlAnchorPublisher`, `IHatlAnchorVerifier`, `IHatlDigitalDeedResolver`, `IHatlCryptographicOperator` |
 | `AIKernel.Dtos.DynamicSlm` | Model ABI records for semantic profile, capability graph, execution profile, lineage, payload descriptors, pipeline context/result/failure/trace metadata, resolved subgraphs, placement plans, capability gaps, graph update plans, distillation requests/plans with metadata, distillation job descriptors, offload requests, fallback strategies, pipeline offload info, and admission results |
-| `AIKernel.Enums` | DynamicSLM payload, accelerator, pipeline stage including distillation offload/fallback selection, failure kind, capability relation, compatibility status, graph update, admission status, distillation job status, fallback kind, and pipeline status primitives |
+| `AIKernel.Dtos.Hatl` | Ledger entries, anchor documents, Digital Deeds, public anchor receipts, verification results, BlockMAC requests/results, ratchet step requests/results, and HATL metadata keys |
+| `AIKernel.Enums` | DynamicSLM payload, accelerator, pipeline stage including distillation offload/fallback selection, failure kind, capability relation, compatibility status, graph update, admission status, distillation job status, fallback kind, pipeline status primitives, and HATL anchor/deed/verification primitives |
 
 These contracts intentionally do not expose `AIKernel.Common.Result<T>` or Core runtime handles. Implementations should adapt their internal result pipeline to the DTO/interface boundary.
 LINQ `SelectMany`, `Bind`, and `Map` implementations belong to `AIKernel.Common` or Core packages, not to `AIKernel.NET`.
 Distillation planning may run in the load pipeline, but distillation execution must be offloaded through `IDynamicSlmDistillationJobScheduler` or `IDynamicSlmBackgroundDistillationService`. Pipelines should continue through teacher, remote, or cached fallback metadata instead of blocking on training work.
+HATL cryptographic operations are also contract-only in `AIKernel.NET`. Bind `IHatlCryptographicOperator` to an AIKernel.RH-backed operator, hardware provider, or audited module in Core/host code.
 
 ### 15.7 Verification Commands
 Run:

@@ -27,6 +27,7 @@ Japanese version: [Index](index-jp.md)
 - [dsl/index.md](dsl/index.md)
 - [execution/index.md](execution/index.md)
 - [governance/index.md](governance/index.md)
+- [hatl/index.md](hatl/index.md)
 - [history/index.md](history/index.md)
 - [hosting/index.md](hosting/index.md)
 - [kernel/index.md](kernel/index.md)
@@ -51,6 +52,7 @@ Japanese version: [Index](index-jp.md)
 - `dsl`: deterministic semantic IR, DSL pipeline, DSL ROM registry, and VFS-backed DSL ROM store contracts.
 - `dynamicslm`: Model ABI, capability subgraph resolution, lineage verification, payload materialization, scheduling, differential distillation planning, and background offload contracts for capability-modular SLM artifacts.
 - `governance`: attention guard, audit logger, signature trust, context lifecycle, and ChatChain hash-chain contracts.
+- `hatl`: Hash-Anchored Trust Layer ledger, public anchor, Digital Deed, and external cryptographic operator contracts.
 - `history`: history summarization and History ROM registry/export/store contracts.
 - `models`: capability axes, dynamic capacity, and execution constraints.
 - `query`: Phase 1 query augmentation, decomposition, and routing contracts.
@@ -71,3 +73,4 @@ Japanese version: [Index](index-jp.md)
 - v0.0.4 (2026-06-04): Added DSL, History ROM, and Time interface categories
 - v0.0.4 (2026-06-04): Clarified governance coverage for audit and ChatChain contracts
 - v0.0.5 (2026-06-05): Added DynamicSLM Model ABI and distillation offload interface category
+- v0.0.5 (2026-06-05): Added HATL interface category for external cryptographic operators

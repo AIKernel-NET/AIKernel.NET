@@ -44,7 +44,7 @@ The status below therefore distinguishes:
 | 06 | Semantic Compilation Architecture | **Partially contracted** through context, routing, DSL, pipeline, and replay-related DTOs/interfaces. | Semantic compiler runtime and graph execution belong to Core/runtime packages. |
 | 07 | Chat-Turn HashChain Governance | **Contracted** through specific ChatChain governance interfaces and replay/hash DTOs. | Canonicalization, hashing, signature verification, quarantine, and replay behavior belong to Core/runtime packages. |
 | 08 | Operator Architecture | **Out of AIKernel.NET scope** except for external capability/provider integration contracts. | Lean/C/C# operator export and native execution belong to `AIKernel.RH` and host/native packages. |
-| 09 | Hash-Anchored Trust Layer (HATL) | **Partial**: trust-store, signature, semantic hasher, and governance primitives exist; no complete HATL contract surface yet. | HATL ledger, ratchet, anchor publication, and proof runtime remain future Core/HATL work. |
+| 09 | Hash-Anchored Trust Layer (HATL) | **Contract foundation added** through HATL ledger entries, anchor documents, Digital Deeds, verification results, and external cryptographic operator interfaces. | Cryptographic runtime, ratchets, Merkle proof construction, public-anchor publication, and secret handling belong to AIKernel.RH-backed operators or other audited Core/HATL modules. |
 | 10 | Semantic DSL Compiler | **Contracted** through DSL IR, DSL ROM, capability registry, pipeline compiler, kernel pipeline, deterministic clock, and History ROM contracts. | JSON parsing, admissibility checking, ResultStep execution, ReplayLog hashing, suspend/resume runtime, and DSL ROM execution belong to Core/runtime packages. |
 | 11 | DynamicSLM | **Contracted for v0.0.5** through Model ABI, capability graph, compatibility, lineage, payload loading, scheduling, gap detection, graph evolution, distillation planning, offload job scheduling, fallback metadata, and pipeline status DTOs/enums. | Model loading, accelerator placement, Teacher fallback execution, background distillation, artifact publication, and self-improvement runtime belong to Core/provider packages. |
 
@@ -53,7 +53,7 @@ The status below therefore distinguishes:
 - Phase-1 contract foundations are mostly present as interface/DTO boundaries.
 - Runtime behavior is deliberately outside this repository.
 - Papers 10 and 11 now have the strongest new contract coverage for v0.0.4/v0.0.5.
-- Paper 09 (HATL) is the largest remaining contract gap in AIKernel.NET.
+- Paper 09 (HATL) now has a contract foundation, but the cryptographic runtime remains external.
 - Paper 05 remains intentionally delegated to `AIKernel.Common` and Core rather than exposed through contract packages.
 
 ## Release Notes

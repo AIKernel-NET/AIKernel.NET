@@ -1,10 +1,12 @@
 using AIKernel.Abstractions.DynamicSlm;
 using AIKernel.Abstractions.Dsl;
+using AIKernel.Abstractions.Hatl;
 using AIKernel.Abstractions.History;
 using AIKernel.Abstractions.Time;
 using AIKernel.Contracts;
 using AIKernel.Dtos.DynamicSlm;
 using AIKernel.Dtos.Dsl;
+using AIKernel.Dtos.Hatl;
 using AIKernel.Dtos.History;
 using AIKernel.Dtos.Time;
 using AIKernel.Enums;
@@ -175,6 +177,82 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    public void HatlContractsAreOwnedByAbstractions()
+    {
+        Assert.True(typeof(IHatlLedgerStore).IsInterface);
+        Assert.True(typeof(IHatlAnchorPublisher).IsInterface);
+        Assert.True(typeof(IHatlAnchorVerifier).IsInterface);
+        Assert.True(typeof(IHatlDigitalDeedResolver).IsInterface);
+        Assert.True(typeof(IHatlCryptographicOperator).IsInterface);
+
+        var macRequest = new HatlBlockMacRequest(
+            "ledger-1",
+            1,
+            "prev-hash",
+            "payload-hash",
+            new Dictionary<string, string>());
+
+        var macResult = new HatlBlockMacResult(
+            "HMAC-SHA-512",
+            "mac",
+            "entry-hash",
+            "leaf-hash",
+            new Dictionary<string, string>());
+
+        var entry = new HatlLedgerEntry(
+            macRequest.LedgerId,
+            macRequest.SequenceNumber,
+            macRequest.PreviousEntryHash,
+            macResult.EntryHash,
+            macRequest.PayloadHash,
+            macResult.MacAlgorithm,
+            macResult.Mac,
+            macResult.MerkleLeafHash,
+            new Dictionary<string, string>());
+
+        var anchor = new HatlAnchorDocument(
+            "anchor-1",
+            entry.LedgerId,
+            HatlAnchorProfile.SlhDsa,
+            1,
+            1,
+            "root-hash",
+            null,
+            "anchor-hash",
+            "SLH-DSA",
+            "signature",
+            new Dictionary<string, string>());
+
+        var deed = new HatlDigitalDeed(
+            "deed-1",
+            "subject-1",
+            HatlDeedStatus.Active,
+            "issuer-1",
+            anchor.AnchorHash,
+            DateTimeOffset.UnixEpoch,
+            null,
+            new Dictionary<string, string>());
+
+        var verification = new HatlVerificationResult(
+            HatlVerificationStatus.Valid,
+            anchor.AnchorId,
+            anchor.AnchorHash,
+            null,
+            new Dictionary<string, string>());
+
+        var ratchet = new HatlRatchetStepResult(
+            "HKDF-SHA-512",
+            "next-key-commitment",
+            new Dictionary<string, string>());
+
+        Assert.Equal("hatl_anchor_id", HatlMetadataKeys.AnchorId);
+        Assert.Equal(HatlAnchorProfile.SlhDsa, anchor.AnchorProfile);
+        Assert.Equal(HatlDeedStatus.Active, deed.Status);
+        Assert.Equal(HatlVerificationStatus.Valid, verification.Status);
+        Assert.Equal("HKDF-SHA-512", ratchet.DerivationAlgorithm);
+    }
+
+    [Fact]
     public void HistoryRomContractsAreOwnedByAbstractions()
     {
         Assert.True(typeof(IHistoryRomRegistry).IsInterface);
@@ -311,6 +389,9 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(DynamicSlmDistillationJobStatus).IsEnum);
         Assert.True(typeof(DynamicSlmFallbackKind).IsEnum);
         Assert.True(typeof(DynamicSlmPipelineStatus).IsEnum);
+        Assert.True(typeof(HatlAnchorProfile).IsEnum);
+        Assert.True(typeof(HatlDeedStatus).IsEnum);
+        Assert.True(typeof(HatlVerificationStatus).IsEnum);
     }
 
     [Fact]

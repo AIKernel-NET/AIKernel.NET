@@ -83,6 +83,7 @@ Those constants are part of the serialized contract surface; parsing, validation
 Shared enums such as execution status and prompt option primitives belong to `AIKernel.Enums`, not `AIKernel.Dtos`.
 DynamicSLM DTOs describe Model ABI records only. Registry, lineage verification, payload materialization, scheduling, and differential distillation planning belong to Core/Provider implementations behind `AIKernel.Abstractions.DynamicSlm`.
 Distillation execution itself is represented as a background offload job so loaders do not block on training work.
+HATL DTOs describe ledger entries, public anchors, Digital Deeds, verification results, and external cryptographic operator request/result records. Cryptographic runtime belongs to AIKernel.RH-backed operators or other audited Core/HATL modules.
 
 ### AIKernel.Enums
 - Purpose: Shared enum primitives used across the specification layer.

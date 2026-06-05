@@ -168,7 +168,14 @@ v0.0.4 publishes the shared contract surface for this model through `AIKernel.Ab
 
 ---
 
-## 1.18 DynamicSLM Model ABI Contracts
+## [1.18 HATL Interface Contracts](./interfaces/hatl/index.md)
+
+v0.0.5 adds the first public contract surface for HATL ledger entries, public anchors, Digital Deeds, verification results, and external cryptographic operator integration.
+Cryptographic implementation remains outside AIKernel.NET and can be provided by AIKernel.RH-backed operators or other audited modules.
+
+---
+
+## 1.19 DynamicSLM Model ABI Contracts
 
 v0.0.5 adds the first public contract surface for DynamicSLM capability-modular SLM artifacts.
 The interface index is available at [interfaces/dynamicslm/index.md](./interfaces/dynamicslm/index.md).
@@ -177,7 +184,7 @@ The contracts cover Model ABI descriptors, capability subgraph resolution, linea
 
 ---
 
-## [1.19 Paper Implementation Status](./PAPER_IMPLEMENTATION_STATUS.md)
+## [1.20 Paper Implementation Status](./PAPER_IMPLEMENTATION_STATUS.md)
 
 Maps each DOI-backed paper to the current AIKernel.NET contract surface and identifies which runtime behavior belongs to Core, Provider, RH, Tools, or future HATL work.
 
@@ -255,6 +262,7 @@ Read the architecture documents in this order. Each item points downward into th
 - [Semantic Context OS Vision](./16.SEMANTIC_CONTEXT_OS_VISION.md)
 - [Phase 1 Query Processing](./17.QUERY_PROCESSING_PHASE1.md)
 - [DSL Pipeline and ROM Specification](./18.DSL_PIPELINE_AND_ROM_SPEC.md)
+- [HATL Interface Contracts](./interfaces/hatl/index.md)
 - [DynamicSLM Interface Contracts](./interfaces/dynamicslm/index.md)
 - [Paper Implementation Status](./PAPER_IMPLEMENTATION_STATUS.md)
 
@@ -276,3 +284,4 @@ This index is the entry point to understanding AIKernel's overall design.
 - v0.0.4 (2026-06-04): Updated architecture index for DSL / History ROM / Time contract publication
 - v0.0.5 (2026-06-05): Added DynamicSLM Model ABI and distillation offload contract navigation
 - v0.0.5 (2026-06-05): Added paper implementation status navigation
+- v0.0.5 (2026-06-05): Added HATL external cryptographic operator contract navigation

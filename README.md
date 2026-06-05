@@ -48,6 +48,10 @@ As of `v0.0.5`, DynamicSLM Model ABI contracts are available through
 These contracts prepare Core/Provider implementations for capability-modular SLM artifacts, lineage verification, payload loading, scheduling, and differential distillation planning without introducing runtime behavior into the contract packages.
 Heavy differential distillation execution is modeled as a background offload through scheduler/service interfaces so the load pipeline can continue through teacher, remote, or cached fallback paths.
 
+As of `v0.0.5`, HATL contract foundations are also available through
+`AIKernel.Abstractions.Hatl`, `AIKernel.Dtos.Hatl`, and HATL enum primitives in `AIKernel.Enums`.
+Cryptographic runtime is intentionally external and can be provided by AIKernel.RH-backed operators or other audited modules.
+
 ---
 
 See `docs/design/DESIGN_INTENT.md` for design philosophy.  
