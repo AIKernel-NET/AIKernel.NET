@@ -37,6 +37,7 @@ public sealed class ExtractedInterfaceContractTests
         Assert.True(typeof(IDynamicSlmAsyncPipelineStep<,>).IsInterface);
         Assert.True(typeof(IDynamicSlmAsyncPipeline).IsInterface);
         Assert.True(typeof(IDynamicSlmPipelineBuilder).IsInterface);
+        Assert.True(typeof(IDynamicSlmFailure).IsInterface);
         Assert.True(typeof(IDynamicSlmCapabilityGraphResolver).IsInterface);
         Assert.True(typeof(IDynamicSlmCompatibilityVerifier).IsInterface);
         Assert.True(typeof(IDynamicSlmLineageVerifier).IsInterface);

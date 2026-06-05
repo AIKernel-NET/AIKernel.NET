@@ -33,6 +33,7 @@ DynamicSLM 論文で示された Model ABI、すなわち Semantic Profile、Cap
 | `IDynamicSlmAsyncPipelineStep<TInput,TOutput>` | GPU/NPU 作業向けの非同期 typed pipeline step 境界を表現する。 |
 | `IDynamicSlmAsyncPipeline` | `DynamicSlmPipelineContext` 上で合成済み DynamicSLM pipeline を実行する。 |
 | `IDynamicSlmPipelineBuilder` | Common/Core 実装型を公開せず async pipeline step を合成する。 |
+| `IDynamicSlmFailure` | 実装固有の失敗を共有 fail-closed 語彙へ投影する。 |
 | `IDynamicSlmCapabilityGraphResolver` | task に必要な最小 capability subgraph を解決する。 |
 | `IDynamicSlmCompatibilityVerifier` | payload loading 前に semantic profile と governance compatibility を検証する。 |
 | `IDynamicSlmLineageVerifier` | payload 利用前に lineage、artifact hash、admission metadata を検証する。 |

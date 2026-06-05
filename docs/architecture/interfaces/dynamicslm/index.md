@@ -33,6 +33,7 @@ They are based on the Model ABI described by the DynamicSLM paper: Semantic Prof
 | `IDynamicSlmAsyncPipelineStep<TInput,TOutput>` | Describe an asynchronous typed pipeline step boundary for GPU/NPU work. |
 | `IDynamicSlmAsyncPipeline` | Execute a composed DynamicSLM pipeline over a `DynamicSlmPipelineContext`. |
 | `IDynamicSlmPipelineBuilder` | Compose async pipeline steps without exposing Common/Core implementation types. |
+| `IDynamicSlmFailure` | Project implementation-specific failures into the shared fail-closed vocabulary. |
 | `IDynamicSlmCapabilityGraphResolver` | Resolve the minimum capability subgraph required for a task. |
 | `IDynamicSlmCompatibilityVerifier` | Verify semantic profile and governance compatibility before payload loading. |
 | `IDynamicSlmLineageVerifier` | Verify lineage, artifact hashes, and admission metadata before payload use. |
