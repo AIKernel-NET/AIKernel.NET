@@ -419,6 +419,8 @@ Enterprise extensions may include:
 ## 11. License / Contribution
 
 - AIKernel.NET is a contract/specification repository and is released under the MIT License.
+- AIKernel.NET contains no implementation and therefore carries no patent surface; MIT maximizes interoperability and standardization.
+- Papers and research documents follow the license explicitly attached to each paper.
 - Contributions are PR-based.
 - Compatibility for Contracts and PromptRules must be explicit.
 - Breaking changes must include migration guides.
