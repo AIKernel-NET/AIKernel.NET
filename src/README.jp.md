@@ -127,5 +127,5 @@ Semantic Compilation DTO は observable semantic state、structural Semantic IR�
 
 ## ライセンス
 
-Apache License 2.0.
+MIT License
 Copyright © 2026 Takuya Sogawa

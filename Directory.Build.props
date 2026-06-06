@@ -6,7 +6,7 @@
     <InformationalVersion>0.0.5.0</InformationalVersion>
 	<Authors>Takuya Sogawa</Authors>
 	<Company>AIKernel-NET</Company>
-	<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<PackageProjectUrl>https://aikernel.net/</PackageProjectUrl>
 	<RepositoryUrl>https://github.com/AIKernel-NET/AIKernel.NET</RepositoryUrl>
 	<Copyright>Copyright © 2026 Takuya Sogawa of AIKernel-NET</Copyright>

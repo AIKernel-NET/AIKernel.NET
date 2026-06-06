@@ -421,7 +421,7 @@ Enterprise 拡張には以下が含まれます。
 
 ## 11. ライセンス / 貢献
 
-- AIKernel.NET は Apache License 2.0 で公開されます。
+- AIKernel.NET は契約・仕様リポジトリであり、MIT License で公開されます。
 - コントリビューションは PR ベースです。
 - Contracts と PromptRules の互換性を明示してください。
 - 破壊的変更には移行ガイドを添付してください。

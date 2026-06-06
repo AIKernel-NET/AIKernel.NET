@@ -418,7 +418,7 @@ Enterprise extensions may include:
 
 ## 11. License / Contribution
 
-- AIKernel.NET is released under the Apache License 2.0.
+- AIKernel.NET is a contract/specification repository and is released under the MIT License.
 - Contributions are PR-based.
 - Compatibility for Contracts and PromptRules must be explicit.
 - Breaking changes must include migration guides.
