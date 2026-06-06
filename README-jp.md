@@ -1,9 +1,9 @@
 ---
-updated: 2026-06-05
+updated: 2026-06-06
 published: 2026-05-16
 version: "0.0.5"
-edition: "Draft"
-status: "Refactor"
+edition: "Release"
+status: "Released"
 issuer: ai-kernel@aikernel.net
 maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 ---
@@ -421,6 +421,7 @@ Enterprise 拡張には以下が含まれます。
 
 ## 11. ライセンス / 貢献
 
+- AIKernel.NET は Apache License 2.0 で公開されます。
 - コントリビューションは PR ベースです。
 - Contracts と PromptRules の互換性を明示してください。
 - 破壊的変更には移行ガイドを添付してください。

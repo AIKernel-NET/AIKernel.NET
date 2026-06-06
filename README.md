@@ -1,9 +1,9 @@
 ---
-updated: 2026-06-05
+updated: 2026-06-06
 published: 2026-05-16
 version: "0.0.5"
-edition: "Draft"
-status: "Refactor"
+edition: "Release"
+status: "Released"
 issuer: ai-kernel@aikernel.net
 maintainer: "Takuya (AIKernel Project Maintainer)"
 ---
@@ -418,6 +418,7 @@ Enterprise extensions may include:
 
 ## 11. License / Contribution
 
+- AIKernel.NET is released under the Apache License 2.0.
 - Contributions are PR-based.
 - Compatibility for Contracts and PromptRules must be explicit.
 - Breaking changes must include migration guides.
