@@ -45,6 +45,11 @@ external Capability modules, and demo/control repositories:
 Historical architecture documents may retain their original 0.0.x front matter
 and changelog entries. The current public release line is 0.1.0.
 
+Release notes:
+
+- [English](RELEASE_NOTES.md)
+- [日本語](RELEASE_NOTES-ja.md)
+
 ---
 
 ## NuGet Packages
