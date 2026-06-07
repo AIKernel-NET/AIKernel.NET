@@ -2,9 +2,9 @@
 id: repo-dependency-rules
 title: "AIKernel.NET Repository Dependency Rules — 依存方向規約"
 created: 2026-04-30
-updated: 2026-06-05
+updated: 2026-06-08
 published: 2026-05-16
-version: "0.0.5"
+version: "0.1.0"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -124,6 +124,17 @@ DynamicSLM、SeedSLM、HATL の追加も同じ contract-only rule に従う。
 `AIKernel.Enums` は共有 DynamicSLM / HATL enum primitive を所有する。
 Result / ResultStep / LINQ adapter、model loading、SeedSLM discipline enforcement、thought-artifact persistence、delegation execution、memory placement execution、distillation execution、HATL cryptography、key handling、ratchet、Merkle construction、public-anchor runtime behavior は `AIKernel.Common`、`AIKernel.Core`、provider package、host application、または AIKernel.RH ベース component などの外部 operator module が所有する。
 
+### 4.6 v0.1.0 Contract ABI Freeze ルール
+
+0.1.0 prototype-validation line では、MemoryRegion / MemoryMapper、Control Plane、
+provider routing DTO、external Capability descriptor、DynamicSLM、SeedSLM、HATL、
+governance vocabulary の共有 contract ownership を凍結します。
+
+Runtime behavior、Result monad adapter、LINQ composition helper、Python binding、
+CUDA/native bridge、physical execution engine は AIKernel.NET の外側に置き、
+AIKernel.Core、AIKernel.Control、AIKernel.Tools、AIKernel.Cuda13.0、AIKernel.Demo
+などの実装 repository が所有します。
+
 ---
 
 ## 5. Kernel / Providers / VfsProviders の依存規約（概要）
@@ -158,3 +169,4 @@ AIKernel.NET は OS として、境界と依存方向を最初に固定し、以
 - v0.0.4 (2026-06-04): 個別の AIKernel.Vfs 互換 facade を package graph から削除
 - v0.0.5 (2026-06-05): interface-only package のための contract-surface purity ルールを追加
 - v0.0.5 (2026-06-05): Core/Common dependency allowance と DynamicSLM/SeedSLM/HATL contract-only ownership を明確化
+- v0.1.0 (2026-06-08): prototype-validation contract ABI freeze ルールを追加し、Python/CUDA/runtime behavior は AIKernel.NET の外側に置くことを明確化

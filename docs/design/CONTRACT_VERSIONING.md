@@ -2,9 +2,9 @@
 id: contract-versioning
 title: "CONTRACT_VERSIONING — Contract (Interface/DTO/Enum) Versioning Policy"
 created: 2026-05-01
-updated: 2026-06-05
+updated: 2026-06-08
 published: 2026-05-16
-version: "0.0.5"
+version: "0.1.0"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -110,3 +110,4 @@ For each release, publish:
 - v0.0.3 (2026-06-02): Added package ownership/type-forwarding compatibility guidance
 - v0.0.4 (2026-06-04): Added explicit guidance for ambiguous-interface renames and contract extraction releases
 - v0.0.5 (2026-06-05): Added contract-surface purity cleanup guidance for interface-only packages
+- v0.1.0 (2026-06-08): Marked the prototype validation contract ABI baseline for MemoryRegion, Control, routing, DynamicSLM, HATL, and Capability contracts

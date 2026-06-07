@@ -48,21 +48,21 @@ contract は `AIKernel.Abstractions.Memory` が所有し、metadata は
 `AIKernel.Dtos.Memory`、access-mode primitive は `AIKernel.Enums` が所有します。
 Core / Kernel package は runtime 実装と adapter を提供します。
 
-`v0.0.5` 以降、external Capability module contract は
+`v0.1.0` 以降、external Capability module contract は
 `AIKernel.Abstractions.Capabilities`、`AIKernel.Dtos.Capabilities`、および `AIKernel.Enums` の capability module enum primitive として公開されます。
 これらの contract は、contract package に runtime loading behavior を持ち込まずに、CLI executable、managed assembly、native ABI、DSL ROM、remote endpoint の capability 境界を区別します。
 
-`v0.0.5` 以降、DynamicSLM Model ABI contract は
+`v0.1.0` 以降、DynamicSLM Model ABI contract は
 `AIKernel.Abstractions.DynamicSlm`、`AIKernel.Dtos.DynamicSlm`、および `AIKernel.Enums` の DynamicSLM enum primitive として公開されます。
 これにより、Core / Provider 実装は contract package に runtime behavior を持ち込まずに、capability-modular SLM artifact、lineage 検証、payload loading、scheduling、differential distillation を実装できます。
 重い differential distillation execution は background offload scheduler/service interface として表現し、load pipeline は teacher、remote、cached fallback path を通じて継続できます。
 SeedSLM contract vocabulary は、strict output discipline、fail-closed delegation、ReplayLog-compatible thought artifact、resident SeedSLM / paged CapabilitySLM memory placement metadata を追加します。
 
-`v0.0.5` 以降、HATL contract foundation も
+`v0.1.0` 以降、HATL contract foundation も
 `AIKernel.Abstractions.Hatl`、`AIKernel.Dtos.Hatl`、および `AIKernel.Enums` の HATL enum primitive として公開されます。
 cryptographic runtime は意図的に外部に残し、AIKernel.RH ベース operator または監査済み module が提供できるようにします。
 
-`v0.0.5` 以降、governance と semantic-compilation vocabulary には、Core 側 admission ReplayLog evidence のための `AdmissibilityReplayRecord`、`AdmissibilityGateKind`、`AdmissibilityDecisionKind`、`TaskCostClass`、`CriticalOperationRequirement`、`SemanticIrSlot` も含まれます。
+`v0.1.0` 以降、governance と semantic-compilation vocabulary には、Core 側 admission ReplayLog evidence のための `AdmissibilityReplayRecord`、`AdmissibilityGateKind`、`AdmissibilityDecisionKind`、`TaskCostClass`、`CriticalOperationRequirement`、`SemanticIrSlot` も含まれます。
 Semantic Compilation DTO は、semantic state、Semantic IR element、governed circuit、prototype space、semantic distance report、deterministic synthesis descriptor、semantic transition の contract-only carrier を提供します。
 Governance DTO には、semantic ellipsoid、convergence / anomaly score report、candidate action evaluation の trajectory governance carrier も含まれます。
 Pre-inference admissibility contract は、critical-operation / computational-complexity gate interface、side-effect profile、model execution budget、fail-closed gate result を含みます。
