@@ -1,9 +1,9 @@
 ---
-updated: 2026-06-06
-published: 2026-05-16
-version: "0.0.5"
+updated: 2026-06-07
+published: 2026-06-09
+version: "0.1.0"
 edition: "Release"
-status: "Released"
+status: "Release Candidate"
 issuer: ai-kernel@aikernel.net
 maintainer: "Takuya (AIKernel Project Maintainer)"
 ---
@@ -20,6 +20,30 @@ It defines the deterministic execution context in which features become inevitab
 This repository manages the canonical contract set of AIKernel.
 
 AIKernel.NET is a contract-first foundation that treats LLMs not as simple APIs, but as capability-bearing processes.
+
+---
+
+## 0.1.0 Prototype Validation Phase
+
+The 0.0.x design-implementation phase is complete. The 0.1.0 package family is
+the first prototype validation baseline, scheduled for publication on
+2026-06-09.
+
+This phase validates the contract packages together with executable Core,
+external Capability modules, and demo/control repositories:
+
+- `AIKernel.NET` - MIT contract packages: interfaces, DTOs, and enums.
+- `AIKernel.Core` - Apache-2.0 runtime, monads, DSL, Kernel, Hosting, and
+  provider integration.
+- `AIKernel.Cuda13.0` - Apache-2.0 external CUDA Capability package.
+- `AIKernel.Demo` - prototype applications for console, API host, WASM,
+  pipeline, PDP, VFS, and replay inspection.
+- `AIKernel.Tools` - external Capability modules and developer tools.
+- `AIKernel.Control` - control-plane execution engines for CPU, GPU, emulator,
+  Bonsai mapping, and diagnostics.
+
+Historical architecture documents may retain their original 0.0.x front matter
+and changelog entries. The current public release line is 0.1.0.
 
 ---
 
@@ -40,8 +64,13 @@ The public namespace remains `AIKernel.Vfs`, but the separate `AIKernel.Vfs` com
 
 As of `v0.0.4`, deterministic DSL, DSL ROM, History ROM, and Kernel clock contracts are also published through `AIKernel.Abstractions` / `AIKernel.Dtos`.
 
-As of `v0.0.5`, `AIKernel.Abstractions` and `AIKernel.Contracts` export interfaces only.
+As of `v0.1.0`, `AIKernel.Abstractions` and `AIKernel.Contracts` export interfaces only.
 DTOs are owned by `AIKernel.Dtos`, and shared enums are owned by `AIKernel.Enums`.
+
+As of `v0.1.0`, OS-independent MemoryRegion / MemoryMapper
+contracts are owned by `AIKernel.Abstractions.Memory`, with metadata in
+`AIKernel.Dtos.Memory` and access-mode primitives in `AIKernel.Enums`.
+Core and Kernel packages provide runtime implementations and adapters.
 
 As of `v0.0.5`, external Capability module contracts are available through
 `AIKernel.Abstractions.Capabilities`, `AIKernel.Dtos.Capabilities`, and capability module enum primitives in `AIKernel.Enums`.

@@ -1,8 +1,8 @@
 ---
 title: "移行ガイド（Migration Guide）"
-updated: 2026-06-05
+updated: 2026-06-07
 published: 2026-05-16
-version: "0.0.5"
+version: "0.1.0"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -711,6 +711,60 @@ AIKernel.Dtos exports no enums.
 AIKernel.Enums owns shared enums.
 CYCLE CHECK: OK
 ```
+
+## 16. v0.1.0 への移行: MemoryRegion / MemoryMapper contract 抽出
+v0.1.0 contract line では、OS 非依存の MemoryRegion / MemoryMapper surface を
+Core の暫定 API から AIKernel.NET contract package へ移動します。
+Runtime package は OS 固有実装と Result-based adapter を保持し、共有 signature は
+Abstractions、DTO、Enum が所有します。
+
+### 16.1 新しい contract ownership
+
+| Contract 領域 | 所有元 |
+|---|---|
+| `IMemoryRegion`, `IMemoryMapper` | `AIKernel.Abstractions.Memory` |
+| `MemoryRegionInfo` | `AIKernel.Dtos.Memory` |
+| `MemoryAccessMode` | `AIKernel.Enums` |
+
+### 16.2 移行手順
+`AIKernel.Core.Memory` を public contract surface として使用していた consumer は、
+AIKernel.NET contract package へ移行してください。
+
+```csharp
+using AIKernel.Abstractions.Memory;
+using AIKernel.Dtos.Memory;
+using AIKernel.Enums;
+```
+
+Core / Kernel 実装は、内部の `Result<T>` pipeline をこれらの interface へ
+adapter して構いません。ただし、AIKernel.NET contract package から
+`AIKernel.Common.Result<T>` を公開しないでください。
+
+### 16.3 Runtime adapter 指針
+Runtime package は Core v0.0.x の Memory 型を transition-only implementation
+adapter として扱ってください。
+
+| 暫定型 | Contract replacement |
+|---|---|
+| `AIKernel.Core.Memory.IMemoryRegion` | `AIKernel.Abstractions.Memory.IMemoryRegion` |
+| `AIKernel.Core.Memory.IMemoryMapper` | `AIKernel.Abstractions.Memory.IMemoryMapper` |
+| `AIKernel.Core.Memory.MemoryRegionInfo` | `AIKernel.Dtos.Memory.MemoryRegionInfo` |
+| `AIKernel.Core.Memory.MemoryAccessMode` | `AIKernel.Enums.MemoryAccessMode` |
+
+Contract の `IMemoryMapper.Open` は意図的に `IMemoryRegion` を直接返します。
+Fail-closed な `Result<T>` composition は Core/Common runtime の責務に残し、
+実装境界で adapter してください。
+
+### 16.4 検証コマンド
+次を実行します。
+
+```powershell
+dotnet build src\AIKernel.NET.slnx -c Release
+dotnet test src\AIKernel.NET.slnx -c Release --no-build
+```
+
+`AIKernel.Abstractions` が `AIKernel.Dtos` と `AIKernel.Enums` のみに依存し、
+`AIKernel.Dtos` が `AIKernel.Enums` のみに依存することを確認してください。
 ---
 
 # 変更履歴
@@ -720,3 +774,4 @@ CYCLE CHECK: OK
 - v0.0.3 (2026-06-02): Vfs contract 所有元の Abstractions への移動、`AIKernel.Vfs` type-forwarding 互換、package reference 指針、循環依存検証手順を追加
 - v0.0.4 (2026-06-04): AIKernel.Core adapter 移行に向け、DSL pipeline、DSL ROM、History ROM、Kernel clock contract 抽出、ROM store contract、曖昧な interface 改名ガイド、AIKernel.Vfs package 削除手順、interface-only contract package 移行手順を追加
 - v0.0.5 (2026-06-05): Abstractions-local DTO/例外実装、DTO enum 重複、旧 ChatChain 曖昧 interface を削除し、external Capability module contract、DynamicSLM Model ABI / SeedSLM discipline / distillation offload / HATL external cryptographic operator / governance admissibility gate・trajectory / Semantic Compilation DTO vocabulary contract 準備を追加
+- v0.1.0 (2026-06-07): MemoryRegion / MemoryMapper contract ownership を AIKernel.Abstractions、AIKernel.Dtos、AIKernel.Enums に追加し、Result-based runtime adapter は Core/Common に残す。

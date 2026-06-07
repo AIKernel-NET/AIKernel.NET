@@ -4,6 +4,7 @@ using AIKernel.Abstractions.Dsl;
 using AIKernel.Abstractions.Governance;
 using AIKernel.Abstractions.Hatl;
 using AIKernel.Abstractions.History;
+using AIKernel.Abstractions.Memory;
 using AIKernel.Abstractions.Time;
 using AIKernel.Contracts;
 using AIKernel.Dtos.Capabilities;
@@ -14,6 +15,7 @@ using AIKernel.Dtos.Dsl;
 using AIKernel.Dtos.Governance;
 using AIKernel.Dtos.Hatl;
 using AIKernel.Dtos.History;
+using AIKernel.Dtos.Memory;
 using AIKernel.Dtos.SemanticCompilation;
 using AIKernel.Dtos.Time;
 using AIKernel.Enums;
@@ -830,6 +832,23 @@ public sealed class ExtractedInterfaceContractTests
 
         Assert.Equal(DateTimeOffset.UnixEpoch, timestamp.UtcDateTime);
         Assert.Equal(1, timestamp.LogicalCounter);
+    }
+
+    [Fact]
+    public void MemoryContractsAreOwnedByAbstractionsDtosAndEnums()
+    {
+        Assert.True(typeof(IMemoryRegion).IsInterface);
+        Assert.True(typeof(IMemoryMapper).IsInterface);
+        Assert.True(typeof(MemoryAccessMode).IsEnum);
+
+        var info = new MemoryRegionInfo(
+            "model.safetensors",
+            4096,
+            MemoryAccessMode.Read);
+
+        Assert.Equal("model.safetensors", info.Path);
+        Assert.Equal(4096, info.Length);
+        Assert.Equal(MemoryAccessMode.Read, info.AccessMode);
     }
 
     [Fact]
