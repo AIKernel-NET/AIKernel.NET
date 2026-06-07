@@ -3,6 +3,8 @@ namespace AIKernel.Vfs;
 /// <summary>
 /// 読み取り可能な Vfs ファイル能力を定義します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IReadableVfsFile']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IReadableVfsFile']" />
 public interface IReadableVfsFile : IVfsEntryInfo
 {
     /// <summary>

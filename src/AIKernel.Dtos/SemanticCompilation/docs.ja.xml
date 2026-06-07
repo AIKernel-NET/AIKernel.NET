@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Dtos.SemanticCompilation.DeterministicSynthesisDescriptor">
+      <summary>AIKernel パッケージ利用者に公開される DeterministicSynthesisDescriptor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.SemanticCompilation.GovernedCircuitDescriptor">
+      <summary>AIKernel パッケージ利用者に公開される GovernedCircuitDescriptor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.SemanticCompilation.PrototypeSpaceDescriptor">
+      <summary>AIKernel パッケージ利用者に公開される PrototypeSpaceDescriptor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.SemanticCompilation.SemanticDistanceReport">
+      <summary>AIKernel パッケージ利用者に公開される SemanticDistanceReport の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.SemanticCompilation.SemanticIrElement">
+      <summary>AIKernel パッケージ利用者に公開される SemanticIrElement の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.SemanticCompilation.SemanticStateSnapshot">
+      <summary>AIKernel パッケージ利用者に公開される SemanticStateSnapshot の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.SemanticCompilation.SemanticTransitionDescriptor">
+      <summary>AIKernel パッケージ利用者に公開される SemanticTransitionDescriptor の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

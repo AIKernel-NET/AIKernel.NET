@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Prompt.IPostExecutionRuleValidator">
+      <summary>AIKernel パッケージ利用者に公開される IPostExecutionRuleValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IPreExecutionRuleValidator">
+      <summary>AIKernel パッケージ利用者に公開される IPreExecutionRuleValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IPromptRepository">
+      <summary>AIKernel パッケージ利用者に公開される IPromptRepository の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IPromptRule">
+      <summary>AIKernel パッケージ利用者に公開される IPromptRule の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IPromptSignatureProvider">
+      <summary>AIKernel パッケージ利用者に公開される IPromptSignatureProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IPromptValidator">
+      <summary>AIKernel パッケージ利用者に公開される IPromptValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IPromptVerifier">
+      <summary>AIKernel パッケージ利用者に公開される IPromptVerifier の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IRuleEvaluator">
+      <summary>AIKernel パッケージ利用者に公開される IRuleEvaluator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IRuleRegistry">
+      <summary>AIKernel パッケージ利用者に公開される IRuleRegistry の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IRulesEngine">
+      <summary>AIKernel パッケージ利用者に公開される IRulesEngine の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

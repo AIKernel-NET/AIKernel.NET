@@ -3,6 +3,8 @@ namespace AIKernel.Vfs;
 /// <summary>
 /// 読み取り可能な Vfs セッション能力を定義します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IReadableVfsSession']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IReadableVfsSession']" />
 public interface IReadableVfsSession
 {
     /// <summary>

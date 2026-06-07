@@ -7,6 +7,8 @@ using AIKernel.Dtos.Context;
 /// コンテキストバッファの寿命管理と状態遷移を統治するインターフェースです。
 /// 履歴の忘却、圧縮、昇格などの戦略をOS レベルで標準化します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.IContextLifecycleManager']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.IContextLifecycleManager']" />
 public interface IContextLifecycleManager
 {
     /// <summary>

@@ -6,6 +6,8 @@ using AIKernel.Abstractions.Models;
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// トークナイザーの識別情報を公開する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenizerIdentity']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenizerIdentity']" />
 public interface ITokenizerIdentity
 {
     /// <summary>
@@ -23,6 +25,8 @@ public interface ITokenizerIdentity
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// テキストをトークン化する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITextTokenizer']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITextTokenizer']" />
 public interface ITextTokenizer
 {
     /// <summary>
@@ -37,6 +41,8 @@ public interface ITextTokenizer
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// テキストのトークン数を計算する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenCounter']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenCounter']" />
 public interface ITokenCounter
 {
     /// <summary>
@@ -51,6 +57,8 @@ public interface ITokenCounter
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// トークンをテキストへデコードする capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenDecoder']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenDecoder']" />
 public interface ITokenDecoder
 {
     /// <summary>
@@ -65,6 +73,8 @@ public interface ITokenDecoder
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// トークナイザーの統計情報を公開する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenizerStatisticsProvider']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenizerStatisticsProvider']" />
 public interface ITokenizerStatisticsProvider
 {
     /// <summary>
@@ -78,6 +88,8 @@ public interface ITokenizerStatisticsProvider
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// モデル対応可否を判定する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenizerModelSupport']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenizerModelSupport']" />
 public interface ITokenizerModelSupport
 {
     /// <summary>
@@ -92,6 +104,8 @@ public interface ITokenizerModelSupport
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// 物理基数を見積もる capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IPhysicalCardinalityAdvisor']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IPhysicalCardinalityAdvisor']" />
 public interface IPhysicalCardinalityAdvisor
 {
     /// <summary>
@@ -108,6 +122,8 @@ public interface IPhysicalCardinalityAdvisor
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// Padding 情報を取得する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IPaddingInfoProvider']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IPaddingInfoProvider']" />
 public interface IPaddingInfoProvider
 {
     /// <summary>
@@ -125,6 +141,8 @@ public interface IPaddingInfoProvider
 /// テキストトークン化と統計情報の管理を行います。
 /// NPU環境での物理基数（パディング）対応に対応しています。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenizer']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenizer']" />
 public interface ITokenizer :
     ITokenizerIdentity,
     ITextTokenizer,

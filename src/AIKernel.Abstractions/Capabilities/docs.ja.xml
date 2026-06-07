@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Capabilities.ICapabilityModuleInvoker">
+      <summary>AIKernel パッケージ利用者に公開される ICapabilityModuleInvoker の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Capabilities.ICapabilityModuleRegistry">
+      <summary>AIKernel パッケージ利用者に公開される ICapabilityModuleRegistry の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

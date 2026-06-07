@@ -4,6 +4,8 @@ namespace AIKernel.Abstractions.Providers;
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// テキスト生成を実行する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.ITextGenerationProvider']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.ITextGenerationProvider']" />
 public interface ITextGenerationProvider
 {
     /// <summary>
@@ -19,6 +21,8 @@ public interface ITextGenerationProvider
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// ストリーミング生成を実行する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IStreamingGenerationProvider']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IStreamingGenerationProvider']" />
 public interface IStreamingGenerationProvider
 {
     /// <summary>
@@ -34,6 +38,8 @@ public interface IStreamingGenerationProvider
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// 質問応答を実行する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IQuestionAnsweringProvider']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IQuestionAnsweringProvider']" />
 public interface IQuestionAnsweringProvider
 {
     /// <summary>
@@ -51,6 +57,8 @@ public interface IQuestionAnsweringProvider
 /// LLMモデル推論プロバイダーを定義する互換合成インターフェースです。
 /// チャット、テキスト生成、推論など、LLMベースの推論機能を提供します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IModelProvider']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IModelProvider']" />
 public interface IModelProvider :
     IProvider,
     ITextGenerationProvider,

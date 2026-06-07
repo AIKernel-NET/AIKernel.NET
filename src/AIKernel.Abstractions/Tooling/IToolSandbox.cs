@@ -4,6 +4,8 @@ namespace AIKernel.Abstractions.Tooling;
 /// UC-31 に基づく契約です。
 /// ツール実行環境のサンドボックス識別情報を公開します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tooling.IToolSandboxIdentity']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tooling.IToolSandboxIdentity']" />
 public interface IToolSandboxIdentity
 {
     /// <summary>
@@ -16,6 +18,8 @@ public interface IToolSandboxIdentity
 /// UC-31 に基づく契約です。
 /// サンドボックス内のツール実行 capability です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tooling.IToolExecutor']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tooling.IToolExecutor']" />
 public interface IToolExecutor
 {
     /// <summary>
@@ -35,6 +39,8 @@ public interface IToolExecutor
 /// UC-31 に基づく契約です。
 /// サンドボックスへのファイルアップロード capability です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tooling.IToolFileUploadSink']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tooling.IToolFileUploadSink']" />
 public interface IToolFileUploadSink
 {
     /// <summary>
@@ -50,6 +56,8 @@ public interface IToolFileUploadSink
 /// UC-31 に基づく契約です。
 /// サンドボックスからのファイルダウンロード capability です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tooling.IToolFileDownloadSource']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tooling.IToolFileDownloadSource']" />
 public interface IToolFileDownloadSource
 {
     /// <summary>
@@ -64,6 +72,8 @@ public interface IToolFileDownloadSource
 /// UC-31 に基づく契約です。
 /// サンドボックス cleanup capability です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tooling.IToolSandboxCleanup']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tooling.IToolSandboxCleanup']" />
 public interface IToolSandboxCleanup
 {
     /// <summary>
@@ -76,6 +86,8 @@ public interface IToolSandboxCleanup
 /// UC-31 に基づく契約です。
 /// サンドボックスのリソース使用状況を公開する capability です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tooling.IToolResourceUsageSource']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tooling.IToolResourceUsageSource']" />
 public interface IToolResourceUsageSource
 {
     /// <summary>
@@ -90,6 +102,8 @@ public interface IToolResourceUsageSource
 /// ツール実行環境のサンドボックスを定義する互換合成インターフェースです。
 /// セキュリティ境界を確立し、ツール実行を隔離します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tooling.IToolSandbox']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tooling.IToolSandbox']" />
 public interface IToolSandbox :
     IToolSandboxIdentity,
     IToolExecutor,

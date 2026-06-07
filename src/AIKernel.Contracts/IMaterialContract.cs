@@ -9,6 +9,8 @@ namespace AIKernel.Contracts;
 /// 参照: 2.CONTEXT_ISOLATION_SPEC.jp.md
 /// UC-21（マテリアル検疫とポリシー実行）
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IMaterialContract']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IMaterialContract']" />
 public interface IMaterialContract
 {
     /// <summary>

@@ -2,6 +2,8 @@ using AIKernel.Enums;
 
 namespace AIKernel.Dtos.DynamicSlm;
 
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityGraphUpdate']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityGraphUpdate']" />
 public sealed record DynamicSlmCapabilityGraphUpdate(
     DynamicSlmGraphUpdateKind Kind,
     DynamicSlmCapabilityNode? Node,
@@ -9,6 +11,8 @@ public sealed record DynamicSlmCapabilityGraphUpdate(
     string? TargetCapabilityId,
     IReadOnlyDictionary<string, string> Metadata);
 
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityGraphUpdatePlan']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityGraphUpdatePlan']" />
 public sealed record DynamicSlmCapabilityGraphUpdatePlan(
     string PlanId,
     string ModelId,

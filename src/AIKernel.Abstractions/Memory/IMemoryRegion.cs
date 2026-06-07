@@ -5,6 +5,8 @@ namespace AIKernel.Abstractions.Memory;
 /// <summary>
 /// Represents a mapped memory region without exposing OS-specific mapping APIs.
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Memory.IMemoryRegion']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Memory.IMemoryRegion']" />
 public interface IMemoryRegion : IDisposable
 {
     /// <summary>

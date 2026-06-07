@@ -9,6 +9,8 @@ namespace AIKernel.Abstractions.Execution;
 /// EPS-006: 状態の不変性（State Immutability）の実装基盤。
 /// EPS-007: 3層バッファとのマッピング（Buffer Mapping）の調整。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IPipelineOrchestrator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IPipelineOrchestrator']" />
 public interface IPipelineOrchestrator
 {
     /// <summary>

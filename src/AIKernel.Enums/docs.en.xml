@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Enums.AdmissibilityDecisionKind">
+      <summary>Represents the AdmissibilityDecisionKind public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.AdmissibilityGateKind">
+      <summary>Represents the AdmissibilityGateKind public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.AttentionSignal">
+      <summary>Represents the AttentionSignal public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.AuditSeverity">
+      <summary>Represents the AuditSeverity public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.CapabilityInvocationMode">
+      <summary>Represents the CapabilityInvocationMode public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.CapabilityModuleKind">
+      <summary>Represents the CapabilityModuleKind public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.ContextCategory">
+      <summary>Represents the ContextCategory public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.ContextStage">
+      <summary>Represents the ContextStage public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.ContextType">
+      <summary>Represents the ContextType public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.CriticalOperationRequirement">
+      <summary>Represents the CriticalOperationRequirement public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmAcceleratorKind">
+      <summary>Represents the DynamicSlmAcceleratorKind public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmAdmissionStatus">
+      <summary>Represents the DynamicSlmAdmissionStatus public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmBaseModelStateKind">
+      <summary>Represents the DynamicSlmBaseModelStateKind public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmCapabilityRelationKind">
+      <summary>Represents the DynamicSlmCapabilityRelationKind public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmCompatibilityStatus">
+      <summary>Represents the DynamicSlmCompatibilityStatus public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmDelegationKind">
+      <summary>Represents the DynamicSlmDelegationKind public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmDelegationReason">
+      <summary>Represents the DynamicSlmDelegationReason public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmDistillationJobStatus">
+      <summary>Represents the DynamicSlmDistillationJobStatus public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmFailureKind">
+      <summary>Represents the DynamicSlmFailureKind public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmFallbackKind">
+      <summary>Represents the DynamicSlmFallbackKind public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmGraphUpdateKind">
+      <summary>Represents the DynamicSlmGraphUpdateKind public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmHotSwapPolicy">
+      <summary>Represents the DynamicSlmHotSwapPolicy public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmPayloadKind">
+      <summary>Represents the DynamicSlmPayloadKind public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmPipelineStage">
+      <summary>Represents the DynamicSlmPipelineStage public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmPipelineStatus">
+      <summary>Represents the DynamicSlmPipelineStatus public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmReasoningTraceFormat">
+      <summary>Represents the DynamicSlmReasoningTraceFormat public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmStrictOutputMode">
+      <summary>Represents the DynamicSlmStrictOutputMode public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.EventPriority">
+      <summary>Represents the EventPriority public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.ExecutionStatus">
+      <summary>Represents the ExecutionStatus public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.FailClosedDecision">
+      <summary>Represents the FailClosedDecision public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.FailureMode">
+      <summary>Represents the FailureMode public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.GuardAction">
+      <summary>Represents the GuardAction public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.HatlAnchorProfile">
+      <summary>Represents the HatlAnchorProfile public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.HatlDeedStatus">
+      <summary>Represents the HatlDeedStatus public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.HatlVerificationStatus">
+      <summary>Represents the HatlVerificationStatus public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.HistoryPolicy">
+      <summary>Represents the HistoryPolicy public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.InformationCategory">
+      <summary>Represents the InformationCategory public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.LatencyClass">
+      <summary>Represents the LatencyClass public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.MemoryAccessMode">
+      <summary>Represents the MemoryAccessMode public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.Modality">
+      <summary>Represents the Modality public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.ModelType">
+      <summary>Represents the ModelType public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.PdpDecision">
+      <summary>Represents the PdpDecision public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.PromptMessageFormat">
+      <summary>Represents the PromptMessageFormat public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.PromptOverflowPolicy">
+      <summary>Represents the PromptOverflowPolicy public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.RejectCode">
+      <summary>Represents the RejectCode public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.RuleScope">
+      <summary>Represents the RuleScope public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.ScheduleStatus">
+      <summary>Represents the ScheduleStatus public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.SemanticIrSlot">
+      <summary>Represents the SemanticIrSlot public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.TaskCostClass">
+      <summary>Represents the TaskCostClass public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.TaskType">
+      <summary>Represents the TaskType public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Enums.VfsEntryType">
+      <summary>Represents the VfsEntryType public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

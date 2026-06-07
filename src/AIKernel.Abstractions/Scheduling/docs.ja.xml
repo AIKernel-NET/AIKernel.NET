@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Scheduling.IJobScheduler">
+      <summary>AIKernel パッケージ利用者に公開される IJobScheduler の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Scheduling.IScheduleSpec">
+      <summary>AIKernel パッケージ利用者に公開される IScheduleSpec の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Scheduling.IScheduledExecutionResult">
+      <summary>AIKernel パッケージ利用者に公開される IScheduledExecutionResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Scheduling.IScheduledExecutionResultReader">
+      <summary>AIKernel パッケージ利用者に公開される IScheduledExecutionResultReader の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Scheduling.IScheduledJob">
+      <summary>AIKernel パッケージ利用者に公開される IScheduledJob の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Scheduling.IScheduledJobCanceller">
+      <summary>AIKernel パッケージ利用者に公開される IScheduledJobCanceller の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Scheduling.IScheduledJobReader">
+      <summary>AIKernel パッケージ利用者に公開される IScheduledJobReader の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Scheduling.IScheduler">
+      <summary>AIKernel パッケージ利用者に公開される IScheduler の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="F:AIKernel.Dtos.Dsl.DslNodeTypes.CallCapability">
+      <summary>AIKernel の公開参照サーフェスで公開される CallCapability 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslNodeTypes.CapabilityCallAlias">
+      <summary>AIKernel の公開参照サーフェスで公開される CapabilityCallAlias 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslNodeTypes.Loop">
+      <summary>AIKernel の公開参照サーフェスで公開される Loop 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslNodeTypes.LoopUntil">
+      <summary>AIKernel の公開参照サーフェスで公開される LoopUntil 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslNodeTypes.Pipeline">
+      <summary>AIKernel の公開参照サーフェスで公開される Pipeline 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslNodeTypes.Step">
+      <summary>AIKernel の公開参照サーフェスで公開される Step 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslNodeTypes.Suspend">
+      <summary>AIKernel の公開参照サーフェスで公開される Suspend 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslNodeTypes.SuspendForApprovalAlias">
+      <summary>AIKernel の公開参照サーフェスで公開される SuspendForApprovalAlias 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslRomMetadataKeys.RomCall">
+      <summary>AIKernel の公開参照サーフェスで公開される RomCall 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslRomMetadataKeys.RomHash">
+      <summary>AIKernel の公開参照サーフェスで公開される RomHash 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslRomMetadataKeys.RomName">
+      <summary>AIKernel の公開参照サーフェスで公開される RomName 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslRomMetadataKeys.RomNamespace">
+      <summary>AIKernel の公開参照サーフェスで公開される RomNamespace 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslRomMetadataKeys.RomPath">
+      <summary>AIKernel の公開参照サーフェスで公開される RomPath 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslRomMetadataKeys.RomReplayLogCount">
+      <summary>AIKernel の公開参照サーフェスで公開される RomReplayLogCount 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslRomMetadataKeys.RomReplayLogHash">
+      <summary>AIKernel の公開参照サーフェスで公開される RomReplayLogHash 値を提供します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.Error">
+      <summary>AIKernel の公開参照サーフェスで公開される Error 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.Output">
+      <summary>AIKernel の公開参照サーフェスで公開される Output 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.ReplayLogCount">
+      <summary>AIKernel の公開参照サーフェスで公開される ReplayLogCount 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.ReplayLogHash">
+      <summary>AIKernel の公開参照サーフェスで公開される ReplayLogHash 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.State">
+      <summary>AIKernel の公開参照サーフェスで公開される State 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.Status">
+      <summary>AIKernel の公開参照サーフェスで公開される Status 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.string">
+      <summary>AIKernel の公開参照サーフェスで公開される string 値を取得または設定します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.CallCapabilityNode">
+      <summary>AIKernel パッケージ利用者に公開される CallCapabilityNode の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslDocument">
+      <summary>AIKernel パッケージ利用者に公開される DslDocument の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslNodeTypes">
+      <summary>AIKernel パッケージ利用者に公開される DslNodeTypes の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslPipelineExecutionContext">
+      <summary>AIKernel パッケージ利用者に公開される DslPipelineExecutionContext の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslPipelineExecutionResult">
+      <summary>AIKernel パッケージ利用者に公開される DslPipelineExecutionResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslPipelineState">
+      <summary>AIKernel パッケージ利用者に公開される DslPipelineState の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslPipelineValue">
+      <summary>AIKernel パッケージ利用者に公開される DslPipelineValue の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslRomMetadata">
+      <summary>AIKernel パッケージ利用者に公開される DslRomMetadata の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslRomMetadataKeys">
+      <summary>AIKernel パッケージ利用者に公開される DslRomMetadataKeys の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslRomSnapshot">
+      <summary>AIKernel パッケージ利用者に公開される DslRomSnapshot の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.LoopNode">
+      <summary>AIKernel パッケージ利用者に公開される LoopNode の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.LoopUntilNode">
+      <summary>AIKernel パッケージ利用者に公開される LoopUntilNode の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.PipelineNode">
+      <summary>AIKernel パッケージ利用者に公開される PipelineNode の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.PipelineRootNode">
+      <summary>AIKernel パッケージ利用者に公開される PipelineRootNode の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.StepNode">
+      <summary>AIKernel パッケージ利用者に公開される StepNode の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.SuspendNode">
+      <summary>AIKernel パッケージ利用者に公開される SuspendNode の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

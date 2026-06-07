@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="M:AIKernel.Dtos.Tokenization.TokenizerStatistics.Empty&lt;string&gt;">
+      <summary>AIKernel の公開参照サーフェスとして Empty&lt;string&gt; 操作を実行します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.PaddingInfo.LogicalTokenCount">
+      <summary>AIKernel の公開参照サーフェスで公開される LogicalTokenCount 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.PaddingInfo.MemoryDifferenceBytes">
+      <summary>AIKernel の公開参照サーフェスで公開される MemoryDifferenceBytes 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.PaddingInfo.PaddingAmount">
+      <summary>AIKernel の公開参照サーフェスで公開される PaddingAmount 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.PaddingInfo.PaddingMethod">
+      <summary>AIKernel の公開参照サーフェスで公開される PaddingMethod 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.PaddingInfo.PaddingPercentage">
+      <summary>AIKernel の公開参照サーフェスで公開される PaddingPercentage 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.PaddingInfo.PhysicalCardinality">
+      <summary>AIKernel の公開参照サーフェスで公開される PhysicalCardinality 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.PaddingInfo.Rationale">
+      <summary>AIKernel の公開参照サーフェスで公開される Rationale 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.Token.EndPosition">
+      <summary>AIKernel の公開参照サーフェスで公開される EndPosition 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.Token.StartPosition">
+      <summary>AIKernel の公開参照サーフェスで公開される StartPosition 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.Token.TokenId">
+      <summary>AIKernel の公開参照サーフェスで公開される TokenId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.Token.TokenType">
+      <summary>AIKernel の公開参照サーフェスで公開される TokenType 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.Token.Value">
+      <summary>AIKernel の公開参照サーフェスで公開される Value 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.TokenizerStatistics.AverageTokenLength">
+      <summary>AIKernel の公開参照サーフェスで公開される AverageTokenLength 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.TokenizerStatistics.MaxTokenLength">
+      <summary>AIKernel の公開参照サーフェスで公開される MaxTokenLength 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.TokenizerStatistics.Version">
+      <summary>AIKernel の公開参照サーフェスで公開される Version 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.TokenizerStatistics.VocabularySize">
+      <summary>AIKernel の公開参照サーフェスで公開される VocabularySize 値を取得または設定します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Tokenization.PaddingInfo">
+      <summary>AIKernel パッケージ利用者に公開される PaddingInfo の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Tokenization.Token">
+      <summary>AIKernel パッケージ利用者に公開される Token の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Tokenization.TokenizerStatistics">
+      <summary>AIKernel パッケージ利用者に公開される TokenizerStatistics の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

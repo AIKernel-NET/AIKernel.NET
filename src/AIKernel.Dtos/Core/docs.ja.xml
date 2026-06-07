@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="M:AIKernel.Dtos.Core.Purpose.new">
+      <summary>AIKernel の公開参照サーフェスとして new 操作を実行します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.Purpose.CreatedAt">
+      <summary>AIKernel の公開参照サーフェスで公開される CreatedAt 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.Purpose.Description">
+      <summary>AIKernel の公開参照サーフェスで公開される Description 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.Purpose.Priority">
+      <summary>AIKernel の公開参照サーフェスで公開される Priority 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.Purpose.PurposeId">
+      <summary>AIKernel の公開参照サーフェスで公開される PurposeId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.Purpose.SuccessCriteria">
+      <summary>AIKernel の公開参照サーフェスで公開される SuccessCriteria 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.TransferTrace.ContextType">
+      <summary>AIKernel の公開参照サーフェスで公開される ContextType 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.TransferTrace.DataSizeBytes">
+      <summary>AIKernel の公開参照サーフェスで公開される DataSizeBytes 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.TransferTrace.Destination">
+      <summary>AIKernel の公開参照サーフェスで公開される Destination 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.TransferTrace.Source">
+      <summary>AIKernel の公開参照サーフェスで公開される Source 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.TransferTrace.TraceId">
+      <summary>AIKernel の公開参照サーフェスで公開される TraceId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.TransferTrace.TransferredAt">
+      <summary>AIKernel の公開参照サーフェスで公開される TransferredAt 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.TransferTrace.string">
+      <summary>AIKernel の公開参照サーフェスで公開される string 値を取得または設定します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Core.ProviderHealthStatus">
+      <summary>AIKernel パッケージ利用者に公開される ProviderHealthStatus の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Core.Purpose">
+      <summary>AIKernel パッケージ利用者に公開される Purpose の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Core.RateLimitInfo">
+      <summary>AIKernel パッケージ利用者に公開される RateLimitInfo の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Core.TransferTrace">
+      <summary>AIKernel パッケージ利用者に公開される TransferTrace の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

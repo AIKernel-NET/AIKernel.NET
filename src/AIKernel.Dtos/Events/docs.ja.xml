@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Dtos.Events.AuditEvent">
+      <summary>AIKernel パッケージ利用者に公開される AuditEvent の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Events.ExecutionEvent">
+      <summary>AIKernel パッケージ利用者に公開される ExecutionEvent の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Events.GuardEvent">
+      <summary>AIKernel パッケージ利用者に公開される GuardEvent の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Events.PipelineEvent">
+      <summary>AIKernel パッケージ利用者に公開される PipelineEvent の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Events.ProviderEvent">
+      <summary>AIKernel パッケージ利用者に公開される ProviderEvent の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

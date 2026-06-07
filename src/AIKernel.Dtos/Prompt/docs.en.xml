@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="M:AIKernel.Dtos.Prompt.PromptPolicyDto.#ctor">
+      <summary>Executes the #ctor operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Prompt.PromptPolicyDto.List&lt;string&gt;">
+      <summary>Executes the List&lt;string&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.GovernanceMetadataDto.Hash">
+      <summary>Gets or sets the Hash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.GovernanceMetadataDto.HashAlgorithm">
+      <summary>Gets or sets the HashAlgorithm value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.GovernanceMetadataDto.Issuer">
+      <summary>Gets or sets the Issuer value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.GovernanceMetadataDto.Signature">
+      <summary>Gets or sets the Signature value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.GovernanceMetadataDto.SignedAt">
+      <summary>Gets or sets the SignedAt value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.GovernanceMetadataDto.SignerId">
+      <summary>Gets or sets the SignerId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.PromptPolicyDto.CreatedAt">
+      <summary>Gets or sets the CreatedAt value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.PromptPolicyDto.ExpiresAt">
+      <summary>Gets or sets the ExpiresAt value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.PromptPolicyDto.MaxTokenBudget">
+      <summary>Gets or sets the MaxTokenBudget value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.PromptPolicyDto.TrustLevelRequired">
+      <summary>Gets or sets the TrustLevelRequired value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.SignedPromptArtifactDto.EntityId">
+      <summary>Gets or sets the EntityId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.SignedPromptArtifactDto.Governance">
+      <summary>Gets or sets the Governance value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.SignedPromptArtifactDto.Policy">
+      <summary>Gets or sets the Policy value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.SignedPromptArtifactDto.PromptBody">
+      <summary>Gets or sets the PromptBody value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.SignedPromptArtifactDto.Type">
+      <summary>Gets or sets the Type value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.SignedPromptArtifactDto.Version">
+      <summary>Gets or sets the Version value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Prompt.GovernanceMetadataDto">
+      <summary>Represents the GovernanceMetadataDto public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Prompt.PromptPolicyDto">
+      <summary>Represents the PromptPolicyDto public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Prompt.PromptValidationResult">
+      <summary>Represents the PromptValidationResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Prompt.PromptVerificationResult">
+      <summary>Represents the PromptVerificationResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Prompt.SignatureVerificationResult">
+      <summary>Represents the SignatureVerificationResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Prompt.SignedPromptArtifactDto">
+      <summary>Represents the SignedPromptArtifactDto public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

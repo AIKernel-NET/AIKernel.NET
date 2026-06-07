@@ -5,6 +5,8 @@ namespace AIKernel.Abstractions.Execution;
 /// Polish フェーズの意味改変検出・検証の契約。
 /// EPS-005（ハッシュ完全性）と EPS-F005（Logic Divergence Check）の実装基盤。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IPolisherValidator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IPolisherValidator']" />
 public interface IPolisherValidator
 {
     /// <summary>

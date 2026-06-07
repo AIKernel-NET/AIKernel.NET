@@ -9,6 +9,8 @@ using AIKernel.Dtos.Vfs;
 /// <remarks>
 /// UC-08（コンテキストスナップショットと永続化）および UC-18（Chat Persistence）で利用される永続化境界です。
 /// </remarks>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IVfsProvider']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IVfsProvider']" />
 public interface IVfsProvider
 {
     /// <summary>

@@ -2,10 +2,14 @@ using AIKernel.Dtos.Control;
 
 namespace AIKernel.Abstractions.Control;
 
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Control.IControlEngine']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Control.IControlEngine']" />
 public interface IControlEngine
 {
+    /// <summary>Gets the EngineId value exposed by the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで公開される EngineId 値を取得します。</summary>
     string EngineId { get; }
 
+    /// <summary>Executes the ExecuteAsync operation on the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで ExecuteAsync 操作を実行します。</summary>
     ValueTask<ControlExecutionResult> ExecuteAsync(
         IExecutionGraph graph,
         ControlExecutionRequest request,

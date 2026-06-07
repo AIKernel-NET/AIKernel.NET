@@ -5,6 +5,8 @@ namespace AIKernel.Enums;
 /// 
 /// 参照: 2.CONTEXT_ISOLATION_SPEC.jp.md
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Enums.ContextType']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Enums.ContextType']" />
 public enum ContextType
 {
     /// <summary>

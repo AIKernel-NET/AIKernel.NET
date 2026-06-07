@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Control.IControlEngine">
+      <summary>Represents the IControlEngine public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Control.IControlPolicy">
+      <summary>Represents the IControlPolicy public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Control.IControlStateObserver">
+      <summary>Represents the IControlStateObserver public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Control.IExecutionGraph">
+      <summary>Represents the IExecutionGraph public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Control.IExecutionNode">
+      <summary>Represents the IExecutionNode public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Control.INodeScheduler">
+      <summary>Represents the INodeScheduler public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

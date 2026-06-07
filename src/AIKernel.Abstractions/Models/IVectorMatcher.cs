@@ -5,6 +5,8 @@ namespace AIKernel.Abstractions.Models;
 /// モデル能力ベクトル間の距離や類似度を計算するための戦略インターフェースです。
 /// 異なるアルゴリズム（コサイン類似度、ユークリッド距離等）を実装側で柔軟に選択できます。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Models.IVectorMatcher']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Models.IVectorMatcher']" />
 public interface IVectorMatcher
 {
     /// <summary>

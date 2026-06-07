@@ -5,6 +5,8 @@ namespace AIKernel.Abstractions.Material;
 /// 構造化された素材を表現するインターフェース。
 /// 入力データの正規化と重み付けを保証します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Material.IStructuredMaterial']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Material.IStructuredMaterial']" />
 public interface IStructuredMaterial
 {
     /// <summary>

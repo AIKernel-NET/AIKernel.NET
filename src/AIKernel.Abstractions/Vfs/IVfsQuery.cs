@@ -7,6 +7,8 @@ using AIKernel.Dtos.Vfs;
 /// データのクエリと検索を行うクエリ。
 /// UC-08（コンテキストスナップショットと永続化）, UC-18（Chat Persistence）
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IVfsQuery']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IVfsQuery']" />
 public interface IVfsQuery
 {
     /// <summary>

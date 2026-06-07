@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Context.IContextAssembler">
+      <summary>Represents the IContextAssembler public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Context.IContextAssemblyGovernancePolicy">
+      <summary>Represents the IContextAssemblyGovernancePolicy public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Context.IContextCollection">
+      <summary>Represents the IContextCollection public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Context.IContextCollectionFactory">
+      <summary>Represents the IContextCollectionFactory public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Context.IContextFragmentCollection">
+      <summary>Represents the IContextFragmentCollection public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Context.IContextHashCalculator">
+      <summary>Represents the IContextHashCalculator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Context.IContextSnapshot">
+      <summary>Represents the IContextSnapshot public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Context.IPhaseBufferCollection">
+      <summary>Represents the IPhaseBufferCollection public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Context.IRomPathResolver">
+      <summary>Represents the IRomPathResolver public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

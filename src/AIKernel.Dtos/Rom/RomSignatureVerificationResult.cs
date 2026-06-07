@@ -1,5 +1,7 @@
 namespace AIKernel.Dtos.Rom;
 
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Rom.RomSignatureVerificationResult']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Rom.RomSignatureVerificationResult']" />
 public sealed record RomSignatureVerificationResult(
     bool IsVerified,
     string Algorithm,

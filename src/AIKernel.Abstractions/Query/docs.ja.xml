@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Query.IQueryAugmentor">
+      <summary>AIKernel パッケージ利用者に公開される IQueryAugmentor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Query.IQueryDecomposer">
+      <summary>AIKernel パッケージ利用者に公開される IQueryDecomposer の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Query.IQueryRouter">
+      <summary>AIKernel パッケージ利用者に公開される IQueryRouter の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

@@ -3,6 +3,8 @@ namespace AIKernel.Dtos.SemanticCompilation;
 /// <summary>
 /// Four-slot Semantic IR element: graph topology, transition shape, constraints, and boundary invariants.
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.SemanticCompilation.SemanticIrElement']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.SemanticCompilation.SemanticIrElement']" />
 public sealed record SemanticIrElement(
     string IrId,
     string GraphTopology,

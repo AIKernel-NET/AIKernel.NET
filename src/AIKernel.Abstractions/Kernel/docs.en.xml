@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernel">
+      <summary>Represents the IKernel public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelAttentionAnalyzer">
+      <summary>Represents the IKernelAttentionAnalyzer public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelContextExecutor">
+      <summary>Represents the IKernelContextExecutor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelExpressionPreparer">
+      <summary>Represents the IKernelExpressionPreparer public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelGuardAccessor">
+      <summary>Represents the IKernelGuardAccessor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelMaterialPreprocessor">
+      <summary>Represents the IKernelMaterialPreprocessor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelModelProviderSelector">
+      <summary>Represents the IKernelModelProviderSelector public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelPdpAccessor">
+      <summary>Represents the IKernelPdpAccessor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelProviderRouterAccessor">
+      <summary>Represents the IKernelProviderRouterAccessor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelRequestHasher">
+      <summary>Represents the IKernelRequestHasher public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelTransactionIdFactory">
+      <summary>Represents the IKernelTransactionIdFactory public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelVersionProvider">
+      <summary>Represents the IKernelVersionProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelVfsSessionFactory">
+      <summary>Represents the IKernelVfsSessionFactory public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

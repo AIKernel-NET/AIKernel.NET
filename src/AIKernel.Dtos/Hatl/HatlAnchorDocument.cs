@@ -2,6 +2,8 @@ using AIKernel.Enums;
 
 namespace AIKernel.Dtos.Hatl;
 
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Hatl.HatlAnchorDocument']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Hatl.HatlAnchorDocument']" />
 public sealed record HatlAnchorDocument(
     string AnchorId,
     string LedgerId,

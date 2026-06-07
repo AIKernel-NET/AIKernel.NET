@@ -4,6 +4,8 @@ namespace AIKernel.Abstractions.Governance;
 /// UC-06/UC-32 に基づく契約です。
 /// 署名者の信頼状態を解決する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ISignerTrustResolver']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ISignerTrustResolver']" />
 public interface ISignerTrustResolver
 {
     /// <summary>
@@ -23,6 +25,8 @@ public interface ISignerTrustResolver
 /// UC-06/UC-32 に基づく契約です。
 /// 署名鍵の失効状態を確認する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.IKeyRevocationChecker']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.IKeyRevocationChecker']" />
 public interface IKeyRevocationChecker
 {
     /// <summary>
@@ -39,6 +43,8 @@ public interface IKeyRevocationChecker
 /// UC-06/UC-32 に基づく契約です。
 /// 署名鍵の有効期限を参照する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.IKeyExpiryReader']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.IKeyExpiryReader']" />
 public interface IKeyExpiryReader
 {
     /// <summary>
@@ -55,6 +61,8 @@ public interface IKeyExpiryReader
 /// UC-06/UC-32 に基づく契約です。
 /// 署名者の証明書チェーンを検証する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ICertificateChainVerifier']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ICertificateChainVerifier']" />
 public interface ICertificateChainVerifier
 {
     /// <summary>
@@ -71,6 +79,8 @@ public interface ICertificateChainVerifier
 /// UC-06/UC-32 に基づく契約です。
 /// 信頼アンカー情報を参照する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ITrustedAnchorReader']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ITrustedAnchorReader']" />
 public interface ITrustedAnchorReader
 {
     /// <summary>
@@ -86,6 +96,8 @@ public interface ITrustedAnchorReader
 /// UC-06/UC-32 に基づく契約です。
 /// Trust Store の到達性を確認する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ITrustStoreHealthProbe']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ITrustStoreHealthProbe']" />
 public interface ITrustStoreHealthProbe
 {
     /// <summary>
@@ -104,6 +116,8 @@ public interface ITrustStoreHealthProbe
 /// SGS-006: 信頼連鎖の検証（Validation of Trust Chain）。
 /// SGS-F005: Trusted Anchor Unreachability: ISignatureTrustStore 到達不能時は Indeterminate として実行遮断する。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ISignatureTrustStore']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ISignatureTrustStore']" />
 public interface ISignatureTrustStore :
     ISignerTrustResolver,
     IKeyRevocationChecker,

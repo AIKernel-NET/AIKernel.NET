@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmArtifactPublisher">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmArtifactPublisher の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmAsyncPipeline">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmAsyncPipeline の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmAsyncPipelineStep">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmAsyncPipelineStep の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmBackgroundDistillationService">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmBackgroundDistillationService の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmCapabilityGapDetector">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmCapabilityGapDetector の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmCapabilityGraphEvolutionPlanner">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmCapabilityGraphEvolutionPlanner の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmCapabilityGraphResolver">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmCapabilityGraphResolver の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmCompatibilityVerifier">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmCompatibilityVerifier の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmDelegationPlanner">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmDelegationPlanner の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmDistillationJobScheduler">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmDistillationJobScheduler の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmDistillationPlanner">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmDistillationPlanner の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmFailure">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmFailure の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmLineageVerifier">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmLineageVerifier の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmMemoryPlacementPlanner">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmMemoryPlacementPlanner の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmModelAbiProvider">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmModelAbiProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmModuleRegistry">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmModuleRegistry の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmPayloadLoader">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmPayloadLoader の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmPipelineBuilder">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmPipelineBuilder の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmPipelineContextFactory">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmPipelineContextFactory の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmPipelineStep">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmPipelineStep の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmScheduler">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmScheduler の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmThoughtArtifactSink">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicSlmThoughtArtifactSink の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.ISeedSlmDisciplineVerifier">
+      <summary>AIKernel パッケージ利用者に公開される ISeedSlmDisciplineVerifier の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

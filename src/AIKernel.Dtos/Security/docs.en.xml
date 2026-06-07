@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="M:AIKernel.Dtos.Security.AccessDecision.new">
+      <summary>Executes the new operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Security.PolicyEvaluationResult.new">
+      <summary>Executes the new operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.AccessDecision.Allowed">
+      <summary>Gets or sets the Allowed value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.AccessDecision.Reason">
+      <summary>Gets or sets the Reason value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.AccessDecision.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.AccessRequest.Action">
+      <summary>Gets or sets the Action value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.AccessRequest.Principal">
+      <summary>Gets or sets the Principal value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.AccessRequest.Resource">
+      <summary>Gets or sets the Resource value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.AccessRequest.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.PermissionConstraint.ConstraintType">
+      <summary>Gets or sets the ConstraintType value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.PermissionConstraint.Description">
+      <summary>Gets or sets the Description value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.PermissionConstraint.Value">
+      <summary>Gets or sets the Value value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.PolicyEvaluationResult.AllAllowed">
+      <summary>Gets or sets the AllAllowed value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.PolicyEvaluationResult.RiskLevel">
+      <summary>Gets or sets the RiskLevel value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Security.AccessDecision">
+      <summary>Represents the AccessDecision public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Security.AccessRequest">
+      <summary>Represents the AccessRequest public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Security.PermissionConstraint">
+      <summary>Represents the PermissionConstraint public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Security.PolicyEvaluationResult">
+      <summary>Represents the PolicyEvaluationResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

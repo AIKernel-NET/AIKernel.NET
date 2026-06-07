@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernel">
+      <summary>AIKernel パッケージ利用者に公開される IKernel の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelAttentionAnalyzer">
+      <summary>AIKernel パッケージ利用者に公開される IKernelAttentionAnalyzer の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelContextExecutor">
+      <summary>AIKernel パッケージ利用者に公開される IKernelContextExecutor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelExpressionPreparer">
+      <summary>AIKernel パッケージ利用者に公開される IKernelExpressionPreparer の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelGuardAccessor">
+      <summary>AIKernel パッケージ利用者に公開される IKernelGuardAccessor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelMaterialPreprocessor">
+      <summary>AIKernel パッケージ利用者に公開される IKernelMaterialPreprocessor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelModelProviderSelector">
+      <summary>AIKernel パッケージ利用者に公開される IKernelModelProviderSelector の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelPdpAccessor">
+      <summary>AIKernel パッケージ利用者に公開される IKernelPdpAccessor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelProviderRouterAccessor">
+      <summary>AIKernel パッケージ利用者に公開される IKernelProviderRouterAccessor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelRequestHasher">
+      <summary>AIKernel パッケージ利用者に公開される IKernelRequestHasher の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelTransactionIdFactory">
+      <summary>AIKernel パッケージ利用者に公開される IKernelTransactionIdFactory の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelVersionProvider">
+      <summary>AIKernel パッケージ利用者に公開される IKernelVersionProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Kernel.IKernelVfsSessionFactory">
+      <summary>AIKernel パッケージ利用者に公開される IKernelVfsSessionFactory の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

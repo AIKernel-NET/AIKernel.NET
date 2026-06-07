@@ -2,6 +2,8 @@ using AIKernel.Enums;
 
 namespace AIKernel.Dtos.DynamicSlm;
 
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineMetadata']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineMetadata']" />
 public sealed record DynamicSlmPipelineMetadata(
     string PipelineId,
     string? ReplayLogHash,
@@ -19,6 +21,8 @@ public sealed record DynamicSlmPipelineMetadata(
     bool TeacherFallbackUsed,
     IReadOnlyDictionary<string, string> Values)
 {
+    /// <include file="docs.en.xml" path="doc/members/member[@name='M:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineMetadata.#ctor']" />
+    /// <include file="docs.ja.xml" path="doc/members/member[@name='M:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineMetadata.#ctor']" />
     public DynamicSlmPipelineMetadata(
         string pipelineId,
         string? replayLogHash,

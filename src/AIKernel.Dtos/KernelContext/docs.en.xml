@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Dtos.KernelContext.Budget">
+      <summary>Represents the Budget public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.KernelContext.DataClassification">
+      <summary>Represents the DataClassification public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.KernelContext.Environment">
+      <summary>Represents the Environment public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.KernelContext.Identity">
+      <summary>Represents the Identity public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.KernelContext.Permission">
+      <summary>Represents the Permission public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.KernelContext.TraceContext">
+      <summary>Represents the TraceContext public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.KernelContext.TraceLog">
+      <summary>Represents the TraceLog public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

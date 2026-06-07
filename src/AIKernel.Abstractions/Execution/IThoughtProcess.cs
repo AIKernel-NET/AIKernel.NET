@@ -9,6 +9,8 @@ namespace AIKernel.Abstractions.Execution;
 /// Orchestration コンテキストから生のロジック（中間表現）を生成します。
 /// これは Two‑Phase 実行の第 1 ステップです。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IThoughtProcess']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IThoughtProcess']" />
 public interface IThoughtProcess
 {
     /// <summary>

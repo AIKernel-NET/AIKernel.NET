@@ -3,6 +3,8 @@ namespace AIKernel.Vfs;
 /// <summary>
 /// 書き込み可能な Vfs ファイル能力を定義します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IWritableVfsFile']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IWritableVfsFile']" />
 public interface IWritableVfsFile : IVfsEntryInfo
 {
     /// <summary>

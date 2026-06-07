@@ -4,6 +4,8 @@ namespace AIKernel.Abstractions.Context;
 /// UC-06/UC-08 に基づく契約です。
 /// コンテキスト断片へのアクセスを提供します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Context.IContextFragmentCollection']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Context.IContextFragmentCollection']" />
 public interface IContextFragmentCollection
 {
     /// <summary>
@@ -24,6 +26,8 @@ public interface IContextFragmentCollection
 /// UC-06/UC-08 に基づく契約です。
 /// フェーズ別 buffer へのアクセスを提供します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Context.IPhaseBufferCollection']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Context.IPhaseBufferCollection']" />
 public interface IPhaseBufferCollection
 {
     /// <summary>
@@ -56,6 +60,8 @@ public interface IPhaseBufferCollection
 /// コンテキスト断片の集合を管理する互換合成インターフェースです。
 /// カテゴリ別アクセスと各フェーズ向けバッファ取得を提供します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Context.IContextCollection']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Context.IContextCollection']" />
 public interface IContextCollection :
     IContextFragmentCollection,
     IPhaseBufferCollection

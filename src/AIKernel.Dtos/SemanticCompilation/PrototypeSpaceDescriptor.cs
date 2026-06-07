@@ -3,6 +3,8 @@ namespace AIKernel.Dtos.SemanticCompilation;
 /// <summary>
 /// Finite, closed set of verified governed circuits available to one compilation decision.
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.SemanticCompilation.PrototypeSpaceDescriptor']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.SemanticCompilation.PrototypeSpaceDescriptor']" />
 public sealed record PrototypeSpaceDescriptor(
     string PrototypeSpaceId,
     IReadOnlyList<GovernedCircuitDescriptor> Circuits,

@@ -6,6 +6,8 @@ using AIKernel.Abstractions.Models;
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// Provider の静的な操作・データ種別 capability を公開します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderOperationCapabilities']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderOperationCapabilities']" />
 public interface IProviderOperationCapabilities
 {
     /// <summary>
@@ -37,6 +39,8 @@ public interface IProviderOperationCapabilities
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// Provider の接続・レート制限 capability を公開します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderConnectionCapabilities']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderConnectionCapabilities']" />
 public interface IProviderConnectionCapabilities
 {
     /// <summary>
@@ -54,6 +58,8 @@ public interface IProviderConnectionCapabilities
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// Provider の静的能力ベクトルを公開します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderCapacityVectorSource']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderCapacityVectorSource']" />
 public interface IProviderCapacityVectorSource
 {
     /// <summary>
@@ -68,6 +74,8 @@ public interface IProviderCapacityVectorSource
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// 実行制約に基づく動的能力を公開します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IDynamicProviderCapacitySource']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IDynamicProviderCapacitySource']" />
 public interface IDynamicProviderCapacitySource
 {
     /// <summary>
@@ -83,6 +91,8 @@ public interface IDynamicProviderCapacitySource
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// Provider の能力プロファイルを公開します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderProfileSource']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderProfileSource']" />
 public interface IProviderProfileSource
 {
     /// <summary>
@@ -97,6 +107,8 @@ public interface IProviderProfileSource
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// 量子化サポート情報を公開します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IQuantizationSupport']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IQuantizationSupport']" />
 public interface IQuantizationSupport
 {
     /// <summary>
@@ -111,6 +123,8 @@ public interface IQuantizationSupport
 /// Phase 1 Query Processing に関する Provider capability を公開します。
 /// Query 補間・分解・ルーティングは Core 実装ではなく、Provider または拡張実装が宣言する能力として扱います。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IQueryProcessingCapabilities']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IQueryProcessingCapabilities']" />
 public interface IQueryProcessingCapabilities
 {
     /// <summary>
@@ -150,6 +164,8 @@ public interface IQueryProcessingCapabilities
 /// Embedding に関する Provider capability metadata を公開します。
 /// 実際の embedding 生成は ITextEmbeddingProvider / IBatchEmbeddingProvider / IEmbeddingProvider が担います。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IEmbeddingCapabilityMetadata']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IEmbeddingCapabilityMetadata']" />
 public interface IEmbeddingCapabilityMetadata
 {
     /// <summary>
@@ -174,6 +190,8 @@ public interface IEmbeddingCapabilityMetadata
 /// プロバイダーの機能情報を定義する互換合成インターフェースです。
 /// 静的な能力情報と、実行制約に基づく動的能力に対応します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderCapabilities']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderCapabilities']" />
 public interface IProviderCapabilities :
     IProviderOperationCapabilities,
     IProviderConnectionCapabilities,

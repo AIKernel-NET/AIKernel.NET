@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Tasks.IPipeline">
+      <summary>Represents the IPipeline public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.IPipelineExecutionController">
+      <summary>Represents the IPipelineExecutionController public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.IPipelineExecutionResult">
+      <summary>Represents the IPipelineExecutionResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.IPipelineExecutionResultReader">
+      <summary>Represents the IPipelineExecutionResultReader public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.IPipelineExecutor">
+      <summary>Represents the IPipelineExecutor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.IPipelineRegistrar">
+      <summary>Represents the IPipelineRegistrar public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.ITask">
+      <summary>Represents the ITask public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.ITaskContext">
+      <summary>Represents the ITaskContext public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.ITaskExecutionResult">
+      <summary>Represents the ITaskExecutionResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.ITaskExecutor">
+      <summary>Represents the ITaskExecutor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.ITaskManager">
+      <summary>Represents the ITaskManager public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.ITaskSchema">
+      <summary>Represents the ITaskSchema public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.ITaskVectorEstimator">
+      <summary>Represents the ITaskVectorEstimator public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

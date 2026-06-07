@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Execution.IComputeCardinalityAdvisor">
+      <summary>Represents the IComputeCardinalityAdvisor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IComputePaddingAdvisor">
+      <summary>Represents the IComputePaddingAdvisor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IComputeShapeAdvisor">
+      <summary>Represents the IComputeShapeAdvisor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IComputeShapeOptimizer">
+      <summary>Represents the IComputeShapeOptimizer public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IContextPromptProjector">
+      <summary>Represents the IContextPromptProjector public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IExecutionOutput">
+      <summary>Represents the IExecutionOutput public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IKernelExecutor">
+      <summary>Represents the IKernelExecutor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IKernelReplayer">
+      <summary>Represents the IKernelReplayer public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IModelPromptCapabilityResolver">
+      <summary>Represents the IModelPromptCapabilityResolver public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IOutputPolisher">
+      <summary>Represents the IOutputPolisher public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IPaddingInfoProvider">
+      <summary>Represents the IPaddingInfoProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IPhaseHandover">
+      <summary>Represents the IPhaseHandover public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IPhysicalCardinalityAdvisor">
+      <summary>Represents the IPhysicalCardinalityAdvisor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IPipelineOrchestrator">
+      <summary>Represents the IPipelineOrchestrator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IPipelineStep">
+      <summary>Represents the IPipelineStep public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IPolisherValidator">
+      <summary>Represents the IPolisherValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IPromptGenerator">
+      <summary>Represents the IPromptGenerator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IQuantizationAdvisor">
+      <summary>Represents the IQuantizationAdvisor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IStructurePlanner">
+      <summary>Represents the IStructurePlanner public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.ITextTokenizer">
+      <summary>Represents the ITextTokenizer public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IThoughtProcess">
+      <summary>Represents the IThoughtProcess public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.ITokenCounter">
+      <summary>Represents the ITokenCounter public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.ITokenDecoder">
+      <summary>Represents the ITokenDecoder public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.ITokenizer">
+      <summary>Represents the ITokenizer public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.ITokenizerIdentity">
+      <summary>Represents the ITokenizerIdentity public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.ITokenizerModelSupport">
+      <summary>Represents the ITokenizerModelSupport public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.ITokenizerStatisticsProvider">
+      <summary>Represents the ITokenizerStatisticsProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

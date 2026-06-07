@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="M:AIKernel.Dtos.Security.AccessDecision.new">
+      <summary>AIKernel の公開参照サーフェスとして new 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Security.PolicyEvaluationResult.new">
+      <summary>AIKernel の公開参照サーフェスとして new 操作を実行します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.AccessDecision.Allowed">
+      <summary>AIKernel の公開参照サーフェスで公開される Allowed 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.AccessDecision.Reason">
+      <summary>AIKernel の公開参照サーフェスで公開される Reason 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.AccessDecision.string">
+      <summary>AIKernel の公開参照サーフェスで公開される string 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.AccessRequest.Action">
+      <summary>AIKernel の公開参照サーフェスで公開される Action 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.AccessRequest.Principal">
+      <summary>AIKernel の公開参照サーフェスで公開される Principal 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.AccessRequest.Resource">
+      <summary>AIKernel の公開参照サーフェスで公開される Resource 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.AccessRequest.string">
+      <summary>AIKernel の公開参照サーフェスで公開される string 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.PermissionConstraint.ConstraintType">
+      <summary>AIKernel の公開参照サーフェスで公開される ConstraintType 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.PermissionConstraint.Description">
+      <summary>AIKernel の公開参照サーフェスで公開される Description 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.PermissionConstraint.Value">
+      <summary>AIKernel の公開参照サーフェスで公開される Value 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.PolicyEvaluationResult.AllAllowed">
+      <summary>AIKernel の公開参照サーフェスで公開される AllAllowed 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Security.PolicyEvaluationResult.RiskLevel">
+      <summary>AIKernel の公開参照サーフェスで公開される RiskLevel 値を取得または設定します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Security.AccessDecision">
+      <summary>AIKernel パッケージ利用者に公開される AccessDecision の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Security.AccessRequest">
+      <summary>AIKernel パッケージ利用者に公開される AccessRequest の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Security.PermissionConstraint">
+      <summary>AIKernel パッケージ利用者に公開される PermissionConstraint の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Security.PolicyEvaluationResult">
+      <summary>AIKernel パッケージ利用者に公開される PolicyEvaluationResult の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

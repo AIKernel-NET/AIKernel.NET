@@ -6,6 +6,8 @@ namespace AIKernel.Abstractions.Kernel;
 /// UC-09 に基づく契約です。
 /// カーネルのバージョン情報を公開する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelVersionProvider']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelVersionProvider']" />
 public interface IKernelVersionProvider
 {
     /// <summary>
@@ -18,6 +20,8 @@ public interface IKernelVersionProvider
 /// UC-09 に基づく契約です。
 /// 統合コンテキスト契約を実行する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelContextExecutor']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelContextExecutor']" />
 public interface IKernelContextExecutor
 {
     /// <summary>
@@ -32,6 +36,8 @@ public interface IKernelContextExecutor
 /// UC-09 に基づく契約です。
 /// Attention 汚染を解析する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelAttentionAnalyzer']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelAttentionAnalyzer']" />
 public interface IKernelAttentionAnalyzer
 {
     /// <summary>
@@ -44,6 +50,8 @@ public interface IKernelAttentionAnalyzer
 /// UC-09 に基づく契約です。
 /// Material Context を正規化・構造化する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelMaterialPreprocessor']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelMaterialPreprocessor']" />
 public interface IKernelMaterialPreprocessor
 {
     /// <summary>
@@ -56,6 +64,8 @@ public interface IKernelMaterialPreprocessor
 /// UC-09 に基づく契約です。
 /// Expression Context を推論後に適用可能な状態にする capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelExpressionPreparer']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelExpressionPreparer']" />
 public interface IKernelExpressionPreparer
 {
     /// <summary>
@@ -68,6 +78,8 @@ public interface IKernelExpressionPreparer
 /// UC-09 に基づく契約です。
 /// Provider Router を公開する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelProviderRouterAccessor']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelProviderRouterAccessor']" />
 public interface IKernelProviderRouterAccessor
 {
     /// <summary>
@@ -80,6 +92,8 @@ public interface IKernelProviderRouterAccessor
 /// UC-09 に基づく契約です。
 /// Guard を公開する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelGuardAccessor']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelGuardAccessor']" />
 public interface IKernelGuardAccessor
 {
     /// <summary>
@@ -92,6 +106,8 @@ public interface IKernelGuardAccessor
 /// UC-09 に基づく契約です。
 /// PDP を公開する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelPdpAccessor']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelPdpAccessor']" />
 public interface IKernelPdpAccessor
 {
     /// <summary>
@@ -111,6 +127,8 @@ public interface IKernelPdpAccessor
 /// - Contract-driven 実行
 /// - Attention 汚染防止
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernel']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernel']" />
 public interface IKernel :
     IKernelVersionProvider,
     IKernelContextExecutor,

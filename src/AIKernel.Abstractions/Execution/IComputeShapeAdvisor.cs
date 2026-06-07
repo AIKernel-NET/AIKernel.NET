@@ -6,6 +6,8 @@ using AIKernel.Abstractions.Models;
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// 計算用 cardinality を提案する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IComputeCardinalityAdvisor']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IComputeCardinalityAdvisor']" />
 public interface IComputeCardinalityAdvisor
 {
     /// <summary>
@@ -29,6 +31,8 @@ public interface IComputeCardinalityAdvisor
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// Padding strategy と overhead を扱う capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IComputePaddingAdvisor']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IComputePaddingAdvisor']" />
 public interface IComputePaddingAdvisor
 {
     /// <summary>
@@ -46,6 +50,8 @@ public interface IComputePaddingAdvisor
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// Quantization level を提案する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IQuantizationAdvisor']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IQuantizationAdvisor']" />
 public interface IQuantizationAdvisor
 {
     /// <summary>
@@ -58,6 +64,8 @@ public interface IQuantizationAdvisor
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// 実行制約下の最適な tensor shape を計算する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IComputeShapeOptimizer']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IComputeShapeOptimizer']" />
 public interface IComputeShapeOptimizer
 {
     /// <summary>
@@ -70,6 +78,8 @@ public interface IComputeShapeOptimizer
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// NPUなどのハードウェアに最適化された物理基数（テンソル形状）を提案する互換合成インターフェースです。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IComputeShapeAdvisor']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IComputeShapeAdvisor']" />
 public interface IComputeShapeAdvisor :
     IComputeCardinalityAdvisor,
     IComputePaddingAdvisor,

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="F:AIKernel.Dtos.Dsl.DslNodeTypes.CallCapability">
+      <summary>Provides the CallCapability value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslNodeTypes.CapabilityCallAlias">
+      <summary>Provides the CapabilityCallAlias value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslNodeTypes.Loop">
+      <summary>Provides the Loop value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslNodeTypes.LoopUntil">
+      <summary>Provides the LoopUntil value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslNodeTypes.Pipeline">
+      <summary>Provides the Pipeline value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslNodeTypes.Step">
+      <summary>Provides the Step value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslNodeTypes.Suspend">
+      <summary>Provides the Suspend value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslNodeTypes.SuspendForApprovalAlias">
+      <summary>Provides the SuspendForApprovalAlias value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslRomMetadataKeys.RomCall">
+      <summary>Provides the RomCall value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslRomMetadataKeys.RomHash">
+      <summary>Provides the RomHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslRomMetadataKeys.RomName">
+      <summary>Provides the RomName value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslRomMetadataKeys.RomNamespace">
+      <summary>Provides the RomNamespace value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslRomMetadataKeys.RomPath">
+      <summary>Provides the RomPath value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslRomMetadataKeys.RomReplayLogCount">
+      <summary>Provides the RomReplayLogCount value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Dsl.DslRomMetadataKeys.RomReplayLogHash">
+      <summary>Provides the RomReplayLogHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.Error">
+      <summary>Gets or sets the Error value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.Output">
+      <summary>Gets or sets the Output value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.ReplayLogCount">
+      <summary>Gets or sets the ReplayLogCount value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.ReplayLogHash">
+      <summary>Gets or sets the ReplayLogHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.State">
+      <summary>Gets or sets the State value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.Status">
+      <summary>Gets or sets the Status value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.CallCapabilityNode">
+      <summary>Represents the CallCapabilityNode public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslDocument">
+      <summary>Represents the DslDocument public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslNodeTypes">
+      <summary>Represents the DslNodeTypes public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslPipelineExecutionContext">
+      <summary>Represents the DslPipelineExecutionContext public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslPipelineExecutionResult">
+      <summary>Represents the DslPipelineExecutionResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslPipelineState">
+      <summary>Represents the DslPipelineState public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslPipelineValue">
+      <summary>Represents the DslPipelineValue public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslRomMetadata">
+      <summary>Represents the DslRomMetadata public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslRomMetadataKeys">
+      <summary>Represents the DslRomMetadataKeys public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.DslRomSnapshot">
+      <summary>Represents the DslRomSnapshot public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.LoopNode">
+      <summary>Represents the LoopNode public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.LoopUntilNode">
+      <summary>Represents the LoopUntilNode public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.PipelineNode">
+      <summary>Represents the PipelineNode public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.PipelineRootNode">
+      <summary>Represents the PipelineRootNode public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.StepNode">
+      <summary>Represents the StepNode public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Dsl.SuspendNode">
+      <summary>Represents the SuspendNode public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

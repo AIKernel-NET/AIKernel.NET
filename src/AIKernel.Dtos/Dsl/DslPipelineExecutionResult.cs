@@ -4,20 +4,36 @@ using System.Collections.Immutable;
 using AIKernel.Dtos.Execution;
 using AIKernel.Enums;
 
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Dsl.DslPipelineExecutionResult']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Dsl.DslPipelineExecutionResult']" />
 public sealed record DslPipelineExecutionResult
 {
+    /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.Status']" />
+    /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.Status']" />
     public required ExecutionStatus Status { get; init; }
 
+    /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.State']" />
+    /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.State']" />
     public required DslPipelineState State { get; init; }
 
+    /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.Output']" />
+    /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.Output']" />
     public required DslPipelineValue Output { get; init; }
 
+    /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.Error']" />
+    /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.Error']" />
     public required ExecutionError? Error { get; init; }
 
+    /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.ReplayLogCount']" />
+    /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.ReplayLogCount']" />
     public required int ReplayLogCount { get; init; }
 
+    /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.ReplayLogHash']" />
+    /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.ReplayLogHash']" />
     public required string ReplayLogHash { get; init; }
 
+    /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.string']" />
+    /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Dsl.DslPipelineExecutionResult.string']" />
     public ImmutableDictionary<string, string> Metadata { get; init; } =
         ImmutableDictionary<string, string>.Empty;
 }

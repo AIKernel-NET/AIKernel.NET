@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Enums.AdmissibilityDecisionKind">
+      <summary>AIKernel パッケージ利用者に公開される AdmissibilityDecisionKind の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.AdmissibilityGateKind">
+      <summary>AIKernel パッケージ利用者に公開される AdmissibilityGateKind の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.AttentionSignal">
+      <summary>AIKernel パッケージ利用者に公開される AttentionSignal の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.AuditSeverity">
+      <summary>AIKernel パッケージ利用者に公開される AuditSeverity の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.CapabilityInvocationMode">
+      <summary>AIKernel パッケージ利用者に公開される CapabilityInvocationMode の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.CapabilityModuleKind">
+      <summary>AIKernel パッケージ利用者に公開される CapabilityModuleKind の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.ContextCategory">
+      <summary>AIKernel パッケージ利用者に公開される ContextCategory の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.ContextStage">
+      <summary>AIKernel パッケージ利用者に公開される ContextStage の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.ContextType">
+      <summary>AIKernel パッケージ利用者に公開される ContextType の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.CriticalOperationRequirement">
+      <summary>AIKernel パッケージ利用者に公開される CriticalOperationRequirement の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmAcceleratorKind">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmAcceleratorKind の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmAdmissionStatus">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmAdmissionStatus の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmBaseModelStateKind">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmBaseModelStateKind の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmCapabilityRelationKind">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmCapabilityRelationKind の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmCompatibilityStatus">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmCompatibilityStatus の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmDelegationKind">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmDelegationKind の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmDelegationReason">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmDelegationReason の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmDistillationJobStatus">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmDistillationJobStatus の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmFailureKind">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmFailureKind の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmFallbackKind">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmFallbackKind の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmGraphUpdateKind">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmGraphUpdateKind の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmHotSwapPolicy">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmHotSwapPolicy の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmPayloadKind">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmPayloadKind の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmPipelineStage">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmPipelineStage の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmPipelineStatus">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmPipelineStatus の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmReasoningTraceFormat">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmReasoningTraceFormat の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.DynamicSlmStrictOutputMode">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmStrictOutputMode の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.EventPriority">
+      <summary>AIKernel パッケージ利用者に公開される EventPriority の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.ExecutionStatus">
+      <summary>AIKernel パッケージ利用者に公開される ExecutionStatus の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.FailClosedDecision">
+      <summary>AIKernel パッケージ利用者に公開される FailClosedDecision の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.FailureMode">
+      <summary>AIKernel パッケージ利用者に公開される FailureMode の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.GuardAction">
+      <summary>AIKernel パッケージ利用者に公開される GuardAction の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.HatlAnchorProfile">
+      <summary>AIKernel パッケージ利用者に公開される HatlAnchorProfile の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.HatlDeedStatus">
+      <summary>AIKernel パッケージ利用者に公開される HatlDeedStatus の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.HatlVerificationStatus">
+      <summary>AIKernel パッケージ利用者に公開される HatlVerificationStatus の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.HistoryPolicy">
+      <summary>AIKernel パッケージ利用者に公開される HistoryPolicy の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.InformationCategory">
+      <summary>AIKernel パッケージ利用者に公開される InformationCategory の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.LatencyClass">
+      <summary>AIKernel パッケージ利用者に公開される LatencyClass の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.MemoryAccessMode">
+      <summary>AIKernel パッケージ利用者に公開される MemoryAccessMode の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.Modality">
+      <summary>AIKernel パッケージ利用者に公開される Modality の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.ModelType">
+      <summary>AIKernel パッケージ利用者に公開される ModelType の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.PdpDecision">
+      <summary>AIKernel パッケージ利用者に公開される PdpDecision の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.PromptMessageFormat">
+      <summary>AIKernel パッケージ利用者に公開される PromptMessageFormat の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.PromptOverflowPolicy">
+      <summary>AIKernel パッケージ利用者に公開される PromptOverflowPolicy の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.RejectCode">
+      <summary>AIKernel パッケージ利用者に公開される RejectCode の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.RuleScope">
+      <summary>AIKernel パッケージ利用者に公開される RuleScope の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.ScheduleStatus">
+      <summary>AIKernel パッケージ利用者に公開される ScheduleStatus の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.SemanticIrSlot">
+      <summary>AIKernel パッケージ利用者に公開される SemanticIrSlot の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.TaskCostClass">
+      <summary>AIKernel パッケージ利用者に公開される TaskCostClass の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.TaskType">
+      <summary>AIKernel パッケージ利用者に公開される TaskType の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Enums.VfsEntryType">
+      <summary>AIKernel パッケージ利用者に公開される VfsEntryType の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

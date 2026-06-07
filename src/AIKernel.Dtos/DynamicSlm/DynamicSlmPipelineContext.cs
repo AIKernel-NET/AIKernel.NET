@@ -1,5 +1,7 @@
 namespace AIKernel.Dtos.DynamicSlm;
 
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineContext']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineContext']" />
 public sealed record DynamicSlmPipelineContext(
     DynamicSlmModelAbi ModelAbi,
     DynamicSlmResolvedSubgraph? ResolvedSubgraph,
@@ -19,6 +21,8 @@ public sealed record DynamicSlmPipelineContext(
     DynamicSlmPipelineMetadata Metadata,
     IReadOnlyList<DynamicSlmPipelineTrace> Trace)
 {
+    /// <include file="docs.en.xml" path="doc/members/member[@name='M:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineContext.#ctor']" />
+    /// <include file="docs.ja.xml" path="doc/members/member[@name='M:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineContext.#ctor']" />
     public DynamicSlmPipelineContext(
         DynamicSlmModelAbi modelAbi,
         DynamicSlmResolvedSubgraph? resolvedSubgraph,

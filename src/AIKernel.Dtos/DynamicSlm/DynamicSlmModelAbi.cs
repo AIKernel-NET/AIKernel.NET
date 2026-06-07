@@ -1,5 +1,7 @@
 namespace AIKernel.Dtos.DynamicSlm;
 
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmModelAbi']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmModelAbi']" />
 public sealed record DynamicSlmModelAbi(
     string ModelId,
     string Version,
@@ -11,6 +13,8 @@ public sealed record DynamicSlmModelAbi(
     SeedSlmProfile? SeedProfile,
     IReadOnlyDictionary<string, string> Metadata)
 {
+    /// <include file="docs.en.xml" path="doc/members/member[@name='M:AIKernel.Dtos.DynamicSlm.DynamicSlmModelAbi.#ctor']" />
+    /// <include file="docs.ja.xml" path="doc/members/member[@name='M:AIKernel.Dtos.DynamicSlm.DynamicSlmModelAbi.#ctor']" />
     public DynamicSlmModelAbi(
         string modelId,
         string version,

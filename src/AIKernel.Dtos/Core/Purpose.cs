@@ -4,13 +4,27 @@ namespace AIKernel.Dtos.Core;
 /// 目的を表現します。
 /// 処理の意図と目標を定義します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Core.Purpose']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Core.Purpose']" />
 public sealed class Purpose
 {
+    /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Core.Purpose.PurposeId']" />
+    /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Core.Purpose.PurposeId']" />
     public required string PurposeId { get; init; }
+    /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Core.Purpose.Description']" />
+    /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Core.Purpose.Description']" />
     public required string Description { get; init; }
+    /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Core.Purpose.Priority']" />
+    /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Core.Purpose.Priority']" />
     public int Priority { get; init; } = 5;
+    /// <include file="docs.en.xml" path="doc/members/member[@name='M:AIKernel.Dtos.Core.Purpose.new']" />
+    /// <include file="docs.ja.xml" path="doc/members/member[@name='M:AIKernel.Dtos.Core.Purpose.new']" />
     public List<string> Tags { get; init; } = new();
+    /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Core.Purpose.SuccessCriteria']" />
+    /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Core.Purpose.SuccessCriteria']" />
     public string? SuccessCriteria { get; init; }
+    /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Core.Purpose.CreatedAt']" />
+    /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Core.Purpose.CreatedAt']" />
     public DateTime CreatedAt { get; init; }
 }
 

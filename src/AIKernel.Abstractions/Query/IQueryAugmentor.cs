@@ -4,6 +4,8 @@ namespace AIKernel.Abstractions.Query;
 /// Phase 1 Context Build において、入力 query の補間・正規化・意味的 rewrite を行う抽象契約です。
 /// 実装は外部検索を行わず、KernelContext に基づく fail-closed な query 変換のみを担います。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Query.IQueryAugmentor']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Query.IQueryAugmentor']" />
 public interface IQueryAugmentor
 {
     /// <summary>

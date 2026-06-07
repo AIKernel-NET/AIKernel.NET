@@ -8,6 +8,8 @@ namespace AIKernel.Vfs;
 /// v0.0.2 以降、読み取り能力は <see cref="IReadableVfsFile"/> で表現します。
 /// 本インターフェースは既存実装との互換性を維持するための読み取り可能ファイル contract です。
 /// </remarks>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IVfsFile']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IVfsFile']" />
 public interface IVfsFile : IReadableVfsFile
 {
 }

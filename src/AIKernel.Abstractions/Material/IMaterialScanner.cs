@@ -3,6 +3,8 @@ namespace AIKernel.Abstractions.Material;
 /// <summary>
 /// UC-21（マテリアル検疫とポリシー実行）に基づき、素材の事前スキャンと信頼評価を行う契約を定義します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Material.IMaterialScanner']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Material.IMaterialScanner']" />
 public interface IMaterialScanner
 {
     /// <summary>

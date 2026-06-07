@@ -6,6 +6,8 @@ namespace AIKernel.Abstractions.Rom;
 /// <remarks>
 /// 同一の <see cref="CanonicalizedRomDto"/> 入力に対して、常に同一のハッシュ値を返す決定論的挙動を保証する必要があります。
 /// </remarks>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.ISemanticHasher']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.ISemanticHasher']" />
 public interface ISemanticHasher
 {
     /// <summary>

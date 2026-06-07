@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Material.IMaterialQuarantine">
+      <summary>Represents the IMaterialQuarantine public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Material.IMaterialScanner">
+      <summary>Represents the IMaterialScanner public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Material.IStructuredMaterial">
+      <summary>Represents the IStructuredMaterial public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

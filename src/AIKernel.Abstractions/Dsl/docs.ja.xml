@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Dsl.IDslCapabilityRegistry">
+      <summary>AIKernel パッケージ利用者に公開される IDslCapabilityRegistry の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Dsl.IDslPipelineCompiler">
+      <summary>AIKernel パッケージ利用者に公開される IDslPipelineCompiler の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Dsl.IDslRomRegistry">
+      <summary>AIKernel パッケージ利用者に公開される IDslRomRegistry の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Dsl.IDslRomStore">
+      <summary>AIKernel パッケージ利用者に公開される IDslRomStore の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Dsl.IKernelPipeline">
+      <summary>AIKernel パッケージ利用者に公開される IKernelPipeline の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

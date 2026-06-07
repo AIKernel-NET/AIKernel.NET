@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Security.IEnvironmentAccessValidator">
+      <summary>Represents the IEnvironmentAccessValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IFileReadAccessValidator">
+      <summary>Represents the IFileReadAccessValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IFileWriteAccessValidator">
+      <summary>Represents the IFileWriteAccessValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IGuard">
+      <summary>Represents the IGuard public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IGuardEnforcer">
+      <summary>Represents the IGuardEnforcer public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IGuardEvaluator">
+      <summary>Represents the IGuardEvaluator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IGuardFailureHandler">
+      <summary>Represents the IGuardFailureHandler public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.INetworkAccessValidator">
+      <summary>Represents the INetworkAccessValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPdp">
+      <summary>Represents the IPdp public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPermissionConstraintValidator">
+      <summary>Represents the IPermissionConstraintValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPermissionLifecycleValidator">
+      <summary>Represents the IPermissionLifecycleValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPolicy">
+      <summary>Represents the IPolicy public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPolicyDecisionEvaluator">
+      <summary>Represents the IPolicyDecisionEvaluator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPolicyDecisionPoint">
+      <summary>Represents the IPolicyDecisionPoint public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPolicyRegistry">
+      <summary>Represents the IPolicyRegistry public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPolicySource">
+      <summary>Represents the IPolicySource public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPrincipal">
+      <summary>Represents the IPrincipal public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IResourceAccessGuard">
+      <summary>Represents the IResourceAccessGuard public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.ISecureCredentialProvider">
+      <summary>Represents the ISecureCredentialProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.ISecureOptions">
+      <summary>Represents the ISecureOptions public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.ISystemCommandAccessValidator">
+      <summary>Represents the ISystemCommandAccessValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IToolAccessValidator">
+      <summary>Represents the IToolAccessValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IToolExecutionAccessValidator">
+      <summary>Represents the IToolExecutionAccessValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

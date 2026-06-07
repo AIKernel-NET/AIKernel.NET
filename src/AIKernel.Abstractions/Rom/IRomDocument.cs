@@ -6,6 +6,8 @@ namespace AIKernel.Abstractions.Rom;
 /// RCS-001: ROM 文書は entity.id と entity.type を持たなければならない（MUST）。
 /// RCS-002: [[id]] は解決可能な参照でなければならない（MUST）。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomDocument']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomDocument']" />
 public interface IRomDocument
 {
     /// <summary>

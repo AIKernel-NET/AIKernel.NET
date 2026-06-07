@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxExecutionResult.ErrorMessage">
+      <summary>AIKernel の公開参照サーフェスで公開される ErrorMessage 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxExecutionResult.ExecutionTimeMs">
+      <summary>AIKernel の公開参照サーフェスで公開される ExecutionTimeMs 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxExecutionResult.Result">
+      <summary>AIKernel の公開参照サーフェスで公開される Result 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxExecutionResult.StdErr">
+      <summary>AIKernel の公開参照サーフェスで公開される StdErr 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxExecutionResult.StdOut">
+      <summary>AIKernel の公開参照サーフェスで公開される StdOut 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxExecutionResult.Success">
+      <summary>AIKernel の公開参照サーフェスで公開される Success 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxResourceUsage.CpuUsagePercent">
+      <summary>AIKernel の公開参照サーフェスで公開される CpuUsagePercent 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxResourceUsage.DiskLimitMb">
+      <summary>AIKernel の公開参照サーフェスで公開される DiskLimitMb 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxResourceUsage.DiskUsageMb">
+      <summary>AIKernel の公開参照サーフェスで公開される DiskUsageMb 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxResourceUsage.MemoryLimitMb">
+      <summary>AIKernel の公開参照サーフェスで公開される MemoryLimitMb 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxResourceUsage.MemoryUsageMb">
+      <summary>AIKernel の公開参照サーフェスで公開される MemoryUsageMb 値を取得または設定します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Sandbox.SandboxExecutionResult">
+      <summary>AIKernel パッケージ利用者に公開される SandboxExecutionResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Sandbox.SandboxResourceUsage">
+      <summary>AIKernel パッケージ利用者に公開される SandboxResourceUsage の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

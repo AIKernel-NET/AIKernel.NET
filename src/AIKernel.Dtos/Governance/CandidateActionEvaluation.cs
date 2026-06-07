@@ -5,6 +5,8 @@ namespace AIKernel.Dtos.Governance;
 /// <summary>
 /// Deterministic evaluation record for an untrusted candidate action before execution.
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Governance.CandidateActionEvaluation']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Governance.CandidateActionEvaluation']" />
 public sealed record CandidateActionEvaluation(
     string EvaluationId,
     string TrajectoryId,

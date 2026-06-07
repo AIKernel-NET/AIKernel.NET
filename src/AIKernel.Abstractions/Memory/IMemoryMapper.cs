@@ -5,6 +5,8 @@ namespace AIKernel.Abstractions.Memory;
 /// <summary>
 /// Opens OS-backed memory regions through a contract-safe abstraction.
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Memory.IMemoryMapper']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Memory.IMemoryMapper']" />
 public interface IMemoryMapper
 {
     /// <summary>

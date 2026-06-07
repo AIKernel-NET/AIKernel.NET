@@ -4,6 +4,8 @@ namespace AIKernel.Enums;
 /// レイテンシクラスを定義します。
 /// パフォーマンスプロファイリングと制約に使用されます。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Enums.LatencyClass']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Enums.LatencyClass']" />
 public enum LatencyClass
 {
     /// <summary>

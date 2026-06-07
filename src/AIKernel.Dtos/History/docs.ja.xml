@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="F:AIKernel.Dtos.History.HistoryRomMetadataKeys.RomHash">
+      <summary>AIKernel の公開参照サーフェスで公開される RomHash 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.History.HistoryRomMetadataKeys.RomId">
+      <summary>AIKernel の公開参照サーフェスで公開される RomId 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.History.HistoryRomMetadataKeys.RomName">
+      <summary>AIKernel の公開参照サーフェスで公開される RomName 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.History.HistoryRomMetadataKeys.RomNamespace">
+      <summary>AIKernel の公開参照サーフェスで公開される RomNamespace 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.History.HistoryRomMetadataKeys.RomPath">
+      <summary>AIKernel の公開参照サーフェスで公開される RomPath 値を提供します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.History.ChatHistoryRomOptions">
+      <summary>AIKernel パッケージ利用者に公開される ChatHistoryRomOptions の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.History.ChatHistoryRomRecord">
+      <summary>AIKernel パッケージ利用者に公開される ChatHistoryRomRecord の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.History.HistoryRomMetadata">
+      <summary>AIKernel パッケージ利用者に公開される HistoryRomMetadata の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.History.HistoryRomMetadataKeys">
+      <summary>AIKernel パッケージ利用者に公開される HistoryRomMetadataKeys の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.History.HistoryRomSnapshot">
+      <summary>AIKernel パッケージ利用者に公開される HistoryRomSnapshot の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

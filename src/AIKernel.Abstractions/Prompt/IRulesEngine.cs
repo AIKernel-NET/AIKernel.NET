@@ -4,6 +4,8 @@ namespace AIKernel.Abstractions.Prompt;
 /// UC-11/UC-12/UC-13 に基づく契約です。
 /// Rule registry を管理します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Prompt.IRuleRegistry']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Prompt.IRuleRegistry']" />
 public interface IRuleRegistry
 {
     /// <summary>
@@ -38,6 +40,8 @@ public interface IRuleRegistry
 /// UC-11/UC-12/UC-13 に基づく契約です。
 /// Rule evaluation を実行します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Prompt.IRuleEvaluator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Prompt.IRuleEvaluator']" />
 public interface IRuleEvaluator
 {
     /// <summary>
@@ -54,6 +58,8 @@ public interface IRuleEvaluator
 /// UC-11/UC-12/UC-13 に基づく契約です。
 /// Prompt 生成前の rule validation を実行します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Prompt.IPreExecutionRuleValidator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Prompt.IPreExecutionRuleValidator']" />
 public interface IPreExecutionRuleValidator
 {
     /// <summary>
@@ -70,6 +76,8 @@ public interface IPreExecutionRuleValidator
 /// UC-11/UC-12/UC-13 に基づく契約です。
 /// Prompt 生成後の rule validation を実行します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Prompt.IPostExecutionRuleValidator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Prompt.IPostExecutionRuleValidator']" />
 public interface IPostExecutionRuleValidator
 {
     /// <summary>
@@ -86,6 +94,8 @@ public interface IPostExecutionRuleValidator
 /// UC-11/UC-12/UC-13 に基づく契約です。
 /// ルールエンジンを定義する互換合成インターフェースです。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Prompt.IRulesEngine']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Prompt.IRulesEngine']" />
 public interface IRulesEngine :
     IProvider,
     IRuleRegistry,

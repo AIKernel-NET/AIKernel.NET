@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Dtos.Control.ControlEnvelope">
+      <summary>AIKernel パッケージ利用者に公開される ControlEnvelope の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Control.ControlExecutionRequest">
+      <summary>AIKernel パッケージ利用者に公開される ControlExecutionRequest の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Control.ControlExecutionResult">
+      <summary>AIKernel パッケージ利用者に公開される ControlExecutionResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Control.ControlPolicyEvaluation">
+      <summary>AIKernel パッケージ利用者に公開される ControlPolicyEvaluation の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Control.ControlStateSnapshot">
+      <summary>AIKernel パッケージ利用者に公開される ControlStateSnapshot の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

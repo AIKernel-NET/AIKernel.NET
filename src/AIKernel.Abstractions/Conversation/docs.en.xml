@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationBranch">
+      <summary>Represents the IConversationBranch public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationBranchLister">
+      <summary>Represents the IConversationBranchLister public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationCheckpoint">
+      <summary>Represents the IConversationCheckpoint public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationDiff">
+      <summary>Represents the IConversationDiff public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationSnapshot">
+      <summary>Represents the IConversationSnapshot public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationSnapshotDeleter">
+      <summary>Represents the IConversationSnapshotDeleter public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationSnapshotReader">
+      <summary>Represents the IConversationSnapshotReader public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationSnapshotWriter">
+      <summary>Represents the IConversationSnapshotWriter public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationStore">
+      <summary>Represents the IConversationStore public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationTimeline">
+      <summary>Represents the IConversationTimeline public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IDiffFormatter">
+      <summary>Represents the IDiffFormatter public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

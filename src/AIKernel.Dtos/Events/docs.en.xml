@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Dtos.Events.AuditEvent">
+      <summary>Represents the AuditEvent public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Events.ExecutionEvent">
+      <summary>Represents the ExecutionEvent public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Events.GuardEvent">
+      <summary>Represents the GuardEvent public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Events.PipelineEvent">
+      <summary>Represents the PipelineEvent public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Events.ProviderEvent">
+      <summary>Represents the ProviderEvent public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

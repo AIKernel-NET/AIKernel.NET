@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="M:AIKernel.Dtos.Kernel.AttentionAnalysis.new">
+      <summary>AIKernel の公開参照サーフェスとして new 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Kernel.KernelExecutionResult.List&lt;FailureMode&gt;">
+      <summary>AIKernel の公開参照サーフェスとして List&lt;FailureMode&gt; 操作を実行します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.AttentionAnalysis.RiskLevel">
+      <summary>AIKernel の公開参照サーフェスで公開される RiskLevel 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.AttentionAnalysis.SignalToNoiseRatio">
+      <summary>AIKernel の公開参照サーフェスで公開される SignalToNoiseRatio 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelExecutionResult.Data">
+      <summary>AIKernel の公開参照サーフェスで公開される Data 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelExecutionResult.Error">
+      <summary>AIKernel の公開参照サーフェスで公開される Error 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelExecutionResult.ExecutionTime">
+      <summary>AIKernel の公開参照サーフェスで公開される ExecutionTime 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelExecutionResult.Success">
+      <summary>AIKernel の公開参照サーフェスで公開される Success 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.Credentials">
+      <summary>AIKernel の公開参照サーフェスで公開される Credentials 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.ExecutionOptions">
+      <summary>AIKernel の公開参照サーフェスで公開される ExecutionOptions 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.Input">
+      <summary>AIKernel の公開参照サーフェスで公開される Input 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.ParentSnapshotId">
+      <summary>AIKernel の公開参照サーフェスで公開される ParentSnapshotId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.PromptOptions">
+      <summary>AIKernel の公開参照サーフェスで公開される PromptOptions 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.RequestedModelId">
+      <summary>AIKernel の公開参照サーフェスで公開される RequestedModelId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.RootRomId">
+      <summary>AIKernel の公開参照サーフェスで公開される RootRomId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.Scope">
+      <summary>AIKernel の公開参照サーフェスで公開される Scope 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.VfsProviderId">
+      <summary>AIKernel の公開参照サーフェスで公開される VfsProviderId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.string">
+      <summary>AIKernel の公開参照サーフェスで公開される string 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelTransactionSnapshot.InputHash">
+      <summary>AIKernel の公開参照サーフェスで公開される InputHash 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelTransactionSnapshot.RequestedModelId">
+      <summary>AIKernel の公開参照サーフェスで公開される RequestedModelId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelTransactionSnapshot.RootRomId">
+      <summary>AIKernel の公開参照サーフェスで公開される RootRomId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelTransactionSnapshot.StartedAtUtc">
+      <summary>AIKernel の公開参照サーフェスで公開される StartedAtUtc 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelTransactionSnapshot.TransactionId">
+      <summary>AIKernel の公開参照サーフェスで公開される TransactionId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelTransactionSnapshot.VfsProviderId">
+      <summary>AIKernel の公開参照サーフェスで公開される VfsProviderId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelTransactionSnapshot.string">
+      <summary>AIKernel の公開参照サーフェスで公開される string 値を取得または設定します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Kernel.AttentionAnalysis">
+      <summary>AIKernel パッケージ利用者に公開される AttentionAnalysis の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Kernel.KernelExecutionResult">
+      <summary>AIKernel パッケージ利用者に公開される KernelExecutionResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Kernel.KernelRequest">
+      <summary>AIKernel パッケージ利用者に公開される KernelRequest の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Kernel.KernelTransactionSnapshot">
+      <summary>AIKernel パッケージ利用者に公開される KernelTransactionSnapshot の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

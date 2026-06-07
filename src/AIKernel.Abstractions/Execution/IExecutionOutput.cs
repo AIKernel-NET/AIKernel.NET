@@ -5,6 +5,8 @@ namespace AIKernel.Abstractions.Execution;
 /// 実行フェーズの成果物を統一的に表現する基底インターフェースです。
 /// ExecutionResult, RawLogic, その他の出力型を統一的に扱えます。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IExecutionOutput']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IExecutionOutput']" />
 public interface IExecutionOutput
 {
     /// <summary>

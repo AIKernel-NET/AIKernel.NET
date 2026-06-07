@@ -5,6 +5,8 @@ namespace AIKernel.Abstractions.Models;
 /// 実行制約に基づいて動的に能力ベクトルを解決するインターフェースです。
 /// これは指示書で提案された、NPU対応の中核となるコンポーネントです。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Models.IDynamicCapacityProvider']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Models.IDynamicCapacityProvider']" />
 public interface IDynamicCapacityProvider
 {
     /// <summary>

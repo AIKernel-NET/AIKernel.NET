@@ -8,6 +8,8 @@ using AIKernel.Dtos.Context;
 /// Attention 消費とコンテキスト品質を受動的に監視するインターフェースです。
 /// 統計やログを収集し、運用フェーズにおける分析に利用されます。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.IAttentionObserver']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.IAttentionObserver']" />
 public interface IAttentionObserver
 {
     /// <summary>

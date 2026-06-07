@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Governance.ChatChain.IChatTurn">
+      <summary>AIKernel パッケージ利用者に公開される IChatTurn の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ChatChain.IChatTurnCanonicalizer">
+      <summary>AIKernel パッケージ利用者に公開される IChatTurnCanonicalizer の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ChatChain.IChatTurnChainVerifier">
+      <summary>AIKernel パッケージ利用者に公開される IChatTurnChainVerifier の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ChatChain.IChatTurnSemanticHasher">
+      <summary>AIKernel パッケージ利用者に公開される IChatTurnSemanticHasher の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ChatChain.IChatTurnSignatureProvider">
+      <summary>AIKernel パッケージ利用者に公開される IChatTurnSignatureProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ChatChain.IChatTurnVerificationResult">
+      <summary>AIKernel パッケージ利用者に公開される IChatTurnVerificationResult の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

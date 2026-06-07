@@ -3,6 +3,8 @@ namespace AIKernel.Abstractions.Security;
 /// <summary>
 /// Represents options that require secure secret resolution before runtime use.
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.ISecureOptions']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.ISecureOptions']" />
 public interface ISecureOptions
 {
     /// <summary>

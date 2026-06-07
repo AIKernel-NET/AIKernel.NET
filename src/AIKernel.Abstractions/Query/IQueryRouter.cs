@@ -4,6 +4,8 @@ namespace AIKernel.Abstractions.Query;
 /// Phase 1 Context Build において、QueryPart を処理可能な Provider へ割り当てる抽象契約です。
 /// ルーティング判断は Provider capability と KernelContext に基づき、部分成功を確定させない形で行われます。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Query.IQueryRouter']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Query.IQueryRouter']" />
 public interface IQueryRouter
 {
     /// <summary>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="P:AIKernel.Dtos.Material.SourceInfo.CollectedAt">
+      <summary>Gets or sets the CollectedAt value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Material.SourceInfo.SourceId">
+      <summary>Gets or sets the SourceId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Material.SourceInfo.SourceType">
+      <summary>Gets or sets the SourceType value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Material.SourceInfo.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Material.SourceInfo">
+      <summary>Represents the SourceInfo public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

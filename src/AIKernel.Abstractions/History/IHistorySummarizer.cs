@@ -8,6 +8,8 @@ namespace AIKernel.Abstractions.History;
 /// 履歴を要約・投影するインターフェース。
 /// 履歴を単なるログではなく、再利用可能な素材または文脈として扱います。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.History.IHistorySummarizer']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.History.IHistorySummarizer']" />
 public interface IHistorySummarizer
 {
     /// <summary>

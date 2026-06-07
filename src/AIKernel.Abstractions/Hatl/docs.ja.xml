@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Hatl.IHatlAnchorPublisher">
+      <summary>AIKernel パッケージ利用者に公開される IHatlAnchorPublisher の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Hatl.IHatlAnchorVerifier">
+      <summary>AIKernel パッケージ利用者に公開される IHatlAnchorVerifier の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Hatl.IHatlCryptographicOperator">
+      <summary>AIKernel パッケージ利用者に公開される IHatlCryptographicOperator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Hatl.IHatlDigitalDeedResolver">
+      <summary>AIKernel パッケージ利用者に公開される IHatlDigitalDeedResolver の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Hatl.IHatlLedgerStore">
+      <summary>AIKernel パッケージ利用者に公開される IHatlLedgerStore の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

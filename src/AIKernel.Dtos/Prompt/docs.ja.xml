@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="M:AIKernel.Dtos.Prompt.PromptPolicyDto.#ctor">
+      <summary>AIKernel の公開参照サーフェスとして #ctor 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Prompt.PromptPolicyDto.List&lt;string&gt;">
+      <summary>AIKernel の公開参照サーフェスとして List&lt;string&gt; 操作を実行します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.GovernanceMetadataDto.Hash">
+      <summary>AIKernel の公開参照サーフェスで公開される Hash 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.GovernanceMetadataDto.HashAlgorithm">
+      <summary>AIKernel の公開参照サーフェスで公開される HashAlgorithm 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.GovernanceMetadataDto.Issuer">
+      <summary>AIKernel の公開参照サーフェスで公開される Issuer 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.GovernanceMetadataDto.Signature">
+      <summary>AIKernel の公開参照サーフェスで公開される Signature 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.GovernanceMetadataDto.SignedAt">
+      <summary>AIKernel の公開参照サーフェスで公開される SignedAt 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.GovernanceMetadataDto.SignerId">
+      <summary>AIKernel の公開参照サーフェスで公開される SignerId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.PromptPolicyDto.CreatedAt">
+      <summary>AIKernel の公開参照サーフェスで公開される CreatedAt 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.PromptPolicyDto.ExpiresAt">
+      <summary>AIKernel の公開参照サーフェスで公開される ExpiresAt 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.PromptPolicyDto.MaxTokenBudget">
+      <summary>AIKernel の公開参照サーフェスで公開される MaxTokenBudget 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.PromptPolicyDto.TrustLevelRequired">
+      <summary>AIKernel の公開参照サーフェスで公開される TrustLevelRequired 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.SignedPromptArtifactDto.EntityId">
+      <summary>AIKernel の公開参照サーフェスで公開される EntityId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.SignedPromptArtifactDto.Governance">
+      <summary>AIKernel の公開参照サーフェスで公開される Governance 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.SignedPromptArtifactDto.Policy">
+      <summary>AIKernel の公開参照サーフェスで公開される Policy 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.SignedPromptArtifactDto.PromptBody">
+      <summary>AIKernel の公開参照サーフェスで公開される PromptBody 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.SignedPromptArtifactDto.Type">
+      <summary>AIKernel の公開参照サーフェスで公開される Type 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Prompt.SignedPromptArtifactDto.Version">
+      <summary>AIKernel の公開参照サーフェスで公開される Version 値を取得または設定します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Prompt.GovernanceMetadataDto">
+      <summary>AIKernel パッケージ利用者に公開される GovernanceMetadataDto の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Prompt.PromptPolicyDto">
+      <summary>AIKernel パッケージ利用者に公開される PromptPolicyDto の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Prompt.PromptValidationResult">
+      <summary>AIKernel パッケージ利用者に公開される PromptValidationResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Prompt.PromptVerificationResult">
+      <summary>AIKernel パッケージ利用者に公開される PromptVerificationResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Prompt.SignatureVerificationResult">
+      <summary>AIKernel パッケージ利用者に公開される SignatureVerificationResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Prompt.SignedPromptArtifactDto">
+      <summary>AIKernel パッケージ利用者に公開される SignedPromptArtifactDto の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

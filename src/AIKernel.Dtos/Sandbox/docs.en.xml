@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxExecutionResult.ErrorMessage">
+      <summary>Gets or sets the ErrorMessage value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxExecutionResult.ExecutionTimeMs">
+      <summary>Gets or sets the ExecutionTimeMs value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxExecutionResult.Result">
+      <summary>Gets or sets the Result value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxExecutionResult.StdErr">
+      <summary>Gets or sets the StdErr value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxExecutionResult.StdOut">
+      <summary>Gets or sets the StdOut value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxExecutionResult.Success">
+      <summary>Gets or sets the Success value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxResourceUsage.CpuUsagePercent">
+      <summary>Gets or sets the CpuUsagePercent value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxResourceUsage.DiskLimitMb">
+      <summary>Gets or sets the DiskLimitMb value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxResourceUsage.DiskUsageMb">
+      <summary>Gets or sets the DiskUsageMb value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxResourceUsage.MemoryLimitMb">
+      <summary>Gets or sets the MemoryLimitMb value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Sandbox.SandboxResourceUsage.MemoryUsageMb">
+      <summary>Gets or sets the MemoryUsageMb value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Sandbox.SandboxExecutionResult">
+      <summary>Represents the SandboxExecutionResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Sandbox.SandboxResourceUsage">
+      <summary>Represents the SandboxResourceUsage public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

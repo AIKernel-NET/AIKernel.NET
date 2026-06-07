@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Dtos.Control.ControlEnvelope">
+      <summary>Represents the ControlEnvelope public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Control.ControlExecutionRequest">
+      <summary>Represents the ControlExecutionRequest public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Control.ControlExecutionResult">
+      <summary>Represents the ControlExecutionResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Control.ControlPolicyEvaluation">
+      <summary>Represents the ControlPolicyEvaluation public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Control.ControlStateSnapshot">
+      <summary>Represents the ControlStateSnapshot public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

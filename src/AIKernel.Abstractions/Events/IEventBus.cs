@@ -4,6 +4,8 @@ namespace AIKernel.Abstractions.Events;
 /// UC-20/UC-24/UC-25 に基づく契約です。
 /// イベントを発行する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IEventPublisher']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IEventPublisher']" />
 public interface IEventPublisher
 {
     /// <summary>
@@ -19,6 +21,8 @@ public interface IEventPublisher
 /// UC-20/UC-24/UC-25 に基づく契約です。
 /// すべての購読者へイベントを配信する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IEventBroadcaster']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IEventBroadcaster']" />
 public interface IEventBroadcaster
 {
     /// <summary>
@@ -34,6 +38,8 @@ public interface IEventBroadcaster
 /// UC-20/UC-24/UC-25 に基づく契約です。
 /// イベント購読を管理する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IEventSubscriptionRegistry']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IEventSubscriptionRegistry']" />
 public interface IEventSubscriptionRegistry
 {
     /// <summary>
@@ -65,6 +71,8 @@ public interface IEventSubscriptionRegistry
 /// イベントバスプロバイダーを定義する互換合成インターフェースです。
 /// アプリケーション全体のイベント配信と購読を管理します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IEventBus']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IEventBus']" />
 public interface IEventBus :
     IProvider,
     IEventPublisher,

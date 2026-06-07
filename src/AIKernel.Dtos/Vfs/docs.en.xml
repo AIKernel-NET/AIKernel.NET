@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="P:AIKernel.Dtos.Vfs.VfsCredentials.ApiKey">
+      <summary>Gets or sets the ApiKey value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Vfs.VfsCredentials.Token">
+      <summary>Gets or sets the Token value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Vfs.VfsCredentials.Username">
+      <summary>Gets or sets the Username value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Vfs.VfsCredentials.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Vfs.VfsEntry.CreatedAt">
+      <summary>Gets or sets the CreatedAt value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Vfs.VfsEntry.ModifiedAt">
+      <summary>Gets or sets the ModifiedAt value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Vfs.VfsEntry.Name">
+      <summary>Gets or sets the Name value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Vfs.VfsEntry.Path">
+      <summary>Gets or sets the Path value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Vfs.VfsEntry.Size">
+      <summary>Gets or sets the Size value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Vfs.VfsEntry.Type">
+      <summary>Gets or sets the Type value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Vfs.VfsProviderHealth.CheckedAtUtc">
+      <summary>Gets or sets the CheckedAtUtc value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Vfs.VfsProviderHealth.IsHealthy">
+      <summary>Gets or sets the IsHealthy value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Vfs.VfsProviderHealth.Message">
+      <summary>Gets or sets the Message value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Vfs.VfsQueryRow.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Vfs.VfsQuerySort.Ascending">
+      <summary>Gets or sets the Ascending value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Vfs.VfsQuerySort.FieldName">
+      <summary>Gets or sets the FieldName value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Vfs.VfsCredentials">
+      <summary>Represents the VfsCredentials public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Vfs.VfsEntry">
+      <summary>Represents the VfsEntry public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Vfs.VfsProviderHealth">
+      <summary>Represents the VfsProviderHealth public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Vfs.VfsQueryRow">
+      <summary>Represents the VfsQueryRow public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Vfs.VfsQuerySort">
+      <summary>Represents the VfsQuerySort public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>
