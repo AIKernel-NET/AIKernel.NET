@@ -767,6 +767,75 @@ dotnet test src\AIKernel.NET.slnx -c Release --no-build
 
 Confirm that `AIKernel.Abstractions` still references only `AIKernel.Dtos` and
 `AIKernel.Enums`, and that `AIKernel.Dtos` references only `AIKernel.Enums`.
+
+## 17. Migrating to v0.1.0: Control and Routing Contract Ownership
+The v0.1.0 contract line also moves Control Plane contracts and provider-routing
+decision data into AIKernel.NET. Runtime behavior remains in Core or Control
+implementation packages.
+
+### 17.1 Control Plane contracts
+
+| Contract area | Owner |
+|---|---|
+| `IControlEngine`, `IExecutionGraph`, `IExecutionNode`, `INodeScheduler`, `IControlPolicy`, `IControlStateObserver` | `AIKernel.Abstractions.Control` |
+| `ControlExecutionRequest`, `ControlExecutionResult`, `ControlPolicyEvaluation`, `ControlStateSnapshot`, `ControlEnvelope` | `AIKernel.Dtos.Control` |
+
+`AIKernel.Control.Core` no longer owns duplicate contract definitions. It should
+reference the AIKernel.NET packages and host Control-specific runtime adapters,
+emulators, schedulers, and diagnostics in the implementation repositories.
+
+### 17.2 Provider routing decision DTO split
+`KernelProviderRoutingDecision` is now a pure DTO owned by
+`AIKernel.Dtos.Routing`. Core keeps runtime behavior in extension/helper APIs.
+
+| Old responsibility | New owner |
+|---|---|
+| Routing decision data | `AIKernel.Dtos.Routing.KernelProviderRoutingDecision` |
+| Routing reason/score data | `AIKernel.Dtos.Routing.RoutingReason`, `AIKernel.Dtos.Routing.RoutingScore` |
+| Factory helpers | `AIKernel.Kernel.KernelProviderRoutingDecisionFactory` |
+| `ApplyToRequest`, `ToMetadata` | `AIKernel.Kernel.KernelProviderRoutingDecisionExtensions` |
+
+Migration example:
+
+```csharp
+using AIKernel.Dtos.Routing;
+using AIKernel.Kernel;
+
+var decision = KernelProviderRoutingDecisionFactory.ForProvider(
+    "llm-low",
+    "gpt-mini",
+    providerTier: "low",
+    routeReason: "short-context");
+
+var routedRequest = decision.ApplyToRequest(request);
+```
+
+### 17.3 Core DSL and History public surface cleanup
+DSL and History ROM contracts are already owned by:
+
+| Contract area | Owner |
+|---|---|
+| DSL interfaces | `AIKernel.Abstractions.Dsl` |
+| DSL DTOs | `AIKernel.Dtos.Dsl` |
+| History interfaces | `AIKernel.Abstractions.History` |
+| History DTOs | `AIKernel.Dtos.History` |
+
+Core keeps Result/ResultStep-based DSL and History runtime adapters internal.
+Consumers should program against the AIKernel.NET contracts and use hosting
+registration to obtain runtime implementations.
+
+### 17.4 Local development versioning
+During 0.1.0 development, local packages may use a fourth build segment to avoid
+NuGet cache collisions.
+
+| Phase | PackageVersion | FileVersion | Usage |
+|---|---|---|---|
+| Development | `0.1.0.1` to `0.1.0.n` | synchronized | Local contract verification and CI |
+| RC | `0.1.0-rc1` | fixed | Release candidate |
+| Public release | `0.1.0.0` | fixed | NuGet publication and contract freeze |
+
+Before public publication, align the package family back to the release version
+chosen for NuGet and verify the full dependency graph.
 ---
 
 # Changelog
@@ -776,4 +845,4 @@ Confirm that `AIKernel.Abstractions` still references only `AIKernel.Dtos` and
 - v0.0.3 (2026-06-02): Added dependency-layer migration for Vfs contract ownership, `AIKernel.Vfs` type-forwarding compatibility, package-reference guidance, and cycle-verification steps
 - v0.0.4 (2026-06-04): Added DSL pipeline, DSL ROM, History ROM, Kernel clock contract extraction, ROM store contracts, ambiguous-interface rename guidance, AIKernel.Vfs package removal steps, and interface-only contract package migration for AIKernel.Core adapter migration
 - v0.0.5 (2026-06-05): Removed remaining Abstractions-local DTO/exception implementations, duplicate DTO enums, and legacy ambiguous ChatChain interfaces; added external Capability module contracts, DynamicSLM Model ABI, SeedSLM discipline, distillation offload, HATL external cryptographic operator, governance admissibility gate/trajectory, and Semantic Compilation DTO vocabulary contract preparation
-- v0.1.0 (2026-06-07): Adds MemoryRegion / MemoryMapper contract ownership in AIKernel.Abstractions, AIKernel.Dtos, and AIKernel.Enums while leaving Result-based runtime adapters in Core/Common.
+- v0.1.0 (2026-06-07): Adds MemoryRegion / MemoryMapper, Control Plane, and provider-routing DTO contract ownership in AIKernel.Abstractions, AIKernel.Dtos, and AIKernel.Enums while leaving Result-based runtime adapters and routing behavior in Core/Common.

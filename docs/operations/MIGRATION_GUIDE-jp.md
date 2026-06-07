@@ -765,6 +765,75 @@ dotnet test src\AIKernel.NET.slnx -c Release --no-build
 
 `AIKernel.Abstractions` が `AIKernel.Dtos` と `AIKernel.Enums` のみに依存し、
 `AIKernel.Dtos` が `AIKernel.Enums` のみに依存することを確認してください。
+
+## 17. v0.1.0 への移行: Control / Routing contract ownership
+v0.1.0 contract line では、Control Plane contract と provider-routing
+decision data も AIKernel.NET に移動します。Runtime behavior は Core または
+Control 実装 package に残します。
+
+### 17.1 Control Plane contract
+
+| Contract 領域 | 所有元 |
+|---|---|
+| `IControlEngine`, `IExecutionGraph`, `IExecutionNode`, `INodeScheduler`, `IControlPolicy`, `IControlStateObserver` | `AIKernel.Abstractions.Control` |
+| `ControlExecutionRequest`, `ControlExecutionResult`, `ControlPolicyEvaluation`, `ControlStateSnapshot`, `ControlEnvelope` | `AIKernel.Dtos.Control` |
+
+`AIKernel.Control.Core` は duplicate contract definition を所有しません。
+AIKernel.NET package を参照し、Control 固有の runtime adapter、emulator、
+scheduler、diagnostics は実装 repository 側で提供してください。
+
+### 17.2 Provider routing decision DTO 分離
+`KernelProviderRoutingDecision` は `AIKernel.Dtos.Routing` が所有する純 DTO です。
+Core は runtime behavior を extension/helper API として保持します。
+
+| 旧責務 | 新しい所有元 |
+|---|---|
+| Routing decision data | `AIKernel.Dtos.Routing.KernelProviderRoutingDecision` |
+| Routing reason/score data | `AIKernel.Dtos.Routing.RoutingReason`, `AIKernel.Dtos.Routing.RoutingScore` |
+| Factory helper | `AIKernel.Kernel.KernelProviderRoutingDecisionFactory` |
+| `ApplyToRequest`, `ToMetadata` | `AIKernel.Kernel.KernelProviderRoutingDecisionExtensions` |
+
+移行例:
+
+```csharp
+using AIKernel.Dtos.Routing;
+using AIKernel.Kernel;
+
+var decision = KernelProviderRoutingDecisionFactory.ForProvider(
+    "llm-low",
+    "gpt-mini",
+    providerTier: "low",
+    routeReason: "short-context");
+
+var routedRequest = decision.ApplyToRequest(request);
+```
+
+### 17.3 Core DSL / History public surface cleanup
+DSL / History ROM contract は既に以下が所有しています。
+
+| Contract 領域 | 所有元 |
+|---|---|
+| DSL interface | `AIKernel.Abstractions.Dsl` |
+| DSL DTO | `AIKernel.Dtos.Dsl` |
+| History interface | `AIKernel.Abstractions.History` |
+| History DTO | `AIKernel.Dtos.History` |
+
+Core は Result / ResultStep ベースの DSL / History runtime adapter を internal に
+保持します。Consumer は AIKernel.NET contract を対象にし、runtime 実装は hosting
+registration 経由で取得してください。
+
+### 17.4 ローカル開発バージョン運用
+0.1.0 開発中は NuGet cache 衝突を避けるため、local package に第 4 セグメントを
+使えます。
+
+| フェーズ | PackageVersion | FileVersion | 用途 |
+|---|---|---|---|
+| 開発中 | `0.1.0.1` ～ `0.1.0.n` | 同期 | ローカル契約検証・CI |
+| RC | `0.1.0-rc1` | 固定 | リリース候補 |
+| 公開版 | `0.1.0.0` | 固定 | NuGet 公開・契約固定 |
+
+公開前には package family を NuGet 公開用の release version に揃え、依存グラフ全体を
+再検証してください。
 ---
 
 # 変更履歴
@@ -774,4 +843,4 @@ dotnet test src\AIKernel.NET.slnx -c Release --no-build
 - v0.0.3 (2026-06-02): Vfs contract 所有元の Abstractions への移動、`AIKernel.Vfs` type-forwarding 互換、package reference 指針、循環依存検証手順を追加
 - v0.0.4 (2026-06-04): AIKernel.Core adapter 移行に向け、DSL pipeline、DSL ROM、History ROM、Kernel clock contract 抽出、ROM store contract、曖昧な interface 改名ガイド、AIKernel.Vfs package 削除手順、interface-only contract package 移行手順を追加
 - v0.0.5 (2026-06-05): Abstractions-local DTO/例外実装、DTO enum 重複、旧 ChatChain 曖昧 interface を削除し、external Capability module contract、DynamicSLM Model ABI / SeedSLM discipline / distillation offload / HATL external cryptographic operator / governance admissibility gate・trajectory / Semantic Compilation DTO vocabulary contract 準備を追加
-- v0.1.0 (2026-06-07): MemoryRegion / MemoryMapper contract ownership を AIKernel.Abstractions、AIKernel.Dtos、AIKernel.Enums に追加し、Result-based runtime adapter は Core/Common に残す。
+- v0.1.0 (2026-06-07): MemoryRegion / MemoryMapper、Control Plane、provider-routing DTO contract ownership を AIKernel.Abstractions、AIKernel.Dtos、AIKernel.Enums に追加し、Result-based runtime adapter と routing behavior は Core/Common に残す。

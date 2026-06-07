@@ -23,6 +23,7 @@ Japanese version: [Index](index-jp.md)
 - [capabilities/index.md](capabilities/index.md)
 - [context/index.md](context/index.md)
 - [contracts/index.md](contracts/index.md)
+- [control/index.md](control/index.md)
 - [conversation/index.md](conversation/index.md)
 - [dynamicslm/index.md](dynamicslm/index.md)
 - [dsl/index.md](dsl/index.md)
@@ -51,6 +52,7 @@ Japanese version: [Index](index-jp.md)
 
 ## Namespace Overview
 - `capabilities`: external Capability module registry and invocation boundary contracts for CLI, managed assembly, native ABI, DSL ROM, and remote endpoint modules.
+- `control`: Control Plane contracts for semantic graph to physical execution mapping.
 - `kernel`: execution entry and lifecycle contracts.
 - `dsl`: deterministic semantic IR, DSL pipeline, DSL ROM registry, and VFS-backed DSL ROM store contracts.
 - `dynamicslm`: Model ABI, capability subgraph resolution, lineage verification, payload materialization, scheduling, differential distillation planning, and background offload contracts for capability-modular SLM artifacts.
@@ -81,3 +83,4 @@ Japanese version: [Index](index-jp.md)
 - v0.0.5 (2026-06-05): Added governance vocabulary for admission replay and Semantic IR slots
 - v0.0.5 (2026-06-05): Added external Capability module interface category
 - v0.1.0 (2026-06-07): Added MemoryRegion / MemoryMapper interface category and ownership note
+- v0.1.0 (2026-06-07): Added Control Plane interface category and ownership note

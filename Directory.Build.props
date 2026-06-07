@@ -1,9 +1,9 @@
 <Project>
   <PropertyGroup>
-    <Version>0.1.0</Version>
-    <AssemblyVersion>0.1.0.0</AssemblyVersion>
-    <FileVersion>0.1.0.0</FileVersion>
-    <InformationalVersion>0.1.0</InformationalVersion>
+    <Version>0.1.0.2</Version>
+    <AssemblyVersion>0.1.0.2</AssemblyVersion>
+    <FileVersion>0.1.0.2</FileVersion>
+    <InformationalVersion>0.1.0.2</InformationalVersion>
 	<Authors>Takuya Sogawa</Authors>
 	<Company>AIKernel-NET</Company>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -17,6 +17,8 @@ AIKernel.NET v0.1.0 — First Stable Contract Baseline
 
 • Promotes the AIKernel.NET contract packages to the first 0.1.0 baseline.
 • Adds MemoryRegion / MemoryMapper contracts for Native Capability modules.
+• Adds Control Plane contracts under AIKernel.Abstractions.Control and AIKernel.Dtos.Control.
+• Adds pure routing decision DTOs under AIKernel.Dtos.Routing so Core can keep routing behavior as runtime extensions.
 • Keeps AIKernel.Abstractions and AIKernel.Contracts interface-only.
 • Keeps DTO ownership in AIKernel.Dtos and enum ownership in AIKernel.Enums.
 • Preserves the package DAG: Enums -> none, Dtos -> Enums, Contracts -> Dtos/Enums, Abstractions -> Dtos/Enums.
@@ -27,6 +29,8 @@ AIKernel.NET v0.1.0 — First Stable Contract Baseline
 
 • AIKernel.NET contract package を最初の 0.1.0 baseline に昇格。
 • Native Capability module 向け MemoryRegion / MemoryMapper contract を追加。
+• Control Plane contract を AIKernel.Abstractions.Control / AIKernel.Dtos.Control に追加。
+• routing behavior を Core runtime extension に残すため、AIKernel.Dtos.Routing に純 DTO を追加。
 • AIKernel.Abstractions / AIKernel.Contracts は interface-only を維持。
 • DTO は AIKernel.Dtos、enum は AIKernel.Enums が所有。
 • package DAG は Enums -> none、Dtos -> Enums、Contracts -> Dtos/Enums、Abstractions -> Dtos/Enums を維持。
