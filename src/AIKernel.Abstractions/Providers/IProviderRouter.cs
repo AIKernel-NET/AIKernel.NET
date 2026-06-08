@@ -4,6 +4,8 @@ namespace AIKernel.Abstractions.Providers;
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// Material Context を取得する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderMaterialRetriever']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderMaterialRetriever']" />
 public interface IProviderMaterialRetriever
 {
     /// <summary>
@@ -27,6 +29,8 @@ public interface IProviderMaterialRetriever
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// Material Context をキャッシュから取得する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IMaterialCacheReader']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IMaterialCacheReader']" />
 public interface IMaterialCacheReader
 {
     /// <summary>
@@ -41,6 +45,8 @@ public interface IMaterialCacheReader
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// Material Context をキャッシュに保存する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IMaterialCacheWriter']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IMaterialCacheWriter']" />
 public interface IMaterialCacheWriter
 {
     /// <summary>
@@ -55,6 +61,8 @@ public interface IMaterialCacheWriter
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// Provider 登録を管理する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderRegistry']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderRegistry']" />
 public interface IProviderRegistry
 {
     /// <summary>
@@ -81,6 +89,8 @@ public interface IProviderRegistry
 /// プロバイダーのルーティングと管理を行う互換合成インターフェースです。
 /// Material Context の取得・変換・キャッシングを管理します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderRouter']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderRouter']" />
 public interface IProviderRouter :
     IProviderMaterialRetriever,
     IMaterialCacheReader,

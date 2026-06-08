@@ -5,6 +5,8 @@ namespace AIKernel.Abstractions.Tooling;
 /// ツール実行権限を定義します。
 /// セキュリティコンテキストに基づいた権限管理を行います。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tooling.IToolPermission']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tooling.IToolPermission']" />
 public interface IToolPermission
 {
     /// <summary>

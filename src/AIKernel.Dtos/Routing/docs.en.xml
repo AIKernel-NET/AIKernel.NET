@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="M:AIKernel.Dtos.Routing.ModelCapacityVector.#ctor">
+      <summary>Executes the #ctor operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Routing.ModelRoutingDecision.string&gt;">
+      <summary>Executes the string&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelCapacityVector.Fidelity">
+      <summary>Gets or sets the Fidelity value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelCapacityVector.LatencyPerformance">
+      <summary>Gets or sets the LatencyPerformance value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelCapacityVector.LinguisticFluidity">
+      <summary>Gets or sets the LinguisticFluidity value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelCapacityVector.ReasoningDepth">
+      <summary>Gets or sets the ReasoningDepth value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelCapacityVector.StructuralIntegrity">
+      <summary>Gets or sets the StructuralIntegrity value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelRoutingDecision.DecisionTimestamp">
+      <summary>Gets or sets the DecisionTimestamp value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelRoutingDecision.EffectiveCapacity">
+      <summary>Gets or sets the EffectiveCapacity value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelRoutingDecision.FittingScore">
+      <summary>Gets or sets the FittingScore value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelRoutingDecision.SelectedProviderId">
+      <summary>Gets or sets the SelectedProviderId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelRoutingDecision.SelectionRationale">
+      <summary>Gets or sets the SelectionRationale value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Routing.ComputeOverhead">
+      <summary>Represents the ComputeOverhead public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Routing.ComputeShape">
+      <summary>Represents the ComputeShape public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Routing.KernelProviderRoutingDecision">
+      <summary>Represents the KernelProviderRoutingDecision public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Routing.ModelCapacityVector">
+      <summary>Represents the ModelCapacityVector public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Routing.ModelRoutingDecision">
+      <summary>Represents the ModelRoutingDecision public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Routing.PaddingStrategy">
+      <summary>Represents the PaddingStrategy public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Routing.RoutingReason">
+      <summary>Represents the RoutingReason public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Routing.RoutingScore">
+      <summary>Represents the RoutingScore public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

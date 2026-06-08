@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="M:AIKernel.Dtos.Kernel.AttentionAnalysis.new">
+      <summary>Executes the new operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Kernel.KernelExecutionResult.List&lt;FailureMode&gt;">
+      <summary>Executes the List&lt;FailureMode&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.AttentionAnalysis.RiskLevel">
+      <summary>Gets or sets the RiskLevel value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.AttentionAnalysis.SignalToNoiseRatio">
+      <summary>Gets or sets the SignalToNoiseRatio value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelExecutionResult.Data">
+      <summary>Gets or sets the Data value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelExecutionResult.Error">
+      <summary>Gets or sets the Error value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelExecutionResult.ExecutionTime">
+      <summary>Gets or sets the ExecutionTime value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelExecutionResult.Success">
+      <summary>Gets or sets the Success value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.Credentials">
+      <summary>Gets or sets the Credentials value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.ExecutionOptions">
+      <summary>Gets or sets the ExecutionOptions value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.Input">
+      <summary>Gets or sets the Input value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.ParentSnapshotId">
+      <summary>Gets or sets the ParentSnapshotId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.PromptOptions">
+      <summary>Gets or sets the PromptOptions value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.RequestedModelId">
+      <summary>Gets or sets the RequestedModelId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.RootRomId">
+      <summary>Gets or sets the RootRomId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.Scope">
+      <summary>Gets or sets the Scope value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.VfsProviderId">
+      <summary>Gets or sets the VfsProviderId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelRequest.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelTransactionSnapshot.InputHash">
+      <summary>Gets or sets the InputHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelTransactionSnapshot.RequestedModelId">
+      <summary>Gets or sets the RequestedModelId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelTransactionSnapshot.RootRomId">
+      <summary>Gets or sets the RootRomId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelTransactionSnapshot.StartedAtUtc">
+      <summary>Gets or sets the StartedAtUtc value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelTransactionSnapshot.TransactionId">
+      <summary>Gets or sets the TransactionId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelTransactionSnapshot.VfsProviderId">
+      <summary>Gets or sets the VfsProviderId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Kernel.KernelTransactionSnapshot.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Kernel.AttentionAnalysis">
+      <summary>Represents the AttentionAnalysis public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Kernel.KernelExecutionResult">
+      <summary>Represents the KernelExecutionResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Kernel.KernelRequest">
+      <summary>Represents the KernelRequest public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Kernel.KernelTransactionSnapshot">
+      <summary>Represents the KernelTransactionSnapshot public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

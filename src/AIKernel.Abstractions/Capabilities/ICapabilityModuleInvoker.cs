@@ -2,8 +2,11 @@ namespace AIKernel.Abstractions.Capabilities;
 
 using AIKernel.Dtos.Capabilities;
 
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Capabilities.ICapabilityModuleInvoker']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Capabilities.ICapabilityModuleInvoker']" />
 public interface ICapabilityModuleInvoker
 {
+    /// <summary>Executes the InvokeAsync operation on the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで InvokeAsync 操作を実行します。</summary>
     ValueTask<CapabilityInvocationResult> InvokeAsync(
         CapabilityInvocationRequest request,
         CancellationToken cancellationToken = default);

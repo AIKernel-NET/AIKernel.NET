@@ -5,6 +5,8 @@ namespace AIKernel.Contracts;
 /// カーネル内通信のメッセージ形式を標準化します。
 /// UC-25（Event Bus 配信）
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IMessageContract']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IMessageContract']" />
 public interface IMessageContract
 {
     /// <summary>

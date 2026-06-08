@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Vfs.IDeletableVfsSession">
+      <summary>AIKernel パッケージ利用者に公開される IDeletableVfsSession の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.INavigableVfsDirectory">
+      <summary>AIKernel パッケージ利用者に公開される INavigableVfsDirectory の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.INavigableVfsSession">
+      <summary>AIKernel パッケージ利用者に公開される INavigableVfsSession の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IQueryableVfsSession">
+      <summary>AIKernel パッケージ利用者に公開される IQueryableVfsSession の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IReadableVfsFile">
+      <summary>AIKernel パッケージ利用者に公開される IReadableVfsFile の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IReadableVfsSession">
+      <summary>AIKernel パッケージ利用者に公開される IReadableVfsSession の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IVfsCredentials">
+      <summary>AIKernel パッケージ利用者に公開される IVfsCredentials の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IVfsDirectory">
+      <summary>AIKernel パッケージ利用者に公開される IVfsDirectory の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IVfsEntryInfo">
+      <summary>AIKernel パッケージ利用者に公開される IVfsEntryInfo の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IVfsFile">
+      <summary>AIKernel パッケージ利用者に公開される IVfsFile の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IVfsProvider">
+      <summary>AIKernel パッケージ利用者に公開される IVfsProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IVfsQuery">
+      <summary>AIKernel パッケージ利用者に公開される IVfsQuery の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IVfsQueryResult">
+      <summary>AIKernel パッケージ利用者に公開される IVfsQueryResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IVfsSession">
+      <summary>AIKernel パッケージ利用者に公開される IVfsSession の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IWritableVfsFile">
+      <summary>AIKernel パッケージ利用者に公開される IWritableVfsFile の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IWritableVfsSession">
+      <summary>AIKernel パッケージ利用者に公開される IWritableVfsSession の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

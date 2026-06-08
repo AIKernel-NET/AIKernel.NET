@@ -4,6 +4,8 @@ namespace AIKernel.Abstractions.Rom;
 /// UC-01/UC-12 に基づく契約です。
 /// ROM schema validation capability です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomSchemaValidator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomSchemaValidator']" />
 public interface IRomSchemaValidator
 {
     /// <summary>
@@ -20,6 +22,8 @@ public interface IRomSchemaValidator
 /// UC-01/UC-12 に基づく契約です。
 /// ROM linkage validation capability です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomLinkageValidator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomLinkageValidator']" />
 public interface IRomLinkageValidator
 {
     /// <summary>
@@ -37,6 +41,8 @@ public interface IRomLinkageValidator
 /// UC-01/UC-12 に基づく契約です。
 /// ROM type consistency validation capability です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomTypeConsistencyValidator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomTypeConsistencyValidator']" />
 public interface IRomTypeConsistencyValidator
 {
     /// <summary>
@@ -54,6 +60,8 @@ public interface IRomTypeConsistencyValidator
 /// UC-01/UC-12 に基づく契約です。
 /// ROM circular reference detection capability です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomCircularReferenceValidator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomCircularReferenceValidator']" />
 public interface IRomCircularReferenceValidator
 {
     /// <summary>
@@ -74,6 +82,8 @@ public interface IRomCircularReferenceValidator
 /// RCS-F004: Type Consistency の検証。
 /// RCS-F005: Circular Reference Guard。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomValidator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomValidator']" />
 public interface IRomValidator :
     IRomSchemaValidator,
     IRomLinkageValidator,

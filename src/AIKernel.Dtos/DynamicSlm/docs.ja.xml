@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.BaseModelState">
+      <summary>AIKernel の公開参照サーフェスで公開される BaseModelState 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.CapabilityGraphHash">
+      <summary>AIKernel の公開参照サーフェスで公開される CapabilityGraphHash 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.DelegationId">
+      <summary>AIKernel の公開参照サーフェスで公開される DelegationId 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.DelegationKind">
+      <summary>AIKernel の公開参照サーフェスで公開される DelegationKind 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.DelegationReason">
+      <summary>AIKernel の公開参照サーフェスで公開される DelegationReason 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.DistillationJobId">
+      <summary>AIKernel の公開参照サーフェスで公開される DistillationJobId 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.DistillationRequestId">
+      <summary>AIKernel の公開参照サーフェスで公開される DistillationRequestId 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.FailureKind">
+      <summary>AIKernel の公開参照サーフェスで公開される FailureKind 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.GapDetected">
+      <summary>AIKernel の公開参照サーフェスで公開される GapDetected 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.HotSwapPolicy">
+      <summary>AIKernel の公開参照サーフェスで公開される HotSwapPolicy 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.LineageHash">
+      <summary>AIKernel の公開参照サーフェスで公開される LineageHash 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.MemoryPlacementId">
+      <summary>AIKernel の公開参照サーフェスで公開される MemoryPlacementId 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.ModelAbiHash">
+      <summary>AIKernel の公開参照サーフェスで公開される ModelAbiHash 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.OffloadStatus">
+      <summary>AIKernel の公開参照サーフェスで公開される OffloadStatus 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.PayloadHash">
+      <summary>AIKernel の公開参照サーフェスで公開される PayloadHash 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.PipelineId">
+      <summary>AIKernel の公開参照サーフェスで公開される PipelineId 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.PipelineStage">
+      <summary>AIKernel の公開参照サーフェスで公開される PipelineStage 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.PipelineTraceCount">
+      <summary>AIKernel の公開参照サーフェスで公開される PipelineTraceCount 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.ReasoningTraceFormat">
+      <summary>AIKernel の公開参照サーフェスで公開される ReasoningTraceFormat 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.ReplayLogHash">
+      <summary>AIKernel の公開参照サーフェスで公開される ReplayLogHash 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.ResidentModelId">
+      <summary>AIKernel の公開参照サーフェスで公開される ResidentModelId 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.StrictOutputMode">
+      <summary>AIKernel の公開参照サーフェスで公開される StrictOutputMode 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.TeacherFallbackUsed">
+      <summary>AIKernel の公開参照サーフェスで公開される TeacherFallbackUsed 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.ThoughtArtifactId">
+      <summary>AIKernel の公開参照サーフェスで公開される ThoughtArtifactId 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.TrajectoryId">
+      <summary>AIKernel の公開参照サーフェスで公開される TrajectoryId 値を提供します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.DynamicSlm.DynamicSlmModelAbi.#ctor">
+      <summary>AIKernel の公開参照サーフェスとして #ctor 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineContext.#ctor">
+      <summary>AIKernel の公開参照サーフェスとして #ctor 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineMetadata.#ctor">
+      <summary>AIKernel の公開参照サーフェスとして #ctor 操作を実行します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmAdapterCompatibilityProfile">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmAdapterCompatibilityProfile の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmAdmissionResult">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmAdmissionResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityEdge">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmCapabilityEdge の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityGap">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmCapabilityGap の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityGraph">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmCapabilityGraph の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityGraphUpdate">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmCapabilityGraphUpdate の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityGraphUpdatePlan">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmCapabilityGraphUpdatePlan の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityNode">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmCapabilityNode の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilitySwapDescriptor">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmCapabilitySwapDescriptor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmCompatibilityResult">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmCompatibilityResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmDelegationMetadata">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmDelegationMetadata の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmDelegationRequest">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmDelegationRequest の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmDistillationJobDescriptor">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmDistillationJobDescriptor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmDistillationOffloadRequest">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmDistillationOffloadRequest の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmDistillationPlan">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmDistillationPlan の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmDistillationRequest">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmDistillationRequest の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmExecutionProfile">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmExecutionProfile の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmFailureContext">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmFailureContext の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmFallbackStrategy">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmFallbackStrategy の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmLineage">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmLineage の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmLoadedPayload">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmLoadedPayload の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmMemoryPlacementMetadata">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmMemoryPlacementMetadata の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmMetadataKeys の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmModelAbi">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmModelAbi の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmNeutralityMetadata">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmNeutralityMetadata の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmPayloadDescriptor">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmPayloadDescriptor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineContext">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmPipelineContext の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineMetadata">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmPipelineMetadata の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineOffloadInfo">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmPipelineOffloadInfo の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineResult">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmPipelineResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineTrace">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmPipelineTrace の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmPlacementPlan">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmPlacementPlan の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmReplayLogEntry">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmReplayLogEntry の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmResidentModelDescriptor">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmResidentModelDescriptor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmResolvedSubgraph">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmResolvedSubgraph の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmSemanticProfile">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmSemanticProfile の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmThoughtArtifact">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmThoughtArtifact の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmTrajectoryMetadata">
+      <summary>AIKernel パッケージ利用者に公開される DynamicSlmTrajectoryMetadata の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.SeedSlmOutputDisciplinePolicy">
+      <summary>AIKernel パッケージ利用者に公開される SeedSlmOutputDisciplinePolicy の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.SeedSlmProfile">
+      <summary>AIKernel パッケージ利用者に公開される SeedSlmProfile の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.SeedSlmStructuralConstraints">
+      <summary>AIKernel パッケージ利用者に公開される SeedSlmStructuralConstraints の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.struct">
+      <summary>AIKernel パッケージ利用者に公開される struct の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

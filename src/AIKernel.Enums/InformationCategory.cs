@@ -6,6 +6,8 @@ namespace AIKernel.Enums;
 /// 
 /// 参照: 1.CATEGORY_SEPARATION_PRINCIPLES.jp.md
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Enums.InformationCategory']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Enums.InformationCategory']" />
 public enum InformationCategory
 {
     /// <summary>

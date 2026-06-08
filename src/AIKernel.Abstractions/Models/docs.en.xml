@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Models.ICapabilityProfile">
+      <summary>Represents the ICapabilityProfile public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Models.ICapacityAxis">
+      <summary>Represents the ICapacityAxis public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Models.IDynamicCapacityAxis">
+      <summary>Represents the IDynamicCapacityAxis public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Models.IDynamicCapacityProvider">
+      <summary>Represents the IDynamicCapacityProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Models.IDynamicCapacityVector">
+      <summary>Represents the IDynamicCapacityVector public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Models.IExecutionConstraints">
+      <summary>Represents the IExecutionConstraints public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Models.IVectorMatcher">
+      <summary>Represents the IVectorMatcher public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

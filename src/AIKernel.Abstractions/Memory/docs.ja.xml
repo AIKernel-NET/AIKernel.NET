@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Memory.IMemoryMapper">
+      <summary>AIKernel パッケージ利用者に公開される IMemoryMapper の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Memory.IMemoryRegion">
+      <summary>AIKernel パッケージ利用者に公開される IMemoryRegion の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

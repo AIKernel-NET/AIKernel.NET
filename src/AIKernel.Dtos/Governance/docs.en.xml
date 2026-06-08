@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="P:AIKernel.Dtos.Governance.TrustContext.IsCertificateChainValid">
+      <summary>Gets or sets the IsCertificateChainValid value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Governance.TrustContext.IsDetermined">
+      <summary>Gets or sets the IsDetermined value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Governance.TrustContext.IsKeyRevoked">
+      <summary>Gets or sets the IsKeyRevoked value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Governance.TrustContext.IsTrustStoreHealthy">
+      <summary>Gets or sets the IsTrustStoreHealthy value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Governance.TrustContext.KeyExpiry">
+      <summary>Gets or sets the KeyExpiry value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Governance.TrustContext.SignerId">
+      <summary>Gets or sets the SignerId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Governance.TrustContext.TrustScore">
+      <summary>Gets or sets the TrustScore value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Governance.TrustContext.VerificationTimestamp">
+      <summary>Gets or sets the VerificationTimestamp value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.AdmissibilityReplayRecord">
+      <summary>Represents the AdmissibilityReplayRecord public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.AttentionObservationStats">
+      <summary>Represents the AttentionObservationStats public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.CandidateActionEvaluation">
+      <summary>Represents the CandidateActionEvaluation public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.ComplexityGateResult">
+      <summary>Represents the ComplexityGateResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.ContextLifecycleState">
+      <summary>Represents the ContextLifecycleState public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.CriticalOperationGateResult">
+      <summary>Represents the CriticalOperationGateResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.CriticalOperationProfile">
+      <summary>Represents the CriticalOperationProfile public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.ModelExecutionBudget">
+      <summary>Represents the ModelExecutionBudget public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.PhaseObservationStats">
+      <summary>Represents the PhaseObservationStats public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.SemanticEllipsoidDescriptor">
+      <summary>Represents the SemanticEllipsoidDescriptor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.TaskComplexityProfile">
+      <summary>Represents the TaskComplexityProfile public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.TrajectoryGovernanceScoreReport">
+      <summary>Represents the TrajectoryGovernanceScoreReport public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.TrustContext">
+      <summary>Represents the TrustContext public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="P:AIKernel.Dtos.Governance.TrustContext.IsCertificateChainValid">
+      <summary>AIKernel の公開参照サーフェスで公開される IsCertificateChainValid 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Governance.TrustContext.IsDetermined">
+      <summary>AIKernel の公開参照サーフェスで公開される IsDetermined 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Governance.TrustContext.IsKeyRevoked">
+      <summary>AIKernel の公開参照サーフェスで公開される IsKeyRevoked 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Governance.TrustContext.IsTrustStoreHealthy">
+      <summary>AIKernel の公開参照サーフェスで公開される IsTrustStoreHealthy 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Governance.TrustContext.KeyExpiry">
+      <summary>AIKernel の公開参照サーフェスで公開される KeyExpiry 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Governance.TrustContext.SignerId">
+      <summary>AIKernel の公開参照サーフェスで公開される SignerId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Governance.TrustContext.TrustScore">
+      <summary>AIKernel の公開参照サーフェスで公開される TrustScore 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Governance.TrustContext.VerificationTimestamp">
+      <summary>AIKernel の公開参照サーフェスで公開される VerificationTimestamp 値を取得または設定します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.AdmissibilityReplayRecord">
+      <summary>AIKernel パッケージ利用者に公開される AdmissibilityReplayRecord の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.AttentionObservationStats">
+      <summary>AIKernel パッケージ利用者に公開される AttentionObservationStats の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.CandidateActionEvaluation">
+      <summary>AIKernel パッケージ利用者に公開される CandidateActionEvaluation の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.ComplexityGateResult">
+      <summary>AIKernel パッケージ利用者に公開される ComplexityGateResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.ContextLifecycleState">
+      <summary>AIKernel パッケージ利用者に公開される ContextLifecycleState の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.CriticalOperationGateResult">
+      <summary>AIKernel パッケージ利用者に公開される CriticalOperationGateResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.CriticalOperationProfile">
+      <summary>AIKernel パッケージ利用者に公開される CriticalOperationProfile の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.ModelExecutionBudget">
+      <summary>AIKernel パッケージ利用者に公開される ModelExecutionBudget の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.PhaseObservationStats">
+      <summary>AIKernel パッケージ利用者に公開される PhaseObservationStats の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.SemanticEllipsoidDescriptor">
+      <summary>AIKernel パッケージ利用者に公開される SemanticEllipsoidDescriptor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.TaskComplexityProfile">
+      <summary>AIKernel パッケージ利用者に公開される TaskComplexityProfile の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.TrajectoryGovernanceScoreReport">
+      <summary>AIKernel パッケージ利用者に公開される TrajectoryGovernanceScoreReport の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Governance.TrustContext">
+      <summary>AIKernel パッケージ利用者に公開される TrustContext の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

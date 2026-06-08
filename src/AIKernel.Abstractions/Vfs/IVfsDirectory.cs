@@ -10,6 +10,8 @@ using AIKernel.Dtos.Vfs;
 /// v0.0.2 以降、階層移動能力は <see cref="INavigableVfsDirectory"/> で表現します。
 /// 本インターフェースは既存実装との互換性を維持するため、従来の戻り値型を残します。
 /// </remarks>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IVfsDirectory']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IVfsDirectory']" />
 public interface IVfsDirectory : INavigableVfsDirectory
 {
     /// <summary>

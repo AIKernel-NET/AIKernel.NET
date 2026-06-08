@@ -5,6 +5,8 @@ namespace AIKernel.Contracts;
 /// カーネルレベルの実行コンテキスト管理を行います。
 /// UC-14（Kernel Module による動的構成）
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IKernelContextContract']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IKernelContextContract']" />
 public interface IKernelContextContract
 {
     /// <summary>

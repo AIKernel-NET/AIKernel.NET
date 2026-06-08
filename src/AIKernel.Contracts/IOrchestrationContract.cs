@@ -9,6 +9,8 @@ namespace AIKernel.Contracts;
 /// 参照: 2.CONTEXT_ISOLATION_SPEC.jp.md
 /// UC-02（Structure フェーズ実行）, UC-04（生成と出力整形）
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IOrchestrationContract']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IOrchestrationContract']" />
 public interface IOrchestrationContract
 {
     /// <summary>

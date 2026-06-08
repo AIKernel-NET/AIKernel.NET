@@ -9,6 +9,8 @@ namespace AIKernel.Abstractions.Execution;
 /// 生のロジックと Expression コンテキストから最終出力を生成します。
 /// これは Two‑Phase 実行の第 2 ステップです。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IOutputPolisher']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IOutputPolisher']" />
 public interface IOutputPolisher
 {
     /// <summary>

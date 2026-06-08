@@ -1,9 +1,9 @@
 ---
 title: "routing Interfaces"
 created: 2026-05-06
-updated: 2026-05-16
+updated: 2026-06-07
 published: 2026-05-16
-version: "0.0.2"
+version: "0.1.0"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -21,6 +21,9 @@ tags:
 
 ## 1. 責務の境界 (Responsibility Boundary)
 Routing は、要求能力・制約・実行状況に基づくモデル選定の境界です。`IModelVectorRouter` が意思決定を、`ICapabilityRegistry` が候補情報の解決を担当し、Replay 時は固定条件を優先します。
+Provider routing decision data は `AIKernel.Dtos.Routing` の DTO として
+contract 所有されます。request mutation と metadata projection は Core runtime
+behavior に残します。
 
 ## 2. 関連ユースケース (Related UCs)
 - `UC-03` モデルベクトルルーティング
@@ -38,8 +41,14 @@ Routing は、要求能力・制約・実行状況に基づくモデル選定の
 ## ドキュメント一覧
 - [ICapabilityRegistry (インターフェース仕様)](../routing/ICapabilityRegistry-jp.md)
 - [IModelVectorRouter (インターフェース仕様)](../routing/IModelVectorRouter-jp.md)
+
+## DTOs
+- `KernelProviderRoutingDecision`
+- `RoutingReason`
+- `RoutingScore`
 ---
 
 # 変更履歴
 - v0.0.0 / v0.0.0.0: 初期ドラフト
 - v0.0.1 (2026-05-06): ドキュメント規約に基づくバージョン更新
+- v0.1.0 (2026-06-07): provider-routing decision DTO ownership note を追加

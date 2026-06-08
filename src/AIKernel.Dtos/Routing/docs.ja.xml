@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="M:AIKernel.Dtos.Routing.ModelCapacityVector.#ctor">
+      <summary>AIKernel の公開参照サーフェスとして #ctor 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Routing.ModelRoutingDecision.string&gt;">
+      <summary>AIKernel の公開参照サーフェスとして string&gt; 操作を実行します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelCapacityVector.Fidelity">
+      <summary>AIKernel の公開参照サーフェスで公開される Fidelity 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelCapacityVector.LatencyPerformance">
+      <summary>AIKernel の公開参照サーフェスで公開される LatencyPerformance 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelCapacityVector.LinguisticFluidity">
+      <summary>AIKernel の公開参照サーフェスで公開される LinguisticFluidity 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelCapacityVector.ReasoningDepth">
+      <summary>AIKernel の公開参照サーフェスで公開される ReasoningDepth 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelCapacityVector.StructuralIntegrity">
+      <summary>AIKernel の公開参照サーフェスで公開される StructuralIntegrity 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelRoutingDecision.DecisionTimestamp">
+      <summary>AIKernel の公開参照サーフェスで公開される DecisionTimestamp 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelRoutingDecision.EffectiveCapacity">
+      <summary>AIKernel の公開参照サーフェスで公開される EffectiveCapacity 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelRoutingDecision.FittingScore">
+      <summary>AIKernel の公開参照サーフェスで公開される FittingScore 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelRoutingDecision.SelectedProviderId">
+      <summary>AIKernel の公開参照サーフェスで公開される SelectedProviderId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Routing.ModelRoutingDecision.SelectionRationale">
+      <summary>AIKernel の公開参照サーフェスで公開される SelectionRationale 値を取得または設定します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Routing.ComputeOverhead">
+      <summary>AIKernel パッケージ利用者に公開される ComputeOverhead の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Routing.ComputeShape">
+      <summary>AIKernel パッケージ利用者に公開される ComputeShape の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Routing.KernelProviderRoutingDecision">
+      <summary>AIKernel パッケージ利用者に公開される KernelProviderRoutingDecision の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Routing.ModelCapacityVector">
+      <summary>AIKernel パッケージ利用者に公開される ModelCapacityVector の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Routing.ModelRoutingDecision">
+      <summary>AIKernel パッケージ利用者に公開される ModelRoutingDecision の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Routing.PaddingStrategy">
+      <summary>AIKernel パッケージ利用者に公開される PaddingStrategy の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Routing.RoutingReason">
+      <summary>AIKernel パッケージ利用者に公開される RoutingReason の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Routing.RoutingScore">
+      <summary>AIKernel パッケージ利用者に公開される RoutingScore の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

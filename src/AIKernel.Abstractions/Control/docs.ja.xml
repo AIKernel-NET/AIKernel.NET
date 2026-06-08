@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Control.IControlEngine">
+      <summary>AIKernel パッケージ利用者に公開される IControlEngine の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Control.IControlPolicy">
+      <summary>AIKernel パッケージ利用者に公開される IControlPolicy の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Control.IControlStateObserver">
+      <summary>AIKernel パッケージ利用者に公開される IControlStateObserver の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Control.IExecutionGraph">
+      <summary>AIKernel パッケージ利用者に公開される IExecutionGraph の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Control.IExecutionNode">
+      <summary>AIKernel パッケージ利用者に公開される IExecutionNode の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Control.INodeScheduler">
+      <summary>AIKernel パッケージ利用者に公開される INodeScheduler の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

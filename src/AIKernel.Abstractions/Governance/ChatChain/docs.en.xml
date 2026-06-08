@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Governance.ChatChain.IChatTurn">
+      <summary>Represents the IChatTurn public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ChatChain.IChatTurnCanonicalizer">
+      <summary>Represents the IChatTurnCanonicalizer public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ChatChain.IChatTurnChainVerifier">
+      <summary>Represents the IChatTurnChainVerifier public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ChatChain.IChatTurnSemanticHasher">
+      <summary>Represents the IChatTurnSemanticHasher public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ChatChain.IChatTurnSignatureProvider">
+      <summary>Represents the IChatTurnSignatureProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ChatChain.IChatTurnVerificationResult">
+      <summary>Represents the IChatTurnVerificationResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

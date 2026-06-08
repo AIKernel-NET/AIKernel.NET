@@ -6,6 +6,8 @@ namespace AIKernel.Abstractions.Models;
 /// 単一のベクトル（点）ではなく、基数やメモリなどのパラメータに対する
 /// 性能関数 F(N) を定義することで、NPU環境での動的基数対応を実現します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Models.ICapabilityProfile']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Models.ICapabilityProfile']" />
 public interface ICapabilityProfile
 {
     /// <summary>

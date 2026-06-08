@@ -5,6 +5,8 @@ namespace AIKernel.Abstractions.Models;
 /// モデル能力評価の次元（ディメンション）を表現するインターフェースです。
 /// 将来的な評価軸の追加に対応するための拡張性を提供します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Models.ICapacityAxis']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Models.ICapacityAxis']" />
 public interface ICapacityAxis
 {
     /// <summary>

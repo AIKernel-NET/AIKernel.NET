@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,7 +14,10 @@ namespace AIKernel.Abstractions.Rom;
 /// 抽象層では「値を持つ ROM 識別子である」という最小契約だけを扱い、
 /// 実際の record / class / struct の選択は実装側へ委ねます。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomId']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomId']" />
 public interface IRomId
 {
+    /// <summary>Gets the Value value exposed by the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで公開される Value 値を取得します。</summary>
     string Value { get; }
 }

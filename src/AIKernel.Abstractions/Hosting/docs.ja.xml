@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Hosting.IKernelContext">
+      <summary>AIKernel パッケージ利用者に公開される IKernelContext の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Hosting.IKernelHost">
+      <summary>AIKernel パッケージ利用者に公開される IKernelHost の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Hosting.IKernelModule">
+      <summary>AIKernel パッケージ利用者に公開される IKernelModule の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Hosting.IProviderRegistrar">
+      <summary>AIKernel パッケージ利用者に公開される IProviderRegistrar の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Hosting.IServiceRegistrar">
+      <summary>AIKernel パッケージ利用者に公開される IServiceRegistrar の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

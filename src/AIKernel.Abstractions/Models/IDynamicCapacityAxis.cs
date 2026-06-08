@@ -6,6 +6,8 @@ namespace AIKernel.Abstractions.Models;
 /// NPU環境では、基数やメモリ制約によって各軸の値が非線形に変化するため、
 /// 静的な ICapacityAxis では不十分です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Models.IDynamicCapacityAxis']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Models.IDynamicCapacityAxis']" />
 public interface IDynamicCapacityAxis : ICapacityAxis
 {
     /// <summary>

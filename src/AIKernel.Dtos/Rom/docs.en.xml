@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="M:AIKernel.Dtos.Rom.CanonicalizedRomDocument.List&lt;ResolvedRelation&gt;">
+      <summary>Executes the List&lt;ResolvedRelation&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.CanonicalizedRomDto.List&lt;ResolvedRomRelationDto&gt;">
+      <summary>Executes the List&lt;ResolvedRomRelationDto&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.CanonicalizedRomDto.List&lt;RomEntityMetadataDto&gt;">
+      <summary>Executes the List&lt;RomEntityMetadataDto&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.CircularReferenceDetectionResult.List&lt;IReadOnlyList&lt;string&gt;&gt;">
+      <summary>Executes the List&lt;IReadOnlyList&lt;string&gt;&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.EntityTypeSchema.List&lt;string&gt;">
+      <summary>Executes the List&lt;string&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.EntityTypeSchema.string&gt;">
+      <summary>Executes the string&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.ResolvableEntity.string&gt;">
+      <summary>Executes the string&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.RomEntityMetadataDto.object&gt;">
+      <summary>Executes the object&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.RomLinkageValidationResult.List&lt;string&gt;">
+      <summary>Executes the List&lt;string&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.RomSchemaValidationResult.List&lt;string&gt;">
+      <summary>Executes the List&lt;string&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.RomTypeConsistencyResult.List&lt;string&gt;">
+      <summary>Executes the List&lt;string&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CanonicalizedRomDocument.CanonicalizedAt">
+      <summary>Gets or sets the CanonicalizedAt value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CanonicalizedRomDocument.NormalizedBody">
+      <summary>Gets or sets the NormalizedBody value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CanonicalizedRomDocument.NormalizedEntityId">
+      <summary>Gets or sets the NormalizedEntityId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CanonicalizedRomDocument.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CanonicalizedRomDto.CanonicalBody">
+      <summary>Gets or sets the CanonicalBody value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CanonicalizedRomDto.CanonicalizationVersion">
+      <summary>Gets or sets the CanonicalizationVersion value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CircularReferenceDetectionResult.CircularReferencesDetected">
+      <summary>Gets or sets the CircularReferencesDetected value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CircularReferenceDetectionResult.MayTriggerInferenceLoop">
+      <summary>Gets or sets the MayTriggerInferenceLoop value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CircularReferenceDetectionResult.Message">
+      <summary>Gets or sets the Message value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.EntityTypeSchema.TypeName">
+      <summary>Gets or sets the TypeName value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.ResolvableEntity.Id">
+      <summary>Gets or sets the Id value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.ResolvableEntity.Type">
+      <summary>Gets or sets the Type value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.ResolvedRelation.OriginalReference">
+      <summary>Gets or sets the OriginalReference value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.ResolvedRelation.RelationType">
+      <summary>Gets or sets the RelationType value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.ResolvedRelation.ResolvedId">
+      <summary>Gets or sets the ResolvedId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.ResolvedRomRelationDto.FullyQualifiedId">
+      <summary>Gets or sets the FullyQualifiedId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.ResolvedRomRelationDto.OriginalReference">
+      <summary>Gets or sets the OriginalReference value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.ResolvedRomRelationDto.RelationType">
+      <summary>Gets or sets the RelationType value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomEntityMetadataDto.EntityId">
+      <summary>Gets or sets the EntityId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomEntityMetadataDto.EntityType">
+      <summary>Gets or sets the EntityType value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomEntityMetadataDto.Version">
+      <summary>Gets or sets the Version value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomLinkageValidationResult.AllLinksResolvable">
+      <summary>Gets or sets the AllLinksResolvable value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomLinkageValidationResult.Message">
+      <summary>Gets or sets the Message value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomRelationDto.NumericValue">
+      <summary>Gets or sets the NumericValue value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomRelationDto.RelationName">
+      <summary>Gets or sets the RelationName value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomRelationDto.RelationType">
+      <summary>Gets or sets the RelationType value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomRelationDto.TargetReference">
+      <summary>Gets or sets the TargetReference value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomRelationDto.TextValue">
+      <summary>Gets or sets the TextValue value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSchemaValidationResult.IsValid">
+      <summary>Gets or sets the IsValid value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSchemaValidationResult.Message">
+      <summary>Gets or sets the Message value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshot.Body">
+      <summary>Gets or sets the Body value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshot.LoadedAtUtc">
+      <summary>Gets or sets the LoadedAtUtc value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshot.Relations">
+      <summary>Gets or sets the Relations value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshot.RomId">
+      <summary>Gets or sets the RomId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshot.SecurityTags">
+      <summary>Gets or sets the SecurityTags value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshot.Signature">
+      <summary>Gets or sets the Signature value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshot.SourcePath">
+      <summary>Gets or sets the SourcePath value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshot.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshotCandidate.Body">
+      <summary>Gets or sets the Body value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshotCandidate.ExpectedHash">
+      <summary>Gets or sets the ExpectedHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshotCandidate.Relations">
+      <summary>Gets or sets the Relations value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshotCandidate.RomId">
+      <summary>Gets or sets the RomId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshotCandidate.SecurityTags">
+      <summary>Gets or sets the SecurityTags value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshotCandidate.SourcePath">
+      <summary>Gets or sets the SourcePath value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshotCandidate.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomTypeConsistencyResult.IsConsistent">
+      <summary>Gets or sets the IsConsistent value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomTypeConsistencyResult.Message">
+      <summary>Gets or sets the Message value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.CanonicalizedRomDocument">
+      <summary>Represents the CanonicalizedRomDocument public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.CanonicalizedRomDto">
+      <summary>Represents the CanonicalizedRomDto public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.CircularReferenceDetectionResult">
+      <summary>Represents the CircularReferenceDetectionResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.EntityTypeSchema">
+      <summary>Represents the EntityTypeSchema public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.MarkdownFrontMatterDocument">
+      <summary>Represents the MarkdownFrontMatterDocument public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.ResolvableEntity">
+      <summary>Represents the ResolvableEntity public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.ResolvedRelation">
+      <summary>Represents the ResolvedRelation public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.ResolvedRomRelationDto">
+      <summary>Represents the ResolvedRomRelationDto public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomContextEdge">
+      <summary>Represents the RomContextEdge public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomEntityMetadataDto">
+      <summary>Represents the RomEntityMetadataDto public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomId">
+      <summary>Represents the RomId public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomLinkageValidationResult">
+      <summary>Represents the RomLinkageValidationResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomRelationDto">
+      <summary>Represents the RomRelationDto public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomRelationSnapshot">
+      <summary>Represents the RomRelationSnapshot public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomSchemaValidationResult">
+      <summary>Represents the RomSchemaValidationResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomSignatureSnapshot">
+      <summary>Represents the RomSignatureSnapshot public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomSignatureVerificationResult">
+      <summary>Represents the RomSignatureVerificationResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomSnapshot">
+      <summary>Represents the RomSnapshot public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomSnapshotCandidate">
+      <summary>Represents the RomSnapshotCandidate public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomTypeConsistencyResult">
+      <summary>Represents the RomTypeConsistencyResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

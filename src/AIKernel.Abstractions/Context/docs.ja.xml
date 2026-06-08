@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Context.IContextAssembler">
+      <summary>AIKernel パッケージ利用者に公開される IContextAssembler の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Context.IContextAssemblyGovernancePolicy">
+      <summary>AIKernel パッケージ利用者に公開される IContextAssemblyGovernancePolicy の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Context.IContextCollection">
+      <summary>AIKernel パッケージ利用者に公開される IContextCollection の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Context.IContextCollectionFactory">
+      <summary>AIKernel パッケージ利用者に公開される IContextCollectionFactory の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Context.IContextFragmentCollection">
+      <summary>AIKernel パッケージ利用者に公開される IContextFragmentCollection の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Context.IContextHashCalculator">
+      <summary>AIKernel パッケージ利用者に公開される IContextHashCalculator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Context.IContextSnapshot">
+      <summary>AIKernel パッケージ利用者に公開される IContextSnapshot の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Context.IPhaseBufferCollection">
+      <summary>AIKernel パッケージ利用者に公開される IPhaseBufferCollection の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Context.IRomPathResolver">
+      <summary>AIKernel パッケージ利用者に公開される IRomPathResolver の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Vfs.IDeletableVfsSession">
+      <summary>Represents the IDeletableVfsSession public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.INavigableVfsDirectory">
+      <summary>Represents the INavigableVfsDirectory public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.INavigableVfsSession">
+      <summary>Represents the INavigableVfsSession public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IQueryableVfsSession">
+      <summary>Represents the IQueryableVfsSession public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IReadableVfsFile">
+      <summary>Represents the IReadableVfsFile public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IReadableVfsSession">
+      <summary>Represents the IReadableVfsSession public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IVfsCredentials">
+      <summary>Represents the IVfsCredentials public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IVfsDirectory">
+      <summary>Represents the IVfsDirectory public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IVfsEntryInfo">
+      <summary>Represents the IVfsEntryInfo public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IVfsFile">
+      <summary>Represents the IVfsFile public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IVfsProvider">
+      <summary>Represents the IVfsProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IVfsQuery">
+      <summary>Represents the IVfsQuery public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IVfsQueryResult">
+      <summary>Represents the IVfsQueryResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IVfsSession">
+      <summary>Represents the IVfsSession public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IWritableVfsFile">
+      <summary>Represents the IWritableVfsFile public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Vfs.IWritableVfsSession">
+      <summary>Represents the IWritableVfsSession public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

@@ -1,19 +1,24 @@
 using AIKernel.Abstractions.Capabilities;
+using AIKernel.Abstractions.Control;
 using AIKernel.Abstractions.DynamicSlm;
 using AIKernel.Abstractions.Dsl;
 using AIKernel.Abstractions.Governance;
 using AIKernel.Abstractions.Hatl;
 using AIKernel.Abstractions.History;
+using AIKernel.Abstractions.Memory;
 using AIKernel.Abstractions.Time;
 using AIKernel.Contracts;
 using AIKernel.Dtos.Capabilities;
 using AIKernel.Dtos.Context;
+using AIKernel.Dtos.Control;
 using AIKernel.Dtos.Core;
 using AIKernel.Dtos.DynamicSlm;
 using AIKernel.Dtos.Dsl;
 using AIKernel.Dtos.Governance;
 using AIKernel.Dtos.Hatl;
 using AIKernel.Dtos.History;
+using AIKernel.Dtos.Memory;
+using AIKernel.Dtos.Routing;
 using AIKernel.Dtos.SemanticCompilation;
 using AIKernel.Dtos.Time;
 using AIKernel.Enums;
@@ -830,6 +835,93 @@ public sealed class ExtractedInterfaceContractTests
 
         Assert.Equal(DateTimeOffset.UnixEpoch, timestamp.UtcDateTime);
         Assert.Equal(1, timestamp.LogicalCounter);
+    }
+
+    [Fact]
+    public void ControlContractsAreOwnedByAbstractions()
+    {
+        Assert.True(typeof(IControlEngine).IsInterface);
+        Assert.True(typeof(IExecutionGraph).IsInterface);
+        Assert.True(typeof(IExecutionNode).IsInterface);
+        Assert.True(typeof(INodeScheduler).IsInterface);
+        Assert.True(typeof(IControlPolicy).IsInterface);
+        Assert.True(typeof(IControlStateObserver).IsInterface);
+
+        var request = new ControlExecutionRequest(
+            "exec-1",
+            new Dictionary<string, string> { ["mode"] = "emulator" });
+
+        var result = new ControlExecutionResult(
+            request.ExecutionId,
+            "Completed",
+            new Dictionary<string, string> { ["engine"] = "control-emulator" });
+
+        var envelope = new ControlEnvelope(
+            "control-1",
+            "execute",
+            new Dictionary<string, string>());
+
+        var evaluation = new ControlPolicyEvaluation(
+            true,
+            "allow",
+            "policy admitted");
+
+        var snapshot = new ControlStateSnapshot(
+            request.ExecutionId,
+            "graph-1",
+            "node-1",
+            new Dictionary<string, string>());
+
+        Assert.Equal("exec-1", result.ExecutionId);
+        Assert.Equal("execute", envelope.Operation);
+        Assert.True(evaluation.Allowed);
+        Assert.Equal("node-1", snapshot.NodeId);
+    }
+
+    [Fact]
+    public void RoutingDecisionIsPureDtoContract()
+    {
+        var score = new RoutingScore(
+            0.97,
+            "routing-profile-v1",
+            new Dictionary<string, string> { ["signal"] = "capability" });
+
+        var reason = new RoutingReason(
+            "capability-match",
+            "Capability module accepted the request",
+            new Dictionary<string, string> { ["capability"] = "chat.completion" });
+
+        var decision = new KernelProviderRoutingDecision(
+            "provider-1",
+            "model-1",
+            "high",
+            "capability-chat",
+            reason.Code,
+            score,
+            new Dictionary<string, string> { ["reason_description"] = reason.Description });
+
+        Assert.Equal("provider-1", decision.ProviderId);
+        Assert.Equal("model-1", decision.RequestedModelId);
+        Assert.Equal("capability-chat", decision.CapabilityModuleId);
+        Assert.Equal("capability-match", decision.RouteReason);
+        Assert.Equal(0.97, decision.Score?.Value);
+    }
+
+    [Fact]
+    public void MemoryContractsAreOwnedByAbstractionsDtosAndEnums()
+    {
+        Assert.True(typeof(IMemoryRegion).IsInterface);
+        Assert.True(typeof(IMemoryMapper).IsInterface);
+        Assert.True(typeof(MemoryAccessMode).IsEnum);
+
+        var info = new MemoryRegionInfo(
+            "model.safetensors",
+            4096,
+            MemoryAccessMode.Read);
+
+        Assert.Equal("model.safetensors", info.Path);
+        Assert.Equal(4096, info.Length);
+        Assert.Equal(MemoryAccessMode.Read, info.AccessMode);
     }
 
     [Fact]

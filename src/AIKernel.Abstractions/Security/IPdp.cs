@@ -4,6 +4,8 @@ namespace AIKernel.Abstractions.Security;
 /// UC-21（マテリアル検疫とポリシー実行）に基づく Policy Decision Point 判定契約を定義します。
 /// 本契約の判定経路は決定論的コードで構成し、LLM 推論を直接・間接に介在させてはなりません。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPolicyDecisionPoint']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPolicyDecisionPoint']" />
 public interface IPolicyDecisionPoint
 {
     /// <summary>
@@ -17,6 +19,8 @@ public interface IPolicyDecisionPoint
 /// <summary>
 /// Policy registry を管理する契約です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPolicyRegistry']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPolicyRegistry']" />
 public interface IPolicyRegistry
 {
     /// <summary>
@@ -35,6 +39,8 @@ public interface IPolicyRegistry
 /// <summary>
 /// Policy source を公開する契約です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPolicySource']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPolicySource']" />
 public interface IPolicySource
 {
     /// <summary>
@@ -46,6 +52,8 @@ public interface IPolicySource
 /// <summary>
 /// 統合コンテキストに対する policy evaluation 契約です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPolicyDecisionEvaluator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPolicyDecisionEvaluator']" />
 public interface IPolicyDecisionEvaluator
 {
     /// <summary>
@@ -59,6 +67,8 @@ public interface IPolicyDecisionEvaluator
 /// <summary>
 /// UC-21（マテリアル検疫とポリシー実行）に基づく Policy Decision Point（PDP）互換合成契約を定義します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPdp']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPdp']" />
 public interface IPdp :
     IPolicyDecisionPoint,
     IPolicyRegistry,

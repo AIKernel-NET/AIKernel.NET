@@ -5,6 +5,8 @@ using AIKernel.Dtos.Vfs;
 /// <summary>
 /// 列挙および階層移動が可能な Vfs ディレクトリ能力を定義します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Vfs.INavigableVfsDirectory']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Vfs.INavigableVfsDirectory']" />
 public interface INavigableVfsDirectory : IVfsEntryInfo
 {
     /// <summary>

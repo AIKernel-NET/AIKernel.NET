@@ -2,9 +2,9 @@
 id: repo-dependency-rules
 title: "AIKernel.NET Repository Dependency Rules"
 created: 2026-04-30
-updated: 2026-06-05
+updated: 2026-06-08
 published: 2026-05-16
-version: "0.0.5"
+version: "0.1.0"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -123,6 +123,18 @@ DynamicSLM, SeedSLM, and HATL additions follow the same contract-only rule.
 `AIKernel.Enums` owns the shared DynamicSLM and HATL enum primitives.
 Result/ResultStep/LINQ adapters, model loading, SeedSLM discipline enforcement, thought-artifact persistence, delegation execution, memory placement execution, distillation execution, HATL cryptography, key handling, ratchets, Merkle construction, and public-anchor runtime behavior belong to `AIKernel.Common`, `AIKernel.Core`, provider packages, host applications, or external operator modules such as AIKernel.RH-backed components.
 
+### 4.6 v0.1.0 Contract ABI Freeze Rule
+
+The 0.1.0 prototype-validation line freezes shared contract ownership for
+MemoryRegion / MemoryMapper, Control Plane, provider routing DTOs, external
+Capability descriptors, DynamicSLM, SeedSLM, HATL, and governance vocabulary.
+
+Runtime behavior, Result monad adapters, LINQ composition helpers, Python
+bindings, CUDA/native bridges, and physical execution engines remain outside
+AIKernel.NET and must live in implementation repositories such as
+AIKernel.Core, AIKernel.Control, AIKernel.Tools, AIKernel.Cuda13.0, or
+AIKernel.Demo.
+
 ---
 
 ## 5. Kernel / Providers / VfsProviders Dependency Rules (Summary)
@@ -156,3 +168,4 @@ Dependency direction is design. AIKernel.NET, as an OS, fixes boundaries and dep
 - v0.0.4 (2026-06-04): Removed the separate AIKernel.Vfs compatibility facade from the package graph
 - v0.0.5 (2026-06-05): Added contract-surface purity rule for interface-only packages
 - v0.0.5 (2026-06-05): Clarified Core/Common dependency allowance and DynamicSLM/SeedSLM/HATL contract-only ownership
+- v0.1.0 (2026-06-08): Added prototype-validation contract ABI freeze rule and clarified that Python/CUDA/runtime behavior stays outside AIKernel.NET

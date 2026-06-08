@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="P:AIKernel.Dtos.Query.QueryPart.Order">
+      <summary>Gets or sets the Order value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Query.QueryPart.ParentQueryId">
+      <summary>Gets or sets the ParentQueryId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Query.QueryPart.QueryPartId">
+      <summary>Gets or sets the QueryPartId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Query.QueryPart.Role">
+      <summary>Gets or sets the Role value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Query.QueryPart.Text">
+      <summary>Gets or sets the Text value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Query.QueryPart.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Query.QueryPart">
+      <summary>Represents the QueryPart public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

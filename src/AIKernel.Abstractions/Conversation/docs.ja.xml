@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationBranch">
+      <summary>AIKernel パッケージ利用者に公開される IConversationBranch の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationBranchLister">
+      <summary>AIKernel パッケージ利用者に公開される IConversationBranchLister の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationCheckpoint">
+      <summary>AIKernel パッケージ利用者に公開される IConversationCheckpoint の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationDiff">
+      <summary>AIKernel パッケージ利用者に公開される IConversationDiff の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationSnapshot">
+      <summary>AIKernel パッケージ利用者に公開される IConversationSnapshot の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationSnapshotDeleter">
+      <summary>AIKernel パッケージ利用者に公開される IConversationSnapshotDeleter の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationSnapshotReader">
+      <summary>AIKernel パッケージ利用者に公開される IConversationSnapshotReader の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationSnapshotWriter">
+      <summary>AIKernel パッケージ利用者に公開される IConversationSnapshotWriter の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationStore">
+      <summary>AIKernel パッケージ利用者に公開される IConversationStore の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IConversationTimeline">
+      <summary>AIKernel パッケージ利用者に公開される IConversationTimeline の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Conversation.IDiffFormatter">
+      <summary>AIKernel パッケージ利用者に公開される IDiffFormatter の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

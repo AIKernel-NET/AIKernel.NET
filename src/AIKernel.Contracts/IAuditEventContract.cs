@@ -5,6 +5,8 @@ namespace AIKernel.Contracts;
 /// セキュリティイベントのログ記録と追跡を行います。
 /// UC-24（監査イベント出力）
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IAuditEventContract']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IAuditEventContract']" />
 public interface IAuditEventContract
 {
     /// <summary>

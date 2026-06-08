@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="M:AIKernel.Dtos.Tokenization.TokenizerStatistics.Empty&lt;string&gt;">
+      <summary>Executes the Empty&lt;string&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.PaddingInfo.LogicalTokenCount">
+      <summary>Gets or sets the LogicalTokenCount value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.PaddingInfo.MemoryDifferenceBytes">
+      <summary>Gets or sets the MemoryDifferenceBytes value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.PaddingInfo.PaddingAmount">
+      <summary>Gets or sets the PaddingAmount value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.PaddingInfo.PaddingMethod">
+      <summary>Gets or sets the PaddingMethod value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.PaddingInfo.PaddingPercentage">
+      <summary>Gets or sets the PaddingPercentage value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.PaddingInfo.PhysicalCardinality">
+      <summary>Gets or sets the PhysicalCardinality value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.PaddingInfo.Rationale">
+      <summary>Gets or sets the Rationale value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.Token.EndPosition">
+      <summary>Gets or sets the EndPosition value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.Token.StartPosition">
+      <summary>Gets or sets the StartPosition value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.Token.TokenId">
+      <summary>Gets or sets the TokenId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.Token.TokenType">
+      <summary>Gets or sets the TokenType value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.Token.Value">
+      <summary>Gets or sets the Value value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.TokenizerStatistics.AverageTokenLength">
+      <summary>Gets or sets the AverageTokenLength value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.TokenizerStatistics.MaxTokenLength">
+      <summary>Gets or sets the MaxTokenLength value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.TokenizerStatistics.Version">
+      <summary>Gets or sets the Version value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Tokenization.TokenizerStatistics.VocabularySize">
+      <summary>Gets or sets the VocabularySize value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Tokenization.PaddingInfo">
+      <summary>Represents the PaddingInfo public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Tokenization.Token">
+      <summary>Represents the Token public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Tokenization.TokenizerStatistics">
+      <summary>Represents the TokenizerStatistics public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

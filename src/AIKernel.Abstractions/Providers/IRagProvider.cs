@@ -4,6 +4,8 @@ namespace AIKernel.Abstractions.Providers;
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// 情報検索・取得（RAG）を実行する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IRagSearchProvider']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IRagSearchProvider']" />
 public interface IRagSearchProvider
 {
     /// <summary>
@@ -20,6 +22,8 @@ public interface IRagSearchProvider
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// RAG インデックスへの書き込みを実行する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IRagIndexWriter']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IRagIndexWriter']" />
 public interface IRagIndexWriter
 {
     /// <summary>
@@ -36,6 +40,8 @@ public interface IRagIndexWriter
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// RAG インデックスからドキュメントを削除する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IRagIndexDeleter']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IRagIndexDeleter']" />
 public interface IRagIndexDeleter
 {
     /// <summary>
@@ -50,6 +56,8 @@ public interface IRagIndexDeleter
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// RAG インデックス全体の管理操作を実行する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IRagIndexManager']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IRagIndexManager']" />
 public interface IRagIndexManager
 {
     /// <summary>
@@ -65,6 +73,8 @@ public interface IRagIndexManager
 /// ベクトル検索やキーワード検索を通じて関連データを取得し、必要に応じて
 /// インデックスを更新します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IRagProvider']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IRagProvider']" />
 public interface IRagProvider :
     IProvider,
     IRagSearchProvider,

@@ -8,6 +8,8 @@ using AIKernel.Abstractions.Models;
 /// 目的と制約から必要なモデル能力ベクトルを推定するインターフェースです。
 /// RAGとの連携を通じてタスク要求を分析し、最適なモデル選定をサポートします。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tasks.ITaskVectorEstimator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tasks.ITaskVectorEstimator']" />
 public interface ITaskVectorEstimator
 {
     /// <summary>

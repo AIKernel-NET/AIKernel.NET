@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Providers.IBatchEmbeddingProvider">
+      <summary>AIKernel パッケージ利用者に公開される IBatchEmbeddingProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IDynamicProviderCapacitySource">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicProviderCapacitySource の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IEmbeddingCapabilityMetadata">
+      <summary>AIKernel パッケージ利用者に公開される IEmbeddingCapabilityMetadata の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IEmbeddingDimensionProvider">
+      <summary>AIKernel パッケージ利用者に公開される IEmbeddingDimensionProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IEmbeddingProvider">
+      <summary>AIKernel パッケージ利用者に公開される IEmbeddingProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IMaterialCacheReader">
+      <summary>AIKernel パッケージ利用者に公開される IMaterialCacheReader の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IMaterialCacheWriter">
+      <summary>AIKernel パッケージ利用者に公開される IMaterialCacheWriter の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IModelMessage">
+      <summary>AIKernel パッケージ利用者に公開される IModelMessage の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IModelProvider">
+      <summary>AIKernel パッケージ利用者に公開される IModelProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProvider">
+      <summary>AIKernel パッケージ利用者に公開される IProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderAvailabilityProbe">
+      <summary>AIKernel パッケージ利用者に公開される IProviderAvailabilityProbe の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderBillingInfo">
+      <summary>AIKernel パッケージ利用者に公開される IProviderBillingInfo の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderCapabilities">
+      <summary>AIKernel パッケージ利用者に公開される IProviderCapabilities の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderCapabilitySource">
+      <summary>AIKernel パッケージ利用者に公開される IProviderCapabilitySource の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderCapacityVectorSource">
+      <summary>AIKernel パッケージ利用者に公開される IProviderCapacityVectorSource の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderConnectionCapabilities">
+      <summary>AIKernel パッケージ利用者に公開される IProviderConnectionCapabilities の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderCostProfile">
+      <summary>AIKernel パッケージ利用者に公開される IProviderCostProfile の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderCreditInfo">
+      <summary>AIKernel パッケージ利用者に公開される IProviderCreditInfo の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderHealthProbe">
+      <summary>AIKernel パッケージ利用者に公開される IProviderHealthProbe の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderIdentity">
+      <summary>AIKernel パッケージ利用者に公開される IProviderIdentity の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderLifecycle">
+      <summary>AIKernel パッケージ利用者に公開される IProviderLifecycle の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderMaterialRetriever">
+      <summary>AIKernel パッケージ利用者に公開される IProviderMaterialRetriever の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderOperationCapabilities">
+      <summary>AIKernel パッケージ利用者に公開される IProviderOperationCapabilities の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderProfileSource">
+      <summary>AIKernel パッケージ利用者に公開される IProviderProfileSource の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderRegistry">
+      <summary>AIKernel パッケージ利用者に公開される IProviderRegistry の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderResourceProfile">
+      <summary>AIKernel パッケージ利用者に公開される IProviderResourceProfile の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderRouter">
+      <summary>AIKernel パッケージ利用者に公開される IProviderRouter の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderUsageStats">
+      <summary>AIKernel パッケージ利用者に公開される IProviderUsageStats の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IQuantizationSupport">
+      <summary>AIKernel パッケージ利用者に公開される IQuantizationSupport の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IQueryProcessingCapabilities">
+      <summary>AIKernel パッケージ利用者に公開される IQueryProcessingCapabilities の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IQuestionAnsweringProvider">
+      <summary>AIKernel パッケージ利用者に公開される IQuestionAnsweringProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IRagIndexDeleter">
+      <summary>AIKernel パッケージ利用者に公開される IRagIndexDeleter の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IRagIndexManager">
+      <summary>AIKernel パッケージ利用者に公開される IRagIndexManager の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IRagIndexWriter">
+      <summary>AIKernel パッケージ利用者に公開される IRagIndexWriter の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IRagProvider">
+      <summary>AIKernel パッケージ利用者に公開される IRagProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IRagSearchProvider">
+      <summary>AIKernel パッケージ利用者に公開される IRagSearchProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IStreamingGenerationProvider">
+      <summary>AIKernel パッケージ利用者に公開される IStreamingGenerationProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.ITextEmbeddingProvider">
+      <summary>AIKernel パッケージ利用者に公開される ITextEmbeddingProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.ITextGenerationProvider">
+      <summary>AIKernel パッケージ利用者に公開される ITextGenerationProvider の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

@@ -7,7 +7,7 @@ The `src` tree contains the canonical specification projects that define interfa
 
 ## Current Package Baseline
 
-As of v0.0.5:
+As of v0.1.0:
 
 - `AIKernel.Abstractions` and `AIKernel.Contracts` export interfaces only.
 - DTOs are owned by `AIKernel.Dtos`.
@@ -15,7 +15,7 @@ As of v0.0.5:
 - `AIKernel.Vfs` remains a public namespace inside `AIKernel.Abstractions`; there is no separate `AIKernel.Vfs` package/project.
 - Legacy ambiguous ChatChain names such as `IResult` and `ISemanticHasher` are not exported from the ChatChain namespace. Use `IChatTurnVerificationResult` and `IChatTurnSemanticHasher`.
 
-Keep all AIKernel.NET packages on the same version line. Do not mix `AIKernel.Abstractions` v0.0.5 with older `AIKernel.Dtos` or `AIKernel.Enums` packages.
+Keep all AIKernel.NET packages on the same version line. Do not mix `AIKernel.Abstractions` v0.1.0 with older `AIKernel.Dtos` or `AIKernel.Enums` packages.
 
 ---
 
@@ -128,5 +128,5 @@ Prohibited examples:
 
 ## License
 
-MIT License  
+MIT License
 Copyright © 2026 Takuya Sogawa

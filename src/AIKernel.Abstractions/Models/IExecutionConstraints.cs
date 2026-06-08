@@ -6,6 +6,8 @@ namespace AIKernel.Abstractions.Models;
 /// SGS-007 Dynamic Scope Binding の `allowed_tools` / `max_token_budget` / `scopes` と
 /// 実行環境制約を統合して表現します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Models.IExecutionConstraints']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Models.IExecutionConstraints']" />
 public interface IExecutionConstraints
 {
     /// <summary>

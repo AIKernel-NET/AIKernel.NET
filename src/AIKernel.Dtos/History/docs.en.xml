@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="F:AIKernel.Dtos.History.HistoryRomMetadataKeys.RomHash">
+      <summary>Provides the RomHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.History.HistoryRomMetadataKeys.RomId">
+      <summary>Provides the RomId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.History.HistoryRomMetadataKeys.RomName">
+      <summary>Provides the RomName value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.History.HistoryRomMetadataKeys.RomNamespace">
+      <summary>Provides the RomNamespace value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.History.HistoryRomMetadataKeys.RomPath">
+      <summary>Provides the RomPath value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.History.ChatHistoryRomOptions">
+      <summary>Represents the ChatHistoryRomOptions public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.History.ChatHistoryRomRecord">
+      <summary>Represents the ChatHistoryRomRecord public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.History.HistoryRomMetadata">
+      <summary>Represents the HistoryRomMetadata public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.History.HistoryRomMetadataKeys">
+      <summary>Represents the HistoryRomMetadataKeys public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.History.HistoryRomSnapshot">
+      <summary>Represents the HistoryRomSnapshot public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

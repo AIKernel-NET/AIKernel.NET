@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="P:AIKernel.Dtos.Material.SourceInfo.CollectedAt">
+      <summary>AIKernel の公開参照サーフェスで公開される CollectedAt 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Material.SourceInfo.SourceId">
+      <summary>AIKernel の公開参照サーフェスで公開される SourceId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Material.SourceInfo.SourceType">
+      <summary>AIKernel の公開参照サーフェスで公開される SourceType 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Material.SourceInfo.string">
+      <summary>AIKernel の公開参照サーフェスで公開される string 値を取得または設定します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Material.SourceInfo">
+      <summary>AIKernel パッケージ利用者に公開される SourceInfo の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

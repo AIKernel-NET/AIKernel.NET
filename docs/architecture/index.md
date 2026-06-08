@@ -1,7 +1,7 @@
 ---
-updated: 2026-06-05
+updated: 2026-06-07
 published: 2026-05-16
-version: "0.0.5"
+version: "0.1.0"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -198,6 +198,15 @@ Semantic Compilation DTOs also provide contract-only carriers for observable sem
 
 ---
 
+## [1.22 Memory Region / Mapper Contracts](./interfaces/memory/index.md)
+
+v0.1.0 moves the OS-independent `IMemoryRegion` / `IMemoryMapper`
+contract surface into AIKernel.NET. The shared DTO/enum vocabulary lives in
+`AIKernel.Dtos.Memory` and `AIKernel.Enums`, while Result-based adapters and
+Win32/POSIX implementations remain in AIKernel.Core / AIKernel.Kernel.
+
+---
+
 # 2. Comparative Architecture
 
 ## [2.1 AIKernel vs LangChain](./6.AIKERNEL_VS_LANGCHAIN.md)
@@ -274,6 +283,7 @@ Read the architecture documents in this order. Each item points downward into th
 - [HATL Interface Contracts](./interfaces/hatl/index.md)
 - [DynamicSLM Interface Contracts](./interfaces/dynamicslm/index.md)
 - [Governance Interfaces](./interfaces/governance/index.md)
+- [Memory Interfaces](./interfaces/memory/index.md)
 - [Paper Implementation Status](./PAPER_IMPLEMENTATION_STATUS.md)
 
 ---
@@ -298,3 +308,4 @@ This index is the entry point to understanding AIKernel's overall design.
 - v0.0.5 (2026-06-05): Added governance admission and Semantic IR vocabulary navigation
 - v0.0.5 (2026-06-05): Added Semantic Compilation DTO vocabulary navigation
 - v0.0.5 (2026-06-05): Added external Capability module contract navigation
+- v0.1.0 (2026-06-07): Added MemoryRegion / MemoryMapper contract extraction navigation

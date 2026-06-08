@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="M:AIKernel.Dtos.Core.Purpose.new">
+      <summary>Executes the new operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.Purpose.CreatedAt">
+      <summary>Gets or sets the CreatedAt value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.Purpose.Description">
+      <summary>Gets or sets the Description value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.Purpose.Priority">
+      <summary>Gets or sets the Priority value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.Purpose.PurposeId">
+      <summary>Gets or sets the PurposeId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.Purpose.SuccessCriteria">
+      <summary>Gets or sets the SuccessCriteria value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.TransferTrace.ContextType">
+      <summary>Gets or sets the ContextType value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.TransferTrace.DataSizeBytes">
+      <summary>Gets or sets the DataSizeBytes value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.TransferTrace.Destination">
+      <summary>Gets or sets the Destination value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.TransferTrace.Source">
+      <summary>Gets or sets the Source value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.TransferTrace.TraceId">
+      <summary>Gets or sets the TraceId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.TransferTrace.TransferredAt">
+      <summary>Gets or sets the TransferredAt value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Core.TransferTrace.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Core.ProviderHealthStatus">
+      <summary>Represents the ProviderHealthStatus public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Core.Purpose">
+      <summary>Represents the Purpose public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Core.RateLimitInfo">
+      <summary>Represents the RateLimitInfo public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Core.TransferTrace">
+      <summary>Represents the TransferTrace public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

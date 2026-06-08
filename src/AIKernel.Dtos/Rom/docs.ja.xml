@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="M:AIKernel.Dtos.Rom.CanonicalizedRomDocument.List&lt;ResolvedRelation&gt;">
+      <summary>AIKernel の公開参照サーフェスとして List&lt;ResolvedRelation&gt; 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.CanonicalizedRomDto.List&lt;ResolvedRomRelationDto&gt;">
+      <summary>AIKernel の公開参照サーフェスとして List&lt;ResolvedRomRelationDto&gt; 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.CanonicalizedRomDto.List&lt;RomEntityMetadataDto&gt;">
+      <summary>AIKernel の公開参照サーフェスとして List&lt;RomEntityMetadataDto&gt; 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.CircularReferenceDetectionResult.List&lt;IReadOnlyList&lt;string&gt;&gt;">
+      <summary>AIKernel の公開参照サーフェスとして List&lt;IReadOnlyList&lt;string&gt;&gt; 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.EntityTypeSchema.List&lt;string&gt;">
+      <summary>AIKernel の公開参照サーフェスとして List&lt;string&gt; 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.EntityTypeSchema.string&gt;">
+      <summary>AIKernel の公開参照サーフェスとして string&gt; 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.ResolvableEntity.string&gt;">
+      <summary>AIKernel の公開参照サーフェスとして string&gt; 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.RomEntityMetadataDto.object&gt;">
+      <summary>AIKernel の公開参照サーフェスとして object&gt; 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.RomLinkageValidationResult.List&lt;string&gt;">
+      <summary>AIKernel の公開参照サーフェスとして List&lt;string&gt; 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.RomSchemaValidationResult.List&lt;string&gt;">
+      <summary>AIKernel の公開参照サーフェスとして List&lt;string&gt; 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Rom.RomTypeConsistencyResult.List&lt;string&gt;">
+      <summary>AIKernel の公開参照サーフェスとして List&lt;string&gt; 操作を実行します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CanonicalizedRomDocument.CanonicalizedAt">
+      <summary>AIKernel の公開参照サーフェスで公開される CanonicalizedAt 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CanonicalizedRomDocument.NormalizedBody">
+      <summary>AIKernel の公開参照サーフェスで公開される NormalizedBody 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CanonicalizedRomDocument.NormalizedEntityId">
+      <summary>AIKernel の公開参照サーフェスで公開される NormalizedEntityId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CanonicalizedRomDocument.string">
+      <summary>AIKernel の公開参照サーフェスで公開される string 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CanonicalizedRomDto.CanonicalBody">
+      <summary>AIKernel の公開参照サーフェスで公開される CanonicalBody 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CanonicalizedRomDto.CanonicalizationVersion">
+      <summary>AIKernel の公開参照サーフェスで公開される CanonicalizationVersion 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CircularReferenceDetectionResult.CircularReferencesDetected">
+      <summary>AIKernel の公開参照サーフェスで公開される CircularReferencesDetected 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CircularReferenceDetectionResult.MayTriggerInferenceLoop">
+      <summary>AIKernel の公開参照サーフェスで公開される MayTriggerInferenceLoop 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.CircularReferenceDetectionResult.Message">
+      <summary>AIKernel の公開参照サーフェスで公開される Message 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.EntityTypeSchema.TypeName">
+      <summary>AIKernel の公開参照サーフェスで公開される TypeName 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.ResolvableEntity.Id">
+      <summary>AIKernel の公開参照サーフェスで公開される Id 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.ResolvableEntity.Type">
+      <summary>AIKernel の公開参照サーフェスで公開される Type 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.ResolvedRelation.OriginalReference">
+      <summary>AIKernel の公開参照サーフェスで公開される OriginalReference 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.ResolvedRelation.RelationType">
+      <summary>AIKernel の公開参照サーフェスで公開される RelationType 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.ResolvedRelation.ResolvedId">
+      <summary>AIKernel の公開参照サーフェスで公開される ResolvedId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.ResolvedRomRelationDto.FullyQualifiedId">
+      <summary>AIKernel の公開参照サーフェスで公開される FullyQualifiedId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.ResolvedRomRelationDto.OriginalReference">
+      <summary>AIKernel の公開参照サーフェスで公開される OriginalReference 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.ResolvedRomRelationDto.RelationType">
+      <summary>AIKernel の公開参照サーフェスで公開される RelationType 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomEntityMetadataDto.EntityId">
+      <summary>AIKernel の公開参照サーフェスで公開される EntityId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomEntityMetadataDto.EntityType">
+      <summary>AIKernel の公開参照サーフェスで公開される EntityType 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomEntityMetadataDto.Version">
+      <summary>AIKernel の公開参照サーフェスで公開される Version 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomLinkageValidationResult.AllLinksResolvable">
+      <summary>AIKernel の公開参照サーフェスで公開される AllLinksResolvable 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomLinkageValidationResult.Message">
+      <summary>AIKernel の公開参照サーフェスで公開される Message 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomRelationDto.NumericValue">
+      <summary>AIKernel の公開参照サーフェスで公開される NumericValue 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomRelationDto.RelationName">
+      <summary>AIKernel の公開参照サーフェスで公開される RelationName 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomRelationDto.RelationType">
+      <summary>AIKernel の公開参照サーフェスで公開される RelationType 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomRelationDto.TargetReference">
+      <summary>AIKernel の公開参照サーフェスで公開される TargetReference 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomRelationDto.TextValue">
+      <summary>AIKernel の公開参照サーフェスで公開される TextValue 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSchemaValidationResult.IsValid">
+      <summary>AIKernel の公開参照サーフェスで公開される IsValid 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSchemaValidationResult.Message">
+      <summary>AIKernel の公開参照サーフェスで公開される Message 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshot.Body">
+      <summary>AIKernel の公開参照サーフェスで公開される Body 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshot.LoadedAtUtc">
+      <summary>AIKernel の公開参照サーフェスで公開される LoadedAtUtc 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshot.Relations">
+      <summary>AIKernel の公開参照サーフェスで公開される Relations 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshot.RomId">
+      <summary>AIKernel の公開参照サーフェスで公開される RomId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshot.SecurityTags">
+      <summary>AIKernel の公開参照サーフェスで公開される SecurityTags 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshot.Signature">
+      <summary>AIKernel の公開参照サーフェスで公開される Signature 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshot.SourcePath">
+      <summary>AIKernel の公開参照サーフェスで公開される SourcePath 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshot.string">
+      <summary>AIKernel の公開参照サーフェスで公開される string 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshotCandidate.Body">
+      <summary>AIKernel の公開参照サーフェスで公開される Body 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshotCandidate.ExpectedHash">
+      <summary>AIKernel の公開参照サーフェスで公開される ExpectedHash 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshotCandidate.Relations">
+      <summary>AIKernel の公開参照サーフェスで公開される Relations 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshotCandidate.RomId">
+      <summary>AIKernel の公開参照サーフェスで公開される RomId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshotCandidate.SecurityTags">
+      <summary>AIKernel の公開参照サーフェスで公開される SecurityTags 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshotCandidate.SourcePath">
+      <summary>AIKernel の公開参照サーフェスで公開される SourcePath 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomSnapshotCandidate.string">
+      <summary>AIKernel の公開参照サーフェスで公開される string 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomTypeConsistencyResult.IsConsistent">
+      <summary>AIKernel の公開参照サーフェスで公開される IsConsistent 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Rom.RomTypeConsistencyResult.Message">
+      <summary>AIKernel の公開参照サーフェスで公開される Message 値を取得または設定します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.CanonicalizedRomDocument">
+      <summary>AIKernel パッケージ利用者に公開される CanonicalizedRomDocument の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.CanonicalizedRomDto">
+      <summary>AIKernel パッケージ利用者に公開される CanonicalizedRomDto の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.CircularReferenceDetectionResult">
+      <summary>AIKernel パッケージ利用者に公開される CircularReferenceDetectionResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.EntityTypeSchema">
+      <summary>AIKernel パッケージ利用者に公開される EntityTypeSchema の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.MarkdownFrontMatterDocument">
+      <summary>AIKernel パッケージ利用者に公開される MarkdownFrontMatterDocument の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.ResolvableEntity">
+      <summary>AIKernel パッケージ利用者に公開される ResolvableEntity の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.ResolvedRelation">
+      <summary>AIKernel パッケージ利用者に公開される ResolvedRelation の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.ResolvedRomRelationDto">
+      <summary>AIKernel パッケージ利用者に公開される ResolvedRomRelationDto の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomContextEdge">
+      <summary>AIKernel パッケージ利用者に公開される RomContextEdge の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomEntityMetadataDto">
+      <summary>AIKernel パッケージ利用者に公開される RomEntityMetadataDto の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomId">
+      <summary>AIKernel パッケージ利用者に公開される RomId の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomLinkageValidationResult">
+      <summary>AIKernel パッケージ利用者に公開される RomLinkageValidationResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomRelationDto">
+      <summary>AIKernel パッケージ利用者に公開される RomRelationDto の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomRelationSnapshot">
+      <summary>AIKernel パッケージ利用者に公開される RomRelationSnapshot の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomSchemaValidationResult">
+      <summary>AIKernel パッケージ利用者に公開される RomSchemaValidationResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomSignatureSnapshot">
+      <summary>AIKernel パッケージ利用者に公開される RomSignatureSnapshot の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomSignatureVerificationResult">
+      <summary>AIKernel パッケージ利用者に公開される RomSignatureVerificationResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomSnapshot">
+      <summary>AIKernel パッケージ利用者に公開される RomSnapshot の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomSnapshotCandidate">
+      <summary>AIKernel パッケージ利用者に公開される RomSnapshotCandidate の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rom.RomTypeConsistencyResult">
+      <summary>AIKernel パッケージ利用者に公開される RomTypeConsistencyResult の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

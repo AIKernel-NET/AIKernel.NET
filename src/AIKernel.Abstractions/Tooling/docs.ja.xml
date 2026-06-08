@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Tooling.IToolExecutor">
+      <summary>AIKernel パッケージ利用者に公開される IToolExecutor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tooling.IToolFileDownloadSource">
+      <summary>AIKernel パッケージ利用者に公開される IToolFileDownloadSource の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tooling.IToolFileUploadSink">
+      <summary>AIKernel パッケージ利用者に公開される IToolFileUploadSink の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tooling.IToolPermission">
+      <summary>AIKernel パッケージ利用者に公開される IToolPermission の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tooling.IToolResourceUsageSource">
+      <summary>AIKernel パッケージ利用者に公開される IToolResourceUsageSource の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tooling.IToolSandbox">
+      <summary>AIKernel パッケージ利用者に公開される IToolSandbox の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tooling.IToolSandboxCleanup">
+      <summary>AIKernel パッケージ利用者に公開される IToolSandboxCleanup の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tooling.IToolSandboxIdentity">
+      <summary>AIKernel パッケージ利用者に公開される IToolSandboxIdentity の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

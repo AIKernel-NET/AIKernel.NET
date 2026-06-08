@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Events.IAuditEvent">
+      <summary>AIKernel パッケージ利用者に公開される IAuditEvent の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IAuditEventWriter">
+      <summary>AIKernel パッケージ利用者に公開される IAuditEventWriter の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IAuditLogger">
+      <summary>AIKernel パッケージ利用者に公開される IAuditLogger の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IEventBroadcaster">
+      <summary>AIKernel パッケージ利用者に公開される IEventBroadcaster の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IEventBus">
+      <summary>AIKernel パッケージ利用者に公開される IEventBus の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IEventPublisher">
+      <summary>AIKernel パッケージ利用者に公開される IEventPublisher の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IEventSubscriptionRegistry">
+      <summary>AIKernel パッケージ利用者に公開される IEventSubscriptionRegistry の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IExecutionAuditLogger">
+      <summary>AIKernel パッケージ利用者に公開される IExecutionAuditLogger の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IGuardAuditLogger">
+      <summary>AIKernel パッケージ利用者に公開される IGuardAuditLogger の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IPipelineAuditLogger">
+      <summary>AIKernel パッケージ利用者に公開される IPipelineAuditLogger の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IProviderAuditLogger">
+      <summary>AIKernel パッケージ利用者に公開される IProviderAuditLogger の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.ITransferTraceLogger">
+      <summary>AIKernel パッケージ利用者に公開される ITransferTraceLogger の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

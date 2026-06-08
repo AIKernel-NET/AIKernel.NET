@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Contracts.IAttentionPollutionDetector">
+      <summary>Represents the IAttentionPollutionDetector public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IAuditEventContract">
+      <summary>Represents the IAuditEventContract public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IEssentialMaterialExtractor">
+      <summary>Represents the IEssentialMaterialExtractor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IExpressionApplicationGate">
+      <summary>Represents the IExpressionApplicationGate public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IExpressionContract">
+      <summary>Represents the IExpressionContract public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IExpressionIsolationValidator">
+      <summary>Represents the IExpressionIsolationValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IKernelContextContract">
+      <summary>Represents the IKernelContextContract public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.ILayerSeparationValidator">
+      <summary>Represents the ILayerSeparationValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IMaterialCanonicalizer">
+      <summary>Represents the IMaterialCanonicalizer public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IMaterialContract">
+      <summary>Represents the IMaterialContract public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IMaterialHashProvider">
+      <summary>Represents the IMaterialHashProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IMaterialNormalizer">
+      <summary>Represents the IMaterialNormalizer public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IMaterialQuarantineValidator">
+      <summary>Represents the IMaterialQuarantineValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IMaterialStructurizer">
+      <summary>Represents the IMaterialStructurizer public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IMessageContract">
+      <summary>Represents the IMessageContract public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IOrchestrationContract">
+      <summary>Represents the IOrchestrationContract public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IOrchestrationContractValidator">
+      <summary>Represents the IOrchestrationContractValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.ISignalToNoiseRatioCalculator">
+      <summary>Represents the ISignalToNoiseRatioCalculator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.ITokenizerProfile">
+      <summary>Represents the ITokenizerProfile public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IUnifiedContextContract">
+      <summary>Represents the IUnifiedContextContract public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IUnifiedContextContractValidator">
+      <summary>Represents the IUnifiedContextContractValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

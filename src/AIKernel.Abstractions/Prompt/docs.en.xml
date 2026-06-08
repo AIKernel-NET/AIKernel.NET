@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Prompt.IPostExecutionRuleValidator">
+      <summary>Represents the IPostExecutionRuleValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IPreExecutionRuleValidator">
+      <summary>Represents the IPreExecutionRuleValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IPromptRepository">
+      <summary>Represents the IPromptRepository public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IPromptRule">
+      <summary>Represents the IPromptRule public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IPromptSignatureProvider">
+      <summary>Represents the IPromptSignatureProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IPromptValidator">
+      <summary>Represents the IPromptValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IPromptVerifier">
+      <summary>Represents the IPromptVerifier public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IRuleEvaluator">
+      <summary>Represents the IRuleEvaluator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IRuleRegistry">
+      <summary>Represents the IRuleRegistry public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Prompt.IRulesEngine">
+      <summary>Represents the IRulesEngine public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

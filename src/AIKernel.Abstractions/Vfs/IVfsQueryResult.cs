@@ -6,6 +6,8 @@ using AIKernel.Dtos.Vfs;
 /// Vfs クエリ結果のインターフェースを定義します。
 /// UC-08（コンテキストスナップショットと永続化）, UC-18（Chat Persistence）
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IVfsQueryResult']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IVfsQueryResult']" />
 public interface IVfsQueryResult
 {
     /// <summary>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Scheduling.IJobScheduler">
+      <summary>Represents the IJobScheduler public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Scheduling.IScheduleSpec">
+      <summary>Represents the IScheduleSpec public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Scheduling.IScheduledExecutionResult">
+      <summary>Represents the IScheduledExecutionResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Scheduling.IScheduledExecutionResultReader">
+      <summary>Represents the IScheduledExecutionResultReader public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Scheduling.IScheduledJob">
+      <summary>Represents the IScheduledJob public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Scheduling.IScheduledJobCanceller">
+      <summary>Represents the IScheduledJobCanceller public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Scheduling.IScheduledJobReader">
+      <summary>Represents the IScheduledJobReader public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Scheduling.IScheduler">
+      <summary>Represents the IScheduler public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

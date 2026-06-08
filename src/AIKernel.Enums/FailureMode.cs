@@ -5,6 +5,8 @@ namespace AIKernel.Enums;
 /// 
 /// 参照: 3.ATTENTION_POLLUTION_THEORY.jp.md, 4.LLM_SURFACE_MODE_FAILURE.jp.md
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Enums.FailureMode']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Enums.FailureMode']" />
 public enum FailureMode
 {
     /// <summary>

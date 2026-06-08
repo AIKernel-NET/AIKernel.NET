@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Providers.IBatchEmbeddingProvider">
+      <summary>Represents the IBatchEmbeddingProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IDynamicProviderCapacitySource">
+      <summary>Represents the IDynamicProviderCapacitySource public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IEmbeddingCapabilityMetadata">
+      <summary>Represents the IEmbeddingCapabilityMetadata public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IEmbeddingDimensionProvider">
+      <summary>Represents the IEmbeddingDimensionProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IEmbeddingProvider">
+      <summary>Represents the IEmbeddingProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IMaterialCacheReader">
+      <summary>Represents the IMaterialCacheReader public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IMaterialCacheWriter">
+      <summary>Represents the IMaterialCacheWriter public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IModelMessage">
+      <summary>Represents the IModelMessage public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IModelProvider">
+      <summary>Represents the IModelProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProvider">
+      <summary>Represents the IProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderAvailabilityProbe">
+      <summary>Represents the IProviderAvailabilityProbe public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderBillingInfo">
+      <summary>Represents the IProviderBillingInfo public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderCapabilities">
+      <summary>Represents the IProviderCapabilities public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderCapabilitySource">
+      <summary>Represents the IProviderCapabilitySource public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderCapacityVectorSource">
+      <summary>Represents the IProviderCapacityVectorSource public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderConnectionCapabilities">
+      <summary>Represents the IProviderConnectionCapabilities public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderCostProfile">
+      <summary>Represents the IProviderCostProfile public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderCreditInfo">
+      <summary>Represents the IProviderCreditInfo public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderHealthProbe">
+      <summary>Represents the IProviderHealthProbe public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderIdentity">
+      <summary>Represents the IProviderIdentity public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderLifecycle">
+      <summary>Represents the IProviderLifecycle public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderMaterialRetriever">
+      <summary>Represents the IProviderMaterialRetriever public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderOperationCapabilities">
+      <summary>Represents the IProviderOperationCapabilities public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderProfileSource">
+      <summary>Represents the IProviderProfileSource public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderRegistry">
+      <summary>Represents the IProviderRegistry public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderResourceProfile">
+      <summary>Represents the IProviderResourceProfile public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderRouter">
+      <summary>Represents the IProviderRouter public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IProviderUsageStats">
+      <summary>Represents the IProviderUsageStats public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IQuantizationSupport">
+      <summary>Represents the IQuantizationSupport public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IQueryProcessingCapabilities">
+      <summary>Represents the IQueryProcessingCapabilities public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IQuestionAnsweringProvider">
+      <summary>Represents the IQuestionAnsweringProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IRagIndexDeleter">
+      <summary>Represents the IRagIndexDeleter public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IRagIndexManager">
+      <summary>Represents the IRagIndexManager public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IRagIndexWriter">
+      <summary>Represents the IRagIndexWriter public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IRagProvider">
+      <summary>Represents the IRagProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IRagSearchProvider">
+      <summary>Represents the IRagSearchProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.IStreamingGenerationProvider">
+      <summary>Represents the IStreamingGenerationProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.ITextEmbeddingProvider">
+      <summary>Represents the ITextEmbeddingProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Providers.ITextGenerationProvider">
+      <summary>Represents the ITextGenerationProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="F:AIKernel.Dtos.Hatl.HatlMetadataKeys.AnchorId">
+      <summary>Provides the AnchorId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Hatl.HatlMetadataKeys.DeedStatus">
+      <summary>Provides the DeedStatus value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Hatl.HatlMetadataKeys.LedgerId">
+      <summary>Provides the LedgerId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Hatl.HatlMetadataKeys.MerkleRootHash">
+      <summary>Provides the MerkleRootHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Hatl.HatlMetadataKeys.PreviousAnchorHash">
+      <summary>Provides the PreviousAnchorHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Hatl.HatlMetadataKeys.VerificationStatus">
+      <summary>Provides the VerificationStatus value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlAnchorDocument">
+      <summary>Represents the HatlAnchorDocument public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlBlockMacRequest">
+      <summary>Represents the HatlBlockMacRequest public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlBlockMacResult">
+      <summary>Represents the HatlBlockMacResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlDigitalDeed">
+      <summary>Represents the HatlDigitalDeed public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlLedgerEntry">
+      <summary>Represents the HatlLedgerEntry public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlMetadataKeys">
+      <summary>Represents the HatlMetadataKeys public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlPublicAnchorReceipt">
+      <summary>Represents the HatlPublicAnchorReceipt public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlRatchetStepRequest">
+      <summary>Represents the HatlRatchetStepRequest public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlRatchetStepResult">
+      <summary>Represents the HatlRatchetStepResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlVerificationResult">
+      <summary>Represents the HatlVerificationResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

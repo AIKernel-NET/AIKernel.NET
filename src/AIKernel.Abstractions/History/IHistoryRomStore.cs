@@ -3,8 +3,11 @@ namespace AIKernel.Abstractions.History;
 using AIKernel.Dtos.History;
 using AIKernel.Vfs;
 
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.History.IHistoryRomStore']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.History.IHistoryRomStore']" />
 public interface IHistoryRomStore
 {
+    /// <summary>Executes the SaveHistoryAsRomAsync operation on the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで SaveHistoryAsRomAsync 操作を実行します。</summary>
     Task<HistoryRomMetadata> SaveHistoryAsRomAsync(
         IVfsSession session,
         string @namespace,
@@ -16,6 +19,7 @@ public interface IHistoryRomStore
         IReadOnlyList<string>? securityTags = null,
         CancellationToken cancellationToken = default);
 
+    /// <summary>Executes the SaveMarkdownAsRomAsync operation on the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで SaveMarkdownAsRomAsync 操作を実行します。</summary>
     Task<HistoryRomMetadata> SaveMarkdownAsRomAsync(
         IVfsSession session,
         string @namespace,
@@ -24,6 +28,7 @@ public interface IHistoryRomStore
         DateTimeOffset createdAtUtc,
         CancellationToken cancellationToken = default);
 
+    /// <summary>Executes the LoadHistoryRomAsync operation on the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで LoadHistoryRomAsync 操作を実行します。</summary>
     Task<HistoryRomMetadata> LoadHistoryRomAsync(
         IVfsSession session,
         string @namespace,

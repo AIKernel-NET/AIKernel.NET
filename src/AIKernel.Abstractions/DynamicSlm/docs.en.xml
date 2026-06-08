@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmArtifactPublisher">
+      <summary>Represents the IDynamicSlmArtifactPublisher public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmAsyncPipeline">
+      <summary>Represents the IDynamicSlmAsyncPipeline public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmAsyncPipelineStep">
+      <summary>Represents the IDynamicSlmAsyncPipelineStep public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmBackgroundDistillationService">
+      <summary>Represents the IDynamicSlmBackgroundDistillationService public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmCapabilityGapDetector">
+      <summary>Represents the IDynamicSlmCapabilityGapDetector public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmCapabilityGraphEvolutionPlanner">
+      <summary>Represents the IDynamicSlmCapabilityGraphEvolutionPlanner public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmCapabilityGraphResolver">
+      <summary>Represents the IDynamicSlmCapabilityGraphResolver public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmCompatibilityVerifier">
+      <summary>Represents the IDynamicSlmCompatibilityVerifier public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmDelegationPlanner">
+      <summary>Represents the IDynamicSlmDelegationPlanner public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmDistillationJobScheduler">
+      <summary>Represents the IDynamicSlmDistillationJobScheduler public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmDistillationPlanner">
+      <summary>Represents the IDynamicSlmDistillationPlanner public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmFailure">
+      <summary>Represents the IDynamicSlmFailure public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmLineageVerifier">
+      <summary>Represents the IDynamicSlmLineageVerifier public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmMemoryPlacementPlanner">
+      <summary>Represents the IDynamicSlmMemoryPlacementPlanner public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmModelAbiProvider">
+      <summary>Represents the IDynamicSlmModelAbiProvider public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmModuleRegistry">
+      <summary>Represents the IDynamicSlmModuleRegistry public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmPayloadLoader">
+      <summary>Represents the IDynamicSlmPayloadLoader public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmPipelineBuilder">
+      <summary>Represents the IDynamicSlmPipelineBuilder public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmPipelineContextFactory">
+      <summary>Represents the IDynamicSlmPipelineContextFactory public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmPipelineStep">
+      <summary>Represents the IDynamicSlmPipelineStep public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmScheduler">
+      <summary>Represents the IDynamicSlmScheduler public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmThoughtArtifactSink">
+      <summary>Represents the IDynamicSlmThoughtArtifactSink public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.DynamicSlm.ISeedSlmDisciplineVerifier">
+      <summary>Represents the ISeedSlmDisciplineVerifier public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

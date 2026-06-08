@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Events.IAuditEvent">
+      <summary>Represents the IAuditEvent public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IAuditEventWriter">
+      <summary>Represents the IAuditEventWriter public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IAuditLogger">
+      <summary>Represents the IAuditLogger public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IEventBroadcaster">
+      <summary>Represents the IEventBroadcaster public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IEventBus">
+      <summary>Represents the IEventBus public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IEventPublisher">
+      <summary>Represents the IEventPublisher public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IEventSubscriptionRegistry">
+      <summary>Represents the IEventSubscriptionRegistry public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IExecutionAuditLogger">
+      <summary>Represents the IExecutionAuditLogger public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IGuardAuditLogger">
+      <summary>Represents the IGuardAuditLogger public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IPipelineAuditLogger">
+      <summary>Represents the IPipelineAuditLogger public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.IProviderAuditLogger">
+      <summary>Represents the IProviderAuditLogger public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Events.ITransferTraceLogger">
+      <summary>Represents the ITransferTraceLogger public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

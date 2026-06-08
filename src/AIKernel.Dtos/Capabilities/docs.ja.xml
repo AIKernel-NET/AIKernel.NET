@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Dtos.Capabilities.CapabilityInvocationRequest">
+      <summary>AIKernel パッケージ利用者に公開される CapabilityInvocationRequest の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Capabilities.CapabilityInvocationResult">
+      <summary>AIKernel パッケージ利用者に公開される CapabilityInvocationResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Capabilities.CapabilityModuleDescriptor">
+      <summary>AIKernel パッケージ利用者に公開される CapabilityModuleDescriptor の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

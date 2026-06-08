@@ -5,6 +5,8 @@ namespace AIKernel.Abstractions.Events;
 /// 監査イベントを定義します。
 /// セキュリティ監査とアクティビティログの基盤です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IAuditEvent']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IAuditEvent']" />
 public interface IAuditEvent
 {
     /// <summary>

@@ -5,6 +5,8 @@ namespace AIKernel.Contracts;
 /// トークナイザーの設定とメタデータを管理します。
 /// UC-30（トークン・ベクトル推定）
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.ITokenizerProfile']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.ITokenizerProfile']" />
 public interface ITokenizerProfile
 {
     /// <summary>

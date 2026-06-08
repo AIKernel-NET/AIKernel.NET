@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Tasks.IPipeline">
+      <summary>AIKernel パッケージ利用者に公開される IPipeline の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.IPipelineExecutionController">
+      <summary>AIKernel パッケージ利用者に公開される IPipelineExecutionController の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.IPipelineExecutionResult">
+      <summary>AIKernel パッケージ利用者に公開される IPipelineExecutionResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.IPipelineExecutionResultReader">
+      <summary>AIKernel パッケージ利用者に公開される IPipelineExecutionResultReader の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.IPipelineExecutor">
+      <summary>AIKernel パッケージ利用者に公開される IPipelineExecutor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.IPipelineRegistrar">
+      <summary>AIKernel パッケージ利用者に公開される IPipelineRegistrar の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.ITask">
+      <summary>AIKernel パッケージ利用者に公開される ITask の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.ITaskContext">
+      <summary>AIKernel パッケージ利用者に公開される ITaskContext の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.ITaskExecutionResult">
+      <summary>AIKernel パッケージ利用者に公開される ITaskExecutionResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.ITaskExecutor">
+      <summary>AIKernel パッケージ利用者に公開される ITaskExecutor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.ITaskManager">
+      <summary>AIKernel パッケージ利用者に公開される ITaskManager の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.ITaskSchema">
+      <summary>AIKernel パッケージ利用者に公開される ITaskSchema の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tasks.ITaskVectorEstimator">
+      <summary>AIKernel パッケージ利用者に公開される ITaskVectorEstimator の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Governance.IAttentionGuard">
+      <summary>Represents the IAttentionGuard public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.IAttentionObserver">
+      <summary>Represents the IAttentionObserver public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ICertificateChainVerifier">
+      <summary>Represents the ICertificateChainVerifier public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.IComputationalComplexityGate">
+      <summary>Represents the IComputationalComplexityGate public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.IContextLifecycleManager">
+      <summary>Represents the IContextLifecycleManager public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ICriticalOperationGate">
+      <summary>Represents the ICriticalOperationGate public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.IKeyExpiryReader">
+      <summary>Represents the IKeyExpiryReader public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.IKeyRevocationChecker">
+      <summary>Represents the IKeyRevocationChecker public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ISignatureTrustStore">
+      <summary>Represents the ISignatureTrustStore public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ISignerTrustResolver">
+      <summary>Represents the ISignerTrustResolver public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ITrustStoreHealthProbe">
+      <summary>Represents the ITrustStoreHealthProbe public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ITrustedAnchorReader">
+      <summary>Represents the ITrustedAnchorReader public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

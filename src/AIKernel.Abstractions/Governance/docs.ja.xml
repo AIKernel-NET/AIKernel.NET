@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Governance.IAttentionGuard">
+      <summary>AIKernel パッケージ利用者に公開される IAttentionGuard の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.IAttentionObserver">
+      <summary>AIKernel パッケージ利用者に公開される IAttentionObserver の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ICertificateChainVerifier">
+      <summary>AIKernel パッケージ利用者に公開される ICertificateChainVerifier の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.IComputationalComplexityGate">
+      <summary>AIKernel パッケージ利用者に公開される IComputationalComplexityGate の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.IContextLifecycleManager">
+      <summary>AIKernel パッケージ利用者に公開される IContextLifecycleManager の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ICriticalOperationGate">
+      <summary>AIKernel パッケージ利用者に公開される ICriticalOperationGate の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.IKeyExpiryReader">
+      <summary>AIKernel パッケージ利用者に公開される IKeyExpiryReader の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.IKeyRevocationChecker">
+      <summary>AIKernel パッケージ利用者に公開される IKeyRevocationChecker の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ISignatureTrustStore">
+      <summary>AIKernel パッケージ利用者に公開される ISignatureTrustStore の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ISignerTrustResolver">
+      <summary>AIKernel パッケージ利用者に公開される ISignerTrustResolver の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ITrustStoreHealthProbe">
+      <summary>AIKernel パッケージ利用者に公開される ITrustStoreHealthProbe の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Governance.ITrustedAnchorReader">
+      <summary>AIKernel パッケージ利用者に公開される ITrustedAnchorReader の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

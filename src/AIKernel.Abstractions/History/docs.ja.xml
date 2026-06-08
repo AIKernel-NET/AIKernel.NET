@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.History.IChatHistoryRomExporter">
+      <summary>AIKernel パッケージ利用者に公開される IChatHistoryRomExporter の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.History.IHistoryRomRegistry">
+      <summary>AIKernel パッケージ利用者に公開される IHistoryRomRegistry の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.History.IHistoryRomStore">
+      <summary>AIKernel パッケージ利用者に公開される IHistoryRomStore の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.History.IHistorySummarizer">
+      <summary>AIKernel パッケージ利用者に公開される IHistorySummarizer の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Models.ICapabilityProfile">
+      <summary>AIKernel パッケージ利用者に公開される ICapabilityProfile の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Models.ICapacityAxis">
+      <summary>AIKernel パッケージ利用者に公開される ICapacityAxis の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Models.IDynamicCapacityAxis">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicCapacityAxis の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Models.IDynamicCapacityProvider">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicCapacityProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Models.IDynamicCapacityVector">
+      <summary>AIKernel パッケージ利用者に公開される IDynamicCapacityVector の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Models.IExecutionConstraints">
+      <summary>AIKernel パッケージ利用者に公開される IExecutionConstraints の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Models.IVectorMatcher">
+      <summary>AIKernel パッケージ利用者に公開される IVectorMatcher の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

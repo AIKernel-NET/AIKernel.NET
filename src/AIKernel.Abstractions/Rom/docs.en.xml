@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Rom.IMarkdownFrontMatterParser">
+      <summary>Represents the IMarkdownFrontMatterParser public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRelationResolver">
+      <summary>Represents the IRelationResolver public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomCanonicalizer">
+      <summary>Represents the IRomCanonicalizer public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomCircularReferenceValidator">
+      <summary>Represents the IRomCircularReferenceValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomDocument">
+      <summary>Represents the IRomDocument public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomId">
+      <summary>Represents the IRomId public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomLinkageValidator">
+      <summary>Represents the IRomLinkageValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomLoader">
+      <summary>Represents the IRomLoader public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomSchemaValidator">
+      <summary>Represents the IRomSchemaValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomSignatureVerifier">
+      <summary>Represents the IRomSignatureVerifier public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomTypeConsistencyValidator">
+      <summary>Represents the IRomTypeConsistencyValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomValidator">
+      <summary>Represents the IRomValidator public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.ISemanticHasher">
+      <summary>Represents the ISemanticHasher public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

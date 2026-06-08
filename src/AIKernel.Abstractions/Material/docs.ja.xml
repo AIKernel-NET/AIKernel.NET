@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Material.IMaterialQuarantine">
+      <summary>AIKernel パッケージ利用者に公開される IMaterialQuarantine の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Material.IMaterialScanner">
+      <summary>AIKernel パッケージ利用者に公開される IMaterialScanner の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Material.IStructuredMaterial">
+      <summary>AIKernel パッケージ利用者に公開される IStructuredMaterial の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

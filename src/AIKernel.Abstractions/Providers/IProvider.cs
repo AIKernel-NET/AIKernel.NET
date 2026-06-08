@@ -4,6 +4,8 @@ namespace AIKernel.Abstractions.Providers;
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// プロバイダーの識別情報を公開する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderIdentity']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderIdentity']" />
 public interface IProviderIdentity
 {
     /// <summary>
@@ -26,6 +28,8 @@ public interface IProviderIdentity
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// プロバイダーの能力情報を公開する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderCapabilitySource']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderCapabilitySource']" />
 public interface IProviderCapabilitySource
 {
     /// <summary>
@@ -38,6 +42,8 @@ public interface IProviderCapabilitySource
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// プロバイダーの可用性を確認する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderAvailabilityProbe']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderAvailabilityProbe']" />
 public interface IProviderAvailabilityProbe
 {
     /// <summary>
@@ -51,6 +57,8 @@ public interface IProviderAvailabilityProbe
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// プロバイダーのライフサイクルを制御する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderLifecycle']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderLifecycle']" />
 public interface IProviderLifecycle
 {
     /// <summary>
@@ -68,6 +76,8 @@ public interface IProviderLifecycle
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// プロバイダーのヘルスチェックを実行する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderHealthProbe']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderHealthProbe']" />
 public interface IProviderHealthProbe
 {
     /// <summary>
@@ -82,6 +92,8 @@ public interface IProviderHealthProbe
 /// AIKernel のプロバイダーを定義する互換合成インターフェースです。
 /// 外部サービスやリソースへのアクセスを提供する基盤です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProvider']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProvider']" />
 public interface IProvider :
     IProviderIdentity,
     IProviderCapabilitySource,

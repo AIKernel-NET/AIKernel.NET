@@ -4,6 +4,8 @@ namespace AIKernel.Abstractions.Providers;
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// 単一テキストをベクトル表現へ変換する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.ITextEmbeddingProvider']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.ITextEmbeddingProvider']" />
 public interface ITextEmbeddingProvider
 {
     /// <summary>
@@ -19,6 +21,8 @@ public interface ITextEmbeddingProvider
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// 複数テキストを一括でベクトル化する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IBatchEmbeddingProvider']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IBatchEmbeddingProvider']" />
 public interface IBatchEmbeddingProvider
 {
     /// <summary>
@@ -34,6 +38,8 @@ public interface IBatchEmbeddingProvider
 /// UC-05/UC-19/UC-23/UC-26/UC-27 に基づく契約です。
 /// 埋め込みベクトル次元数を公開する capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IEmbeddingDimensionProvider']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IEmbeddingDimensionProvider']" />
 public interface IEmbeddingDimensionProvider
 {
     /// <summary>
@@ -48,6 +54,8 @@ public interface IEmbeddingDimensionProvider
 /// 埋め込み（Embedding）プロバイダーを定義する互換合成インターフェースです。
 /// テキストをベクトル表現に変換します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IEmbeddingProvider']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IEmbeddingProvider']" />
 public interface IEmbeddingProvider :
     IProvider,
     ITextEmbeddingProvider,

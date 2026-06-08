@@ -3,6 +3,8 @@ namespace AIKernel.Vfs;
 /// <summary>
 /// Vfs エントリに共通する識別情報を定義します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IVfsEntryInfo']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IVfsEntryInfo']" />
 public interface IVfsEntryInfo
 {
     /// <summary>

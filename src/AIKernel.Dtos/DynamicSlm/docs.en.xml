@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.BaseModelState">
+      <summary>Provides the BaseModelState value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.CapabilityGraphHash">
+      <summary>Provides the CapabilityGraphHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.DelegationId">
+      <summary>Provides the DelegationId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.DelegationKind">
+      <summary>Provides the DelegationKind value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.DelegationReason">
+      <summary>Provides the DelegationReason value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.DistillationJobId">
+      <summary>Provides the DistillationJobId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.DistillationRequestId">
+      <summary>Provides the DistillationRequestId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.FailureKind">
+      <summary>Provides the FailureKind value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.GapDetected">
+      <summary>Provides the GapDetected value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.HotSwapPolicy">
+      <summary>Provides the HotSwapPolicy value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.LineageHash">
+      <summary>Provides the LineageHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.MemoryPlacementId">
+      <summary>Provides the MemoryPlacementId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.ModelAbiHash">
+      <summary>Provides the ModelAbiHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.OffloadStatus">
+      <summary>Provides the OffloadStatus value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.PayloadHash">
+      <summary>Provides the PayloadHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.PipelineId">
+      <summary>Provides the PipelineId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.PipelineStage">
+      <summary>Provides the PipelineStage value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.PipelineTraceCount">
+      <summary>Provides the PipelineTraceCount value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.ReasoningTraceFormat">
+      <summary>Provides the ReasoningTraceFormat value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.ReplayLogHash">
+      <summary>Provides the ReplayLogHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.ResidentModelId">
+      <summary>Provides the ResidentModelId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.StrictOutputMode">
+      <summary>Provides the StrictOutputMode value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.TeacherFallbackUsed">
+      <summary>Provides the TeacherFallbackUsed value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.ThoughtArtifactId">
+      <summary>Provides the ThoughtArtifactId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys.TrajectoryId">
+      <summary>Provides the TrajectoryId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.DynamicSlm.DynamicSlmModelAbi.#ctor">
+      <summary>Executes the #ctor operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineContext.#ctor">
+      <summary>Executes the #ctor operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineMetadata.#ctor">
+      <summary>Executes the #ctor operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmAdapterCompatibilityProfile">
+      <summary>Represents the DynamicSlmAdapterCompatibilityProfile public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmAdmissionResult">
+      <summary>Represents the DynamicSlmAdmissionResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityEdge">
+      <summary>Represents the DynamicSlmCapabilityEdge public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityGap">
+      <summary>Represents the DynamicSlmCapabilityGap public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityGraph">
+      <summary>Represents the DynamicSlmCapabilityGraph public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityGraphUpdate">
+      <summary>Represents the DynamicSlmCapabilityGraphUpdate public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityGraphUpdatePlan">
+      <summary>Represents the DynamicSlmCapabilityGraphUpdatePlan public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityNode">
+      <summary>Represents the DynamicSlmCapabilityNode public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilitySwapDescriptor">
+      <summary>Represents the DynamicSlmCapabilitySwapDescriptor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmCompatibilityResult">
+      <summary>Represents the DynamicSlmCompatibilityResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmDelegationMetadata">
+      <summary>Represents the DynamicSlmDelegationMetadata public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmDelegationRequest">
+      <summary>Represents the DynamicSlmDelegationRequest public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmDistillationJobDescriptor">
+      <summary>Represents the DynamicSlmDistillationJobDescriptor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmDistillationOffloadRequest">
+      <summary>Represents the DynamicSlmDistillationOffloadRequest public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmDistillationPlan">
+      <summary>Represents the DynamicSlmDistillationPlan public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmDistillationRequest">
+      <summary>Represents the DynamicSlmDistillationRequest public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmExecutionProfile">
+      <summary>Represents the DynamicSlmExecutionProfile public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmFailureContext">
+      <summary>Represents the DynamicSlmFailureContext public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmFallbackStrategy">
+      <summary>Represents the DynamicSlmFallbackStrategy public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmLineage">
+      <summary>Represents the DynamicSlmLineage public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmLoadedPayload">
+      <summary>Represents the DynamicSlmLoadedPayload public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmMemoryPlacementMetadata">
+      <summary>Represents the DynamicSlmMemoryPlacementMetadata public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmMetadataKeys">
+      <summary>Represents the DynamicSlmMetadataKeys public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmModelAbi">
+      <summary>Represents the DynamicSlmModelAbi public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmNeutralityMetadata">
+      <summary>Represents the DynamicSlmNeutralityMetadata public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmPayloadDescriptor">
+      <summary>Represents the DynamicSlmPayloadDescriptor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineContext">
+      <summary>Represents the DynamicSlmPipelineContext public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineMetadata">
+      <summary>Represents the DynamicSlmPipelineMetadata public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineOffloadInfo">
+      <summary>Represents the DynamicSlmPipelineOffloadInfo public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineResult">
+      <summary>Represents the DynamicSlmPipelineResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineTrace">
+      <summary>Represents the DynamicSlmPipelineTrace public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmPlacementPlan">
+      <summary>Represents the DynamicSlmPlacementPlan public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmReplayLogEntry">
+      <summary>Represents the DynamicSlmReplayLogEntry public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmResidentModelDescriptor">
+      <summary>Represents the DynamicSlmResidentModelDescriptor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmResolvedSubgraph">
+      <summary>Represents the DynamicSlmResolvedSubgraph public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmSemanticProfile">
+      <summary>Represents the DynamicSlmSemanticProfile public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmThoughtArtifact">
+      <summary>Represents the DynamicSlmThoughtArtifact public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.DynamicSlmTrajectoryMetadata">
+      <summary>Represents the DynamicSlmTrajectoryMetadata public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.SeedSlmOutputDisciplinePolicy">
+      <summary>Represents the SeedSlmOutputDisciplinePolicy public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.SeedSlmProfile">
+      <summary>Represents the SeedSlmProfile public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.SeedSlmStructuralConstraints">
+      <summary>Represents the SeedSlmStructuralConstraints public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.DynamicSlm.struct">
+      <summary>Represents the struct public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

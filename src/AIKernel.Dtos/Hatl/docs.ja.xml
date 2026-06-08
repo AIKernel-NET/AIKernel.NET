@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="F:AIKernel.Dtos.Hatl.HatlMetadataKeys.AnchorId">
+      <summary>AIKernel の公開参照サーフェスで公開される AnchorId 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Hatl.HatlMetadataKeys.DeedStatus">
+      <summary>AIKernel の公開参照サーフェスで公開される DeedStatus 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Hatl.HatlMetadataKeys.LedgerId">
+      <summary>AIKernel の公開参照サーフェスで公開される LedgerId 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Hatl.HatlMetadataKeys.MerkleRootHash">
+      <summary>AIKernel の公開参照サーフェスで公開される MerkleRootHash 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Hatl.HatlMetadataKeys.PreviousAnchorHash">
+      <summary>AIKernel の公開参照サーフェスで公開される PreviousAnchorHash 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Hatl.HatlMetadataKeys.VerificationStatus">
+      <summary>AIKernel の公開参照サーフェスで公開される VerificationStatus 値を提供します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlAnchorDocument">
+      <summary>AIKernel パッケージ利用者に公開される HatlAnchorDocument の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlBlockMacRequest">
+      <summary>AIKernel パッケージ利用者に公開される HatlBlockMacRequest の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlBlockMacResult">
+      <summary>AIKernel パッケージ利用者に公開される HatlBlockMacResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlDigitalDeed">
+      <summary>AIKernel パッケージ利用者に公開される HatlDigitalDeed の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlLedgerEntry">
+      <summary>AIKernel パッケージ利用者に公開される HatlLedgerEntry の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlMetadataKeys">
+      <summary>AIKernel パッケージ利用者に公開される HatlMetadataKeys の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlPublicAnchorReceipt">
+      <summary>AIKernel パッケージ利用者に公開される HatlPublicAnchorReceipt の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlRatchetStepRequest">
+      <summary>AIKernel パッケージ利用者に公開される HatlRatchetStepRequest の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlRatchetStepResult">
+      <summary>AIKernel パッケージ利用者に公開される HatlRatchetStepResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Hatl.HatlVerificationResult">
+      <summary>AIKernel パッケージ利用者に公開される HatlVerificationResult の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

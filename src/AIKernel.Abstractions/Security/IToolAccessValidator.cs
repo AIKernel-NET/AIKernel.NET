@@ -4,6 +4,8 @@ namespace AIKernel.Abstractions.Security;
 /// UC-21 に基づく契約です。
 /// ツール実行権限を検証するための capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IToolExecutionAccessValidator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IToolExecutionAccessValidator']" />
 public interface IToolExecutionAccessValidator
 {
     /// <summary>
@@ -19,6 +21,8 @@ public interface IToolExecutionAccessValidator
 /// UC-21 に基づく契約です。
 /// ファイル読み取り権限を検証するための capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IFileReadAccessValidator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IFileReadAccessValidator']" />
 public interface IFileReadAccessValidator
 {
     /// <summary>
@@ -34,6 +38,8 @@ public interface IFileReadAccessValidator
 /// UC-21 に基づく契約です。
 /// ファイル書き込み権限を検証するための capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IFileWriteAccessValidator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IFileWriteAccessValidator']" />
 public interface IFileWriteAccessValidator
 {
     /// <summary>
@@ -49,6 +55,8 @@ public interface IFileWriteAccessValidator
 /// UC-21 に基づく契約です。
 /// ネットワークアクセス権限を検証するための capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.INetworkAccessValidator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.INetworkAccessValidator']" />
 public interface INetworkAccessValidator
 {
     /// <summary>
@@ -64,6 +72,8 @@ public interface INetworkAccessValidator
 /// UC-21 に基づく契約です。
 /// 環境変数アクセス権限を検証するための capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IEnvironmentAccessValidator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IEnvironmentAccessValidator']" />
 public interface IEnvironmentAccessValidator
 {
     /// <summary>
@@ -79,6 +89,8 @@ public interface IEnvironmentAccessValidator
 /// UC-21 に基づく契約です。
 /// システムコマンド実行権限を検証するための capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.ISystemCommandAccessValidator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.ISystemCommandAccessValidator']" />
 public interface ISystemCommandAccessValidator
 {
     /// <summary>
@@ -94,6 +106,8 @@ public interface ISystemCommandAccessValidator
 /// UC-21 に基づく契約です。
 /// 権限定義そのものの妥当性を検証するための capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPermissionLifecycleValidator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPermissionLifecycleValidator']" />
 public interface IPermissionLifecycleValidator
 {
     /// <summary>
@@ -108,6 +122,8 @@ public interface IPermissionLifecycleValidator
 /// UC-21 に基づく契約です。
 /// 実行時コンテキストを含めた制約を検証するための capability interface です。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPermissionConstraintValidator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPermissionConstraintValidator']" />
 public interface IPermissionConstraintValidator
 {
     /// <summary>
@@ -126,6 +142,8 @@ public interface IPermissionConstraintValidator
 /// インターフェース定義に徹します。具体的なビルダー実装は
 /// 実装リポジトリで提供されます。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IToolAccessValidator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IToolAccessValidator']" />
 public interface IToolAccessValidator :
     IToolExecutionAccessValidator,
     IFileReadAccessValidator,

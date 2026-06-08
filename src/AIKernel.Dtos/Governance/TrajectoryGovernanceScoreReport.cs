@@ -5,6 +5,8 @@ namespace AIKernel.Dtos.Governance;
 /// <summary>
 /// Replay-compatible score report for one governed semantic trajectory state.
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Governance.TrajectoryGovernanceScoreReport']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Governance.TrajectoryGovernanceScoreReport']" />
 public sealed record TrajectoryGovernanceScoreReport(
     string ReportId,
     string TrajectoryId,

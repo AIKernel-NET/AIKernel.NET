@@ -9,6 +9,8 @@ namespace AIKernel.Contracts;
 /// 参照: 2.CONTEXT_ISOLATION_SPEC.jp.md
 /// UC-06（3層バッファによる Attention 制御）, UC-08（コンテキストスナップショットと永続化）
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IUnifiedContextContract']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IUnifiedContextContract']" />
 public interface IUnifiedContextContract
 {
     /// <summary>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Rom.IMarkdownFrontMatterParser">
+      <summary>AIKernel パッケージ利用者に公開される IMarkdownFrontMatterParser の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRelationResolver">
+      <summary>AIKernel パッケージ利用者に公開される IRelationResolver の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomCanonicalizer">
+      <summary>AIKernel パッケージ利用者に公開される IRomCanonicalizer の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomCircularReferenceValidator">
+      <summary>AIKernel パッケージ利用者に公開される IRomCircularReferenceValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomDocument">
+      <summary>AIKernel パッケージ利用者に公開される IRomDocument の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomId">
+      <summary>AIKernel パッケージ利用者に公開される IRomId の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomLinkageValidator">
+      <summary>AIKernel パッケージ利用者に公開される IRomLinkageValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomLoader">
+      <summary>AIKernel パッケージ利用者に公開される IRomLoader の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomSchemaValidator">
+      <summary>AIKernel パッケージ利用者に公開される IRomSchemaValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomSignatureVerifier">
+      <summary>AIKernel パッケージ利用者に公開される IRomSignatureVerifier の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomTypeConsistencyValidator">
+      <summary>AIKernel パッケージ利用者に公開される IRomTypeConsistencyValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.IRomValidator">
+      <summary>AIKernel パッケージ利用者に公開される IRomValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Rom.ISemanticHasher">
+      <summary>AIKernel パッケージ利用者に公開される ISemanticHasher の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

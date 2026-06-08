@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Dtos.Rules.RuleEvaluationContext">
+      <summary>AIKernel パッケージ利用者に公開される RuleEvaluationContext の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rules.RuleEvaluationResult">
+      <summary>AIKernel パッケージ利用者に公開される RuleEvaluationResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Rules.RuleValidationResult">
+      <summary>AIKernel パッケージ利用者に公開される RuleValidationResult の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

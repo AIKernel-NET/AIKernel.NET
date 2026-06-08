@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="F:AIKernel.Dtos.Execution.ModelMessageRoles.Assistant">
+      <summary>Provides the Assistant value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Execution.ModelMessageRoles.Developer">
+      <summary>Provides the Developer value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Execution.ModelMessageRoles.System">
+      <summary>Provides the System value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Execution.ModelMessageRoles.Tool">
+      <summary>Provides the Tool value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Execution.ModelMessageRoles.User">
+      <summary>Provides the User value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Execution.InitializationResult.List&lt;string&gt;">
+      <summary>Executes the List&lt;string&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Execution.LogicDivergenceAnalysis.List&lt;string&gt;">
+      <summary>Executes the List&lt;string&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Execution.PolisherValidationResult.List&lt;string&gt;">
+      <summary>Executes the List&lt;string&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionOptions.MaxOutputTokens">
+      <summary>Gets or sets the MaxOutputTokens value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionOptions.StopSequences">
+      <summary>Gets or sets the StopSequences value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionOptions.Temperature">
+      <summary>Gets or sets the Temperature value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionOptions.TopP">
+      <summary>Gets or sets the TopP value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionResult.ElapsedMilliseconds">
+      <summary>Gets or sets the ElapsedMilliseconds value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionResult.ErrorMessage">
+      <summary>Gets or sets the ErrorMessage value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionResult.FinalOutput">
+      <summary>Gets or sets the FinalOutput value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionResult.IsSuccessful">
+      <summary>Gets or sets the IsSuccessful value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionResult.Logic">
+      <summary>Gets or sets the Logic value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.GeneratedPrompt.Capability">
+      <summary>Gets or sets the Capability value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.GeneratedPrompt.ContextHash">
+      <summary>Gets or sets the ContextHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.GeneratedPrompt.ContextSnapshotId">
+      <summary>Gets or sets the ContextSnapshotId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.GeneratedPrompt.EstimatedInputTokens">
+      <summary>Gets or sets the EstimatedInputTokens value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.GeneratedPrompt.Messages">
+      <summary>Gets or sets the Messages value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.GeneratedPrompt.PromptHash">
+      <summary>Gets or sets the PromptHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.GeneratedPrompt.PromptId">
+      <summary>Gets or sets the PromptId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.GeneratedPrompt.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.HashChain.GenerationHash">
+      <summary>Gets or sets the GenerationHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.HashChain.GenerationParentHash">
+      <summary>Gets or sets the GenerationParentHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.HashChain.HashAlgorithm">
+      <summary>Gets or sets the HashAlgorithm value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.HashChain.PolishHash">
+      <summary>Gets or sets the PolishHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.HashChain.PolishParentHash">
+      <summary>Gets or sets the PolishParentHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.HashChain.StructureHash">
+      <summary>Gets or sets the StructureHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.InitializationResult.IsInitialized">
+      <summary>Gets or sets the IsInitialized value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.InitializationResult.Message">
+      <summary>Gets or sets the Message value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.InitializationResult.PreExecutionContextHash">
+      <summary>Gets or sets the PreExecutionContextHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelExecutionRequest.ContextBlocks">
+      <summary>Gets or sets the ContextBlocks value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelExecutionRequest.ContextHash">
+      <summary>Gets or sets the ContextHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelExecutionRequest.ContextSnapshotId">
+      <summary>Gets or sets the ContextSnapshotId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelExecutionRequest.ExecutionOptions">
+      <summary>Gets or sets the ExecutionOptions value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelExecutionRequest.PromptOptions">
+      <summary>Gets or sets the PromptOptions value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelExecutionRequest.RequestedModelId">
+      <summary>Gets or sets the RequestedModelId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelExecutionRequest.UserInstruction">
+      <summary>Gets or sets the UserInstruction value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.CompletedAtUtc">
+      <summary>Gets or sets the CompletedAtUtc value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.ContextHash">
+      <summary>Gets or sets the ContextHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.ContextSnapshotId">
+      <summary>Gets or sets the ContextSnapshotId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.Error">
+      <summary>Gets or sets the Error value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.ExecutionId">
+      <summary>Gets or sets the ExecutionId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.ModelId">
+      <summary>Gets or sets the ModelId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.OutputText">
+      <summary>Gets or sets the OutputText value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.PromptHash">
+      <summary>Gets or sets the PromptHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.ProviderId">
+      <summary>Gets or sets the ProviderId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.StartedAtUtc">
+      <summary>Gets or sets the StartedAtUtc value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.Status">
+      <summary>Gets or sets the Status value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.Usage">
+      <summary>Gets or sets the Usage value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.LogicDivergenceAnalysis.Description">
+      <summary>Gets or sets the Description value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.LogicDivergenceAnalysis.DivergenceDetected">
+      <summary>Gets or sets the DivergenceDetected value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.LogicDivergenceAnalysis.DivergenceType">
+      <summary>Gets or sets the DivergenceType value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.LogicDivergenceAnalysis.Severity">
+      <summary>Gets or sets the Severity value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.MaxInputTokens">
+      <summary>Gets or sets the MaxInputTokens value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.MaxOutputTokens">
+      <summary>Gets or sets the MaxOutputTokens value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.MessageFormat">
+      <summary>Gets or sets the MessageFormat value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.ModelId">
+      <summary>Gets or sets the ModelId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.ProviderId">
+      <summary>Gets or sets the ProviderId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.RequiresAlternatingUserAssistantMessages">
+      <summary>Gets or sets the RequiresAlternatingUserAssistantMessages value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.SupportedRoles">
+      <summary>Gets or sets the SupportedRoles value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.SupportsDeveloperMessages">
+      <summary>Gets or sets the SupportsDeveloperMessages value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.SupportsSystemMessages">
+      <summary>Gets or sets the SupportsSystemMessages value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.SystemInstructionRole">
+      <summary>Gets or sets the SystemInstructionRole value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModificationContext.ModificationData">
+      <summary>Gets or sets the ModificationData value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModificationContext.ModifiedBy">
+      <summary>Gets or sets the ModifiedBy value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModificationContext.Reason">
+      <summary>Gets or sets the Reason value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModificationContext.TargetPhase">
+      <summary>Gets or sets the TargetPhase value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.PolisherValidationResult.IsValid">
+      <summary>Gets or sets the IsValid value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.PolisherValidationResult.LogicIntegrityScore">
+      <summary>Gets or sets the LogicIntegrityScore value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.PolisherValidationResult.Message">
+      <summary>Gets or sets the Message value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.PromptGenerationOptions.IncludeContextHash">
+      <summary>Gets or sets the IncludeContextHash value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.PromptGenerationOptions.IncludeSourceMetadata">
+      <summary>Gets or sets the IncludeSourceMetadata value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.PromptGenerationOptions.OverflowPolicy">
+      <summary>Gets or sets the OverflowPolicy value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ReplayDump.CreatedAt">
+      <summary>Gets or sets the CreatedAt value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ReplayDump.DumpId">
+      <summary>Gets or sets the DumpId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ReplayDump.GenerationOutput">
+      <summary>Gets or sets the GenerationOutput value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ReplayDump.HashChain">
+      <summary>Gets or sets the HashChain value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ReplayDump.OriginalResult">
+      <summary>Gets or sets the OriginalResult value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ReplayDump.StructureOutput">
+      <summary>Gets or sets the StructureOutput value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.SignatureVerificationResult.IsValid">
+      <summary>Gets or sets the IsValid value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.SignatureVerificationResult.Message">
+      <summary>Gets or sets the Message value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.SignatureVerificationResult.SignerId">
+      <summary>Gets or sets the SignerId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.SignatureVerificationResult.TrustScore">
+      <summary>Gets or sets the TrustScore value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.SignatureVerificationResult.VerificationTimestamp">
+      <summary>Gets or sets the VerificationTimestamp value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ContextPromptBlock">
+      <summary>Represents the ContextPromptBlock public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ExecutionError">
+      <summary>Represents the ExecutionError public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ExecutionOptions">
+      <summary>Represents the ExecutionOptions public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ExecutionResult">
+      <summary>Represents the ExecutionResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ExecutionUsage">
+      <summary>Represents the ExecutionUsage public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.GeneratedPrompt">
+      <summary>Represents the GeneratedPrompt public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.HashChain">
+      <summary>Represents the HashChain public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.InitializationResult">
+      <summary>Represents the InitializationResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.KernelExecutionRequest">
+      <summary>Represents the KernelExecutionRequest public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.KernelRequestExecutionResult">
+      <summary>Represents the KernelRequestExecutionResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.LogicDivergenceAnalysis">
+      <summary>Represents the LogicDivergenceAnalysis public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ModelMessage">
+      <summary>Represents the ModelMessage public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ModelMessageRoles">
+      <summary>Represents the ModelMessageRoles public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ModelPromptCapability">
+      <summary>Represents the ModelPromptCapability public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ModificationContext">
+      <summary>Represents the ModificationContext public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.PhaseHandoverResult">
+      <summary>Represents the PhaseHandoverResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.PolisherValidationResult">
+      <summary>Represents the PolisherValidationResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.PromptGenerationOptions">
+      <summary>Represents the PromptGenerationOptions public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.PromptGenerationRequest">
+      <summary>Represents the PromptGenerationRequest public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.PromptProjectionOptions">
+      <summary>Represents the PromptProjectionOptions public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.RawLogic">
+      <summary>Represents the RawLogic public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ReplayDump">
+      <summary>Represents the ReplayDump public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.SignatureVerificationResult">
+      <summary>Represents the SignatureVerificationResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.struct">
+      <summary>Represents the struct public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

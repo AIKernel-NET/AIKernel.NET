@@ -4,6 +4,8 @@ namespace AIKernel.Abstractions.Query;
 /// Phase 1 Context Build において、複合 query を意味的に独立した QueryPart へ分解する抽象契約です。
 /// 分解結果は ROM/CacheDB/Governance に渡す前の query planning 単位として扱われます。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Query.IQueryDecomposer']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Query.IQueryDecomposer']" />
 public interface IQueryDecomposer
 {
     /// <summary>

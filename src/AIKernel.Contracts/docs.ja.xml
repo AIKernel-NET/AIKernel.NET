@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Contracts.IAttentionPollutionDetector">
+      <summary>AIKernel パッケージ利用者に公開される IAttentionPollutionDetector の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IAuditEventContract">
+      <summary>AIKernel パッケージ利用者に公開される IAuditEventContract の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IEssentialMaterialExtractor">
+      <summary>AIKernel パッケージ利用者に公開される IEssentialMaterialExtractor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IExpressionApplicationGate">
+      <summary>AIKernel パッケージ利用者に公開される IExpressionApplicationGate の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IExpressionContract">
+      <summary>AIKernel パッケージ利用者に公開される IExpressionContract の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IExpressionIsolationValidator">
+      <summary>AIKernel パッケージ利用者に公開される IExpressionIsolationValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IKernelContextContract">
+      <summary>AIKernel パッケージ利用者に公開される IKernelContextContract の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.ILayerSeparationValidator">
+      <summary>AIKernel パッケージ利用者に公開される ILayerSeparationValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IMaterialCanonicalizer">
+      <summary>AIKernel パッケージ利用者に公開される IMaterialCanonicalizer の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IMaterialContract">
+      <summary>AIKernel パッケージ利用者に公開される IMaterialContract の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IMaterialHashProvider">
+      <summary>AIKernel パッケージ利用者に公開される IMaterialHashProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IMaterialNormalizer">
+      <summary>AIKernel パッケージ利用者に公開される IMaterialNormalizer の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IMaterialQuarantineValidator">
+      <summary>AIKernel パッケージ利用者に公開される IMaterialQuarantineValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IMaterialStructurizer">
+      <summary>AIKernel パッケージ利用者に公開される IMaterialStructurizer の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IMessageContract">
+      <summary>AIKernel パッケージ利用者に公開される IMessageContract の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IOrchestrationContract">
+      <summary>AIKernel パッケージ利用者に公開される IOrchestrationContract の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IOrchestrationContractValidator">
+      <summary>AIKernel パッケージ利用者に公開される IOrchestrationContractValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.ISignalToNoiseRatioCalculator">
+      <summary>AIKernel パッケージ利用者に公開される ISignalToNoiseRatioCalculator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.ITokenizerProfile">
+      <summary>AIKernel パッケージ利用者に公開される ITokenizerProfile の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IUnifiedContextContract">
+      <summary>AIKernel パッケージ利用者に公開される IUnifiedContextContract の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Contracts.IUnifiedContextContractValidator">
+      <summary>AIKernel パッケージ利用者に公開される IUnifiedContextContractValidator の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

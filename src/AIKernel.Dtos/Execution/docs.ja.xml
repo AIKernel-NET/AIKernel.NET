@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="F:AIKernel.Dtos.Execution.ModelMessageRoles.Assistant">
+      <summary>AIKernel の公開参照サーフェスで公開される Assistant 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Execution.ModelMessageRoles.Developer">
+      <summary>AIKernel の公開参照サーフェスで公開される Developer 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Execution.ModelMessageRoles.System">
+      <summary>AIKernel の公開参照サーフェスで公開される System 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Execution.ModelMessageRoles.Tool">
+      <summary>AIKernel の公開参照サーフェスで公開される Tool 値を提供します。</summary>
+    </member>
+    <member name="F:AIKernel.Dtos.Execution.ModelMessageRoles.User">
+      <summary>AIKernel の公開参照サーフェスで公開される User 値を提供します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Execution.InitializationResult.List&lt;string&gt;">
+      <summary>AIKernel の公開参照サーフェスとして List&lt;string&gt; 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Execution.LogicDivergenceAnalysis.List&lt;string&gt;">
+      <summary>AIKernel の公開参照サーフェスとして List&lt;string&gt; 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Execution.PolisherValidationResult.List&lt;string&gt;">
+      <summary>AIKernel の公開参照サーフェスとして List&lt;string&gt; 操作を実行します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionOptions.MaxOutputTokens">
+      <summary>AIKernel の公開参照サーフェスで公開される MaxOutputTokens 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionOptions.StopSequences">
+      <summary>AIKernel の公開参照サーフェスで公開される StopSequences 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionOptions.Temperature">
+      <summary>AIKernel の公開参照サーフェスで公開される Temperature 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionOptions.TopP">
+      <summary>AIKernel の公開参照サーフェスで公開される TopP 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionResult.ElapsedMilliseconds">
+      <summary>AIKernel の公開参照サーフェスで公開される ElapsedMilliseconds 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionResult.ErrorMessage">
+      <summary>AIKernel の公開参照サーフェスで公開される ErrorMessage 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionResult.FinalOutput">
+      <summary>AIKernel の公開参照サーフェスで公開される FinalOutput 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionResult.IsSuccessful">
+      <summary>AIKernel の公開参照サーフェスで公開される IsSuccessful 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ExecutionResult.Logic">
+      <summary>AIKernel の公開参照サーフェスで公開される Logic 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.GeneratedPrompt.Capability">
+      <summary>AIKernel の公開参照サーフェスで公開される Capability 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.GeneratedPrompt.ContextHash">
+      <summary>AIKernel の公開参照サーフェスで公開される ContextHash 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.GeneratedPrompt.ContextSnapshotId">
+      <summary>AIKernel の公開参照サーフェスで公開される ContextSnapshotId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.GeneratedPrompt.EstimatedInputTokens">
+      <summary>AIKernel の公開参照サーフェスで公開される EstimatedInputTokens 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.GeneratedPrompt.Messages">
+      <summary>AIKernel の公開参照サーフェスで公開される Messages 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.GeneratedPrompt.PromptHash">
+      <summary>AIKernel の公開参照サーフェスで公開される PromptHash 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.GeneratedPrompt.PromptId">
+      <summary>AIKernel の公開参照サーフェスで公開される PromptId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.GeneratedPrompt.string">
+      <summary>AIKernel の公開参照サーフェスで公開される string 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.HashChain.GenerationHash">
+      <summary>AIKernel の公開参照サーフェスで公開される GenerationHash 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.HashChain.GenerationParentHash">
+      <summary>AIKernel の公開参照サーフェスで公開される GenerationParentHash 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.HashChain.HashAlgorithm">
+      <summary>AIKernel の公開参照サーフェスで公開される HashAlgorithm 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.HashChain.PolishHash">
+      <summary>AIKernel の公開参照サーフェスで公開される PolishHash 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.HashChain.PolishParentHash">
+      <summary>AIKernel の公開参照サーフェスで公開される PolishParentHash 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.HashChain.StructureHash">
+      <summary>AIKernel の公開参照サーフェスで公開される StructureHash 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.InitializationResult.IsInitialized">
+      <summary>AIKernel の公開参照サーフェスで公開される IsInitialized 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.InitializationResult.Message">
+      <summary>AIKernel の公開参照サーフェスで公開される Message 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.InitializationResult.PreExecutionContextHash">
+      <summary>AIKernel の公開参照サーフェスで公開される PreExecutionContextHash 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelExecutionRequest.ContextBlocks">
+      <summary>AIKernel の公開参照サーフェスで公開される ContextBlocks 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelExecutionRequest.ContextHash">
+      <summary>AIKernel の公開参照サーフェスで公開される ContextHash 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelExecutionRequest.ContextSnapshotId">
+      <summary>AIKernel の公開参照サーフェスで公開される ContextSnapshotId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelExecutionRequest.ExecutionOptions">
+      <summary>AIKernel の公開参照サーフェスで公開される ExecutionOptions 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelExecutionRequest.PromptOptions">
+      <summary>AIKernel の公開参照サーフェスで公開される PromptOptions 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelExecutionRequest.RequestedModelId">
+      <summary>AIKernel の公開参照サーフェスで公開される RequestedModelId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelExecutionRequest.UserInstruction">
+      <summary>AIKernel の公開参照サーフェスで公開される UserInstruction 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.CompletedAtUtc">
+      <summary>AIKernel の公開参照サーフェスで公開される CompletedAtUtc 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.ContextHash">
+      <summary>AIKernel の公開参照サーフェスで公開される ContextHash 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.ContextSnapshotId">
+      <summary>AIKernel の公開参照サーフェスで公開される ContextSnapshotId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.Error">
+      <summary>AIKernel の公開参照サーフェスで公開される Error 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.ExecutionId">
+      <summary>AIKernel の公開参照サーフェスで公開される ExecutionId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.ModelId">
+      <summary>AIKernel の公開参照サーフェスで公開される ModelId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.OutputText">
+      <summary>AIKernel の公開参照サーフェスで公開される OutputText 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.PromptHash">
+      <summary>AIKernel の公開参照サーフェスで公開される PromptHash 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.ProviderId">
+      <summary>AIKernel の公開参照サーフェスで公開される ProviderId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.StartedAtUtc">
+      <summary>AIKernel の公開参照サーフェスで公開される StartedAtUtc 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.Status">
+      <summary>AIKernel の公開参照サーフェスで公開される Status 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.Usage">
+      <summary>AIKernel の公開参照サーフェスで公開される Usage 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.KernelRequestExecutionResult.string">
+      <summary>AIKernel の公開参照サーフェスで公開される string 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.LogicDivergenceAnalysis.Description">
+      <summary>AIKernel の公開参照サーフェスで公開される Description 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.LogicDivergenceAnalysis.DivergenceDetected">
+      <summary>AIKernel の公開参照サーフェスで公開される DivergenceDetected 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.LogicDivergenceAnalysis.DivergenceType">
+      <summary>AIKernel の公開参照サーフェスで公開される DivergenceType 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.LogicDivergenceAnalysis.Severity">
+      <summary>AIKernel の公開参照サーフェスで公開される Severity 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.MaxInputTokens">
+      <summary>AIKernel の公開参照サーフェスで公開される MaxInputTokens 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.MaxOutputTokens">
+      <summary>AIKernel の公開参照サーフェスで公開される MaxOutputTokens 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.MessageFormat">
+      <summary>AIKernel の公開参照サーフェスで公開される MessageFormat 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.ModelId">
+      <summary>AIKernel の公開参照サーフェスで公開される ModelId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.ProviderId">
+      <summary>AIKernel の公開参照サーフェスで公開される ProviderId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.RequiresAlternatingUserAssistantMessages">
+      <summary>AIKernel の公開参照サーフェスで公開される RequiresAlternatingUserAssistantMessages 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.SupportedRoles">
+      <summary>AIKernel の公開参照サーフェスで公開される SupportedRoles 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.SupportsDeveloperMessages">
+      <summary>AIKernel の公開参照サーフェスで公開される SupportsDeveloperMessages 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.SupportsSystemMessages">
+      <summary>AIKernel の公開参照サーフェスで公開される SupportsSystemMessages 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.SystemInstructionRole">
+      <summary>AIKernel の公開参照サーフェスで公開される SystemInstructionRole 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModelPromptCapability.string">
+      <summary>AIKernel の公開参照サーフェスで公開される string 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModificationContext.ModificationData">
+      <summary>AIKernel の公開参照サーフェスで公開される ModificationData 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModificationContext.ModifiedBy">
+      <summary>AIKernel の公開参照サーフェスで公開される ModifiedBy 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModificationContext.Reason">
+      <summary>AIKernel の公開参照サーフェスで公開される Reason 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ModificationContext.TargetPhase">
+      <summary>AIKernel の公開参照サーフェスで公開される TargetPhase 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.PolisherValidationResult.IsValid">
+      <summary>AIKernel の公開参照サーフェスで公開される IsValid 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.PolisherValidationResult.LogicIntegrityScore">
+      <summary>AIKernel の公開参照サーフェスで公開される LogicIntegrityScore 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.PolisherValidationResult.Message">
+      <summary>AIKernel の公開参照サーフェスで公開される Message 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.PromptGenerationOptions.IncludeContextHash">
+      <summary>AIKernel の公開参照サーフェスで公開される IncludeContextHash 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.PromptGenerationOptions.IncludeSourceMetadata">
+      <summary>AIKernel の公開参照サーフェスで公開される IncludeSourceMetadata 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.PromptGenerationOptions.OverflowPolicy">
+      <summary>AIKernel の公開参照サーフェスで公開される OverflowPolicy 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ReplayDump.CreatedAt">
+      <summary>AIKernel の公開参照サーフェスで公開される CreatedAt 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ReplayDump.DumpId">
+      <summary>AIKernel の公開参照サーフェスで公開される DumpId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ReplayDump.GenerationOutput">
+      <summary>AIKernel の公開参照サーフェスで公開される GenerationOutput 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ReplayDump.HashChain">
+      <summary>AIKernel の公開参照サーフェスで公開される HashChain 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ReplayDump.OriginalResult">
+      <summary>AIKernel の公開参照サーフェスで公開される OriginalResult 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.ReplayDump.StructureOutput">
+      <summary>AIKernel の公開参照サーフェスで公開される StructureOutput 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.SignatureVerificationResult.IsValid">
+      <summary>AIKernel の公開参照サーフェスで公開される IsValid 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.SignatureVerificationResult.Message">
+      <summary>AIKernel の公開参照サーフェスで公開される Message 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.SignatureVerificationResult.SignerId">
+      <summary>AIKernel の公開参照サーフェスで公開される SignerId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.SignatureVerificationResult.TrustScore">
+      <summary>AIKernel の公開参照サーフェスで公開される TrustScore 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Execution.SignatureVerificationResult.VerificationTimestamp">
+      <summary>AIKernel の公開参照サーフェスで公開される VerificationTimestamp 値を取得または設定します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ContextPromptBlock">
+      <summary>AIKernel パッケージ利用者に公開される ContextPromptBlock の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ExecutionError">
+      <summary>AIKernel パッケージ利用者に公開される ExecutionError の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ExecutionOptions">
+      <summary>AIKernel パッケージ利用者に公開される ExecutionOptions の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ExecutionResult">
+      <summary>AIKernel パッケージ利用者に公開される ExecutionResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ExecutionUsage">
+      <summary>AIKernel パッケージ利用者に公開される ExecutionUsage の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.GeneratedPrompt">
+      <summary>AIKernel パッケージ利用者に公開される GeneratedPrompt の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.HashChain">
+      <summary>AIKernel パッケージ利用者に公開される HashChain の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.InitializationResult">
+      <summary>AIKernel パッケージ利用者に公開される InitializationResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.KernelExecutionRequest">
+      <summary>AIKernel パッケージ利用者に公開される KernelExecutionRequest の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.KernelRequestExecutionResult">
+      <summary>AIKernel パッケージ利用者に公開される KernelRequestExecutionResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.LogicDivergenceAnalysis">
+      <summary>AIKernel パッケージ利用者に公開される LogicDivergenceAnalysis の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ModelMessage">
+      <summary>AIKernel パッケージ利用者に公開される ModelMessage の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ModelMessageRoles">
+      <summary>AIKernel パッケージ利用者に公開される ModelMessageRoles の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ModelPromptCapability">
+      <summary>AIKernel パッケージ利用者に公開される ModelPromptCapability の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ModificationContext">
+      <summary>AIKernel パッケージ利用者に公開される ModificationContext の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.PhaseHandoverResult">
+      <summary>AIKernel パッケージ利用者に公開される PhaseHandoverResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.PolisherValidationResult">
+      <summary>AIKernel パッケージ利用者に公開される PolisherValidationResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.PromptGenerationOptions">
+      <summary>AIKernel パッケージ利用者に公開される PromptGenerationOptions の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.PromptGenerationRequest">
+      <summary>AIKernel パッケージ利用者に公開される PromptGenerationRequest の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.PromptProjectionOptions">
+      <summary>AIKernel パッケージ利用者に公開される PromptProjectionOptions の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.RawLogic">
+      <summary>AIKernel パッケージ利用者に公開される RawLogic の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.ReplayDump">
+      <summary>AIKernel パッケージ利用者に公開される ReplayDump の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.SignatureVerificationResult">
+      <summary>AIKernel パッケージ利用者に公開される SignatureVerificationResult の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Execution.struct">
+      <summary>AIKernel パッケージ利用者に公開される struct の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

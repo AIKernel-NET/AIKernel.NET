@@ -7,6 +7,8 @@ namespace AIKernel.Abstractions.Execution;
 /// 同一の ReplayDump と実行条件に対して、常に同一の再実行結果へ収束する決定論的挙動を保証する必要があります。
 /// 副作用を伴う外部依存は、再現性を損なわない形で隔離してください。
 /// </remarks>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IKernelReplayer']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IKernelReplayer']" />
 public interface IKernelReplayer
 {
     /// <summary>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="M:AIKernel.Dtos.Context.ExpressionBuffer.#ctor">
+      <summary>Executes the #ctor operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.ExpressionContextDto.new">
+      <summary>Executes the new operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.ExpressionFragment.#ctor">
+      <summary>Executes the #ctor operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.ExpressionFragment.Empty&lt;string&gt;">
+      <summary>Executes the Empty&lt;string&gt; operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.HistoryBuffer.#ctor">
+      <summary>Executes the #ctor operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.MaterialBuffer.#ctor">
+      <summary>Executes the #ctor operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.OrchestrationBuffer.#ctor">
+      <summary>Executes the #ctor operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.OrchestrationContextDto.new">
+      <summary>Executes the new operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.UnifiedContextDto.new">
+      <summary>Executes the new operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.ValidationResult.new">
+      <summary>Executes the new operation as part of the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextAssemblyRequest.MaxDepth">
+      <summary>Gets or sets the MaxDepth value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextAssemblyRequest.RelationKindsToFollow">
+      <summary>Gets or sets the RelationKindsToFollow value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextAssemblyScope.Capabilities">
+      <summary>Gets or sets the Capabilities value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextAssemblyScope.Purpose">
+      <summary>Gets or sets the Purpose value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextAssemblyScope.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextFragment.Category">
+      <summary>Gets or sets the Category value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextFragment.Content">
+      <summary>Gets or sets the Content value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextFragment.CreatedAt">
+      <summary>Gets or sets the CreatedAt value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextFragment.FragmentId">
+      <summary>Gets or sets the FragmentId value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextFragment.Priority">
+      <summary>Gets or sets the Priority value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextFragment.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ExpressionBuffer.Fragments">
+      <summary>Gets or sets the Fragments value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ExpressionContextDto.CreatedAt">
+      <summary>Gets or sets the CreatedAt value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ExpressionContextDto.DescriptionTemplate">
+      <summary>Gets or sets the DescriptionTemplate value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ExpressionContextDto.Style">
+      <summary>Gets or sets the Style value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ExpressionContextDto.string">
+      <summary>Gets or sets the string value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ExpressionFragment.LanguageTag">
+      <summary>Gets or sets the LanguageTag value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ExpressionFragment.StyleHints">
+      <summary>Gets or sets the StyleHints value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ExpressionFragment.Tone">
+      <summary>Gets or sets the Tone value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.HistoryBuffer.Fragments">
+      <summary>Gets or sets the Fragments value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.MaterialBuffer.Fragments">
+      <summary>Gets or sets the Fragments value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.MaterialContextDto.NormalizedData">
+      <summary>Gets or sets the NormalizedData value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.MaterialContextDto.RawData">
+      <summary>Gets or sets the RawData value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.MaterialContextDto.RelevanceScore">
+      <summary>Gets or sets the RelevanceScore value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.MaterialContextDto.RetrievedAt">
+      <summary>Gets or sets the RetrievedAt value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.MaterialContextDto.Source">
+      <summary>Gets or sets the Source value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.MaterialContextDto.object">
+      <summary>Gets or sets the object value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.OrchestrationBuffer.Fragments">
+      <summary>Gets or sets the Fragments value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.OrchestrationContextDto.CreatedAt">
+      <summary>Gets or sets the CreatedAt value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.OrchestrationContextDto.Purpose">
+      <summary>Gets or sets the Purpose value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.OrchestrationContextDto.ReasoningPattern">
+      <summary>Gets or sets the ReasoningPattern value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.OrchestrationContextDto.Structure">
+      <summary>Gets or sets the Structure value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.OrchestrationContextDto.object">
+      <summary>Gets or sets the object value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.UnifiedContextDto.CreatedAt">
+      <summary>Gets or sets the CreatedAt value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.UnifiedContextDto.Expression">
+      <summary>Gets or sets the Expression value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.UnifiedContextDto.Id">
+      <summary>Gets or sets the Id value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.UnifiedContextDto.Material">
+      <summary>Gets or sets the Material value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.UnifiedContextDto.Orchestration">
+      <summary>Gets or sets the Orchestration value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.UnifiedContextDto.SignalToNoiseRatio">
+      <summary>Gets or sets the SignalToNoiseRatio value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ValidationResult.IsValid">
+      <summary>Gets or sets the IsValid value exposed by the AIKernel public reference surface.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.ContextAssemblyDecision">
+      <summary>Represents the ContextAssemblyDecision public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.ContextAssemblyRequest">
+      <summary>Represents the ContextAssemblyRequest public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.ContextAssemblyScope">
+      <summary>Represents the ContextAssemblyScope public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.ContextFragment">
+      <summary>Represents the ContextFragment public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.ExpressionBuffer">
+      <summary>Represents the ExpressionBuffer public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.ExpressionContextDto">
+      <summary>Represents the ExpressionContextDto public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.ExpressionFragment">
+      <summary>Represents the ExpressionFragment public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.HistoryBuffer">
+      <summary>Represents the HistoryBuffer public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.MaterialBuffer">
+      <summary>Represents the MaterialBuffer public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.MaterialContextDto">
+      <summary>Represents the MaterialContextDto public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.OrchestrationBuffer">
+      <summary>Represents the OrchestrationBuffer public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.OrchestrationContextDto">
+      <summary>Represents the OrchestrationContextDto public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.UnifiedContextDto">
+      <summary>Represents the UnifiedContextDto public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.ValidationResult">
+      <summary>Represents the ValidationResult public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Security.IEnvironmentAccessValidator">
+      <summary>AIKernel パッケージ利用者に公開される IEnvironmentAccessValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IFileReadAccessValidator">
+      <summary>AIKernel パッケージ利用者に公開される IFileReadAccessValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IFileWriteAccessValidator">
+      <summary>AIKernel パッケージ利用者に公開される IFileWriteAccessValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IGuard">
+      <summary>AIKernel パッケージ利用者に公開される IGuard の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IGuardEnforcer">
+      <summary>AIKernel パッケージ利用者に公開される IGuardEnforcer の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IGuardEvaluator">
+      <summary>AIKernel パッケージ利用者に公開される IGuardEvaluator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IGuardFailureHandler">
+      <summary>AIKernel パッケージ利用者に公開される IGuardFailureHandler の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.INetworkAccessValidator">
+      <summary>AIKernel パッケージ利用者に公開される INetworkAccessValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPdp">
+      <summary>AIKernel パッケージ利用者に公開される IPdp の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPermissionConstraintValidator">
+      <summary>AIKernel パッケージ利用者に公開される IPermissionConstraintValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPermissionLifecycleValidator">
+      <summary>AIKernel パッケージ利用者に公開される IPermissionLifecycleValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPolicy">
+      <summary>AIKernel パッケージ利用者に公開される IPolicy の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPolicyDecisionEvaluator">
+      <summary>AIKernel パッケージ利用者に公開される IPolicyDecisionEvaluator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPolicyDecisionPoint">
+      <summary>AIKernel パッケージ利用者に公開される IPolicyDecisionPoint の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPolicyRegistry">
+      <summary>AIKernel パッケージ利用者に公開される IPolicyRegistry の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPolicySource">
+      <summary>AIKernel パッケージ利用者に公開される IPolicySource の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IPrincipal">
+      <summary>AIKernel パッケージ利用者に公開される IPrincipal の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IResourceAccessGuard">
+      <summary>AIKernel パッケージ利用者に公開される IResourceAccessGuard の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.ISecureCredentialProvider">
+      <summary>AIKernel パッケージ利用者に公開される ISecureCredentialProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.ISecureOptions">
+      <summary>AIKernel パッケージ利用者に公開される ISecureOptions の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.ISystemCommandAccessValidator">
+      <summary>AIKernel パッケージ利用者に公開される ISystemCommandAccessValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IToolAccessValidator">
+      <summary>AIKernel パッケージ利用者に公開される IToolAccessValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Security.IToolExecutionAccessValidator">
+      <summary>AIKernel パッケージ利用者に公開される IToolExecutionAccessValidator の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

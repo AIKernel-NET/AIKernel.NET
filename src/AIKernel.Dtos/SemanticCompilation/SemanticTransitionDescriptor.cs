@@ -5,6 +5,8 @@ namespace AIKernel.Dtos.SemanticCompilation;
 /// <summary>
 /// Replay-addressable candidate movement from one Semantic IR/state artifact to another.
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.SemanticCompilation.SemanticTransitionDescriptor']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.SemanticCompilation.SemanticTransitionDescriptor']" />
 public sealed record SemanticTransitionDescriptor(
     string TransitionId,
     string FromIrId,

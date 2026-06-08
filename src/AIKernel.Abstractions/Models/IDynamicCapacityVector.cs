@@ -6,6 +6,8 @@ namespace AIKernel.Abstractions.Models;
 /// 従来の固定プロパティベースの ModelCapacityVector とは異なり、
 /// 実行制約に応じて次元数や各軸の値が動的に変わります。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Models.IDynamicCapacityVector']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Models.IDynamicCapacityVector']" />
 public interface IDynamicCapacityVector
 {
     /// <summary>

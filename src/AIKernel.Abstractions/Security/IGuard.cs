@@ -3,6 +3,8 @@ namespace AIKernel.Abstractions.Security;
 /// <summary>
 /// UC-21（マテリアル検疫とポリシー実行）に基づく Guard 判定契約を定義します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IGuardEvaluator']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IGuardEvaluator']" />
 public interface IGuardEvaluator
 {
     /// <summary>
@@ -26,6 +28,8 @@ public interface IGuardEvaluator
 /// <summary>
 /// UC-21（マテリアル検疫とポリシー実行）に基づく resource access 判定契約を定義します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IResourceAccessGuard']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IResourceAccessGuard']" />
 public interface IResourceAccessGuard
 {
     /// <summary>
@@ -49,6 +53,8 @@ public interface IResourceAccessGuard
 /// UC-21（マテリアル検疫とポリシー実行）に基づく Guard enforcement 契約を定義します。
 /// Fail-Closed 境界では、判定不能または拒否された操作を実行してはなりません。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IGuardEnforcer']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IGuardEnforcer']" />
 public interface IGuardEnforcer
 {
     /// <summary>
@@ -65,6 +71,8 @@ public interface IGuardEnforcer
 /// UC-21（マテリアル検疫とポリシー実行）に基づく Guard failure handling 契約を定義します。
 /// Fail-Closed 境界では、継続不能な failure mode を成功扱いしてはなりません。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IGuardFailureHandler']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IGuardFailureHandler']" />
 public interface IGuardFailureHandler
 {
     /// <summary>
@@ -78,6 +86,8 @@ public interface IGuardFailureHandler
 /// <summary>
 /// UC-21（マテリアル検疫とポリシー実行）に基づく Guard 互換合成契約を定義します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IGuard']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IGuard']" />
 public interface IGuard :
     IGuardEvaluator,
     IResourceAccessGuard,

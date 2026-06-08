@@ -3,6 +3,8 @@ namespace AIKernel.Dtos.KernelContext;
 /// <summary>
 /// Environment の契約を定義します。
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.KernelContext.Environment']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.KernelContext.Environment']" />
 public sealed record Environment(
     string EnvironmentId,
     string Name,

@@ -9,6 +9,8 @@ namespace AIKernel.Contracts;
 /// 参照: 2.CONTEXT_ISOLATION_SPEC.jp.md
 /// UC-04（生成と出力整形）
 /// </summary>
+/// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IExpressionContract']" />
+/// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IExpressionContract']" />
 public interface IExpressionContract
 {
     /// <summary>

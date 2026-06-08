@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="P:AIKernel.Dtos.Query.QueryPart.Order">
+      <summary>AIKernel の公開参照サーフェスで公開される Order 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Query.QueryPart.ParentQueryId">
+      <summary>AIKernel の公開参照サーフェスで公開される ParentQueryId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Query.QueryPart.QueryPartId">
+      <summary>AIKernel の公開参照サーフェスで公開される QueryPartId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Query.QueryPart.Role">
+      <summary>AIKernel の公開参照サーフェスで公開される Role 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Query.QueryPart.Text">
+      <summary>AIKernel の公開参照サーフェスで公開される Text 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Query.QueryPart.string">
+      <summary>AIKernel の公開参照サーフェスで公開される string 値を取得または設定します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Query.QueryPart">
+      <summary>AIKernel パッケージ利用者に公開される QueryPart の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

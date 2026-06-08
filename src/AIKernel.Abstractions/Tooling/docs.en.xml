@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Tooling.IToolExecutor">
+      <summary>Represents the IToolExecutor public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tooling.IToolFileDownloadSource">
+      <summary>Represents the IToolFileDownloadSource public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tooling.IToolFileUploadSink">
+      <summary>Represents the IToolFileUploadSink public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tooling.IToolPermission">
+      <summary>Represents the IToolPermission public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tooling.IToolResourceUsageSource">
+      <summary>Represents the IToolResourceUsageSource public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tooling.IToolSandbox">
+      <summary>Represents the IToolSandbox public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tooling.IToolSandboxCleanup">
+      <summary>Represents the IToolSandboxCleanup public reference surface for AIKernel package consumers.</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Tooling.IToolSandboxIdentity">
+      <summary>Represents the IToolSandboxIdentity public reference surface for AIKernel package consumers.</summary>
+    </member>
+  </members>
+</doc>

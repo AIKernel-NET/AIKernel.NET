@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:AIKernel.Abstractions.Execution.IComputeCardinalityAdvisor">
+      <summary>AIKernel パッケージ利用者に公開される IComputeCardinalityAdvisor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IComputePaddingAdvisor">
+      <summary>AIKernel パッケージ利用者に公開される IComputePaddingAdvisor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IComputeShapeAdvisor">
+      <summary>AIKernel パッケージ利用者に公開される IComputeShapeAdvisor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IComputeShapeOptimizer">
+      <summary>AIKernel パッケージ利用者に公開される IComputeShapeOptimizer の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IContextPromptProjector">
+      <summary>AIKernel パッケージ利用者に公開される IContextPromptProjector の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IExecutionOutput">
+      <summary>AIKernel パッケージ利用者に公開される IExecutionOutput の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IKernelExecutor">
+      <summary>AIKernel パッケージ利用者に公開される IKernelExecutor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IKernelReplayer">
+      <summary>AIKernel パッケージ利用者に公開される IKernelReplayer の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IModelPromptCapabilityResolver">
+      <summary>AIKernel パッケージ利用者に公開される IModelPromptCapabilityResolver の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IOutputPolisher">
+      <summary>AIKernel パッケージ利用者に公開される IOutputPolisher の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IPaddingInfoProvider">
+      <summary>AIKernel パッケージ利用者に公開される IPaddingInfoProvider の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IPhaseHandover">
+      <summary>AIKernel パッケージ利用者に公開される IPhaseHandover の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IPhysicalCardinalityAdvisor">
+      <summary>AIKernel パッケージ利用者に公開される IPhysicalCardinalityAdvisor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IPipelineOrchestrator">
+      <summary>AIKernel パッケージ利用者に公開される IPipelineOrchestrator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IPipelineStep">
+      <summary>AIKernel パッケージ利用者に公開される IPipelineStep の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IPolisherValidator">
+      <summary>AIKernel パッケージ利用者に公開される IPolisherValidator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IPromptGenerator">
+      <summary>AIKernel パッケージ利用者に公開される IPromptGenerator の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IQuantizationAdvisor">
+      <summary>AIKernel パッケージ利用者に公開される IQuantizationAdvisor の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IStructurePlanner">
+      <summary>AIKernel パッケージ利用者に公開される IStructurePlanner の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.ITextTokenizer">
+      <summary>AIKernel パッケージ利用者に公開される ITextTokenizer の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.IThoughtProcess">
+      <summary>AIKernel パッケージ利用者に公開される IThoughtProcess の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.ITokenCounter">
+      <summary>AIKernel パッケージ利用者に公開される ITokenCounter の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.ITokenDecoder">
+      <summary>AIKernel パッケージ利用者に公開される ITokenDecoder の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.ITokenizer">
+      <summary>AIKernel パッケージ利用者に公開される ITokenizer の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.ITokenizerIdentity">
+      <summary>AIKernel パッケージ利用者に公開される ITokenizerIdentity の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.ITokenizerModelSupport">
+      <summary>AIKernel パッケージ利用者に公開される ITokenizerModelSupport の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Abstractions.Execution.ITokenizerStatisticsProvider">
+      <summary>AIKernel パッケージ利用者に公開される ITokenizerStatisticsProvider の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

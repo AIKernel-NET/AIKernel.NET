@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="M:AIKernel.Dtos.Context.ExpressionBuffer.#ctor">
+      <summary>AIKernel の公開参照サーフェスとして #ctor 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.ExpressionContextDto.new">
+      <summary>AIKernel の公開参照サーフェスとして new 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.ExpressionFragment.#ctor">
+      <summary>AIKernel の公開参照サーフェスとして #ctor 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.ExpressionFragment.Empty&lt;string&gt;">
+      <summary>AIKernel の公開参照サーフェスとして Empty&lt;string&gt; 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.HistoryBuffer.#ctor">
+      <summary>AIKernel の公開参照サーフェスとして #ctor 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.MaterialBuffer.#ctor">
+      <summary>AIKernel の公開参照サーフェスとして #ctor 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.OrchestrationBuffer.#ctor">
+      <summary>AIKernel の公開参照サーフェスとして #ctor 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.OrchestrationContextDto.new">
+      <summary>AIKernel の公開参照サーフェスとして new 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.UnifiedContextDto.new">
+      <summary>AIKernel の公開参照サーフェスとして new 操作を実行します。</summary>
+    </member>
+    <member name="M:AIKernel.Dtos.Context.ValidationResult.new">
+      <summary>AIKernel の公開参照サーフェスとして new 操作を実行します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextAssemblyRequest.MaxDepth">
+      <summary>AIKernel の公開参照サーフェスで公開される MaxDepth 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextAssemblyRequest.RelationKindsToFollow">
+      <summary>AIKernel の公開参照サーフェスで公開される RelationKindsToFollow 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextAssemblyScope.Capabilities">
+      <summary>AIKernel の公開参照サーフェスで公開される Capabilities 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextAssemblyScope.Purpose">
+      <summary>AIKernel の公開参照サーフェスで公開される Purpose 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextAssemblyScope.string">
+      <summary>AIKernel の公開参照サーフェスで公開される string 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextFragment.Category">
+      <summary>AIKernel の公開参照サーフェスで公開される Category 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextFragment.Content">
+      <summary>AIKernel の公開参照サーフェスで公開される Content 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextFragment.CreatedAt">
+      <summary>AIKernel の公開参照サーフェスで公開される CreatedAt 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextFragment.FragmentId">
+      <summary>AIKernel の公開参照サーフェスで公開される FragmentId 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextFragment.Priority">
+      <summary>AIKernel の公開参照サーフェスで公開される Priority 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ContextFragment.string">
+      <summary>AIKernel の公開参照サーフェスで公開される string 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ExpressionBuffer.Fragments">
+      <summary>AIKernel の公開参照サーフェスで公開される Fragments 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ExpressionContextDto.CreatedAt">
+      <summary>AIKernel の公開参照サーフェスで公開される CreatedAt 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ExpressionContextDto.DescriptionTemplate">
+      <summary>AIKernel の公開参照サーフェスで公開される DescriptionTemplate 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ExpressionContextDto.Style">
+      <summary>AIKernel の公開参照サーフェスで公開される Style 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ExpressionContextDto.string">
+      <summary>AIKernel の公開参照サーフェスで公開される string 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ExpressionFragment.LanguageTag">
+      <summary>AIKernel の公開参照サーフェスで公開される LanguageTag 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ExpressionFragment.StyleHints">
+      <summary>AIKernel の公開参照サーフェスで公開される StyleHints 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ExpressionFragment.Tone">
+      <summary>AIKernel の公開参照サーフェスで公開される Tone 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.HistoryBuffer.Fragments">
+      <summary>AIKernel の公開参照サーフェスで公開される Fragments 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.MaterialBuffer.Fragments">
+      <summary>AIKernel の公開参照サーフェスで公開される Fragments 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.MaterialContextDto.NormalizedData">
+      <summary>AIKernel の公開参照サーフェスで公開される NormalizedData 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.MaterialContextDto.RawData">
+      <summary>AIKernel の公開参照サーフェスで公開される RawData 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.MaterialContextDto.RelevanceScore">
+      <summary>AIKernel の公開参照サーフェスで公開される RelevanceScore 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.MaterialContextDto.RetrievedAt">
+      <summary>AIKernel の公開参照サーフェスで公開される RetrievedAt 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.MaterialContextDto.Source">
+      <summary>AIKernel の公開参照サーフェスで公開される Source 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.MaterialContextDto.object">
+      <summary>AIKernel の公開参照サーフェスで公開される object 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.OrchestrationBuffer.Fragments">
+      <summary>AIKernel の公開参照サーフェスで公開される Fragments 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.OrchestrationContextDto.CreatedAt">
+      <summary>AIKernel の公開参照サーフェスで公開される CreatedAt 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.OrchestrationContextDto.Purpose">
+      <summary>AIKernel の公開参照サーフェスで公開される Purpose 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.OrchestrationContextDto.ReasoningPattern">
+      <summary>AIKernel の公開参照サーフェスで公開される ReasoningPattern 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.OrchestrationContextDto.Structure">
+      <summary>AIKernel の公開参照サーフェスで公開される Structure 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.OrchestrationContextDto.object">
+      <summary>AIKernel の公開参照サーフェスで公開される object 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.UnifiedContextDto.CreatedAt">
+      <summary>AIKernel の公開参照サーフェスで公開される CreatedAt 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.UnifiedContextDto.Expression">
+      <summary>AIKernel の公開参照サーフェスで公開される Expression 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.UnifiedContextDto.Id">
+      <summary>AIKernel の公開参照サーフェスで公開される Id 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.UnifiedContextDto.Material">
+      <summary>AIKernel の公開参照サーフェスで公開される Material 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.UnifiedContextDto.Orchestration">
+      <summary>AIKernel の公開参照サーフェスで公開される Orchestration 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.UnifiedContextDto.SignalToNoiseRatio">
+      <summary>AIKernel の公開参照サーフェスで公開される SignalToNoiseRatio 値を取得または設定します。</summary>
+    </member>
+    <member name="P:AIKernel.Dtos.Context.ValidationResult.IsValid">
+      <summary>AIKernel の公開参照サーフェスで公開される IsValid 値を取得または設定します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.ContextAssemblyDecision">
+      <summary>AIKernel パッケージ利用者に公開される ContextAssemblyDecision の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.ContextAssemblyRequest">
+      <summary>AIKernel パッケージ利用者に公開される ContextAssemblyRequest の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.ContextAssemblyScope">
+      <summary>AIKernel パッケージ利用者に公開される ContextAssemblyScope の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.ContextFragment">
+      <summary>AIKernel パッケージ利用者に公開される ContextFragment の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.ExpressionBuffer">
+      <summary>AIKernel パッケージ利用者に公開される ExpressionBuffer の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.ExpressionContextDto">
+      <summary>AIKernel パッケージ利用者に公開される ExpressionContextDto の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.ExpressionFragment">
+      <summary>AIKernel パッケージ利用者に公開される ExpressionFragment の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.HistoryBuffer">
+      <summary>AIKernel パッケージ利用者に公開される HistoryBuffer の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.MaterialBuffer">
+      <summary>AIKernel パッケージ利用者に公開される MaterialBuffer の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.MaterialContextDto">
+      <summary>AIKernel パッケージ利用者に公開される MaterialContextDto の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.OrchestrationBuffer">
+      <summary>AIKernel パッケージ利用者に公開される OrchestrationBuffer の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.OrchestrationContextDto">
+      <summary>AIKernel パッケージ利用者に公開される OrchestrationContextDto の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.UnifiedContextDto">
+      <summary>AIKernel パッケージ利用者に公開される UnifiedContextDto の参照サーフェスを表します。</summary>
+    </member>
+    <member name="T:AIKernel.Dtos.Context.ValidationResult">
+      <summary>AIKernel パッケージ利用者に公開される ValidationResult の参照サーフェスを表します。</summary>
+    </member>
+  </members>
+</doc>

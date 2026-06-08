@@ -1,9 +1,9 @@
 ---
 title: "routing Interfaces"
 created: 2026-05-06
-updated: 2026-05-16
+updated: 2026-06-07
 published: 2026-05-16
-version: "0.0.2"
+version: "0.1.0"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -21,6 +21,9 @@ Japanese version: [Index](index-jp.md)
 
 ## 1. Responsibility Boundary
 Routing is the boundary for model/provider selection based on required capability vectors, execution constraints, and runtime conditions. `IModelVectorRouter` owns the decision process, while `ICapabilityRegistry` resolves candidate facts. Replay mode prioritizes locked conditions over dynamic routing.
+Provider routing decision data is contract-owned as DTOs in
+`AIKernel.Dtos.Routing`; request mutation and metadata projection remain Core
+runtime behavior.
 
 ## 2. Related Use Cases
 - `UC-03` Model Vector Routing
@@ -38,8 +41,14 @@ Routing is the boundary for model/provider selection based on required capabilit
 ## Documents
 - [ICapabilityRegistry (Interface Specification)](../routing/ICapabilityRegistry.md)
 - [IModelVectorRouter (Interface Specification)](../routing/IModelVectorRouter.md)
+
+## DTOs
+- `KernelProviderRoutingDecision`
+- `RoutingReason`
+- `RoutingScore`
 ---
 
 # Changelog
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
+- v0.1.0 (2026-06-07): Added provider-routing decision DTO ownership note
