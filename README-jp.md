@@ -1,7 +1,7 @@
 ---
 updated: 2026-06-07
 published: 2026-05-16
-version: "0.1.0"
+version: "0.1.1"
 edition: "Release"
 status: "Released"
 issuer: ai-kernel@aikernel.net
@@ -20,6 +20,57 @@ AIKernel は、機能そのものを定義しません。
 このリポジトリは、AIKernel の正典となる契約群を管理します。
 
 AIKernel.NET は、LLM を API ではなく、能力（Capability）を持つプロセスとして扱う Contract-First な基盤です。
+
+AIOS SDK において、AIKernel.NET は契約語彙のレイヤーです。安定した
+interface、DTO、enum、境界型を定義し、他の AIKernel layer がそれらを
+組み合わせて AI Operating System distribution を構築できるようにします。
+
+AIKernel には、公式 AIOS ディストリビューションである **AIKernel.Monolith** もあります。
+Monolith は 0.1.x 系 SDK の安定化後に、SDK の各 layer を統合する標準 AIOS
+として開発が開始されています。
+
+---
+
+## 最初に読む場所
+
+AIKernel が初めての場合、この repository は contract と vocabulary の入口として使い、
+実際に動かしたい内容に応じて runtime repository へ進んでください。
+
+| やりたいこと | 入口 |
+| --- | --- |
+| 安定した interface、DTO、enum を参照する | `AIKernel.Abstractions`, `AIKernel.Contracts`, `AIKernel.Dtos`, `AIKernel.Enums` |
+| .NET host / service を構築する | [AIKernel.Core](https://github.com/AIKernel-NET/AIKernel.Core) |
+| 公式 Provider / OS driver を追加する | [AIKernel.Providers](https://github.com/AIKernel-NET/AIKernel.Providers) |
+| 物理実行エンジンを使う | [AIKernel.Control](https://github.com/AIKernel-NET/AIKernel.Control) |
+| `aik` CLI や replay / inspection tool を使う | [AIKernel.Tools](https://github.com/AIKernel-NET/AIKernel.Tools) |
+| browser / WebAssembly workload を扱う | [AIKernel.Wasm](https://github.com/AIKernel-NET/AIKernel.Wasm) |
+| runnable example から学ぶ | [AIKernel.Demo](https://github.com/AIKernel-NET/AIKernel.Demo) |
+
+contract package は同じ version family でまとめて導入してください。
+
+```bash
+dotnet add package AIKernel.Abstractions --version 0.1.1
+dotnet add package AIKernel.Contracts --version 0.1.1
+dotnet add package AIKernel.Dtos --version 0.1.1
+dotnet add package AIKernel.Enums --version 0.1.1
+```
+
+異なる version family の AIKernel contract package を混在させないでください。
+
+---
+
+## 0.1.1 公開パッケージライン
+
+0.0.x の design / implementation phase と 0.1.0 prototype validation baseline は完了しました。
+現在の public package line は 0.1.1 です。
+
+0.1.1 では、契約 package に加えて、実行可能な Core、外部 Capability module、
+WASM runtime package、Tools、Demo / Control repository を公開 package family として
+扱います。
+
+過去の architecture document には元の 0.0.x / 0.1.0 front matter や prototype note が
+残る場合があります。利用者向けの package installation example は、現行の 0.1.1
+package を使用してください。
 
 ---
 
@@ -116,7 +167,7 @@ app.Run();
 起動時には以下のシーケンスが実行されます。
 
 ```txt
-[KERNEL] Initializing AIKernel.NET v0.1.0...
+[KERNEL] Initializing AIKernel.NET v0.1.1...
 [KERNEL] Loading ISignatureTrustStore... [OK]
 [KERNEL] Mounting Vfs (Git: ./context)... [OK]
 [KERNEL] Verifying System Prompt Signature... [VALID]

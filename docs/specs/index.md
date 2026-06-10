@@ -8,7 +8,7 @@ issuer: ai-kernel@aikernel.net
 maintainer: "Takuya (AIKernel Project Maintainer)"
 ---
 
-Japanese version: [Specification Index](specs/index-jp.md)
+Japanese version: [Specification Index](index-jp.md)
 
 # Specification Index
 
