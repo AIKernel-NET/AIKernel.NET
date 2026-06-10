@@ -458,6 +458,9 @@ Enterprise extensions may include:
 - Contributions are PR-based.
 - Compatibility for Contracts and PromptRules must be explicit.
 - Breaking changes must include migration guides.
+- Contributors must follow the full development discipline in
+  [AIKernel Development Guidelines](docs/guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES.md)
+  and [AIKernel 開発ガイドライン](docs/guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES-jp.md).
 
 ---
 

@@ -432,6 +432,10 @@ Enterprise 拡張には以下が含まれます。
 - コントリビューションは PR ベースです。
 - Contracts と PromptRules の互換性を明示してください。
 - 破壊的変更には移行ガイドを添付してください。
+- コントリビュータは
+  [AIKernel 開発ガイドライン](docs/guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES-jp.md)
+  および [AIKernel Development Guidelines](docs/guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES.md)
+  に従ってください。
 
 ---
 

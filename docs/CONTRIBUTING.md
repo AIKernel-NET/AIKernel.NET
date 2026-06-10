@@ -21,6 +21,16 @@ signature: ""
 ## Introduction
 AIKernel.NET is a **Contract-Driven AI Runtime** and aims to be a production-grade AI OS. This repository targets **.NET 10 / C# 14**. This CONTRIBUTING guide explains repository structure, PR rules, CI expectations, and best practices for contributors.
 
+The canonical contributor-facing development discipline is defined in
+[`guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES.md`](guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES.md)
+and
+[`guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES-jp.md`](guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES-jp.md).
+That guideline is normative for Interface Led Architecture, Provider-Observer-Operator
+responsibility boundaries, DAG execution, fail-closed monads, versioning, testing,
+documentation, and governance. This CONTRIBUTING guide is the short operational
+entry point; the detailed guideline takes precedence when reviewing architecture
+or implementation choices.
+
 ---
 
 ## Environment
@@ -99,6 +109,8 @@ CI runs build and tests to ensure baseline quality.
 - Create Issues for contract/interface/DTO changes
 - Mark breaking changes with `[Breaking]`
 - Provide XML docs for public APIs
+- Confirm compliance with `guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES.md`
+  or `guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES-jp.md`
 - Ensure CI passes
 - If AI was used to generate content, note it and ensure human validation
 
