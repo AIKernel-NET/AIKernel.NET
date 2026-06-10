@@ -1,9 +1,9 @@
 ---
 updated: 2026-06-07
-published: 2026-06-09
-version: "0.1.0"
+published: 2026-06-10
+version: "0.1.1"
 edition: "Release"
-status: "Release Candidate"
+status: "Release"
 issuer: ai-kernel@aikernel.net
 maintainer: "Takuya (AIKernel Project Maintainer)"
 ---
@@ -21,16 +21,53 @@ This repository manages the canonical contract set of AIKernel.
 
 AIKernel.NET is a contract-first foundation that treats LLMs not as simple APIs, but as capability-bearing processes.
 
+In the AIOS SDK, AIKernel.NET is the contract vocabulary layer. It defines the
+stable interfaces, DTOs, enums, and boundary types that other AIKernel layers
+compose into an AI Operating System distribution.
+
+AIKernel also provides an official AIOS distribution, codenamed
+**AIKernel.Monolith**. Monolith has begun development as the standard AIOS that
+integrates the SDK layers into a unified reference system after the 0.1.x line
+stabilizes.
+
 ---
 
-## 0.1.0 Prototype Validation Phase
+## Start Here
 
-The 0.0.x design-implementation phase is complete. The 0.1.0 package family is
-the first prototype validation baseline, scheduled for publication on
-2026-06-09.
+If you are new to AIKernel, use this repository for contracts and vocabulary,
+then move to the runtime repository that matches what you want to run.
 
-This phase validates the contract packages together with executable Core,
-external Capability modules, and demo/control repositories:
+| You want to... | Start with |
+| --- | --- |
+| Reference stable interfaces, DTOs, and enums | `AIKernel.Abstractions`, `AIKernel.Contracts`, `AIKernel.Dtos`, `AIKernel.Enums` |
+| Build a .NET host or service | [AIKernel.Core](https://github.com/AIKernel-NET/AIKernel.Core) |
+| Add official Providers or OS drivers | [AIKernel.Providers](https://github.com/AIKernel-NET/AIKernel.Providers) |
+| Run physical execution engines | [AIKernel.Control](https://github.com/AIKernel-NET/AIKernel.Control) |
+| Use the `aik` CLI or replay/inspection tools | [AIKernel.Tools](https://github.com/AIKernel-NET/AIKernel.Tools) |
+| Run browser/WebAssembly workloads | [AIKernel.Wasm](https://github.com/AIKernel-NET/AIKernel.Wasm) |
+| Learn through runnable examples | [AIKernel.Demo](https://github.com/AIKernel-NET/AIKernel.Demo) |
+
+Install the contract packages together:
+
+```bash
+dotnet add package AIKernel.Abstractions --version 0.1.1
+dotnet add package AIKernel.Contracts --version 0.1.1
+dotnet add package AIKernel.Dtos --version 0.1.1
+dotnet add package AIKernel.Enums --version 0.1.1
+```
+
+Do not mix AIKernel contract packages from different version families.
+
+---
+
+## 0.1.1 Public Package Line
+
+The 0.0.x design-implementation phase and the 0.1.0 prototype validation
+baseline are complete. The current public package line is 0.1.1.
+
+The 0.1.1 line publishes the contract packages together with executable Core,
+external Capability modules, WASM runtime packages, tools, and demo/control
+repositories:
 
 - `AIKernel.NET` - MIT contract packages: interfaces, DTOs, and enums.
 - `AIKernel.Core` - Apache-2.0 runtime, monads, DSL, Kernel, Hosting, and
@@ -41,9 +78,13 @@ external Capability modules, and demo/control repositories:
 - `AIKernel.Tools` - external Capability modules and developer tools.
 - `AIKernel.Control` - control-plane execution engines for CPU, GPU, emulator,
   Bonsai mapping, and diagnostics.
+- `AIKernel.Providers` - official extension Provider and standard OS driver
+  packages.
+- `AIKernel.Wasm` - browser/WebAssembly runtime and WebGPU provider packages.
 
 Historical architecture documents may retain their original 0.0.x front matter
-and changelog entries. The current public release line is 0.1.0.
+and 0.1.0 prototype notes. User-facing package installation examples should use
+the current 0.1.1 packages.
 
 Release notes:
 
@@ -142,7 +183,7 @@ app.Run();
 ### Target Experience / Boot Log Example
 
 ```txt
-[KERNEL] Initializing AIKernel.NET v0.1.0...
+[KERNEL] Initializing AIKernel.NET v0.1.1...
 [KERNEL] Loading ISignatureTrustStore... [OK]
 [KERNEL] Mounting Vfs (Git: ./context)... [OK]
 [KERNEL] Verifying System Prompt Signature... [VALID]
@@ -458,6 +499,9 @@ Enterprise extensions may include:
 - Contributions are PR-based.
 - Compatibility for Contracts and PromptRules must be explicit.
 - Breaking changes must include migration guides.
+- Contributors must follow the full development discipline in
+  [AIKernel Development Guidelines](docs/guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES.md)
+  and [AIKernel 開発ガイドライン](docs/guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES-jp.md).
 
 ---
 

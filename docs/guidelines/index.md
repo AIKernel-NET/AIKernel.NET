@@ -21,7 +21,22 @@ with **English as the canonical version** and **Japanese as the deep-dive versio
 
 ## Guideline Documents
 
-### 1. [Documentation Guidelines](DOCUMENTATION_GUIDELINES.md)  
+### 1. [AIKernel Development Guidelines](AIKERNEL_DEVELOPMENT_GUIDELINES.md)
+**Contents:**
+- Contract-first development discipline
+- Monadic LINQ use with Result / Either / Option / Try / Async
+- Fail-closed execution boundaries
+- DRY and DGA refactoring rules
+- Public API bilingual comment requirements
+- Test, package, release, and PR quality gates
+- Documentation, Python wrapper, and cross-package consistency checks
+
+Defines the primary contributor discipline for implementation, review, and
+release readiness across the AIKernel package family.
+
+---
+
+### 2. [Documentation Guidelines](DOCUMENTATION_GUIDELINES.md)  
 **Contents:**  
 - Markdown-first principle  
 - English as canonical  
@@ -35,7 +50,7 @@ All AIKernel documentation must follow this guideline.
 
 ---
 
-### 2. [Docs Contributing Guide](DOCS_CONTRIBUTING.md)  
+### 3. [Docs Contributing Guide](DOCS_CONTRIBUTING.md)  
 **Contents:**  
 - Rules for documentation PRs  
 - CI checks (lint, link-check, build)  
@@ -47,7 +62,7 @@ Defines the **operational rules** for contributing documentation.
 
 ---
 
-### 3. [Repository Dependency Rules](REPO_DEPENDENCY_RULES.md)  
+### 4. [Repository Dependency Rules](REPO_DEPENDENCY_RULES.md)  
 **Contents:**  
 - Allowed dependency directions (Core → Kernel → Providers)  
 - Prohibition of circular dependencies  
@@ -58,7 +73,7 @@ Ensures the **architectural integrity** of the entire AIKernel ecosystem.
 
 ---
 
-### 4. Contract Versioning Policy  
+### 5. Contract Versioning Policy  
 **Contents:**  
 - Versioning rules for Interfaces / DTOs / Enums  
 - Definition of breaking changes  
@@ -70,7 +85,7 @@ Defines governance for safely evolving **Contracts**, the foundation of AIKernel
 
 ---
 
-### 5. Migration Guide (Planned)  
+### 6. Migration Guide (Planned)  
 **Contents:**  
 - Migration steps across breaking contract changes  
 - Classification of changes (Breaking / Non-breaking)  
@@ -107,11 +122,12 @@ These guidelines provide the foundation for operating AIKernel as a long-term **
 
 ## Recommended Reading Order
 
-1. **DOCUMENTATION_GUIDELINES**  
-2. **DOCS_CONTRIBUTING**  
-3. **REPO_DEPENDENCY_RULES**  
-4. **CONTRACT_VERSIONING**  
-5. **MIGRATION_GUIDE** (when available)
+1. **AIKERNEL_DEVELOPMENT_GUIDELINES**
+2. **DOCUMENTATION_GUIDELINES**  
+3. **DOCS_CONTRIBUTING**  
+4. **REPO_DEPENDENCY_RULES**  
+5. **CONTRACT_VERSIONING**  
+6. **MIGRATION_GUIDE** (when available)
 
 ---
 

@@ -2,14 +2,17 @@
 
 [日本語](RELEASE_NOTES-ja.md)
 
-## 0.1.0
+## 0.1.1
 
-> [EN] Crossing the 0.1.0 event horizon: the semantic runtime becomes observable, deterministic, and contract-led.
->
-> [JA] 0.1.0 の事象の地平を越える──意味的ランタイムは可観測・決定論・契約駆動へと収束する。
+**June 10th, 2026 - Aligning the Semantic OS boundary.**
+**2026年6月10日--Semantic OS の境界を整列する。**
 
-AIKernel.NET 0.1.0 completes the Phase-1 contract baseline for the semantic
-runtime.
+Aligning the Semantic OS boundary: abstractions, contracts, and identifiers
+converge into the unified 0.1.1 surface. Semantic OS の境界整列--抽象・契約・
+識別子が 0.1.1 の統一面へ収束する。
+
+AIKernel.NET 0.1.1 completes the synchronized contract boundary for the
+Semantic OS package family.
 
 - Freeze the public contract boundary for Abstractions, DTOs, Enums, and
   contract-only surfaces.
@@ -26,6 +29,6 @@ runtime.
   no patent surface. Papers and research documents remain governed by the
   license attached to each paper.
 
-This release marks the completion point of the semantic visibility phase:
+This release marks the synchronized 0.1.1 boundary for semantic visibility:
 determinism, contract boundaries, semantic state, observability, and governed
-circuits are now named as stable public concepts.
+circuits are named as stable public concepts across the ecosystem.

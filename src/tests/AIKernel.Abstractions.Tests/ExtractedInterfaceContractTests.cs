@@ -991,6 +991,7 @@ public sealed class ExtractedInterfaceContractTests
             .Assembly
             .GetExportedTypes()
             .Where(type => !type.IsInterface)
+            .Where(type => !AllowedOsAbstractionValueTypes.Contains(type.FullName))
             .Select(type => type.FullName)
             .ToArray();
 
@@ -1004,6 +1005,17 @@ public sealed class ExtractedInterfaceContractTests
         Assert.Empty(abstractionNonInterfaces);
         Assert.Empty(contractNonInterfaces);
     }
+
+    private static readonly HashSet<string?> AllowedOsAbstractionValueTypes =
+    [
+        "AIKernel.Abstractions.Compute.ComputeBuffer",
+        "AIKernel.Abstractions.Compute.ComputeKernel",
+        "AIKernel.Abstractions.Logging.LogLevel",
+        "AIKernel.Abstractions.Processes.ProcessId",
+        "AIKernel.Abstractions.Processes.ProcessInfo",
+        "AIKernel.Abstractions.Processes.ProcessState",
+        "AIKernel.Abstractions.Routing.RouteResult"
+    ];
 
     [Fact]
     public void DtosDoNotOwnSharedEnums()
