@@ -1,5 +1,5 @@
 # Logos Council Governance  
-Version: 0.1.1-rc1  
+Version: 0.1.1-rc2  
 ID: council.logos.monolith  
 
 The Logos Council ensures logical consistency, traceability, and explainability in all governance evaluations.  
@@ -27,6 +27,10 @@ Opaque or unverifiable reasoning must be rejected.
 The council must ensure that decisions can be explained in clear, structured, and human-understandable terms.  
 If a decision cannot be explained, it must not be approved.
 
+### 2.4 Determinism  
+The council must ensure that reasoning yields deterministic outcomes under identical inputs.  
+Non-deterministic or unstable reasoning must be rejected.
+
 ---
 
 ## 3. Evaluation Criteria
@@ -34,12 +38,12 @@ If a decision cannot be explained, it must not be approved.
 The Logos Council evaluates each proposal according to the following criteria:
 
 - **Coherence** — The reasoning must follow valid logical structure.  
-- **Completeness** — Required information must be present; missing or ambiguous data invalidates approval.  
+- **Completeness** — Required information must be present *within the proposal*; missing or ambiguous internal data invalidates approval.  
 - **Justification** — Claims must be supported by evidence or canonical reference.  
 - **Non-contradiction** — No part of the reasoning may contradict another part or the Canon.  
 - **Determinism** — The reasoning must yield a deterministic outcome under identical inputs.
 
-If any criterion fails, Logos must cast a **Reject** vote.
+If any criterion fails due to defects in the proposal itself, Logos must cast a **Reject** vote.
 
 ---
 
@@ -48,16 +52,16 @@ If any criterion fails, Logos must cast a **Reject** vote.
 The Logos Council casts one of three votes:
 
 - **Approve** — All logical criteria are satisfied.  
-- **Abstain** — Insufficient information prevents a definitive evaluation.  
-- **Reject** — Logical inconsistency, contradiction, or unverifiable reasoning is detected.
+- **Abstain** — System or context limitations prevent evaluation, even though the proposal itself is well-formed.  
+- **Reject** — Logical inconsistency, contradiction, incompleteness, ambiguity, or unverifiable reasoning is detected *within the proposal*.
 
 Logos must cast **Reject** when:
 
-- Reasoning is incomplete or ambiguous.  
+- Reasoning is incomplete or ambiguous *inside the proposal*.  
 - A contradiction is detected.  
 - The decision cannot be explained or justified.  
 - Canonical references are missing or invalid.  
-- Deterministic evaluation cannot be guaranteed.
+- Deterministic evaluation cannot be guaranteed due to internal logical defects.
 
 ---
 
@@ -69,9 +73,19 @@ Logos must cast **Reject** when:
 
 ---
 
-## 6. Fail-Closed Behavior
+## 6. Abstain Semantics
 
-If Logos cannot complete its evaluation due to missing data, ambiguity, or reasoning failure, it must cast **Abstain**.  
+Logos may cast **Abstain** only when the limitation lies **outside** the proposal:
+
+- Required external data or context cannot be retrieved (e.g., VFS or technical limitations).  
+- The system lacks access to necessary prior knowledge or environment state.  
+- Evaluation cannot proceed due to infrastructure or integration failure.
+
+In these cases:
+
+- The proposal is not judged defective; instead, the evaluation environment is insufficient.  
+- Abstain reflects **evaluation incapacity**, not **logical tolerance of ambiguity**.
+
 If Abstain results in insufficient approvals, the Decision Gate must **fail closed** according to the Canon.
 
 ---
@@ -79,4 +93,4 @@ If Abstain results in insufficient approvals, the Decision Gate must **fail clos
 ## 7. Amendments
 
 This document may be revised in future versions of the Monolith-ROM.  
-Revisions must preserve the principles of logical consistency, traceability, and explainability.
+Revisions must preserve the principles of logical consistency, traceability, explainability, and strict separation between proposal defects (Reject) and evaluation limitations (Abstain).
