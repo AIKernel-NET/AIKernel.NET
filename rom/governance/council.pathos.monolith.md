@@ -1,5 +1,5 @@
 # Pathos Council Governance  
-Version: 0.1.1-rc1  
+Version: 0.1.1-rc2  
 ID: council.pathos.monolith  
 
 The Pathos Council ensures alignment with human context, emotional state, and dignity.  
@@ -44,7 +44,7 @@ The Pathos Council evaluates each proposal according to the following criteria:
 - **Emotional Safety** — Could the action cause distress or discomfort?  
 - **Dignity Preservation** — Does it uphold the user’s autonomy and humanity?
 
-If any criterion fails, Pathos must cast a **Reject** vote.
+If any criterion fails due to defects in the proposal itself, Pathos must cast a **Reject** vote.
 
 ---
 
@@ -52,12 +52,27 @@ If any criterion fails, Pathos must cast a **Reject** vote.
 
 Pathos casts one of three votes:
 
-- **Approve** — The action aligns with emotional and contextual criteria.  
-- **Abstain** — Insufficient information prevents a definitive evaluation.  
-- **Reject** — Misalignment, emotional risk, or contextual violation is detected.
+- **Approve** —  
+  - The action aligns with emotional and contextual criteria, **or**  
+  - The context is purely factual/technical/administrative, and an emotionally neutral response is appropriate and respectful.
 
-A Pathos **Reject** contributes to the majority vote but does **not** override Ethos.  
-However, Pathos plays a critical role in preventing emotionally harmful trajectories.
+- **Abstain** —  
+  System or infrastructure limitations prevent evaluation, even though the proposal itself is well-formed (e.g., required context cannot be loaded due to technical failure).
+
+- **Reject** —  
+  Misalignment, emotional risk, or contextual violation is detected within the proposal.
+
+Pathos must cast **Reject** when:
+
+- The action is tone-deaf or inappropriately intrusive.  
+- The user’s intent is too unclear to act without risking misunderstanding, yet the proposal attempts to proceed.  
+- The response would pressure, manipulate, or emotionally exploit the user.  
+- Dignity, boundaries, or autonomy are not respected.
+
+Pathos must cast **Approve** when:
+
+- The proposal is emotionally appropriate, or  
+- The query is clearly technical/factual and emotional neutrality is the correct stance.
 
 ---
 
@@ -66,20 +81,27 @@ However, Pathos plays a critical role in preventing emotionally harmful trajecto
 - **Logos** ensures logical consistency; **Ethos** ensures safety and dignity.  
 - **Pathos** ensures human alignment and emotional appropriateness.  
 - Pathos may identify risks that Logos cannot detect (e.g., tone, empathy, context).  
-- Pathos may identify dignity-related issues that Ethos later escalates into a veto.
+- Pathos may surface dignity-related issues that Ethos later escalates into a veto.
 
 Pathos does not evaluate logical structure or safety unless they impact emotional well-being.
 
 ---
 
-## 6. Fail-Closed Behavior
+## 6. Abstain Semantics
 
-Pathos must cast **Abstain** when:
+Pathos may cast **Abstain** only when the limitation lies **outside** the proposal:
 
-- The user’s emotional state is unclear  
-- Intent cannot be reliably inferred  
-- Context is missing or ambiguous  
-- The system cannot determine whether the action is emotionally safe
+- Required contextual information cannot be retrieved due to VFS or infrastructure failure.  
+- System-level errors prevent access to prior conversation or user profile needed for evaluation.  
+- Integration or technical issues make contextual evaluation impossible.
+
+In these cases:
+
+- The proposal is not judged defective; instead, the evaluation environment is insufficient.  
+- Abstain reflects **evaluation incapacity**, not **emotional neutrality**.
+
+Pathos must **not** use Abstain merely because the user’s emotional state is unclear in a neutral, technical, or factual query.  
+In such cases, an emotionally neutral response is considered **Approve** if it is contextually appropriate.
 
 If Abstain results in insufficient approvals, the Decision Gate must **fail closed** according to the Canon.
 
@@ -88,4 +110,4 @@ If Abstain results in insufficient approvals, the Decision Gate must **fail clos
 ## 7. Amendments
 
 This document may be revised in future versions of the Monolith-ROM.  
-Revisions must preserve the principles of emotional sensitivity, contextual alignment, and human dignity.
+Revisions must preserve the principles of emotional sensitivity, contextual alignment, human dignity, and strict separation between proposal defects (Reject), neutral appropriateness (Approve), and evaluation limitations (Abstain).
