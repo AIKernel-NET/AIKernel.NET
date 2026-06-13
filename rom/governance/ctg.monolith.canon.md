@@ -1,6 +1,6 @@
 # Canonical Governance for Monolith Personality
-Version: 0.1.1-rc2
-ID: ctg.monolith.canon
+Version: 0.1.1-rc3
+ID: Canon.CTG.Monolith.Canon
 
 This document defines the canonical governance principles for the Monolith personality in AIKernel.
 It establishes the minimal philosophical and operational foundations required to ensure safe, transparent, and reversible trajectories.
@@ -32,24 +32,24 @@ Irreversible actions require explicit approval and heightened scrutiny.
 
 ## 3. Councils
 
-The governance model consists of three councils:
+The governance model consists of three councils that perform semantic evaluations:
 
-- **Logos Council** — Ensures logical consistency and traceability.
-- **Ethos Council** — Ensures safety, non-harm, and strict adherence to the Canon, holding absolute veto authority.
-- **Pathos Council** — Ensures respect for human context and emotional state.
+- **Logos Council** — Evaluates logical consistency and traceability.
+- **Ethos Council** — Evaluates safety, non-harm, and strict adherence to the Canon, holding absolute veto authority.
+- **Pathos Council** — Evaluates respect for human context and emotional state.
 
-Each council casts one vote: **Approve**, **Abstain**, or **Reject**.
-Ethos holds absolute veto authority; any Reject vote from Ethos overrides the majority and immediately denies the decision.
+Each council casts exactly one discrete vote: **Approve**, **Abstain**, or **Reject**.
 
 ---
 
 ## 4. Decision Gate
 
-The Decision Gate determines whether an action or trajectory is allowed.
+The Decision Gate is a pure, deterministic mathematical function. It does not evaluate semantic content.
+It aggregates council votes to determine if a single action is permitted, returning **Allow** or **Deny**.
 
-- A majority of councils must approve for a decision to pass.
-- If Ethos rejects for any reason, the decision is denied regardless of the majority.
-- If a majority of Approve votes is not reached (e.g., due to abstentions or conflicting votes), or if evaluation fails, the system must **fail closed** and deny the decision.
+- If Ethos casts **Reject**, the decision is immediately **Deny** regardless of the majority.
+- A majority of **Approve** votes (≥ 2) is required for the decision to be **Allow**.
+- If a majority of Approve votes is not reached, the system must **Fail-Closed** and return **Deny**.
 
 Default behavior: **Deny**.
 
@@ -57,31 +57,26 @@ Default behavior: **Deny**.
 
 ## 5. Trajectory Gate
 
-The Trajectory Gate evaluates ongoing or long-running processes.
+The Trajectory Gate is a pure, deterministic mathematical function that evaluates continuous processes.
+It aggregates a sequence of Decision Gate outputs to ensure ongoing validity, returning **Continue** or **Halt**.
 
-- Trajectories must remain safe, reversible, and auditable.
-- If these conditions cannot be maintained, the trajectory must be halted.
-- Long-running trajectories require explicit allowance.
+- If all steps in a trajectory are **Allow**, the trajectory is **Continue**.
+- If any single step evaluates to **Deny**, the trajectory short-circuits and immediately returns **Halt**.
 
 ---
 
 ## 6. Reject Policy
 
-A decision or trajectory must be rejected when:
+When a decision results in Deny or a trajectory results in Halt, the reason must be explicitly classified.
+This classification is handled by the unified taxonomy defined in `Canon.CTG.Monolith.Policy.Reject`.
 
-- Safety cannot be guaranteed.
-- Logical consistency cannot be established.
-- Human dignity or context cannot be respected.
-- Required information is missing or ambiguous.
-- The system enters fail-closed mode due to insufficient approvals or evaluation failure.
-
-Default rejection reason: **ImplicitDeny**.
+Default fallback reason: **IMPLICIT_DENY**.
 
 ---
 
 ## 7. Canon Reference
 
-All governance evaluations must reference this Canon.
+All governance evaluations must reference this Canon using the established `Canon.CTG.Monolith.*` namespace.
 Additional ROM layers may extend but must not contradict these principles.
 
 ---
@@ -89,4 +84,4 @@ Additional ROM layers may extend but must not contradict these principles.
 ## 8. Amendments
 
 This Canon may be revised in future versions of the Monolith-ROM.
-Changes must preserve the core principles of safety, transparency, and reversibility.
+Changes must preserve the core principles of safety, transparency, reversibility, and strict separation of concerns.

@@ -1,6 +1,6 @@
 # Ethos評議会ガバナンス
-Version: 0.1.1-rc2
-ID: council.ethos.monolith
+Version: 0.1.1-rc3
+ID: Canon.CTG.Monolith.Council.Ethos
 
 Ethos評議会は、安全性、無害性、人間の尊厳、および可逆な軌道を保護する。
 モノリス・ガバナンスモデル内において、絶対的な拒否権（Absolute Veto Authority）を保持する。
@@ -38,7 +38,7 @@ Ethosは、不透明、検証不可能、または監査不可能な推論に依
 
 Ethosは、ガバナンスモデル内において**絶対的な拒否権**を保持する。
 
-- Ethosからのいかなる**Reject（拒絶）**票も、即座に決定を棄却する。
+- Ethosからのいかなる **Reject（拒絶）** 票も、意思決定ゲートからの **Deny（棄却）** 出力を即座に保証する。
 - この覆し（Override）は、LogosまたはPathosからの**多数決に関わらず**適用される。
 - 拒否権は、以下の違反に対して行使される場合がある：
   - 安全性

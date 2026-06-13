@@ -1,6 +1,6 @@
 # 拒絶ポリシー・ガバナンス
-Version: 0.1.1-rc2
-ID: reject.policy.monolith
+Version: 0.1.1-rc3
+ID: Canon.CTG.Monolith.Policy.Reject
 
 拒絶ポリシーは、ガバナンスシステム全体で使用される拒絶理由の正典的な分類体系（タクソノミー）を定義する。
 拒絶が「いつ」発生するかを決定するものではない；その責務は評議会およびゲートに属する。
@@ -10,12 +10,12 @@ ID: reject.policy.monolith
 
 ## 1. 目的 (Purpose)
 
-拒絶ポリシーの目的は、拒絶理由コードに対する「信頼できる唯一の情報源（SSoT: Single Source of Truth）」を提供することである。
+拒絶ポリシーの目的は、拒絶理由コードに対する「信頼できる唯一の情報源（SSoT）」を提供することである。
 これらのコードは以下によって使用される：
 
-- 評議会（Logos, Ethos, Pathos）が Reject 票を投じる際
-- 意思決定ゲートが Deny を計算する際
-- 軌道ゲートが Halt を計算する際
+- 評議会（Logos, Ethos, Pathos）が **Reject** 票を投じる際
+- 意思決定ゲートが **Deny** を計算する際
+- 軌道ゲートが **Halt** を計算する際
 
 これにより、システム全体で一貫した監査可能性と決定論的リプレイが保証される。
 
@@ -89,11 +89,11 @@ ID: reject.policy.monolith
 
 例：
 
-- `Canon.CTG.3.2` — Ethosの拒否権
-- `Council.Logos.3` — 論理的整合性
-- `Council.Pathos.4` — 文脈との整合性
-- `Gate.Decision.3.2` — 多数決規則
-- `Gate.Trajectory.3` — 短絡評価
+- `Canon.CTG.Monolith.Gate.Decision.3.1` — Ethosの拒否権
+- `Canon.CTG.Monolith.Council.Logos.3` — 論理的整合性
+- `Canon.CTG.Monolith.Council.Pathos.4` — 文脈との整合性
+- `Canon.CTG.Monolith.Gate.Decision.3.2` — 多数決規則
+- `Canon.CTG.Monolith.Gate.Trajectory.3` — 短絡評価
 
 参照は正確かつ安定的でなければならない。
 

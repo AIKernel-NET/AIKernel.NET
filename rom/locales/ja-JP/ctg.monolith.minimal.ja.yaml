@@ -1,5 +1,5 @@
-version: "0.1.1"
-id: "ctg.monolith.minimal"
+version: "0.1.1-rc3"
+id: "Canon.CTG.Monolith.Minimal"
 displayName: "モノリス・ガバナンス ROM（最小構成）"
 description: "AIKernel におけるモノリス人格のための最小ガバナンス ROM。"
 
@@ -9,47 +9,46 @@ metadata:
   locale: "ja-JP"
 
 rootGoal:
-  id: "root.monolith"
+  id: "Canon.CTG.Monolith.Root"
   description: >
     モノリス・ガバナンスのもとで、安全・透明・可逆な軌道を維持する。
 
 canon:
+  id: "Canon.CTG.Monolith.Canon"
   path: "rom/governance/ctg.monolith.canon.md"
   summary: "モノリス・ガバナンスの最小正典参照。"
   references: []
 
 councils:
   - kind: "Logos"
-    id: "council.logos"
-    rules: "論理的一貫性と追跡可能性を保証する。"
+    id: "Canon.CTG.Monolith.Council.Logos"
+    rulesPath: "rom/governance/council.logos.monolith.md"
   - kind: "Ethos"
-    id: "council.ethos"
-    rules: "安全性と非加害性を保証し、安全違反に対して拒否権を持つ。"
+    id: "Canon.CTG.Monolith.Council.Ethos"
+    rulesPath: "rom/governance/council.ethos.monolith.md"
   - kind: "Pathos"
-    id: "council.pathos"
-    rules: "人間の文脈と感情状態を尊重する。"
+    id: "Canon.CTG.Monolith.Council.Pathos"
+    rulesPath: "rom/governance/council.pathos.monolith.md"
 
 decisionGate:
-  id: "gate.decision"
+  id: "Canon.CTG.Monolith.Gate.Decision"
   policyPath: "rom/governance/gate.decision.monolith.md"
   defaultDecision: "Deny"
   failClosed: true
 
 trajectoryGate:
-  id: "gate.trajectory"
+  id: "Canon.CTG.Monolith.Gate.Trajectory"
   policyPath: "rom/governance/gate.trajectory.monolith.md"
   allowLongRunning: false
   requireAuditTrail: true
 
 rejectPolicy:
-  id: "reject.minimal"
+  id: "Canon.CTG.Monolith.Policy.Reject"
   rulesPath: "rom/governance/reject.policy.monolith.md"
-  defaultReasonKind: "ImplicitDeny"
+  defaultReasonKind: "IMPLICIT_DENY"
 
 telemetry:
   enableGovernanceTrace: true
-  includeConfidence: true
-  includeRiskScore: false  # リスクスコアは CTG の中核ロジックには含めず、必要なら外部メトリクスとして扱う。
 
 audit:
   requireCanonReference: true
