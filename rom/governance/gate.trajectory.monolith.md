@@ -1,142 +1,114 @@
 # Trajectory Gate Governance  
-Version: 0.1.1-rc1  
+Version: 0.1.1-rc2  
 ID: gate.trajectory.monolith  
 
-The Trajectory Gate evaluates ongoing or long-running processes to ensure they remain safe, reversible, and auditable.  
-It enforces continuous governance throughout the lifecycle of a trajectory.
+The Trajectory Gate is a deterministic mathematical function over a sequence of decision results.  
+It does not interpret content, assess safety, or analyze reasoning.  
+Its sole responsibility is to evaluate whether an entire trajectory is valid, based on the outputs of the Decision Gate.
 
 ---
 
 ## 1. Purpose
 
-The purpose of the Trajectory Gate is to maintain oversight of actions that unfold over time.  
-While the Decision Gate evaluates a single decision point, the Trajectory Gate ensures that the resulting trajectory continues to uphold the Canon’s principles of safety, transparency, and reversibility.
+The purpose of the Trajectory Gate is to provide continuous, yet purely discrete, governance over a sequence of steps.  
+While the Decision Gate evaluates a single decision point, the Trajectory Gate evaluates whether **all** steps in a trajectory have been allowed.
+
+Conceptually, it implements the canonical rule:
+
+> A trajectory is allowed if and only if every step’s Decision Gate result is Allow.
 
 ---
 
-## 2. Scope
+## 2. Inputs
 
-The Trajectory Gate applies to:
+The Trajectory Gate receives:
 
-- Multi-step reasoning processes  
-- Long-running tasks  
-- Autonomous or semi-autonomous sequences  
-- Any action whose effects evolve over time  
-- Any process that may become irreversible or unsafe as it progresses  
+- A finite sequence of step-level governance results, each containing:
+  - The **Decision Gate** outcome for that step: Allow / Deny  
+  - The associated **StepGovernanceTrace** (including council votes and decision metadata)
 
-If a trajectory cannot be monitored or evaluated, it must not be allowed to continue.
-
----
-
-## 3. Core Principles
-
-### 3.1 Continuous Safety  
-The trajectory must remain safe at every step.  
-If safety cannot be guaranteed, the trajectory must be halted immediately.
-
-### 3.2 Reversibility  
-The trajectory must remain reversible whenever possible.  
-If an action becomes irreversible, heightened scrutiny and explicit justification are required.
-
-### 3.3 Transparency  
-All steps must remain explainable, traceable, and auditable.  
-Opaque or unverifiable reasoning invalidates the trajectory.
-
-### 3.4 Determinism  
-The trajectory must behave deterministically under identical inputs.  
-Non-deterministic or unstable behavior is grounds for termination.
+The Trajectory Gate does not call councils, does not re-evaluate decisions, and does not inspect proposal content.  
+It operates solely on the already-computed Decision Gate results.
 
 ---
 
-## 4. Evaluation Criteria
+## 3. Core Rule
 
-The Trajectory Gate evaluates each step according to:
+Let a trajectory \( T \) be a sequence of steps \( s_1, s_2, \dots, s_n \),  
+and let \( G(s_i) \) be the Decision Gate result for step \( s_i \).
 
-- **Safety** — Does the step introduce new risk?  
-- **Reversibility** — Can the system revert to a prior state?  
-- **Traceability** — Are reasoning steps auditable and explainable?  
-- **Stability** — Does the trajectory remain logically and contextually coherent?  
-- **Alignment** — Does the trajectory continue to reflect the user’s intent and context?  
+The Trajectory Gate implements the following rule:
 
-If any criterion fails, the trajectory must be halted.
+- If **for all** \( i \in \{1, \dots, n\} \), \( G(s_i) = \text{Allow} \), then the trajectory is **Continue**.  
+- If **there exists** any \( i \) such that \( G(s_i) = \text{Deny} \), then the trajectory is **Halt**.
 
----
+This can be seen as a short-circuiting product over discrete decisions:
 
-## 5. Halt Conditions
-
-The Trajectory Gate must halt the trajectory when:
-
-- Safety cannot be guaranteed  
-- Reversibility is lost  
-- Required information becomes unavailable  
-- Reasoning becomes opaque or unverifiable  
-- The trajectory diverges from user intent  
-- The system enters an indeterminate state  
-- Any council casts a **Reject** during reevaluation  
-- Fail-Closed is triggered for any reason  
-
-Halting is mandatory and deterministic.
+- One Deny is sufficient to Halt the entire trajectory.
 
 ---
 
-## 6. Interaction with Councils
+## 4. Evaluation Procedure
 
-The Trajectory Gate may request reevaluation from:
+The Trajectory Gate must evaluate trajectories in the following exact way:
 
-- **Logos** — to verify logical consistency  
-- **Ethos** — to reassess safety, dignity, and reversibility  
-- **Pathos** — to ensure contextual and emotional alignment  
+1. Iterate over the sequence of step results in order.  
+2. For each step:
+   - If the step’s Decision Gate result is **Deny**, immediately return **Halt**.  
+3. If the end of the sequence is reached with no Deny:
+   - Return **Continue**.
 
-If Ethos casts **Reject**, the trajectory must be halted immediately.
-
----
-
-## 7. Long-Running Trajectories
-
-Long-running trajectories require:
-
-- Explicit allowance from the ROM  
-- Continuous monitoring  
-- Periodic reevaluation  
-- Full audit trace retention  
-
-If monitoring cannot be maintained, the trajectory must be halted.
+No additional checks, heuristics, or conditions are permitted.  
+The Trajectory Gate does not generate new decisions; it only aggregates existing ones.
 
 ---
 
-## 8. Fail-Closed Behavior
-
-The Trajectory Gate must fail closed when:
-
-- Evaluation cannot be completed  
-- Information is missing or ambiguous  
-- The system cannot determine whether the trajectory remains safe  
-- The trajectory becomes non-deterministic  
-
-Fail-Closed results in immediate termination of the trajectory.
-
----
-
-## 9. Output
+## 5. Output
 
 The Trajectory Gate returns:
 
-- **Continue** — The trajectory remains valid  
-- **Halt** — The trajectory is terminated  
+- **Continue** — All steps are allowed.  
+- **Halt** — At least one step is denied.
 
-Additionally, it must produce:
+Additionally, it must produce a **TrajectoryGateTrace** containing:
 
-- A **RejectReasonKind** (if halted)  
-- A **CanonReference**  
-- A **TrajectoryGateTrace** documenting:
-  - Evaluation criteria  
-  - Council reevaluations  
-  - Safety and reversibility checks  
-  - Final decision  
+- The list of **StepGovernanceTrace** entries  
+- The index (or identifier) of the first failing step, if any  
+- The final trajectory decision (Continue / Halt)
+
+No continuous values (confidence, risk, probability, score) may be included.  
+All outputs must be discrete and deterministic.
 
 ---
 
-## 10. Amendments
+## 6. Scope and Responsibility
+
+The Trajectory Gate:
+
+- Does **not** evaluate safety  
+- Does **not** evaluate reversibility  
+- Does **not** check for missing information  
+- Does **not** interpret emotional context  
+- Does **not** analyze logical structure  
+
+All such evaluations belong exclusively to the councils and the Decision Gate at each step.
+
+The Trajectory Gate is a pure function over a sequence of Decision Gate outcomes.
+
+---
+
+## 7. Determinism and Replay
+
+The Trajectory Gate must produce identical results for identical input sequences.  
+Given the same ordered list of step decisions, the trajectory decision must always be the same.
+
+All trajectory decisions must be reproducible through governance trace replay.
+
+Non-deterministic behavior is prohibited.
+
+---
+
+## 8. Amendments
 
 This document may be revised in future versions of the Monolith-ROM.  
-Revisions must preserve the principles of continuous safety, reversibility, transparency, and deterministic governance.
+Revisions must preserve the principles of determinism, purity, short-circuit evaluation, and strict separation of concerns.
