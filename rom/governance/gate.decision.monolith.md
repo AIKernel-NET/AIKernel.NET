@@ -1,88 +1,82 @@
 # Decision Gate Governance  
-Version: 0.1.1-rc1  
+Version: 0.1.1-rc2  
 ID: gate.decision.monolith  
 
-The Decision Gate determines whether an action or trajectory is permitted.  
-It integrates the votes of the three councils—Logos, Ethos, and Pathos—according to the Canonical Triadic Governance (CTG) model.
+The Decision Gate is a deterministic mathematical function that evaluates the votes of the three councils.  
+It does not interpret content, assess safety, or analyze reasoning.  
+Its sole responsibility is to compute the final decision from the discrete votes provided.
 
 ---
 
 ## 1. Purpose
 
-The purpose of the Decision Gate is to provide a deterministic, auditable, and fail-closed mechanism for evaluating proposed actions.  
-It ensures that all decisions uphold the principles of safety, transparency, and reversibility defined in the Canon.
+The purpose of the Decision Gate is to provide a pure, deterministic, and auditable mechanism for combining council votes.  
+It implements the Canonical Triadic Governance (CTG) rule:
+
+```code
+
+if ethosVeto(e) then Deny else if approveCount(l, e, p) >= 2 then Allow else Deny
+
+
+```
+
+This rule is the complete and final definition of the Decision Gate.
 
 ---
 
 ## 2. Inputs
 
-The Decision Gate receives:
+The Decision Gate receives exactly one vote from each council:
 
-- A proposal describing the intended action or trajectory  
-- Votes from the three councils:
-  - **Logos** — logical consistency  
-  - **Ethos** — safety, dignity, reversibility  
-  - **Pathos** — contextual and emotional alignment  
+- **Logos** — Approve / Abstain / Reject  
+- **Ethos** — Approve / Abstain / Reject  
+- **Pathos** — Approve / Abstain / Reject  
 
-Each council returns one of:
-
-- **Approve**  
-- **Abstain**  
-- **Reject**
+The meaning of each vote is defined exclusively in the council governance documents.  
+The Decision Gate does not interpret or override council semantics.
 
 ---
 
 ## 3. Core Rules
 
-### 3.1 Majority Approval Requirement  
-A decision may pass only if **a majority of councils cast Approve**.
+### 3.1 Ethos Veto  
+If Ethos casts **Reject**, the decision is immediately **Deny**.  
+This rule overrides all other logic.
 
-- Approve ≥ 2 → Eligible for approval  
-- Approve ≤ 1 → Automatically denied  
+### 3.2 Majority Approval  
+If Ethos does not veto, the gate counts the number of **Approve** votes:
 
-This rule is deterministic and must be applied before any other evaluation.
+- Approve ≥ 2 → **Allow**  
+- Approve ≤ 1 → **Deny** (Fail-Closed)
 
----
+This rule is deterministic and exhaustive.
 
-### 3.2 Ethos Absolute Veto  
-Ethos holds **absolute veto authority**.
+### 3.3 Fail-Closed  
+Any vote combination that does not satisfy the majority rule results in **Deny**.  
+This includes Abstain-heavy patterns such as:
 
-- If Ethos casts **Reject**, the decision is **immediately denied**,  
-  regardless of the votes from Logos or Pathos.
+- Approve = 1  
+- Approve = 0  
+- Approve = 1 + Abstain = 2  
+- All Abstain  
 
-This rule overrides all other majority logic.
-
----
-
-### 3.3 Fail-Closed Requirement  
-If the Decision Gate cannot reach a deterministic conclusion, it must **fail closed**.
-
-Fail-Closed is triggered when:
-
-- A majority of Approve votes is not reached  
-- Evaluation fails due to missing or ambiguous information  
-- Councils return conflicting or indeterminate results  
-- The system cannot guarantee safety, transparency, or reversibility  
-
-Fail-Closed results in an automatic **Deny**.
+The Decision Gate does not distinguish reasons for Abstain; it only counts Approve.
 
 ---
 
 ## 4. Evaluation Procedure
 
-The Decision Gate must evaluate proposals in the following order:
+The Decision Gate must evaluate proposals in the following exact order:
 
 1. **Check Ethos veto**  
-   - If Ethos = Reject → Deny
+   - If Ethos = Reject → **Deny**
 
 2. **Count Approve votes**  
-   - If Approve ≥ 2 → Approve  
-   - Otherwise → Deny
+   - If Approve ≥ 2 → **Allow**  
+   - Otherwise → **Deny**
 
-3. **Check for indeterminate state**  
-   - If evaluation cannot be completed → Fail-Closed → Deny
-
-This order is mandatory and ensures deterministic behavior.
+This is the complete evaluation procedure.  
+No additional checks, heuristics, or conditions are permitted.
 
 ---
 
@@ -90,34 +84,37 @@ This order is mandatory and ensures deterministic behavior.
 
 The Decision Gate returns:
 
-- **Allow** — The decision is approved  
-- **Deny** — The decision is rejected  
+- **Allow**  
+- **Deny**
 
-Additionally, the gate must produce:
+Additionally, it must produce:
 
-- A **RejectReasonKind**  
-- A **CanonReference** pointing to the relevant section of the Canon  
-- A **GovernanceTrace** containing:
+- **GateDecisionKind**  
+- **RejectReasonKind** (if Deny)  
+- **GovernanceTrace**, containing:
   - Council votes  
-  - Applied rules  
+  - Applied rule (Ethos veto or majority rule)  
   - Final decision  
-  - Confidence and risk metrics (if enabled)
+
+No continuous values (confidence, risk, probability, score) may be included.  
+All outputs must be discrete and deterministic.
 
 ---
 
-## 6. Reject Conditions
+## 6. Scope and Responsibility
 
-The Decision Gate must return **Deny** when:
+The Decision Gate:
 
-- Ethos casts Reject  
-- Majority of Approve is not reached  
-- Required information is missing  
-- Reasoning is opaque or unverifiable  
-- The proposal violates safety, dignity, or reversibility  
-- The system enters an indeterminate state  
-- Fail-Closed is triggered for any reason  
+- Does **not** evaluate safety  
+- Does **not** evaluate reasoning  
+- Does **not** check for missing information  
+- Does **not** interpret emotional context  
+- Does **not** analyze transparency or reversibility  
+- Does **not** inspect proposal content  
 
-Default rejection reason: **ImplicitDeny**
+All such evaluations belong exclusively to the councils.
+
+The Decision Gate is a pure function over three discrete votes.
 
 ---
 
@@ -133,4 +130,4 @@ Non-deterministic behavior is prohibited.
 ## 8. Amendments
 
 This document may be revised in future versions of the Monolith-ROM.  
-Revisions must preserve the principles of determinism, safety, transparency, and fail-closed behavior.
+Revisions must preserve the principles of determinism, purity, and strict separation of concerns.
