@@ -1,17 +1,17 @@
 ---
-updated: 2026-06-07
+updated: 2026-06-10
 published: 2026-05-16
-version: "0.1.0"
-edition: "Draft"
-status: "Refactor"
+version: "0.1.1"
+edition: "Release"
+status: "Active"
 issuer: ai-kernel@aikernel.net
 maintainer: "Takuya (AIKernel Project Maintainer)"
 ---
 
 # AIKernel Operations — Index
 This directory serves as the entry point for **Operations** documentation in AIKernel.NET.  
-At this stage, most documents are **Planned**, and will be created once the core specifications  
-(Contracts / Kernel / Providers) reach a stable state.
+As of 0.1.1, the Operations area also carries the public package installation path,  
+the official demo-program reading order, and the release-time verification surface.
 
 Operations documents differ from architecture (Why), design (How), and guidelines (Rules).  
 They focus on **practical operational procedures (Runbooks)** such as monitoring, release workflows,  
@@ -37,12 +37,38 @@ incident response, and SLO/SLA management.
 - v0.0.5 governance admissibility replay and Semantic IR slot vocabulary
 - v0.0.5 Semantic Compilation DTO vocabulary
 - v0.1.0 MemoryRegion / MemoryMapper contract extraction
+- v0.1.1 synchronized package line verification across NuGet, PyPI, Providers, WASM, Tools, CUDA, and Demo
 
 Use this guide when upgrading package references or validating contract-layer dependencies.
 
 ---
 
-### 2. Release Operations  
+### 2. [Package Installation Guide](PACKAGE_INSTALLATION_GUIDE.md)  
+**Status:** Active  
+**Current contents:**  
+- Fastest three-command path for starting the AIKernel OS surface  
+- NuGet package map for contract, runtime, provider, tools, WASM, and CUDA layers  
+- PyPI package map for Python wrapper users  
+- Provider selection guidance and repository links  
+- 0.1.1 version-mixing rule  
+
+Use this guide when installing AIKernel packages or validating package-family boundaries.
+
+---
+
+### 3. [Demo Programs Guide](DEMO_PROGRAMS_GUIDE.md)  
+**Status:** Active  
+**Current contents:**  
+- Recommended first demo: `AIKernel.Demo.CoreRuntime`  
+- Eight-demo map across CoreRuntime, Contracts, Control, Providers, StandardProviders, Tools, WASM, and CUDA  
+- Release-friendly dry-run execution order  
+- Python demo surface guidance  
+
+Use this guide when learning AIKernel through executable examples.
+
+---
+
+### 4. Release Operations  
 **Status:** Planned  
 **Planned contents:**  
 - Release workflow (tag → build → publish → verify)  
@@ -52,7 +78,7 @@ Use this guide when upgrading package references or validating contract-layer de
 
 ---
 
-### 3. Monitoring & Observability  
+### 5. Monitoring & Observability  
 **Status:** Planned  
 **Planned contents:**  
 - Metrics (latency, cost, retries, cache, provider health)  
@@ -62,7 +88,7 @@ Use this guide when upgrading package references or validating contract-layer de
 
 ---
 
-### 4. Incident Response  
+### 6. Incident Response  
 **Status:** Planned  
 **Planned contents:**  
 - Detection → Triage → Isolation → Recovery → Postmortem  
@@ -72,7 +98,7 @@ Use this guide when upgrading package references or validating contract-layer de
 
 ---
 
-### 5. Security Operations  
+### 7. Security Operations  
 **Status:** Planned  
 **Planned contents:**  
 - Signature verification (PromptRules / Contracts / Policies)  
@@ -112,8 +138,10 @@ Operations provide the foundation for running AIKernel as a long-term, reliable 
 Operations documentation is being expanded as contract and packaging boundaries stabilize.
 
 Currently:
-- The Migration Guide contains concrete steps through v0.1.0
-- All other documents remain Planned  
+- The Migration Guide contains concrete steps through v0.1.1
+- The Package Installation Guide covers the NuGet and PyPI public package line
+- The Demo Programs Guide covers the official AIKernel.Demo learning path
+- Release, monitoring, incident, and security operations remain Planned  
 
 Future versions will expand this directory.
 
@@ -134,3 +162,4 @@ Future versions will expand this directory.
 - v0.0.4 (2026-06-04): Added DSL / History ROM contract extraction migration coverage
 - v0.0.5 (2026-06-05): Added contract-surface purity cleanup, external Capability module, DynamicSLM Model ABI / SeedSLM discipline / distillation offload, HATL external cryptographic operator, governance admissibility, and Semantic Compilation DTO vocabulary migration coverage
 - v0.1.0 (2026-06-07): Added MemoryRegion / MemoryMapper contract extraction coverage
+- v0.1.1 (2026-06-10): Added package installation and demo program guides for the synchronized public release line

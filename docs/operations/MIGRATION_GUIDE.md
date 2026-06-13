@@ -1,10 +1,10 @@
 ---
 title: "Migration Guide"
-updated: 2026-06-07
+updated: 2026-06-10
 published: 2026-05-16
-version: "0.1.0"
-edition: "Draft"
-status: "Refactor"
+version: "0.1.1"
+edition: "Release"
+status: "Active"
 issuer: ai-kernel@aikernel.net
 maintainer: "Takuya (AIKernel Project Maintainer)"
 ---
@@ -12,6 +12,8 @@ maintainer: "Takuya (AIKernel Project Maintainer)"
 # Migration Guide
 
 This guide defines migration steps from the initial concept baseline (`v0.0.0`) to the canonical architecture baseline (`v0.0.1`, `v0.0.2`, `v0.0.3`), to the DSL / History ROM contract extraction introduced in `v0.0.4`, and to the contract-surface purity cleanup plus external Capability module contracts, DynamicSLM Model ABI / SeedSLM discipline / distillation offload, HATL external cryptographic operator contract preparation, governance admissibility gate and trajectory vocabulary, and Semantic Compilation DTO vocabulary introduced in `v0.0.5`.
+
+For the synchronized `0.1.1` public release line, keep NuGet and PyPI package families on the same version. The 0.1.1 line publishes Core, Control, Providers, Tools, WASM, CUDA, and Demo surfaces together, so mixed `0.1.0` / `0.1.1` dependency graphs should be treated as stale until proven otherwise.
 
 ## 1. Fundamental Changes
 In `v0.0.1`, the architecture was rebuilt around `Determinism` and `Non-LLM Governance`.
@@ -846,3 +848,4 @@ chosen for NuGet and verify the full dependency graph.
 - v0.0.4 (2026-06-04): Added DSL pipeline, DSL ROM, History ROM, Kernel clock contract extraction, ROM store contracts, ambiguous-interface rename guidance, AIKernel.Vfs package removal steps, and interface-only contract package migration for AIKernel.Core adapter migration
 - v0.0.5 (2026-06-05): Removed remaining Abstractions-local DTO/exception implementations, duplicate DTO enums, and legacy ambiguous ChatChain interfaces; added external Capability module contracts, DynamicSLM Model ABI, SeedSLM discipline, distillation offload, HATL external cryptographic operator, governance admissibility gate/trajectory, and Semantic Compilation DTO vocabulary contract preparation
 - v0.1.0 (2026-06-07): Adds MemoryRegion / MemoryMapper, Control Plane, and provider-routing DTO contract ownership in AIKernel.Abstractions, AIKernel.Dtos, and AIKernel.Enums while leaving Result-based runtime adapters and routing behavior in Core/Common.
+- v0.1.1 (2026-06-10): Adds the synchronized package-family rule for Core, Control, Providers, Tools, WASM, CUDA, and Demo release lines.

@@ -1,10 +1,10 @@
 ---
 title: "移行ガイド（Migration Guide）"
-updated: 2026-06-07
+updated: 2026-06-10
 published: 2026-05-16
-version: "0.1.0"
-edition: "Draft"
-status: "Refactor"
+version: "0.1.1"
+edition: "Release"
+status: "Active"
 issuer: ai-kernel@aikernel.net
 maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 ---
@@ -12,6 +12,8 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 # 移行ガイド（Migration Guide）
 
 本ガイドは、初期コンセプト版（v0.0.0）から、正典化されたアーキテクチャ（v0.0.1、v0.0.2、v0.0.3）、v0.0.4 の DSL / History ROM contract 抽出、および v0.0.5 の contract-surface purity cleanup、external Capability module contract、DynamicSLM Model ABI / SeedSLM discipline / distillation offload、HATL external cryptographic operator contract 準備、governance admissibility gate / trajectory vocabulary、Semantic Compilation DTO vocabulary へ移行するための手順を定義します。
+
+同期された `0.1.1` 公開リリースラインでは、NuGet と PyPI のパッケージファミリを同じバージョンで揃えてください。0.1.1 は Core、Control、Providers、Tools、WASM、CUDA、Demo の各サーフェスをまとめて公開するため、`0.1.0` と `0.1.1` が混在する依存グラフは、検証が終わるまで stale として扱います。
 
 ## 1. 根本的な変更点
 v0.0.1 では、`決定論（Determinism）` と `非推論型ガバナンス` を軸に、全体設計が再編されました。
@@ -844,3 +846,4 @@ registration 経由で取得してください。
 - v0.0.4 (2026-06-04): AIKernel.Core adapter 移行に向け、DSL pipeline、DSL ROM、History ROM、Kernel clock contract 抽出、ROM store contract、曖昧な interface 改名ガイド、AIKernel.Vfs package 削除手順、interface-only contract package 移行手順を追加
 - v0.0.5 (2026-06-05): Abstractions-local DTO/例外実装、DTO enum 重複、旧 ChatChain 曖昧 interface を削除し、external Capability module contract、DynamicSLM Model ABI / SeedSLM discipline / distillation offload / HATL external cryptographic operator / governance admissibility gate・trajectory / Semantic Compilation DTO vocabulary contract 準備を追加
 - v0.1.0 (2026-06-07): MemoryRegion / MemoryMapper、Control Plane、provider-routing DTO contract ownership を AIKernel.Abstractions、AIKernel.Dtos、AIKernel.Enums に追加し、Result-based runtime adapter と routing behavior は Core/Common に残す。
+- v0.1.1 (2026-06-10): Core、Control、Providers、Tools、WASM、CUDA、Demo の同期リリースラインに合わせ、パッケージファミリを 0.1.1 で揃える運用ルールを追加
