@@ -3,6 +3,7 @@ namespace AIKernel.Vfs;
 /// <summary>
 /// Vfs 認証情報を定義します。
 /// UC-08（コンテキストスナップショットと永続化）, UC-18（Chat Persistence）
+/// JA: IVfsCredentials の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IVfsCredentials']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IVfsCredentials']" />
@@ -10,21 +11,25 @@ public interface IVfsCredentials
 {
     /// <summary>
     /// ユーザー名を取得します。
+    /// JA: このメンバー の公開契約を定義します。
     /// </summary>
     string? Username { get; }
 
     /// <summary>
     /// API キーを取得します。
+    /// JA: このメンバー の公開契約を定義します。
     /// </summary>
     string? ApiKey { get; }
 
     /// <summary>
     /// トークンを取得します。
+    /// JA: このメンバー の公開契約を定義します。
     /// </summary>
     string? Token { get; }
 
     /// <summary>
     /// その他の認証パラメータを取得します。
+    /// JA: このメンバー の公開契約を定義します。
     /// </summary>
     IReadOnlyDictionary<string, object>? Parameters { get; }
 }

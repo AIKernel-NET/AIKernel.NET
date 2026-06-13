@@ -4,6 +4,9 @@ using AIKernel.Abstractions.Tasks;
 
 namespace AIKernel.Abstractions.Tests;
 
+/// <summary>
+/// Defines a test helper type. JA: テスト用の型を定義します。
+/// </summary>
 public sealed class TaskAndSchedulingCapabilityContractTests
 {
     [Fact]
@@ -19,6 +22,9 @@ public sealed class TaskAndSchedulingCapabilityContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void PipelineResultReaderDoesNotExposeExecutionCapabilities()
     {
         IPipelineExecutionResultReader reader = new PipelineResultOnlyReader();
@@ -41,6 +47,9 @@ public sealed class TaskAndSchedulingCapabilityContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void ScheduledJobReaderDoesNotExposeMutationCapabilities()
     {
         IScheduledJobReader reader = new ScheduledJobOnlyReader();
@@ -59,6 +68,9 @@ public sealed class TaskAndSchedulingCapabilityContractTests
 
     private sealed class FullTaskManager : ITaskManager
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<string> RegisterPipelineAsync(IPipeline pipeline)
         {
             return Task.FromResult("pipeline");
@@ -72,6 +84,9 @@ public sealed class TaskAndSchedulingCapabilityContractTests
             return Task.FromResult<IPipelineExecutionResult>(null!);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<ITaskExecutionResult> ExecuteTaskAsync(
             ITask task,
             ITaskContext context,
@@ -85,6 +100,9 @@ public sealed class TaskAndSchedulingCapabilityContractTests
             return Task.FromResult(true);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<bool> ResumePipelineAsync(string executionId)
         {
             return Task.FromResult(true);
@@ -103,6 +121,9 @@ public sealed class TaskAndSchedulingCapabilityContractTests
 
     private sealed class ScheduledJobOnlyReader : IScheduledJobReader
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<IScheduledJob?> GetJobAsync(string jobId)
         {
             return Task.FromResult<IScheduledJob?>(null);
@@ -117,6 +138,9 @@ public sealed class TaskAndSchedulingCapabilityContractTests
 
     private sealed class FullScheduler : IScheduler
     {
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public string ProviderId => "scheduler";
 
         public string Name => "Scheduler";
@@ -133,6 +157,9 @@ public sealed class TaskAndSchedulingCapabilityContractTests
             return Task.FromResult(true);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task InitializeAsync()
         {
             return Task.CompletedTask;
@@ -148,6 +175,9 @@ public sealed class TaskAndSchedulingCapabilityContractTests
             return Task.FromResult(new ProviderHealthStatus(true, null, DateTime.UnixEpoch, 0));
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<IScheduledJob?> GetJobAsync(string jobId)
         {
             return Task.FromResult<IScheduledJob?>(null);
@@ -163,6 +193,9 @@ public sealed class TaskAndSchedulingCapabilityContractTests
             return Task.FromResult(true);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<IReadOnlyList<IScheduledJob>> ListJobsAsync()
         {
             IReadOnlyList<IScheduledJob> jobs = [];

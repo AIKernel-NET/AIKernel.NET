@@ -11,6 +11,9 @@ using AIKernel.Contracts;
 
 namespace AIKernel.Abstractions.Tests;
 
+/// <summary>
+/// Defines the IContractSurfaceTests test skeleton. JA: IContractSurfaceTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IContractSurfaceTests
 {
     [Fact]
@@ -22,7 +25,10 @@ public sealed class IContractSurfaceTests
     }
 }
 
-public sealed class IProviderExtendedTests
+/// <summary>
+/// Defines the IKernelProviderTests test skeleton. JA: IKernelProviderTests のテストスケルトンを定義します。
+/// </summary>
+public sealed class IKernelProviderTests
 {
     [Fact]
     public void GetCapabilitiesAsync_ValidContext_ReturnsCapabilities()
@@ -33,6 +39,9 @@ public sealed class IProviderExtendedTests
     }
 
     [Fact]
+    /// <summary>
+    /// Verifies the ExecuteAsync_ValidOperation_ReturnsProviderResult skeleton scenario. JA: ExecuteAsync_ValidOperation_ReturnsProviderResult のスケルトンシナリオを検証します。
+    /// </summary>
     public void ExecuteAsync_ValidOperation_ReturnsProviderResult()
     {
         // Arrange
@@ -41,7 +50,10 @@ public sealed class IProviderExtendedTests
     }
 }
 
-public sealed class IProviderRouterExtendedTests
+/// <summary>
+/// Defines the ICapabilityProviderRouterTests test skeleton. JA: ICapabilityProviderRouterTests のテストスケルトンを定義します。
+/// </summary>
+public sealed class ICapabilityProviderRouterTests
 {
     [Fact]
     public void SelectProviderAsync_HealthyCandidates_ReturnsBestProvider()
@@ -52,7 +64,10 @@ public sealed class IProviderRouterExtendedTests
     }
 }
 
-public sealed class IPdpExtendedTests
+/// <summary>
+/// Defines the IGovernanceDecisionProviderTests test skeleton. JA: IGovernanceDecisionProviderTests のテストスケルトンを定義します。
+/// </summary>
+public sealed class IGovernanceDecisionProviderTests
 {
     [Fact]
     public void EvaluateAsync_AllowedRequest_ReturnsAllowDecision()
@@ -63,7 +78,10 @@ public sealed class IPdpExtendedTests
     }
 }
 
-public sealed class IPolicyExtendedTests
+/// <summary>
+/// Defines the IActionGovernancePolicyTests test skeleton. JA: IActionGovernancePolicyTests のテストスケルトンを定義します。
+/// </summary>
+public sealed class IActionGovernancePolicyTests
 {
     [Fact]
     public void Evaluate_ApplicableRequest_ReturnsDecisionFragment()
@@ -74,6 +92,9 @@ public sealed class IPolicyExtendedTests
     }
 }
 
+/// <summary>
+/// Defines the ISignerServiceTests test skeleton. JA: ISignerServiceTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class ISignerServiceTests
 {
     [Fact]
@@ -85,6 +106,9 @@ public sealed class ISignerServiceTests
     }
 }
 
+/// <summary>
+/// Defines the IVerifierServiceTests test skeleton. JA: IVerifierServiceTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IVerifierServiceTests
 {
     [Fact]
@@ -96,6 +120,9 @@ public sealed class IVerifierServiceTests
     }
 }
 
+/// <summary>
+/// Defines the ISignatureCounterStoreTests test skeleton. JA: ISignatureCounterStoreTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class ISignatureCounterStoreTests
 {
     [Fact]
@@ -107,6 +134,9 @@ public sealed class ISignatureCounterStoreTests
     }
 }
 
+/// <summary>
+/// Defines the ILifecycleManagerTests test skeleton. JA: ILifecycleManagerTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class ILifecycleManagerTests
 {
     [Fact]
@@ -118,6 +148,9 @@ public sealed class ILifecycleManagerTests
     }
 }
 
+/// <summary>
+/// Defines the IMigrationScriptTests test skeleton. JA: IMigrationScriptTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IMigrationScriptTests
 {
     [Fact]
@@ -129,6 +162,9 @@ public sealed class IMigrationScriptTests
     }
 }
 
+/// <summary>
+/// Defines the IContractComparerTests test skeleton. JA: IContractComparerTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IContractComparerTests
 {
     [Fact]
@@ -140,6 +176,9 @@ public sealed class IContractComparerTests
     }
 }
 
+/// <summary>
+/// Defines the ISandboxRuntimeProviderTests test skeleton. JA: ISandboxRuntimeProviderTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class ISandboxRuntimeProviderTests
 {
     [Fact]
@@ -151,6 +190,9 @@ public sealed class ISandboxRuntimeProviderTests
     }
 }
 
+/// <summary>
+/// Defines the IRuntimeStatusProviderTests test skeleton. JA: IRuntimeStatusProviderTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IRuntimeStatusProviderTests
 {
     [Fact]
@@ -162,6 +204,9 @@ public sealed class IRuntimeStatusProviderTests
     }
 }
 
+/// <summary>
+/// Defines the ISandboxProcessProviderTests test skeleton. JA: ISandboxProcessProviderTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class ISandboxProcessProviderTests
 {
     [Fact]
@@ -173,6 +218,9 @@ public sealed class ISandboxProcessProviderTests
     }
 }
 
+/// <summary>
+/// Defines the IRuntimeAssetResolverTests test skeleton. JA: IRuntimeAssetResolverTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IRuntimeAssetResolverTests
 {
     [Fact]
@@ -184,6 +232,9 @@ public sealed class IRuntimeAssetResolverTests
     }
 }
 
+/// <summary>
+/// Defines the IMemoryAssetMountProviderTests test skeleton. JA: IMemoryAssetMountProviderTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IMemoryAssetMountProviderTests
 {
     [Fact]
@@ -195,6 +246,9 @@ public sealed class IMemoryAssetMountProviderTests
     }
 }
 
+/// <summary>
+/// Defines the IFrameSourceProviderTests test skeleton. JA: IFrameSourceProviderTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IFrameSourceProviderTests
 {
     [Fact]
@@ -206,6 +260,9 @@ public sealed class IFrameSourceProviderTests
     }
 }
 
+/// <summary>
+/// Defines the IFrameSurfaceProviderTests test skeleton. JA: IFrameSurfaceProviderTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IFrameSurfaceProviderTests
 {
     [Fact]
@@ -217,6 +274,9 @@ public sealed class IFrameSurfaceProviderTests
     }
 }
 
+/// <summary>
+/// Defines the IFramePerceptionProviderTests test skeleton. JA: IFramePerceptionProviderTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IFramePerceptionProviderTests
 {
     [Fact]
@@ -228,6 +288,9 @@ public sealed class IFramePerceptionProviderTests
     }
 }
 
+/// <summary>
+/// Defines the IObservationProviderTests test skeleton. JA: IObservationProviderTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IObservationProviderTests
 {
     [Fact]
@@ -239,6 +302,9 @@ public sealed class IObservationProviderTests
     }
 }
 
+/// <summary>
+/// Defines the IPhaseRouterProviderTests test skeleton. JA: IPhaseRouterProviderTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IPhaseRouterProviderTests
 {
     [Fact]
@@ -250,6 +316,9 @@ public sealed class IPhaseRouterProviderTests
     }
 }
 
+/// <summary>
+/// Defines the IActionProposalProviderTests test skeleton. JA: IActionProposalProviderTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IActionProposalProviderTests
 {
     [Fact]
@@ -261,6 +330,9 @@ public sealed class IActionProposalProviderTests
     }
 }
 
+/// <summary>
+/// Defines the IActionArbiterProviderTests test skeleton. JA: IActionArbiterProviderTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IActionArbiterProviderTests
 {
     [Fact]
@@ -272,6 +344,9 @@ public sealed class IActionArbiterProviderTests
     }
 }
 
+/// <summary>
+/// Defines the IControlProfileProviderTests test skeleton. JA: IControlProfileProviderTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IControlProfileProviderTests
 {
     [Fact]
@@ -283,6 +358,9 @@ public sealed class IControlProfileProviderTests
     }
 }
 
+/// <summary>
+/// Defines the IVirtualInputProviderTests test skeleton. JA: IVirtualInputProviderTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IVirtualInputProviderTests
 {
     [Fact]
@@ -294,6 +372,9 @@ public sealed class IVirtualInputProviderTests
     }
 }
 
+/// <summary>
+/// Defines the IEvidenceCaptureProviderTests test skeleton. JA: IEvidenceCaptureProviderTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IEvidenceCaptureProviderTests
 {
     [Fact]
@@ -305,6 +386,9 @@ public sealed class IEvidenceCaptureProviderTests
     }
 }
 
+/// <summary>
+/// Defines the IRuntimeTelemetryProviderTests test skeleton. JA: IRuntimeTelemetryProviderTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IRuntimeTelemetryProviderTests
 {
     [Fact]
@@ -316,6 +400,9 @@ public sealed class IRuntimeTelemetryProviderTests
     }
 }
 
+/// <summary>
+/// Defines the IReplayEvidenceProviderTests test skeleton. JA: IReplayEvidenceProviderTests のテストスケルトンを定義します。
+/// </summary>
 public sealed class IReplayEvidenceProviderTests
 {
     [Fact]

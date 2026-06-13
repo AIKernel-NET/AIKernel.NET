@@ -7,6 +7,9 @@ using KernelContextExecutor = AIKernel.Abstractions.Kernel.IKernelContextExecuto
 
 namespace AIKernel.Abstractions.Tests;
 
+/// <summary>
+/// Defines a test helper type. JA: テスト用の型を定義します。
+/// </summary>
 public sealed class KernelCapabilityContractTests
 {
     [Fact]
@@ -25,6 +28,9 @@ public sealed class KernelCapabilityContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void KernelExecutorDoesNotExposeGovernanceAccessors()
     {
         KernelContextExecutor executor = new ExecuteOnlyKernel();
@@ -44,6 +50,9 @@ public sealed class KernelCapabilityContractTests
 
     private sealed class FullKernel : IKernel
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public string GetVersion()
         {
             return "0.0.2";
@@ -59,6 +68,9 @@ public sealed class KernelCapabilityContractTests
             return Task.FromResult<AttentionAnalysis>(null!);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<MaterialContextDto> PreprocessMaterialAsync(MaterialContextDto material)
         {
             return Task.FromResult(material);
@@ -74,6 +86,9 @@ public sealed class KernelCapabilityContractTests
             return null!;
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public IGuard GetGuard()
         {
             return null!;

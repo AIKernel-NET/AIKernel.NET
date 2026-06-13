@@ -2,6 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// Declares the invocation boundary used for an external capability.
+/// JA: CapabilityInvocationMode の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Enums.CapabilityInvocationMode']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Enums.CapabilityInvocationMode']" />

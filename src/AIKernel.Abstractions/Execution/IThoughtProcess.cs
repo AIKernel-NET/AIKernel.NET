@@ -8,6 +8,7 @@ namespace AIKernel.Abstractions.Execution;
 /// 思考プロセスのインターフェース。
 /// Orchestration コンテキストから生のロジック（中間表現）を生成します。
 /// これは Two‑Phase 実行の第 1 ステップです。
+/// JA: IThoughtProcess の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IThoughtProcess']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IThoughtProcess']" />
@@ -16,15 +17,17 @@ public interface IThoughtProcess
     /// <summary>
     /// このThoughtProcessが要求するモデル能力ベクトル。
     /// 通常は ReasoningDepth が高いベクトルが要求されます。
+    /// JA: BuildLogicAsync 操作を実行します。
     /// </summary>
     ModelCapacityVector RequiredCapacity { get; }
 
     /// <summary>
     /// Orchestration コンテキストからロジックを構築します。
+    /// JA: BuildLogicAsync 操作を実行します。
     /// </summary>
-    /// <param name="orchestrationContext">制御・指示コンテキスト</param>
-    /// <param name="ct">キャンセルトークン</param>
-    /// <returns>生のロジック（推論結果の中間表現）</returns>
+    /// <param name="orchestrationContext">制御・指示コンテキスト JA: orchestrationContext パラメーターです。</param>
+    /// <param name="ct">キャンセルトークン JA: ct パラメーターです。</param>
+    /// <returns>生のロジック（推論結果の中間表現） JA: 結果を返します。</returns>
     Task<RawLogic> BuildLogicAsync(IContextCollection orchestrationContext, CancellationToken ct = default);
 }
 

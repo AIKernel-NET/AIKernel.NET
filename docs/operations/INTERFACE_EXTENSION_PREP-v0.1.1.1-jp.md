@@ -2,7 +2,7 @@
 id: interface-extension-prep-v0-1-1-1
 title: "AIKernel.NET v0.1.1.1 Interface Extension Preparation"
 created: 2026-06-13
-updated: 2026-06-13
+updated: 2026-06-14
 version: "0.1.1.1"
 edition: "Preparation"
 status: "Draft"
@@ -52,6 +52,9 @@ tags:
 - 既存 DTO constructor / required property / enum value の意味変更は避ける。
 - 新しい DTO field は optional / nullable / default 付きにする。
 - 新しい enum value を追加する場合、既存値の numeric value と意味を変更しない。
+- 新規 domain enum は `Unknown = 0` を持ち、未知値は fail-closed に扱う。
+- 追加 interface は semantic name を使い、機械的な expansion suffix を使わない。
+- public API にはバイリンガル XML documentation を付与する。
 - `AIKernel.Abstractions` と `AIKernel.Contracts` は interface-only を維持する。
 - DTO は `AIKernel.Dtos`、enum は `AIKernel.Enums` に置く。
 - runtime behavior、exception 実装、Result adapter、Core 実装は `AIKernel.NET` に入れない。
@@ -61,6 +64,10 @@ tags:
 - `src/README.md`: package 境界、dependency rule、Vfs namespace ownership
 - `docs/design/CONTRACT_VERSIONING.md`: breaking / non-breaking change の判定
 - `docs/operations/MIGRATION_GUIDE.md`: package 利用者向け migration note
+- `docs/architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1-jp.md`: v0.1.1.1 additive contract surface
+- `docs/operations/INTERFACE_EXTENSION_NAMING-v0.1.1.1-jp.md`: semantic interface naming
+- `docs/operations/ENUM_HANDLING_POLICY-v0.1.1.1-jp.md`: enum unknown value handling
+- `docs/operations/XML_DOCUMENTATION_POLICY-v0.1.1.1-jp.md`: bilingual XML documentation
 - `docs/architecture/interfaces/*`: interface category ごとの既存公開 surface
 - `src/tests/AIKernel.Abstractions.Tests`: interface composition / package DAG / spec alignment tests
 

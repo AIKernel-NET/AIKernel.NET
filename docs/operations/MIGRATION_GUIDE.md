@@ -1,8 +1,8 @@
 ---
 title: "Migration Guide"
-updated: 2026-06-10
+updated: 2026-06-14
 published: 2026-05-16
-version: "0.1.1"
+version: "0.1.1.1"
 edition: "Release"
 status: "Active"
 issuer: ai-kernel@aikernel.net
@@ -14,6 +14,46 @@ maintainer: "Takuya (AIKernel Project Maintainer)"
 This guide defines migration steps from the initial concept baseline (`v0.0.0`) to the canonical architecture baseline (`v0.0.1`, `v0.0.2`, `v0.0.3`), to the DSL / History ROM contract extraction introduced in `v0.0.4`, and to the contract-surface purity cleanup plus external Capability module contracts, DynamicSLM Model ABI / SeedSLM discipline / distillation offload, HATL external cryptographic operator contract preparation, governance admissibility gate and trajectory vocabulary, and Semantic Compilation DTO vocabulary introduced in `v0.0.5`.
 
 For the synchronized `0.1.1` public release line, keep NuGet and PyPI package families on the same version. The 0.1.1 line publishes Core, Control, Providers, Tools, WASM, CUDA, and Demo surfaces together, so mixed `0.1.0` / `0.1.1` dependency graphs should be treated as stale until proven otherwise.
+
+For `0.1.1.1`, no GitHub release workflow is required. This update is an
+additive package-line contract expansion for already published public packages.
+Existing `0.1.1` consumers do not need code migration unless they opt into the
+new domain contracts.
+
+## 0. v0.1.1.1 Additive Contract Expansion
+
+`0.1.1.1` adds semantic interfaces, DTOs, and enums for adapters, runtime
+control, process control, replay, observability, diagnostics, operator strategy,
+profiles, telemetry, metrics, HUD signals, overlay annotations, and CTG
+governance carriers.
+
+### 0.1 Compatibility
+
+- Existing public method signatures remain unchanged.
+- Existing public enum values are not removed or renamed.
+- New interfaces are opt-in and use semantic names rather than mechanical
+  expansion suffixes.
+- New descriptor and snapshot DTO fields are optional.
+- New domain enums use `Unknown = 0` and fail-closed unknown-value handling.
+
+### 0.2 Consumer Action
+
+Existing consumers can remain on their current API usage. Consumers that need
+the new surface should add references to the semantic interfaces and DTO
+domains described in
+[`../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md`](../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md).
+For CTG-specific guidance, also read
+[`../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md`](../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md),
+[`../design/CTG_CONTRACT_MODEL-v0.1.1.1.md`](../design/CTG_CONTRACT_MODEL-v0.1.1.1.md), and
+[`CTG_DEVELOPER_GUIDE-v0.1.1.1.md`](CTG_DEVELOPER_GUIDE-v0.1.1.1.md). The fixed
+paper reference is
+[`../papers/12-canonical-trajectory-governance/README.md`](../papers/12-canonical-trajectory-governance/README.md).
+
+Local development package versions use:
+
+```text
+0.1.1-dev<build-number>
+```
 
 ## 1. Fundamental Changes
 In `v0.0.1`, the architecture was rebuilt around `Determinism` and `Non-LLM Governance`.

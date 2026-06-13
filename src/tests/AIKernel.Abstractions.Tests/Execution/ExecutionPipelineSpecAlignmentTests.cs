@@ -10,6 +10,7 @@ namespace AIKernel.Abstractions.Tests.Execution;
 
 /// <summary>
 /// ExecutionPipelineSpecAlignmentTests の契約を定義します。
+/// Defines the ExecutionPipelineSpecAlignmentTests contract. JA: ExecutionPipelineSpecAlignmentTests の公開契約を定義します。
 /// </summary>
 public sealed class ExecutionPipelineSpecAlignmentTests
 {
@@ -39,6 +40,9 @@ public sealed class ExecutionPipelineSpecAlignmentTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void EPS_005_EPS_F002_HashChain_Tamper_Is_FailClosed()
     {
         // EPS-005: フェーズ間ハッシュ連鎖で完全性検証
@@ -56,6 +60,9 @@ public sealed class ExecutionPipelineSpecAlignmentTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public async Task EPS_F005_Logic_Divergence_Returns_Safe_Result_Type()
     {
         // EPS-F005: Logic Divergence Check を戻り値型で安全ハンドル
@@ -86,6 +93,9 @@ public sealed class ExecutionPipelineSpecAlignmentTests
             });
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public ModelType SelectOptimalModel(ModelCapacityVector requirement, IEnumerable<ModelType> candidates)
         {
             _ = requirement;
@@ -98,6 +108,9 @@ public sealed class ExecutionPipelineSpecAlignmentTests
             return candidates.Select(x => (x, 1.0f));
         }
 
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public bool VerifyDeterministicRouting(ModelRoutingDecision decision1, ModelRoutingDecision decision2) =>
             decision1.SelectedProviderId == decision2.SelectedProviderId && decision1.SelectionRationale == decision2.SelectionRationale;
     }
@@ -113,6 +126,9 @@ public sealed class ExecutionPipelineSpecAlignmentTests
                 LogicIntegrityScore = 0.0
             });
 
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public Task<LogicDivergenceAnalysis> AnalyzeDivergenceAsync(RawLogic originalLogic, string output, CancellationToken cancellationToken = default) =>
             Task.FromResult(new LogicDivergenceAnalysis
             {
@@ -126,6 +142,9 @@ public sealed class ExecutionPipelineSpecAlignmentTests
 
     private sealed class StubExecutionConstraints : IExecutionConstraints
     {
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public int ContextCardinality => 1;
         public IReadOnlyList<string> AllowedTools => AllowedToolsValues;
         public IReadOnlyList<string> Scopes => ScopeValues;
@@ -138,6 +157,9 @@ public sealed class ExecutionPipelineSpecAlignmentTests
         public float ComputeThroughputTflops => 1.0f;
         public int BatchSize => 1;
         public int SequenceLength => 512;
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public int PhysicalCardinality => 1;
         public string? GetContextValue(string key) => null;
         public IReadOnlyDictionary<string, string> GetAllContextValues() => new Dictionary<string, string>();
@@ -153,6 +175,5 @@ public sealed class ExecutionPipelineSpecAlignmentTests
             && chain.GenerationParentHash == chain.StructureHash;
     }
 }
-
 
 

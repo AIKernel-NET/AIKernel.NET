@@ -4,6 +4,7 @@ using AIKernel.Dtos.Time;
 
 /// <summary>
 /// Provides deterministic time to Kernel, DSL, ROM, and replay components.
+/// JA: IKernelClock の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Time.IKernelClock']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Time.IKernelClock']" />

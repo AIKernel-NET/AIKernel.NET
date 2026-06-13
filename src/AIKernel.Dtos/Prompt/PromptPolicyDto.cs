@@ -2,6 +2,7 @@ namespace AIKernel.Dtos.Prompt;
 
 /// <summary>
 /// PromptPolicyDto の契約を定義します。
+/// JA: PromptPolicyDto の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Prompt.PromptPolicyDto']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Prompt.PromptPolicyDto']" />

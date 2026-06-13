@@ -1,8 +1,8 @@
 ---
 title: "移行ガイド（Migration Guide）"
-updated: 2026-06-10
+updated: 2026-06-14
 published: 2026-05-16
-version: "0.1.1"
+version: "0.1.1.1"
 edition: "Release"
 status: "Active"
 issuer: ai-kernel@aikernel.net
@@ -14,6 +14,44 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 本ガイドは、初期コンセプト版（v0.0.0）から、正典化されたアーキテクチャ（v0.0.1、v0.0.2、v0.0.3）、v0.0.4 の DSL / History ROM contract 抽出、および v0.0.5 の contract-surface purity cleanup、external Capability module contract、DynamicSLM Model ABI / SeedSLM discipline / distillation offload、HATL external cryptographic operator contract 準備、governance admissibility gate / trajectory vocabulary、Semantic Compilation DTO vocabulary へ移行するための手順を定義します。
 
 同期された `0.1.1` 公開リリースラインでは、NuGet と PyPI のパッケージファミリを同じバージョンで揃えてください。0.1.1 は Core、Control、Providers、Tools、WASM、CUDA、Demo の各サーフェスをまとめて公開するため、`0.1.0` と `0.1.1` が混在する依存グラフは、検証が終わるまで stale として扱います。
+
+`0.1.1.1` では GitHub release workflow は不要です。この更新は、すでに公開済みの
+public package line に対する additive contract expansion です。既存 `0.1.1`
+consumer は、新しい domain contract を opt-in で利用しない限りコード移行は不要です。
+
+## 0. v0.1.1.1 Additive Contract Expansion
+
+`0.1.1.1` では、adapter、runtime control、process control、replay、
+observability、diagnostics、operator strategy、profiles、telemetry、
+metrics、HUD signal、overlay annotation、CTG governance carrier の
+semantic interface、DTO、enum を追加します。
+
+### 0.1 互換性
+
+- 既存 public method signature は変更しません。
+- 既存 public enum value は削除・rename しません。
+- 新規 interface は opt-in とし、機械的な expansion suffix ではなく semantic name を使います。
+- 新規 descriptor / snapshot DTO field は optional です。
+- 新規 domain enum は `Unknown = 0` を持ち、未知値は fail-closed に扱います。
+
+### 0.2 Consumer Action
+
+既存 consumer は現在の API 利用を維持できます。新しい surface が必要な consumer は、
+[`../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1-jp.md`](../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1-jp.md)
+に記載された semantic interface と DTO domain を opt-in で参照してください。
+CTG 固有の guidance は
+[`../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1-jp.md`](../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1-jp.md)、
+[`../design/CTG_CONTRACT_MODEL-v0.1.1.1-jp.md`](../design/CTG_CONTRACT_MODEL-v0.1.1.1-jp.md)、
+[`CTG_DEVELOPER_GUIDE-v0.1.1.1-jp.md`](CTG_DEVELOPER_GUIDE-v0.1.1.1-jp.md)
+も参照してください。固定された論文参照は
+[`../papers/12-canonical-trajectory-governance/README.md`](../papers/12-canonical-trajectory-governance/README.md)
+です。
+
+local development package version は次を使います。
+
+```text
+0.1.1-dev<build-number>
+```
 
 ## 1. 根本的な変更点
 v0.0.1 では、`決定論（Determinism）` と `非推論型ガバナンス` を軸に、全体設計が再編されました。

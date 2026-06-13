@@ -2,6 +2,7 @@ namespace AIKernel.Dtos.Time;
 
 /// <summary>
 /// Represents an AIKernel logical timestamp without binding callers to a concrete clock implementation.
+/// JA: KernelTimestamp の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Time.KernelTimestamp']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Time.KernelTimestamp']" />

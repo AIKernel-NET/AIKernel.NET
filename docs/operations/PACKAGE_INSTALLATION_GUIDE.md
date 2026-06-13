@@ -1,18 +1,30 @@
 ---
-title: "AIKernel 0.1.1 Package Installation Guide"
-updated: 2026-06-10
+title: "AIKernel 0.1.1 / 0.1.1.1 Package Installation Guide"
+updated: 2026-06-14
 published: 2026-06-10
-version: "0.1.1"
+version: "0.1.1.1"
 edition: "Release"
 status: "Active"
 issuer: ai-kernel@aikernel.net
 maintainer: "Takuya (AIKernel Project Maintainer)"
 ---
 
-# AIKernel 0.1.1 Package Installation Guide
+# AIKernel 0.1.1 / 0.1.1.1 Package Installation Guide
 
 AIKernel 0.1.1 is the first synchronized package line for the public Semantic OS surface.  
 The .NET packages are published through NuGet, the Python wrappers are published through PyPI, and the demo repository provides the official golden-path examples.
+
+AIKernel 0.1.1.1 is an additive interface-extension update for selected public
+packages. It does not require a GitHub release workflow and preserves v0.1.1
+consumer compatibility. Use `0.1.1.1` package versions only when you need the
+new semantic contract surface documented in
+[`../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md`](../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md),
+including the CTG developer documents:
+[`../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md`](../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md),
+[`../design/CTG_CONTRACT_MODEL-v0.1.1.1.md`](../design/CTG_CONTRACT_MODEL-v0.1.1.1.md), and
+[`CTG_DEVELOPER_GUIDE-v0.1.1.1.md`](CTG_DEVELOPER_GUIDE-v0.1.1.1.md). The published
+paper reference is
+[`../papers/12-canonical-trajectory-governance/README.md`](../papers/12-canonical-trajectory-governance/README.md).
 
 ## Quick Start: Start the OS Surface
 
@@ -118,3 +130,10 @@ Choose the provider package by the runtime boundary you need:
 ## Release Rule
 
 Use only `0.1.1` packages together for the synchronized line. Mixing `0.1.0` and `0.1.1` packages can hide stale contracts, provider manifests, or Python wrapper surfaces.
+
+For the additive interface-extension line, keep updated public packages on
+`0.1.1.1` together. Local development packages use:
+
+```text
+0.1.1-dev<build-number>
+```

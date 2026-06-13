@@ -5,6 +5,7 @@ using AIKernel.Abstractions.Models;
 /// <summary>
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// トークナイザーの識別情報を公開する capability interface です。
+/// JA: ITokenizerIdentity の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenizerIdentity']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenizerIdentity']" />
@@ -12,11 +13,13 @@ public interface ITokenizerIdentity
 {
     /// <summary>
     /// トークナイザーのプロファイルIDを取得します。
+    /// JA: このメンバー の公開契約を定義します。
     /// </summary>
     string TokenizerProfileId { get; }
 
     /// <summary>
     /// トークナイザーの名前を取得します。
+    /// JA: ITextTokenizer の公開契約を定義します。
     /// </summary>
     string Name { get; }
 }
@@ -24,6 +27,7 @@ public interface ITokenizerIdentity
 /// <summary>
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// テキストをトークン化する capability interface です。
+/// JA: ITextTokenizer の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITextTokenizer']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITextTokenizer']" />
@@ -31,15 +35,17 @@ public interface ITextTokenizer
 {
     /// <summary>
     /// テキストをトークン化します。
+    /// JA: Tokenize 操作を実行します。
     /// </summary>
-    /// <param name="text">トークン化するテキスト</param>
-    /// <returns>トークンリスト</returns>
+    /// <param name="text">トークン化するテキスト JA: text パラメーターです。</param>
+    /// <returns>トークンリスト JA: 結果を返します。</returns>
     IReadOnlyList<Token> Tokenize(string text);
 }
 
 /// <summary>
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// テキストのトークン数を計算する capability interface です。
+/// JA: ITokenCounter の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenCounter']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenCounter']" />
@@ -47,15 +53,17 @@ public interface ITokenCounter
 {
     /// <summary>
     /// テキストのトークン数を計算します。
+    /// JA: CountTokens 操作を実行します。
     /// </summary>
-    /// <param name="text">テキスト</param>
-    /// <returns>トークン数</returns>
+    /// <param name="text">テキスト JA: text パラメーターです。</param>
+    /// <returns>トークン数 JA: 結果を返します。</returns>
     int CountTokens(string text);
 }
 
 /// <summary>
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// トークンをテキストへデコードする capability interface です。
+/// JA: ITokenDecoder の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenDecoder']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenDecoder']" />
@@ -63,15 +71,17 @@ public interface ITokenDecoder
 {
     /// <summary>
     /// トークンをテキストにデコードします。
+    /// JA: Decode 操作を実行します。
     /// </summary>
-    /// <param name="tokens">トークンリスト</param>
-    /// <returns>デコードされたテキスト</returns>
+    /// <param name="tokens">トークンリスト JA: tokens パラメーターです。</param>
+    /// <returns>デコードされたテキスト JA: 結果を返します。</returns>
     string Decode(IReadOnlyList<Token> tokens);
 }
 
 /// <summary>
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// トークナイザーの統計情報を公開する capability interface です。
+/// JA: ITokenizerStatisticsProvider の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenizerStatisticsProvider']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenizerStatisticsProvider']" />
@@ -79,14 +89,16 @@ public interface ITokenizerStatisticsProvider
 {
     /// <summary>
     /// トークナイザーの統計情報を取得します。
+    /// JA: GetStatistics 操作を実行します。
     /// </summary>
-    /// <returns>統計情報</returns>
+    /// <returns>統計情報 JA: 結果を返します。</returns>
     TokenizerStatistics GetStatistics();
 }
 
 /// <summary>
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// モデル対応可否を判定する capability interface です。
+/// JA: ITokenizerModelSupport の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenizerModelSupport']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenizerModelSupport']" />
@@ -94,15 +106,17 @@ public interface ITokenizerModelSupport
 {
     /// <summary>
     /// トークナイザーが特定のモデルをサポートしているかどうかを確認します。
+    /// JA: SupportsModel 操作を実行します。
     /// </summary>
-    /// <param name="modelName">モデル名</param>
-    /// <returns>サポートしている場合は true</returns>
+    /// <param name="modelName">モデル名 JA: modelName パラメーターです。</param>
+    /// <returns>サポートしている場合は true JA: 結果を返します。</returns>
     bool SupportsModel(string modelName);
 }
 
 /// <summary>
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// 物理基数を見積もる capability interface です。
+/// JA: IPhysicalCardinalityAdvisor の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IPhysicalCardinalityAdvisor']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IPhysicalCardinalityAdvisor']" />
@@ -111,16 +125,18 @@ public interface IPhysicalCardinalityAdvisor
     /// <summary>
     /// 論理的なトークン数を物理基数に変換します。
     /// NPU最適化のためのパディングを考慮します。
+    /// JA: GetPhysicalCardinality 操作を実行します。
     /// </summary>
-    /// <param name="logicalTokenCount">論理的なトークン数</param>
-    /// <param name="deviceType">デバイスタイプ（"NPU", "GPU", "CPU"等）</param>
-    /// <returns>NPU最適化後の物理基数</returns>
+    /// <param name="logicalTokenCount">論理的なトークン数 JA: logicalTokenCount パラメーターです。</param>
+    /// <param name="deviceType">デバイスタイプ（"NPU", "GPU", "CPU"等） JA: deviceType パラメーターです。</param>
+    /// <returns>NPU最適化後の物理基数 JA: 結果を返します。</returns>
     int GetPhysicalCardinality(int logicalTokenCount, string deviceType);
 }
 
 /// <summary>
 /// UC-02/UC-04/UC-09/UC-20/UC-22 に基づく契約です。
 /// Padding 情報を取得する capability interface です。
+/// JA: IPaddingInfoProvider の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IPaddingInfoProvider']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.IPaddingInfoProvider']" />
@@ -128,10 +144,11 @@ public interface IPaddingInfoProvider
 {
     /// <summary>
     /// 指定された物理基数でのパディング情報を取得します。
+    /// JA: GetPaddingInfo 操作を実行します。
     /// </summary>
-    /// <param name="logicalTokenCount">論理的なトークン数</param>
-    /// <param name="physicalCardinality">物理基数</param>
-    /// <returns>パディング情報</returns>
+    /// <param name="logicalTokenCount">論理的なトークン数 JA: logicalTokenCount パラメーターです。</param>
+    /// <param name="physicalCardinality">物理基数 JA: physicalCardinality パラメーターです。</param>
+    /// <returns>パディング情報 JA: 結果を返します。</returns>
     PaddingInfo GetPaddingInfo(int logicalTokenCount, int physicalCardinality);
 }
 
@@ -140,6 +157,7 @@ public interface IPaddingInfoProvider
 /// トークナイザーの互換合成インターフェースを定義します。
 /// テキストトークン化と統計情報の管理を行います。
 /// NPU環境での物理基数（パディング）対応に対応しています。
+/// JA: ITokenizer の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenizer']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Execution.ITokenizer']" />

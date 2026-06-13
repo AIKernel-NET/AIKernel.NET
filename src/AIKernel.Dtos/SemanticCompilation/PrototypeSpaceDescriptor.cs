@@ -2,6 +2,7 @@ namespace AIKernel.Dtos.SemanticCompilation;
 
 /// <summary>
 /// Finite, closed set of verified governed circuits available to one compilation decision.
+/// JA: PrototypeSpaceDescriptor の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.SemanticCompilation.PrototypeSpaceDescriptor']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.SemanticCompilation.PrototypeSpaceDescriptor']" />

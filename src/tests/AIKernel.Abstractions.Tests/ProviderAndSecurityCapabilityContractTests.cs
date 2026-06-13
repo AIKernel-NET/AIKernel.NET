@@ -8,6 +8,9 @@ using AIKernel.Dtos.Query;
 
 namespace AIKernel.Abstractions.Tests;
 
+/// <summary>
+/// Defines a test helper type. JA: テスト用の型を定義します。
+/// </summary>
 public sealed class ProviderAndSecurityCapabilityContractTests
 {
     [Fact]
@@ -26,6 +29,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void ReadOnlyRagProviderDoesNotExposeIndexMutationCapabilities()
     {
         IRagSearchProvider provider = new SearchOnlyRagProvider();
@@ -48,6 +54,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void CompositeModelProviderExposesGranularModelCapabilities()
     {
         IModelProvider provider = new FullModelProvider();
@@ -68,6 +77,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void CompositeEmbeddingProviderExposesGranularEmbeddingCapabilities()
     {
         IEmbeddingProvider provider = new FullEmbeddingProvider();
@@ -88,6 +100,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void ProviderCapabilitiesCanBeExposedAsSeparateCapabilitySources()
     {
         IProviderCapabilities capabilities = new EmptyProviderCapabilities();
@@ -107,6 +122,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void QueryProcessingAbstractionsRequireKernelContext()
     {
         var augmentorMethod = typeof(IQueryAugmentor).GetMethod(nameof(IQueryAugmentor.AugmentAsync));
@@ -119,6 +137,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void QueryPartUsesImmutableMetadata()
     {
         var queryPart = new QueryPart
@@ -133,6 +154,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void CompositeProviderExposesGranularLifecycleCapabilities()
     {
         IProvider provider = new FullRagProvider();
@@ -145,6 +169,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void CompositeProviderRouterExposesGranularRoutingCapabilities()
     {
         IProviderRouter router = new FullProviderRouter();
@@ -165,6 +192,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void CompositeEventBusExposesGranularEventCapabilities()
     {
         IEventBus eventBus = new FullEventBus();
@@ -186,6 +216,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     private sealed class FullToolAccessValidator : IToolAccessValidator
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public bool CanExecuteTool(IToolPermission permission, string toolName)
         {
             return true;
@@ -201,6 +234,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
             return true;
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public bool CanAccessNetwork(IToolPermission permission, string host)
         {
             return true;
@@ -216,6 +252,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
             return true;
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public bool IsPermissionValid(IToolPermission permission)
         {
             return true;
@@ -229,6 +268,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     private sealed class SearchOnlyRagProvider : IRagSearchProvider
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<IReadOnlyList<MaterialContextDto>> SearchAsync(
             string query,
             int topK = 10,
@@ -241,6 +283,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     private sealed class FullRagProvider : IRagProvider
     {
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public string ProviderId => "full-rag";
 
         public string Name => "Full RAG";
@@ -257,6 +302,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
             return Task.FromResult(true);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task InitializeAsync()
         {
             return Task.CompletedTask;
@@ -272,6 +320,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
             return Task.FromResult(new ProviderHealthStatus(true, null, DateTime.UnixEpoch, 0));
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<IReadOnlyList<MaterialContextDto>> SearchAsync(
             string query,
             int topK = 10,
@@ -290,6 +341,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
             return Task.CompletedTask;
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task DeleteAsync(string documentId, CancellationToken cancellationToken = default)
         {
             return Task.CompletedTask;
@@ -303,6 +357,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     private sealed class TextOnlyModelProvider : ITextGenerationProvider
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<string> GenerateAsync(IReadOnlyList<IModelMessage> messages, CancellationToken cancellationToken = default)
         {
             return Task.FromResult(string.Empty);
@@ -316,6 +373,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
             return Task.FromResult(string.Empty);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task StreamGenerateAsync(
             IReadOnlyList<IModelMessage> messages,
             Func<string, Task> onChunk,
@@ -332,6 +392,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     private sealed class SingleEmbeddingProvider : ITextEmbeddingProvider
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<float[]> EmbedAsync(string text, CancellationToken cancellationToken = default)
         {
             return Task.FromResult(Array.Empty<float>());
@@ -345,6 +408,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
             return Task.FromResult(Array.Empty<float>());
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<IReadOnlyList<float[]>> EmbedBatchAsync(
             IReadOnlyList<string> texts,
             CancellationToken cancellationToken = default)
@@ -361,6 +427,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     private sealed class EmptyProviderCapabilities : IProviderCapabilities
     {
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public IReadOnlyList<string> SupportedOperations => [];
 
         public IReadOnlyList<string> SupportedDataTypes => [];
@@ -376,6 +445,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
             return null;
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public ICapabilityProfile? GetCapabilityProfile()
         {
             return null;
@@ -391,6 +463,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
             return false;
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public bool SupportsQuantization(string quantizationLevel)
         {
             return false;
@@ -404,6 +479,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
         public int MaxQueryParts => 0;
 
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public IReadOnlyList<string> SupportedQueryProcessingOperations => [];
 
         public bool SupportsQueryProcessingOperation(string operation)
@@ -420,6 +498,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     private sealed class StaticOperationCapabilities : IProviderOperationCapabilities
     {
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public IReadOnlyList<string> SupportedOperations => [];
 
         public IReadOnlyList<string> SupportedDataTypes => [];
@@ -437,6 +518,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     private sealed class CacheReadOnlyRouter : IMaterialCacheReader
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<MaterialContextDto?> GetFromCacheAsync(string cacheKey)
         {
             return Task.FromResult<MaterialContextDto?>(null);
@@ -450,6 +534,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
             return Task.FromResult<MaterialContextDto>(null!);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<IReadOnlyList<MaterialContextDto>> RetrieveMultipleAsync(IReadOnlyList<string> sources, string query)
         {
             IReadOnlyList<MaterialContextDto> results = [];
@@ -466,6 +553,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
             return Task.CompletedTask;
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public void RegisterProvider(string name, IProvider provider)
         {
         }
@@ -483,6 +573,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     private sealed class SubscriptionOnlyEventRegistry : IEventSubscriptionRegistry
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public string Subscribe<T>(string eventName, Func<T, Task> handler)
         {
             return "subscription";
@@ -501,6 +594,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     private sealed class FullEventBus : FullProviderBase, IEventBus
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task PublishAsync(string eventName, object eventData, CancellationToken cancellationToken = default)
         {
             return Task.CompletedTask;
@@ -516,6 +612,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
             return "subscription";
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public bool Unsubscribe(string subscriptionId)
         {
             return true;
@@ -529,6 +628,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     private abstract class FullProviderBase : IProvider
     {
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public string ProviderId => "provider";
 
         public string Name => "Provider";
@@ -545,6 +647,9 @@ public sealed class ProviderAndSecurityCapabilityContractTests
             return Task.FromResult(true);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task InitializeAsync()
         {
             return Task.CompletedTask;

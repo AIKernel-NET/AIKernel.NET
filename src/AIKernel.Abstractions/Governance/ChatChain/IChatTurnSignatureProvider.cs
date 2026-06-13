@@ -6,6 +6,7 @@ namespace AIKernel.Abstractions.Governance.ChatChain;
 
 /// <summary>
 /// チャットターンのハッシュに対する暗号学的署名を提供する。
+/// JA: IChatTurnSignatureProvider の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ChatChain.IChatTurnSignatureProvider']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ChatChain.IChatTurnSignatureProvider']" />

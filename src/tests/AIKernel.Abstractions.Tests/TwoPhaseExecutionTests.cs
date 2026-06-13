@@ -7,6 +7,7 @@ namespace AIKernel.Abstractions.Tests;
 
 /// <summary>
 /// UC-02（Structure フェーズ）と UC-04（生成と出力整形）の整合テスト。
+/// Defines the TwoPhaseExecutionTests contract. JA: TwoPhaseExecutionTests の公開契約を定義します。
 /// </summary>
 public class TwoPhaseExecutionTests
 {
@@ -17,6 +18,7 @@ public class TwoPhaseExecutionTests
 
     /// <summary>
     /// テスト用の IThoughtProcess 実装
+    /// Gets the RequiredCapacity value. JA: RequiredCapacity を取得します。
     /// </summary>
     private class TestThoughtProcess : IThoughtProcess
     {
@@ -32,6 +34,7 @@ public class TwoPhaseExecutionTests
 
     /// <summary>
     /// テスト用の IOutputPolisher 実装
+    /// Gets the RequiredCapacity value. JA: RequiredCapacity を取得します。
     /// </summary>
     private class TestOutputPolisher : IOutputPolisher
     {
@@ -51,6 +54,7 @@ public class TwoPhaseExecutionTests
 
     /// <summary>
     /// テスト用の IContextCollection 実装
+    /// Defines the TestContextCollection helper. JA: TestContextCollection 操作を実行します。
     /// </summary>
     private class TestContextCollection : IContextCollection
     {
@@ -63,6 +67,9 @@ public class TwoPhaseExecutionTests
 
         public IEnumerable<ContextFragment> GetAll() => _fragments;
 
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public IEnumerable<ContextFragment> GetByCategory(ContextCategory category) =>
             _fragments.Where(f => f.Category == category);
 
@@ -76,6 +83,9 @@ public class TwoPhaseExecutionTests
         public MaterialBuffer GetMaterialBuffer() =>
             new MaterialBuffer(GetByCategory(ContextCategory.Material));
 
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public HistoryBuffer GetHistoryBuffer() =>
             new HistoryBuffer(GetByCategory(ContextCategory.History));
     }
@@ -105,6 +115,9 @@ public class TwoPhaseExecutionTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public async Task TwoPhaseExecution_Render_ShouldApplyExpressionContext()
     {
         // UC-04: 生成結果を Expression コンテキストで整形
@@ -132,6 +145,9 @@ public class TwoPhaseExecutionTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public async Task TwoPhaseExecution_EmptyLogic_ShouldThrowException()
     {
         // Arrange
@@ -146,6 +162,9 @@ public class TwoPhaseExecutionTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void RawLogicSerializedRepresentation_ShouldSupportWhitespaceChecks()
     {
         // Act
@@ -160,6 +179,9 @@ public class TwoPhaseExecutionTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void ExecutionResult_ShouldEncapsulateLogicAndOutput()
     {
         // Two-Phase 実行結果 DTO（現行契約: ExecutionResult）を検証
@@ -185,6 +207,9 @@ public class TwoPhaseExecutionTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public async Task TwoPhaseExecution_CompleteFlow_ShouldProduceExecutionResult()
     {
         // Arrange
@@ -234,4 +259,3 @@ public class TwoPhaseExecutionTests
         Assert.True(result.ElapsedMilliseconds >= 0);
     }
 }
-

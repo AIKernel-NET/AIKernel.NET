@@ -2,6 +2,7 @@ namespace AIKernel.Dtos.Core;
 
 /// <summary>
 /// ProviderHealthStatus の契約を定義します。
+/// JA: ProviderHealthStatus の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Core.ProviderHealthStatus']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Core.ProviderHealthStatus']" />

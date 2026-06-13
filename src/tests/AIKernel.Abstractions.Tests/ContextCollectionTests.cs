@@ -5,6 +5,7 @@ namespace AIKernel.Abstractions.Tests;
 
 /// <summary>
 /// IContextCollection と ContextFragment のテスト
+/// Defines the ContextCollectionTests contract. JA: ContextCollectionTests の公開契約を定義します。
 /// </summary>
 public class ContextCollectionTests
 {
@@ -52,6 +53,9 @@ public class ContextCollectionTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void OrchestrationBuffer_ShouldConvertEnumerableToReadOnlyList()
     {
         // Arrange
@@ -71,6 +75,9 @@ public class ContextCollectionTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void ExpressionBuffer_ShouldContainExpressionFragments()
     {
         // Arrange
@@ -96,6 +103,9 @@ public class ContextCollectionTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void Buffer_WithEmptyEnumerable_ShouldCreateEmptyReadOnlyList()
     {
         // Act
@@ -115,5 +125,4 @@ public class ContextCollectionTests
         Assert.Empty(buffer.Fragments);
     }
 }
-
 

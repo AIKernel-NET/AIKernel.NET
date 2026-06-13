@@ -7,6 +7,9 @@ using SecurityPrincipal = AIKernel.Abstractions.Security.IPrincipal;
 
 namespace AIKernel.Abstractions.Tests;
 
+/// <summary>
+/// Defines a test helper type. JA: テスト用の型を定義します。
+/// </summary>
 public sealed class SecurityPolicySeparationTests
 {
     [Fact]
@@ -21,6 +24,9 @@ public sealed class SecurityPolicySeparationTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void GuardEvaluatorDoesNotExposeFailureHandling()
     {
         IGuardEvaluator evaluator = new DecisionOnlyGuard();
@@ -42,6 +48,9 @@ public sealed class SecurityPolicySeparationTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void PolicyDecisionPointDoesNotExposePolicyRegistry()
     {
         IPolicyDecisionPoint decisionPoint = new DecisionOnlyPdp();
@@ -63,6 +72,9 @@ public sealed class SecurityPolicySeparationTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void RuleEvaluatorDoesNotExposeRegistryOrPostValidation()
     {
         IRuleEvaluator evaluator = new RuleEvaluationOnlyEngine();
@@ -85,6 +97,9 @@ public sealed class SecurityPolicySeparationTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void ExecutionAuditLoggerDoesNotExposeGuardOrTransferAudit()
     {
         IExecutionAuditLogger logger = new ExecutionOnlyAuditLogger();
@@ -100,6 +115,9 @@ public sealed class SecurityPolicySeparationTests
             return Task.FromResult(true);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<bool> CanAccessContextAsync(SecurityPrincipal principal, UnifiedContextDto contract)
         {
             return Task.FromResult(true);
@@ -113,6 +131,9 @@ public sealed class SecurityPolicySeparationTests
             return Task.FromResult(true);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<bool> CanAccessContextAsync(SecurityPrincipal principal, UnifiedContextDto contract)
         {
             return Task.FromResult(true);
@@ -128,6 +149,9 @@ public sealed class SecurityPolicySeparationTests
             return Task.FromResult(true);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<GuardAction> EnforceAsync(SecurityPrincipal principal, string action, string resource)
         {
             return Task.FromResult(GuardAction.Continue);
@@ -141,6 +165,9 @@ public sealed class SecurityPolicySeparationTests
 
     private sealed class DecisionOnlyPdp : IPolicyDecisionPoint
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<AccessDecision> EvaluateAsync(AccessRequest request)
         {
             return Task.FromResult<AccessDecision>(null!);
@@ -154,6 +181,9 @@ public sealed class SecurityPolicySeparationTests
             return Task.FromResult<AccessDecision>(null!);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public void AddPolicy(IPolicy policy)
         {
         }
@@ -168,6 +198,9 @@ public sealed class SecurityPolicySeparationTests
             return [];
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<PolicyEvaluationResult> EvaluatePoliciesAsync(UnifiedContextDto contract)
         {
             return Task.FromResult<PolicyEvaluationResult>(null!);
@@ -187,6 +220,9 @@ public sealed class SecurityPolicySeparationTests
 
     private sealed class FullRulesEngine : IProvider, IRulesEngine
     {
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public string ProviderId => "rules";
 
         public string Name => "Rules";
@@ -203,6 +239,9 @@ public sealed class SecurityPolicySeparationTests
             return Task.FromResult(true);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task InitializeAsync()
         {
             return Task.CompletedTask;
@@ -218,6 +257,9 @@ public sealed class SecurityPolicySeparationTests
             return Task.FromResult(new ProviderHealthStatus(true, null, DateTime.UnixEpoch, 0));
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task RegisterRuleAsync(string ruleId, IPromptRule rule)
         {
             return Task.CompletedTask;
@@ -233,6 +275,9 @@ public sealed class SecurityPolicySeparationTests
             return Task.FromResult(true);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<IReadOnlyList<IPromptRule>> ListRulesAsync()
         {
             IReadOnlyList<IPromptRule> rules = [];
@@ -247,6 +292,9 @@ public sealed class SecurityPolicySeparationTests
             return Task.FromResult<RuleEvaluationResult>(null!);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<RuleValidationResult> ValidatePrePromptAsync(
             string ruleId,
             IReadOnlyDictionary<string, string> prepromptContext,
@@ -266,6 +314,9 @@ public sealed class SecurityPolicySeparationTests
 
     private sealed class ExecutionOnlyAuditLogger : IExecutionAuditLogger
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public ValueTask LogExecutionEventAsync(ExecutionEvent executionEvent, CancellationToken cancellationToken = default)
         {
             return ValueTask.CompletedTask;
@@ -279,6 +330,9 @@ public sealed class SecurityPolicySeparationTests
             return ValueTask.CompletedTask;
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public ValueTask LogExecutionEventAsync(ExecutionEvent executionEvent, CancellationToken cancellationToken = default)
         {
             return ValueTask.CompletedTask;
@@ -294,6 +348,9 @@ public sealed class SecurityPolicySeparationTests
             return ValueTask.CompletedTask;
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public ValueTask LogProviderEventAsync(ProviderEvent providerEvent, CancellationToken cancellationToken = default)
         {
             return ValueTask.CompletedTask;

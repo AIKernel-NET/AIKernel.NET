@@ -2,6 +2,7 @@ namespace AIKernel.Dtos.SemanticCompilation;
 
 /// <summary>
 /// Replayable report for heterogeneous Semantic IR / governed circuit compatibility distance.
+/// JA: SemanticDistanceReport の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.SemanticCompilation.SemanticDistanceReport']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.SemanticCompilation.SemanticDistanceReport']" />

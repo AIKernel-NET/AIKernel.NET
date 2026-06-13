@@ -7,6 +7,7 @@ namespace AIKernel.Abstractions.Tests;
 
 /// <summary>
 /// IMaterialQuarantine と IStructuredMaterial のテスト
+/// Defines the MaterialQuarantineTests contract. JA: MaterialQuarantineTests の公開契約を定義します。
 /// </summary>
 public class MaterialQuarantineTests
 {
@@ -26,6 +27,9 @@ public class MaterialQuarantineTests
             return ValueTask.FromResult<IReadOnlyList<string>>(Array.Empty<string>());
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public ValueTask<TrustContext> EvaluateTrustAsync(string rawMaterial, CancellationToken cancellationToken = default)
         {
             EvaluateCallCount++;
@@ -45,6 +49,9 @@ public class MaterialQuarantineTests
 
     private sealed class StrictScanner : IMaterialScanner
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public ValueTask<IReadOnlyList<string>> ScanAsync(string rawMaterial, CancellationToken cancellationToken = default)
         {
             if (rawMaterial.Contains("malware", StringComparison.OrdinalIgnoreCase))
@@ -70,6 +77,9 @@ public class MaterialQuarantineTests
 
     private sealed class StrictFormatQuarantine : IMaterialQuarantine
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<IStructuredMaterial> QuarantineAsync(ContextFragment rawFragment, CancellationToken ct = default)
         {
             if (rawFragment.Content.Contains("bad-format", StringComparison.OrdinalIgnoreCase))
@@ -94,6 +104,7 @@ public class MaterialQuarantineTests
 
     /// <summary>
     /// テスト用の簡単な実装
+    /// Gets the RawContent value. JA: RawContent を取得します。
     /// </summary>
     private class TestStructuredMaterial : IStructuredMaterial
     {
@@ -105,6 +116,7 @@ public class MaterialQuarantineTests
 
     /// <summary>
     /// テスト用の検疫実装（正常系）
+    /// Executes the QuarantineAsync operation. JA: QuarantineAsync 操作を実行します。
     /// </summary>
     private class SuccessfulQuarantine : IMaterialQuarantine
     {
@@ -134,6 +146,9 @@ public class MaterialQuarantineTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public async Task QuarantineAsync_ShouldNormalizeContent()
     {
         // Arrange
@@ -157,6 +172,9 @@ public class MaterialQuarantineTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public async Task QuarantineAsync_ShouldThrowInvalidOperationException_WhenContentIsInvalid()
     {
         // Arrange
@@ -177,6 +195,9 @@ public class MaterialQuarantineTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void StructuredMaterial_ShouldPreserveSourceInfo()
     {
         // Arrange
@@ -202,6 +223,9 @@ public class MaterialQuarantineTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public async Task QuarantineAsync_ShouldAssignCorrectWeight()
     {
         // Arrange
@@ -222,6 +246,9 @@ public class MaterialQuarantineTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public async Task Scanner_And_Quarantine_Should_Keep_Clear_Boundaries()
     {
         // Boundary rule:
@@ -249,6 +276,9 @@ public class MaterialQuarantineTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public async Task ScannerFailure_ShouldBeRaisedByScanner_BeforeQuarantine()
     {
         // Scanner failure: セキュリティ拒否は IMaterialScanner が担当
@@ -270,6 +300,9 @@ public class MaterialQuarantineTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public async Task NormalizationFailure_ShouldBeRaisedByQuarantine_AfterScan()
     {
         // Normalization failure: 形式拒否は IMaterialQuarantine が担当
@@ -288,5 +321,4 @@ public class MaterialQuarantineTests
         await Assert.ThrowsAsync<FormatException>(() => quarantine.QuarantineAsync(fragment));
     }
 }
-
 

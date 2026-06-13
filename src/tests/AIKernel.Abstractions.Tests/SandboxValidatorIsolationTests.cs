@@ -10,6 +10,9 @@ using AIKernel.Dtos.Sandbox;
 
 namespace AIKernel.Abstractions.Tests;
 
+/// <summary>
+/// Defines a test helper type. JA: テスト用の型を定義します。
+/// </summary>
 public sealed class SandboxValidatorIsolationTests
 {
     [Fact]
@@ -26,6 +29,9 @@ public sealed class SandboxValidatorIsolationTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void ToolExecutorDoesNotExposeFileTransferOrCleanup()
     {
         IToolExecutor executor = new ToolExecutionOnlySandbox();
@@ -47,6 +53,9 @@ public sealed class SandboxValidatorIsolationTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void RomSchemaValidatorDoesNotExposeGraphValidation()
     {
         IRomSchemaValidator validator = new SchemaOnlyRomValidator();
@@ -65,6 +74,9 @@ public sealed class SandboxValidatorIsolationTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void ContextFragmentCollectionDoesNotExposePhaseBuffers()
     {
         IContextFragmentCollection fragments = new FragmentOnlyContextCollection();
@@ -85,6 +97,9 @@ public sealed class SandboxValidatorIsolationTests
 
     private sealed class ToolExecutionOnlySandbox : IToolExecutor
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<SandboxExecutionResult> ExecuteToolAsync(
             string toolName,
             IReadOnlyDictionary<string, string> parameters,
@@ -98,6 +113,9 @@ public sealed class SandboxValidatorIsolationTests
     {
         public string SandboxId => "sandbox";
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<SandboxExecutionResult> ExecuteToolAsync(
             string toolName,
             IReadOnlyDictionary<string, string> parameters,
@@ -111,6 +129,9 @@ public sealed class SandboxValidatorIsolationTests
             return Task.FromResult(true);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<byte[]?> DownloadFileAsync(string fileName)
         {
             return Task.FromResult<byte[]?>(null);
@@ -129,6 +150,9 @@ public sealed class SandboxValidatorIsolationTests
 
     private sealed class SchemaOnlyRomValidator : IRomSchemaValidator
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<RomSchemaValidationResult> ValidateSchemaAsync(
             IRomDocument document,
             CancellationToken cancellationToken = default)
@@ -146,6 +170,9 @@ public sealed class SandboxValidatorIsolationTests
             return Task.FromResult<RomSchemaValidationResult>(null!);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<RomLinkageValidationResult> ValidateLinkageAsync(
             IRomDocument document,
             IRelationResolver relationResolver,
@@ -162,6 +189,9 @@ public sealed class SandboxValidatorIsolationTests
             return Task.FromResult<RomTypeConsistencyResult>(null!);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<CircularReferenceDetectionResult> DetectCircularReferencesAsync(
             IRomDocument document,
             IRelationResolver relationResolver,
@@ -174,6 +204,9 @@ public sealed class SandboxValidatorIsolationTests
 
     private sealed class ReadOnlyConversationStore : IConversationSnapshotReader
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<IConversationSnapshot?> GetSnapshotAsync(string snapshotId, CancellationToken ct = default)
         {
             return Task.FromResult<IConversationSnapshot?>(null);
@@ -187,6 +220,9 @@ public sealed class SandboxValidatorIsolationTests
             return [];
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public IEnumerable<ContextFragment> GetByCategory(ContextCategory category)
         {
             return [];
@@ -200,6 +236,9 @@ public sealed class SandboxValidatorIsolationTests
             return logicalLength;
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public int SelectOptimalCardinality(IEnumerable<int> candidates, string deviceType)
         {
             return candidates.FirstOrDefault();
@@ -215,6 +254,9 @@ public sealed class SandboxValidatorIsolationTests
             return null!;
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public ComputeOverhead EstimatePaddingOverhead(int logicalLength, int physicalLength)
         {
             return null!;

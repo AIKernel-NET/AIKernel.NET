@@ -2,6 +2,7 @@ namespace AIKernel.Abstractions.Routing;
 
 /// <summary>
 /// UC-03/UC-22 に基づく ICapabilityRegistry の契約を定義します。
+/// JA: ICapabilityRegistry の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Routing.ICapabilityRegistry']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Routing.ICapabilityRegistry']" />

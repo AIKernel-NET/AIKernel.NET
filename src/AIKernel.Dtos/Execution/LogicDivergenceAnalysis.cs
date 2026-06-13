@@ -2,6 +2,7 @@ namespace AIKernel.Dtos.Execution;
 
 /// <summary>
 /// LogicDivergenceAnalysis の契約を定義します。
+/// JA: LogicDivergenceAnalysis の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Execution.LogicDivergenceAnalysis']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Execution.LogicDivergenceAnalysis']" />

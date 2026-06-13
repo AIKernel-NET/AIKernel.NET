@@ -2,6 +2,7 @@ namespace AIKernel.Abstractions.Governance;
 
 /// <summary>
 /// UC-06/UC-32 に基づく IAttentionGuard の契約を定義します。
+/// JA: IAttentionGuard の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.IAttentionGuard']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.IAttentionGuard']" />

@@ -5,6 +5,7 @@ namespace AIKernel.Abstractions.Tests.Execution;
 
 /// <summary>
 /// RomCoreSpecAlignmentTests の契約を定義します。
+/// Defines the RomCoreSpecAlignmentTests contract. JA: RomCoreSpecAlignmentTests の公開契約を定義します。
 /// </summary>
 public sealed class RomCoreSpecAlignmentTests
 {
@@ -27,6 +28,9 @@ public sealed class RomCoreSpecAlignmentTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public async Task RCS_001_002_004_RomContract_Covers_Mandatory_Fields_References_And_Hash()
     {
         // RCS-001: entity.id / entity.type 必須
@@ -42,6 +46,9 @@ public sealed class RomCoreSpecAlignmentTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public async Task RCS_F002_RCS_F005_FailClosed_Result_Type_Is_Safe()
     {
         // RCS-F002: 未解決リンクを拒否
@@ -59,6 +66,9 @@ public sealed class RomCoreSpecAlignmentTests
 
     private sealed class StubRomDocument : IRomDocument
     {
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public string EntityId => "entity.1";
         public string EntityType => "execution.contract";
         public string Version => "1.0.0";
@@ -84,6 +94,9 @@ public sealed class RomCoreSpecAlignmentTests
 
     private sealed class StubRomValidator : IRomValidator
     {
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public Task<RomSchemaValidationResult> ValidateSchemaAsync(IRomDocument document, CancellationToken cancellationToken = default) =>
             Task.FromResult(new RomSchemaValidationResult { IsValid = true, Message = "ok" });
 
@@ -99,6 +112,9 @@ public sealed class RomCoreSpecAlignmentTests
 
     private sealed class StubResolver : IRelationResolver
     {
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public Task<ResolvableEntity?> ResolveAsync(string referenceId, CancellationToken cancellationToken = default) =>
             Task.FromResult<ResolvableEntity?>(null);
 
@@ -111,6 +127,9 @@ public sealed class RomCoreSpecAlignmentTests
         public bool WasCalled { get; private set; }
         public CanonicalizedRomDto? LastCanonicalized { get; private set; }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public CanonicalizedRomDto Canonicalize(IRomDocument document)
         {
             WasCalled = true;
@@ -131,6 +150,9 @@ public sealed class RomCoreSpecAlignmentTests
             return LastCanonicalized;
         }
 
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public Task<CanonicalizedRomDto> CanonicalizeAsync(IRomDocument document, CancellationToken cancellationToken = default) =>
             Task.FromResult(Canonicalize(document));
     }
@@ -148,6 +170,9 @@ public sealed class RomCoreSpecAlignmentTests
             return "sha256:canon";
         }
 
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public Task<string> ComputeHashAsync(CanonicalizedRomDto canonicalized, CancellationToken cancellationToken = default) =>
             Task.FromResult(ComputeHash(canonicalized));
 
@@ -161,6 +186,5 @@ public sealed class RomCoreSpecAlignmentTests
             Task.FromResult(VerifyHash(canonicalized, expectedHash));
     }
 }
-
 
 

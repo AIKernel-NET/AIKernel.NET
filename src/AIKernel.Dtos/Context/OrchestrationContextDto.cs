@@ -7,6 +7,7 @@ namespace AIKernel.Dtos.Context;
 /// 推論に必要な情報のみを含みます。
 /// 
 /// 参照: 2.CONTEXT_ISOLATION_SPEC.jp.md
+/// JA: OrchestrationContextDto の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Context.OrchestrationContextDto']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Context.OrchestrationContextDto']" />
@@ -14,6 +15,7 @@ public sealed class OrchestrationContextDto
 {
     /// <summary>
     /// 目的を取得または設定します。
+    /// JA: Purpose を取得します。
     /// </summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.OrchestrationContextDto.Purpose']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.OrchestrationContextDto.Purpose']" />
@@ -21,6 +23,7 @@ public sealed class OrchestrationContextDto
 
     /// <summary>
     /// 制約条件を取得または設定します。
+    /// JA: Constraints を取得します。
     /// </summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='M:AIKernel.Dtos.Context.OrchestrationContextDto.new']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='M:AIKernel.Dtos.Context.OrchestrationContextDto.new']" />
@@ -28,6 +31,7 @@ public sealed class OrchestrationContextDto
 
     /// <summary>
     /// 抽象構造を取得または設定します。
+    /// JA: Structure を取得します。
     /// </summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.OrchestrationContextDto.Structure']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.OrchestrationContextDto.Structure']" />
@@ -35,6 +39,7 @@ public sealed class OrchestrationContextDto
 
     /// <summary>
     /// 思考パターンを取得または設定します。
+    /// JA: ReasoningPattern を取得します。
     /// </summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.OrchestrationContextDto.ReasoningPattern']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.OrchestrationContextDto.ReasoningPattern']" />
@@ -42,6 +47,7 @@ public sealed class OrchestrationContextDto
 
     /// <summary>
     /// 追加パラメータを取得または設定します。
+    /// JA: Parameters を取得します。
     /// </summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.OrchestrationContextDto.object']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.OrchestrationContextDto.object']" />
@@ -49,6 +55,7 @@ public sealed class OrchestrationContextDto
 
     /// <summary>
     /// 作成日時を取得または設定します。
+    /// JA: CreatedAt を取得します。
     /// </summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.OrchestrationContextDto.CreatedAt']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.OrchestrationContextDto.CreatedAt']" />

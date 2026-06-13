@@ -4,6 +4,7 @@ namespace AIKernel.Dtos.Governance;
 
 /// <summary>
 /// Fail-closed decision and attached requirements emitted by a critical operation gate.
+/// JA: CriticalOperationGateResult の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Governance.CriticalOperationGateResult']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Governance.CriticalOperationGateResult']" />

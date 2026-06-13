@@ -7,6 +7,7 @@ using AIKernel.Dtos.Context;
 /// UC-06/UC-32 に基づく契約です。
 /// Attention 消費とコンテキスト品質を受動的に監視するインターフェースです。
 /// 統計やログを収集し、運用フェーズにおける分析に利用されます。
+/// JA: IAttentionObserver の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.IAttentionObserver']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.IAttentionObserver']" />
@@ -14,11 +15,12 @@ public interface IAttentionObserver
 {
     /// <summary>
     /// フェーズ開始時のイベントを記録します。
+    /// JA: OnPhaseStartedAsync 操作を実行します。
     /// </summary>
-    /// <param name="phaseName">フェーズ名</param>
-    /// <param name="modelType">選定されたモデルタイプ</param>
-    /// <param name="requiredCapacity">要求された能力ベクトル</param>
-    /// <param name="cancellationToken">キャンセルトークン</param>
+    /// <param name="phaseName">フェーズ名 JA: phaseName パラメーターです。</param>
+    /// <param name="modelType">選定されたモデルタイプ JA: modelType パラメーターです。</param>
+    /// <param name="requiredCapacity">要求された能力ベクトル JA: requiredCapacity パラメーターです。</param>
+    /// <param name="cancellationToken">キャンセルトークン JA: キャンセル通知を監視するトークンです。</param>
     Task OnPhaseStartedAsync(
         string phaseName,
         ModelType modelType,
@@ -27,12 +29,13 @@ public interface IAttentionObserver
 
     /// <summary>
     /// フェーズ終了時のイベントを記録します。
+    /// JA: OnPhaseCompletedAsync 操作を実行します。
     /// </summary>
-    /// <param name="phaseName">フェーズ名</param>
-    /// <param name="modelType">使用されたモデルタイプ</param>
-    /// <param name="attentionConsumed">消費された Attention トークン数</param>
-    /// <param name="signalToNoiseRatio">信号対雑音比</param>
-    /// <param name="cancellationToken">キャンセルトークン</param>
+    /// <param name="phaseName">フェーズ名 JA: phaseName パラメーターです。</param>
+    /// <param name="modelType">使用されたモデルタイプ JA: modelType パラメーターです。</param>
+    /// <param name="attentionConsumed">消費された Attention トークン数 JA: attentionConsumed パラメーターです。</param>
+    /// <param name="signalToNoiseRatio">信号対雑音比 JA: signalToNoiseRatio パラメーターです。</param>
+    /// <param name="cancellationToken">キャンセルトークン JA: キャンセル通知を監視するトークンです。</param>
     Task OnPhaseCompletedAsync(
         string phaseName,
         ModelType modelType,
@@ -42,12 +45,13 @@ public interface IAttentionObserver
 
     /// <summary>
     /// モデル選定時のイベントを記録します。
+    /// JA: OnModelSelectedAsync 操作を実行します。
     /// </summary>
-    /// <param name="modelType">選定されたモデルタイプ</param>
-    /// <param name="requiredCapacity">要求された能力ベクトル</param>
-    /// <param name="providedCapacity">提供される能力ベクトル</param>
-    /// <param name="selectionScore">選定スコア（0.0 ~ 1.0）</param>
-    /// <param name="cancellationToken">キャンセルトークン</param>
+    /// <param name="modelType">選定されたモデルタイプ JA: modelType パラメーターです。</param>
+    /// <param name="requiredCapacity">要求された能力ベクトル JA: requiredCapacity パラメーターです。</param>
+    /// <param name="providedCapacity">提供される能力ベクトル JA: providedCapacity パラメーターです。</param>
+    /// <param name="selectionScore">選定スコア（0.0 ~ 1.0） JA: selectionScore パラメーターです。</param>
+    /// <param name="cancellationToken">キャンセルトークン JA: キャンセル通知を監視するトークンです。</param>
     Task OnModelSelectedAsync(
         ModelType modelType,
         ModelCapacityVector requiredCapacity,
@@ -57,11 +61,12 @@ public interface IAttentionObserver
 
     /// <summary>
     /// Attention 汚染の検知時のイベントを記録します。
+    /// JA: OnAttentionPollutionDetectedAsync 操作を実行します。
     /// </summary>
-    /// <param name="phaseName">汚染が検知されたフェーズ名</param>
-    /// <param name="pollutionLevel">汚染度（0.0 ~ 1.0）</param>
-    /// <param name="affectedCategories">影響を受けたコンテキストカテゴリ</param>
-    /// <param name="cancellationToken">キャンセルトークン</param>
+    /// <param name="phaseName">汚染が検知されたフェーズ名 JA: phaseName パラメーターです。</param>
+    /// <param name="pollutionLevel">汚染度（0.0 ~ 1.0） JA: pollutionLevel パラメーターです。</param>
+    /// <param name="affectedCategories">影響を受けたコンテキストカテゴリ JA: affectedCategories パラメーターです。</param>
+    /// <param name="cancellationToken">キャンセルトークン JA: キャンセル通知を監視するトークンです。</param>
     Task OnAttentionPollutionDetectedAsync(
         string phaseName,
         float pollutionLevel,
@@ -70,11 +75,12 @@ public interface IAttentionObserver
 
     /// <summary>
     /// コンテキスト品質の変化を記録します。
+    /// JA: OnContextQualityChangedAsync 操作を実行します。
     /// </summary>
-    /// <param name="category">コンテキストカテゴリ</param>
-    /// <param name="quality">品質スコア（0.0 ~ 1.0）</param>
-    /// <param name="fragmentCount">フラグメント数</param>
-    /// <param name="cancellationToken">キャンセルトークン</param>
+    /// <param name="category">コンテキストカテゴリ JA: category パラメーターです。</param>
+    /// <param name="quality">品質スコア（0.0 ~ 1.0） JA: quality パラメーターです。</param>
+    /// <param name="fragmentCount">フラグメント数 JA: fragmentCount パラメーターです。</param>
+    /// <param name="cancellationToken">キャンセルトークン JA: キャンセル通知を監視するトークンです。</param>
     Task OnContextQualityChangedAsync(
         ContextCategory category,
         float quality,
@@ -83,9 +89,10 @@ public interface IAttentionObserver
 
     /// <summary>
     /// 統計情報を取得します。
+    /// JA: GetObservationStatsAsync 操作を実行します。
     /// </summary>
-    /// <param name="cancellationToken">キャンセルトークン</param>
-    /// <returns>観察された統計情報</returns>
+    /// <param name="cancellationToken">キャンセルトークン JA: キャンセル通知を監視するトークンです。</param>
+    /// <returns>観察された統計情報 JA: 結果を返します。</returns>
     Task<AttentionObservationStats> GetObservationStatsAsync(CancellationToken cancellationToken = default);
 }
 

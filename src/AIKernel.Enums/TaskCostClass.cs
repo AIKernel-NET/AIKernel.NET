@@ -2,6 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// Conservative computational cost class used by pre-inference admissibility gates.
+/// JA: TaskCostClass の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Enums.TaskCostClass']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Enums.TaskCostClass']" />

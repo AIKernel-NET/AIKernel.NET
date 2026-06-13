@@ -1,9 +1,9 @@
 ---
 title: "AIKernel Paper Implementation Status"
 created: 2026-06-05
-updated: 2026-06-05
+updated: 2026-06-14
 published: 2026-05-16
-version: "0.0.5"
+version: "0.1.1.1"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -47,6 +47,7 @@ The status below therefore distinguishes:
 | 09 | Hash-Anchored Trust Layer (HATL) | **Contract foundation added** through HATL ledger entries, anchor documents, Digital Deeds, verification results, and external cryptographic operator interfaces. | Cryptographic runtime, ratchets, Merkle proof construction, public-anchor publication, and secret handling belong to AIKernel.RH-backed operators or other audited Core/HATL modules. |
 | 10 | Semantic DSL Compiler | **Contracted** through DSL IR, DSL ROM, capability registry, pipeline compiler, kernel pipeline, deterministic clock, and History ROM contracts. | JSON parsing, admissibility checking, ResultStep execution, ReplayLog hashing, suspend/resume runtime, and DSL ROM execution belong to Core/runtime packages. |
 | 11 | DynamicSLM | **Contracted for v0.0.5** through Model ABI, capability graph, compatibility, lineage, payload loading, scheduling, gap detection, graph evolution, distillation planning, offload job scheduling, fallback metadata, pipeline status DTOs/enums, and SeedSLM discipline/delegation/thought-artifact/memory-placement DTOs. | Model loading, accelerator placement, SeedSLM discipline enforcement, thought-artifact persistence, delegation execution, Teacher fallback execution, background distillation, artifact publication, and self-improvement runtime belong to Core/provider packages. |
+| 12 | Canonical Trajectory Governance (CTG) | **Contracted for v0.1.1.1** through CTG council/gate/trajectory/ROM governance interfaces, `CouncilKind`, `CouncilVoteKind`, `CouncilDecisionKind`, gate decision enums, `CanonReference`, `RejectReasonInfo`, `CouncilVoteValue`, `CouncilDecision`, `DecisionGateResult`, `StepGovernanceTrace`, `GovernanceTrace`, and ROM governance carriers. The implementation is more detailed than the paper sketches but preserves the paper invariants. | Finite vote-table execution, Ethos-denial short-circuiting, CTG-ROM loading, persona profile resolution, PPM research integration, HATL-backed state/replay protection, and cross-runtime replay validation belong to runtime packages and research/runtime repositories. |
 
 ## Current Completion Summary
 
@@ -54,8 +55,10 @@ The status below therefore distinguishes:
 - Runtime behavior is deliberately outside this repository.
 - Papers 03, 06, 10, and 11 now expose shared contract vocabulary for admission evidence, Semantic IR/state/circuit/prototype/distance/synthesis/transition descriptors, DSL compilation, and DynamicSLM/SeedSLM discipline without moving runtime behavior into AIKernel.NET.
 - Paper 09 (HATL) now has a contract foundation, but the cryptographic runtime remains external.
+- Paper 12 (CTG) now has a contract foundation for three-council governance, deterministic gate carriers, CTG-ROM references, and replayable governance traces. C# enum numeric values are serialization discriminants, not the paper's mathematical vote weights.
 - Paper 05 remains intentionally delegated to `AIKernel.Common` and Core rather than exposed through contract packages.
 
 ## Release Notes
 
 - v0.0.5 (2026-06-05): Added paper-to-contract implementation status for the current AIKernel.NET package surface.
+- v0.1.1.1 (2026-06-14): Added Paper 12 CTG mapping and vote-weight alignment note.

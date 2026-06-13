@@ -1,18 +1,30 @@
 ---
-title: "AIKernel 0.1.1 パッケージ導入ガイド"
-updated: 2026-06-10
+title: "AIKernel 0.1.1 / 0.1.1.1 パッケージ導入ガイド"
+updated: 2026-06-14
 published: 2026-06-10
-version: "0.1.1"
+version: "0.1.1.1"
 edition: "Release"
 status: "Active"
 issuer: ai-kernel@aikernel.net
 maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 ---
 
-# AIKernel 0.1.1 パッケージ導入ガイド
+# AIKernel 0.1.1 / 0.1.1.1 パッケージ導入ガイド
 
 AIKernel 0.1.1 は、公開された Semantic OS サーフェスを同期した最初のパッケージラインです。  
 .NET パッケージは NuGet、Python ラッパーは PyPI、公式デモは AIKernel.Demo リポジトリで提供されます。
+
+AIKernel 0.1.1.1 は、一部の public package に対する additive interface-extension
+update です。GitHub release workflow は不要で、v0.1.1 consumer との互換性を維持します。
+[`../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1-jp.md`](../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1-jp.md)
+に記載された新しい semantic contract surface が必要な場合のみ、`0.1.1.1`
+package version を利用してください。CTG については
+[`../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1-jp.md`](../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1-jp.md)、
+[`../design/CTG_CONTRACT_MODEL-v0.1.1.1-jp.md`](../design/CTG_CONTRACT_MODEL-v0.1.1.1-jp.md)、
+[`CTG_DEVELOPER_GUIDE-v0.1.1.1-jp.md`](CTG_DEVELOPER_GUIDE-v0.1.1.1-jp.md)
+を参照してください。公開済み論文参照は
+[`../papers/12-canonical-trajectory-governance/README.md`](../papers/12-canonical-trajectory-governance/README.md)
+です。
 
 ## Quick Start: OS サーフェスを起動する
 
@@ -118,3 +130,10 @@ pip install aikernel-wasm==0.1.1
 ## リリースルール
 
 同期された 0.1.1 ラインでは、`0.1.1` パッケージ同士を組み合わせてください。`0.1.0` と `0.1.1` を混在させると、古い contract、provider manifest、Python wrapper surface が残る可能性があります。
+
+additive interface-extension line では、更新対象の public package を
+`0.1.1.1` で揃えてください。local development package は次を使います。
+
+```text
+0.1.1-dev<build-number>
+```

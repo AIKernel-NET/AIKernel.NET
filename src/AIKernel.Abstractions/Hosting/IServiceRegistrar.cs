@@ -2,6 +2,7 @@ namespace AIKernel.Abstractions.Hosting;
 
 /// <summary>
 /// UC-14 に基づく IServiceRegistrar の契約を定義します。
+/// JA: IServiceRegistrar の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Hosting.IServiceRegistrar']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Hosting.IServiceRegistrar']" />
