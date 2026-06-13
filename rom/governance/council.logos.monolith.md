@@ -1,5 +1,5 @@
 # Logos Council Governance
-Version: 0.1.1-rc3
+Version: 0.1.1-rc4
 ID: Canon.CTG.Monolith.Council.Logos
 
 The Logos Council ensures logical consistency, traceability, and explainability in all governance evaluations.

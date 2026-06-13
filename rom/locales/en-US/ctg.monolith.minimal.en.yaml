@@ -1,55 +1,55 @@
-version: "0.1.1-rc3"
-id: "Canon.CTG.Monolith.Minimal"
-displayName: "Monolith Governance ROM (Minimal Edition)"
-description: "Minimal canonical governance ROM for the Monolith personality in AIKernel."
-
-metadata:
-  author: "takuya"
-  createdAt: "2026-06-14T00:00:00Z"
-  locale: "en-US"
-
-rootGoal:
-  id: "Canon.CTG.Monolith.Root"
-  description: >
-    Maintain safe, transparent, and reversible trajectories under the Monolith governance model.
+id: "ctg.monolith.minimal"
+version: "0.1.1-rc4"
+canonVersion: "0.1.1-rc4"
+schemaVersion: "0.1.1"
+locale: "en-US"
+createdAt: "2026-06-13T15:00:00Z"
 
 canon:
-  id: "Canon.CTG.Monolith.Canon"
   path: "rom/governance/ctg.monolith.canon.md"
-  summary: "Minimal canonical reference for Monolith governance."
-  references: []
+  canonReference: "Canon.CTG.Monolith.Canon"
 
 councils:
   - kind: "Logos"
-    id: "Canon.CTG.Monolith.Council.Logos"
+    id: "council.logos"
+    rulesSummary: "Ensure logical consistency and traceability."
     rulesPath: "rom/governance/council.logos.monolith.md"
+    canonReference: "Canon.CTG.Monolith.Council.Logos"
   - kind: "Ethos"
-    id: "Canon.CTG.Monolith.Council.Ethos"
+    id: "council.ethos"
+    rulesSummary: "Ensure safety, non-harm, dignity, transparency, reversibility, and Canon integrity with absolute veto authority."
     rulesPath: "rom/governance/council.ethos.monolith.md"
+    canonReference: "Canon.CTG.Monolith.Council.Ethos"
   - kind: "Pathos"
-    id: "Canon.CTG.Monolith.Council.Pathos"
+    id: "council.pathos"
+    rulesSummary: "Respect human context, emotional state, dignity, and non-manipulation."
     rulesPath: "rom/governance/council.pathos.monolith.md"
+    canonReference: "Canon.CTG.Monolith.Council.Pathos"
 
 decisionGate:
-  id: "Canon.CTG.Monolith.Gate.Decision"
+  id: "gate.decision"
   policyPath: "rom/governance/gate.decision.monolith.md"
+  canonReference: "Canon.CTG.Monolith.Gate.Decision"
   defaultDecision: "Deny"
   failClosed: true
 
 trajectoryGate:
-  id: "Canon.CTG.Monolith.Gate.Trajectory"
+  id: "gate.trajectory"
   policyPath: "rom/governance/gate.trajectory.monolith.md"
+  canonReference: "Canon.CTG.Monolith.Gate.Trajectory"
   allowLongRunning: false
+  explicitAllowanceRequired: true
+  explicitAllowanceReferenceKind: "CanonReference"
   requireAuditTrail: true
 
 rejectPolicy:
-  id: "Canon.CTG.Monolith.Policy.Reject"
+  id: "reject.minimal"
   rulesPath: "rom/governance/reject.policy.monolith.md"
+  canonReference: "Canon.CTG.Monolith.RejectPolicy"
   defaultReasonKind: "IMPLICIT_DENY"
 
 telemetry:
   enableGovernanceTrace: true
-
-audit:
-  requireCanonReference: true
-  retentionDays: 7
+  includeCouncilDiagnostics: true
+  includeGateContinuousValues: false
+  includeRiskScore: false

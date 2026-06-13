@@ -1,5 +1,5 @@
 # Trajectory Gate Governance
-Version: 0.1.1-rc3
+Version: 0.1.1-rc4
 ID: Canon.CTG.Monolith.Gate.Trajectory
 
 The Trajectory Gate is a deterministic mathematical function over a sequence of decision results.
@@ -11,6 +11,7 @@ Its sole responsibility is to evaluate whether an entire trajectory is valid, ba
 ## 1. Purpose
 
 The purpose of the Trajectory Gate is to provide continuous, yet purely discrete, governance over a sequence of steps.
+Safety, reversibility, and auditability are evaluated by the councils at each step. The Trajectory Gate only aggregates Decision Gate results.
 While the Decision Gate evaluates a single decision point, the Trajectory Gate evaluates whether **all** steps in a trajectory have been allowed.
 
 Conceptually, it implements the canonical rule:
@@ -41,6 +42,7 @@ The Trajectory Gate implements the following rule:
 
 - If **for all** $i \in \{1, \dots, n\}$, $G(s_i) = \text{Allow}$, then the trajectory is **Continue**.
 - If **there exists** any $i$ such that $G(s_i) = \text{Deny}$, then the trajectory is **Halt**.
+- If the sequence is empty ($n=0$), it is a precondition violation and the trajectory is **Halt**.
 
 This can be seen as a short-circuiting product over discrete decisions:
 - One Deny is sufficient to Halt the entire trajectory.
@@ -51,10 +53,11 @@ This can be seen as a short-circuiting product over discrete decisions:
 
 The Trajectory Gate must evaluate trajectories in the following exact way:
 
-1. Iterate over the sequence of step results in order.
-2. For each step:
+1. If the sequence is empty, return **Halt**.
+2. Iterate over the sequence of step results in order.
+3. For each step:
    - If the step’s Decision Gate result is **Deny**, immediately return **Halt**.
-3. If the end of the sequence is reached with no Deny:
+4. If the end of the sequence is reached with no Deny:
    - Return **Continue**.
 
 No additional checks, heuristics, or conditions are permitted.
@@ -67,7 +70,7 @@ The Trajectory Gate does not generate new decisions; it only aggregates existing
 The Trajectory Gate returns:
 
 - **Continue** — All steps are allowed.
-- **Halt** — At least one step is denied.
+- **Halt** — At least one step is denied, or the sequence is empty.
 
 Additionally, it must produce a **TrajectoryGateTrace** containing:
 

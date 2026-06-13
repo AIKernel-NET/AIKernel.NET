@@ -1,5 +1,5 @@
 # Canonical Governance for Monolith Personality
-Version: 0.1.1-rc3
+Version: 0.1.1-rc4
 ID: Canon.CTG.Monolith.Canon
 
 This document defines the canonical governance principles for the Monolith personality in AIKernel.
@@ -47,9 +47,9 @@ Each council casts exactly one discrete vote: **Approve**, **Abstain**, or **Rej
 The Decision Gate is a pure, deterministic mathematical function. It does not evaluate semantic content.
 It aggregates council votes to determine if a single action is permitted, returning **Allow** or **Deny**.
 
-- If Ethos casts **Reject**, the decision is immediately **Deny** regardless of the majority.
-- A majority of **Approve** votes (≥ 2) is required for the decision to be **Allow**.
-- If a majority of Approve votes is not reached, the system must **Fail-Closed** and return **Deny**.
+- A majority of **Approve** votes is required for a decision to pass.
+- If Ethos casts **Reject** for any reason, the decision is **Deny** regardless of the majority.
+- If a majority of **Approve** votes is not reached (e.g., due to abstentions or conflicting votes), the system must **fail closed** and return **Deny**.
 
 Default behavior: **Deny**.
 
@@ -58,10 +58,13 @@ Default behavior: **Deny**.
 ## 5. Trajectory Gate
 
 The Trajectory Gate is a pure, deterministic mathematical function that evaluates continuous processes.
-It aggregates a sequence of Decision Gate outputs to ensure ongoing validity, returning **Continue** or **Halt**.
+Safety, reversibility, and auditability are evaluated by the councils at each step. The Trajectory Gate only aggregates Decision Gate results to ensure ongoing validity, returning **Continue** or **Halt**.
 
 - If all steps in a trajectory are **Allow**, the trajectory is **Continue**.
 - If any single step evaluates to **Deny**, the trajectory short-circuits and immediately returns **Halt**.
+
+### 5.1 Empty Trajectories
+A trajectory must contain at least one evaluable step. An empty trajectory ($n=0$) is considered a precondition violation and must inherently result in **Halt**.
 
 ---
 

@@ -1,5 +1,5 @@
 # 拒絶ポリシー・ガバナンス
-Version: 0.1.1-rc3
+Version: 0.1.1-rc4
 ID: Canon.CTG.Monolith.Policy.Reject
 
 拒絶ポリシーは、ガバナンスシステム全体で使用される拒絶理由の正典的な分類体系（タクソノミー）を定義する。
