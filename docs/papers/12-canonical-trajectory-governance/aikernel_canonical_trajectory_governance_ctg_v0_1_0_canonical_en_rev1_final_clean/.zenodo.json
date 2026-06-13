@@ -1,0 +1,73 @@
+{
+  "title": "AIKernel Canonical Trajectory Governance (CTG): A Three-Council Gateway for Deterministic AI Personality OS Architecture",
+  "upload_type": "publication",
+  "publication_type": "technicalnote",
+  "description": "This technical note introduces Canonical Trajectory Governance (CTG), an AIKernel governance theory for admitting stochastic LLM-generated candidate actions into deterministic operating-system control. CTG evaluates each action through Logos, Ethos, and Pathos councils, gives Ethos canonical veto authority, and defines trajectory validity as the product of step-level gates. The paper also clarifies the relationship between CTG and the AIKernel Prime-Phase Model (PPM), repositioning PPM as a mathematical substrate for state-space and memory-protection research rather than as the runtime decision gateway. The English manuscript is canonical; the Japanese manuscript is included as a companion translation.",
+  "creators": [
+    {
+      "name": "Sogawa, Takuya",
+      "orcid": "0009-0009-7499-2595",
+      "affiliation": "AIKernel Project"
+    }
+  ],
+  "version": "v0.1.0",
+  "publication_date": "2026-06-14",
+  "doi": "10.5281/zenodo.20681895",
+  "language": "eng",
+  "keywords": [
+    "AIKernel",
+    "Canonical Trajectory Governance",
+    "CTG",
+    "Three-Council Gateway",
+    "Logos",
+    "Ethos",
+    "Pathos",
+    "Fail-Closed Governance",
+    "Deterministic AI OS",
+    "CTG-ROM",
+    "Persona Portability",
+    "ReplayLog",
+    "GovernanceTrace",
+    "Prime-Phase Model",
+    "PPM",
+    "HATL"
+  ],
+  "license": "cc-by-4.0",
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20309510",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20483437",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20502685",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20534341",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20550614",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://github.com/AIKernel-NET/AIKernel.NET",
+      "relation": "isSupplementedBy",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://aikernel.net/",
+      "relation": "isSupplementedBy",
+      "resource_type": "other"
+    }
+  ]
+}
