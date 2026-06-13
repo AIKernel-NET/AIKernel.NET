@@ -77,7 +77,33 @@ contract vocabulary.
 
 ---
 
-## 4. Gate Review Checklist
+## 4. Monolith ROM and Diff Layers
+
+The Monolith CTG-ROM minimal configuration is the baseline canon for the
+AIKernel personality OS. Runtime packages should treat the base canon files in
+`rom/governance/` as stable governance inputs and the locale descriptors in
+`rom/locales/<locale>/` as personality ROM selectors.
+
+Developers personalize CTG-ROM by providing diff layers over the Monolith base.
+Diff layers should contain only deltas. They must not copy and mutate the whole
+base canon as a replacement profile.
+
+Runtime VFS implementations should merge in this order:
+
+1. base canon layer
+2. selected locale personality layer
+3. developer diff layers in stable order
+4. read-only mounted Personality-ROM
+
+The merge must fail closed when canon is missing, references cannot be resolved,
+unknown values are encountered, or a diff layer weakens Monolith base
+invariants.
+
+See [CTG ROM Layout](CTG_ROM_LAYOUT-v0.1.1.1.md) for the canonical file layout.
+
+---
+
+## 5. Gate Review Checklist
 
 When reviewing a gate-related contract or implementation outside AIKernel.NET,
 verify:
@@ -96,7 +122,7 @@ verify:
 
 ---
 
-## 5. Diagnostics and Telemetry
+## 6. Diagnostics and Telemetry
 
 Unknown enum handling must be observable. When a consumer sees an unknown enum
 value, it should:
@@ -111,7 +137,7 @@ policy for this behavior.
 
 ---
 
-## 6. Validation Commands
+## 7. Validation Commands
 
 Run these commands before publishing CTG contract changes:
 
@@ -135,7 +161,7 @@ The local package version format is:
 
 ---
 
-## 7. Paper Alignment Checklist
+## 8. Paper Alignment Checklist
 
 For CTG-related changes, verify:
 
@@ -147,13 +173,14 @@ For CTG-related changes, verify:
 - Ambiguous, missing, unknown, zero, or negative cases fail closed.
 - Trajectory validity is represented as all step-level gates admitting execution.
 - CTG-ROM remains a governance/persona contract, not a prompt.
+- The Monolith CTG-ROM remains the base layer for personalized diff layers.
 - PPM is not treated as the CTG execution gate.
 - HATL remains the integrity/provenance layer for state, memory, and replayable
   records.
 
 ---
 
-## 8. Pull Request Checklist
+## 9. Pull Request Checklist
 
 - No existing public interface signature changed.
 - No implementation class was added.
@@ -167,10 +194,11 @@ For CTG-related changes, verify:
 
 ---
 
-## 9. Related Documents
+## 10. Related Documents
 
 - [Paper 12: Canonical Trajectory Governance](../papers/12-canonical-trajectory-governance/README.md)
 - [Canonical Trajectory Governance](../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md)
 - [CTG Contract Model](../design/CTG_CONTRACT_MODEL-v0.1.1.1.md)
+- [CTG ROM Layout](CTG_ROM_LAYOUT-v0.1.1.1.md)
 - [XML Documentation Policy](XML_DOCUMENTATION_POLICY-v0.1.1.1.md)
 - [Interface Extension Naming Policy](INTERFACE_EXTENSION_NAMING-v0.1.1.1.md)

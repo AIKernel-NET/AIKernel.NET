@@ -295,6 +295,7 @@ For the v0.1.1.1 additive contract surface, start with:
 - `docs/architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md`
 - `docs/design/CTG_CONTRACT_MODEL-v0.1.1.1.md`
 - `docs/operations/CTG_DEVELOPER_GUIDE-v0.1.1.1.md`
+- `docs/operations/CTG_ROM_LAYOUT-v0.1.1.1.md`
 - `docs/papers/12-canonical-trajectory-governance/README.md`
 - `docs/operations/INTERFACE_EXTENSION_NAMING-v0.1.1.1.md`
 - `docs/operations/ENUM_HANDLING_POLICY-v0.1.1.1.md`

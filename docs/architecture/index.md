@@ -228,6 +228,8 @@ replayable governance traces.
 
 This document maps the Zenodo-published CTG paper to developer architecture
 without embedding canon rule text or runtime implementation in AIKernel.NET.
+The Monolith CTG-ROM is documented as the base canon layer for personalized
+developer diff layers under runtime VFS merge.
 
 ---
 
@@ -335,4 +337,4 @@ This index is the entry point to understanding AIKernel's overall design.
 - v0.0.5 (2026-06-05): Added Semantic Compilation DTO vocabulary navigation
 - v0.0.5 (2026-06-05): Added external Capability module contract navigation
 - v0.1.0 (2026-06-07): Added MemoryRegion / MemoryMapper contract extraction navigation
-- v0.1.1.1 (2026-06-14): Added domain contract surface and Canonical Trajectory Governance navigation
+- v0.1.1.1 (2026-06-14): Added domain contract surface, Canonical Trajectory Governance, and Monolith CTG-ROM layout navigation

@@ -171,7 +171,28 @@ reference が欠落または解決不能な場合、runtime implementation は f
 
 ---
 
-## 9. Paper alignment notes
+## 9. Monolith ROM layering
+
+Monolith minimal CTG-ROM は personality OS governance の base layer である。
+canon、council、gate、reject-policy file は `rom/governance/` に置く。
+localized personality descriptor は `rom/locales/<locale>/` に置き、次のような
+effective canon path を解決する。
+
+```text
+rom/governance/ctg.monolith.canon.md
+```
+
+personalized CTG-ROM は、Monolith base の上に developer diff layer として表現する。
+diff layer は profile metadata、reference、locale wording、audit requirement を
+追加または制約できる。ただし、triadic council model、Ethos veto、fail-closed
+behavior、default deny、replay trace requirement を弱めてはならない。
+
+runtime VFS package が deterministic merge と mount behavior を所有する。
+AIKernel.NET は layout を文書化し、contract carrier を公開するだけである。
+
+---
+
+## 10. Paper alignment notes
 
 論文は trace object について簡略化した C# sketch を使っている。現在の実装は、
 次の audit invariant を守る限り、より詳細な DTO を利用してよい。
@@ -187,7 +208,7 @@ theory name として新規 documentation に導入しない。
 
 ---
 
-## 10. Review checklist
+## 11. Review checklist
 
 - 変更は追加型であり、既存 public signature を変更しない。
 - 新規 interface は `AIKernel.Abstractions.Governance` のみに置く。
@@ -203,9 +224,10 @@ theory name として新規 documentation に導入しない。
 
 ---
 
-## 11. 関連文書
+## 12. 関連文書
 
 - [Paper 12: Canonical Trajectory Governance](../papers/12-canonical-trajectory-governance/README.md)
 - [Canonical Trajectory Governance](../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1-jp.md)
 - [CTG Developer Guide](../operations/CTG_DEVELOPER_GUIDE-v0.1.1.1-jp.md)
+- [CTG ROM Layout](../operations/CTG_ROM_LAYOUT-v0.1.1.1-jp.md)
 - [Domain Contract Surface v0.1.1.1](../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1-jp.md)

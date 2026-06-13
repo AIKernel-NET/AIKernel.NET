@@ -115,7 +115,19 @@ Use this guide when adding, reviewing, or implementing CTG contracts in runtime 
 
 ---
 
-### 8. Release Operations
+### 8. [CTG ROM Layout](CTG_ROM_LAYOUT-v0.1.1.1.md)
+**Status:** Active
+**Current contents:**
+- Monolith CTG-ROM directory layout
+- Separation between `/rom/governance` canon assets and `/rom/locales` personality descriptors
+- Base canon layer, locale layer, developer diff layer, and VFS merge layer
+- Fail-closed merge rules for personalized Personality-ROM construction
+
+Use this guide when adding, reviewing, or mounting CTG-ROM canon and personalization layers.
+
+---
+
+### 9. Release Operations
 **Status:** Planned
 **Planned contents:**
 - Release workflow (tag → build → publish → verify)
@@ -125,7 +137,7 @@ Use this guide when adding, reviewing, or implementing CTG contracts in runtime 
 
 ---
 
-### 9. Monitoring & Observability
+### 10. Monitoring & Observability
 **Status:** Planned
 **Planned contents:**
 - Metrics (latency, cost, retries, cache, provider health)
@@ -135,7 +147,7 @@ Use this guide when adding, reviewing, or implementing CTG contracts in runtime 
 
 ---
 
-### 10. Incident Response
+### 11. Incident Response
 **Status:** Planned
 **Planned contents:**
 - Detection → Triage → Isolation → Recovery → Postmortem
@@ -145,7 +157,7 @@ Use this guide when adding, reviewing, or implementing CTG contracts in runtime 
 
 ---
 
-### 11. Security Operations
+### 12. Security Operations
 **Status:** Planned
 **Planned contents:**
 - Signature verification (PromptRules / Contracts / Policies)
@@ -188,7 +200,7 @@ Currently:
 - The Migration Guide contains concrete steps through v0.1.1
 - The Package Installation Guide covers the NuGet and PyPI public package line
 - The Demo Programs Guide covers the official AIKernel.Demo learning path
-- Interface naming, enum handling, XML documentation policy, and CTG developer guidance cover the v0.1.1.1 additive contract surface
+- Interface naming, enum handling, XML documentation policy, CTG developer guidance, and CTG ROM layout cover the v0.1.1.1 additive contract surface
 - Release, monitoring, incident, and security operations remain Planned
 
 Future versions will expand this directory.
@@ -211,4 +223,4 @@ Future versions will expand this directory.
 - v0.0.5 (2026-06-05): Added contract-surface purity cleanup, external Capability module, DynamicSLM Model ABI / SeedSLM discipline / distillation offload, HATL external cryptographic operator, governance admissibility, and Semantic Compilation DTO vocabulary migration coverage
 - v0.1.0 (2026-06-07): Added MemoryRegion / MemoryMapper contract extraction coverage
 - v0.1.1 (2026-06-10): Added package installation and demo program guides for the synchronized public release line
-- v0.1.1.1 (2026-06-14): Added CTG developer guide coverage
+- v0.1.1.1 (2026-06-14): Added CTG developer guide and Monolith CTG-ROM layout coverage

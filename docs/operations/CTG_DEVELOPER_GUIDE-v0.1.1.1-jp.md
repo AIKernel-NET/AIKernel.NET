@@ -74,7 +74,33 @@ vocabulary のみを所有する。
 
 ---
 
-## 4. Gate review checklist
+## 4. Monolith ROM と diff layer
+
+Monolith CTG-ROM の最小構成は、AIKernel personality OS の baseline canon である。
+runtime package は、`rom/governance/` の base canon file を stable governance
+input として扱い、`rom/locales/<locale>/` の locale descriptor を personality ROM
+selector として扱う。
+
+開発者は Monolith base の上に diff layer を提供することで CTG-ROM を
+personalize する。diff layer は差分のみを含めるべきであり、base canon 全体を
+コピーして変更した replacement profile として扱ってはならない。
+
+runtime VFS implementation は次の順序で merge する。
+
+1. base canon layer
+2. selected locale personality layer
+3. developer diff layer（安定順序）
+4. read-only mounted Personality-ROM
+
+canon が欠落した場合、reference を解決できない場合、unknown value を検出した場合、
+または diff layer が Monolith base invariant を弱める場合、merge は fail closed
+しなければならない。
+
+canonical file layout は [CTG ROM Layout](CTG_ROM_LAYOUT-v0.1.1.1-jp.md) を参照する。
+
+---
+
+## 5. Gate review checklist
 
 AIKernel.NET の外で gate 関連 contract または implementation を review する場合、
 次を確認する。
@@ -92,7 +118,7 @@ AIKernel.NET の外で gate 関連 contract または implementation を review 
 
 ---
 
-## 5. Diagnostics と telemetry
+## 6. Diagnostics と telemetry
 
 unknown enum handling は observable でなければならない。consumer が unknown enum
 value を見た場合、次を行う。
@@ -107,7 +133,7 @@ value を見た場合、次を行う。
 
 ---
 
-## 6. Validation command
+## 7. Validation command
 
 CTG contract change を公開する前に次を実行する。
 
@@ -131,7 +157,7 @@ local package version format は次の通り。
 
 ---
 
-## 7. Paper alignment checklist
+## 8. Paper alignment checklist
 
 CTG 関連の変更では次を確認する。
 
@@ -143,12 +169,13 @@ CTG 関連の変更では次を確認する。
 - ambiguous、missing、unknown、zero、negative case は fail closed する。
 - trajectory validity は、すべての step-level gate が execution を admit することとして表現する。
 - CTG-ROM は prompt ではなく governance/persona contract である。
+- Monolith CTG-ROM は personalized diff layer の base layer として維持する。
 - PPM を CTG execution gate として扱っていない。
 - HATL は state、memory、replayable record の integrity/provenance layer として残っている。
 
 ---
 
-## 8. Pull request checklist
+## 9. Pull request checklist
 
 - 既存 public interface signature を変更していない。
 - implementation class を追加していない。
@@ -162,10 +189,11 @@ CTG 関連の変更では次を確認する。
 
 ---
 
-## 9. 関連文書
+## 10. 関連文書
 
 - [Paper 12: Canonical Trajectory Governance](../papers/12-canonical-trajectory-governance/README.md)
 - [Canonical Trajectory Governance](../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1-jp.md)
 - [CTG Contract Model](../design/CTG_CONTRACT_MODEL-v0.1.1.1-jp.md)
+- [CTG ROM Layout](CTG_ROM_LAYOUT-v0.1.1.1-jp.md)
 - [XML Documentation Policy](XML_DOCUMENTATION_POLICY-v0.1.1.1-jp.md)
 - [Interface Extension Naming Policy](INTERFACE_EXTENSION_NAMING-v0.1.1.1-jp.md)

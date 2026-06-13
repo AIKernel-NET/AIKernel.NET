@@ -173,7 +173,29 @@ runtime implementation.
 
 ---
 
-## 9. Paper Alignment Notes
+## 9. Monolith ROM Layering
+
+The Monolith minimal CTG-ROM is the base layer for personality OS governance.
+Its canon, council, gate, and reject-policy files live under
+`rom/governance/`. Localized personality descriptors live under
+`rom/locales/<locale>/` and resolve the effective canon path, including:
+
+```text
+rom/governance/ctg.monolith.canon.md
+```
+
+Personalized CTG-ROMs should be expressed as developer diff layers over the
+Monolith base. Diff layers may add or constrain profile metadata, references,
+locale wording, or audit requirements, but they must not weaken the triadic
+council model, Ethos veto, fail-closed behavior, default deny, or replay trace
+requirements.
+
+Runtime VFS packages own deterministic merge and mount behavior. AIKernel.NET
+only documents the layout and publishes contract carriers.
+
+---
+
+## 10. Paper Alignment Notes
 
 The paper intentionally uses simplified C# sketches for trace objects. The
 current implementation may use more detailed DTOs as long as the audit invariant
@@ -190,7 +212,7 @@ the older shorthand as a formal theory name in new documentation.
 
 ---
 
-## 10. Review Checklist
+## 11. Review Checklist
 
 - The change is additive and does not alter existing public signatures.
 - New interfaces are placed only under `AIKernel.Abstractions.Governance`.
@@ -206,9 +228,10 @@ the older shorthand as a formal theory name in new documentation.
 
 ---
 
-## 11. Related Documents
+## 12. Related Documents
 
 - [Paper 12: Canonical Trajectory Governance](../papers/12-canonical-trajectory-governance/README.md)
 - [Canonical Trajectory Governance](../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md)
 - [CTG Developer Guide](../operations/CTG_DEVELOPER_GUIDE-v0.1.1.1.md)
+- [CTG ROM Layout](../operations/CTG_ROM_LAYOUT-v0.1.1.1.md)
 - [Domain Contract Surface v0.1.1.1](../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md)
