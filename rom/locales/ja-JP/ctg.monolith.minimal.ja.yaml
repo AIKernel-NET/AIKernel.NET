@@ -1,1 +1,56 @@
-TODO:TBD is Fixme
+version: "0.1.1"
+id: "ctg.monolith.minimal"
+displayName: "モノリス・ガバナンス ROM（最小構成）"
+description: "AIKernel におけるモノリス人格のための最小ガバナンス ROM。"
+
+metadata:
+  author: "takuya"
+  createdAt: "2026-06-14T00:00:00Z"
+  locale: "ja-JP"
+
+rootGoal:
+  id: "root.monolith"
+  description: >
+    モノリス・ガバナンスのもとで、安全・透明・可逆な軌道を維持する。
+
+canon:
+  path: "rom/governance/ctg.monolith.canon.md"
+  summary: "モノリス・ガバナンスの最小正典参照。"
+  references: []
+
+councils:
+  - kind: "Logos"
+    id: "council.logos"
+    rules: "論理的一貫性と追跡可能性を保証する。"
+  - kind: "Ethos"
+    id: "council.ethos"
+    rules: "安全性と非加害性を保証し、安全違反に対して拒否権を持つ。"
+  - kind: "Pathos"
+    id: "council.pathos"
+    rules: "人間の文脈と感情状態を尊重する。"
+
+decisionGate:
+  id: "gate.decision"
+  policyPath: "rom/governance/gate.decision.monolith.md"
+  defaultDecision: "Deny"
+  failClosed: true
+
+trajectoryGate:
+  id: "gate.trajectory"
+  policyPath: "rom/governance/gate.trajectory.monolith.md"
+  allowLongRunning: false
+  requireAuditTrail: true
+
+rejectPolicy:
+  id: "reject.minimal"
+  rulesPath: "rom/governance/reject.policy.monolith.md"
+  defaultReasonKind: "ImplicitDeny"
+
+telemetry:
+  enableGovernanceTrace: true
+  includeConfidence: true
+  includeRiskScore: false  # リスクスコアは CTG の中核ロジックには含めず、必要なら外部メトリクスとして扱う。
+
+audit:
+  requireCanonReference: true
+  retentionDays: 7

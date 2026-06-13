@@ -1,1 +1,56 @@
-TODO:TBD is Fixme
+version: "0.1.1"
+id: "ctg.monolith.minimal"
+displayName: "Monolith Governance ROM (Minimal Edition)"
+description: "Minimal canonical governance ROM for the Monolith personality in AIKernel."
+
+metadata:
+  author: "takuya"
+  createdAt: "2026-06-14T00:00:00Z"
+  locale: "en-US"
+
+rootGoal:
+  id: "root.monolith"
+  description: >
+    Maintain safe, transparent, and reversible trajectories under the Monolith governance model.
+
+canon:
+  path: "rom/governance/ctg.monolith.canon.md"
+  summary: "Minimal canonical reference for Monolith governance."
+  references: []
+
+councils:
+  - kind: "Logos"
+    id: "council.logos"
+    rules: "Ensure logical consistency and traceability."
+  - kind: "Ethos"
+    id: "council.ethos"
+    rules: "Ensure safety and non-harm, with veto power on safety violations."
+  - kind: "Pathos"
+    id: "council.pathos"
+    rules: "Respect human context and emotional state."
+
+decisionGate:
+  id: "gate.decision"
+  policyPath: "rom/governance/gate.decision.monolith.md"
+  defaultDecision: "Deny"
+  failClosed: true
+
+trajectoryGate:
+  id: "gate.trajectory"
+  policyPath: "rom/governance/gate.trajectory.monolith.md"
+  allowLongRunning: false
+  requireAuditTrail: true
+
+rejectPolicy:
+  id: "reject.minimal"
+  rulesPath: "rom/governance/reject.policy.monolith.md"
+  defaultReasonKind: "ImplicitDeny"
+
+telemetry:
+  enableGovernanceTrace: true
+  includeConfidence: true
+  includeRiskScore: false  # Risk score is not part of CTG core; may be added as external metric.
+
+audit:
+  requireCanonReference: true
+  retentionDays: 7
