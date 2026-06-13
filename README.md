@@ -301,6 +301,10 @@ For the v0.1.1.1 additive contract surface, start with:
 - `docs/operations/ENUM_HANDLING_POLICY-v0.1.1.1.md`
 - `docs/operations/XML_DOCUMENTATION_POLICY-v0.1.1.1.md`
 
+The `0.1.1.1` package line is .NET / NuGet-only. Do not build or publish PyPI
+packages for `0.1.1.1`; Python wrappers remain on the synchronized `0.1.1`
+package line.
+
 ---
 
 ## Repository Mapping

@@ -40,6 +40,7 @@ tags:
 
 - 公開更新 version: `0.1.1.1`
 - GitHub release: 作成しない
+- PyPI package: 作成しない（`0.1.1.1` は .NET / NuGet package のみ）
 - ローカル開発 package version: `0.1.1-dev{buildNumber}`
 - stable pack 例: `dotnet pack src/AIKernel.NET.slnx -c Release`
 - local dev pack 例: `dotnet pack src/AIKernel.NET.slnx -c Release -p:UseLocalPackageVersion=true -p:LocalPackageBuildNumber=42`

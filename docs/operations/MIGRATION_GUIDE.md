@@ -18,7 +18,9 @@ For the synchronized `0.1.1` public release line, keep NuGet and PyPI package fa
 For `0.1.1.1`, no GitHub release workflow is required. This update is an
 additive package-line contract expansion for already published public packages.
 Existing `0.1.1` consumers do not need code migration unless they opt into the
-new domain contracts.
+new domain contracts. The `0.1.1.1` package boundary is .NET / NuGet only:
+do not build or publish PyPI packages for this line, and keep Python wrappers
+on the synchronized `0.1.1` package line.
 
 ## 0. v0.1.1.1 Additive Contract Expansion
 

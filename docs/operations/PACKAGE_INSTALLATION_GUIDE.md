@@ -25,6 +25,9 @@ including the CTG developer documents:
 [`CTG_DEVELOPER_GUIDE-v0.1.1.1.md`](CTG_DEVELOPER_GUIDE-v0.1.1.1.md). The published
 paper reference is
 [`../papers/12-canonical-trajectory-governance/README.md`](../papers/12-canonical-trajectory-governance/README.md).
+The `0.1.1.1` line is a .NET / NuGet package update only. Do not build or
+publish PyPI packages for this line; Python wrappers remain on the synchronized
+`0.1.1` package line.
 
 ## Quick Start: Start the OS Surface
 
@@ -77,6 +80,9 @@ aik capabilities invoke aikernel.vfs vfs.exists path=README.md
 CUDA is intentionally platform-scoped. Use the CUDA package only on Windows win-x64 environments that satisfy its native runtime requirements.
 
 ## PyPI Packages
+
+The PyPI packages below belong to the synchronized `0.1.1` line. There is no
+`0.1.1.1` PyPI package line.
 
 | Package | Import Surface | Purpose |
 |---|---|---|
@@ -132,7 +138,9 @@ Choose the provider package by the runtime boundary you need:
 Use only `0.1.1` packages together for the synchronized line. Mixing `0.1.0` and `0.1.1` packages can hide stale contracts, provider manifests, or Python wrapper surfaces.
 
 For the additive interface-extension line, keep updated public packages on
-`0.1.1.1` together. Local development packages use:
+`0.1.1.1` together for the .NET / NuGet contract packages only. Do not create
+or publish PyPI packages for `0.1.1.1`; Python wrapper packages stay at
+`0.1.1`. Local development packages use:
 
 ```text
 0.1.1-dev<build-number>

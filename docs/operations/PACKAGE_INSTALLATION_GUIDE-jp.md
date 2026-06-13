@@ -25,6 +25,9 @@ package version を利用してください。CTG については
 を参照してください。公開済み論文参照は
 [`../papers/12-canonical-trajectory-governance/README.md`](../papers/12-canonical-trajectory-governance/README.md)
 です。
+`0.1.1.1` line は .NET / NuGet package のみの更新です。この line では
+PyPI package を build / publish しません。Python wrapper は同期済み `0.1.1`
+package line のまま維持します。
 
 ## Quick Start: OS サーフェスを起動する
 
@@ -77,6 +80,9 @@ aik capabilities invoke aikernel.vfs vfs.exists path=README.md
 CUDA は意図的にプラットフォームを限定しています。Windows win-x64 かつ native runtime 要件を満たす環境でのみ利用してください。
 
 ## PyPI パッケージ
+
+以下の PyPI package は同期済み `0.1.1` line に属します。`0.1.1.1` の
+PyPI package line はありません。
 
 | パッケージ | import surface | 役割 |
 |---|---|---|
@@ -132,7 +138,9 @@ pip install aikernel-wasm==0.1.1
 同期された 0.1.1 ラインでは、`0.1.1` パッケージ同士を組み合わせてください。`0.1.0` と `0.1.1` を混在させると、古い contract、provider manifest、Python wrapper surface が残る可能性があります。
 
 additive interface-extension line では、更新対象の public package を
-`0.1.1.1` で揃えてください。local development package は次を使います。
+`.NET / NuGet contract package` に限って `0.1.1.1` で揃えてください。
+`0.1.1.1` の PyPI package は作成・公開しません。Python wrapper package は
+`0.1.1` のまま維持します。local development package は次を使います。
 
 ```text
 0.1.1-dev<build-number>

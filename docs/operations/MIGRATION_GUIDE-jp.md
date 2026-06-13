@@ -18,6 +18,9 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 `0.1.1.1` では GitHub release workflow は不要です。この更新は、すでに公開済みの
 public package line に対する additive contract expansion です。既存 `0.1.1`
 consumer は、新しい domain contract を opt-in で利用しない限りコード移行は不要です。
+`0.1.1.1` の package boundary は .NET / NuGet のみです。この line では
+PyPI package を build / publish せず、Python wrapper は同期済み `0.1.1`
+package line のまま維持します。
 
 ## 0. v0.1.1.1 Additive Contract Expansion
 
