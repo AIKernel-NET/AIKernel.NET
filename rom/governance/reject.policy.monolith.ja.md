@@ -1,51 +1,85 @@
 # 拒絶ポリシー・ガバナンス
-Version: 0.1.1-rc1
+Version: 0.1.1-rc2
 ID: reject.policy.monolith
 
-拒絶ポリシーは、決定または軌道がなぜ棄却（Deny）されたかを決定するための正典的規則を定義する。
-すべての拒絶が明示的で、監査可能であり、正典と整合していることを保証する。
+拒絶ポリシーは、ガバナンスシステム全体で使用される拒絶理由の正典的な分類体系（タクソノミー）を定義する。
+拒絶が「いつ」発生するかを決定するものではない；その責務は評議会およびゲートに属する。
+本文書は、すべてのレイヤーに対する統一された分類（RejectReasonKind）を提供する。
 
 ---
 
 ## 1. 目的 (Purpose)
 
-拒絶ポリシーの目的は、拒絶の結果を分類するための決定論的で透明なフレームワークを提供することである。
-すべての棄却（Deny）または停止（Halt）の決定に、正典およびガバナンスプロセスまで追跡可能な明確な理由が伴うことを保証する。
+拒絶ポリシーの目的は、拒絶理由コードに対する「信頼できる唯一の情報源（SSoT: Single Source of Truth）」を提供することである。
+これらのコードは以下によって使用される：
+
+- 評議会（Logos, Ethos, Pathos）が Reject 票を投じる際
+- 意思決定ゲートが Deny を計算する際
+- 軌道ゲートが Halt を計算する際
+
+これにより、システム全体で一貫した監査可能性と決定論的リプレイが保証される。
 
 ---
 
-## 2. 拒絶理由の種類 (RejectReasonKind)
+## 2. 拒絶理由の分類 (RejectReasonKind Taxonomy)
 
-拒絶は、以下の正典的な理由の種類のいずれかを使用して分類されなければならない：
+拒絶理由は、それを発行するレイヤーによってグループ化される。
+
+---
+
+### 2.1 評議会レベルの理由 (Council-Level Reasons)
+評議会が Reject 票を投じた場合に**のみ**発行される。
+これらの理由は、提案に対する「意味論的（semantic）」な評価を反映する。
 
 - **SAFETY_VIOLATION（安全性違反）**
-  提案が危害のリスクをもたらすか、安全原則に違反している。
+  行動が危害のリスクをもたらすか、安全原則に違反している。
+  （Ethosによって発行される）
 
 - **LOGICAL_INCONSISTENCY（論理的不整合）**
-  推論に矛盾、無効な推論、または検証不可能な主張が含まれている。
+  推論が矛盾している、不完全である、または検証不可能である。
+  （Logosによって発行される）
 
 - **CONTEXT_MISALIGNMENT（文脈の不整合）**
-  提案がユーザーの意図、文脈、または感情的状態と整合していない。
+  行動がユーザーの意図、感情的状態、または文脈上の境界に違反している。
+  （Pathosによって発行される）
 
 - **IRREVERSIBLE_ACTION（不可逆な行動）**
-  行動が取り消し不可能であり、明示的な正当化を欠いている。
+  行動が取り消し不可能であり、正当化を欠いている。
+  （Ethosによって発行される）
 
 - **INSUFFICIENT_INFORMATION（情報不足）**
-  必要な情報が欠落している、曖昧である、または判定不能である。
+  提案に必要な内部情報が欠落している。
+  （LogosまたはPathosによって発行される）
 
 - **OPAQUE_REASONING（不透明な推論）**
-  推論が説明可能、追跡可能、または監査可能ではない。
+  推論が説明可能または監査可能ではない。
+  （LogosまたはEthosによって発行される）
+
+これらの理由は **CouncilDecisionTrace** の内部に表示される。
+
+---
+
+### 2.2 ゲートレベルの理由 (Gate-Level Reasons)
+ゲート（意思決定ゲート / 軌道ゲート）によって**のみ**発行される。
+これらの理由は、ガバナンスプロセスの「構造的（structural）」な結果を反映する。
 
 - **ETHOS_VETO（Ethosの拒否権）**
-  EthosがReject票を投じ、絶対的な拒否権を発動した。
+  Ethosが Reject を投じ、絶対的な拒否権がトリガーされた。
+  （意思決定ゲートのみ）
 
 - **FAIL_CLOSED（フェイルクローズ）**
-  評価の失敗または承認不足により、システムがフェイルクローズ状態に入った。
+  Approve 票が過半数に達しなかった（Approve < 2）。
+  （意思決定ゲートのみ）
+
+- **STEP_DENIED（ステップ拒絶）**
+  軌道内のステップが拒絶された。
+  （軌道ゲートのみ）
 
 - **IMPLICIT_DENY（暗黙の拒絶）**
-  特定の理由が適用されない、または評価が進行できない場合のデフォルトのフォールバック。
+  特定の理由が適用されない場合のデフォルトのフォールバック。
+  （両方のゲートで使用される）
 
-これらの理由の種類は網羅的かつ相互排他的である。
+ゲートレベルの理由は **GovernanceTrace** および **TrajectoryGateTrace** の内部に表示される。
 
 ---
 
@@ -55,96 +89,50 @@ ID: reject.policy.monolith
 
 例：
 
-- `Canon.CTG.2.1` — 安全性
-- `Canon.CTG.2.3` — 可逆性
+- `Canon.CTG.3.2` — Ethosの拒否権
 - `Council.Logos.3` — 論理的整合性
-- `Gate.Decision.3.1` — 多数決規則
-- `Gate.Trajectory.5` — 停止条件
+- `Council.Pathos.4` — 文脈との整合性
+- `Gate.Decision.3.2` — 多数決規則
+- `Gate.Trajectory.3` — 短絡評価
 
 参照は正確かつ安定的でなければならない。
 
 ---
 
-## 4. 拒絶条件 (Reject Conditions)
+## 4. レイヤーの責務（関心の分離 / SoC）
 
-以下の条件のいずれかが満たされた場合、決定または軌道は拒絶されなければならない：
+本文書は拒絶条件を定義**しない**。
+それらは以下において定義される：
 
-### 4.1 安全性 (Safety)
-提案が危害のリスクをもたらすか、安全原則に違反している。
+- `council.logos.monolith.md`
+- `council.ethos.monolith.md`
+- `council.pathos.monolith.md`
+- `gate.decision.monolith.md`
+- `gate.trajectory.monolith.md`
 
-### 4.2 論理的失敗 (Logical Failure)
-推論が一貫していない、矛盾している、不完全である、または検証不可能である。
-
-### 4.3 文脈の不整合 (Contextual Misalignment)
-行動がユーザーの意図、境界、または感情的状態を尊重していない。
-
-### 4.4 不可逆性 (Irreversibility)
-明示的な正当化なしに行動が不可逆になる。
-
-### 4.5 情報の欠落または曖昧さ (Missing or Ambiguous Information)
-データ不足により、システムが提案を評価できない。
-
-### 4.6 不透明な推論 (Opaque Reasoning)
-推論が説明できない、または監査できない。
-
-### 4.7 Ethosの拒否権 (Ethos Veto)
-EthosがRejectを投じる → 即時のDeny。
-
-### 4.8 フェイルクローズ (Fail-Closed)
-システムが判定不能または安全でない状態に入る。
-
-### 4.9 デフォルト (Default)
-他の理由が適用されない場合、拒絶は **ImplicitDeny** として分類されなければならない。
+拒絶ポリシーは論理ではなく、**分類のみ**を定義する。
 
 ---
 
-## 5. 意思決定ゲートとの相互作用 (Interaction with Decision Gate)
+## 5. 決定論とリプレイ (Determinism and Replay)
 
-拒絶ポリシーは意思決定ゲートと以下のように統合される：
+RejectReasonKind は以下の性質を持たなければならない：
 
-- Ethos = Reject の場合 → RejectReasonKind = **ETHOS_VETO**
-- Approve < 2 の場合 → RejectReasonKind = **FAIL_CLOSED**
-- 評価が完了できない場合 → **FAIL_CLOSED**
-- 推論が失敗した場合 → **LOGICAL_INCONSISTENCY**
-- 文脈が不整合な場合 → **CONTEXT_MISALIGNMENT**
-- 特定の理由が適用されない場合 → **IMPLICIT_DENY**
+- 決定論的であること
+- レイヤーに特化していること
+- ガバナンス証跡のリプレイを通じて再現可能であること
+- 明示的に改訂されない限り、バージョン間で安定的であること
 
-意思決定ゲートは常に RejectReasonKind を生成しなければならない。
+同一の入力は、常に同一の理由コードを生成しなければならない。
 
 ---
 
-## 6. 軌道ゲートとの相互作用 (Interaction with Trajectory Gate)
+## 6. 改訂 (Amendments)
 
-軌道ゲートは、同じ RejectReasonKind タクソノミーを使用して Halt イベントを分類しなければならない。
+この分類体系は、Monolith-ROMの将来のバージョンにおいて拡張される可能性がある。
+拡張は以下を保持しなければならない：
 
-例：
-
-- 可逆性の喪失 → **IRREVERSIBLE_ACTION**
-- 安全性の低下 → **SAFETY_VIOLATION**
-- 文脈の逸脱 → **CONTEXT_MISALIGNMENT**
-- データの欠落 → **INSUFFICIENT_INFORMATION**
-- Ethosの拒否権 → **ETHOS_VETO**
-
-軌道の停止には常に理由が伴わなければならない。
-
----
-
-## 7. 決定論とリプレイ (Determinism and Replay)
-
-拒絶の分類は決定論的でなければならない：
-
-- 同一の入力 → 同一の RejectReasonKind
-- GovernanceTrace は以下を含まなければならない：
-  - 評議会の票
-  - 適用された規則
-  - RejectReasonKind
-  - CanonReference
-
-リプレイは同じ拒絶を再現しなければならない。
-
----
-
-## 8. 改訂 (Amendments)
-
-本文書は、Monolith-ROMの将来のバージョンにおいて改訂される可能性がある。
-改訂は、明示性、決定論、および監査可能性の原則を保持しなければならない。
+- 信頼できる唯一の情報源 (SSoT)
+- 関心の厳格な分離 (SoC)
+- 決定論的分類
+- 可能な限りの後方互換性

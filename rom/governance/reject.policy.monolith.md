@@ -1,51 +1,85 @@
 # Reject Policy Governance  
-Version: 0.1.1-rc1  
+Version: 0.1.1-rc2  
 ID: reject.policy.monolith  
 
-The Reject Policy defines the canonical rules for determining why a decision or trajectory is denied.  
-It ensures that all rejections are explicit, auditable, and aligned with the Canon.
+The Reject Policy defines the canonical taxonomy of rejection reasons used across the governance system.  
+It does not determine *when* a rejection occurs; that responsibility belongs to the councils and gates.  
+This document provides a unified classification (RejectReasonKind) for all layers.
 
 ---
 
 ## 1. Purpose
 
-The purpose of the Reject Policy is to provide a deterministic and transparent framework for classifying rejection outcomes.  
-It ensures that every Deny or Halt decision is accompanied by a clear reason, traceable to the Canon and the governance process.
+The purpose of the Reject Policy is to provide a single source of truth (SSoT) for rejection reason codes.  
+These codes are used by:
+
+- Councils (Logos, Ethos, Pathos) when casting Reject  
+- Decision Gate when computing Deny  
+- Trajectory Gate when computing Halt  
+
+This ensures consistent auditability and deterministic replay across the system.
 
 ---
 
-## 2. RejectReasonKind
+## 2. RejectReasonKind Taxonomy
 
-A rejection must be classified using one of the following canonical reason kinds:
+Reject reasons are grouped by the layer that issues them.
+
+---
+
+### 2.1 Council-Level Reasons  
+Issued **only** by councils when they cast a Reject vote.  
+These reasons reflect *semantic* evaluation of the proposal.
 
 - **SAFETY_VIOLATION**  
-  The proposal introduces risk of harm or violates safety principles.
+  The action introduces risk of harm or violates safety principles.  
+  (Issued by Ethos)
 
 - **LOGICAL_INCONSISTENCY**  
-  The reasoning contains contradictions, invalid inferences, or unverifiable claims.
+  The reasoning is contradictory, incomplete, or unverifiable.  
+  (Issued by Logos)
 
 - **CONTEXT_MISALIGNMENT**  
-  The proposal fails to align with the user’s intent, context, or emotional state.
+  The action violates user intent, emotional state, or contextual boundaries.  
+  (Issued by Pathos)
 
 - **IRREVERSIBLE_ACTION**  
-  The action cannot be reversed and lacks explicit justification.
+  The action cannot be undone and lacks justification.  
+  (Issued by Ethos)
 
 - **INSUFFICIENT_INFORMATION**  
-  Required information is missing, ambiguous, or indeterminate.
+  The proposal lacks required internal information.  
+  (Issued by Logos or Pathos)
 
 - **OPAQUE_REASONING**  
-  The reasoning is not explainable, traceable, or auditable.
+  The reasoning is not explainable or auditable.  
+  (Issued by Logos or Ethos)
+
+These reasons appear inside **CouncilDecisionTrace**.
+
+---
+
+### 2.2 Gate-Level Reasons  
+Issued **only** by gates (Decision Gate / Trajectory Gate).  
+These reasons reflect *structural* outcomes of the governance process.
 
 - **ETHOS_VETO**  
-  Ethos has cast a Reject vote, triggering absolute veto authority.
+  Ethos cast Reject, triggering absolute veto.  
+  (Decision Gate only)
 
 - **FAIL_CLOSED**  
-  The system has entered a fail-closed state due to evaluation failure or insufficient approvals.
+  Approve votes did not reach majority (Approve < 2).  
+  (Decision Gate only)
+
+- **STEP_DENIED**  
+  A step in the trajectory was denied.  
+  (Trajectory Gate only)
 
 - **IMPLICIT_DENY**  
-  Default fallback when no specific reason applies or evaluation cannot proceed.
+  Default fallback when no specific reason applies.  
+  (Used by both gates)
 
-These reason kinds are exhaustive and mutually exclusive.
+Gate-level reasons appear inside **GovernanceTrace** and **TrajectoryGateTrace**.
 
 ---
 
@@ -55,96 +89,50 @@ Every rejection must include a **CanonReference** pointing to the specific secti
 
 Examples:
 
-- `Canon.CTG.2.1` — Safety  
-- `Canon.CTG.2.3` — Reversibility  
+- `Canon.CTG.3.2` — Ethos veto  
 - `Council.Logos.3` — Logical consistency  
-- `Gate.Decision.3.1` — Majority rule  
-- `Gate.Trajectory.5` — Halt conditions  
+- `Council.Pathos.4` — Contextual alignment  
+- `Gate.Decision.3.2` — Majority rule  
+- `Gate.Trajectory.3` — Short-circuit evaluation  
 
 The reference must be precise and stable.
 
 ---
 
-## 4. Reject Conditions
+## 4. Layer Responsibilities (SoC)
 
-A decision or trajectory must be rejected when any of the following conditions are met:
+This document does **not** define rejection conditions.  
+Those are defined in:
 
-### 4.1 Safety  
-The proposal introduces risk of harm or violates safety principles.
+- `council.logos.monolith.md`  
+- `council.ethos.monolith.md`  
+- `council.pathos.monolith.md`  
+- `gate.decision.monolith.md`  
+- `gate.trajectory.monolith.md`
 
-### 4.2 Logical Failure  
-Reasoning is inconsistent, contradictory, incomplete, or unverifiable.
-
-### 4.3 Contextual Misalignment  
-The action fails to respect the user’s intent, boundaries, or emotional state.
-
-### 4.4 Irreversibility  
-The action becomes irreversible without explicit justification.
-
-### 4.5 Missing or Ambiguous Information  
-The system cannot evaluate the proposal due to insufficient data.
-
-### 4.6 Opaque Reasoning  
-The reasoning cannot be explained or audited.
-
-### 4.7 Ethos Veto  
-Ethos casts Reject → immediate Deny.
-
-### 4.8 Fail-Closed  
-The system enters an indeterminate or unsafe state.
-
-### 4.9 Default  
-If no other reason applies, the rejection must be classified as **ImplicitDeny**.
+Reject Policy defines **only the classification**, not the logic.
 
 ---
 
-## 5. Interaction with Decision Gate
+## 5. Determinism and Replay
 
-The Reject Policy integrates with the Decision Gate as follows:
+RejectReasonKind must be:
 
-- If Ethos = Reject → RejectReasonKind = **ETHOS_VETO**  
-- If Approve < 2 → RejectReasonKind = **FAIL_CLOSED**  
-- If evaluation cannot complete → **FAIL_CLOSED**  
-- If reasoning fails → **LOGICAL_INCONSISTENCY**  
-- If context misaligns → **CONTEXT_MISALIGNMENT**  
-- If no specific reason applies → **IMPLICIT_DENY**
+- Deterministic  
+- Layer-specific  
+- Reproducible through governance trace replay  
+- Stable across versions unless explicitly amended  
 
-The Decision Gate must always produce a RejectReasonKind.
+Identical inputs must always produce identical reason codes.
 
 ---
 
-## 6. Interaction with Trajectory Gate
+## 6. Amendments
 
-The Trajectory Gate must classify Halt events using the same RejectReasonKind taxonomy.
+This taxonomy may be extended in future versions of the Monolith-ROM.  
+Extensions must preserve:
 
-Examples:
-
-- Loss of reversibility → **IRREVERSIBLE_ACTION**  
-- Safety degradation → **SAFETY_VIOLATION**  
-- Context drift → **CONTEXT_MISALIGNMENT**  
-- Missing data → **INSUFFICIENT_INFORMATION**  
-- Ethos veto → **ETHOS_VETO**
-
-Trajectory halts must always be accompanied by a reason.
-
----
-
-## 7. Determinism and Replay
-
-Reject classification must be deterministic:
-
-- Identical inputs → identical RejectReasonKind  
-- GovernanceTrace must contain:
-  - Council votes  
-  - Applied rules  
-  - RejectReasonKind  
-  - CanonReference  
-
-Replay must reproduce the same rejection.
-
----
-
-## 8. Amendments
-
-This document may be revised in future versions of the Monolith-ROM.  
-Revisions must preserve the principles of explicitness, determinism, and auditability.
+- Single Source of Truth (SSoT)  
+- Strict separation of concerns (SoC)  
+- Deterministic classification  
+- Backward compatibility where possible
