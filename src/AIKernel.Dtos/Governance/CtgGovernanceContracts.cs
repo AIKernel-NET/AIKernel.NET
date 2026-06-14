@@ -227,17 +227,8 @@ public sealed record DecisionGateRequest
     /// <summary>EN: Gets the step identifier. JA: ステップ識別子を取得します。</summary>
     public string StepId { get; init; } = string.Empty;
 
-    /// <summary>EN: Gets the council decision. JA: 評議会決定を取得します。</summary>
-    public CouncilDecision CouncilDecision { get; init; } = new();
-
-    /// <summary>EN: Gets the logos gate input. JA: Logos ゲート入力を取得します。</summary>
-    public GateInput L { get; init; } = new();
-
-    /// <summary>EN: Gets the ethos gate input. JA: Ethos ゲート入力を取得します。</summary>
-    public GateInput E { get; init; } = new();
-
-    /// <summary>EN: Gets the pathos gate input. JA: Pathos ゲート入力を取得します。</summary>
-    public GateInput P { get; init; } = new();
+    /// <summary>EN: Gets the pure triadic vote-only gate input. JA: 純粋な三項 vote-only gate input を取得します。</summary>
+    public GateInput GateInput { get; init; } = new();
 
     /// <summary>EN: Gets canon references for the request. JA: 要求の正典参照を取得します。</summary>
     public IReadOnlyList<CanonReference> CanonReferences { get; init; } = [];

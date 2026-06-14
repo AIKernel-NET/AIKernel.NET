@@ -74,6 +74,19 @@ RomGovernanceEvaluationRequest
 各 DTO は carrier である。DTO は rule logic、derived behavior、side effect を
 持ってはならない。
 
+`DecisionGateRequest` は council evaluation carrier より意図的に狭い。
+これは 1 つの `GateInput` だけを運び、個別の `L` / `E` / `P` `GateInput`
+envelope や `CouncilDecision` payload は運ばない。`GateInput` は純粋な
+triadic vote-only carrier である。
+
+- `Logos`
+- `Ethos`
+- `Pathos`
+
+この 3 値は `CouncilVoteValue` で表現する。confidence、risk、source、
+metadata の observation は council trace または result diagnostics に属し、
+decision gate input には属さない。
+
 ---
 
 ## 4. Naming decision

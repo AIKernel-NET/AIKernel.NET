@@ -120,6 +120,8 @@ verify:
 - C# enum numeric values are not used directly as mathematical vote weights.
 - `CouncilVoteValue` values are mapped to the finite CTG table before aggregate
   evaluation.
+- `DecisionGateRequest` contains one vote-only `GateInput`, not per-council
+  `L` / `E` / `P` gate envelopes or a `CouncilDecision` payload.
 - The accepted or rejected result is represented by a result DTO.
 - Rejection carries `RejectReasonInfo`.
 - Canon evidence carries `IReadOnlyList<CanonReference>`.

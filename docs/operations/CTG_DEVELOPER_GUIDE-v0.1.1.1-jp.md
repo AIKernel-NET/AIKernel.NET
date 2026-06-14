@@ -116,6 +116,8 @@ AIKernel.NET の外で gate 関連 contract または implementation を review 
 - confidence または risk weighting が decision を変更していない。
 - C# enum numeric value を数学的 vote weight として直接使っていない。
 - `CouncilVoteValue` を aggregate evaluation 前に有限 CTG table へ map している。
+- `DecisionGateRequest` が 1 つの vote-only `GateInput` だけを持ち、per-council の
+  `L` / `E` / `P` gate envelope や `CouncilDecision` payload を持たない。
 - accept / reject result が result DTO で表現されている。
 - rejection が `RejectReasonInfo` を保持している。
 - canon evidence が `IReadOnlyList<CanonReference>` を保持している。
