@@ -3,6 +3,9 @@ using AIKernel.Vfs;
 
 namespace AIKernel.Abstractions.Tests;
 
+/// <summary>
+/// Defines a test helper type. JA: テスト用の型を定義します。
+/// </summary>
 public sealed class VfsCapabilityContractTests
 {
     [Fact]
@@ -24,6 +27,9 @@ public sealed class VfsCapabilityContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void ReadOnlySessionDoesNotExposeMutationCapabilities()
     {
         IReadableVfsSession session = new ReadOnlyVfsSession();
@@ -37,6 +43,9 @@ public sealed class VfsCapabilityContractTests
     {
         public string SessionId => "readonly";
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<IReadableVfsFile> ReadReadableFileAsync(string path)
         {
             return Task.FromResult<IReadableVfsFile>(new ReadableFile(path));
@@ -50,6 +59,9 @@ public sealed class VfsCapabilityContractTests
 
     private sealed class FullVfsSession : IVfsSession
     {
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public string SessionId => "full";
 
         public Task<IVfsFile> ReadFileAsync(string path)
@@ -62,6 +74,9 @@ public sealed class VfsCapabilityContractTests
             return Task.CompletedTask;
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<IVfsDirectory> GetDirectoryAsync(string path)
         {
             return Task.FromResult<IVfsDirectory>(new NavigableDirectory(path));
@@ -77,6 +92,9 @@ public sealed class VfsCapabilityContractTests
             return Task.CompletedTask;
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<IVfsQueryResult> QueryAsync(IVfsQuery query)
         {
             return Task.FromResult<IVfsQueryResult>(new EmptyQueryResult());
@@ -90,6 +108,9 @@ public sealed class VfsCapabilityContractTests
 
     private sealed class ReadableFile(string path) : IVfsFile
     {
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public string Name => System.IO.Path.GetFileName(path);
 
         public string Path => path;
@@ -105,6 +126,9 @@ public sealed class VfsCapabilityContractTests
             return Task.FromResult(Array.Empty<byte>());
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<string> ReadAsTextAsync()
         {
             return Task.FromResult(string.Empty);
@@ -118,6 +142,9 @@ public sealed class VfsCapabilityContractTests
 
     private sealed class NavigableDirectory(string path) : IVfsDirectory
     {
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public string Name => path == "/" ? string.Empty : System.IO.Path.GetFileName(path);
 
         public string Path => path;
@@ -134,6 +161,9 @@ public sealed class VfsCapabilityContractTests
             return Task.FromResult(directories);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<IReadOnlyList<VfsEntry>> GetEntriesAsync()
         {
             IReadOnlyList<VfsEntry> entries = [];
@@ -153,6 +183,9 @@ public sealed class VfsCapabilityContractTests
 
     private sealed class EmptyQueryResult : IVfsQueryResult
     {
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public bool IsSuccessful => true;
 
         public int RowCount => 0;

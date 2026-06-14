@@ -2,6 +2,7 @@ namespace AIKernel.Dtos.KernelContext;
 
 /// <summary>
 /// DataClassification の契約を定義します。
+/// JA: DataClassification の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.KernelContext.DataClassification']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.KernelContext.DataClassification']" />

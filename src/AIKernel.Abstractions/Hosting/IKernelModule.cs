@@ -2,6 +2,7 @@ namespace AIKernel.Abstractions.Hosting;
 
 /// <summary>
 /// UC-14 に基づく IKernelModule の契約を定義します。
+/// JA: IKernelModule の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Hosting.IKernelModule']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Hosting.IKernelModule']" />

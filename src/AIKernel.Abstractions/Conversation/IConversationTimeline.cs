@@ -2,6 +2,7 @@ namespace AIKernel.Abstractions.Conversation;
 
 /// <summary>
 /// UC-15/UC-16/UC-17/UC-18 に基づく IConversationTimeline の契約を定義します。
+/// JA: IConversationTimeline の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Conversation.IConversationTimeline']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Conversation.IConversationTimeline']" />

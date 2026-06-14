@@ -25,6 +25,9 @@ using AIKernel.Enums;
 
 namespace AIKernel.Abstractions.Tests;
 
+/// <summary>
+/// Defines a test helper type. JA: テスト用の型を定義します。
+/// </summary>
 public sealed class ExtractedInterfaceContractTests
 {
     [Fact]
@@ -63,6 +66,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void DslContractsAreOwnedByAbstractions()
     {
         Assert.True(typeof(IKernelPipeline).IsInterface);
@@ -81,6 +87,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void AdmissibilityAndSemanticIrVocabulariesAreSharedContracts()
     {
         Assert.True(typeof(ICriticalOperationGate).IsInterface);
@@ -158,6 +167,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void TrajectoryGovernanceDtosAreContractOnly()
     {
         var ellipsoid = new SemanticEllipsoidDescriptor(
@@ -206,6 +218,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void SemanticCompilationDtosAreContractOnly()
     {
         var state = new SemanticStateSnapshot(
@@ -284,6 +299,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void DynamicSlmContractsAreOwnedByAbstractions()
     {
         Assert.True(typeof(IDynamicSlmModelAbiProvider).IsInterface);
@@ -494,6 +512,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void SeedSlmDisciplineContractsAreOwnedByAbstractions()
     {
         var constraints = new SeedSlmStructuralConstraints(
@@ -671,6 +692,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void HatlContractsAreOwnedByAbstractions()
     {
         Assert.True(typeof(IHatlLedgerStore).IsInterface);
@@ -747,6 +771,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void HistoryRomContractsAreOwnedByAbstractions()
     {
         Assert.True(typeof(IHistoryRomRegistry).IsInterface);
@@ -763,6 +790,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void CapabilityModuleContractsSupportCliAndAssemblyBoundaries()
     {
         Assert.True(typeof(ICapabilityModuleRegistry).IsInterface);
@@ -821,6 +851,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void KernelClockContractUsesDtoTimestamp()
     {
         Assert.True(typeof(IKernelClock).IsInterface);
@@ -838,6 +871,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void ControlContractsAreOwnedByAbstractions()
     {
         Assert.True(typeof(IControlEngine).IsInterface);
@@ -879,6 +915,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void RoutingDecisionIsPureDtoContract()
     {
         var score = new RoutingScore(
@@ -908,6 +947,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void MemoryContractsAreOwnedByAbstractionsDtosAndEnums()
     {
         Assert.True(typeof(IMemoryRegion).IsInterface);
@@ -925,6 +967,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void ExtractedContractsDoNotIntroduceReverseDependencies()
     {
         var abstractionReferences = typeof(IKernelPipeline)
@@ -970,6 +1015,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void PublicInterfacesHaveUniqueSimpleNamesInsideAbstractions()
     {
         var duplicates = typeof(IKernelPipeline)
@@ -985,6 +1033,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void AbstractionsAndContractsExportInterfacesOnly()
     {
         var abstractionNonInterfaces = typeof(IKernelPipeline)
@@ -1018,6 +1069,9 @@ public sealed class ExtractedInterfaceContractTests
     ];
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void DtosDoNotOwnSharedEnums()
     {
         var dtoEnums = typeof(DslDocument)
@@ -1060,6 +1114,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void RemovedImplementationTypesAreNotExportedFromContractAssemblies()
     {
         var abstractionTypes = typeof(IKernelPipeline)
@@ -1088,6 +1145,9 @@ public sealed class ExtractedInterfaceContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void SharedInterfaceSurfaceDoesNotUseAmbiguousGenericNames()
     {
         var interfaces = typeof(IKernelPipeline)

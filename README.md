@@ -1,7 +1,7 @@
 ---
-updated: 2026-06-07
+updated: 2026-06-14
 published: 2026-06-10
-version: "0.1.1"
+version: "0.1.1.1"
 edition: "Release"
 status: "Release"
 issuer: ai-kernel@aikernel.net
@@ -288,6 +288,23 @@ For the latest structure and cross-links, use the category indexes:
 - `docs/operations/index.md` / `docs/operations/index-jp.md`
 - `docs/papers/README.md`
 - `docs/theory/README.md` / `docs/theory/README-jp.md`
+
+For the v0.1.1.1 additive contract surface, start with:
+
+- `docs/architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md`
+- `docs/architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md`
+- `docs/architecture/21.CTG_DEVELOPER_THEORY-v0.1.1.1.md`
+- `docs/design/CTG_CONTRACT_MODEL-v0.1.1.1.md`
+- `docs/operations/CTG_DEVELOPER_GUIDE-v0.1.1.1.md`
+- `docs/operations/CTG_ROM_LAYOUT-v0.1.1.1.md`
+- `docs/papers/12-canonical-trajectory-governance/README.md`
+- `docs/operations/INTERFACE_EXTENSION_NAMING-v0.1.1.1.md`
+- `docs/operations/ENUM_HANDLING_POLICY-v0.1.1.1.md`
+- `docs/operations/XML_DOCUMENTATION_POLICY-v0.1.1.1.md`
+
+The `0.1.1.1` package line is .NET / NuGet-only. Do not build or publish PyPI
+packages for `0.1.1.1`; Python wrappers remain on the synchronized `0.1.1`
+package line.
 
 ---
 

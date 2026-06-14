@@ -2,6 +2,7 @@ namespace AIKernel.Abstractions.Prompt;
 
 /// <summary>
 /// UC-11/UC-12/UC-13 に基づく IPromptVerifier の契約を定義します。
+/// JA: IPromptVerifier の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Prompt.IPromptVerifier']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Prompt.IPromptVerifier']" />

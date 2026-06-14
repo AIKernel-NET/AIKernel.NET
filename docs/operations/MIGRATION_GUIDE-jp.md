@@ -1,10 +1,10 @@
 ---
 title: "移行ガイド（Migration Guide）"
-updated: 2026-06-07
+updated: 2026-06-14
 published: 2026-05-16
-version: "0.1.0"
-edition: "Draft"
-status: "Refactor"
+version: "0.1.1.1"
+edition: "Release"
+status: "Active"
 issuer: ai-kernel@aikernel.net
 maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 ---
@@ -12,6 +12,71 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 # 移行ガイド（Migration Guide）
 
 本ガイドは、初期コンセプト版（v0.0.0）から、正典化されたアーキテクチャ（v0.0.1、v0.0.2、v0.0.3）、v0.0.4 の DSL / History ROM contract 抽出、および v0.0.5 の contract-surface purity cleanup、external Capability module contract、DynamicSLM Model ABI / SeedSLM discipline / distillation offload、HATL external cryptographic operator contract 準備、governance admissibility gate / trajectory vocabulary、Semantic Compilation DTO vocabulary へ移行するための手順を定義します。
+
+同期された `0.1.1` 公開リリースラインでは、NuGet と PyPI のパッケージファミリを同じバージョンで揃えてください。0.1.1 は Core、Control、Providers、Tools、WASM、CUDA、Demo の各サーフェスをまとめて公開するため、`0.1.0` と `0.1.1` が混在する依存グラフは、検証が終わるまで stale として扱います。
+
+`0.1.1.1` では GitHub release workflow は不要です。この更新は、すでに公開済みの
+public package line に対する additive contract expansion です。既存 `0.1.1`
+consumer は、新しい domain contract を opt-in で利用しない限りコード移行は不要です。
+`0.1.1.1` の package boundary は .NET / NuGet のみです。この line では
+PyPI package を build / publish せず、Python wrapper は同期済み `0.1.1`
+package line のまま維持します。
+
+CTG contract vocabulary は `0.1.1.1` package line の公開前に正規化されました。
+council vote carrier は `CouncilVote`、finite vote value は `CouncilVoteValue`、
+gate decision は discrete-only、`CanonReference` は正規化された pointer shape を使います。
+
+## 0. v0.1.1.1 Additive Contract Expansion
+
+`0.1.1.1` では、adapter、runtime control、process control、replay、
+observability、diagnostics、operator strategy、profiles、telemetry、
+metrics、HUD signal、overlay annotation、CTG governance carrier の
+semantic interface、DTO、enum を追加します。
+
+### 0.1 互換性
+
+- 既存 public method signature は変更しません。
+- 既存 public enum value は削除・rename しません。
+- 新規 interface は opt-in とし、機械的な expansion suffix ではなく semantic name を使います。
+- 新規 descriptor / snapshot DTO field は optional です。
+- 新規 domain enum は `Unknown = 0` を持ち、未知値は fail-closed に扱います。
+
+### 0.2 Consumer Action
+
+既存 consumer は現在の API 利用を維持できます。新しい surface が必要な consumer は、
+[`../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1-jp.md`](../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1-jp.md)
+に記載された semantic interface と DTO domain を opt-in で参照してください。
+CTG 固有の guidance は
+[`../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1-jp.md`](../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1-jp.md)、
+[`../architecture/21.CTG_DEVELOPER_THEORY-v0.1.1.1-jp.md`](../architecture/21.CTG_DEVELOPER_THEORY-v0.1.1.1-jp.md)、
+[`../design/CTG_CONTRACT_MODEL-v0.1.1.1-jp.md`](../design/CTG_CONTRACT_MODEL-v0.1.1.1-jp.md)、
+[`CTG_DEVELOPER_GUIDE-v0.1.1.1-jp.md`](CTG_DEVELOPER_GUIDE-v0.1.1.1-jp.md)
+も参照してください。固定された論文参照は
+[`../papers/12-canonical-trajectory-governance/README.md`](../papers/12-canonical-trajectory-governance/README.md)
+です。
+
+### 0.3 CTG DTO / Enum 正規化
+
+公開前の CTG draft contract を参照していた場合は、`0.1.1.1` package を利用する前に
+次の名前と値へ更新してください。
+
+| Draft shape | Published contract shape |
+|---|---|
+| DTO carrier としての `CouncilVoteValue` | `CouncilVote` |
+| `CouncilVoteKind` enum | `CouncilVoteValue` enum |
+| `GateDecisionKind.Accepted` / `Rejected` / `Vetoed` / `Inconclusive` | `GateDecisionKind.Allow` / `Deny` |
+| `TrajectoryGateDecisionKind.Accepted` / `Rejected` / `Vetoed` / `Inconclusive` | `TrajectoryGateDecisionKind.Continue` / `Halt` |
+| `RejectReasonKind` の operational draft name | `SafetyViolation`、`EthosVeto`、`FailClosed`、`ImplicitDeny` などの PascalCase canonical taxonomy |
+| metadata を含む `CanonReference` | `CanonId`、`Path`、`Section`、`Anchor`、`ContentHash` の正規化 pointer |
+
+これらの補正は canon、council、gate、reject-policy の意味を変更しません。
+DTO、enum、serialization shape を公開前に揃えるためのものです。
+
+local development package version は次を使います。
+
+```text
+0.1.1-dev<build-number>
+```
 
 ## 1. 根本的な変更点
 v0.0.1 では、`決定論（Determinism）` と `非推論型ガバナンス` を軸に、全体設計が再編されました。
@@ -844,3 +909,4 @@ registration 経由で取得してください。
 - v0.0.4 (2026-06-04): AIKernel.Core adapter 移行に向け、DSL pipeline、DSL ROM、History ROM、Kernel clock contract 抽出、ROM store contract、曖昧な interface 改名ガイド、AIKernel.Vfs package 削除手順、interface-only contract package 移行手順を追加
 - v0.0.5 (2026-06-05): Abstractions-local DTO/例外実装、DTO enum 重複、旧 ChatChain 曖昧 interface を削除し、external Capability module contract、DynamicSLM Model ABI / SeedSLM discipline / distillation offload / HATL external cryptographic operator / governance admissibility gate・trajectory / Semantic Compilation DTO vocabulary contract 準備を追加
 - v0.1.0 (2026-06-07): MemoryRegion / MemoryMapper、Control Plane、provider-routing DTO contract ownership を AIKernel.Abstractions、AIKernel.Dtos、AIKernel.Enums に追加し、Result-based runtime adapter と routing behavior は Core/Common に残す。
+- v0.1.1 (2026-06-10): Core、Control、Providers、Tools、WASM、CUDA、Demo の同期リリースラインに合わせ、パッケージファミリを 0.1.1 で揃える運用ルールを追加

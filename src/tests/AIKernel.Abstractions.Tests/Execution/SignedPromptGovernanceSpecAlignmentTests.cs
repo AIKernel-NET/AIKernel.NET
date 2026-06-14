@@ -11,6 +11,7 @@ namespace AIKernel.Abstractions.Tests.Execution;
 
 /// <summary>
 /// SignedPromptGovernanceSpecAlignmentTests の契約を定義します。
+/// Defines the SignedPromptGovernanceSpecAlignmentTests contract. JA: SignedPromptGovernanceSpecAlignmentTests の公開契約を定義します。
 /// </summary>
 public sealed class SignedPromptGovernanceSpecAlignmentTests
 {
@@ -49,6 +50,9 @@ public sealed class SignedPromptGovernanceSpecAlignmentTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public async Task SGS_UseCase_Verify_Then_Validate_Then_Allow()
     {
         // SGS-001/002/003/004/007:
@@ -68,6 +72,9 @@ public sealed class SignedPromptGovernanceSpecAlignmentTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public async Task SGS_F001_F005_Indeterminate_Is_Deny()
     {
         // SGS-F001: Indeterminate は Deny 扱い
@@ -108,6 +115,9 @@ public sealed class SignedPromptGovernanceSpecAlignmentTests
 
     private sealed class StubPromptVerifier(FailClosedDecision decision) : IPromptVerifier
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<PromptVerificationResult> VerifyAsync(SignedPromptArtifactDto artifact, CancellationToken ct = default)
         {
             _ = artifact;
@@ -129,6 +139,9 @@ public sealed class SignedPromptGovernanceSpecAlignmentTests
 
     private sealed class StubExecutionConstraints : IExecutionConstraints
     {
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public int ContextCardinality => 1;
         public IReadOnlyList<string> AllowedTools => ToolA;
         public IReadOnlyList<string> Scopes => ScopeRead;
@@ -141,6 +154,9 @@ public sealed class SignedPromptGovernanceSpecAlignmentTests
         public float ComputeThroughputTflops => 1;
         public int BatchSize => 1;
         public int SequenceLength => 128;
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public int PhysicalCardinality => 1;
         public string? GetContextValue(string key) => null;
         public IReadOnlyDictionary<string, string> GetAllContextValues() => new Dictionary<string, string>();
@@ -156,6 +172,9 @@ public sealed class SignedPromptGovernanceSpecAlignmentTests
 
     private sealed class DeterministicDenyPolicy : IPolicy
     {
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public string GetId() => "policy.deny.execute";
         public string GetName() => "Deny Execute";
         public bool IsApplicable(AccessRequest request) => string.Equals(request.Action, "execute", StringComparison.Ordinal);
@@ -178,6 +197,9 @@ public sealed class SignedPromptGovernanceSpecAlignmentTests
             return Task.FromResult(policy.Evaluate(request));
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public void AddPolicy(IPolicy policy) { }
         public bool RemovePolicy(string policyId)
         {
@@ -199,6 +221,9 @@ public sealed class SignedPromptGovernanceSpecAlignmentTests
 
     private sealed class StubGuard : IGuard
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<bool> CanExecuteAsync(SecurityPrincipal principal, string action, string resource)
         {
             _ = principal;
@@ -214,6 +239,9 @@ public sealed class SignedPromptGovernanceSpecAlignmentTests
             return Task.FromResult(false);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<bool> CanReadAsync(SecurityPrincipal principal, string resource)
         {
             _ = principal;
@@ -228,6 +256,9 @@ public sealed class SignedPromptGovernanceSpecAlignmentTests
             return Task.FromResult(false);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<GuardAction> EnforceAsync(SecurityPrincipal principal, string action, string resource)
         {
             _ = principal;
@@ -244,6 +275,5 @@ public sealed class SignedPromptGovernanceSpecAlignmentTests
         }
     }
 }
-
 
 

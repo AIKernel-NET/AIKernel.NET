@@ -2,6 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// Required mitigation attached before a critical operation may execute.
+/// JA: CriticalOperationRequirement の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Enums.CriticalOperationRequirement']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Enums.CriticalOperationRequirement']" />

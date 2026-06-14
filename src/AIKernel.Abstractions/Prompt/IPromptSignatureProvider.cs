@@ -2,6 +2,7 @@ namespace AIKernel.Abstractions.Prompt;
 
 /// <summary>
 /// UC-11/UC-12/UC-13 に基づく IPromptSignatureProvider の契約を定義します。
+/// JA: IPromptSignatureProvider の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Prompt.IPromptSignatureProvider']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Prompt.IPromptSignatureProvider']" />

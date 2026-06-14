@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+title: "AIKernel Canonical Trajectory Governance (CTG): A Three-Council Gateway for Deterministic AI Personality OS Architecture"
+message: "If you use this work, please cite it using the metadata from this file."
+type: article
+authors:
+  - family-names: Sogawa
+    given-names: Takuya
+    orcid: "https://orcid.org/0009-0009-7499-2595"
+    affiliation: "AIKernel Project"
+doi: "10.5281/zenodo.20681895"
+version: "v0.1.0"
+date-released: "2026-06-14"
+license: "CC-BY-4.0"
+keywords:
+  - AIKernel
+  - Canonical Trajectory Governance
+  - CTG
+  - Three-Council Gateway
+  - Logos
+  - Ethos
+  - Pathos
+  - Fail-Closed Governance
+  - Deterministic AI OS
+  - CTG-ROM
+  - Persona Portability
+  - ReplayLog
+  - GovernanceTrace
+  - Prime-Phase Model
+  - PPM
+  - HATL
+abstract: >-
+  This technical note introduces Canonical Trajectory Governance (CTG), an AIKernel governance theory for admitting stochastic LLM-generated candidate actions into deterministic operating-system control. CTG evaluates each action through Logos, Ethos, and Pathos councils, gives Ethos canonical veto authority, and defines trajectory validity as the product of step-level gates. The paper also clarifies that the earlier AIKernel.RH prime-phase line should be referred to as the AIKernel Prime-Phase Model (PPM), not as a formal SH theory name.

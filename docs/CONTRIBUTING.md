@@ -4,9 +4,9 @@ title: "AIKernel Contributing Guide"
 scope:
   - repo: AIKernel.NET
 createdAt: 2026-04-28T00:00:00Z
-updated: 2026-05-16
+updated: 2026-06-14
 published: 2026-05-16
-version: "0.0.2"
+version: "0.1.1.1"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -61,7 +61,9 @@ CI runs build and tests to ensure baseline quality.
 - Large changes should be split into smaller PRs.
 
 ### 5. XML documentation
-- Public APIs must include XML docs (`/// <summary>`, parameter descriptions, remarks).
+- Public APIs must include bilingual XML docs (`/// <summary>`, parameter descriptions, type parameter descriptions, and return descriptions).
+- Inline XML docs use English followed by `JA:` Japanese text. Existing external docs must use paired `docs.en.xml` and `docs.ja.xml` includes.
+- Follow [`operations/XML_DOCUMENTATION_POLICY-v0.1.1.1.md`](operations/XML_DOCUMENTATION_POLICY-v0.1.1.1.md).
 - Keep docs up to date and reflect in `docs/` and README.
 
 ### 6. Mark breaking changes
@@ -69,11 +71,16 @@ CI runs build and tests to ensure baseline quality.
 - Example: `[Breaking] Modify RetrievalQuery structure`
 - Create an Issue to explain the breaking change and migration plan.
 
-### 7. APM and package management
+### 7. CTG contract changes
+- CTG changes must remain contract-only: interfaces, DTO records, and enums.
+- Follow [`operations/CTG_DEVELOPER_GUIDE-v0.1.1.1.md`](operations/CTG_DEVELOPER_GUIDE-v0.1.1.1.md).
+- Do not add canon rule bodies or runtime behavior to AIKernel.NET.
+
+### 8. APM and package management
 - AIKernel.NET uses an APM (Agent Package Manager) for skills, prompts, agents, hooks, MCP servers.
 - Add new artifacts via Issue and follow repository packaging conventions.
 
-### 8. Link Issues and PRs
+### 9. Link Issues and PRs
 - Link PRs to the related Issue when applicable.
 - Avoid closing Issues without explicit resolution.
 
@@ -109,6 +116,10 @@ CI runs build and tests to ensure baseline quality.
 - Create Issues for contract/interface/DTO changes
 - Mark breaking changes with `[Breaking]`
 - Provide XML docs for public APIs
+- Confirm bilingual XML documentation for public APIs
+- Confirm semantic interface naming and avoid mechanical expansion suffixes
+- Confirm enum `Unknown = 0` and fail-closed handling guidance when adding enums
+- Confirm CTG changes follow `operations/CTG_DEVELOPER_GUIDE-v0.1.1.1.md` when applicable
 - Confirm compliance with `guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES.md`
   or `guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES-jp.md`
 - Ensure CI passes
@@ -137,3 +148,4 @@ AIKernel targets **.NET 10 / C# 14** and aims to be a production-grade contract-
 # Changelog
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
+- v0.1.1.1 (2026-06-14): Added bilingual XML documentation, semantic interface naming, enum handling policy, and CTG developer guide references

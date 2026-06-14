@@ -1,9 +1,15 @@
 <Project>
   <PropertyGroup>
-    <Version>0.1.1</Version>
-    <AssemblyVersion>0.1.1</AssemblyVersion>
-    <FileVersion>0.1.1</FileVersion>
-    <InformationalVersion>0.1.1</InformationalVersion>
+    <StablePackageVersion>0.1.1.1</StablePackageVersion>
+    <LocalPackageVersionPrefix>0.1.1</LocalPackageVersionPrefix>
+    <LocalPackageBuildNumber Condition="'$(LocalPackageBuildNumber)' == ''">0</LocalPackageBuildNumber>
+    <UseLocalPackageVersion Condition="'$(UseLocalPackageVersion)' == ''">false</UseLocalPackageVersion>
+    <PackageVersion Condition="'$(UseLocalPackageVersion)' == 'true'">$(LocalPackageVersionPrefix)-dev$(LocalPackageBuildNumber)</PackageVersion>
+    <PackageVersion Condition="'$(UseLocalPackageVersion)' != 'true'">$(StablePackageVersion)</PackageVersion>
+    <Version>$(PackageVersion)</Version>
+    <AssemblyVersion>$(StablePackageVersion)</AssemblyVersion>
+    <FileVersion>$(StablePackageVersion)</FileVersion>
+    <InformationalVersion>$(PackageVersion)</InformationalVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
 	<Authors>Takuya Sogawa</Authors>
 	<Company>AIKernel-NET</Company>
@@ -14,6 +20,24 @@
     <PackageTags>aikernel;aikernel-core;ai-os;architecture;category-separation;context-isolation;contract-driven;governance;admissibility;preprocessing;semantic-context-os;semantic-compilation;deterministic-replay;fail-closed;rom;canonicalization;pdp;signed-prompt;interface-contracts;dto;enum;capability-modules;dynamicslm;seedslm;hatl</PackageTags>
 	  <PackageReleaseNotes>
 		  <![CDATA[
+AIKernel.NET v0.1.1.1 — Interface Extension Update
+
+• Prepares the AIKernel.NET contract packages for package-level interface extension updates.
+• Keeps the v0.1.1 public contract baseline backward-compatible.
+• Uses package-public updates only; no GitHub release is required for this line.
+• Keeps AIKernel.Abstractions and AIKernel.Contracts interface-only.
+• Keeps DTO ownership in AIKernel.Dtos and enum ownership in AIKernel.Enums.
+• Supports local development package versions as 0.1.1-dev{buildNumber}.
+
+AIKernel.NET v0.1.1.1 — Interface Extension Update
+
+• AIKernel.NET contract package を package-level の interface 拡張更新向けに準備。
+• v0.1.1 の公開 contract baseline との後方互換性を維持。
+• GitHub release は作成せず、公開済み個別 package の更新として扱う。
+• AIKernel.Abstractions / AIKernel.Contracts は interface-only を維持。
+• DTO は AIKernel.Dtos、enum は AIKernel.Enums が所有。
+• ローカル開発 package version は 0.1.1-dev{buildNumber} を使用。
+
 AIKernel.NET v0.1.1 — First Stable Contract Baseline
 
 • Promotes the AIKernel.NET contract packages to the first 0.1.1 baseline.

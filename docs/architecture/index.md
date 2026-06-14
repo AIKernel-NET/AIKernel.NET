@@ -1,7 +1,7 @@
 ---
-updated: 2026-06-07
+updated: 2026-06-14
 published: 2026-05-16
-version: "0.1.0"
+version: "0.1.1.1"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -187,6 +187,7 @@ The contracts cover Model ABI descriptors, capability subgraph resolution, linea
 ## [1.20 Paper Implementation Status](./PAPER_IMPLEMENTATION_STATUS.md)
 
 Maps each DOI-backed paper to the current AIKernel.NET contract surface and identifies which runtime behavior belongs to Core, Provider, RH, Tools, or future HATL work.
+This includes Paper 12, Canonical Trajectory Governance, and its v0.1.1.1 contract mapping.
 
 ---
 
@@ -204,6 +205,42 @@ v0.1.0 moves the OS-independent `IMemoryRegion` / `IMemoryMapper`
 contract surface into AIKernel.NET. The shared DTO/enum vocabulary lives in
 `AIKernel.Dtos.Memory` and `AIKernel.Enums`, while Result-based adapters and
 Win32/POSIX implementations remain in AIKernel.Core / AIKernel.Kernel.
+
+---
+
+## [1.23 Domain Contract Surface v0.1.1.1](./19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md)
+
+v0.1.1.1 adds semantic contract surfaces for adapters, runtime control,
+process control, replay, observability, diagnostics, operator strategy,
+profiles, telemetry, metrics, HUD signals, and overlay annotation.
+
+The surface is additive: existing v0.1.1 public signatures remain stable, new
+interfaces are opt-in, DTO additions are optional, and enum handling follows the
+fail-closed `Unknown = 0` policy.
+
+---
+
+## [1.24 Canonical Trajectory Governance](./20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md)
+
+v0.1.1.1 adds the CTG contract vocabulary for triadic council evaluation,
+deterministic step gates, trajectory gates, ROM-backed governance requests, and
+replayable governance traces.
+
+This document maps the Zenodo-published CTG paper to developer architecture
+without embedding canon rule text or runtime implementation in AIKernel.NET.
+The Monolith CTG-ROM is documented as the base canon layer for personalized
+developer diff layers under runtime VFS merge.
+
+---
+
+## [1.25 CTG Developer Theory](./21.CTG_DEVELOPER_THEORY-v0.1.1.1.md)
+
+Explains CTG theory in developer terms: three councils, finite vote values,
+discrete step and trajectory gates, rejection taxonomy, canon references, and
+deterministic replay boundaries.
+
+Use this document when reviewing whether CTG DTOs, enums, and runtime-package
+implementations preserve the paper invariants without inventing canon rules.
 
 ---
 
@@ -284,6 +321,9 @@ Read the architecture documents in this order. Each item points downward into th
 - [DynamicSLM Interface Contracts](./interfaces/dynamicslm/index.md)
 - [Governance Interfaces](./interfaces/governance/index.md)
 - [Memory Interfaces](./interfaces/memory/index.md)
+- [Domain Contract Surface v0.1.1.1](./19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md)
+- [Canonical Trajectory Governance](./20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md)
+- [CTG Developer Theory](./21.CTG_DEVELOPER_THEORY-v0.1.1.1.md)
 - [Paper Implementation Status](./PAPER_IMPLEMENTATION_STATUS.md)
 
 ---
@@ -309,3 +349,4 @@ This index is the entry point to understanding AIKernel's overall design.
 - v0.0.5 (2026-06-05): Added Semantic Compilation DTO vocabulary navigation
 - v0.0.5 (2026-06-05): Added external Capability module contract navigation
 - v0.1.0 (2026-06-07): Added MemoryRegion / MemoryMapper contract extraction navigation
+- v0.1.1.1 (2026-06-14): Added domain contract surface, Canonical Trajectory Governance, CTG Developer Theory, and Monolith CTG-ROM layout navigation

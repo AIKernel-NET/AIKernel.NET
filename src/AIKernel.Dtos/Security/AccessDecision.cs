@@ -2,6 +2,7 @@ namespace AIKernel.Dtos.Security;
 
 /// <summary>
 /// AccessDecision の契約を定義します。
+/// JA: AccessDecision の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Security.AccessDecision']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Security.AccessDecision']" />

@@ -2,6 +2,7 @@ namespace AIKernel.Dtos.Vfs;
 
 /// <summary>
 /// VfsProviderHealth の契約を定義します。
+/// JA: VfsProviderHealth の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Vfs.VfsProviderHealth']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Vfs.VfsProviderHealth']" />

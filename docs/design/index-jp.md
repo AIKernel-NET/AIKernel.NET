@@ -1,7 +1,7 @@
 ---
-updated: 2026-05-16
+updated: 2026-06-14
 published: 2026-05-16
-version: "0.0.2"
+version: "0.1.1.1"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -24,6 +24,7 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 - `docs/specs/01.EXECUTION_PIPELINE_SPEC-jp.md`
 - `docs/specs/02.SIGNED_PROMPT_GOVERNANCE_SPEC-jp.md`
 - `docs/specs/03.ROM_CORE_SPEC-jp.md`
+- `docs/architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1-jp.md`
 
 ## 4. ドキュメント一覧
 - [DESIGN_INTENT-jp.md](DESIGN_INTENT-jp.md)
@@ -32,9 +33,11 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 - [EXTENSION_POINTS-jp.md](EXTENSION_POINTS-jp.md)
 - [CONTRACT_VERSIONING-jp.md](CONTRACT_VERSIONING-jp.md)
 - [SEMANTIC_SNAPSHOT_FORMAT-jp.md](SEMANTIC_SNAPSHOT_FORMAT-jp.md)
+- [CTG_CONTRACT_MODEL-v0.1.1.1-jp.md](CTG_CONTRACT_MODEL-v0.1.1.1-jp.md)
 
 ---
 
 # 変更履歴
 - v0.0.0 / v0.0.0.0: 初期ドラフト
 - v0.0.1 (2026-05-06): AIOS理論との対応付けを追加
+- v0.1.1.1 (2026-06-14): CTG contract model guide を追加

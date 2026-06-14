@@ -4,6 +4,9 @@ using AIKernel.Dtos.Tokenization;
 
 namespace AIKernel.Abstractions.Tests;
 
+/// <summary>
+/// Defines a test helper type. JA: テスト用の型を定義します。
+/// </summary>
 public sealed class TokenizerCapabilityContractTests
 {
     [Fact]
@@ -22,6 +25,9 @@ public sealed class TokenizerCapabilityContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void TokenCounterDoesNotExposeTokenizeOrDecodeCapabilities()
     {
         ITokenCounter counter = new CountOnlyTokenizer();
@@ -41,6 +47,9 @@ public sealed class TokenizerCapabilityContractTests
 
     private sealed class FullTokenizer : ITokenizer
     {
+        /// <summary>
+        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// </summary>
         public string TokenizerProfileId => "profile";
 
         public string Name => "Tokenizer";
@@ -55,6 +64,9 @@ public sealed class TokenizerCapabilityContractTests
             return 0;
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public string Decode(IReadOnlyList<Token> tokens)
         {
             return string.Empty;
@@ -70,6 +82,9 @@ public sealed class TokenizerCapabilityContractTests
             return false;
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public int GetPhysicalCardinality(int logicalTokenCount, string deviceType)
         {
             return logicalTokenCount;

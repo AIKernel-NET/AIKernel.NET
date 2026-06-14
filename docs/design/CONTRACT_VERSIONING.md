@@ -2,9 +2,9 @@
 id: contract-versioning
 title: "CONTRACT_VERSIONING — Contract (Interface/DTO/Enum) Versioning Policy"
 created: 2026-05-01
-updated: 2026-06-08
+updated: 2026-06-14
 published: 2026-05-16
-version: "0.1.0"
+version: "0.1.1.1"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -49,6 +49,7 @@ During review, set contract/document versions to 0.0.0 to indicate instability a
 ## 3. Definition of Breaking Changes
 Treat the following as breaking:
 - Removal or signature change of interface methods/properties
+- Adding members to an existing public interface
 - Deletion or semantic change of DTO/Enum values that breaks compatibility
 - Adding required fields to schemas
 
@@ -61,11 +62,14 @@ Principle:
 Generally considered non-breaking:
 - Adding optional fields to DTOs
 - Adding enum values (without changing existing meanings)
-- Adding interface members in ways that do not break existing implementations
+- Adding new semantic interfaces next to existing APIs
 - Moving public contract ownership between packages when namespace, type identity compatibility, and migration guidance are preserved through type forwarding
 
 Note:
+- Existing public interfaces must not be changed directly for additive features. Use opt-in semantic interfaces and document inheritance/composition in operations docs.
 - Adding interfaces can affect implementers; always document compatibility impact.
+- New domain enums must use `Unknown = 0` and follow fail-closed handling for unknown values.
+- Public contract XML documentation must be bilingual using inline `JA:` text or paired `docs.en.xml` / `docs.ja.xml` includes.
 - Compatibility facades must clearly state the new owning package and the unsupported dependency direction. The temporary `AIKernel.Vfs` facade from v0.0.3 was removed in v0.0.4; consumers now reference `AIKernel.Abstractions` directly.
 - Breaking interface renames, such as the v0.0.4 `IKernelContextExecutor` / `IChatTurnVerificationResult` / `IChatTurnSemanticHasher` cleanup, must be listed in the migration guide before package publication.
 - Contract-surface purity cleanup, such as v0.0.5 removal of DTOs, enums, and exception implementations from contract packages, is a breaking change and must include explicit type replacement tables.
@@ -102,6 +106,9 @@ For each release, publish:
 - `EXTENSION_POINTS.md`
 - `../architecture/index.md`
 - `../guidelines/DOCUMENTATION_GUIDELINES.md`
+- `../operations/INTERFACE_EXTENSION_NAMING-v0.1.1.1.md`
+- `../operations/ENUM_HANDLING_POLICY-v0.1.1.1.md`
+- `../operations/XML_DOCUMENTATION_POLICY-v0.1.1.1.md`
 ---
 
 # Changelog
@@ -111,3 +118,4 @@ For each release, publish:
 - v0.0.4 (2026-06-04): Added explicit guidance for ambiguous-interface renames and contract extraction releases
 - v0.0.5 (2026-06-05): Added contract-surface purity cleanup guidance for interface-only packages
 - v0.1.0 (2026-06-08): Marked the prototype validation contract ABI baseline for MemoryRegion, Control, routing, DynamicSLM, HATL, and Capability contracts
+- v0.1.1.1 (2026-06-14): Added additive semantic-interface, fail-closed enum, and bilingual XML documentation compatibility rules

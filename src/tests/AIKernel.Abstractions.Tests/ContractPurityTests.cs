@@ -2,6 +2,9 @@ using AIKernel.Contracts;
 
 namespace AIKernel.Abstractions.Tests;
 
+/// <summary>
+/// Defines a test helper type. JA: テスト用の型を定義します。
+/// </summary>
 public sealed class ContractPurityTests
 {
     [Fact]
@@ -19,6 +22,9 @@ public sealed class ContractPurityTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void ContextContractsDoNotOwnValidationOrAnalysisProcessing()
     {
         var unifiedMethodNames = typeof(IUnifiedContextContract).GetMethods().Select(method => method.Name).ToArray();
@@ -36,6 +42,9 @@ public sealed class ContractPurityTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void MaterialTransformationsAreExternalizedAsServices()
     {
         Assert.True(typeof(IMaterialNormalizer).IsInterface);

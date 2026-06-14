@@ -3,6 +3,7 @@ namespace AIKernel.Abstractions.Events;
 /// <summary>
 /// UC-20/UC-24/UC-25 に基づく契約です。
 /// イベントを発行する capability interface です。
+/// JA: IEventPublisher の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IEventPublisher']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IEventPublisher']" />
@@ -10,16 +11,18 @@ public interface IEventPublisher
 {
     /// <summary>
     /// イベントを発行します。
+    /// JA: PublishAsync 操作を実行します。
     /// </summary>
-    /// <param name="eventName">イベント名</param>
-    /// <param name="eventData">イベントデータ</param>
-    /// <param name="cancellationToken">キャンセルトークン</param>
+    /// <param name="eventName">イベント名 JA: eventName パラメーターです。</param>
+    /// <param name="eventData">イベントデータ JA: eventData パラメーターです。</param>
+    /// <param name="cancellationToken">キャンセルトークン JA: キャンセル通知を監視するトークンです。</param>
     Task PublishAsync(string eventName, object eventData, CancellationToken cancellationToken = default);
 }
 
 /// <summary>
 /// UC-20/UC-24/UC-25 に基づく契約です。
 /// すべての購読者へイベントを配信する capability interface です。
+/// JA: IEventBroadcaster の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IEventBroadcaster']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IEventBroadcaster']" />
@@ -27,16 +30,18 @@ public interface IEventBroadcaster
 {
     /// <summary>
     /// すべての購読者にイベントを配信します。
+    /// JA: BroadcastAsync 操作を実行します。
     /// </summary>
-    /// <param name="eventName">イベント名</param>
-    /// <param name="eventData">イベントデータ</param>
-    /// <param name="cancellationToken">キャンセルトークン</param>
+    /// <param name="eventName">イベント名 JA: eventName パラメーターです。</param>
+    /// <param name="eventData">イベントデータ JA: eventData パラメーターです。</param>
+    /// <param name="cancellationToken">キャンセルトークン JA: キャンセル通知を監視するトークンです。</param>
     Task BroadcastAsync(string eventName, object eventData, CancellationToken cancellationToken = default);
 }
 
 /// <summary>
 /// UC-20/UC-24/UC-25 に基づく契約です。
 /// イベント購読を管理する capability interface です。
+/// JA: IEventSubscriptionRegistry の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IEventSubscriptionRegistry']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IEventSubscriptionRegistry']" />
@@ -44,25 +49,28 @@ public interface IEventSubscriptionRegistry
 {
     /// <summary>
     /// イベントに購読します。
+    /// JA: Unsubscribe 操作を実行します。
     /// </summary>
-    /// <typeparam name="T">イベントデータの型</typeparam>
-    /// <param name="eventName">イベント名</param>
-    /// <param name="handler">イベントハンドラー</param>
-    /// <returns>購読ID（購読解除時に使用）</returns>
+    /// <typeparam name="T">イベントデータの型 JA: T 型パラメーターです。</typeparam>
+    /// <param name="eventName">イベント名 JA: eventName パラメーターです。</param>
+    /// <param name="handler">イベントハンドラー JA: handler パラメーターです。</param>
+    /// <returns>購読ID（購読解除時に使用） JA: 結果を返します。</returns>
     string Subscribe<T>(string eventName, Func<T, Task> handler);
 
     /// <summary>
     /// イベント購読を解除します。
+    /// JA: Unsubscribe 操作を実行します。
     /// </summary>
-    /// <param name="subscriptionId">購読ID</param>
-    /// <returns>解除成功の可否</returns>
+    /// <param name="subscriptionId">購読ID JA: subscriptionId パラメーターです。</param>
+    /// <returns>解除成功の可否 JA: 結果を返します。</returns>
     bool Unsubscribe(string subscriptionId);
 
     /// <summary>
     /// 指定されたイベント名の購読者数を取得します。
+    /// JA: GetSubscriberCount 操作を実行します。
     /// </summary>
-    /// <param name="eventName">イベント名</param>
-    /// <returns>購読者数</returns>
+    /// <param name="eventName">イベント名 JA: eventName パラメーターです。</param>
+    /// <returns>購読者数 JA: 結果を返します。</returns>
     int GetSubscriberCount(string eventName);
 }
 
@@ -70,6 +78,7 @@ public interface IEventSubscriptionRegistry
 /// UC-20/UC-24/UC-25 に基づく契約です。
 /// イベントバスプロバイダーを定義する互換合成インターフェースです。
 /// アプリケーション全体のイベント配信と購読を管理します。
+/// JA: IEventBus の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IEventBus']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IEventBus']" />

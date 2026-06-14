@@ -13,6 +13,7 @@ namespace AIKernel.Abstractions.Rom;
 ///
 /// 抽象層では「値を持つ ROM 識別子である」という最小契約だけを扱い、
 /// 実際の record / class / struct の選択は実装側へ委ねます。
+/// JA: IRomId の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomId']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomId']" />

@@ -2,6 +2,9 @@ using AIKernel.Abstractions.Governance;
 
 namespace AIKernel.Abstractions.Tests;
 
+/// <summary>
+/// Defines a test helper type. JA: テスト用の型を定義します。
+/// </summary>
 public sealed class SignatureTrustStoreCapabilityContractTests
 {
     [Fact]
@@ -18,6 +21,9 @@ public sealed class SignatureTrustStoreCapabilityContractTests
     }
 
     [Fact]
+    /// <summary>
+    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// </summary>
     public void TrustStoreHealthProbeDoesNotExposeTrustResolutionCapabilities()
     {
         ITrustStoreHealthProbe healthProbe = new HealthOnlyTrustStoreProbe();
@@ -37,6 +43,9 @@ public sealed class SignatureTrustStoreCapabilityContractTests
 
     private sealed class FullSignatureTrustStore : ISignatureTrustStore
     {
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<double> ResolveTrustScoreAsync(string signerId, CancellationToken cancellationToken = default)
         {
             return Task.FromResult(1.0);
@@ -52,6 +61,9 @@ public sealed class SignatureTrustStoreCapabilityContractTests
             return Task.FromResult<DateTime?>(DateTime.UnixEpoch);
         }
 
+        /// <summary>
+        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// </summary>
         public Task<bool> VerifyCertificateChainAsync(string signerId, CancellationToken cancellationToken = default)
         {
             return Task.FromResult(true);

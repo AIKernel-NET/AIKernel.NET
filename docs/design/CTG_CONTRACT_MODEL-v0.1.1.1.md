@@ -1,0 +1,288 @@
+---
+updated: 2026-06-14
+published: 2026-06-14
+version: "0.1.1.1"
+edition: "Draft"
+status: "Active"
+issuer: ai-kernel@aikernel.net
+maintainer: "Takuya (AIKernel Project Maintainer)"
+---
+
+Japanese version: [CTG Contract Model](CTG_CONTRACT_MODEL-v0.1.1.1-jp.md)
+
+# CTG Contract Model v0.1.1.1
+
+This document describes how Canonical Trajectory Governance contracts are shaped
+inside AIKernel.NET. It is a design guide for contributors who add, review, or
+consume the contract surface. It does not prescribe runtime implementation.
+
+The theoretical reference is the Zenodo-published CTG paper:
+
+- [Paper 12: Canonical Trajectory Governance](../papers/12-canonical-trajectory-governance/README.md)
+- DOI: https://doi.org/10.5281/zenodo.20681895
+
+The paper is fixed after publication. AIKernel.NET documentation and contracts
+may become more detailed, but they must not contradict the paper's core model.
+
+---
+
+## 1. Package Boundaries
+
+| Package | Namespace | Allowed contents |
+| --- | --- | --- |
+| `AIKernel.Abstractions` | `AIKernel.Abstractions.Governance` | interfaces only |
+| `AIKernel.Dtos` | `AIKernel.Dtos.Governance` | DTO records only |
+| `AIKernel.Enums` | `AIKernel.Enums.Governance` | enum types only |
+
+No implementation class, algorithm, rule body, provider strategy, runtime engine,
+or canon text belongs in these packages.
+
+---
+
+## 2. Interface Contracts
+
+| Interface | Responsibility |
+| --- | --- |
+| `ICouncilEvaluator` | Evaluates council input and returns council decisions. |
+| `IDecisionGate` | Evaluates one deterministic step gate request. |
+| `ITrajectoryGate` | Evaluates an ordered set of step governance traces. |
+| `IRomGovernanceEngine` | Evaluates governance through a ROM-backed request carrier. |
+
+Interfaces expose contract signatures only. They must use `ValueTask<T>` for
+asynchronous responses and must place `CancellationToken` as the final parameter.
+
+---
+
+## 3. DTO Flow
+
+CTG DTOs form a replayable flow:
+
+```text
+RomGovernanceEvaluationRequest
+  -> CouncilEvaluationRequest
+  -> CouncilEvaluationResult
+  -> CouncilDecision
+  -> CouncilVote
+  -> DecisionGateRequest
+  -> DecisionGateResult
+  -> StepGovernanceTrace
+  -> TrajectoryGateRequest
+  -> TrajectoryGateResult
+  -> GovernanceTrace
+```
+
+Each DTO is a carrier. The DTOs must not contain rule logic, derived behavior,
+or side effects.
+
+`DecisionGateRequest` is intentionally narrower than the council evaluation
+carriers. It carries one `GateInput`, not separate `L` / `E` / `P` `GateInput`
+envelopes and not a `CouncilDecision` payload. `GateInput` is the pure triadic
+vote-only carrier:
+
+- `Logos`
+- `Ethos`
+- `Pathos`
+
+These three values are `CouncilVoteValue` members. Confidence, risk, source, and
+metadata observations belong to council traces or result diagnostics, not to the
+decision gate input.
+
+---
+
+## 4. Naming Decisions
+
+CTG uses semantic names rather than mechanical suffixes.
+
+| Concept | Contract name | Reason |
+| --- | --- | --- |
+| Council vote carrier | `CouncilVote` | Carries one council vote and its trace evidence. |
+| Council vote enum | `CouncilVoteValue` | Keeps the finite vote vocabulary separate from the carrier DTO. |
+| Rejection detail carrier | `RejectReasonInfo` | Distinguishes structured reason DTOs from reason enum values. |
+| Canon link | `CanonReference` | Carries stable canon identity without embedding rule text. |
+| Council triad | `CouncilKind` | Preserves `Logos`, `Ethos`, and `Pathos` as the governance vocabulary. |
+
+Do not add mechanical expansion suffixes or version suffixes for sideways
+contract additions. Use a semantic interface name and document which earlier
+interface or concept it expands.
+
+---
+
+## 5. Failure and Diagnostics
+
+Predictable failures are represented by DTO fields, not exceptions. CTG result
+DTOs expose failure information through fields such as:
+
+- `Succeeded`
+- `Accepted`
+- `ErrorCode`
+- `ErrorMessage`
+- `RejectReasons`
+- `Diagnostics`
+
+Cancellation is the exceptional control path and may use
+`OperationCanceledException`.
+
+Unknown enum values are fail-closed. Consumers should emit diagnostics and, when
+telemetry is available, record an `unknown_enum_value` event with the raw numeric
+value in metadata.
+
+---
+
+## 6. Vote Mapping
+
+The paper expresses the mathematical vote table as positive, neutral, and
+negative values. The C# enum values in `CouncilVoteValue` are not those weights;
+they are stable serialization discriminants.
+
+Runtime implementations should map contract values to the finite CTG table:
+
+| Contract value | Mathematical role |
+| --- | --- |
+| `Approve` | positive vote |
+| `Abstain` | neutral vote |
+| `Reject` | negative vote |
+| `Unknown` | fail-closed unknown value |
+
+The step gate follows the paper-level invariant:
+
+- Ethos rejection denies execution.
+- Ethos-veto cases are expressed as rejection evidence, not as a fourth vote
+  value.
+- Without Ethos denial, execution is admitted only when the mapped aggregate
+  council vote is strictly positive.
+- Zero, negative, missing, unknown, or insufficient evidence denies execution.
+
+Gate and trajectory decision enums are discrete-only:
+
+| Enum | Values |
+| --- | --- |
+| `GateDecisionKind` | `Unknown`, `Allow`, `Deny` |
+| `TrajectoryGateDecisionKind` | `Unknown`, `Continue`, `Halt` |
+
+`RejectReasonKind` uses PascalCase C# names even when ROM/YAML sources use
+uppercase snake case:
+
+```text
+SafetyViolation
+LogicalInconsistency
+ContextMisalignment
+IrreversibleAction
+InsufficientInformation
+OpaqueReasoning
+EthosVeto
+FailClosed
+StepDenied
+ImplicitDeny
+```
+
+---
+
+## 7. Optional Observation Carriers
+
+`Confidence` and `RiskScore` are optional `double?` properties. They are trace
+carriers only.
+
+Allowed use:
+
+- preserve a measurement observed during council evaluation
+- replay the exact evidence used by a runtime host
+- expose diagnostics for operators
+
+Disallowed use:
+
+- weighting council votes
+- changing `gate(l,e,p)` behavior
+- turning deterministic governance into probabilistic scoring
+
+---
+
+## 8. Canon Reference Shape
+
+Any DTO that carries canon evidence should prefer a collection:
+
+```csharp
+IReadOnlyList<CanonReference>
+```
+
+This preserves multiple canon anchors without changing DTO shape later. A
+missing or unresolved canon reference should be treated as fail-closed by the
+runtime implementation.
+
+The normalized `CanonReference` shape is:
+
+```csharp
+public sealed record CanonReference
+{
+    public string CanonId { get; init; } = string.Empty;
+    public string Path { get; init; } = string.Empty;
+    public string Section { get; init; } = string.Empty;
+    public string? Anchor { get; init; }
+    public string? ContentHash { get; init; }
+}
+```
+
+---
+
+## 9. Monolith ROM Layering
+
+The Monolith minimal CTG-ROM is the base layer for personality OS governance.
+Its canon, council, gate, and reject-policy files live under
+`rom/governance/`. Localized personality descriptors live under
+`rom/locales/<locale>/` and resolve the effective canon path, including:
+
+```text
+rom/governance/ctg.monolith.canon.md
+```
+
+Personalized CTG-ROMs should be expressed as developer diff layers over the
+Monolith base. Diff layers may add or constrain profile metadata, references,
+locale wording, or audit requirements, but they must not weaken the triadic
+council model, Ethos veto, fail-closed behavior, default deny, or replay trace
+requirements.
+
+Runtime VFS packages own deterministic merge and mount behavior. AIKernel.NET
+only documents the layout and publishes contract carriers.
+
+---
+
+## 10. Paper Alignment Notes
+
+The paper intentionally uses simplified C# sketches for trace objects. The
+current implementation may use more detailed DTOs as long as the audit invariant
+is preserved:
+
+- each council vote is explainable by reason code and canon reference
+- each gate result is replayable
+- each trajectory result preserves the ordered step trace
+- CTG-ROM remains an immutable governance/persona contract concept
+- CTG remains separate from PPM and HATL
+
+PPM is the publication term for the prime-phase research line. Do not introduce
+the older shorthand as a formal theory name in new documentation.
+
+---
+
+## 11. Review Checklist
+
+- Existing public interface signatures are not altered.
+- DTO or enum normalization is documented with its compatibility impact.
+- New interfaces are placed only under `AIKernel.Abstractions.Governance`.
+- New DTOs are placed only under `AIKernel.Dtos.Governance`.
+- New enums are placed only under `AIKernel.Enums.Governance`.
+- All public API XML documentation is bilingual.
+- All enums include `Unknown = 0`.
+- Result DTOs carry predictable failures without requiring exceptions.
+- Canon rule text is not added to AIKernel.NET.
+- Runtime behavior is not added to AIKernel.NET.
+- C# enum numeric values are not treated as CTG vote weights.
+- New CTG documentation links back to Paper 12 when it explains theory.
+
+---
+
+## 12. Related Documents
+
+- [Paper 12: Canonical Trajectory Governance](../papers/12-canonical-trajectory-governance/README.md)
+- [Canonical Trajectory Governance](../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md)
+- [CTG Developer Guide](../operations/CTG_DEVELOPER_GUIDE-v0.1.1.1.md)
+- [CTG ROM Layout](../operations/CTG_ROM_LAYOUT-v0.1.1.1.md)
+- [Domain Contract Surface v0.1.1.1](../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md)

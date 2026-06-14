@@ -2,6 +2,7 @@ namespace AIKernel.Dtos.Sandbox;
 
 /// <summary>
 /// SandboxExecutionResult の契約を定義します。
+/// JA: SandboxExecutionResult の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Sandbox.SandboxExecutionResult']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Sandbox.SandboxExecutionResult']" />

@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 /// <summary>
 /// [EN] Compute kernel descriptor shared by OS compute providers.
 /// [JA] OS compute Provider で共有する compute kernel descriptor です。
+/// JA: ComputeKernel の公開契約を定義します。
 /// </summary>
 public sealed class ComputeKernel
 {
@@ -12,7 +13,12 @@ public sealed class ComputeKernel
         @"@workgroup_size\((?<x>\d+)(,\s*(?<y>\d+))?(,\s*(?<z>\d+))?\)",
         RegexOptions.Compiled | RegexOptions.CultureInvariant);
 
-    /// <summary>[EN] Initializes a compute kernel descriptor. [JA] compute kernel descriptor を初期化します。</summary>
+    /// <summary>[EN] Initializes a compute kernel descriptor. [JA] compute kernel descriptor を初期化します。 JA: ComputeKernel 操作を実行します。</summary>
+    /// <param name="source">The kernel source code. JA: kernel source code です。</param>
+    /// <param name="dispatchX">The dispatch group count in X. JA: X 方向の dispatch group 数です。</param>
+    /// <param name="dispatchY">The dispatch group count in Y. JA: Y 方向の dispatch group 数です。</param>
+    /// <param name="dispatchZ">The dispatch group count in Z. JA: Z 方向の dispatch group 数です。</param>
+    /// <param name="nativePipeline">The optional native pipeline handle. JA: 任意の native pipeline handle です。</param>
     public ComputeKernel(
         string source,
         int dispatchX,
@@ -34,34 +40,37 @@ public sealed class ComputeKernel
         WorkgroupSizeZ = match.Success && match.Groups["z"].Success ? int.Parse(match.Groups["z"].Value) : 1;
     }
 
-    /// <summary>[EN] Kernel source code. [JA] kernel source code です。</summary>
+    /// <summary>[EN] Kernel source code. [JA] kernel source code です。 JA: Source を取得します。</summary>
     public string Source { get; }
 
-    /// <summary>[EN] Alias for WGSL source code. [JA] WGSL source code の alias です。</summary>
+    /// <summary>[EN] Alias for WGSL source code. [JA] WGSL source code の alias です。 JA: WorkgroupSizeX を取得します。</summary>
     public string Wgsl => Source;
 
-    /// <summary>[EN] Workgroup size in X. [JA] X 方向の workgroup size です。</summary>
+    /// <summary>[EN] Workgroup size in X. [JA] X 方向の workgroup size です。 JA: WorkgroupSizeX を取得します。</summary>
     public int WorkgroupSizeX { get; }
 
-    /// <summary>[EN] Workgroup size in Y. [JA] Y 方向の workgroup size です。</summary>
+    /// <summary>[EN] Workgroup size in Y. [JA] Y 方向の workgroup size です。 JA: WorkgroupSizeY を取得します。</summary>
     public int WorkgroupSizeY { get; }
 
-    /// <summary>[EN] Workgroup size in Z. [JA] Z 方向の workgroup size です。</summary>
+    /// <summary>[EN] Workgroup size in Z. [JA] Z 方向の workgroup size です。 JA: WorkgroupSizeZ を取得します。</summary>
     public int WorkgroupSizeZ { get; }
 
-    /// <summary>[EN] Dispatch groups in X. [JA] X 方向の dispatch group 数です。</summary>
+    /// <summary>[EN] Dispatch groups in X. [JA] X 方向の dispatch group 数です。 JA: DispatchX を取得します。</summary>
     public int DispatchX { get; }
 
-    /// <summary>[EN] Dispatch groups in Y. [JA] Y 方向の dispatch group 数です。</summary>
+    /// <summary>[EN] Dispatch groups in Y. [JA] Y 方向の dispatch group 数です。 JA: DispatchY を取得します。</summary>
     public int DispatchY { get; }
 
-    /// <summary>[EN] Dispatch groups in Z. [JA] Z 方向の dispatch group 数です。</summary>
+    /// <summary>[EN] Dispatch groups in Z. [JA] Z 方向の dispatch group 数です。 JA: DispatchZ を取得します。</summary>
     public int DispatchZ { get; }
 
-    /// <summary>[EN] Optional native pipeline handle. [JA] 任意の native pipeline handle です。</summary>
+    /// <summary>[EN] Optional native pipeline handle. [JA] 任意の native pipeline handle です。 JA: NativePipeline を取得します。</summary>
     public object? NativePipeline { get; }
 
-    /// <summary>[EN] Creates a standard WGSL vector-add kernel descriptor. [JA] 標準 WGSL vector-add kernel descriptor を作成します。</summary>
+    /// <summary>[EN] Creates a standard WGSL vector-add kernel descriptor. [JA] 標準 WGSL vector-add kernel descriptor を作成します。 JA: CreateVectorAdd 操作を実行します。</summary>
+    /// <param name="elementCount">The vector element count. JA: vector element count です。</param>
+    /// <param name="workgroupSize">The workgroup size. JA: workgroup size です。</param>
+    /// <returns>The compute kernel descriptor. JA: compute kernel descriptor を返します。</returns>
     public static ComputeKernel CreateVectorAdd(int elementCount, int workgroupSize = 64)
     {
         if (elementCount <= 0)
