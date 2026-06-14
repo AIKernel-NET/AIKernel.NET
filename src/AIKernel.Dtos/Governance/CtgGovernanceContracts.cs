@@ -202,25 +202,18 @@ public sealed record CouncilEvaluationResult
 }
 
 /// <summary>
-/// EN: Carries an opaque gate input value. JA: 不透明なゲート入力値を運びます。
+/// EN: Carries the pure triadic council vote input for a decision gate. JA: 決定ゲート用の純粋な三項 council vote 入力を運びます。
 /// </summary>
 public sealed record GateInput
 {
-    /// <summary>EN: Gets the optional boolean gate value. JA: 任意の真偽ゲート値を取得します。</summary>
-    public bool? Value { get; init; }
+    /// <summary>EN: Gets the Logos council vote value. JA: Logos council vote value を取得します。</summary>
+    public CouncilVoteValue Logos { get; init; } = CouncilVoteValue.Unknown;
 
-    /// <summary>EN: Gets the input source. JA: 入力ソースを取得します。</summary>
-    public string Source { get; init; } = string.Empty;
+    /// <summary>EN: Gets the Ethos council vote value. JA: Ethos council vote value を取得します。</summary>
+    public CouncilVoteValue Ethos { get; init; } = CouncilVoteValue.Unknown;
 
-    /// <summary>EN: Gets the optional observed confidence carrier. JA: 任意の観測 confidence carrier を取得します。</summary>
-    public double? Confidence { get; init; }
-
-    /// <summary>EN: Gets the optional observed risk score carrier. JA: 任意の観測 risk score carrier を取得します。</summary>
-    public double? RiskScore { get; init; }
-
-    /// <summary>EN: Gets input metadata. JA: 入力メタデータを取得します。</summary>
-    public IReadOnlyDictionary<string, string> Metadata { get; init; } =
-        new Dictionary<string, string>(StringComparer.Ordinal);
+    /// <summary>EN: Gets the Pathos council vote value. JA: Pathos council vote value を取得します。</summary>
+    public CouncilVoteValue Pathos { get; init; } = CouncilVoteValue.Unknown;
 }
 
 /// <summary>
