@@ -22,10 +22,6 @@ public sealed record CanonReference
 
     /// <summary>EN: Gets the optional content hash. JA: 任意のコンテンツハッシュを取得します。</summary>
     public string? ContentHash { get; init; }
-
-    /// <summary>EN: Gets reference metadata. JA: 参照メタデータを取得します。</summary>
-    public IReadOnlyDictionary<string, string> Metadata { get; init; } =
-        new Dictionary<string, string>(StringComparer.Ordinal);
 }
 
 /// <summary>
@@ -59,7 +55,7 @@ public sealed record RejectReasonInfo
 /// <summary>
 /// EN: Carries a single council vote. JA: 単一評議会の投票を運びます。
 /// </summary>
-public sealed record CouncilVoteValue
+public sealed record CouncilVote
 {
     /// <summary>EN: Gets the vote identifier. JA: 投票識別子を取得します。</summary>
     public string VoteId { get; init; } = string.Empty;
@@ -67,8 +63,8 @@ public sealed record CouncilVoteValue
     /// <summary>EN: Gets the council kind. JA: 評議会種別を取得します。</summary>
     public CouncilKind CouncilKind { get; init; } = CouncilKind.Unknown;
 
-    /// <summary>EN: Gets the vote kind. JA: 投票種別を取得します。</summary>
-    public CouncilVoteKind VoteKind { get; init; } = CouncilVoteKind.Unknown;
+    /// <summary>EN: Gets the vote value. JA: 投票値を取得します。</summary>
+    public CouncilVoteValue VoteValue { get; init; } = CouncilVoteValue.Unknown;
 
     /// <summary>EN: Gets the optional observed confidence carrier. JA: 任意の観測 confidence carrier を取得します。</summary>
     public double? Confidence { get; init; }
@@ -102,7 +98,7 @@ public sealed record CouncilDecision
     public CouncilDecisionKind DecisionKind { get; init; } = CouncilDecisionKind.Unknown;
 
     /// <summary>EN: Gets the council votes. JA: 評議会投票を取得します。</summary>
-    public IReadOnlyList<CouncilVoteValue> Votes { get; init; } = [];
+    public IReadOnlyList<CouncilVote> Votes { get; init; } = [];
 
     /// <summary>EN: Gets rejection reasons. JA: 拒否理由を取得します。</summary>
     public IReadOnlyList<RejectReasonInfo> RejectReasons { get; init; } = [];

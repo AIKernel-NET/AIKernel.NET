@@ -293,6 +293,7 @@ For the v0.1.1.1 additive contract surface, start with:
 
 - `docs/architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md`
 - `docs/architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md`
+- `docs/architecture/21.CTG_DEVELOPER_THEORY-v0.1.1.1.md`
 - `docs/design/CTG_CONTRACT_MODEL-v0.1.1.1.md`
 - `docs/operations/CTG_DEVELOPER_GUIDE-v0.1.1.1.md`
 - `docs/operations/CTG_ROM_LAYOUT-v0.1.1.1.md`

@@ -62,7 +62,7 @@ RomGovernanceEvaluationRequest
   -> CouncilEvaluationRequest
   -> CouncilEvaluationResult
   -> CouncilDecision
-  -> CouncilVoteValue
+  -> CouncilVote
   -> DecisionGateRequest
   -> DecisionGateResult
   -> StepGovernanceTrace
@@ -82,7 +82,8 @@ CTG uses semantic names rather than mechanical suffixes.
 
 | Concept | Contract name | Reason |
 | --- | --- | --- |
-| Council vote carrier | `CouncilVoteValue` | Avoids collision with vote enum names. |
+| Council vote carrier | `CouncilVote` | Carries one council vote and its trace evidence. |
+| Council vote enum | `CouncilVoteValue` | Keeps the finite vote vocabulary separate from the carrier DTO. |
 | Rejection detail carrier | `RejectReasonInfo` | Distinguishes structured reason DTOs from reason enum values. |
 | Canon link | `CanonReference` | Carries stable canon identity without embedding rule text. |
 | Council triad | `CouncilKind` | Preserves `Logos`, `Ethos`, and `Pathos` as the governance vocabulary. |
@@ -100,7 +101,6 @@ DTOs expose failure information through fields such as:
 
 - `Succeeded`
 - `Accepted`
-- `Rejected`
 - `ErrorCode`
 - `ErrorMessage`
 - `RejectReasons`
@@ -118,7 +118,7 @@ value in metadata.
 ## 6. Vote Mapping
 
 The paper expresses the mathematical vote table as positive, neutral, and
-negative values. The C# enum values in `CouncilVoteKind` are not those weights;
+negative values. The C# enum values in `CouncilVoteValue` are not those weights;
 they are stable serialization discriminants.
 
 Runtime implementations should map contract values to the finite CTG table:
@@ -128,15 +128,39 @@ Runtime implementations should map contract values to the finite CTG table:
 | `Approve` | positive vote |
 | `Abstain` | neutral vote |
 | `Reject` | negative vote |
-| `Veto` | explicit hard-denial carrier, especially for Ethos |
 | `Unknown` | fail-closed unknown value |
 
 The step gate follows the paper-level invariant:
 
-- Ethos reject or explicit veto denies execution.
+- Ethos rejection denies execution.
+- Ethos-veto cases are expressed as rejection evidence, not as a fourth vote
+  value.
 - Without Ethos denial, execution is admitted only when the mapped aggregate
   council vote is strictly positive.
-- Zero, negative, missing, unknown, or inconclusive evidence denies execution.
+- Zero, negative, missing, unknown, or insufficient evidence denies execution.
+
+Gate and trajectory decision enums are discrete-only:
+
+| Enum | Values |
+| --- | --- |
+| `GateDecisionKind` | `Unknown`, `Allow`, `Deny` |
+| `TrajectoryGateDecisionKind` | `Unknown`, `Continue`, `Halt` |
+
+`RejectReasonKind` uses PascalCase C# names even when ROM/YAML sources use
+uppercase snake case:
+
+```text
+SafetyViolation
+LogicalInconsistency
+ContextMisalignment
+IrreversibleAction
+InsufficientInformation
+OpaqueReasoning
+EthosVeto
+FailClosed
+StepDenied
+ImplicitDeny
+```
 
 ---
 
@@ -170,6 +194,19 @@ IReadOnlyList<CanonReference>
 This preserves multiple canon anchors without changing DTO shape later. A
 missing or unresolved canon reference should be treated as fail-closed by the
 runtime implementation.
+
+The normalized `CanonReference` shape is:
+
+```csharp
+public sealed record CanonReference
+{
+    public string CanonId { get; init; } = string.Empty;
+    public string Path { get; init; } = string.Empty;
+    public string Section { get; init; } = string.Empty;
+    public string? Anchor { get; init; }
+    public string? ContentHash { get; init; }
+}
+```
 
 ---
 
@@ -214,7 +251,8 @@ the older shorthand as a formal theory name in new documentation.
 
 ## 11. Review Checklist
 
-- The change is additive and does not alter existing public signatures.
+- Existing public interface signatures are not altered.
+- DTO or enum normalization is documented with its compatibility impact.
 - New interfaces are placed only under `AIKernel.Abstractions.Governance`.
 - New DTOs are placed only under `AIKernel.Dtos.Governance`.
 - New enums are placed only under `AIKernel.Enums.Governance`.

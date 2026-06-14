@@ -35,7 +35,8 @@ interfaces, DTOs, enums, and developer documentation.
 Current contract alignment:
 
 - CTG council vocabulary: `AIKernel.Enums.Governance.CouncilKind`
-- CTG vote carriers: `AIKernel.Dtos.Governance.CouncilVoteValue`
+- CTG vote carriers: `AIKernel.Dtos.Governance.CouncilVote`
+- CTG vote values: `AIKernel.Enums.Governance.CouncilVoteValue`
 - rejection carriers: `AIKernel.Dtos.Governance.RejectReasonInfo`
 - canon references: `AIKernel.Dtos.Governance.CanonReference`
 - step traces: `AIKernel.Dtos.Governance.StepGovernanceTrace`
@@ -45,11 +46,12 @@ Current contract alignment:
 Implementation contracts may be more detailed than the paper sketches. In
 particular, enum numeric values in C# are serialization discriminants, not the
 mathematical vote weights in the paper. Runtime implementations should map
-`CouncilVoteKind` values onto the finite CTG vote table described by the paper.
+`CouncilVoteValue` values onto the finite CTG vote table described by the paper.
 
 ## Related Developer Documents
 
 - [Canonical Trajectory Governance architecture](../../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md)
+- [CTG Developer Theory](../../architecture/21.CTG_DEVELOPER_THEORY-v0.1.1.1.md)
 - [CTG Contract Model](../../design/CTG_CONTRACT_MODEL-v0.1.1.1.md)
 - [CTG Developer Guide](../../operations/CTG_DEVELOPER_GUIDE-v0.1.1.1.md)
 - [Paper Implementation Status](../../architecture/PAPER_IMPLEMENTATION_STATUS.md)

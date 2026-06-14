@@ -40,6 +40,7 @@ incident response, and SLO/SLA management.
 - v0.1.1 synchronized package line verification across NuGet, PyPI, Providers, WASM, Tools, CUDA, and Demo
 - v0.1.1.1 additive domain contract surface and documentation-policy alignment
 - v0.1.1.1 .NET / NuGet-only package boundary; no PyPI packages are produced for this line
+- v0.1.1.1 CTG DTO / enum normalization before publication
 
 Use this guide when upgrading package references or validating contract-layer dependencies.
 
@@ -117,7 +118,19 @@ Use this guide when adding, reviewing, or implementing CTG contracts in runtime 
 
 ---
 
-### 8. [CTG ROM Layout](CTG_ROM_LAYOUT-v0.1.1.1.md)
+### 8. [CTG Developer Theory](../architecture/21.CTG_DEVELOPER_THEORY-v0.1.1.1.md)
+**Status:** Active
+**Current contents:**
+- Developer-facing theory map for CTG
+- Three-council model, finite vote values, and discrete gate decisions
+- Rejection taxonomy, canon reference shape, and replay boundaries
+
+Use this guide when reviewing whether CTG DTOs, enums, and runtime-package
+implementations preserve the published paper invariants.
+
+---
+
+### 9. [CTG ROM Layout](CTG_ROM_LAYOUT-v0.1.1.1.md)
 **Status:** Active
 **Current contents:**
 - Monolith CTG-ROM directory layout
@@ -129,7 +142,7 @@ Use this guide when adding, reviewing, or mounting CTG-ROM canon and personaliza
 
 ---
 
-### 9. Release Operations
+### 10. Release Operations
 **Status:** Planned
 **Planned contents:**
 - Release workflow (tag → build → publish → verify)
@@ -139,7 +152,7 @@ Use this guide when adding, reviewing, or mounting CTG-ROM canon and personaliza
 
 ---
 
-### 10. Monitoring & Observability
+### 11. Monitoring & Observability
 **Status:** Planned
 **Planned contents:**
 - Metrics (latency, cost, retries, cache, provider health)
@@ -149,7 +162,7 @@ Use this guide when adding, reviewing, or mounting CTG-ROM canon and personaliza
 
 ---
 
-### 11. Incident Response
+### 12. Incident Response
 **Status:** Planned
 **Planned contents:**
 - Detection → Triage → Isolation → Recovery → Postmortem
@@ -159,7 +172,7 @@ Use this guide when adding, reviewing, or mounting CTG-ROM canon and personaliza
 
 ---
 
-### 12. Security Operations
+### 13. Security Operations
 **Status:** Planned
 **Planned contents:**
 - Signature verification (PromptRules / Contracts / Policies)
@@ -199,10 +212,10 @@ Operations provide the foundation for running AIKernel as a long-term, reliable 
 Operations documentation is being expanded as contract and packaging boundaries stabilize.
 
 Currently:
-- The Migration Guide contains concrete steps through v0.1.1
+- The Migration Guide contains concrete steps through v0.1.1 and the v0.1.1.1 CTG DTO / enum normalization
 - The Package Installation Guide covers the synchronized `0.1.1` NuGet / PyPI line and the `0.1.1.1` NuGet-only contract update
 - The Demo Programs Guide covers the official AIKernel.Demo learning path
-- Interface naming, enum handling, XML documentation policy, CTG developer guidance, and CTG ROM layout cover the v0.1.1.1 additive contract surface
+- Interface naming, enum handling, XML documentation policy, CTG developer guidance, CTG developer theory, and CTG ROM layout cover the v0.1.1.1 additive contract surface
 - Release, monitoring, incident, and security operations remain Planned
 
 Future versions will expand this directory.
@@ -225,4 +238,4 @@ Future versions will expand this directory.
 - v0.0.5 (2026-06-05): Added contract-surface purity cleanup, external Capability module, DynamicSLM Model ABI / SeedSLM discipline / distillation offload, HATL external cryptographic operator, governance admissibility, and Semantic Compilation DTO vocabulary migration coverage
 - v0.1.0 (2026-06-07): Added MemoryRegion / MemoryMapper contract extraction coverage
 - v0.1.1 (2026-06-10): Added package installation and demo program guides for the synchronized public release line
-- v0.1.1.1 (2026-06-14): Added CTG developer guide, Monolith CTG-ROM layout coverage, and the NuGet-only package boundary for 0.1.1.1
+- v0.1.1.1 (2026-06-14): Added CTG developer guide, CTG Developer Theory, Monolith CTG-ROM layout coverage, and the NuGet-only package boundary for 0.1.1.1

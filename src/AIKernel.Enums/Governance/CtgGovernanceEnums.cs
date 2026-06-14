@@ -19,24 +19,21 @@ public enum CouncilKind
 }
 
 /// <summary>
-/// EN: Identifies a council vote kind. Numeric values are serialization discriminants, not CTG mathematical vote weights. JA: 評議会投票種別を識別します。数値はシリアライズ識別子であり、CTG の数学的投票重みではありません。
+/// EN: Identifies a council vote value. Numeric values are serialization discriminants, not CTG mathematical vote weights. JA: 評議会投票値を識別します。数値はシリアライズ識別子であり、CTG の数学的投票重みではありません。
 /// </summary>
-public enum CouncilVoteKind
+public enum CouncilVoteValue
 {
     /// <summary>EN: Gets the unknown vote value. JA: 未知の投票値を取得します。</summary>
     Unknown = 0,
 
-    /// <summary>EN: Gets the approve vote kind. JA: 承認投票種別を取得します。</summary>
+    /// <summary>EN: Gets the approve vote value. JA: 承認投票値を取得します。</summary>
     Approve = 1,
 
-    /// <summary>EN: Gets the reject vote kind. JA: 拒否投票種別を取得します。</summary>
-    Reject = 2,
+    /// <summary>EN: Gets the abstain vote value. JA: 棄権投票値を取得します。</summary>
+    Abstain = 2,
 
-    /// <summary>EN: Gets the abstain vote kind. JA: 棄権投票種別を取得します。</summary>
-    Abstain = 3,
-
-    /// <summary>EN: Gets the explicit veto vote kind. JA: 明示的な拒否権投票種別を取得します。</summary>
-    Veto = 4
+    /// <summary>EN: Gets the reject vote value. JA: 拒否投票値を取得します。</summary>
+    Reject = 3
 }
 
 /// <summary>
@@ -68,17 +65,11 @@ public enum GateDecisionKind
     /// <summary>EN: Gets the unknown gate decision value. JA: 未知のゲート決定値を取得します。</summary>
     Unknown = 0,
 
-    /// <summary>EN: Gets the accepted gate decision value. JA: 受理ゲート決定値を取得します。</summary>
-    Accepted = 1,
+    /// <summary>EN: Gets the allow gate decision value. JA: 許可ゲート決定値を取得します。</summary>
+    Allow = 1,
 
-    /// <summary>EN: Gets the rejected gate decision value. JA: 拒否ゲート決定値を取得します。</summary>
-    Rejected = 2,
-
-    /// <summary>EN: Gets the vetoed gate decision value. JA: 拒否権適用済みゲート決定値を取得します。</summary>
-    Vetoed = 3,
-
-    /// <summary>EN: Gets the inconclusive gate decision value. JA: 不確定ゲート決定値を取得します。</summary>
-    Inconclusive = 4
+    /// <summary>EN: Gets the deny gate decision value. JA: 拒否ゲート決定値を取得します。</summary>
+    Deny = 2
 }
 
 /// <summary>
@@ -89,17 +80,11 @@ public enum TrajectoryGateDecisionKind
     /// <summary>EN: Gets the unknown trajectory decision value. JA: 未知の軌道決定値を取得します。</summary>
     Unknown = 0,
 
-    /// <summary>EN: Gets the accepted trajectory decision value. JA: 受理軌道決定値を取得します。</summary>
-    Accepted = 1,
+    /// <summary>EN: Gets the continue trajectory decision value. JA: 継続軌道決定値を取得します。</summary>
+    Continue = 1,
 
-    /// <summary>EN: Gets the rejected trajectory decision value. JA: 拒否軌道決定値を取得します。</summary>
-    Rejected = 2,
-
-    /// <summary>EN: Gets the vetoed trajectory decision value. JA: 拒否権適用済み軌道決定値を取得します。</summary>
-    Vetoed = 3,
-
-    /// <summary>EN: Gets the inconclusive trajectory decision value. JA: 不確定軌道決定値を取得します。</summary>
-    Inconclusive = 4
+    /// <summary>EN: Gets the halt trajectory decision value. JA: 停止軌道決定値を取得します。</summary>
+    Halt = 2
 }
 
 /// <summary>
@@ -110,24 +95,33 @@ public enum RejectReasonKind
     /// <summary>EN: Gets the unknown rejection reason value. JA: 未知の拒否理由値を取得します。</summary>
     Unknown = 0,
 
-    /// <summary>EN: Gets the missing canon rejection reason value. JA: 正典不足の拒否理由値を取得します。</summary>
-    CanonMissing = 1,
+    /// <summary>EN: Gets the safety violation rejection reason value. JA: 安全違反の拒否理由値を取得します。</summary>
+    SafetyViolation = 1,
 
-    /// <summary>EN: Gets the canon veto rejection reason value. JA: 正典拒否権の拒否理由値を取得します。</summary>
-    CanonVeto = 2,
+    /// <summary>EN: Gets the logical inconsistency rejection reason value. JA: 論理的不整合の拒否理由値を取得します。</summary>
+    LogicalInconsistency = 2,
 
-    /// <summary>EN: Gets the council rejection reason value. JA: 評議会拒否の理由値を取得します。</summary>
-    CouncilRejected = 3,
+    /// <summary>EN: Gets the context misalignment rejection reason value. JA: 文脈不整合の拒否理由値を取得します。</summary>
+    ContextMisalignment = 3,
 
-    /// <summary>EN: Gets the gate rejection reason value. JA: ゲート拒否の理由値を取得します。</summary>
-    GateRejected = 4,
+    /// <summary>EN: Gets the irreversible action rejection reason value. JA: 不可逆操作の拒否理由値を取得します。</summary>
+    IrreversibleAction = 4,
 
-    /// <summary>EN: Gets the trajectory rejection reason value. JA: 軌道拒否の理由値を取得します。</summary>
-    TrajectoryRejected = 5,
+    /// <summary>EN: Gets the insufficient information rejection reason value. JA: 情報不足の拒否理由値を取得します。</summary>
+    InsufficientInformation = 5,
 
-    /// <summary>EN: Gets the inconclusive rejection reason value. JA: 不確定の拒否理由値を取得します。</summary>
-    Inconclusive = 6,
+    /// <summary>EN: Gets the opaque reasoning rejection reason value. JA: 不透明な推論の拒否理由値を取得します。</summary>
+    OpaqueReasoning = 6,
 
-    /// <summary>EN: Gets the invalid input rejection reason value. JA: 無効入力の拒否理由値を取得します。</summary>
-    InvalidInput = 7
+    /// <summary>EN: Gets the ethos veto rejection reason value. JA: Ethos 拒否権の拒否理由値を取得します。</summary>
+    EthosVeto = 7,
+
+    /// <summary>EN: Gets the fail-closed rejection reason value. JA: fail-closed の拒否理由値を取得します。</summary>
+    FailClosed = 8,
+
+    /// <summary>EN: Gets the step-denied rejection reason value. JA: step denied の拒否理由値を取得します。</summary>
+    StepDenied = 9,
+
+    /// <summary>EN: Gets the implicit-deny rejection reason value. JA: implicit deny の拒否理由値を取得します。</summary>
+    ImplicitDeny = 10
 }

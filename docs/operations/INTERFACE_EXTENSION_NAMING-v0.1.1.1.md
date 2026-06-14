@@ -53,10 +53,10 @@ role of each contract directly.
 | `ITrajectoryGate` | Evaluates a trajectory-level governance result carrier. |
 | `IRomGovernanceEngine` | Loads governance context from ROM-facing inputs and returns governance result carriers. |
 
-DTO names avoid ambiguous overlap between carrier records and enum types:
-`CouncilVoteValue` carries a vote, `CouncilVoteKind` names the vote kind,
-`RejectReasonInfo` carries rejection details, and `RejectReasonKind` names the
-reason category.
+DTO and enum names avoid ambiguous overlap between carrier records and finite
+values: `CouncilVote` carries a council vote, `CouncilVoteValue` names the
+finite vote value, `RejectReasonInfo` carries rejection details, and
+`RejectReasonKind` names the reason category.
 
 ---
 

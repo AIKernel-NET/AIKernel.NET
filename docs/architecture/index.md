@@ -233,6 +233,17 @@ developer diff layers under runtime VFS merge.
 
 ---
 
+## [1.25 CTG Developer Theory](./21.CTG_DEVELOPER_THEORY-v0.1.1.1.md)
+
+Explains CTG theory in developer terms: three councils, finite vote values,
+discrete step and trajectory gates, rejection taxonomy, canon references, and
+deterministic replay boundaries.
+
+Use this document when reviewing whether CTG DTOs, enums, and runtime-package
+implementations preserve the paper invariants without inventing canon rules.
+
+---
+
 # 2. Comparative Architecture
 
 ## [2.1 AIKernel vs LangChain](./6.AIKERNEL_VS_LANGCHAIN.md)
@@ -312,6 +323,7 @@ Read the architecture documents in this order. Each item points downward into th
 - [Memory Interfaces](./interfaces/memory/index.md)
 - [Domain Contract Surface v0.1.1.1](./19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md)
 - [Canonical Trajectory Governance](./20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md)
+- [CTG Developer Theory](./21.CTG_DEVELOPER_THEORY-v0.1.1.1.md)
 - [Paper Implementation Status](./PAPER_IMPLEMENTATION_STATUS.md)
 
 ---
@@ -337,4 +349,4 @@ This index is the entry point to understanding AIKernel's overall design.
 - v0.0.5 (2026-06-05): Added Semantic Compilation DTO vocabulary navigation
 - v0.0.5 (2026-06-05): Added external Capability module contract navigation
 - v0.1.0 (2026-06-07): Added MemoryRegion / MemoryMapper contract extraction navigation
-- v0.1.1.1 (2026-06-14): Added domain contract surface, Canonical Trajectory Governance, and Monolith CTG-ROM layout navigation
+- v0.1.1.1 (2026-06-14): Added domain contract surface, Canonical Trajectory Governance, CTG Developer Theory, and Monolith CTG-ROM layout navigation

@@ -22,6 +22,11 @@ new domain contracts. The `0.1.1.1` package boundary is .NET / NuGet only:
 do not build or publish PyPI packages for this line, and keep Python wrappers
 on the synchronized `0.1.1` package line.
 
+The CTG contract vocabulary was normalized before the `0.1.1.1` package line is
+published: council vote carriers use `CouncilVote`, finite vote values use
+`CouncilVoteValue`, gate decisions are discrete-only, and `CanonReference`
+uses the normalized pointer shape.
+
 ## 0. v0.1.1.1 Additive Contract Expansion
 
 `0.1.1.1` adds semantic interfaces, DTOs, and enums for adapters, runtime
@@ -46,10 +51,28 @@ domains described in
 [`../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md`](../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md).
 For CTG-specific guidance, also read
 [`../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md`](../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md),
+[`../architecture/21.CTG_DEVELOPER_THEORY-v0.1.1.1.md`](../architecture/21.CTG_DEVELOPER_THEORY-v0.1.1.1.md),
 [`../design/CTG_CONTRACT_MODEL-v0.1.1.1.md`](../design/CTG_CONTRACT_MODEL-v0.1.1.1.md), and
 [`CTG_DEVELOPER_GUIDE-v0.1.1.1.md`](CTG_DEVELOPER_GUIDE-v0.1.1.1.md). The fixed
 paper reference is
 [`../papers/12-canonical-trajectory-governance/README.md`](../papers/12-canonical-trajectory-governance/README.md).
+
+### 0.3 CTG DTO / Enum Normalization
+
+If you adopted pre-publication CTG draft contracts, update the following names
+and values before consuming `0.1.1.1` packages:
+
+| Draft shape | Published contract shape |
+|---|---|
+| `CouncilVoteValue` as a DTO carrier | `CouncilVote` |
+| `CouncilVoteKind` enum | `CouncilVoteValue` enum |
+| `GateDecisionKind.Accepted` / `Rejected` / `Vetoed` / `Inconclusive` | `GateDecisionKind.Allow` / `Deny` |
+| `TrajectoryGateDecisionKind.Accepted` / `Rejected` / `Vetoed` / `Inconclusive` | `TrajectoryGateDecisionKind.Continue` / `Halt` |
+| `RejectReasonKind` operational draft names | PascalCase canonical taxonomy such as `SafetyViolation`, `EthosVeto`, `FailClosed`, and `ImplicitDeny` |
+| `CanonReference` with extra metadata | normalized `CanonId`, `Path`, `Section`, `Anchor`, `ContentHash` pointer |
+
+These corrections do not change canon, council, gate, or reject-policy meaning.
+They only align DTO, enum, and serialization shape before publication.
 
 Local development package versions use:
 

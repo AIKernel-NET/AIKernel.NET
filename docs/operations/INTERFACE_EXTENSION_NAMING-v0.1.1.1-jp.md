@@ -53,7 +53,8 @@ Canonical triadic governance では、各 contract の役割を直接表す sema
 | `IRomGovernanceEngine` | ROM-facing input から governance context を読み、governance result carrier を返す。 |
 
 DTO 名は carrier record と enum type の曖昧な重複を避ける。
-`CouncilVoteValue` は vote carrier、`CouncilVoteKind` は vote kind、
+DTO と enum は carrier record と finite value の重複を避ける。
+`CouncilVote` は council vote carrier、`CouncilVoteValue` は finite vote value、
 `RejectReasonInfo` は reject detail carrier、`RejectReasonKind` は reason category を表す。
 
 ---

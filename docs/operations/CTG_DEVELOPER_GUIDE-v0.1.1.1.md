@@ -21,6 +21,9 @@ The fixed theoretical reference is Paper 12:
 - [Paper 12: Canonical Trajectory Governance](../papers/12-canonical-trajectory-governance/README.md)
 - DOI: https://doi.org/10.5281/zenodo.20681895
 
+For a developer-oriented explanation of the theory-to-contract mapping, read
+[CTG Developer Theory](../architecture/21.CTG_DEVELOPER_THEORY-v0.1.1.1.md).
+
 The paper is Zenodo-published and must not be edited to follow later
 implementation details. Implementation contracts may be more detailed than the
 paper as long as they preserve the paper's invariants.
@@ -108,12 +111,14 @@ See [CTG ROM Layout](CTG_ROM_LAYOUT-v0.1.1.1.md) for the canonical file layout.
 When reviewing a gate-related contract or implementation outside AIKernel.NET,
 verify:
 
-- Ethos reject or explicit veto can close the gate.
+- Ethos rejection can close the gate.
+- Ethos-veto cases are represented as rejection evidence, not as a fourth
+  `CouncilVoteValue`.
 - Unknown and missing values close the gate.
-- Inconclusive evidence closes the gate.
+- Insufficient evidence closes the gate.
 - No confidence or risk weighting changes the decision.
 - C# enum numeric values are not used directly as mathematical vote weights.
-- Contract vote values are mapped to the finite CTG table before aggregate
+- `CouncilVoteValue` values are mapped to the finite CTG table before aggregate
   evaluation.
 - The accepted or rejected result is represented by a result DTO.
 - Rejection carries `RejectReasonInfo`.

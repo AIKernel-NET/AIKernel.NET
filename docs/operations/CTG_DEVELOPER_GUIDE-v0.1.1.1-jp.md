@@ -20,6 +20,10 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 - [Paper 12: Canonical Trajectory Governance](../papers/12-canonical-trajectory-governance/README.md)
 - DOI: https://doi.org/10.5281/zenodo.20681895
 
+理論から contract への対応を開発者向けに読む場合は
+[CTG Developer Theory](../architecture/21.CTG_DEVELOPER_THEORY-v0.1.1.1-jp.md)
+を参照する。
+
 論文は Zenodo 公開済みであり、後続の実装詳細に合わせて修正してはならない。
 実装 contract は論文より詳細であってよいが、論文の invariant を保つ必要がある。
 
@@ -105,12 +109,13 @@ canonical file layout は [CTG ROM Layout](CTG_ROM_LAYOUT-v0.1.1.1-jp.md) を参
 AIKernel.NET の外で gate 関連 contract または implementation を review する場合、
 次を確認する。
 
-- Ethos reject または explicit veto が gate を閉じられる。
+- Ethos rejection が gate を閉じられる。
+- Ethos-veto case は 4 つ目の `CouncilVoteValue` ではなく rejection evidence として表現する。
 - unknown / missing value が gate を閉じる。
-- inconclusive evidence が gate を閉じる。
+- insufficient evidence が gate を閉じる。
 - confidence または risk weighting が decision を変更していない。
 - C# enum numeric value を数学的 vote weight として直接使っていない。
-- contract vote value を aggregate evaluation 前に有限 CTG table へ map している。
+- `CouncilVoteValue` を aggregate evaluation 前に有限 CTG table へ map している。
 - accept / reject result が result DTO で表現されている。
 - rejection が `RejectReasonInfo` を保持している。
 - canon evidence が `IReadOnlyList<CanonReference>` を保持している。
