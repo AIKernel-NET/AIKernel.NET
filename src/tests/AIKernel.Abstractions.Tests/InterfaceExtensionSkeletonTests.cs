@@ -16,6 +16,9 @@ namespace AIKernel.Abstractions.Tests;
 /// </summary>
 public sealed class IContractSurfaceTests
 {
+    /// <summary>
+    /// Verifies the ValidateAsync_ValidPayload_ReturnsValidationResult skeleton scenario. JA: ValidateAsync_ValidPayload_ReturnsValidationResult のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void ValidateAsync_ValidPayload_ReturnsValidationResult()
     {
@@ -30,6 +33,9 @@ public sealed class IContractSurfaceTests
 /// </summary>
 public sealed class IKernelProviderTests
 {
+    /// <summary>
+    /// Verifies the GetCapabilitiesAsync_ValidContext_ReturnsCapabilities skeleton scenario. JA: GetCapabilitiesAsync_ValidContext_ReturnsCapabilities のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void GetCapabilitiesAsync_ValidContext_ReturnsCapabilities()
     {
@@ -38,10 +44,10 @@ public sealed class IKernelProviderTests
         // Assert
     }
 
-    [Fact]
     /// <summary>
     /// Verifies the ExecuteAsync_ValidOperation_ReturnsProviderResult skeleton scenario. JA: ExecuteAsync_ValidOperation_ReturnsProviderResult のスケルトンシナリオを検証します。
     /// </summary>
+    [Fact]
     public void ExecuteAsync_ValidOperation_ReturnsProviderResult()
     {
         // Arrange
@@ -55,6 +61,9 @@ public sealed class IKernelProviderTests
 /// </summary>
 public sealed class ICapabilityProviderRouterTests
 {
+    /// <summary>
+    /// Verifies the SelectProviderAsync_HealthyCandidates_ReturnsBestProvider skeleton scenario. JA: SelectProviderAsync_HealthyCandidates_ReturnsBestProvider のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void SelectProviderAsync_HealthyCandidates_ReturnsBestProvider()
     {
@@ -69,6 +78,9 @@ public sealed class ICapabilityProviderRouterTests
 /// </summary>
 public sealed class IGovernanceDecisionProviderTests
 {
+    /// <summary>
+    /// Verifies the EvaluateAsync_AllowedRequest_ReturnsAllowDecision skeleton scenario. JA: EvaluateAsync_AllowedRequest_ReturnsAllowDecision のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void EvaluateAsync_AllowedRequest_ReturnsAllowDecision()
     {
@@ -83,6 +95,9 @@ public sealed class IGovernanceDecisionProviderTests
 /// </summary>
 public sealed class IActionGovernancePolicyTests
 {
+    /// <summary>
+    /// Verifies the Evaluate_ApplicableRequest_ReturnsDecisionFragment skeleton scenario. JA: Evaluate_ApplicableRequest_ReturnsDecisionFragment のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void Evaluate_ApplicableRequest_ReturnsDecisionFragment()
     {
@@ -97,6 +112,9 @@ public sealed class IActionGovernancePolicyTests
 /// </summary>
 public sealed class ISignerServiceTests
 {
+    /// <summary>
+    /// Verifies the SignAsync_ValidPayload_ReturnsSignatureResult skeleton scenario. JA: SignAsync_ValidPayload_ReturnsSignatureResult のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void SignAsync_ValidPayload_ReturnsSignatureResult()
     {
@@ -111,6 +129,9 @@ public sealed class ISignerServiceTests
 /// </summary>
 public sealed class IVerifierServiceTests
 {
+    /// <summary>
+    /// Verifies the VerifyAsync_ValidSignature_ReturnsVerifyResult skeleton scenario. JA: VerifyAsync_ValidSignature_ReturnsVerifyResult のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void VerifyAsync_ValidSignature_ReturnsVerifyResult()
     {
@@ -125,6 +146,9 @@ public sealed class IVerifierServiceTests
 /// </summary>
 public sealed class ISignatureCounterStoreTests
 {
+    /// <summary>
+    /// Verifies the AdvanceCounterAsync_ExistingCounter_ReturnsAdvancedCounter skeleton scenario. JA: AdvanceCounterAsync_ExistingCounter_ReturnsAdvancedCounter のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void AdvanceCounterAsync_ExistingCounter_ReturnsAdvancedCounter()
     {
@@ -139,6 +163,9 @@ public sealed class ISignatureCounterStoreTests
 /// </summary>
 public sealed class ILifecycleManagerTests
 {
+    /// <summary>
+    /// Verifies the HealthCheckAsync_StartedLifecycle_ReturnsStatusSnapshot skeleton scenario. JA: HealthCheckAsync_StartedLifecycle_ReturnsStatusSnapshot のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void HealthCheckAsync_StartedLifecycle_ReturnsStatusSnapshot()
     {
@@ -153,6 +180,9 @@ public sealed class ILifecycleManagerTests
 /// </summary>
 public sealed class IMigrationScriptTests
 {
+    /// <summary>
+    /// Verifies the ApplyAsync_CompatibleContracts_ReturnsMigrationResult skeleton scenario. JA: ApplyAsync_CompatibleContracts_ReturnsMigrationResult のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void ApplyAsync_CompatibleContracts_ReturnsMigrationResult()
     {
@@ -167,6 +197,9 @@ public sealed class IMigrationScriptTests
 /// </summary>
 public sealed class IContractComparerTests
 {
+    /// <summary>
+    /// Verifies the Diff_ChangedContract_ReturnsContractDiff skeleton scenario. JA: Diff_ChangedContract_ReturnsContractDiff のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void Diff_ChangedContract_ReturnsContractDiff()
     {
@@ -181,6 +214,9 @@ public sealed class IContractComparerTests
 /// </summary>
 public sealed class ISandboxRuntimeProviderTests
 {
+    /// <summary>
+    /// Verifies the EnsureReadyAsync_ConsentGranted_ReturnsReadyResult skeleton scenario. JA: EnsureReadyAsync_ConsentGranted_ReturnsReadyResult のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void EnsureReadyAsync_ConsentGranted_ReturnsReadyResult()
     {
@@ -195,6 +231,9 @@ public sealed class ISandboxRuntimeProviderTests
 /// </summary>
 public sealed class IRuntimeStatusProviderTests
 {
+    /// <summary>
+    /// Verifies the GetStatusAsync_ValidRequest_ReturnsRuntimeStatusSnapshot skeleton scenario. JA: GetStatusAsync_ValidRequest_ReturnsRuntimeStatusSnapshot のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void GetStatusAsync_ValidRequest_ReturnsRuntimeStatusSnapshot()
     {
@@ -209,6 +248,9 @@ public sealed class IRuntimeStatusProviderTests
 /// </summary>
 public sealed class ISandboxProcessProviderTests
 {
+    /// <summary>
+    /// Verifies the ListProcessesAsync_ValidHandle_ReturnsProcessDescriptors skeleton scenario. JA: ListProcessesAsync_ValidHandle_ReturnsProcessDescriptors のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void ListProcessesAsync_ValidHandle_ReturnsProcessDescriptors()
     {
@@ -223,6 +265,9 @@ public sealed class ISandboxProcessProviderTests
 /// </summary>
 public sealed class IRuntimeAssetResolverTests
 {
+    /// <summary>
+    /// Verifies the ResolveAsync_ValidRequest_ReturnsResolutionResult skeleton scenario. JA: ResolveAsync_ValidRequest_ReturnsResolutionResult のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void ResolveAsync_ValidRequest_ReturnsResolutionResult()
     {
@@ -237,6 +282,9 @@ public sealed class IRuntimeAssetResolverTests
 /// </summary>
 public sealed class IMemoryAssetMountProviderTests
 {
+    /// <summary>
+    /// Verifies the MountAsync_ValidRequest_ReturnsMountResult skeleton scenario. JA: MountAsync_ValidRequest_ReturnsMountResult のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void MountAsync_ValidRequest_ReturnsMountResult()
     {
@@ -251,6 +299,9 @@ public sealed class IMemoryAssetMountProviderTests
 /// </summary>
 public sealed class IFrameSourceProviderTests
 {
+    /// <summary>
+    /// Verifies the CaptureAsync_ValidRequest_ReturnsFrameSnapshots skeleton scenario. JA: CaptureAsync_ValidRequest_ReturnsFrameSnapshots のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void CaptureAsync_ValidRequest_ReturnsFrameSnapshots()
     {
@@ -265,6 +316,9 @@ public sealed class IFrameSourceProviderTests
 /// </summary>
 public sealed class IFrameSurfaceProviderTests
 {
+    /// <summary>
+    /// Verifies the BindAsync_ValidRequest_ReturnsFrameSurfaceBinding skeleton scenario. JA: BindAsync_ValidRequest_ReturnsFrameSurfaceBinding のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void BindAsync_ValidRequest_ReturnsFrameSurfaceBinding()
     {
@@ -279,6 +333,9 @@ public sealed class IFrameSurfaceProviderTests
 /// </summary>
 public sealed class IFramePerceptionProviderTests
 {
+    /// <summary>
+    /// Verifies the AnalyzeAsync_ValidFrame_ReturnsPerceptionResult skeleton scenario. JA: AnalyzeAsync_ValidFrame_ReturnsPerceptionResult のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void AnalyzeAsync_ValidFrame_ReturnsPerceptionResult()
     {
@@ -293,6 +350,9 @@ public sealed class IFramePerceptionProviderTests
 /// </summary>
 public sealed class IObservationProviderTests
 {
+    /// <summary>
+    /// Verifies the ObserveAsync_ValidRequest_ReturnsObservationSnapshot skeleton scenario. JA: ObserveAsync_ValidRequest_ReturnsObservationSnapshot のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void ObserveAsync_ValidRequest_ReturnsObservationSnapshot()
     {
@@ -307,6 +367,9 @@ public sealed class IObservationProviderTests
 /// </summary>
 public sealed class IPhaseRouterProviderTests
 {
+    /// <summary>
+    /// Verifies the RouteAsync_ValidObservation_ReturnsPhaseRoutingResult skeleton scenario. JA: RouteAsync_ValidObservation_ReturnsPhaseRoutingResult のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void RouteAsync_ValidObservation_ReturnsPhaseRoutingResult()
     {
@@ -321,6 +384,9 @@ public sealed class IPhaseRouterProviderTests
 /// </summary>
 public sealed class IActionProposalProviderTests
 {
+    /// <summary>
+    /// Verifies the ProposeAsync_ValidObservation_ReturnsActionProposals skeleton scenario. JA: ProposeAsync_ValidObservation_ReturnsActionProposals のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void ProposeAsync_ValidObservation_ReturnsActionProposals()
     {
@@ -335,6 +401,9 @@ public sealed class IActionProposalProviderTests
 /// </summary>
 public sealed class IActionArbiterProviderTests
 {
+    /// <summary>
+    /// Verifies the ArbitrateAsync_ValidProposals_ReturnsArbitrationResult skeleton scenario. JA: ArbitrateAsync_ValidProposals_ReturnsArbitrationResult のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void ArbitrateAsync_ValidProposals_ReturnsArbitrationResult()
     {
@@ -349,6 +418,9 @@ public sealed class IActionArbiterProviderTests
 /// </summary>
 public sealed class IControlProfileProviderTests
 {
+    /// <summary>
+    /// Verifies the SaveAsync_ValidRequest_ReturnsControlProfileSaveResult skeleton scenario. JA: SaveAsync_ValidRequest_ReturnsControlProfileSaveResult のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void SaveAsync_ValidRequest_ReturnsControlProfileSaveResult()
     {
@@ -363,6 +435,9 @@ public sealed class IControlProfileProviderTests
 /// </summary>
 public sealed class IVirtualInputProviderTests
 {
+    /// <summary>
+    /// Verifies the SendAsync_GovernedInput_ReturnsInputResult skeleton scenario. JA: SendAsync_GovernedInput_ReturnsInputResult のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void SendAsync_GovernedInput_ReturnsInputResult()
     {
@@ -377,6 +452,9 @@ public sealed class IVirtualInputProviderTests
 /// </summary>
 public sealed class IEvidenceCaptureProviderTests
 {
+    /// <summary>
+    /// Verifies the CaptureAsync_ValidRequest_ReturnsEvidenceBundle skeleton scenario. JA: CaptureAsync_ValidRequest_ReturnsEvidenceBundle のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void CaptureAsync_ValidRequest_ReturnsEvidenceBundle()
     {
@@ -391,6 +469,9 @@ public sealed class IEvidenceCaptureProviderTests
 /// </summary>
 public sealed class IRuntimeTelemetryProviderTests
 {
+    /// <summary>
+    /// Verifies the GetTelemetryAsync_ValidRequest_ReturnsRuntimeTelemetrySnapshot skeleton scenario. JA: GetTelemetryAsync_ValidRequest_ReturnsRuntimeTelemetrySnapshot のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void GetTelemetryAsync_ValidRequest_ReturnsRuntimeTelemetrySnapshot()
     {
@@ -405,6 +486,9 @@ public sealed class IRuntimeTelemetryProviderTests
 /// </summary>
 public sealed class IReplayEvidenceProviderTests
 {
+    /// <summary>
+    /// Verifies the RecordAsync_ValidEvidence_ReturnsReplayEvidenceRecord skeleton scenario. JA: RecordAsync_ValidEvidence_ReturnsReplayEvidenceRecord のスケルトンシナリオを検証します。
+    /// </summary>
     [Fact]
     public void RecordAsync_ValidEvidence_ReturnsReplayEvidenceRecord()
     {
