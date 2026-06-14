@@ -1,5 +1,5 @@
 # Ethos Council Governance
-Version: 0.1.1-rc4
+Version: 0.1.1-rc5
 ID: Canon.CTG.Monolith.Council.Ethos
 
 The Ethos Council safeguards safety, non-harm, human dignity, and reversible trajectories.

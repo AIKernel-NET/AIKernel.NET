@@ -1,5 +1,5 @@
 # 意思決定ゲート・ガバナンス
-Version: 0.1.1-rc4
+Version: 0.1.1-rc5
 ID: Canon.CTG.Monolith.Gate.Decision
 
 意思決定ゲートは、三つの評議会の票を評価する決定論的な数学的関数である。
@@ -13,7 +13,7 @@ ID: Canon.CTG.Monolith.Gate.Decision
 意思決定ゲートの目的は、評議会の票を統合するための、純粋で、決定論的で、監査可能なメカニズムを提供することである。
 本ゲートは以下の正典的鼎立ガバナンス（CTG）規則を実装する：
 
-```code
+```text
 if ethosVeto(e) then Deny else if approveCount(l, e, p) >= 2 then Allow else Deny
 ````
 
@@ -21,7 +21,7 @@ if ethosVeto(e) then Deny else if approveCount(l, e, p) >= 2 then Allow else Den
 
 ## 2. 入力 (Inputs)
 
-意思決定ゲートは、各評議会から正確に1票を受け取る：
+意思決定ゲートは、各評議会から正確に1つの離散的な票を受け取る：
 
 - **Logos** — Approve / Abstain / Reject
     
@@ -30,7 +30,7 @@ if ethosVeto(e) then Deny else if approveCount(l, e, p) >= 2 then Allow else Den
 - **Pathos** — Approve / Abstain / Reject
     
 
-各票の意味は、各評議会のガバナンス文書で排他的に定義される。 意思決定ゲートは評議会のセマンティクス（意味論）を解釈したり、覆したりすることはない。
+入力契約（例：`GateInput` DTO）は、これら3つの離散的な票に厳密に限定されなければならない。評議会の決定に付随するいかなる連続値キャリア（`Confidence` や `RiskScore` など）も、厳密にテレメトリ用であり、意思決定ゲートから完全に隔離されるか、無視されなければならない。 意思決定ゲートは評議会のセマンティクス（意味論）を解釈したり、覆したりすることはない。
 
 ## 3. 中核規則 (Core Rules)
 

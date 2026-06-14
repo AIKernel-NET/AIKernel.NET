@@ -1,5 +1,5 @@
 # Decision Gate Governance
-Version: 0.1.1-rc4
+Version: 0.1.1-rc5
 ID: Canon.CTG.Monolith.Gate.Decision
 
 The Decision Gate is a deterministic mathematical function that evaluates the votes of the three councils.
@@ -13,7 +13,7 @@ Its sole responsibility is to compute the final decision from the discrete votes
 The purpose of the Decision Gate is to provide a pure, deterministic, and auditable mechanism for combining council votes.
 It implements the Canonical Triadic Governance (CTG) rule:
 
-```code
+```text
 if ethosVeto(e) then Deny else if approveCount(l, e, p) >= 2 then Allow else Deny
 ````
 
@@ -21,7 +21,7 @@ This rule is the complete and final definition of the Decision Gate.
 
 ## 2. Inputs
 
-The Decision Gate receives exactly one vote from each council:
+The Decision Gate receives exactly one discrete vote from each council:
 
 - **Logos** — Approve / Abstain / Reject
     
@@ -30,7 +30,7 @@ The Decision Gate receives exactly one vote from each council:
 - **Pathos** — Approve / Abstain / Reject
     
 
-The meaning of each vote is defined exclusively in the council governance documents. The Decision Gate does not interpret or override council semantics.
+The input contract (e.g., `GateInput` DTO) must be strictly limited to these three discrete votes. Any continuous carriers (such as `Confidence` or `RiskScore`) attached to council decisions are strictly for telemetry and MUST be completely isolated from or ignored by the Decision Gate. The Decision Gate does not interpret or override council semantics.
 
 ## 3. Core Rules
 

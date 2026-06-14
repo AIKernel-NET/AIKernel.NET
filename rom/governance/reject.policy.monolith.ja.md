@@ -1,5 +1,5 @@
 # 拒絶ポリシー・ガバナンス
-Version: 0.1.1-rc4
+Version: 0.1.1-rc5
 ID: Canon.CTG.Monolith.Policy.Reject
 
 拒絶ポリシーは、ガバナンスシステム全体で使用される拒絶理由の正典的な分類体系（タクソノミー）を定義する。
@@ -65,7 +65,7 @@ ID: Canon.CTG.Monolith.Policy.Reject
 
 - **ETHOS_VETO（Ethosの拒否権）**
   Ethosが Reject を投じ、絶対的な拒否権がトリガーされた。
-  （意思決定ゲートのみ）
+  （意思決定ゲートのみ。注：評議会レベルの診断における「Vetoed」状態は純粋に情報提供であり、正式な構造的拒絶はこのゲートレベルの理由のみである。）
 
 - **FAIL_CLOSED（フェイルクローズ）**
   Approve 票が過半数に達しなかった（Approve < 2）。

@@ -1,5 +1,5 @@
 # モノリス人格のための正典的ガバナンス
-Version: 0.1.1-rc4
+Version: 0.1.1-rc5
 ID: Canon.CTG.Monolith.Canon
 
 本文書は、AIKernelにおけるモノリス人格の正典的ガバナンス原則を定義する。
@@ -39,6 +39,7 @@ ID: Canon.CTG.Monolith.Canon
 - **Pathos（情動評議会）** — 人間の文脈と感情的状態への配慮を評価する。
 
 各評議会は、正確に1つの離散的な票を投じる： **Approve（承認）**, **Abstain（棄権）**, または **Reject（拒絶）**。
+評議会によって生成されるいかなる連続的メトリクス（例：RiskScore、Confidence）も、厳密には診断用のテレメトリであり、ゲートの評価ロジックと交差してはならない。
 
 ---
 

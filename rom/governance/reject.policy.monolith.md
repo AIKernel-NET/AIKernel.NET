@@ -1,5 +1,5 @@
 # Reject Policy Governance
-Version: 0.1.1-rc4
+Version: 0.1.1-rc5
 ID: Canon.CTG.Monolith.Policy.Reject
 
 The Reject Policy defines the canonical taxonomy of rejection reasons used across the governance system.
@@ -65,7 +65,7 @@ These reasons reflect *structural* outcomes of the governance process.
 
 - **ETHOS_VETO**
   Ethos cast Reject, triggering absolute veto.
-  (Decision Gate only)
+  (Decision Gate only. Note: Any "Vetoed" status in council-level diagnostics is purely informational; the formal structural rejection is exclusively this gate-level reason.)
 
 - **FAIL_CLOSED**
   Approve votes did not reach majority (Approve < 2).

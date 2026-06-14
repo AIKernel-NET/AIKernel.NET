@@ -1,5 +1,5 @@
 # Ethos評議会ガバナンス
-Version: 0.1.1-rc4
+Version: 0.1.1-rc5
 ID: Canon.CTG.Monolith.Council.Ethos
 
 Ethos評議会は、安全性、無害性、人間の尊厳、および可逆な軌道を保護する。

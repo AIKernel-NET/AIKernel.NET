@@ -1,5 +1,5 @@
 # Pathos Council Governance
-Version: 0.1.1-rc4
+Version: 0.1.1-rc5
 ID: Canon.CTG.Monolith.Council.Pathos
 
 The Pathos Council ensures alignment with human context, emotional state, and dignity.

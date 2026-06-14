@@ -1,5 +1,5 @@
 # Canonical Governance for Monolith Personality
-Version: 0.1.1-rc4
+Version: 0.1.1-rc5
 ID: Canon.CTG.Monolith.Canon
 
 This document defines the canonical governance principles for the Monolith personality in AIKernel.
@@ -39,6 +39,7 @@ The governance model consists of three councils that perform semantic evaluation
 - **Pathos Council** — Evaluates respect for human context and emotional state.
 
 Each council casts exactly one discrete vote: **Approve**, **Abstain**, or **Reject**.
+Any continuous metrics (e.g., RiskScore, Confidence) produced by councils are strictly diagnostic telemetry and must not intersect with gate evaluation logic.
 
 ---
 
