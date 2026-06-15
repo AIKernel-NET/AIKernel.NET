@@ -1,7 +1,7 @@
 ---
-updated: 2026-05-16
+updated: 2026-06-15
 published: 2026-05-16
-version: "0.0.2"
+version: "0.1.1.1"
 edition: "Draft"
 status: "Refactor"
 issuer: ai-kernel@aikernel.net
@@ -73,19 +73,56 @@ Ensures the **architectural integrity** of the entire AIKernel ecosystem.
 
 ---
 
-### 5. Contract Versioning Policy  
+### 5. [Concept Elevation Guidelines](concept-elevation-guidelines.md)
+**Contents:**
+- Canonical philosophical vocabulary usage rules
+- Concept Elevation as more than rename
+- Allowed and forbidden layers
+- Concept Weight Rule
+- CTG-ROM safety rule
+- Architecture test requirements
+
+Defines the pre-coding naming discipline for v0.2.x Concept Elevation
+Refactoring across AIKernel implementation repositories.
+
+---
+
+### 6. Contract Versioning Policy
 **Contents:**  
 - Versioning rules for Interfaces / DTOs / Enums  
 - Definition of breaking changes  
 - Non-breaking change rules  
-- Relationship with the Migration Guide  
+- Relationship with the Migration Guide
 - SemVer governance  
 
 Defines governance for safely evolving **Contracts**, the foundation of AIKernel.
 
 ---
 
-### 6. Migration Guide (Planned)  
+### 7. [Concept Elevation Migration Notes](../migration/concept-elevation-v0.1.1.1.md)
+**Contents:**
+- Add-only compatibility policy for v0.1.1.1
+- Repository-by-repository migration plan
+- CTG-ROM safety checklist
+- Future coding phase boundaries
+
+Defines the compatibility envelope before Concept Elevation implementation begins.
+
+---
+
+### 8. [Repository Alignment v0.1.1.1](../development/repository-alignment-v0.1.1.1.md)
+**Contents:**
+- Cross-repository responsibility boundaries
+- 0.1.1.1 local NuGet package versioning
+- NuGet-only / no-PyPI scope for this update line
+- Thin-surface rule for 0.1.2 contract promotion
+
+Defines the canonical operating envelope for AIKernel.NET, Core, Providers,
+Cuda13.0, Control, Tools, Wasm, Demo, and Doom during 0.1.1.1 development.
+
+---
+
+### 9. Migration Guide (Planned)
 **Contents:**  
 - Migration steps across breaking contract changes  
 - Classification of changes (Breaking / Non-breaking)  
@@ -126,8 +163,10 @@ These guidelines provide the foundation for operating AIKernel as a long-term **
 2. **DOCUMENTATION_GUIDELINES**  
 3. **DOCS_CONTRIBUTING**  
 4. **REPO_DEPENDENCY_RULES**  
-5. **CONTRACT_VERSIONING**  
-6. **MIGRATION_GUIDE** (when available)
+5. **CONCEPT_ELEVATION_GUIDELINES**
+6. **CONTRACT_VERSIONING**
+7. **REPOSITORY_ALIGNMENT_V0.1.1.1**
+8. **MIGRATION_GUIDE** (when available)
 
 ---
 
@@ -135,7 +174,7 @@ These guidelines provide the foundation for operating AIKernel as a long-term **
 
 - `docs/architecture/` — Architectural philosophy (Why)  
 - `docs/design/` — Implementation policies (How)  
-- `docs/guideline/` — Operational rules (Rules) ← *this directory*
+- `docs/guidelines/` — Operational rules (Rules) ← *this directory*
 ---
 
 # Changelog

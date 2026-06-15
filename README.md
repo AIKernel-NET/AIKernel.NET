@@ -93,6 +93,23 @@ Release notes:
 
 ---
 
+## Concept Elevation
+
+AIKernel v0.2.x introduces a concept-layer naming system based on a canonical philosophical vocabulary.
+This does not change CTG-ROM or canonical governance contracts.
+
+See:
+
+- [Development Notes](docs/development/index.md)
+- [Repository Alignment v0.1.1.1](docs/development/repository-alignment-v0.1.1.1.md)
+- [Canonical Language Dictionary](docs/canonical-language/index.md)
+- [Concept Elevation Refactoring Design](docs/design/concept-elevation-refactoring-design.md)
+- [Concept Elevation Guidelines](docs/guidelines/concept-elevation-guidelines.md)
+- [Concept Elevation Migration Notes](docs/migration/concept-elevation-v0.1.1.1.md)
+- [Concept Elevation TODO](docs/todo/concept-elevation-refactoring-todo.md)
+
+---
+
 ## NuGet Packages
 
 AIKernel.NET is composed of multiple independent abstraction layers.  
@@ -272,22 +289,28 @@ The documentation is organized into the following categories:
 | Directory | Role |
 | --- | --- |
 | `docs/architecture` | Why: principles, invariants, governance |
+| `docs/canonical-language` | Vocabulary: ecosystem-wide concept-layer naming dictionary |
 | `docs/design` | How: design decisions and implementation strategy |
 | `docs/specs` | What: normative contracts and acceptance criteria |
 | `docs/guidelines` | Rules: repository and contribution policies |
+| `docs/migration` | Migration notes and compatibility plans |
 | `docs/operations` | Release, migration, and package-public operation guides |
 | `docs/papers` | DOI-backed AIKernel / AIOS paper series |
 | `docs/theory` | Work-in-progress research notes before paper/spec promotion |
+| `docs/todo` | Pre-coding and cross-repository task trackers |
 
 For the latest structure and cross-links, use the category indexes:
 
 - `docs/architecture/index.md` / `docs/architecture/index-jp.md`
+- `docs/canonical-language/index.md`
 - `docs/design/index.md` / `docs/design/index-jp.md`
 - `docs/specs/index.md` / `docs/specs/index-jp.md`
 - `docs/guidelines/index.md` / `docs/guidelines/index-jp.md`
+- `docs/migration/concept-elevation-v0.1.1.1.md`
 - `docs/operations/index.md` / `docs/operations/index-jp.md`
 - `docs/papers/README.md`
 - `docs/theory/README.md` / `docs/theory/README-jp.md`
+- `docs/todo/concept-elevation-refactoring-todo.md`
 
 For the v0.1.1.1 additive contract surface, start with:
 

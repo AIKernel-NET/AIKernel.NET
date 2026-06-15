@@ -34,6 +34,7 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 - [CONTRACT_VERSIONING-jp.md](CONTRACT_VERSIONING-jp.md)
 - [SEMANTIC_SNAPSHOT_FORMAT-jp.md](SEMANTIC_SNAPSHOT_FORMAT-jp.md)
 - [CTG_CONTRACT_MODEL-v0.1.1.1-jp.md](CTG_CONTRACT_MODEL-v0.1.1.1-jp.md)
+- [concept-elevation-refactoring-design-jp.md](concept-elevation-refactoring-design-jp.md)
 
 ---
 
@@ -41,3 +42,4 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 - v0.0.0 / v0.0.0.0: 初期ドラフト
 - v0.0.1 (2026-05-06): AIOS理論との対応付けを追加
 - v0.1.1.1 (2026-06-14): CTG contract model guide を追加
+- v0.1.1.1 (2026-06-15): Concept Elevation refactoring design を追加
