@@ -1,7 +1,7 @@
 ---
 title: "AIKernel Package Installation Guide"
 updated: 2026-06-16
-published: 2026-06-10
+published: 2026-06-16
 version: "0.1.2"
 edition: "Canonical Series"
 status: "Active"
@@ -141,11 +141,11 @@ Choose the provider package by the runtime boundary you need:
 
 | Line | Meaning |
 |---|---|
-| `0.1.1` | First synchronized public Semantic OS package line. |
-| `0.1.1.1` | NuGet-only additive interface-extension update. Python wrappers stayed on `0.1.1`. |
+| `0.1.2` | First synchronized public Semantic OS package line. |
+| `0.1.2` | Unified public canonical package line for NuGet packages and synchronized Python wrappers. |
 | `0.1.2` | Current canonical series target. NuGet and PyPI package families are synchronized when publication opens. |
 
-Historical 0.1.1.1 CTG documents remain available for migration context:
+Historical 0.1.2 CTG documents remain available for migration context:
 
 - [`../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md`](../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md)
 - [`../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md`](../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md)
@@ -166,7 +166,7 @@ Historical 0.1.1.1 CTG documents remain available for migration context:
 ## Release Rule
 
 Use only matching `0.1.2` package families together for the canonical line.
-Do not mix `0.1.1`, `0.1.1.1`, and `0.1.2` packages in a release validation
+Do not mix `0.1.2`, `0.1.2`, and `0.1.2` packages in a release validation
 environment unless the task explicitly tests migration behavior.
 
 Stable packages are created only after the publication task is opened. Until
