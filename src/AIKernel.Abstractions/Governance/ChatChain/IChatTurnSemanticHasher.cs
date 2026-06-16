@@ -2,7 +2,7 @@ namespace AIKernel.Abstractions.Governance.ChatChain;
 
 /// <summary>
 /// EN: Computes the deterministic hash for a chat turn from canonical content and the previous turn hash.
-/// EN: Documentation for public API. JA: IChatTurnSemanticHasher の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IChatTurnSemanticHasher の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ChatChain.IChatTurnSemanticHasher']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ChatChain.IChatTurnSemanticHasher']" />

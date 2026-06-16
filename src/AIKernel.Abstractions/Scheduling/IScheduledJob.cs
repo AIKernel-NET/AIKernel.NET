@@ -2,7 +2,7 @@ namespace AIKernel.Abstractions.Scheduling;
 
 /// <summary>
 /// EN: UC-28 に基づく IScheduledJob の契約を定義します。
-/// EN: Documentation for public API. JA: IScheduledJob の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IScheduledJob の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Scheduling.IScheduledJob']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Scheduling.IScheduledJob']" />

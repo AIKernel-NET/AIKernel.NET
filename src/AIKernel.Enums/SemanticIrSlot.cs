@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: Identifies the four slots of AIKernel Semantic IR without prescribing runtime behavior.
-/// EN: Documentation for public API. JA: SemanticIrSlot の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] SemanticIrSlot の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Enums.SemanticIrSlot']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Enums.SemanticIrSlot']" />

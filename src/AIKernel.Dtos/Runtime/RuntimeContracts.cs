@@ -6,7 +6,7 @@ namespace AIKernel.Dtos.Runtime;
 
 /// <summary>
 /// EN: Carries a sandbox runtime preparation result.
-/// EN: Documentation for public API. JA: SandboxRuntimePreparationResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] SandboxRuntimePreparationResult の公開契約を定義します。
 /// </summary>
 public sealed record SandboxRuntimePreparationResult
 {
@@ -28,7 +28,7 @@ public sealed record SandboxRuntimePreparationResult
 
 /// <summary>
 /// EN: Carries a sandbox runtime start request.
-/// EN: Documentation for public API. JA: SandboxRuntimeStartRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] SandboxRuntimeStartRequest の公開契約を定義します。
 /// </summary>
 public sealed record SandboxRuntimeStartRequest
 {
@@ -44,7 +44,7 @@ public sealed record SandboxRuntimeStartRequest
 
 /// <summary>
 /// EN: Carries a sandbox runtime start result.
-/// EN: Documentation for public API. JA: SandboxRuntimeStartResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] SandboxRuntimeStartResult の公開契約を定義します。
 /// </summary>
 public sealed record SandboxRuntimeStartResult
 {
@@ -63,7 +63,7 @@ public sealed record SandboxRuntimeStartResult
 
 /// <summary>
 /// EN: Carries a sandbox runtime stop request.
-/// EN: Documentation for public API. JA: SandboxRuntimeStopRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] SandboxRuntimeStopRequest の公開契約を定義します。
 /// </summary>
 public sealed record SandboxRuntimeStopRequest
 {
@@ -79,7 +79,7 @@ public sealed record SandboxRuntimeStopRequest
 
 /// <summary>
 /// EN: Carries a sandbox runtime stop result.
-/// EN: Documentation for public API. JA: SandboxRuntimeStopResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] SandboxRuntimeStopResult の公開契約を定義します。
 /// </summary>
 public sealed record SandboxRuntimeStopResult
 {
@@ -95,7 +95,7 @@ public sealed record SandboxRuntimeStopResult
 
 /// <summary>
 /// EN: Carries a runtime status snapshot.
-/// EN: Documentation for public API. JA: RuntimeStatusSnapshot の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeStatusSnapshot の公開契約を定義します。
 /// </summary>
 public sealed record RuntimeStatusSnapshot
 {
@@ -141,7 +141,7 @@ public sealed record RuntimeStatusSnapshot
 
 /// <summary>
 /// EN: Carries a runtime status request.
-/// EN: Documentation for public API. JA: RuntimeStatusRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeStatusRequest の公開契約を定義します。
 /// </summary>
 public sealed record RuntimeStatusRequest
 {
@@ -154,7 +154,7 @@ public sealed record RuntimeStatusRequest
 
 /// <summary>
 /// EN: Identifies a sandbox runtime instance.
-/// EN: Documentation for public API. JA: SandboxInstanceHandle の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] SandboxInstanceHandle の公開契約を定義します。
 /// </summary>
 public sealed record SandboxInstanceHandle
 {
@@ -170,7 +170,7 @@ public sealed record SandboxInstanceHandle
 
 /// <summary>
 /// EN: Carries a sandbox process creation request.
-/// EN: Documentation for public API. JA: SandboxProcessCreateRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] SandboxProcessCreateRequest の公開契約を定義します。
 /// </summary>
 public sealed record SandboxProcessCreateRequest
 {
@@ -186,7 +186,7 @@ public sealed record SandboxProcessCreateRequest
 
 /// <summary>
 /// EN: Carries a sandbox process snapshot.
-/// EN: Documentation for public API. JA: SandboxProcessSnapshot の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] SandboxProcessSnapshot の公開契約を定義します。
 /// </summary>
 public sealed record SandboxProcessSnapshot
 {
@@ -205,7 +205,7 @@ public sealed record SandboxProcessSnapshot
 
 /// <summary>
 /// EN: Describes a sandbox process.
-/// EN: Documentation for public API. JA: SandboxProcessDescriptor の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] SandboxProcessDescriptor の公開契約を定義します。
 /// </summary>
 public sealed record SandboxProcessDescriptor
 {
@@ -224,7 +224,7 @@ public sealed record SandboxProcessDescriptor
 
 /// <summary>
 /// EN: Carries a runtime asset request.
-/// EN: Documentation for public API. JA: RuntimeAssetRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeAssetRequest の公開契約を定義します。
 /// </summary>
 public sealed record RuntimeAssetRequest
 {
@@ -246,7 +246,7 @@ public sealed record RuntimeAssetRequest
 
 /// <summary>
 /// EN: Carries a runtime asset resolution result.
-/// EN: Documentation for public API. JA: RuntimeAssetResolutionResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeAssetResolutionResult の公開契約を定義します。
 /// </summary>
 public sealed record RuntimeAssetResolutionResult
 {
@@ -265,7 +265,7 @@ public sealed record RuntimeAssetResolutionResult
 
 /// <summary>
 /// EN: Carries a memory asset mount request.
-/// EN: Documentation for public API. JA: MemoryAssetMountRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] MemoryAssetMountRequest の公開契約を定義します。
 /// </summary>
 public sealed record MemoryAssetMountRequest
 {
@@ -284,7 +284,7 @@ public sealed record MemoryAssetMountRequest
 
 /// <summary>
 /// EN: Carries a memory asset mount result.
-/// EN: Documentation for public API. JA: MemoryAssetMountResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] MemoryAssetMountResult の公開契約を定義します。
 /// </summary>
 public sealed record MemoryAssetMountResult
 {

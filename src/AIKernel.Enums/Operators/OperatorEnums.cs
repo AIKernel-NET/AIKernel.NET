@@ -2,7 +2,7 @@ namespace AIKernel.Enums.Operators;
 
 /// <summary>
 /// EN: Describes operator mode.
-/// EN: Documentation for public API. JA: OperatorMode の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OperatorMode の公開契約を定義します。
 /// </summary>
 public enum OperatorMode
 {
@@ -24,7 +24,7 @@ public enum OperatorMode
 
 /// <summary>
 /// EN: Describes operator decisions.
-/// EN: Documentation for public API. JA: OperatorDecisionKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OperatorDecisionKind の公開契約を定義します。
 /// </summary>
 public enum OperatorDecisionKind
 {
@@ -46,7 +46,7 @@ public enum OperatorDecisionKind
 
 /// <summary>
 /// EN: Describes action proposal kinds.
-/// EN: Documentation for public API. JA: ActionProposalKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ActionProposalKind の公開契約を定義します。
 /// </summary>
 public enum ActionProposalKind
 {

@@ -4,7 +4,7 @@ namespace AIKernel.Dtos.Diagnostics;
 
 /// <summary>
 /// EN: Carries a portable diagnostic entry.
-/// EN: Documentation for public API. JA: DiagnosticEntry の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] DiagnosticEntry の公開契約を定義します。
 /// </summary>
 public sealed record DiagnosticEntry
 {
@@ -47,7 +47,7 @@ public sealed record DiagnosticEntry
 
 /// <summary>
 /// EN: Carries diagnostic details for result and snapshot DTOs.
-/// EN: Documentation for public API. JA: DiagnosticInfo の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] DiagnosticInfo の公開契約を定義します。
 /// </summary>
 public sealed record DiagnosticInfo
 {
@@ -60,7 +60,7 @@ public sealed record DiagnosticInfo
 
 /// <summary>
 /// EN: Carries a diagnostics snapshot request.
-/// EN: Documentation for public API. JA: DiagnosticSnapshotRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] DiagnosticSnapshotRequest の公開契約を定義します。
 /// </summary>
 public sealed record DiagnosticSnapshotRequest
 {
@@ -79,7 +79,7 @@ public sealed record DiagnosticSnapshotRequest
 
 /// <summary>
 /// EN: Carries a diagnostics snapshot.
-/// EN: Documentation for public API. JA: DiagnosticSnapshot の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] DiagnosticSnapshot の公開契約を定義します。
 /// </summary>
 public sealed record DiagnosticSnapshot
 {
@@ -113,7 +113,7 @@ public sealed record DiagnosticSnapshot
 
 /// <summary>
 /// EN: Carries a diagnostic query.
-/// EN: Documentation for public API. JA: DiagnosticQuery の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] DiagnosticQuery の公開契約を定義します。
 /// </summary>
 public sealed record DiagnosticQuery
 {
@@ -138,7 +138,7 @@ public sealed record DiagnosticQuery
 
 /// <summary>
 /// EN: Carries a diagnostic clear request.
-/// EN: Documentation for public API. JA: DiagnosticClearRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] DiagnosticClearRequest の公開契約を定義します。
 /// </summary>
 public sealed record DiagnosticClearRequest
 {
@@ -154,7 +154,7 @@ public sealed record DiagnosticClearRequest
 
 /// <summary>
 /// EN: Carries a diagnostic clear result.
-/// EN: Documentation for public API. JA: DiagnosticClearResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] DiagnosticClearResult の公開契約を定義します。
 /// </summary>
 public sealed record DiagnosticClearResult
 {
@@ -191,7 +191,7 @@ public sealed record DiagnosticClearResult
 
 /// <summary>
 /// EN: Carries a diagnostic key catalog request.
-/// EN: Documentation for public API. JA: DiagnosticKeyDescribeRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] DiagnosticKeyDescribeRequest の公開契約を定義します。
 /// </summary>
 public sealed record DiagnosticKeyDescribeRequest
 {
@@ -204,7 +204,7 @@ public sealed record DiagnosticKeyDescribeRequest
 
 /// <summary>
 /// EN: Carries known diagnostic keys.
-/// EN: Documentation for public API. JA: DiagnosticKeyCatalog の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] DiagnosticKeyCatalog の公開契約を定義します。
 /// </summary>
 public sealed record DiagnosticKeyCatalog
 {

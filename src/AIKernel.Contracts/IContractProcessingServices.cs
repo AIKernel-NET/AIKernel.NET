@@ -6,7 +6,7 @@ namespace AIKernel.Contracts;
 /// <summary>
 /// 統合コンテキスト契約を検証する service interface です。
 /// EN: Contract 自体は不変 view に留まり、検証処理はこの境界へ外出しします。
-/// EN: Documentation for public API. JA: IUnifiedContextContractValidator の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IUnifiedContextContractValidator の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IUnifiedContextContractValidator']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IUnifiedContextContractValidator']" />
@@ -18,7 +18,7 @@ public interface IUnifiedContextContractValidator
 
 /// <summary>
 /// EN: 3 層分離を検証する service interface です。
-/// EN: Documentation for public API. JA: ILayerSeparationValidator の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ILayerSeparationValidator の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.ILayerSeparationValidator']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.ILayerSeparationValidator']" />
@@ -30,7 +30,7 @@ public interface ILayerSeparationValidator
 
 /// <summary>
 /// EN: Attention 汚染を検出する service interface です。
-/// EN: Documentation for public API. JA: IAttentionPollutionDetector の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IAttentionPollutionDetector の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IAttentionPollutionDetector']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IAttentionPollutionDetector']" />
@@ -42,7 +42,7 @@ public interface IAttentionPollutionDetector
 
 /// <summary>
 /// EN: Signal-to-Noise Ratio（SNR）を計算する service interface です。
-/// EN: Documentation for public API. JA: ISignalToNoiseRatioCalculator の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ISignalToNoiseRatioCalculator の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.ISignalToNoiseRatioCalculator']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.ISignalToNoiseRatioCalculator']" />
@@ -57,7 +57,7 @@ public interface ISignalToNoiseRatioCalculator
 
 /// <summary>
 /// EN: Orchestration 契約を検証する service interface です。
-/// EN: Documentation for public API. JA: IOrchestrationContractValidator の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IOrchestrationContractValidator の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IOrchestrationContractValidator']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IOrchestrationContractValidator']" />
@@ -69,7 +69,7 @@ public interface IOrchestrationContractValidator
 
 /// <summary>
 /// EN: Expression 契約の隔離状態を検証する service interface です。
-/// EN: Documentation for public API. JA: IExpressionIsolationValidator の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IExpressionIsolationValidator の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IExpressionIsolationValidator']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IExpressionIsolationValidator']" />
@@ -81,7 +81,7 @@ public interface IExpressionIsolationValidator
 
 /// <summary>
 /// EN: Expression 契約の適用タイミングを判定する service interface です。
-/// EN: Documentation for public API. JA: IExpressionApplicationGate の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IExpressionApplicationGate の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IExpressionApplicationGate']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IExpressionApplicationGate']" />
@@ -93,7 +93,7 @@ public interface IExpressionApplicationGate
 
 /// <summary>
 /// EN: Material 契約を正規化する service interface です。
-/// EN: Documentation for public API. JA: IMaterialNormalizer の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IMaterialNormalizer の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IMaterialNormalizer']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IMaterialNormalizer']" />
@@ -105,7 +105,7 @@ public interface IMaterialNormalizer
 
 /// <summary>
 /// EN: Material 契約を構造化する service interface です。
-/// EN: Documentation for public API. JA: IMaterialStructurizer の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IMaterialStructurizer の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IMaterialStructurizer']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IMaterialStructurizer']" />
@@ -117,7 +117,7 @@ public interface IMaterialStructurizer
 
 /// <summary>
 /// EN: Material 契約を正準化する service interface です。
-/// EN: Documentation for public API. JA: IMaterialCanonicalizer の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IMaterialCanonicalizer の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IMaterialCanonicalizer']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IMaterialCanonicalizer']" />
@@ -129,7 +129,7 @@ public interface IMaterialCanonicalizer
 
 /// <summary>
 /// EN: Material 契約の hash を計算する service interface です。
-/// EN: Documentation for public API. JA: IMaterialHashProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IMaterialHashProvider の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IMaterialHashProvider']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IMaterialHashProvider']" />
@@ -141,7 +141,7 @@ public interface IMaterialHashProvider
 
 /// <summary>
 /// EN: Orchestration Context へ転写可能な必須 content を抽出する service interface です。
-/// EN: Documentation for public API. JA: IEssentialMaterialExtractor の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IEssentialMaterialExtractor の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IEssentialMaterialExtractor']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IEssentialMaterialExtractor']" />
@@ -153,7 +153,7 @@ public interface IEssentialMaterialExtractor
 
 /// <summary>
 /// EN: Material 検疫状態を検証する service interface です。
-/// EN: Documentation for public API. JA: IMaterialQuarantineValidator の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IMaterialQuarantineValidator の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IMaterialQuarantineValidator']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IMaterialQuarantineValidator']" />

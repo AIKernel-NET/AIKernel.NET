@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: Classifies a provider by its architectural responsibility.
-/// EN: Documentation for public API. JA: ProviderKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderKind の公開契約を定義します。
 /// </summary>
 public enum ProviderKind
 {

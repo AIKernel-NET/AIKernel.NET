@@ -2,7 +2,7 @@ namespace AIKernel.Enums.Runtime;
 
 /// <summary>
 /// EN: Describes how a runtime is attached.
-/// EN: Documentation for public API. JA: RuntimeAttachmentMode の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeAttachmentMode の公開契約を定義します。
 /// </summary>
 public enum RuntimeAttachmentMode
 {
@@ -24,7 +24,7 @@ public enum RuntimeAttachmentMode
 
 /// <summary>
 /// EN: Describes runtime control operations.
-/// EN: Documentation for public API. JA: RuntimeControlOperation の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeControlOperation の公開契約を定義します。
 /// </summary>
 public enum RuntimeControlOperation
 {
@@ -49,7 +49,7 @@ public enum RuntimeControlOperation
 
 /// <summary>
 /// EN: Describes runtime state.
-/// EN: Documentation for public API. JA: RuntimeState の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeState の公開契約を定義します。
 /// </summary>
 public enum RuntimeState
 {
@@ -80,7 +80,7 @@ public enum RuntimeState
 
 /// <summary>
 /// EN: Describes runtime failure categories.
-/// EN: Documentation for public API. JA: RuntimeFailureKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeFailureKind の公開契約を定義します。
 /// </summary>
 public enum RuntimeFailureKind
 {
@@ -108,7 +108,7 @@ public enum RuntimeFailureKind
 
 /// <summary>
 /// EN: Describes process control operations.
-/// EN: Documentation for public API. JA: ProcessControlOperation の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProcessControlOperation の公開契約を定義します。
 /// </summary>
 public enum ProcessControlOperation
 {
@@ -136,7 +136,7 @@ public enum ProcessControlOperation
 
 /// <summary>
 /// EN: Describes process state.
-/// EN: Documentation for public API. JA: ProcessStateKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProcessStateKind の公開契約を定義します。
 /// </summary>
 public enum ProcessStateKind
 {
@@ -161,7 +161,7 @@ public enum ProcessStateKind
 
 /// <summary>
 /// EN: Describes portable process signals.
-/// EN: Documentation for public API. JA: ProcessSignalKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProcessSignalKind の公開契約を定義します。
 /// </summary>
 public enum ProcessSignalKind
 {

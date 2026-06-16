@@ -2,7 +2,7 @@ namespace AIKernel.Abstractions.Security;
 
 /// <summary>
 /// EN: UC-21 に基づく IPolicy の契約を定義します。
-/// EN: Documentation for public API. JA: IPolicy の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IPolicy の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPolicy']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPolicy']" />

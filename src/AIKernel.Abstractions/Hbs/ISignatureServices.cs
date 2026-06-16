@@ -4,13 +4,13 @@ namespace AIKernel.Abstractions.Hbs;
 
 /// <summary>
 /// EN: Signs deterministic payload references for hash-bound signature chains.
-/// EN: Documentation for public API. JA: ISignerService の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ISignerService の公開契約を定義します。
 /// </summary>
 public interface ISignerService
 {
     /// <summary>
     /// EN: Signs a payload reference.
-    /// EN: Documentation for public API. JA: SignAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] SignAsync 操作を実行します。
     /// </summary>
     /// <param name="payload">EN: The payload reference or hash. JA: payload パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -20,13 +20,13 @@ public interface ISignerService
 
 /// <summary>
 /// EN: Verifies deterministic payload signatures.
-/// EN: Documentation for public API. JA: IVerifierService の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IVerifierService の公開契約を定義します。
 /// </summary>
 public interface IVerifierService
 {
     /// <summary>
     /// EN: Verifies a payload signature.
-    /// EN: Documentation for public API. JA: VerifyAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] VerifyAsync 操作を実行します。
     /// </summary>
     /// <param name="payload">EN: The payload reference or hash. JA: payload パラメーターです。</param>
     /// <param name="signature">EN: The signature value. JA: signature パラメーターです。</param>
@@ -40,13 +40,13 @@ public interface IVerifierService
 
 /// <summary>
 /// EN: Manages monotonic signature counters.
-/// EN: Documentation for public API. JA: ISignatureCounterStore の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ISignatureCounterStore の公開契約を定義します。
 /// </summary>
 public interface ISignatureCounterStore
 {
     /// <summary>
     /// EN: Gets the current signature counter.
-    /// EN: Documentation for public API. JA: GetCounterAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] GetCounterAsync 操作を実行します。
     /// </summary>
     /// <param name="counterId">EN: The counter identifier. JA: counterId パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -55,7 +55,7 @@ public interface ISignatureCounterStore
 
     /// <summary>
     /// EN: Advances the signature counter.
-    /// EN: Documentation for public API. JA: AdvanceCounterAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] AdvanceCounterAsync 操作を実行します。
     /// </summary>
     /// <param name="counterId">EN: The counter identifier. JA: counterId パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>

@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: Describes input modalities accepted by a provider capability.
-/// EN: Documentation for public API. JA: InputModalities の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] InputModalities の公開契約を定義します。
 /// </summary>
 [Flags]
 public enum InputModalities

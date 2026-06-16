@@ -2,7 +2,7 @@ namespace AIKernel.Abstractions.Dsl;
 
 using AIKernel.Dtos.Dsl;
 
-/// <summary>EN: Documentation for public API. JA: IKernelPipeline contract を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] IKernelPipeline contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Dsl.IKernelPipeline']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Dsl.IKernelPipeline']" />
 public interface IKernelPipeline

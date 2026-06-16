@@ -3,7 +3,7 @@ namespace AIKernel.Abstractions.Scheduling;
 /// <summary>
 /// UC-28 に基づく契約です。
 /// EN: Scheduled job を参照する capability interface です。
-/// EN: Documentation for public API. JA: IScheduledJobReader の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IScheduledJobReader の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Scheduling.IScheduledJobReader']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Scheduling.IScheduledJobReader']" />
@@ -19,7 +19,7 @@ public interface IScheduledJobReader
 /// <summary>
 /// UC-28 に基づく契約です。
 /// EN: Job を schedule する capability interface です。
-/// EN: Documentation for public API. JA: IJobScheduler の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IJobScheduler の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Scheduling.IJobScheduler']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Scheduling.IJobScheduler']" />
@@ -32,7 +32,7 @@ public interface IJobScheduler
 /// <summary>
 /// UC-28 に基づく契約です。
 /// EN: Scheduled job を cancel する capability interface です。
-/// EN: Documentation for public API. JA: IScheduledJobCanceller の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IScheduledJobCanceller の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Scheduling.IScheduledJobCanceller']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Scheduling.IScheduledJobCanceller']" />
@@ -45,7 +45,7 @@ public interface IScheduledJobCanceller
 /// <summary>
 /// UC-28 に基づく契約です。
 /// EN: Scheduled job の実行結果を参照する capability interface です。
-/// EN: Documentation for public API. JA: IScheduledExecutionResultReader の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IScheduledExecutionResultReader の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Scheduling.IScheduledExecutionResultReader']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Scheduling.IScheduledExecutionResultReader']" />
@@ -57,7 +57,7 @@ public interface IScheduledExecutionResultReader
 
 /// <summary>
 /// EN: UC-28 に基づく IScheduler の互換合成 contract を定義します。
-/// EN: Documentation for public API. JA: IScheduler の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IScheduler の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Scheduling.IScheduler']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Scheduling.IScheduler']" />

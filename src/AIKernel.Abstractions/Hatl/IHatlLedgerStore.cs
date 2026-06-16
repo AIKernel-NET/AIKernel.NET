@@ -2,7 +2,7 @@ namespace AIKernel.Abstractions.Hatl;
 
 using AIKernel.Dtos.Hatl;
 
-/// <summary>EN: Documentation for public API. JA: IHatlLedgerStore contract を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] IHatlLedgerStore contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Hatl.IHatlLedgerStore']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Hatl.IHatlLedgerStore']" />
 public interface IHatlLedgerStore

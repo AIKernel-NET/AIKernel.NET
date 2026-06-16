@@ -3,7 +3,7 @@ namespace AIKernel.Abstractions.Dsl;
 using AIKernel.Dtos.Dsl;
 using AIKernel.Vfs;
 
-/// <summary>EN: Documentation for public API. JA: IDslRomStore contract を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] IDslRomStore contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Dsl.IDslRomStore']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Dsl.IDslRomStore']" />
 public interface IDslRomStore

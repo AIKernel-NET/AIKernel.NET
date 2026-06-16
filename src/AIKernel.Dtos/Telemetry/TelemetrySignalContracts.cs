@@ -5,7 +5,7 @@ namespace AIKernel.Dtos.Telemetry;
 
 /// <summary>
 /// EN: Carries a telemetry snapshot request.
-/// EN: Documentation for public API. JA: TelemetrySnapshotRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] TelemetrySnapshotRequest の公開契約を定義します。
 /// </summary>
 public sealed record TelemetrySnapshotRequest
 {
@@ -27,7 +27,7 @@ public sealed record TelemetrySnapshotRequest
 
 /// <summary>
 /// EN: Carries a telemetry stream request.
-/// EN: Documentation for public API. JA: TelemetryStreamRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] TelemetryStreamRequest の公開契約を定義します。
 /// </summary>
 public sealed record TelemetryStreamRequest
 {
@@ -43,7 +43,7 @@ public sealed record TelemetryStreamRequest
 
 /// <summary>
 /// EN: Carries a telemetry snapshot.
-/// EN: Documentation for public API. JA: TelemetrySnapshot の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] TelemetrySnapshot の公開契約を定義します。
 /// </summary>
 public sealed record TelemetrySnapshot
 {
@@ -92,7 +92,7 @@ public sealed record TelemetrySnapshot
 
 /// <summary>
 /// EN: Carries one telemetry signal.
-/// EN: Documentation for public API. JA: TelemetrySignal の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] TelemetrySignal の公開契約を定義します。
 /// </summary>
 public sealed record TelemetrySignal
 {
@@ -114,7 +114,7 @@ public sealed record TelemetrySignal
 
 /// <summary>
 /// EN: Carries a telemetry signal catalog request.
-/// EN: Documentation for public API. JA: TelemetrySignalCatalogRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] TelemetrySignalCatalogRequest の公開契約を定義します。
 /// </summary>
 public sealed record TelemetrySignalCatalogRequest
 {
@@ -127,7 +127,7 @@ public sealed record TelemetrySignalCatalogRequest
 
 /// <summary>
 /// EN: Carries a telemetry signal catalog.
-/// EN: Documentation for public API. JA: TelemetrySignalCatalog の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] TelemetrySignalCatalog の公開契約を定義します。
 /// </summary>
 public sealed record TelemetrySignalCatalog
 {
@@ -155,7 +155,7 @@ public sealed record TelemetrySignalCatalog
 
 /// <summary>
 /// EN: Carries a telemetry reset request.
-/// EN: Documentation for public API. JA: TelemetryResetRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] TelemetryResetRequest の公開契約を定義します。
 /// </summary>
 public sealed record TelemetryResetRequest
 {
@@ -168,7 +168,7 @@ public sealed record TelemetryResetRequest
 
 /// <summary>
 /// EN: Carries a telemetry reset result.
-/// EN: Documentation for public API. JA: TelemetryResetResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] TelemetryResetResult の公開契約を定義します。
 /// </summary>
 public sealed record TelemetryResetResult
 {

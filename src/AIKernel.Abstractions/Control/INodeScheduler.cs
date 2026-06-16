@@ -1,6 +1,6 @@
 namespace AIKernel.Abstractions.Control;
 
-/// <summary>EN: Documentation for public API. JA: INodeScheduler contract を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] INodeScheduler contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Control.INodeScheduler']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Control.INodeScheduler']" />
 public interface INodeScheduler

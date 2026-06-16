@@ -4,13 +4,13 @@ namespace AIKernel.Abstractions.Adapters;
 
 /// <summary>
 /// EN: Attaches, detaches, controls, and probes runtime adapters.
-/// EN: Documentation for public API. JA: IRuntimeAdapter の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IRuntimeAdapter の公開契約を定義します。
 /// </summary>
 public interface IRuntimeAdapter
 {
     /// <summary>
     /// EN: Attaches a runtime.
-    /// EN: Documentation for public API. JA: AttachAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] AttachAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The attach request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -21,7 +21,7 @@ public interface IRuntimeAdapter
 
     /// <summary>
     /// EN: Detaches a runtime.
-    /// EN: Documentation for public API. JA: DetachAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] DetachAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The detach request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -32,7 +32,7 @@ public interface IRuntimeAdapter
 
     /// <summary>
     /// EN: Controls a runtime.
-    /// EN: Documentation for public API. JA: ControlAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ControlAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The control request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -43,7 +43,7 @@ public interface IRuntimeAdapter
 
     /// <summary>
     /// EN: Gets a runtime status snapshot.
-    /// EN: Documentation for public API. JA: SnapshotAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] SnapshotAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The snapshot request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -54,7 +54,7 @@ public interface IRuntimeAdapter
 
     /// <summary>
     /// EN: Probes runtime availability.
-    /// EN: Documentation for public API. JA: ProbeRuntimeAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ProbeRuntimeAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The probe request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>

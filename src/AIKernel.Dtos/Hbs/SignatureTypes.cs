@@ -2,7 +2,7 @@ namespace AIKernel.Dtos.Hbs;
 
 /// <summary>
 /// EN: Carries a signature result for hash-bound signing services.
-/// EN: Documentation for public API. JA: SignatureResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] SignatureResult の公開契約を定義します。
 /// </summary>
 public sealed record SignatureResult
 {
@@ -24,7 +24,7 @@ public sealed record SignatureResult
 
 /// <summary>
 /// EN: Carries a verification result for hash-bound signatures.
-/// EN: Documentation for public API. JA: VerifyResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] VerifyResult の公開契約を定義します。
 /// </summary>
 public sealed record VerifyResult
 {
@@ -43,7 +43,7 @@ public sealed record VerifyResult
 
 /// <summary>
 /// EN: Carries signature counter state.
-/// EN: Documentation for public API. JA: SignatureCounter の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] SignatureCounter の公開契約を定義します。
 /// </summary>
 public sealed record SignatureCounter
 {

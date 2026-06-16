@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: Classifies an external runtime asset without binding to a concrete technology.
-/// EN: Documentation for public API. JA: RuntimeAssetKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeAssetKind の公開契約を定義します。
 /// </summary>
 public enum RuntimeAssetKind
 {

@@ -2,34 +2,34 @@ namespace AIKernel.Dtos.Routing;
 
 /// <summary>
 /// EN: ModelCapacityVector の契約を定義します。
-/// EN: Documentation for public API. JA: ModelCapacityVector の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ModelCapacityVector の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Routing.ModelCapacityVector']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Routing.ModelCapacityVector']" />
 public sealed record ModelCapacityVector
 {
-    /// <summary>EN: Documentation for public API. JA: StructuralIntegrity を取得します。</summary>
+    /// <summary>[EN] Documents this public package API member. [JA] StructuralIntegrity を取得します。</summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Routing.ModelCapacityVector.StructuralIntegrity']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Routing.ModelCapacityVector.StructuralIntegrity']" />
     public float StructuralIntegrity { get; init; }
-    /// <summary>EN: Documentation for public API. JA: LinguisticFluidity を取得します。</summary>
+    /// <summary>[EN] Documents this public package API member. [JA] LinguisticFluidity を取得します。</summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Routing.ModelCapacityVector.LinguisticFluidity']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Routing.ModelCapacityVector.LinguisticFluidity']" />
     public float LinguisticFluidity { get; init; }
-    /// <summary>EN: Documentation for public API. JA: ReasoningDepth を取得します。</summary>
+    /// <summary>[EN] Documents this public package API member. [JA] ReasoningDepth を取得します。</summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Routing.ModelCapacityVector.ReasoningDepth']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Routing.ModelCapacityVector.ReasoningDepth']" />
     public float ReasoningDepth { get; init; }
-    /// <summary>EN: Documentation for public API. JA: Fidelity を取得します。</summary>
+    /// <summary>[EN] Documents this public package API member. [JA] Fidelity を取得します。</summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Routing.ModelCapacityVector.Fidelity']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Routing.ModelCapacityVector.Fidelity']" />
     public float Fidelity { get; init; }
-    /// <summary>EN: Documentation for public API. JA: LatencyPerformance を取得します。</summary>
+    /// <summary>[EN] Documents this public package API member. [JA] LatencyPerformance を取得します。</summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Routing.ModelCapacityVector.LatencyPerformance']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Routing.ModelCapacityVector.LatencyPerformance']" />
     public float LatencyPerformance { get; init; }
 
-    /// <summary>EN: Documentation for public API. JA: ModelCapacityVector を取得します。</summary>
+    /// <summary>[EN] Documents this public package API member. [JA] ModelCapacityVector を取得します。</summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='M:AIKernel.Dtos.Routing.ModelCapacityVector.#ctor']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='M:AIKernel.Dtos.Routing.ModelCapacityVector.#ctor']" />
     public ModelCapacityVector(

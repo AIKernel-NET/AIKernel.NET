@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: Describes a virtual runtime lifecycle state.
-/// EN: Documentation for public API. JA: RuntimeLifecycleStatus の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeLifecycleStatus の公開契約を定義します。
 /// </summary>
 public enum RuntimeLifecycleStatus
 {

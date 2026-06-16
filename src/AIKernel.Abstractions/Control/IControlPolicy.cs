@@ -2,7 +2,7 @@ using AIKernel.Dtos.Control;
 
 namespace AIKernel.Abstractions.Control;
 
-/// <summary>EN: Documentation for public API. JA: IControlPolicy contract を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] IControlPolicy contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Control.IControlPolicy']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Control.IControlPolicy']" />
 public interface IControlPolicy

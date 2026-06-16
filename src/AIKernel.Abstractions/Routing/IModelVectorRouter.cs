@@ -4,7 +4,7 @@ using AIKernel.Abstractions.Models;
 
 /// <summary>
 /// EN: UC-03/UC-22 に基づく IModelVectorRouter の契約を定義します。
-/// EN: Documentation for public API. JA: IModelVectorRouter の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IModelVectorRouter の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Routing.IModelVectorRouter']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Routing.IModelVectorRouter']" />

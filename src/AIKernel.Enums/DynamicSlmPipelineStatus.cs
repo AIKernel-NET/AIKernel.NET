@@ -1,6 +1,6 @@
 namespace AIKernel.Enums;
 
-/// <summary>EN: Documentation for public API. JA: DynamicSlmPipelineStatus の値を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] DynamicSlmPipelineStatus の値を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Enums.DynamicSlmPipelineStatus']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Enums.DynamicSlmPipelineStatus']" />
 public enum DynamicSlmPipelineStatus

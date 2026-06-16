@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: RuleScope の契約を定義します。
-/// EN: Documentation for public API. JA: RuleScope の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuleScope の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Enums.RuleScope']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Enums.RuleScope']" />

@@ -2,7 +2,7 @@ namespace AIKernel.Enums.Profiles;
 
 /// <summary>
 /// EN: Describes profile kinds.
-/// EN: Documentation for public API. JA: ProfileKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileKind の公開契約を定義します。
 /// </summary>
 public enum ProfileKind
 {
@@ -27,7 +27,7 @@ public enum ProfileKind
 
 /// <summary>
 /// EN: Describes profile formats.
-/// EN: Documentation for public API. JA: ProfileFormat の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileFormat の公開契約を定義します。
 /// </summary>
 public enum ProfileFormat
 {
@@ -46,7 +46,7 @@ public enum ProfileFormat
 
 /// <summary>
 /// EN: Describes profile optimization goals.
-/// EN: Documentation for public API. JA: ProfileOptimizationGoal の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileOptimizationGoal の公開契約を定義します。
 /// </summary>
 public enum ProfileOptimizationGoal
 {
@@ -71,7 +71,7 @@ public enum ProfileOptimizationGoal
 
 /// <summary>
 /// EN: Describes profile optimization decisions.
-/// EN: Documentation for public API. JA: ProfileOptimizationDecision の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileOptimizationDecision の公開契約を定義します。
 /// </summary>
 public enum ProfileOptimizationDecision
 {

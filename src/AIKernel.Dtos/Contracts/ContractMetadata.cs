@@ -4,7 +4,7 @@ namespace AIKernel.Dtos.Contracts;
 
 /// <summary>
 /// EN: Describes a versioned contract surface and its schema reference.
-/// EN: Documentation for public API. JA: ContractMetadata の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ContractMetadata の公開契約を定義します。
 /// </summary>
 public sealed record ContractMetadata
 {
@@ -26,7 +26,7 @@ public sealed record ContractMetadata
 
 /// <summary>
 /// EN: Carries a contract validation request.
-/// EN: Documentation for public API. JA: ContractValidationRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ContractValidationRequest の公開契約を定義します。
 /// </summary>
 public sealed record ContractValidationRequest
 {
@@ -45,7 +45,7 @@ public sealed record ContractValidationRequest
 
 /// <summary>
 /// EN: Carries a generic policy evaluation request.
-/// EN: Documentation for public API. JA: PolicyEvaluationRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] PolicyEvaluationRequest の公開契約を定義します。
 /// </summary>
 public sealed record PolicyEvaluationRequest
 {
@@ -67,7 +67,7 @@ public sealed record PolicyEvaluationRequest
 
 /// <summary>
 /// EN: Carries the result of contract validation.
-/// EN: Documentation for public API. JA: ContractValidationResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ContractValidationResult の公開契約を定義します。
 /// </summary>
 public sealed record ContractValidationResult
 {
@@ -86,7 +86,7 @@ public sealed record ContractValidationResult
 
 /// <summary>
 /// EN: Describes a contract difference for migration and compatibility review.
-/// EN: Documentation for public API. JA: ContractDiff の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ContractDiff の公開契約を定義します。
 /// </summary>
 public sealed record ContractDiff
 {
@@ -108,7 +108,7 @@ public sealed record ContractDiff
 
 /// <summary>
 /// EN: Carries a contract migration result.
-/// EN: Documentation for public API. JA: MigrationResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] MigrationResult の公開契約を定義します。
 /// </summary>
 public sealed record MigrationResult
 {
@@ -133,7 +133,7 @@ public sealed record MigrationResult
 
 /// <summary>
 /// EN: Carries a policy decision with an optional reason message.
-/// EN: Documentation for public API. JA: PolicyDecision の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] PolicyDecision の公開契約を定義します。
 /// </summary>
 public sealed record PolicyDecision
 {
@@ -149,7 +149,7 @@ public sealed record PolicyDecision
 
 /// <summary>
 /// EN: Carries a partial policy decision contributed by one policy.
-/// EN: Documentation for public API. JA: PolicyDecisionFragment の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] PolicyDecisionFragment の公開契約を定義します。
 /// </summary>
 public sealed record PolicyDecisionFragment
 {
@@ -165,7 +165,7 @@ public sealed record PolicyDecisionFragment
 
 /// <summary>
 /// EN: Carries a governance decision applied before side-effecting provider execution.
-/// EN: Documentation for public API. JA: GovernanceDecision の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] GovernanceDecision の公開契約を定義します。
 /// </summary>
 public sealed record GovernanceDecision
 {
@@ -184,7 +184,7 @@ public sealed record GovernanceDecision
 
 /// <summary>
 /// EN: Carries a governance decision request.
-/// EN: Documentation for public API. JA: GovernanceDecisionRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] GovernanceDecisionRequest の公開契約を定義します。
 /// </summary>
 public sealed record GovernanceDecisionRequest
 {

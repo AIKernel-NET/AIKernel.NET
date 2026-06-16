@@ -2,7 +2,7 @@ namespace AIKernel.Abstractions.History;
 
 using AIKernel.Dtos.History;
 
-/// <summary>EN: Documentation for public API. JA: IHistoryRomRegistry contract を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] IHistoryRomRegistry contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.History.IHistoryRomRegistry']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.History.IHistoryRomRegistry']" />
 public interface IHistoryRomRegistry

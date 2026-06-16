@@ -2,7 +2,7 @@ namespace AIKernel.Enums.Replay;
 
 /// <summary>
 /// EN: Describes replay event kinds.
-/// EN: Documentation for public API. JA: ReplayEventKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplayEventKind の公開契約を定義します。
 /// </summary>
 public enum ReplayEventKind
 {
@@ -30,7 +30,7 @@ public enum ReplayEventKind
 
 /// <summary>
 /// EN: Describes replay sealing state.
-/// EN: Documentation for public API. JA: ReplaySealState の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplaySealState の公開契約を定義します。
 /// </summary>
 public enum ReplaySealState
 {
@@ -52,7 +52,7 @@ public enum ReplaySealState
 
 /// <summary>
 /// EN: Describes replay frame kinds.
-/// EN: Documentation for public API. JA: ReplayFrameKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplayFrameKind の公開契約を定義します。
 /// </summary>
 public enum ReplayFrameKind
 {

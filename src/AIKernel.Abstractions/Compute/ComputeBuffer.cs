@@ -3,7 +3,7 @@ namespace AIKernel.Abstractions.Compute;
 /// <summary>
 /// [EN] Compute buffer abstraction shared by OS compute providers.
 /// [JA] OS compute Provider で共有する compute buffer 抽象です。
-/// EN: Documentation for public API. JA: ComputeBuffer の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ComputeBuffer の公開契約を定義します。
 /// </summary>
 public sealed class ComputeBuffer : IDisposable
 {

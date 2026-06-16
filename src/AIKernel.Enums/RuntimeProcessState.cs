@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: Describes a virtual process state.
-/// EN: Documentation for public API. JA: RuntimeProcessState の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeProcessState の公開契約を定義します。
 /// </summary>
 public enum RuntimeProcessState
 {

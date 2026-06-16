@@ -4,7 +4,7 @@ using AIKernel.Abstractions.Context;
 using AIKernel.Abstractions.Providers;
 using AIKernel.Dtos.Kernel;
 
-/// <summary>EN: Documentation for public API. JA: IKernelModelProviderSelector contract を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] IKernelModelProviderSelector contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelModelProviderSelector']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelModelProviderSelector']" />
 public interface IKernelModelProviderSelector

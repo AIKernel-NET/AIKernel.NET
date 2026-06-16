@@ -2,7 +2,7 @@ using AIKernel.Dtos.Control;
 
 namespace AIKernel.Abstractions.Control;
 
-/// <summary>EN: Documentation for public API. JA: IControlEngine contract を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] IControlEngine contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Control.IControlEngine']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Control.IControlEngine']" />
 public interface IControlEngine

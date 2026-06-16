@@ -5,7 +5,7 @@ namespace AIKernel.Dtos.Perception;
 
 /// <summary>
 /// EN: Carries a HUD signal extraction request.
-/// EN: Documentation for public API. JA: HudSignalRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] HudSignalRequest の公開契約を定義します。
 /// </summary>
 public sealed record HudSignalRequest
 {
@@ -21,7 +21,7 @@ public sealed record HudSignalRequest
 
 /// <summary>
 /// EN: Carries lightweight HUD signals.
-/// EN: Documentation for public API. JA: HudSignalSet の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] HudSignalSet の公開契約を定義します。
 /// </summary>
 public sealed record HudSignalSet
 {
@@ -58,7 +58,7 @@ public sealed record HudSignalSet
 
 /// <summary>
 /// EN: Carries one lightweight HUD signal.
-/// EN: Documentation for public API. JA: HudSignal の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] HudSignal の公開契約を定義します。
 /// </summary>
 public sealed record HudSignal
 {
@@ -95,7 +95,7 @@ public sealed record HudSignal
 
 /// <summary>
 /// EN: Carries a HUD signal catalog request.
-/// EN: Documentation for public API. JA: HudSignalCatalogRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] HudSignalCatalogRequest の公開契約を定義します。
 /// </summary>
 public sealed record HudSignalCatalogRequest
 {
@@ -105,7 +105,7 @@ public sealed record HudSignalCatalogRequest
 
 /// <summary>
 /// EN: Carries supported HUD signal kinds.
-/// EN: Documentation for public API. JA: HudSignalCatalog の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] HudSignalCatalog の公開契約を定義します。
 /// </summary>
 public sealed record HudSignalCatalog
 {
@@ -133,7 +133,7 @@ public sealed record HudSignalCatalog
 
 /// <summary>
 /// EN: Carries visual signals that are heavier than lightweight HUD signals.
-/// EN: Documentation for public API. JA: VisualSignalSet の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] VisualSignalSet の公開契約を定義します。
 /// </summary>
 public sealed record VisualSignalSet
 {
@@ -149,7 +149,7 @@ public sealed record VisualSignalSet
 
 /// <summary>
 /// EN: Carries one visual signal.
-/// EN: Documentation for public API. JA: VisualSignal の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] VisualSignal の公開契約を定義します。
 /// </summary>
 public sealed record VisualSignal
 {
@@ -177,7 +177,7 @@ public sealed record VisualSignal
 
 /// <summary>
 /// EN: Carries an overlay annotation request.
-/// EN: Documentation for public API. JA: OverlayAnnotationRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OverlayAnnotationRequest の公開契約を定義します。
 /// </summary>
 public sealed record OverlayAnnotationRequest
 {
@@ -193,7 +193,7 @@ public sealed record OverlayAnnotationRequest
 
 /// <summary>
 /// EN: Carries overlay annotations.
-/// EN: Documentation for public API. JA: OverlayAnnotationSet の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OverlayAnnotationSet の公開契約を定義します。
 /// </summary>
 public sealed record OverlayAnnotationSet
 {
@@ -230,7 +230,7 @@ public sealed record OverlayAnnotationSet
 
 /// <summary>
 /// EN: Carries one overlay annotation.
-/// EN: Documentation for public API. JA: OverlayAnnotation の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OverlayAnnotation の公開契約を定義します。
 /// </summary>
 public sealed record OverlayAnnotation
 {
@@ -264,7 +264,7 @@ public sealed record OverlayAnnotation
 
 /// <summary>
 /// EN: Carries an overlay layer catalog request.
-/// EN: Documentation for public API. JA: OverlayLayerCatalogRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OverlayLayerCatalogRequest の公開契約を定義します。
 /// </summary>
 public sealed record OverlayLayerCatalogRequest
 {
@@ -274,7 +274,7 @@ public sealed record OverlayLayerCatalogRequest
 
 /// <summary>
 /// EN: Carries supported overlay layers.
-/// EN: Documentation for public API. JA: OverlayLayerCatalog の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OverlayLayerCatalog の公開契約を定義します。
 /// </summary>
 public sealed record OverlayLayerCatalog
 {

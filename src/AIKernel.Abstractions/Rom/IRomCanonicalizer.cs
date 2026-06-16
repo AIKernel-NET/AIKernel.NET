@@ -2,7 +2,7 @@ namespace AIKernel.Abstractions.Rom;
 
 /// <summary>
 /// EN: UC-01/UC-12 に基づく IRomCanonicalizer の契約を定義します。
-/// EN: Documentation for public API. JA: IRomCanonicalizer の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IRomCanonicalizer の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomCanonicalizer']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Rom.IRomCanonicalizer']" />

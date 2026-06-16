@@ -2,7 +2,7 @@ namespace AIKernel.Enums.Perception;
 
 /// <summary>
 /// EN: Describes HUD signal kinds.
-/// EN: Documentation for public API. JA: HudSignalKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] HudSignalKind の公開契約を定義します。
 /// </summary>
 public enum HudSignalKind
 {
@@ -27,7 +27,7 @@ public enum HudSignalKind
 
 /// <summary>
 /// EN: Describes signal confidence.
-/// EN: Documentation for public API. JA: SignalConfidenceKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] SignalConfidenceKind の公開契約を定義します。
 /// </summary>
 public enum SignalConfidenceKind
 {
@@ -49,7 +49,7 @@ public enum SignalConfidenceKind
 
 /// <summary>
 /// EN: Describes overlay shapes.
-/// EN: Documentation for public API. JA: OverlayShapeKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OverlayShapeKind の公開契約を定義します。
 /// </summary>
 public enum OverlayShapeKind
 {
@@ -74,7 +74,7 @@ public enum OverlayShapeKind
 
 /// <summary>
 /// EN: Describes overlay layers.
-/// EN: Documentation for public API. JA: OverlayLayerKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OverlayLayerKind の公開契約を定義します。
 /// </summary>
 public enum OverlayLayerKind
 {

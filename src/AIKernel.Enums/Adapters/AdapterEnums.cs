@@ -2,7 +2,7 @@ namespace AIKernel.Enums.Adapters;
 
 /// <summary>
 /// EN: Identifies the broad adapter boundary.
-/// EN: Documentation for public API. JA: AdapterKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] AdapterKind の公開契約を定義します。
 /// </summary>
 public enum AdapterKind
 {
@@ -24,7 +24,7 @@ public enum AdapterKind
 
 /// <summary>
 /// EN: Describes adapter binding state.
-/// EN: Documentation for public API. JA: AdapterBindingState の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] AdapterBindingState の公開契約を定義します。
 /// </summary>
 public enum AdapterBindingState
 {
@@ -46,7 +46,7 @@ public enum AdapterBindingState
 
 /// <summary>
 /// EN: Describes adapter validation severity.
-/// EN: Documentation for public API. JA: AdapterValidationSeverity の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] AdapterValidationSeverity の公開契約を定義します。
 /// </summary>
 public enum AdapterValidationSeverity
 {

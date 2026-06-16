@@ -4,7 +4,7 @@ namespace AIKernel.Dtos.Perception;
 
 /// <summary>
 /// EN: Carries frame perception options.
-/// EN: Documentation for public API. JA: FramePerceptionOptions の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] FramePerceptionOptions の公開契約を定義します。
 /// </summary>
 public sealed record FramePerceptionOptions
 {
@@ -20,7 +20,7 @@ public sealed record FramePerceptionOptions
 
 /// <summary>
 /// EN: Describes a symbolic region extracted from a frame.
-/// EN: Documentation for public API. JA: PerceptionRegion の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] PerceptionRegion の公開契約を定義します。
 /// </summary>
 public sealed record PerceptionRegion
 {
@@ -45,7 +45,7 @@ public sealed record PerceptionRegion
 
 /// <summary>
 /// EN: Describes a bounded symbolic perception signal.
-/// EN: Documentation for public API. JA: PerceptionSignal の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] PerceptionSignal の公開契約を定義します。
 /// </summary>
 public sealed record PerceptionSignal
 {
@@ -64,7 +64,7 @@ public sealed record PerceptionSignal
 
 /// <summary>
 /// EN: Describes a semantic frame signature.
-/// EN: Documentation for public API. JA: SemanticSignature の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] SemanticSignature の公開契約を定義します。
 /// </summary>
 public sealed record SemanticSignature
 {
@@ -80,7 +80,7 @@ public sealed record SemanticSignature
 
 /// <summary>
 /// EN: Describes bounded motion metadata across frames.
-/// EN: Documentation for public API. JA: MotionSignature の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] MotionSignature の公開契約を定義します。
 /// </summary>
 public sealed record MotionSignature
 {
@@ -99,7 +99,7 @@ public sealed record MotionSignature
 
 /// <summary>
 /// EN: Carries a frame perception result.
-/// EN: Documentation for public API. JA: FramePerceptionResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] FramePerceptionResult の公開契約を定義します。
 /// </summary>
 public sealed record FramePerceptionResult
 {
@@ -136,7 +136,7 @@ public sealed record FramePerceptionResult
 
 /// <summary>
 /// EN: Carries an observation request.
-/// EN: Documentation for public API. JA: ObservationRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ObservationRequest の公開契約を定義します。
 /// </summary>
 public sealed record ObservationRequest
 {
@@ -149,7 +149,7 @@ public sealed record ObservationRequest
 
 /// <summary>
 /// EN: Carries a read-only observation snapshot.
-/// EN: Documentation for public API. JA: ObservationSnapshot の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ObservationSnapshot の公開契約を定義します。
 /// </summary>
 public sealed record ObservationSnapshot
 {

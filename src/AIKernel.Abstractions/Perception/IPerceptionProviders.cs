@@ -6,13 +6,13 @@ namespace AIKernel.Abstractions.Perception;
 
 /// <summary>
 /// EN: Converts frames into bounded symbolic perception signals.
-/// EN: Documentation for public API. JA: IFramePerceptionProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IFramePerceptionProvider の公開契約を定義します。
 /// </summary>
 public interface IFramePerceptionProvider : IKernelProvider
 {
     /// <summary>
     /// EN: Analyzes a frame snapshot.
-    /// EN: Documentation for public API. JA: AnalyzeAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] AnalyzeAsync 操作を実行します。
     /// </summary>
     /// <param name="frame">EN: The frame snapshot. JA: frame パラメーターです。</param>
     /// <param name="options">EN: The perception options. JA: options パラメーターです。</param>
@@ -28,13 +28,13 @@ public interface IFramePerceptionProvider : IKernelProvider
 
 /// <summary>
 /// EN: Produces read-only observation snapshots without selecting actions.
-/// EN: Documentation for public API. JA: IObservationProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IObservationProvider の公開契約を定義します。
 /// </summary>
 public interface IObservationProvider : IKernelProvider
 {
     /// <summary>
     /// EN: Captures an observation snapshot.
-    /// EN: Documentation for public API. JA: ObserveAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ObserveAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The observation request. JA: request パラメーターです。</param>
     /// <param name="context">EN: The execution context. JA: context パラメーターです。</param>

@@ -5,7 +5,7 @@ namespace AIKernel.Dtos.Adapters;
 
 /// <summary>
 /// EN: Carries a provider adapter description request.
-/// EN: Documentation for public API. JA: ProviderAdapterDescribeRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderAdapterDescribeRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProviderAdapterDescribeRequest
 {
@@ -18,7 +18,7 @@ public sealed record ProviderAdapterDescribeRequest
 
 /// <summary>
 /// EN: Describes a provider adapter.
-/// EN: Documentation for public API. JA: ProviderAdapterDescriptor の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderAdapterDescriptor の公開契約を定義します。
 /// </summary>
 public sealed record ProviderAdapterDescriptor
 {
@@ -52,7 +52,7 @@ public sealed record ProviderAdapterDescriptor
 
 /// <summary>
 /// EN: Carries a provider adapter validation request.
-/// EN: Documentation for public API. JA: ProviderAdapterValidationRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderAdapterValidationRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProviderAdapterValidationRequest
 {
@@ -65,7 +65,7 @@ public sealed record ProviderAdapterValidationRequest
 
 /// <summary>
 /// EN: Carries a provider adapter validation result.
-/// EN: Documentation for public API. JA: ProviderAdapterValidationResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderAdapterValidationResult の公開契約を定義します。
 /// </summary>
 public sealed record ProviderAdapterValidationResult
 {
@@ -102,7 +102,7 @@ public sealed record ProviderAdapterValidationResult
 
 /// <summary>
 /// EN: Carries a provider adapter bind request.
-/// EN: Documentation for public API. JA: ProviderAdapterBindRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderAdapterBindRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProviderAdapterBindRequest
 {
@@ -121,7 +121,7 @@ public sealed record ProviderAdapterBindRequest
 
 /// <summary>
 /// EN: Carries a provider adapter bind result.
-/// EN: Documentation for public API. JA: ProviderAdapterBindResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderAdapterBindResult の公開契約を定義します。
 /// </summary>
 public sealed record ProviderAdapterBindResult
 {
@@ -158,7 +158,7 @@ public sealed record ProviderAdapterBindResult
 
 /// <summary>
 /// EN: Carries a provider adapter unbind request.
-/// EN: Documentation for public API. JA: ProviderAdapterUnbindRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderAdapterUnbindRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProviderAdapterUnbindRequest
 {
@@ -174,7 +174,7 @@ public sealed record ProviderAdapterUnbindRequest
 
 /// <summary>
 /// EN: Carries a provider adapter unbind result.
-/// EN: Documentation for public API. JA: ProviderAdapterUnbindResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderAdapterUnbindResult の公開契約を定義します。
 /// </summary>
 public sealed record ProviderAdapterUnbindResult
 {
@@ -211,7 +211,7 @@ public sealed record ProviderAdapterUnbindResult
 
 /// <summary>
 /// EN: Carries a provider adapter state request.
-/// EN: Documentation for public API. JA: ProviderAdapterStateRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderAdapterStateRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProviderAdapterStateRequest
 {
@@ -224,7 +224,7 @@ public sealed record ProviderAdapterStateRequest
 
 /// <summary>
 /// EN: Carries a provider adapter state snapshot.
-/// EN: Documentation for public API. JA: ProviderAdapterStateSnapshot の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderAdapterStateSnapshot の公開契約を定義します。
 /// </summary>
 public sealed record ProviderAdapterStateSnapshot
 {

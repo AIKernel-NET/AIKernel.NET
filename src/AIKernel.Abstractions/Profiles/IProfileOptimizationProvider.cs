@@ -4,13 +4,13 @@ namespace AIKernel.Abstractions.Profiles;
 
 /// <summary>
 /// EN: Plans, optimizes, compares, and applies profile optimization candidates.
-/// EN: Documentation for public API. JA: IProfileOptimizationProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IProfileOptimizationProvider の公開契約を定義します。
 /// </summary>
 public interface IProfileOptimizationProvider
 {
     /// <summary>
     /// EN: Plans profile optimization.
-    /// EN: Documentation for public API. JA: PlanAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] PlanAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The plan request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -21,7 +21,7 @@ public interface IProfileOptimizationProvider
 
     /// <summary>
     /// EN: Optimizes a profile.
-    /// EN: Documentation for public API. JA: OptimizeAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] OptimizeAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The optimization request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -32,7 +32,7 @@ public interface IProfileOptimizationProvider
 
     /// <summary>
     /// EN: Compares profiles.
-    /// EN: Documentation for public API. JA: CompareAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] CompareAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The comparison request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -43,7 +43,7 @@ public interface IProfileOptimizationProvider
 
     /// <summary>
     /// EN: Applies an optimization candidate.
-    /// EN: Documentation for public API. JA: ApplyAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ApplyAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The apply request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>

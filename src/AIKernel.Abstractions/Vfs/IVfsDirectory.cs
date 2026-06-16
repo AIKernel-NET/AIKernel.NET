@@ -5,7 +5,7 @@ using AIKernel.Dtos.Vfs;
 /// <summary>
 /// Vfs ディレクトリの互換合成インターフェースを定義します。
 /// EN: UC-08（コンテキストスナップショットと永続化）, UC-18（Chat Persistence）
-/// EN: Documentation for public API. JA: IVfsDirectory の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IVfsDirectory の公開契約を定義します。
 /// </summary>
 /// <remarks>
 /// v0.0.2 以降、階層移動能力は <see cref="INavigableVfsDirectory"/> で表現します。
@@ -17,25 +17,25 @@ public interface IVfsDirectory : INavigableVfsDirectory
 {
     /// <summary>
     /// EN: ディレクトリ内のファイルを列挙します。
-    /// EN: Documentation for public API. JA: GetFilesAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] GetFilesAsync 操作を実行します。
     /// </summary>
-    /// <param name="recursive">EN: Documentation for public API. JA: 再帰的に列挙するかどうか recursive パラメーターです。</param>
-    /// <returns>EN: Documentation for public API. JA: ファイル一覧 結果を返します。</returns>
+    /// <param name="recursive">[EN] Documents this public package API member. [JA] 再帰的に列挙するかどうか recursive パラメーターです。</param>
+    /// <returns>[EN] Documents this public package API member. [JA] ファイル一覧 結果を返します。</returns>
     Task<IReadOnlyList<IVfsFile>> GetFilesAsync(bool recursive = false);
 
     /// <summary>
     /// EN: ディレクトリ内のサブディレクトリを列挙します。
-    /// EN: Documentation for public API. JA: GetDirectoriesAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] GetDirectoriesAsync 操作を実行します。
     /// </summary>
-    /// <returns>EN: Documentation for public API. JA: サブディレクトリ一覧 結果を返します。</returns>
+    /// <returns>[EN] Documents this public package API member. [JA] サブディレクトリ一覧 結果を返します。</returns>
     Task<IReadOnlyList<IVfsDirectory>> GetDirectoriesAsync();
 
     /// <summary>
     /// EN: サブディレクトリを取得します。
-    /// EN: Documentation for public API. JA: GetSubdirectoryAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] GetSubdirectoryAsync 操作を実行します。
     /// </summary>
-    /// <param name="name">EN: Documentation for public API. JA: サブディレクトリ名 name パラメーターです。</param>
-    /// <returns>EN: Documentation for public API. JA: 見つかったサブディレクトリ。存在しない場合は null。 結果を返します。</returns>
+    /// <param name="name">[EN] Documents this public package API member. [JA] サブディレクトリ名 name パラメーターです。</param>
+    /// <returns>[EN] Documents this public package API member. [JA] 見つかったサブディレクトリ。存在しない場合は null。 結果を返します。</returns>
     Task<IVfsDirectory?> GetSubdirectoryAsync(string name);
 
     async Task<IReadOnlyList<IReadableVfsFile>> INavigableVfsDirectory.GetReadableFilesAsync(bool recursive)

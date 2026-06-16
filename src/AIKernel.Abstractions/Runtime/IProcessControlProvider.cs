@@ -4,13 +4,13 @@ namespace AIKernel.Abstractions.Runtime;
 
 /// <summary>
 /// EN: Provides process control operations without changing the base sandbox process provider.
-/// EN: Documentation for public API. JA: IProcessControlProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IProcessControlProvider の公開契約を定義します。
 /// </summary>
 public interface IProcessControlProvider : ISandboxProcessProvider
 {
     /// <summary>
     /// EN: Lists processes.
-    /// EN: Documentation for public API. JA: ListProcessesAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ListProcessesAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The process list request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -21,7 +21,7 @@ public interface IProcessControlProvider : ISandboxProcessProvider
 
     /// <summary>
     /// EN: Gets a process descriptor.
-    /// EN: Documentation for public API. JA: GetProcessAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] GetProcessAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The process query request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -32,7 +32,7 @@ public interface IProcessControlProvider : ISandboxProcessProvider
 
     /// <summary>
     /// EN: Controls a process.
-    /// EN: Documentation for public API. JA: ControlProcessAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ControlProcessAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The process control request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -43,7 +43,7 @@ public interface IProcessControlProvider : ISandboxProcessProvider
 
     /// <summary>
     /// EN: Attaches a process.
-    /// EN: Documentation for public API. JA: AttachProcessAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] AttachProcessAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The process attach request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -54,7 +54,7 @@ public interface IProcessControlProvider : ISandboxProcessProvider
 
     /// <summary>
     /// EN: Detaches a process.
-    /// EN: Documentation for public API. JA: DetachProcessAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] DetachProcessAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The process detach request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>

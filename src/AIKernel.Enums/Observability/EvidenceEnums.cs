@@ -2,7 +2,7 @@ namespace AIKernel.Enums.Observability;
 
 /// <summary>
 /// EN: Describes evidence kinds.
-/// EN: Documentation for public API. JA: EvidenceKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] EvidenceKind の公開契約を定義します。
 /// </summary>
 public enum EvidenceKind
 {
@@ -33,7 +33,7 @@ public enum EvidenceKind
 
 /// <summary>
 /// EN: Describes evidence capture mode.
-/// EN: Documentation for public API. JA: EvidenceCaptureMode の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] EvidenceCaptureMode の公開契約を定義します。
 /// </summary>
 public enum EvidenceCaptureMode
 {

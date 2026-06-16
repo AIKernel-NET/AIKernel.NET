@@ -3,7 +3,7 @@ namespace AIKernel.Abstractions.DynamicSlm;
 using AIKernel.Dtos.DynamicSlm;
 using AIKernel.Dtos.Rules;
 
-/// <summary>EN: Documentation for public API. JA: IDynamicSlmCompatibilityVerifier contract を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] IDynamicSlmCompatibilityVerifier contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmCompatibilityVerifier']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmCompatibilityVerifier']" />
 public interface IDynamicSlmCompatibilityVerifier

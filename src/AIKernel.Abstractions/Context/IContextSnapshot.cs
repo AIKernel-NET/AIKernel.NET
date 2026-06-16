@@ -2,7 +2,7 @@ namespace AIKernel.Abstractions.Context;
 
 /// <summary>
 /// EN: UC-06/UC-08 に基づく IContextSnapshot の契約を定義します。
-/// EN: Documentation for public API. JA: IContextSnapshot の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IContextSnapshot の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Context.IContextSnapshot']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Context.IContextSnapshot']" />

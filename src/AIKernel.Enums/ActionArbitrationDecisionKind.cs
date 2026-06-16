@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: Describes an operator action arbitration outcome.
-/// EN: Documentation for public API. JA: ActionArbitrationDecisionKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ActionArbitrationDecisionKind の公開契約を定義します。
 /// </summary>
 public enum ActionArbitrationDecisionKind
 {

@@ -5,7 +5,7 @@ namespace AIKernel.Dtos.Metrics;
 
 /// <summary>
 /// EN: Carries a metrics snapshot request.
-/// EN: Documentation for public API. JA: MetricsSnapshotRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] MetricsSnapshotRequest の公開契約を定義します。
 /// </summary>
 public sealed record MetricsSnapshotRequest
 {
@@ -24,7 +24,7 @@ public sealed record MetricsSnapshotRequest
 
 /// <summary>
 /// EN: Carries a metrics snapshot.
-/// EN: Documentation for public API. JA: MetricsSnapshot の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] MetricsSnapshot の公開契約を定義します。
 /// </summary>
 public sealed record MetricsSnapshot
 {
@@ -70,7 +70,7 @@ public sealed record MetricsSnapshot
 
 /// <summary>
 /// EN: Carries one metric point.
-/// EN: Documentation for public API. JA: MetricPoint の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] MetricPoint の公開契約を定義します。
 /// </summary>
 public sealed record MetricPoint
 {
@@ -98,7 +98,7 @@ public sealed record MetricPoint
 
 /// <summary>
 /// EN: Carries a metric series.
-/// EN: Documentation for public API. JA: MetricSeries の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] MetricSeries の公開契約を定義します。
 /// </summary>
 public sealed record MetricSeries
 {
@@ -114,7 +114,7 @@ public sealed record MetricSeries
 
 /// <summary>
 /// EN: Carries a metric series query.
-/// EN: Documentation for public API. JA: MetricSeriesQuery の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] MetricSeriesQuery の公開契約を定義します。
 /// </summary>
 public sealed record MetricSeriesQuery
 {
@@ -133,7 +133,7 @@ public sealed record MetricSeriesQuery
 
 /// <summary>
 /// EN: Carries a metric catalog request.
-/// EN: Documentation for public API. JA: MetricCatalogRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] MetricCatalogRequest の公開契約を定義します。
 /// </summary>
 public sealed record MetricCatalogRequest
 {
@@ -146,7 +146,7 @@ public sealed record MetricCatalogRequest
 
 /// <summary>
 /// EN: Carries supported metric kinds.
-/// EN: Documentation for public API. JA: MetricCatalog の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] MetricCatalog の公開契約を定義します。
 /// </summary>
 public sealed record MetricCatalog
 {
@@ -174,7 +174,7 @@ public sealed record MetricCatalog
 
 /// <summary>
 /// EN: Carries a metrics reset request.
-/// EN: Documentation for public API. JA: MetricsResetRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] MetricsResetRequest の公開契約を定義します。
 /// </summary>
 public sealed record MetricsResetRequest
 {
@@ -187,7 +187,7 @@ public sealed record MetricsResetRequest
 
 /// <summary>
 /// EN: Carries a metrics reset result.
-/// EN: Documentation for public API. JA: MetricsResetResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] MetricsResetResult の公開契約を定義します。
 /// </summary>
 public sealed record MetricsResetResult
 {

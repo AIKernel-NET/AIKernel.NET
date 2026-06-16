@@ -2,7 +2,7 @@ namespace AIKernel.Dtos.Telemetry;
 
 /// <summary>
 /// EN: Carries runtime telemetry data.
-/// EN: Documentation for public API. JA: RuntimeTelemetrySnapshot の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeTelemetrySnapshot の公開契約を定義します。
 /// </summary>
 public sealed record RuntimeTelemetrySnapshot
 {
@@ -18,7 +18,7 @@ public sealed record RuntimeTelemetrySnapshot
 
 /// <summary>
 /// EN: Carries a runtime telemetry request.
-/// EN: Documentation for public API. JA: RuntimeTelemetryRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeTelemetryRequest の公開契約を定義します。
 /// </summary>
 public sealed record RuntimeTelemetryRequest
 {
@@ -31,7 +31,7 @@ public sealed record RuntimeTelemetryRequest
 
 /// <summary>
 /// EN: Carries an evidence capture request.
-/// EN: Documentation for public API. JA: EvidenceCaptureRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] EvidenceCaptureRequest の公開契約を定義します。
 /// </summary>
 public sealed record EvidenceCaptureRequest
 {
@@ -47,7 +47,7 @@ public sealed record EvidenceCaptureRequest
 
 /// <summary>
 /// EN: Carries a replayable evidence bundle.
-/// EN: Documentation for public API. JA: EvidenceBundle の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] EvidenceBundle の公開契約を定義します。
 /// </summary>
 public sealed record EvidenceBundle
 {
@@ -75,7 +75,7 @@ public sealed record EvidenceBundle
 
 /// <summary>
 /// EN: References an image artifact without owning image bytes.
-/// EN: Documentation for public API. JA: AiImageRef の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] AiImageRef の公開契約を定義します。
 /// </summary>
 public sealed record AiImageRef
 {
@@ -91,7 +91,7 @@ public sealed record AiImageRef
 
 /// <summary>
 /// EN: References a generic AI artifact.
-/// EN: Documentation for public API. JA: AiArtifactRef の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] AiArtifactRef の公開契約を定義します。
 /// </summary>
 public sealed record AiArtifactRef
 {
@@ -110,7 +110,7 @@ public sealed record AiArtifactRef
 
 /// <summary>
 /// EN: Carries a captured log entry.
-/// EN: Documentation for public API. JA: LogEntry の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] LogEntry の公開契約を定義します。
 /// </summary>
 public sealed record LogEntry
 {
@@ -126,7 +126,7 @@ public sealed record LogEntry
 
 /// <summary>
 /// EN: Carries a replay evidence request.
-/// EN: Documentation for public API. JA: ReplayEvidenceRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplayEvidenceRequest の公開契約を定義します。
 /// </summary>
 public sealed record ReplayEvidenceRequest
 {
@@ -142,7 +142,7 @@ public sealed record ReplayEvidenceRequest
 
 /// <summary>
 /// EN: Carries a recorded replay evidence entry.
-/// EN: Documentation for public API. JA: ReplayEvidenceRecord の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplayEvidenceRecord の公開契約を定義します。
 /// </summary>
 public sealed record ReplayEvidenceRecord
 {

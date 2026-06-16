@@ -3,7 +3,7 @@ namespace AIKernel.Abstractions.DynamicSlm;
 using AIKernel.Dtos.DynamicSlm;
 using AIKernel.Enums;
 
-/// <summary>EN: Documentation for public API. JA: IDynamicSlmAsyncPipelineStep contract を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] IDynamicSlmAsyncPipelineStep contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmAsyncPipelineStep']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmAsyncPipelineStep']" />
 public interface IDynamicSlmAsyncPipelineStep<TInput, TOutput>

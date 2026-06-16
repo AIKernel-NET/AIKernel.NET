@@ -2,7 +2,7 @@ namespace AIKernel.Enums.Diagnostics;
 
 /// <summary>
 /// EN: Describes diagnostic severity.
-/// EN: Documentation for public API. JA: DiagnosticSeverity の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] DiagnosticSeverity の公開契約を定義します。
 /// </summary>
 public enum DiagnosticSeverity
 {
@@ -30,7 +30,7 @@ public enum DiagnosticSeverity
 
 /// <summary>
 /// EN: Describes diagnostic scope.
-/// EN: Documentation for public API. JA: DiagnosticScope の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] DiagnosticScope の公開契約を定義します。
 /// </summary>
 public enum DiagnosticScope
 {

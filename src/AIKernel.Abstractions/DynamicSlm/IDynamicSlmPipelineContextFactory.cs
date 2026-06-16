@@ -2,7 +2,7 @@ namespace AIKernel.Abstractions.DynamicSlm;
 
 using AIKernel.Dtos.DynamicSlm;
 
-/// <summary>EN: Documentation for public API. JA: IDynamicSlmPipelineContextFactory contract を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] IDynamicSlmPipelineContextFactory contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmPipelineContextFactory']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.DynamicSlm.IDynamicSlmPipelineContextFactory']" />
 public interface IDynamicSlmPipelineContextFactory

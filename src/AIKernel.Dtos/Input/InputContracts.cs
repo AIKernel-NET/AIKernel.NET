@@ -4,7 +4,7 @@ namespace AIKernel.Dtos.Input;
 
 /// <summary>
 /// EN: Carries keyboard input state.
-/// EN: Documentation for public API. JA: KeyboardInputPacket の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] KeyboardInputPacket の公開契約を定義します。
 /// </summary>
 public sealed record KeyboardInputPacket
 {
@@ -17,7 +17,7 @@ public sealed record KeyboardInputPacket
 
 /// <summary>
 /// EN: Carries pointer input state.
-/// EN: Documentation for public API. JA: PointerInputPacket の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] PointerInputPacket の公開契約を定義します。
 /// </summary>
 public sealed record PointerInputPacket
 {
@@ -36,7 +36,7 @@ public sealed record PointerInputPacket
 
 /// <summary>
 /// EN: Carries gamepad input state.
-/// EN: Documentation for public API. JA: GamepadInputPacket の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] GamepadInputPacket の公開契約を定義します。
 /// </summary>
 public sealed record GamepadInputPacket
 {
@@ -52,7 +52,7 @@ public sealed record GamepadInputPacket
 
 /// <summary>
 /// EN: Carries a governed virtual input packet.
-/// EN: Documentation for public API. JA: VirtualInputPacket の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] VirtualInputPacket の公開契約を定義します。
 /// </summary>
 public sealed record VirtualInputPacket
 {
@@ -77,7 +77,7 @@ public sealed record VirtualInputPacket
 
 /// <summary>
 /// EN: Carries a virtual input result.
-/// EN: Documentation for public API. JA: VirtualInputResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] VirtualInputResult の公開契約を定義します。
 /// </summary>
 public sealed record VirtualInputResult
 {
@@ -96,7 +96,7 @@ public sealed record VirtualInputResult
 
 /// <summary>
 /// EN: Carries a send-keys request.
-/// EN: Documentation for public API. JA: SendKeysRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] SendKeysRequest の公開契約を定義します。
 /// </summary>
 public sealed record SendKeysRequest
 {
@@ -109,7 +109,7 @@ public sealed record SendKeysRequest
 
 /// <summary>
 /// EN: Carries a text input request.
-/// EN: Documentation for public API. JA: TypeTextRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] TypeTextRequest の公開契約を定義します。
 /// </summary>
 public sealed record TypeTextRequest
 {
@@ -122,7 +122,7 @@ public sealed record TypeTextRequest
 
 /// <summary>
 /// EN: Carries a pointer move request.
-/// EN: Documentation for public API. JA: PointerMoveRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] PointerMoveRequest の公開契約を定義します。
 /// </summary>
 public sealed record PointerMoveRequest
 {
@@ -138,7 +138,7 @@ public sealed record PointerMoveRequest
 
 /// <summary>
 /// EN: Carries a pointer click request.
-/// EN: Documentation for public API. JA: PointerClickRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] PointerClickRequest の公開契約を定義します。
 /// </summary>
 public sealed record PointerClickRequest
 {
@@ -157,7 +157,7 @@ public sealed record PointerClickRequest
 
 /// <summary>
 /// EN: Carries a pointer drag request.
-/// EN: Documentation for public API. JA: PointerDragRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] PointerDragRequest の公開契約を定義します。
 /// </summary>
 public sealed record PointerDragRequest
 {
@@ -179,7 +179,7 @@ public sealed record PointerDragRequest
 
 /// <summary>
 /// EN: Carries a virtual input state request.
-/// EN: Documentation for public API. JA: InputStateRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] InputStateRequest の公開契約を定義します。
 /// </summary>
 public sealed record InputStateRequest
 {

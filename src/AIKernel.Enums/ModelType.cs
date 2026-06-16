@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: ModelType の契約を定義します。
-/// EN: Documentation for public API. JA: ModelType の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ModelType の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Enums.ModelType']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Enums.ModelType']" />

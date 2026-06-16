@@ -5,7 +5,7 @@ namespace AIKernel.Dtos.Operators;
 
 /// <summary>
 /// EN: Carries an operator strategy description request.
-/// EN: Documentation for public API. JA: OperatorStrategyDescribeRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OperatorStrategyDescribeRequest の公開契約を定義します。
 /// </summary>
 public sealed record OperatorStrategyDescribeRequest
 {
@@ -18,7 +18,7 @@ public sealed record OperatorStrategyDescribeRequest
 
 /// <summary>
 /// EN: Describes an operator strategy.
-/// EN: Documentation for public API. JA: OperatorStrategyDescriptor の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OperatorStrategyDescriptor の公開契約を定義します。
 /// </summary>
 public sealed record OperatorStrategyDescriptor
 {
@@ -49,7 +49,7 @@ public sealed record OperatorStrategyDescriptor
 
 /// <summary>
 /// EN: Carries an operator strategy request.
-/// EN: Documentation for public API. JA: OperatorStrategyRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OperatorStrategyRequest の公開契約を定義します。
 /// </summary>
 public sealed record OperatorStrategyRequest
 {
@@ -65,7 +65,7 @@ public sealed record OperatorStrategyRequest
 
 /// <summary>
 /// EN: Carries an operator strategy result.
-/// EN: Documentation for public API. JA: OperatorStrategyResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OperatorStrategyResult の公開契約を定義します。
 /// </summary>
 public sealed record OperatorStrategyResult
 {
@@ -105,7 +105,7 @@ public sealed record OperatorStrategyResult
 
 /// <summary>
 /// EN: Carries an operator action proposal.
-/// EN: Documentation for public API. JA: OperatorActionProposal の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OperatorActionProposal の公開契約を定義します。
 /// </summary>
 public sealed record OperatorActionProposal
 {
@@ -127,7 +127,7 @@ public sealed record OperatorActionProposal
 
 /// <summary>
 /// EN: Carries an operator strategy reset request.
-/// EN: Documentation for public API. JA: OperatorStrategyResetRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OperatorStrategyResetRequest の公開契約を定義します。
 /// </summary>
 public sealed record OperatorStrategyResetRequest
 {
@@ -140,7 +140,7 @@ public sealed record OperatorStrategyResetRequest
 
 /// <summary>
 /// EN: Carries an operator strategy reset result.
-/// EN: Documentation for public API. JA: OperatorStrategyResetResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OperatorStrategyResetResult の公開契約を定義します。
 /// </summary>
 public sealed record OperatorStrategyResetResult
 {
@@ -174,7 +174,7 @@ public sealed record OperatorStrategyResetResult
 
 /// <summary>
 /// EN: Carries an operator strategy state request.
-/// EN: Documentation for public API. JA: OperatorStrategyStateRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OperatorStrategyStateRequest の公開契約を定義します。
 /// </summary>
 public sealed record OperatorStrategyStateRequest
 {
@@ -187,7 +187,7 @@ public sealed record OperatorStrategyStateRequest
 
 /// <summary>
 /// EN: Carries an operator strategy state snapshot.
-/// EN: Documentation for public API. JA: OperatorStrategyStateSnapshot の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OperatorStrategyStateSnapshot の公開契約を定義します。
 /// </summary>
 public sealed record OperatorStrategyStateSnapshot
 {
@@ -221,7 +221,7 @@ public sealed record OperatorStrategyStateSnapshot
 
 /// <summary>
 /// EN: Carries an operator strategy profile update request.
-/// EN: Documentation for public API. JA: OperatorStrategyProfileUpdateRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OperatorStrategyProfileUpdateRequest の公開契約を定義します。
 /// </summary>
 public sealed record OperatorStrategyProfileUpdateRequest
 {
@@ -237,7 +237,7 @@ public sealed record OperatorStrategyProfileUpdateRequest
 
 /// <summary>
 /// EN: Carries an operator strategy profile update result.
-/// EN: Documentation for public API. JA: OperatorStrategyProfileUpdateResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OperatorStrategyProfileUpdateResult の公開契約を定義します。
 /// </summary>
 public sealed record OperatorStrategyProfileUpdateResult
 {

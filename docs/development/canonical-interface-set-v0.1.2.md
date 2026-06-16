@@ -40,9 +40,9 @@ AIKernel.NET. It is a developer map for the contract files under
 ### CTG Carrier Surface
 
 - `AIKernel.Abstractions.Governance.ICouncilVote`
-- `AIKernel.Abstractions.Governance.ICTGCanon`
-- `AIKernel.Abstractions.Governance.ICTGRuleset`
-- `AIKernel.Abstractions.Governance.ICTGDecisionGate`
+- `AIKernel.Abstractions.Governance.ICtgCanon`
+- `AIKernel.Abstractions.Governance.ICtgRuleset`
+- `AIKernel.Abstractions.Governance.ICtgDecisionGate`
 
 ### Provider Surface
 

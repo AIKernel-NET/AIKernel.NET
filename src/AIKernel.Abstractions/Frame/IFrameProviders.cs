@@ -6,13 +6,13 @@ namespace AIKernel.Abstractions.Frame;
 
 /// <summary>
 /// EN: Provides frame snapshots from a source boundary.
-/// EN: Documentation for public API. JA: IFrameSourceProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IFrameSourceProvider の公開契約を定義します。
 /// </summary>
 public interface IFrameSourceProvider : IKernelProvider
 {
     /// <summary>
     /// EN: Captures frame snapshots.
-    /// EN: Documentation for public API. JA: CaptureAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] CaptureAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The capture request. JA: request パラメーターです。</param>
     /// <param name="context">EN: The execution context. JA: context パラメーターです。</param>
@@ -26,7 +26,7 @@ public interface IFrameSourceProvider : IKernelProvider
 
 /// <summary>
 /// EN: Provides frames from a physical or desktop screen source.
-/// EN: Documentation for public API. JA: IScreenFrameSourceProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IScreenFrameSourceProvider の公開契約を定義します。
 /// </summary>
 public interface IScreenFrameSourceProvider : IFrameSourceProvider
 {
@@ -34,13 +34,13 @@ public interface IScreenFrameSourceProvider : IFrameSourceProvider
 
 /// <summary>
 /// EN: Provides frames from a virtual runtime source.
-/// EN: Documentation for public API. JA: IVirtualFrameSourceProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IVirtualFrameSourceProvider の公開契約を定義します。
 /// </summary>
 public interface IVirtualFrameSourceProvider : IFrameSourceProvider
 {
     /// <summary>
     /// EN: Lists virtual surfaces exposed by a sandbox instance.
-    /// EN: Documentation for public API. JA: ListSurfacesAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ListSurfacesAsync 操作を実行します。
     /// </summary>
     /// <param name="handle">EN: The sandbox instance handle. JA: handle パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -52,13 +52,13 @@ public interface IVirtualFrameSourceProvider : IFrameSourceProvider
 
 /// <summary>
 /// EN: Binds a frame source to a surface boundary.
-/// EN: Documentation for public API. JA: IFrameSurfaceProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IFrameSurfaceProvider の公開契約を定義します。
 /// </summary>
 public interface IFrameSurfaceProvider : IKernelProvider
 {
     /// <summary>
     /// EN: Binds a frame surface.
-    /// EN: Documentation for public API. JA: BindAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] BindAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The binding request. JA: request パラメーターです。</param>
     /// <param name="context">EN: The execution context. JA: context パラメーターです。</param>

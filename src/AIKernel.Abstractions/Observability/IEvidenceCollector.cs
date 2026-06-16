@@ -4,13 +4,13 @@ namespace AIKernel.Abstractions.Observability;
 
 /// <summary>
 /// EN: Captures evidence bundles and evidence items.
-/// EN: Documentation for public API. JA: IEvidenceCollector の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IEvidenceCollector の公開契約を定義します。
 /// </summary>
 public interface IEvidenceCollector
 {
     /// <summary>
     /// EN: Captures an evidence bundle.
-    /// EN: Documentation for public API. JA: CaptureAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] CaptureAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The capture request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -21,7 +21,7 @@ public interface IEvidenceCollector
 
     /// <summary>
     /// EN: Captures frame evidence.
-    /// EN: Documentation for public API. JA: CaptureFrameAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] CaptureFrameAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The frame capture request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -32,7 +32,7 @@ public interface IEvidenceCollector
 
     /// <summary>
     /// EN: Captures log evidence.
-    /// EN: Documentation for public API. JA: CaptureLogsAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] CaptureLogsAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The log capture request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -43,7 +43,7 @@ public interface IEvidenceCollector
 
     /// <summary>
     /// EN: Captures diagnostic evidence.
-    /// EN: Documentation for public API. JA: CaptureDiagnosticsAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] CaptureDiagnosticsAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The diagnostic capture request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -54,7 +54,7 @@ public interface IEvidenceCollector
 
     /// <summary>
     /// EN: Exports an evidence bundle.
-    /// EN: Documentation for public API. JA: ExportBundleAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ExportBundleAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The export request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AIKernel.Abstractions.Governance.ChatChain;
 
-/// <summary>EN: Documentation for public API. JA: IChatTurn contract を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] IChatTurn contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ChatChain.IChatTurn']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ChatChain.IChatTurn']" />
 public interface IChatTurn

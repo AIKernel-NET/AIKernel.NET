@@ -3,7 +3,7 @@ namespace AIKernel.Abstractions.History;
 using AIKernel.Dtos.History;
 using AIKernel.Vfs;
 
-/// <summary>EN: Documentation for public API. JA: IHistoryRomStore contract を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] IHistoryRomStore contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.History.IHistoryRomStore']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.History.IHistoryRomStore']" />
 public interface IHistoryRomStore

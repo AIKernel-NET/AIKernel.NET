@@ -4,13 +4,13 @@ namespace AIKernel.Abstractions.Providers;
 
 /// <summary>
 /// EN: Provides capability-based execution on top of the stable provider boundary.
-/// EN: Documentation for public API. JA: IKernelProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IKernelProvider の公開契約を定義します。
 /// </summary>
 public interface IKernelProvider : IProvider
 {
     /// <summary>
     /// EN: Gets provider capabilities for routing and admission.
-    /// EN: Documentation for public API. JA: GetCapabilitiesAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] GetCapabilitiesAsync 操作を実行します。
     /// </summary>
     /// <param name="context">EN: The preparation context. JA: context パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -21,7 +21,7 @@ public interface IKernelProvider : IProvider
 
     /// <summary>
     /// EN: Probes capability availability without side effects.
-    /// EN: Documentation for public API. JA: ProbeAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ProbeAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The capability query. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -32,7 +32,7 @@ public interface IKernelProvider : IProvider
 
     /// <summary>
     /// EN: Executes a provider operation and returns a deterministic result envelope.
-    /// EN: Documentation for public API. JA: このメンバー の公開契約を定義します。
+    /// [EN] Documents this public package API member. [JA] このメンバー の公開契約を定義します。
     /// </summary>
     /// <typeparam name="T">EN: The result value type. JA: T 型パラメーターです。</typeparam>
     /// <param name="operationId">EN: The operation identifier. JA: operationId パラメーターです。</param>
@@ -47,13 +47,13 @@ public interface IKernelProvider : IProvider
 
 /// <summary>
 /// EN: Routes providers by evaluating capability availability and routing policy.
-/// EN: Documentation for public API. JA: ICapabilityProviderRouter の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ICapabilityProviderRouter の公開契約を定義します。
 /// </summary>
 public interface ICapabilityProviderRouter : IProviderRouter
 {
     /// <summary>
     /// EN: Selects the best provider for a routing context.
-    /// EN: Documentation for public API. JA: SelectProviderAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] SelectProviderAsync 操作を実行します。
     /// </summary>
     /// <param name="routingContext">EN: The routing context. JA: routingContext パラメーターです。</param>
     /// <param name="policy">EN: The routing policy. JA: policy パラメーターです。</param>
@@ -68,7 +68,7 @@ public interface ICapabilityProviderRouter : IProviderRouter
 
     /// <summary>
     /// EN: Routes a capability probe across candidate providers.
-    /// EN: Documentation for public API. JA: ProbeAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ProbeAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The capability query. JA: request パラメーターです。</param>
     /// <param name="policy">EN: The routing policy. JA: policy パラメーターです。</param>
@@ -83,7 +83,7 @@ public interface ICapabilityProviderRouter : IProviderRouter
 
     /// <summary>
     /// EN: Evaluates matching capabilities for a capability query.
-    /// EN: Documentation for public API. JA: EvaluateCapabilityAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] EvaluateCapabilityAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The capability query. JA: request パラメーターです。</param>
     /// <param name="candidates">EN: The candidate providers. JA: candidates パラメーターです。</param>
@@ -97,13 +97,13 @@ public interface ICapabilityProviderRouter : IProviderRouter
 
 /// <summary>
 /// EN: Creates scoped provider instances for isolated runtime operations.
-/// EN: Documentation for public API. JA: IScopedProviderFactory の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IScopedProviderFactory の公開契約を定義します。
 /// </summary>
 public interface IScopedProviderFactory
 {
     /// <summary>
     /// EN: Creates a provider for the supplied scope.
-    /// EN: Documentation for public API. JA: CreateProviderAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] CreateProviderAsync 操作を実行します。
     /// </summary>
     /// <param name="scope">EN: The scope identifier. JA: scope パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>

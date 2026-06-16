@@ -2,7 +2,7 @@ namespace AIKernel.Dtos.Routing;
 
 /// <summary>
 /// EN: ComputeShape の契約を定義します。
-/// EN: Documentation for public API. JA: ComputeShape の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ComputeShape の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Routing.ComputeShape']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Routing.ComputeShape']" />

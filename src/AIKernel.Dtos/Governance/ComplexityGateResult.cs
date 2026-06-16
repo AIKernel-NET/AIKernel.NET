@@ -4,7 +4,7 @@ namespace AIKernel.Dtos.Governance;
 
 /// <summary>
 /// EN: Admission decision emitted by a computational complexity gate.
-/// EN: Documentation for public API. JA: ComplexityGateResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ComplexityGateResult の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Governance.ComplexityGateResult']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Governance.ComplexityGateResult']" />

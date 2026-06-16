@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: Classifies a virtual input packet.
-/// EN: Documentation for public API. JA: VirtualInputKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] VirtualInputKind の公開契約を定義します。
 /// </summary>
 public enum VirtualInputKind
 {

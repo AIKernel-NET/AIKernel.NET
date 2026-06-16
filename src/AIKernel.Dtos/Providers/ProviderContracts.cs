@@ -5,7 +5,7 @@ namespace AIKernel.Dtos.Providers;
 
 /// <summary>
 /// EN: Describes a logical provider capability for package-boundary routing.
-/// EN: Documentation for public API. JA: ProviderCapability の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderCapability の公開契約を定義します。
 /// </summary>
 public sealed record ProviderCapability
 {
@@ -51,7 +51,7 @@ public sealed record ProviderCapability
 
 /// <summary>
 /// EN: Describes provider capability availability.
-/// EN: Documentation for public API. JA: CapabilityAvailability の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] CapabilityAvailability の公開契約を定義します。
 /// </summary>
 public sealed record CapabilityAvailability
 {
@@ -70,7 +70,7 @@ public sealed record CapabilityAvailability
 
 /// <summary>
 /// EN: Carries a capability query for provider probing and routing.
-/// EN: Documentation for public API. JA: CapabilityQuery の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] CapabilityQuery の公開契約を定義します。
 /// </summary>
 public sealed record CapabilityQuery
 {
@@ -95,7 +95,7 @@ public sealed record CapabilityQuery
 
 /// <summary>
 /// EN: Carries preparation consent for hosted runtime, model, and protected assets.
-/// EN: Documentation for public API. JA: PreparationConsent の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] PreparationConsent の公開契約を定義します。
 /// </summary>
 public sealed record PreparationConsent
 {
@@ -129,7 +129,7 @@ public sealed record PreparationConsent
 
 /// <summary>
 /// EN: Carries preparation policy thresholds.
-/// EN: Documentation for public API. JA: PreparationPolicy の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] PreparationPolicy の公開契約を定義します。
 /// </summary>
 public sealed record PreparationPolicy
 {
@@ -154,7 +154,7 @@ public sealed record PreparationPolicy
 
 /// <summary>
 /// EN: Carries provider preparation context.
-/// EN: Documentation for public API. JA: ProviderPreparationContext の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderPreparationContext の公開契約を定義します。
 /// </summary>
 public sealed record ProviderPreparationContext
 {
@@ -176,7 +176,7 @@ public sealed record ProviderPreparationContext
 
 /// <summary>
 /// EN: Carries provider execution context.
-/// EN: Documentation for public API. JA: ProviderExecutionContext の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderExecutionContext の公開契約を定義します。
 /// </summary>
 public sealed record ProviderExecutionContext
 {
@@ -198,7 +198,7 @@ public sealed record ProviderExecutionContext
 
 /// <summary>
 /// EN: Carries provider diagnostics.
-/// EN: Documentation for public API. JA: ProviderDiagnostic の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderDiagnostic の公開契約を定義します。
 /// </summary>
 public sealed record ProviderDiagnostic
 {
@@ -217,7 +217,7 @@ public sealed record ProviderDiagnostic
 
 /// <summary>
 /// EN: Carries provider result data without throwing contract-package exceptions.
-/// EN: Documentation for public API. JA: ProviderResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderResult の公開契約を定義します。
 /// </summary>
 public sealed record ProviderResult<T>
 {
@@ -239,7 +239,7 @@ public sealed record ProviderResult<T>
 
 /// <summary>
 /// EN: Carries routing metadata for provider selection.
-/// EN: Documentation for public API. JA: RoutingContext の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RoutingContext の公開契約を定義します。
 /// </summary>
 public sealed record RoutingContext
 {
@@ -261,7 +261,7 @@ public sealed record RoutingContext
 
 /// <summary>
 /// EN: Carries provider routing policy constraints.
-/// EN: Documentation for public API. JA: RoutingPolicy の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RoutingPolicy の公開契約を定義します。
 /// </summary>
 public sealed record RoutingPolicy
 {

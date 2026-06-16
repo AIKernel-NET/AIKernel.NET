@@ -2,7 +2,7 @@ using AIKernel.Enums;
 
 namespace AIKernel.Dtos.DynamicSlm;
 
-/// <summary>EN: Documentation for public API. JA: DynamicSlmAdapterCompatibilityProfile を表します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] DynamicSlmAdapterCompatibilityProfile を表します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmAdapterCompatibilityProfile']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmAdapterCompatibilityProfile']" />
 public sealed record DynamicSlmAdapterCompatibilityProfile(

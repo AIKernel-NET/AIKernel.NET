@@ -2,7 +2,7 @@ namespace AIKernel.Abstractions.Tasks;
 
 /// <summary>
 /// EN: UC-29 に基づく ITaskContext の契約を定義します。
-/// EN: Documentation for public API. JA: ITaskContext の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ITaskContext の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tasks.ITaskContext']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Tasks.ITaskContext']" />

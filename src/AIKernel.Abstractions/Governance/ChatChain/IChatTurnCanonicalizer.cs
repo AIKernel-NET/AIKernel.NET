@@ -6,7 +6,7 @@ namespace AIKernel.Abstractions.Governance.ChatChain;
 
 /// <summary>
 /// EN: チャットターンを決定論的なバイト列または文字列表現へ正準化する。
-/// EN: Documentation for public API. JA: IChatTurnCanonicalizer の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IChatTurnCanonicalizer の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ChatChain.IChatTurnCanonicalizer']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Governance.ChatChain.IChatTurnCanonicalizer']" />

@@ -2,7 +2,7 @@ namespace AIKernel.Abstractions.Security;
 
 /// <summary>
 /// EN: UC-21 に基づく IPrincipal の契約を定義します。
-/// EN: Documentation for public API. JA: IPrincipal の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IPrincipal の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPrincipal']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.IPrincipal']" />

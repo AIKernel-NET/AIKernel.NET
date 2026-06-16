@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: Describes the maximum side-effect mode allowed for a runtime loop.
-/// EN: Documentation for public API. JA: RuntimeControlMode の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeControlMode の公開契約を定義します。
 /// </summary>
 public enum RuntimeControlMode
 {

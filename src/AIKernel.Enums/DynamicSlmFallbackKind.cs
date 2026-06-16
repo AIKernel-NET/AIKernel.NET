@@ -1,6 +1,6 @@
 namespace AIKernel.Enums;
 
-/// <summary>EN: Documentation for public API. JA: DynamicSlmFallbackKind の値を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] DynamicSlmFallbackKind の値を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Enums.DynamicSlmFallbackKind']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Enums.DynamicSlmFallbackKind']" />
 public enum DynamicSlmFallbackKind

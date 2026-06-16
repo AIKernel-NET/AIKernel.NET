@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: Describes coarse-grained provider capabilities for discovery and routing.
-/// EN: Documentation for public API. JA: ProviderCapabilityFlags の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderCapabilityFlags の公開契約を定義します。
 /// </summary>
 [Flags]
 public enum ProviderCapabilityFlags

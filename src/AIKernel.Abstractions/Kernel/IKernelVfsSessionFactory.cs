@@ -3,7 +3,7 @@ namespace AIKernel.Abstractions.Kernel;
 using AIKernel.Dtos.Kernel;
 using AIKernel.Vfs;
 
-/// <summary>EN: Documentation for public API. JA: IKernelVfsSessionFactory contract を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] IKernelVfsSessionFactory contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelVfsSessionFactory']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Kernel.IKernelVfsSessionFactory']" />
 public interface IKernelVfsSessionFactory

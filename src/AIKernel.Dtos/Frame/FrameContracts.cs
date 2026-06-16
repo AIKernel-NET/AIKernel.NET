@@ -4,7 +4,7 @@ namespace AIKernel.Dtos.Frame;
 
 /// <summary>
 /// EN: Carries a frame capture request.
-/// EN: Documentation for public API. JA: FrameCaptureRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] FrameCaptureRequest の公開契約を定義します。
 /// </summary>
 public sealed record FrameCaptureRequest
 {
@@ -20,7 +20,7 @@ public sealed record FrameCaptureRequest
 
 /// <summary>
 /// EN: Describes frame buffer shape and pixel format.
-/// EN: Documentation for public API. JA: FrameBufferDescriptor の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] FrameBufferDescriptor の公開契約を定義します。
 /// </summary>
 public sealed record FrameBufferDescriptor
 {
@@ -42,7 +42,7 @@ public sealed record FrameBufferDescriptor
 
 /// <summary>
 /// EN: Carries a frame snapshot.
-/// EN: Documentation for public API. JA: FrameSnapshot の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] FrameSnapshot の公開契約を定義します。
 /// </summary>
 public sealed record FrameSnapshot
 {
@@ -67,7 +67,7 @@ public sealed record FrameSnapshot
 
 /// <summary>
 /// EN: Carries a frame surface binding request.
-/// EN: Documentation for public API. JA: FrameSurfaceBindingRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] FrameSurfaceBindingRequest の公開契約を定義します。
 /// </summary>
 public sealed record FrameSurfaceBindingRequest
 {
@@ -83,7 +83,7 @@ public sealed record FrameSurfaceBindingRequest
 
 /// <summary>
 /// EN: Carries a frame surface binding result.
-/// EN: Documentation for public API. JA: FrameSurfaceBinding の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] FrameSurfaceBinding の公開契約を定義します。
 /// </summary>
 public sealed record FrameSurfaceBinding
 {
@@ -105,7 +105,7 @@ public sealed record FrameSurfaceBinding
 
 /// <summary>
 /// EN: Describes a virtual frame surface exposed by a sandbox instance.
-/// EN: Documentation for public API. JA: VirtualSurfaceDescriptor の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] VirtualSurfaceDescriptor の公開契約を定義します。
 /// </summary>
 public sealed record VirtualSurfaceDescriptor
 {

@@ -5,13 +5,13 @@ namespace AIKernel.Abstractions.Runtime;
 
 /// <summary>
 /// EN: Provides sandbox runtime control operations without changing the base sandbox runtime provider.
-/// EN: Documentation for public API. JA: ISandboxRuntimeControlProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ISandboxRuntimeControlProvider の公開契約を定義します。
 /// </summary>
 public interface ISandboxRuntimeControlProvider : ISandboxRuntimeProvider
 {
     /// <summary>
     /// EN: Starts a runtime.
-    /// EN: Documentation for public API. JA: StartAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] StartAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The control request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -22,7 +22,7 @@ public interface ISandboxRuntimeControlProvider : ISandboxRuntimeProvider
 
     /// <summary>
     /// EN: Stops a runtime.
-    /// EN: Documentation for public API. JA: StopAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] StopAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The control request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -33,7 +33,7 @@ public interface ISandboxRuntimeControlProvider : ISandboxRuntimeProvider
 
     /// <summary>
     /// EN: Restarts a runtime.
-    /// EN: Documentation for public API. JA: RestartAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] RestartAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The control request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -44,7 +44,7 @@ public interface ISandboxRuntimeControlProvider : ISandboxRuntimeProvider
 
     /// <summary>
     /// EN: Attaches a runtime.
-    /// EN: Documentation for public API. JA: AttachAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] AttachAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The attach request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -55,7 +55,7 @@ public interface ISandboxRuntimeControlProvider : ISandboxRuntimeProvider
 
     /// <summary>
     /// EN: Detaches a runtime.
-    /// EN: Documentation for public API. JA: DetachAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] DetachAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The detach request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -66,7 +66,7 @@ public interface ISandboxRuntimeControlProvider : ISandboxRuntimeProvider
 
     /// <summary>
     /// EN: Gets runtime status.
-    /// EN: Documentation for public API. JA: GetStatusAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] GetStatusAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The snapshot request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -77,7 +77,7 @@ public interface ISandboxRuntimeControlProvider : ISandboxRuntimeProvider
 
     /// <summary>
     /// EN: Gets runtime telemetry.
-    /// EN: Documentation for public API. JA: GetTelemetryAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] GetTelemetryAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The telemetry snapshot request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>

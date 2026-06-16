@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: Describes a policy decision category.
-/// EN: Documentation for public API. JA: PolicyDecisionKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] PolicyDecisionKind の公開契約を定義します。
 /// </summary>
 public enum PolicyDecisionKind
 {

@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: Explains why a provider capability is or is not available.
-/// EN: Documentation for public API. JA: AvailabilityReason の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] AvailabilityReason の公開契約を定義します。
 /// </summary>
 public enum AvailabilityReason
 {

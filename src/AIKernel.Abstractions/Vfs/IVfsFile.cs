@@ -3,7 +3,7 @@ namespace AIKernel.Vfs;
 /// <summary>
 /// Vfs ファイルの互換合成インターフェースを定義します。
 /// EN: UC-08（コンテキストスナップショットと永続化）, UC-18（Chat Persistence）
-/// EN: Documentation for public API. JA: IVfsFile の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IVfsFile の公開契約を定義します。
 /// </summary>
 /// <remarks>
 /// v0.0.2 以降、読み取り能力は <see cref="IReadableVfsFile"/> で表現します。

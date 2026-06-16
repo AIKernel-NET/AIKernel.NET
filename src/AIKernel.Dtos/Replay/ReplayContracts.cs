@@ -5,7 +5,7 @@ namespace AIKernel.Dtos.Replay;
 
 /// <summary>
 /// EN: Carries a replay timeline create request.
-/// EN: Documentation for public API. JA: ReplayTimelineCreateRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplayTimelineCreateRequest の公開契約を定義します。
 /// </summary>
 public sealed record ReplayTimelineCreateRequest
 {
@@ -18,7 +18,7 @@ public sealed record ReplayTimelineCreateRequest
 
 /// <summary>
 /// EN: Carries a replay timeline create result.
-/// EN: Documentation for public API. JA: ReplayTimelineCreateResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplayTimelineCreateResult の公開契約を定義します。
 /// </summary>
 public sealed record ReplayTimelineCreateResult
 {
@@ -55,7 +55,7 @@ public sealed record ReplayTimelineCreateResult
 
 /// <summary>
 /// EN: Carries a replay frame append request.
-/// EN: Documentation for public API. JA: ReplayFrameAppendRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplayFrameAppendRequest の公開契約を定義します。
 /// </summary>
 public sealed record ReplayFrameAppendRequest
 {
@@ -71,7 +71,7 @@ public sealed record ReplayFrameAppendRequest
 
 /// <summary>
 /// EN: Carries a replay event append request.
-/// EN: Documentation for public API. JA: ReplayEventAppendRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplayEventAppendRequest の公開契約を定義します。
 /// </summary>
 public sealed record ReplayEventAppendRequest
 {
@@ -87,7 +87,7 @@ public sealed record ReplayEventAppendRequest
 
 /// <summary>
 /// EN: Carries a replay append result.
-/// EN: Documentation for public API. JA: ReplayAppendResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplayAppendResult の公開契約を定義します。
 /// </summary>
 public sealed record ReplayAppendResult
 {
@@ -124,7 +124,7 @@ public sealed record ReplayAppendResult
 
 /// <summary>
 /// EN: Carries a replay timeline query.
-/// EN: Documentation for public API. JA: ReplayTimelineQuery の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplayTimelineQuery の公開契約を定義します。
 /// </summary>
 public sealed record ReplayTimelineQuery
 {
@@ -137,7 +137,7 @@ public sealed record ReplayTimelineQuery
 
 /// <summary>
 /// EN: Carries a replay timeline.
-/// EN: Documentation for public API. JA: ReplayTimeline の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplayTimeline の公開契約を定義します。
 /// </summary>
 public sealed record ReplayTimeline
 {
@@ -180,7 +180,7 @@ public sealed record ReplayTimeline
 
 /// <summary>
 /// EN: Carries a replay frame.
-/// EN: Documentation for public API. JA: ReplayFrame の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplayFrame の公開契約を定義します。
 /// </summary>
 public sealed record ReplayFrame
 {
@@ -202,7 +202,7 @@ public sealed record ReplayFrame
 
 /// <summary>
 /// EN: Carries a replay event.
-/// EN: Documentation for public API. JA: ReplayEvent の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplayEvent の公開契約を定義します。
 /// </summary>
 public sealed record ReplayEvent
 {
@@ -224,7 +224,7 @@ public sealed record ReplayEvent
 
 /// <summary>
 /// EN: Carries a replay event query.
-/// EN: Documentation for public API. JA: ReplayEventQuery の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplayEventQuery の公開契約を定義します。
 /// </summary>
 public sealed record ReplayEventQuery
 {
@@ -243,7 +243,7 @@ public sealed record ReplayEventQuery
 
 /// <summary>
 /// EN: Carries a replay seal request.
-/// EN: Documentation for public API. JA: ReplaySealRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplaySealRequest の公開契約を定義します。
 /// </summary>
 public sealed record ReplaySealRequest
 {
@@ -259,7 +259,7 @@ public sealed record ReplaySealRequest
 
 /// <summary>
 /// EN: Carries replay seal hash and signature references.
-/// EN: Documentation for public API. JA: ReplaySealResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplaySealResult の公開契約を定義します。
 /// </summary>
 public sealed record ReplaySealResult
 {
@@ -311,7 +311,7 @@ public sealed record ReplaySealResult
 
 /// <summary>
 /// EN: Carries replay cursor state.
-/// EN: Documentation for public API. JA: ReplayCursor の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ReplayCursor の公開契約を定義します。
 /// </summary>
 public sealed record ReplayCursor
 {

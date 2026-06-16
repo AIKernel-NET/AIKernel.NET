@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 /// <summary>
 /// [EN] Compute kernel descriptor shared by OS compute providers.
 /// [JA] OS compute Provider で共有する compute kernel descriptor です。
-/// EN: Documentation for public API. JA: ComputeKernel の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ComputeKernel の公開契約を定義します。
 /// </summary>
 public sealed class ComputeKernel
 {

@@ -6,13 +6,13 @@ namespace AIKernel.Abstractions.Operators;
 
 /// <summary>
 /// EN: Routes observations to bounded phase states.
-/// EN: Documentation for public API. JA: IPhaseRouterProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IPhaseRouterProvider の公開契約を定義します。
 /// </summary>
 public interface IPhaseRouterProvider : IKernelProvider
 {
     /// <summary>
     /// EN: Routes an observation to a phase.
-    /// EN: Documentation for public API. JA: RouteAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] RouteAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The phase routing request. JA: request パラメーターです。</param>
     /// <param name="context">EN: The execution context. JA: context パラメーターです。</param>
@@ -26,13 +26,13 @@ public interface IPhaseRouterProvider : IKernelProvider
 
 /// <summary>
 /// EN: Proposes bounded actions from observations and phase state.
-/// EN: Documentation for public API. JA: IActionProposalProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IActionProposalProvider の公開契約を定義します。
 /// </summary>
 public interface IActionProposalProvider : IKernelProvider
 {
     /// <summary>
     /// EN: Proposes actions for an observation.
-    /// EN: Documentation for public API. JA: ProposeAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ProposeAsync 操作を実行します。
     /// </summary>
     /// <param name="observation">EN: The observation snapshot. JA: observation パラメーターです。</param>
     /// <param name="phase">EN: The phase state. JA: phase パラメーターです。</param>
@@ -50,13 +50,13 @@ public interface IActionProposalProvider : IKernelProvider
 
 /// <summary>
 /// EN: Arbitrates action proposals before governance or input execution.
-/// EN: Documentation for public API. JA: IActionArbiterProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IActionArbiterProvider の公開契約を定義します。
 /// </summary>
 public interface IActionArbiterProvider : IKernelProvider
 {
     /// <summary>
     /// EN: Arbitrates action proposals.
-    /// EN: Documentation for public API. JA: ArbitrateAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ArbitrateAsync 操作を実行します。
     /// </summary>
     /// <param name="proposals">EN: The action proposals. JA: proposals パラメーターです。</param>
     /// <param name="context">EN: The execution context. JA: context パラメーターです。</param>
@@ -70,13 +70,13 @@ public interface IActionArbiterProvider : IKernelProvider
 
 /// <summary>
 /// EN: Loads reusable control profiles.
-/// EN: Documentation for public API. JA: IControlProfileProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IControlProfileProvider の公開契約を定義します。
 /// </summary>
 public interface IControlProfileProvider : IKernelProvider
 {
     /// <summary>
     /// EN: Loads a control profile.
-    /// EN: Documentation for public API. JA: LoadProfileAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] LoadProfileAsync 操作を実行します。
     /// </summary>
     /// <param name="profileId">EN: The profile identifier. JA: profileId パラメーターです。</param>
     /// <param name="context">EN: The execution context. JA: context パラメーターです。</param>
@@ -89,7 +89,7 @@ public interface IControlProfileProvider : IKernelProvider
 
     /// <summary>
     /// EN: Saves a control profile.
-    /// EN: Documentation for public API. JA: SaveAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] SaveAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The control profile request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -101,13 +101,13 @@ public interface IControlProfileProvider : IKernelProvider
 
 /// <summary>
 /// EN: Produces reusable control-profile tuning artifacts.
-/// EN: Documentation for public API. JA: IControlProfileOptimizerProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IControlProfileOptimizerProvider の公開契約を定義します。
 /// </summary>
 public interface IControlProfileOptimizerProvider : IKernelProvider
 {
     /// <summary>
     /// EN: Optimizes a control profile from evidence and telemetry metadata.
-    /// EN: Documentation for public API. JA: OptimizeAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] OptimizeAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The optimization request. JA: request パラメーターです。</param>
     /// <param name="context">EN: The execution context. JA: context パラメーターです。</param>
@@ -120,7 +120,7 @@ public interface IControlProfileOptimizerProvider : IKernelProvider
 
     /// <summary>
     /// EN: Optimizes a control profile.
-    /// EN: Documentation for public API. JA: OptimizeAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] OptimizeAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The optimization request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -132,7 +132,7 @@ public interface IControlProfileOptimizerProvider : IKernelProvider
 
 /// <summary>
 /// EN: Provides request-envelope based proposal and arbitration operations.
-/// EN: Documentation for public API. JA: IActionOperatorProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IActionOperatorProvider の公開契約を定義します。
 /// </summary>
 public interface IActionOperatorProvider :
     IActionProposalProvider,
@@ -140,7 +140,7 @@ public interface IActionOperatorProvider :
 {
     /// <summary>
     /// EN: Proposes actions.
-    /// EN: Documentation for public API. JA: ProposeActionsAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ProposeActionsAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The action proposal request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -151,7 +151,7 @@ public interface IActionOperatorProvider :
 
     /// <summary>
     /// EN: Arbitrates action proposals.
-    /// EN: Documentation for public API. JA: ArbitrateAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ArbitrateAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The action arbitration request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>

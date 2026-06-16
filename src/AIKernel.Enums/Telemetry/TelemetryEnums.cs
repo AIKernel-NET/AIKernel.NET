@@ -2,7 +2,7 @@ namespace AIKernel.Enums.Telemetry;
 
 /// <summary>
 /// EN: Describes telemetry signal kinds.
-/// EN: Documentation for public API. JA: TelemetrySignalKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] TelemetrySignalKind の公開契約を定義します。
 /// </summary>
 public enum TelemetrySignalKind
 {
@@ -36,7 +36,7 @@ public enum TelemetrySignalKind
 
 /// <summary>
 /// EN: Describes telemetry level.
-/// EN: Documentation for public API. JA: TelemetryLevel の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] TelemetryLevel の公開契約を定義します。
 /// </summary>
 public enum TelemetryLevel
 {

@@ -2,7 +2,7 @@ namespace AIKernel.Enums.Metrics;
 
 /// <summary>
 /// EN: Describes metric kinds.
-/// EN: Documentation for public API. JA: MetricKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] MetricKind の公開契約を定義します。
 /// </summary>
 public enum MetricKind
 {
@@ -42,7 +42,7 @@ public enum MetricKind
 
 /// <summary>
 /// EN: Describes metric aggregation.
-/// EN: Documentation for public API. JA: MetricAggregationKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] MetricAggregationKind の公開契約を定義します。
 /// </summary>
 public enum MetricAggregationKind
 {

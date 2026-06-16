@@ -5,13 +5,13 @@ namespace AIKernel.Abstractions.Runtime;
 
 /// <summary>
 /// EN: Resolves runtime artifacts without exposing technology-specific names.
-/// EN: Documentation for public API. JA: IRuntimeAssetResolver の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IRuntimeAssetResolver の公開契約を定義します。
 /// </summary>
 public interface IRuntimeAssetResolver : IKernelProvider
 {
     /// <summary>
     /// EN: Resolves a runtime asset request.
-    /// EN: Documentation for public API. JA: ResolveAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ResolveAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The runtime asset request. JA: request パラメーターです。</param>
     /// <param name="context">EN: The execution context. JA: context パラメーターです。</param>
@@ -25,13 +25,13 @@ public interface IRuntimeAssetResolver : IKernelProvider
 
 /// <summary>
 /// EN: Mounts resolved artifacts into a memory-backed runtime boundary.
-/// EN: Documentation for public API. JA: IMemoryAssetMountProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IMemoryAssetMountProvider の公開契約を定義します。
 /// </summary>
 public interface IMemoryAssetMountProvider : IKernelProvider
 {
     /// <summary>
     /// EN: Mounts an asset into memory.
-    /// EN: Documentation for public API. JA: MountAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] MountAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The mount request. JA: request パラメーターです。</param>
     /// <param name="context">EN: The execution context. JA: context パラメーターです。</param>

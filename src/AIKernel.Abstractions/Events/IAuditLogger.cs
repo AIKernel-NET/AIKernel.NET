@@ -2,7 +2,7 @@ namespace AIKernel.Abstractions.Events;
 
 /// <summary>
 /// EN: UC-20/UC-24/UC-25 に基づく audit event 書き込み契約です。
-/// EN: Documentation for public API. JA: IAuditEventWriter の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IAuditEventWriter の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IAuditEventWriter']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IAuditEventWriter']" />
@@ -14,7 +14,7 @@ public interface IAuditEventWriter
 
 /// <summary>
 /// EN: Execution event の audit logging 契約です。
-/// EN: Documentation for public API. JA: IExecutionAuditLogger の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IExecutionAuditLogger の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IExecutionAuditLogger']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IExecutionAuditLogger']" />
@@ -26,7 +26,7 @@ public interface IExecutionAuditLogger
 
 /// <summary>
 /// EN: Guard event の audit logging 契約です。
-/// EN: Documentation for public API. JA: IGuardAuditLogger の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IGuardAuditLogger の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IGuardAuditLogger']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IGuardAuditLogger']" />
@@ -38,7 +38,7 @@ public interface IGuardAuditLogger
 
 /// <summary>
 /// EN: Pipeline event の audit logging 契約です。
-/// EN: Documentation for public API. JA: IPipelineAuditLogger の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IPipelineAuditLogger の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IPipelineAuditLogger']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IPipelineAuditLogger']" />
@@ -50,7 +50,7 @@ public interface IPipelineAuditLogger
 
 /// <summary>
 /// EN: Provider event の audit logging 契約です。
-/// EN: Documentation for public API. JA: IProviderAuditLogger の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IProviderAuditLogger の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IProviderAuditLogger']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IProviderAuditLogger']" />
@@ -62,7 +62,7 @@ public interface IProviderAuditLogger
 
 /// <summary>
 /// EN: Transfer trace の audit logging 契約です。
-/// EN: Documentation for public API. JA: ITransferTraceLogger の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ITransferTraceLogger の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.ITransferTraceLogger']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.ITransferTraceLogger']" />
@@ -74,7 +74,7 @@ public interface ITransferTraceLogger
 
 /// <summary>
 /// EN: UC-20/UC-24/UC-25 に基づく IAuditLogger の互換合成契約を定義します。
-/// EN: Documentation for public API. JA: IAuditLogger の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IAuditLogger の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IAuditLogger']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Events.IAuditLogger']" />

@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: Describes provider capability risk level.
-/// EN: Documentation for public API. JA: ProviderRiskLevel の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProviderRiskLevel の公開契約を定義します。
 /// </summary>
 public enum ProviderRiskLevel
 {

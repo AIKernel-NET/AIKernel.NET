@@ -144,6 +144,18 @@ CTG-ROM canon と personalization layer を追加、レビュー、または mou
 
 ---
 
+### 9a. [CTG ROM Layout v0.1.2](CTG_ROM_LAYOUT-v0.1.2-jp.md)
+**ステータス:** Active
+**現在の内容:**
+- v0.1.2 package-facing CTG-ROM version alignment
+- rc5 Monolith CTG-ROM content promotion without semantic changes
+- `aikernel-net` 同梱 CTG-ROM sample の synchronization rule
+
+v0.1.2 ROM metadata、Python sample package contents、base-layer personalization
+boundary を検証する場合に利用する。
+
+---
+
 ### 10. Release Operations（リリース運用）
 **ステータス:** Planned
 **内容（予定）:**
@@ -215,9 +227,10 @@ Operations 文書は、contract と package 境界の安定化に合わせて順
 
 現時点では、
 - Migration Guide は v0.1.1 までの具体的な移行手順と v0.1.1.1 の CTG DTO / enum 正規化を含む
-- Package Installation Guide は同期済み `0.1.1` の NuGet / PyPI line、`0.1.1.1` の NuGet-only contract update、v0.1.2 の NuGet / PyPI 同期公開前提を扱う
+- Package Installation Guide は v0.1.2 正典 package line、local `0.1.2-dev` / `0.1.2.dev` validation、履歴としての `0.1.1` / `0.1.1.1` context を扱う
 - Demo Programs Guide は公式 AIKernel.Demo の学習導線を扱う
-- Interface naming、enum handling、XML documentation policy、CTG developer guidance、CTG developer theory、CTG ROM layout は v0.1.1.1 additive contract surface を扱う
+- Interface naming、enum handling、XML documentation policy、CTG developer guidance、CTG developer theory は v0.1.1.1 additive contract surface を扱う
+- CTG ROM Layout v0.1.2 は、rc5 Monolith CTG-ROM を semantic changes なしで package-facing metadata promotion する範囲を扱う
 - Release、monitoring、incident、security operations は Planned
 という状態であり、今後のバージョンで順次追加される。
 
@@ -240,3 +253,4 @@ Operations 文書は、contract と package 境界の安定化に合わせて順
 - v0.1.0 (2026-06-07): MemoryRegion / MemoryMapper contract extraction を追加
 - v0.1.1 (2026-06-10): 同期された公開リリースライン向けに package installation guide と demo programs guide を追加
 - v0.1.1.1 (2026-06-14): CTG developer guide、CTG Developer Theory、Monolith CTG-ROM layout coverage、0.1.1.1 の NuGet-only package boundary を追加
+- v0.1.2 (2026-06-16): NuGet / PyPI 同期公開、local development package versioning、semantic ROM changes なしの CTG-ROM metadata alignment に合わせて package installation guidance を更新

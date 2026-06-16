@@ -5,13 +5,13 @@ namespace AIKernel.Abstractions.Runtime;
 
 /// <summary>
 /// EN: Manages sandbox runtime lifecycle operations.
-/// EN: Documentation for public API. JA: ISandboxRuntimeProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ISandboxRuntimeProvider の公開契約を定義します。
 /// </summary>
 public interface ISandboxRuntimeProvider : IKernelProvider
 {
     /// <summary>
     /// EN: Ensures the runtime is prepared and ready.
-    /// EN: Documentation for public API. JA: EnsureReadyAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] EnsureReadyAsync 操作を実行します。
     /// </summary>
     /// <param name="context">EN: The preparation context. JA: context パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -22,7 +22,7 @@ public interface ISandboxRuntimeProvider : IKernelProvider
 
     /// <summary>
     /// EN: Starts a sandbox runtime.
-    /// EN: Documentation for public API. JA: StartAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] StartAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The start request. JA: request パラメーターです。</param>
     /// <param name="context">EN: The execution context. JA: context パラメーターです。</param>
@@ -35,7 +35,7 @@ public interface ISandboxRuntimeProvider : IKernelProvider
 
     /// <summary>
     /// EN: Stops a sandbox runtime.
-    /// EN: Documentation for public API. JA: StopAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] StopAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The stop request. JA: request パラメーターです。</param>
     /// <param name="context">EN: The execution context. JA: context パラメーターです。</param>
@@ -49,13 +49,13 @@ public interface ISandboxRuntimeProvider : IKernelProvider
 
 /// <summary>
 /// EN: Manages sandbox process snapshots.
-/// EN: Documentation for public API. JA: ISandboxProcessProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ISandboxProcessProvider の公開契約を定義します。
 /// </summary>
 public interface ISandboxProcessProvider : IKernelProvider
 {
     /// <summary>
     /// EN: Creates a sandbox process.
-    /// EN: Documentation for public API. JA: CreateProcessAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] CreateProcessAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The process creation request. JA: request パラメーターです。</param>
     /// <param name="context">EN: The execution context. JA: context パラメーターです。</param>
@@ -68,7 +68,7 @@ public interface ISandboxProcessProvider : IKernelProvider
 
     /// <summary>
     /// EN: Gets a sandbox process snapshot.
-    /// EN: Documentation for public API. JA: GetProcessAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] GetProcessAsync 操作を実行します。
     /// </summary>
     /// <param name="processId">EN: The process identifier. JA: processId パラメーターです。</param>
     /// <param name="context">EN: The execution context. JA: context パラメーターです。</param>
@@ -81,7 +81,7 @@ public interface ISandboxProcessProvider : IKernelProvider
 
     /// <summary>
     /// EN: Lists sandbox processes for an instance.
-    /// EN: Documentation for public API. JA: ListProcessesAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ListProcessesAsync 操作を実行します。
     /// </summary>
     /// <param name="handle">EN: The sandbox instance handle. JA: handle パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -93,13 +93,13 @@ public interface ISandboxProcessProvider : IKernelProvider
 
 /// <summary>
 /// EN: Provides runtime status and health snapshots.
-/// EN: Documentation for public API. JA: IRuntimeStatusProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IRuntimeStatusProvider の公開契約を定義します。
 /// </summary>
 public interface IRuntimeStatusProvider : IKernelProvider
 {
     /// <summary>
     /// EN: Gets a runtime status snapshot.
-    /// EN: Documentation for public API. JA: GetStatusAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] GetStatusAsync 操作を実行します。
     /// </summary>
     /// <param name="runtimeId">EN: The runtime identifier. JA: runtimeId パラメーターです。</param>
     /// <param name="context">EN: The execution context. JA: context パラメーターです。</param>
@@ -112,7 +112,7 @@ public interface IRuntimeStatusProvider : IKernelProvider
 
     /// <summary>
     /// EN: Gets a runtime status snapshot.
-    /// EN: Documentation for public API. JA: GetStatusAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] GetStatusAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The runtime status request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -124,27 +124,27 @@ public interface IRuntimeStatusProvider : IKernelProvider
 
 /// <summary>
 /// EN: Provides start, stop, and health-check lifecycle operations.
-/// EN: Documentation for public API. JA: ILifecycleManager の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ILifecycleManager の公開契約を定義します。
 /// </summary>
 public interface ILifecycleManager
 {
     /// <summary>
     /// EN: Starts the managed lifecycle.
-    /// EN: Documentation for public API. JA: StartAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] StartAsync 操作を実行します。
     /// </summary>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
     ValueTask StartAsync(CancellationToken cancellationToken);
 
     /// <summary>
     /// EN: Stops the managed lifecycle.
-    /// EN: Documentation for public API. JA: StopAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] StopAsync 操作を実行します。
     /// </summary>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
     ValueTask StopAsync(CancellationToken cancellationToken);
 
     /// <summary>
     /// EN: Runs a health check.
-    /// EN: Documentation for public API. JA: HealthCheckAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] HealthCheckAsync 操作を実行します。
     /// </summary>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
     /// <returns>EN: The runtime status snapshot. JA: 結果を返します。</returns>

@@ -19,7 +19,7 @@ public interface ICouncilVote
 /// <summary>
 /// EN: Describes a canonical CTG canon without embedding canon text. JA: 正典本文を埋め込まず正典 CTG canon を記述します。
 /// </summary>
-public interface ICTGCanon
+public interface ICtgCanon
 {
     /// <summary>
     /// EN: Describes the canon snapshot. JA: 正典スナップショットを記述します。
@@ -33,7 +33,7 @@ public interface ICTGCanon
 /// <summary>
 /// EN: Evaluates CTG ruleset carriers without adding new governance rules. JA: 新しい統治規則を追加せず CTG ルールセット carrier を評価します。
 /// </summary>
-public interface ICTGRuleset
+public interface ICtgRuleset
 {
     /// <summary>
     /// EN: Evaluates a ruleset carrier. JA: ルールセット carrier を評価します。
@@ -47,7 +47,7 @@ public interface ICTGRuleset
 /// <summary>
 /// EN: Evaluates a canonical CTG decision gate using extracted vote carriers. JA: 抽出済み投票 carrier を用いて正典 CTG 決定ゲートを評価します。
 /// </summary>
-public interface ICTGDecisionGate
+public interface ICtgDecisionGate
 {
     /// <summary>
     /// EN: Evaluates a CTG decision gate. JA: CTG 決定ゲートを評価します。

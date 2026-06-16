@@ -2,7 +2,7 @@ namespace AIKernel.Dtos.SemanticCompilation;
 
 /// <summary>
 /// EN: Observable semantic state associated with a Semantic IR element.
-/// EN: Documentation for public API. JA: SemanticStateSnapshot の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] SemanticStateSnapshot の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.SemanticCompilation.SemanticStateSnapshot']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.SemanticCompilation.SemanticStateSnapshot']" />

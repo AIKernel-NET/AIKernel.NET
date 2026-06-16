@@ -6,13 +6,13 @@ namespace AIKernel.Abstractions.Perception;
 
 /// <summary>
 /// EN: Provides diagnostics-bearing frame perception results.
-/// EN: Documentation for public API. JA: IDiagnosticFramePerceptionProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IDiagnosticFramePerceptionProvider の公開契約を定義します。
 /// </summary>
 public interface IDiagnosticFramePerceptionProvider : IFramePerceptionProvider
 {
     /// <summary>
     /// EN: Analyzes a frame snapshot with diagnostics-bearing output.
-    /// EN: Documentation for public API. JA: AnalyzeWithDiagnosticsAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] AnalyzeWithDiagnosticsAsync 操作を実行します。
     /// </summary>
     /// <param name="frame">EN: The frame snapshot. JA: frame パラメーターです。</param>
     /// <param name="options">EN: The perception options. JA: options パラメーターです。</param>

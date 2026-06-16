@@ -1,6 +1,6 @@
 namespace AIKernel.Enums;
 
-/// <summary>EN: Documentation for public API. JA: DynamicSlmCompatibilityStatus の値を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] DynamicSlmCompatibilityStatus の値を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Enums.DynamicSlmCompatibilityStatus']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Enums.DynamicSlmCompatibilityStatus']" />
 public enum DynamicSlmCompatibilityStatus

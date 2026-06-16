@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: Describes a frame buffer pixel format.
-/// EN: Documentation for public API. JA: FramePixelFormat の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] FramePixelFormat の公開契約を定義します。
 /// </summary>
 public enum FramePixelFormat
 {

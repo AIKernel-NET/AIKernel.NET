@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: Defines normalized outcomes for semantic admissibility checks.
-/// EN: Documentation for public API. JA: AdmissibilityDecisionKind の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] AdmissibilityDecisionKind の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Enums.AdmissibilityDecisionKind']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Enums.AdmissibilityDecisionKind']" />

@@ -4,13 +4,13 @@ namespace AIKernel.Abstractions.Operators;
 
 /// <summary>
 /// EN: Evaluates bounded operator strategy proposals without executing actions.
-/// EN: Documentation for public API. JA: IOperatorStrategyProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IOperatorStrategyProvider の公開契約を定義します。
 /// </summary>
 public interface IOperatorStrategyProvider
 {
     /// <summary>
     /// EN: Describes the operator strategy.
-    /// EN: Documentation for public API. JA: DescribeStrategyAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] DescribeStrategyAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The strategy description request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -21,7 +21,7 @@ public interface IOperatorStrategyProvider
 
     /// <summary>
     /// EN: Evaluates the operator strategy.
-    /// EN: Documentation for public API. JA: EvaluateAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] EvaluateAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The strategy request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -32,7 +32,7 @@ public interface IOperatorStrategyProvider
 
     /// <summary>
     /// EN: Resets strategy state.
-    /// EN: Documentation for public API. JA: ResetAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ResetAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The reset request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -43,7 +43,7 @@ public interface IOperatorStrategyProvider
 
     /// <summary>
     /// EN: Gets strategy state.
-    /// EN: Documentation for public API. JA: GetStateAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] GetStateAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The state request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -54,7 +54,7 @@ public interface IOperatorStrategyProvider
 
     /// <summary>
     /// EN: Updates the strategy profile.
-    /// EN: Documentation for public API. JA: UpdateProfileAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] UpdateProfileAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The profile update request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>

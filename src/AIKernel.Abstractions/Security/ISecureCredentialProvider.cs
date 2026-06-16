@@ -1,6 +1,6 @@
 namespace AIKernel.Abstractions.Security;
 
-/// <summary>EN: Documentation for public API. JA: ISecureCredentialProvider contract を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] ISecureCredentialProvider contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.ISecureCredentialProvider']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Security.ISecureCredentialProvider']" />
 public interface ISecureCredentialProvider

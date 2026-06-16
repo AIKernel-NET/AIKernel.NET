@@ -2,7 +2,7 @@ namespace AIKernel.Abstractions.Providers;
 
 /// <summary>
 /// EN: UC-05/UC-19/UC-23/UC-26/UC-27 に基づく IProviderBillingInfo の契約を定義します。
-/// EN: Documentation for public API. JA: IProviderBillingInfo の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IProviderBillingInfo の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderBillingInfo']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Providers.IProviderBillingInfo']" />

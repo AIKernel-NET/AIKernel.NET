@@ -6,7 +6,7 @@ namespace AIKernel.Dtos.Profiles;
 
 /// <summary>
 /// EN: Carries a profile document.
-/// EN: Documentation for public API. JA: ProfileDocument の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileDocument の公開契約を定義します。
 /// </summary>
 public sealed record ProfileDocument
 {
@@ -31,7 +31,7 @@ public sealed record ProfileDocument
 
 /// <summary>
 /// EN: Describes a profile.
-/// EN: Documentation for public API. JA: ProfileDescriptor の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileDescriptor の公開契約を定義します。
 /// </summary>
 public sealed record ProfileDescriptor
 {
@@ -50,7 +50,7 @@ public sealed record ProfileDescriptor
 
 /// <summary>
 /// EN: Carries a profile load request.
-/// EN: Documentation for public API. JA: ProfileLoadRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileLoadRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProfileLoadRequest
 {
@@ -66,7 +66,7 @@ public sealed record ProfileLoadRequest
 
 /// <summary>
 /// EN: Carries a profile load result.
-/// EN: Documentation for public API. JA: ProfileLoadResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileLoadResult の公開契約を定義します。
 /// </summary>
 public sealed record ProfileLoadResult
 {
@@ -103,7 +103,7 @@ public sealed record ProfileLoadResult
 
 /// <summary>
 /// EN: Carries a profile save request.
-/// EN: Documentation for public API. JA: ProfileSaveRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileSaveRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProfileSaveRequest
 {
@@ -116,7 +116,7 @@ public sealed record ProfileSaveRequest
 
 /// <summary>
 /// EN: Carries a profile save result.
-/// EN: Documentation for public API. JA: ProfileSaveResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileSaveResult の公開契約を定義します。
 /// </summary>
 public sealed record ProfileSaveResult
 {
@@ -153,7 +153,7 @@ public sealed record ProfileSaveResult
 
 /// <summary>
 /// EN: Carries a profile list request.
-/// EN: Documentation for public API. JA: ProfileListRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileListRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProfileListRequest
 {
@@ -166,7 +166,7 @@ public sealed record ProfileListRequest
 
 /// <summary>
 /// EN: Carries a profile list result.
-/// EN: Documentation for public API. JA: ProfileListResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileListResult の公開契約を定義します。
 /// </summary>
 public sealed record ProfileListResult
 {
@@ -203,7 +203,7 @@ public sealed record ProfileListResult
 
 /// <summary>
 /// EN: Carries a profile version request.
-/// EN: Documentation for public API. JA: ProfileVersionRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileVersionRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProfileVersionRequest
 {
@@ -216,7 +216,7 @@ public sealed record ProfileVersionRequest
 
 /// <summary>
 /// EN: Carries a profile version result.
-/// EN: Documentation for public API. JA: ProfileVersionResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileVersionResult の公開契約を定義します。
 /// </summary>
 public sealed record ProfileVersionResult
 {
@@ -253,7 +253,7 @@ public sealed record ProfileVersionResult
 
 /// <summary>
 /// EN: Carries a profile validation request.
-/// EN: Documentation for public API. JA: ProfileValidationRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileValidationRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProfileValidationRequest
 {
@@ -266,7 +266,7 @@ public sealed record ProfileValidationRequest
 
 /// <summary>
 /// EN: Carries a profile validation result.
-/// EN: Documentation for public API. JA: ProfileValidationResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileValidationResult の公開契約を定義します。
 /// </summary>
 public sealed record ProfileValidationResult
 {
@@ -300,7 +300,7 @@ public sealed record ProfileValidationResult
 
 /// <summary>
 /// EN: Carries a profile optimization plan request.
-/// EN: Documentation for public API. JA: ProfileOptimizationPlanRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileOptimizationPlanRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProfileOptimizationPlanRequest
 {
@@ -316,7 +316,7 @@ public sealed record ProfileOptimizationPlanRequest
 
 /// <summary>
 /// EN: Carries a profile optimization plan result.
-/// EN: Documentation for public API. JA: ProfileOptimizationPlanResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileOptimizationPlanResult の公開契約を定義します。
 /// </summary>
 public sealed record ProfileOptimizationPlanResult
 {
@@ -353,7 +353,7 @@ public sealed record ProfileOptimizationPlanResult
 
 /// <summary>
 /// EN: Carries a profile optimization request.
-/// EN: Documentation for public API. JA: ProfileOptimizationRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileOptimizationRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProfileOptimizationRequest
 {
@@ -372,7 +372,7 @@ public sealed record ProfileOptimizationRequest
 
 /// <summary>
 /// EN: Carries a profile optimization result.
-/// EN: Documentation for public API. JA: ProfileOptimizationResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileOptimizationResult の公開契約を定義します。
 /// </summary>
 public sealed record ProfileOptimizationResult
 {
@@ -412,7 +412,7 @@ public sealed record ProfileOptimizationResult
 
 /// <summary>
 /// EN: Carries a profile candidate.
-/// EN: Documentation for public API. JA: ProfileCandidate の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileCandidate の公開契約を定義します。
 /// </summary>
 public sealed record ProfileCandidate
 {
@@ -431,7 +431,7 @@ public sealed record ProfileCandidate
 
 /// <summary>
 /// EN: Carries a profile comparison request.
-/// EN: Documentation for public API. JA: ProfileComparisonRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileComparisonRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProfileComparisonRequest
 {
@@ -447,7 +447,7 @@ public sealed record ProfileComparisonRequest
 
 /// <summary>
 /// EN: Carries a profile comparison result.
-/// EN: Documentation for public API. JA: ProfileComparisonResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileComparisonResult の公開契約を定義します。
 /// </summary>
 public sealed record ProfileComparisonResult
 {
@@ -481,7 +481,7 @@ public sealed record ProfileComparisonResult
 
 /// <summary>
 /// EN: Carries a profile optimization apply request.
-/// EN: Documentation for public API. JA: ProfileOptimizationApplyRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileOptimizationApplyRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProfileOptimizationApplyRequest
 {
@@ -494,7 +494,7 @@ public sealed record ProfileOptimizationApplyRequest
 
 /// <summary>
 /// EN: Carries a profile optimization apply result.
-/// EN: Documentation for public API. JA: ProfileOptimizationApplyResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileOptimizationApplyResult の公開契約を定義します。
 /// </summary>
 public sealed record ProfileOptimizationApplyResult
 {
@@ -531,7 +531,7 @@ public sealed record ProfileOptimizationApplyResult
 
 /// <summary>
 /// EN: References profile optimization evidence.
-/// EN: Documentation for public API. JA: ProfileOptimizationEvidenceRef の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProfileOptimizationEvidenceRef の公開契約を定義します。
 /// </summary>
 public sealed record ProfileOptimizationEvidenceRef
 {

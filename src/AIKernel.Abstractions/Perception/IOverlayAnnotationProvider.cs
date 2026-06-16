@@ -4,13 +4,13 @@ namespace AIKernel.Abstractions.Perception;
 
 /// <summary>
 /// EN: Builds debug or evidence overlay annotation DTOs without rendering them.
-/// EN: Documentation for public API. JA: IOverlayAnnotationProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IOverlayAnnotationProvider の公開契約を定義します。
 /// </summary>
 public interface IOverlayAnnotationProvider
 {
     /// <summary>
     /// EN: Builds overlay annotations.
-    /// EN: Documentation for public API. JA: BuildOverlayAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] BuildOverlayAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The overlay annotation request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -21,7 +21,7 @@ public interface IOverlayAnnotationProvider
 
     /// <summary>
     /// EN: Describes supported overlay layers.
-    /// EN: Documentation for public API. JA: DescribeLayersAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] DescribeLayersAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The overlay layer catalog request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>

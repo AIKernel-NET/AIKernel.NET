@@ -6,7 +6,7 @@ namespace AIKernel.Dtos.Observability;
 
 /// <summary>
 /// EN: Carries an evidence capture request.
-/// EN: Documentation for public API. JA: EvidenceCaptureRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] EvidenceCaptureRequest の公開契約を定義します。
 /// </summary>
 public sealed record EvidenceCaptureRequest
 {
@@ -22,7 +22,7 @@ public sealed record EvidenceCaptureRequest
 
 /// <summary>
 /// EN: Carries a frame evidence capture request.
-/// EN: Documentation for public API. JA: EvidenceFrameCaptureRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] EvidenceFrameCaptureRequest の公開契約を定義します。
 /// </summary>
 public sealed record EvidenceFrameCaptureRequest
 {
@@ -35,7 +35,7 @@ public sealed record EvidenceFrameCaptureRequest
 
 /// <summary>
 /// EN: Carries a log evidence capture request.
-/// EN: Documentation for public API. JA: EvidenceLogCaptureRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] EvidenceLogCaptureRequest の公開契約を定義します。
 /// </summary>
 public sealed record EvidenceLogCaptureRequest
 {
@@ -48,7 +48,7 @@ public sealed record EvidenceLogCaptureRequest
 
 /// <summary>
 /// EN: Carries a diagnostics evidence capture request.
-/// EN: Documentation for public API. JA: EvidenceDiagnosticsCaptureRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] EvidenceDiagnosticsCaptureRequest の公開契約を定義します。
 /// </summary>
 public sealed record EvidenceDiagnosticsCaptureRequest
 {
@@ -61,7 +61,7 @@ public sealed record EvidenceDiagnosticsCaptureRequest
 
 /// <summary>
 /// EN: Carries an evidence export request.
-/// EN: Documentation for public API. JA: EvidenceExportRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] EvidenceExportRequest の公開契約を定義します。
 /// </summary>
 public sealed record EvidenceExportRequest
 {
@@ -74,7 +74,7 @@ public sealed record EvidenceExportRequest
 
 /// <summary>
 /// EN: Carries an evidence export result.
-/// EN: Documentation for public API. JA: EvidenceExportResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] EvidenceExportResult の公開契約を定義します。
 /// </summary>
 public sealed record EvidenceExportResult
 {
@@ -111,7 +111,7 @@ public sealed record EvidenceExportResult
 
 /// <summary>
 /// EN: Carries an evidence bundle.
-/// EN: Documentation for public API. JA: EvidenceBundle の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] EvidenceBundle の公開契約を定義します。
 /// </summary>
 public sealed record EvidenceBundle
 {
@@ -148,7 +148,7 @@ public sealed record EvidenceBundle
 
 /// <summary>
 /// EN: Carries one evidence item.
-/// EN: Documentation for public API. JA: EvidenceItem の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] EvidenceItem の公開契約を定義します。
 /// </summary>
 public sealed record EvidenceItem
 {
@@ -188,7 +188,7 @@ public sealed record EvidenceItem
 
 /// <summary>
 /// EN: References an evidence artifact.
-/// EN: Documentation for public API. JA: EvidenceArtifactRef の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] EvidenceArtifactRef の公開契約を定義します。
 /// </summary>
 public sealed record EvidenceArtifactRef
 {

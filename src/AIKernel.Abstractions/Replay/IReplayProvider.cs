@@ -4,13 +4,13 @@ namespace AIKernel.Abstractions.Replay;
 
 /// <summary>
 /// EN: Provides deterministic replay timeline operations.
-/// EN: Documentation for public API. JA: IReplayProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IReplayProvider の公開契約を定義します。
 /// </summary>
 public interface IReplayProvider
 {
     /// <summary>
     /// EN: Creates a replay timeline.
-    /// EN: Documentation for public API. JA: CreateTimelineAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] CreateTimelineAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The timeline create request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -21,7 +21,7 @@ public interface IReplayProvider
 
     /// <summary>
     /// EN: Appends a replay frame.
-    /// EN: Documentation for public API. JA: AppendFrameAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] AppendFrameAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The frame append request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -32,7 +32,7 @@ public interface IReplayProvider
 
     /// <summary>
     /// EN: Appends a replay event.
-    /// EN: Documentation for public API. JA: AppendEventAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] AppendEventAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The event append request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -43,7 +43,7 @@ public interface IReplayProvider
 
     /// <summary>
     /// EN: Gets a replay timeline.
-    /// EN: Documentation for public API. JA: GetTimelineAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] GetTimelineAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The timeline query. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -54,7 +54,7 @@ public interface IReplayProvider
 
     /// <summary>
     /// EN: Seals a replay timeline.
-    /// EN: Documentation for public API. JA: SealTimelineAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] SealTimelineAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The seal request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -65,7 +65,7 @@ public interface IReplayProvider
 
     /// <summary>
     /// EN: Queries replay events.
-    /// EN: Documentation for public API. JA: QueryEventsAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] QueryEventsAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The event query. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>

@@ -3,7 +3,7 @@ namespace AIKernel.Abstractions.Context;
 using AIKernel.Dtos.Context;
 using AIKernel.Dtos.Rom;
 
-/// <summary>EN: Documentation for public API. JA: IContextHashCalculator contract を定義します。</summary>
+/// <summary>[EN] Documents this public package API member. [JA] IContextHashCalculator contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Context.IContextHashCalculator']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Context.IContextHashCalculator']" />
 public interface IContextHashCalculator

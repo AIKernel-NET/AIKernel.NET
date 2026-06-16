@@ -4,13 +4,13 @@ namespace AIKernel.Abstractions.Metrics;
 
 /// <summary>
 /// EN: Provides metrics snapshots, series, catalogs, and reset operations.
-/// EN: Documentation for public API. JA: IMetricsProvider の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] IMetricsProvider の公開契約を定義します。
 /// </summary>
 public interface IMetricsProvider
 {
     /// <summary>
     /// EN: Captures a metrics snapshot.
-    /// EN: Documentation for public API. JA: SnapshotAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] SnapshotAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The snapshot request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -21,7 +21,7 @@ public interface IMetricsProvider
 
     /// <summary>
     /// EN: Queries metric points.
-    /// EN: Documentation for public API. JA: QuerySeriesAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] QuerySeriesAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The series query. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -32,7 +32,7 @@ public interface IMetricsProvider
 
     /// <summary>
     /// EN: Describes supported metrics.
-    /// EN: Documentation for public API. JA: DescribeMetricsAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] DescribeMetricsAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The metric catalog request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
@@ -43,7 +43,7 @@ public interface IMetricsProvider
 
     /// <summary>
     /// EN: Resets metrics state.
-    /// EN: Documentation for public API. JA: ResetMetricsAsync 操作を実行します。
+    /// [EN] Documents this public package API member. [JA] ResetMetricsAsync 操作を実行します。
     /// </summary>
     /// <param name="request">EN: The reset request. JA: request パラメーターです。</param>
     /// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>

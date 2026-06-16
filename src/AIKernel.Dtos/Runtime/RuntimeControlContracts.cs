@@ -5,7 +5,7 @@ namespace AIKernel.Dtos.Runtime;
 
 /// <summary>
 /// EN: Identifies a runtime boundary.
-/// EN: Documentation for public API. JA: RuntimeHandle の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeHandle の公開契約を定義します。
 /// </summary>
 public sealed record RuntimeHandle
 {
@@ -21,7 +21,7 @@ public sealed record RuntimeHandle
 
 /// <summary>
 /// EN: Describes a runtime.
-/// EN: Documentation for public API. JA: RuntimeDescriptor の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeDescriptor の公開契約を定義します。
 /// </summary>
 public sealed record RuntimeDescriptor
 {
@@ -40,7 +40,7 @@ public sealed record RuntimeDescriptor
 
 /// <summary>
 /// EN: Carries a runtime attach request.
-/// EN: Documentation for public API. JA: RuntimeAttachRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeAttachRequest の公開契約を定義します。
 /// </summary>
 public sealed record RuntimeAttachRequest
 {
@@ -56,7 +56,7 @@ public sealed record RuntimeAttachRequest
 
 /// <summary>
 /// EN: Carries a runtime attach result.
-/// EN: Documentation for public API. JA: RuntimeAttachResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeAttachResult の公開契約を定義します。
 /// </summary>
 public sealed record RuntimeAttachResult
 {
@@ -93,7 +93,7 @@ public sealed record RuntimeAttachResult
 
 /// <summary>
 /// EN: Carries a runtime detach request.
-/// EN: Documentation for public API. JA: RuntimeDetachRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeDetachRequest の公開契約を定義します。
 /// </summary>
 public sealed record RuntimeDetachRequest
 {
@@ -106,7 +106,7 @@ public sealed record RuntimeDetachRequest
 
 /// <summary>
 /// EN: Carries a runtime detach result.
-/// EN: Documentation for public API. JA: RuntimeDetachResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeDetachResult の公開契約を定義します。
 /// </summary>
 public sealed record RuntimeDetachResult
 {
@@ -143,7 +143,7 @@ public sealed record RuntimeDetachResult
 
 /// <summary>
 /// EN: Carries a runtime control request.
-/// EN: Documentation for public API. JA: RuntimeControlRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeControlRequest の公開契約を定義します。
 /// </summary>
 public sealed record RuntimeControlRequest
 {
@@ -162,7 +162,7 @@ public sealed record RuntimeControlRequest
 
 /// <summary>
 /// EN: Carries a runtime control result.
-/// EN: Documentation for public API. JA: RuntimeControlResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeControlResult の公開契約を定義します。
 /// </summary>
 public sealed record RuntimeControlResult
 {
@@ -202,7 +202,7 @@ public sealed record RuntimeControlResult
 
 /// <summary>
 /// EN: Carries a runtime snapshot request.
-/// EN: Documentation for public API. JA: RuntimeSnapshotRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeSnapshotRequest の公開契約を定義します。
 /// </summary>
 public sealed record RuntimeSnapshotRequest
 {
@@ -218,7 +218,7 @@ public sealed record RuntimeSnapshotRequest
 
 /// <summary>
 /// EN: Carries a runtime probe request.
-/// EN: Documentation for public API. JA: RuntimeProbeRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeProbeRequest の公開契約を定義します。
 /// </summary>
 public sealed record RuntimeProbeRequest
 {
@@ -231,7 +231,7 @@ public sealed record RuntimeProbeRequest
 
 /// <summary>
 /// EN: Carries a runtime probe result.
-/// EN: Documentation for public API. JA: RuntimeProbeResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] RuntimeProbeResult の公開契約を定義します。
 /// </summary>
 public sealed record RuntimeProbeResult
 {
@@ -271,7 +271,7 @@ public sealed record RuntimeProbeResult
 
 /// <summary>
 /// EN: Identifies a process boundary.
-/// EN: Documentation for public API. JA: ProcessHandle の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProcessHandle の公開契約を定義します。
 /// </summary>
 public sealed record ProcessHandle
 {
@@ -287,7 +287,7 @@ public sealed record ProcessHandle
 
 /// <summary>
 /// EN: Carries a process list request.
-/// EN: Documentation for public API. JA: ProcessListRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProcessListRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProcessListRequest
 {
@@ -300,7 +300,7 @@ public sealed record ProcessListRequest
 
 /// <summary>
 /// EN: Carries a process list result.
-/// EN: Documentation for public API. JA: ProcessListResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProcessListResult の公開契約を定義します。
 /// </summary>
 public sealed record ProcessListResult
 {
@@ -337,7 +337,7 @@ public sealed record ProcessListResult
 
 /// <summary>
 /// EN: Carries a process query request.
-/// EN: Documentation for public API. JA: ProcessQueryRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProcessQueryRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProcessQueryRequest
 {
@@ -353,7 +353,7 @@ public sealed record ProcessQueryRequest
 
 /// <summary>
 /// EN: Describes a runtime process.
-/// EN: Documentation for public API. JA: ProcessDescriptor の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProcessDescriptor の公開契約を定義します。
 /// </summary>
 public sealed record ProcessDescriptor
 {
@@ -390,7 +390,7 @@ public sealed record ProcessDescriptor
 
 /// <summary>
 /// EN: Carries a process control request.
-/// EN: Documentation for public API. JA: ProcessControlRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProcessControlRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProcessControlRequest
 {
@@ -409,7 +409,7 @@ public sealed record ProcessControlRequest
 
 /// <summary>
 /// EN: Carries a process control result.
-/// EN: Documentation for public API. JA: ProcessControlResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProcessControlResult の公開契約を定義します。
 /// </summary>
 public sealed record ProcessControlResult
 {
@@ -446,7 +446,7 @@ public sealed record ProcessControlResult
 
 /// <summary>
 /// EN: Carries a process attach request.
-/// EN: Documentation for public API. JA: ProcessAttachRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProcessAttachRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProcessAttachRequest
 {
@@ -462,7 +462,7 @@ public sealed record ProcessAttachRequest
 
 /// <summary>
 /// EN: Carries a process attach result.
-/// EN: Documentation for public API. JA: ProcessAttachResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProcessAttachResult の公開契約を定義します。
 /// </summary>
 public sealed record ProcessAttachResult
 {
@@ -499,7 +499,7 @@ public sealed record ProcessAttachResult
 
 /// <summary>
 /// EN: Carries a process detach request.
-/// EN: Documentation for public API. JA: ProcessDetachRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProcessDetachRequest の公開契約を定義します。
 /// </summary>
 public sealed record ProcessDetachRequest
 {
@@ -512,7 +512,7 @@ public sealed record ProcessDetachRequest
 
 /// <summary>
 /// EN: Carries a process detach result.
-/// EN: Documentation for public API. JA: ProcessDetachResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ProcessDetachResult の公開契約を定義します。
 /// </summary>
 public sealed record ProcessDetachResult
 {

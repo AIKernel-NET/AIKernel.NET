@@ -5,7 +5,7 @@ namespace AIKernel.Dtos.Operators;
 
 /// <summary>
 /// EN: Carries phase routing state.
-/// EN: Documentation for public API. JA: PhaseState の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] PhaseState の公開契約を定義します。
 /// </summary>
 public sealed record PhaseState
 {
@@ -21,7 +21,7 @@ public sealed record PhaseState
 
 /// <summary>
 /// EN: Carries a phase routing request.
-/// EN: Documentation for public API. JA: PhaseRoutingRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] PhaseRoutingRequest の公開契約を定義します。
 /// </summary>
 public sealed record PhaseRoutingRequest
 {
@@ -37,7 +37,7 @@ public sealed record PhaseRoutingRequest
 
 /// <summary>
 /// EN: Carries a phase routing result.
-/// EN: Documentation for public API. JA: PhaseRoutingResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] PhaseRoutingResult の公開契約を定義します。
 /// </summary>
 public sealed record PhaseRoutingResult
 {
@@ -53,7 +53,7 @@ public sealed record PhaseRoutingResult
 
 /// <summary>
 /// EN: Carries an action proposal.
-/// EN: Documentation for public API. JA: ActionProposal の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ActionProposal の公開契約を定義します。
 /// </summary>
 public sealed record ActionProposal
 {
@@ -84,7 +84,7 @@ public sealed record ActionProposal
 
 /// <summary>
 /// EN: Carries an action proposal request.
-/// EN: Documentation for public API. JA: ActionProposalRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ActionProposalRequest の公開契約を定義します。
 /// </summary>
 public sealed record ActionProposalRequest
 {
@@ -106,7 +106,7 @@ public sealed record ActionProposalRequest
 
 /// <summary>
 /// EN: Carries action proposals.
-/// EN: Documentation for public API. JA: ActionProposalSet の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ActionProposalSet の公開契約を定義します。
 /// </summary>
 public sealed record ActionProposalSet
 {
@@ -122,7 +122,7 @@ public sealed record ActionProposalSet
 
 /// <summary>
 /// EN: Carries an action arbitration request.
-/// EN: Documentation for public API. JA: ActionArbitrationRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ActionArbitrationRequest の公開契約を定義します。
 /// </summary>
 public sealed record ActionArbitrationRequest
 {
@@ -138,7 +138,7 @@ public sealed record ActionArbitrationRequest
 
 /// <summary>
 /// EN: Carries action arbitration result.
-/// EN: Documentation for public API. JA: ActionArbitrationResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ActionArbitrationResult の公開契約を定義します。
 /// </summary>
 public sealed record ActionArbitrationResult
 {
@@ -157,7 +157,7 @@ public sealed record ActionArbitrationResult
 
 /// <summary>
 /// EN: Carries a generic control profile.
-/// EN: Documentation for public API. JA: ControlProfile の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ControlProfile の公開契約を定義します。
 /// </summary>
 public sealed record ControlProfile
 {
@@ -173,7 +173,7 @@ public sealed record ControlProfile
 
 /// <summary>
 /// EN: Carries a control profile optimization request.
-/// EN: Documentation for public API. JA: ControlProfileOptimizationRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ControlProfileOptimizationRequest の公開契約を定義します。
 /// </summary>
 public sealed record ControlProfileOptimizationRequest
 {
@@ -189,7 +189,7 @@ public sealed record ControlProfileOptimizationRequest
 
 /// <summary>
 /// EN: Carries a control profile load or save request.
-/// EN: Documentation for public API. JA: ControlProfileRequest の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ControlProfileRequest の公開契約を定義します。
 /// </summary>
 public sealed record ControlProfileRequest
 {
@@ -205,7 +205,7 @@ public sealed record ControlProfileRequest
 
 /// <summary>
 /// EN: Carries a control profile save result.
-/// EN: Documentation for public API. JA: ControlProfileSaveResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ControlProfileSaveResult の公開契約を定義します。
 /// </summary>
 public sealed record ControlProfileSaveResult
 {
@@ -221,7 +221,7 @@ public sealed record ControlProfileSaveResult
 
 /// <summary>
 /// EN: Carries a control profile optimization result.
-/// EN: Documentation for public API. JA: ControlProfileOptimizationResult の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ControlProfileOptimizationResult の公開契約を定義します。
 /// </summary>
 public sealed record ControlProfileOptimizationResult
 {

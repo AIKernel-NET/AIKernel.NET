@@ -2,7 +2,7 @@ namespace AIKernel.Enums;
 
 /// <summary>
 /// EN: Describes output modalities produced by a provider capability.
-/// EN: Documentation for public API. JA: OutputModalities の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] OutputModalities の公開契約を定義します。
 /// </summary>
 [Flags]
 public enum OutputModalities
