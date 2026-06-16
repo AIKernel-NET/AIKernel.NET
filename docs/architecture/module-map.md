@@ -1,7 +1,7 @@
 ---
-title: "Architecture"
+title: "Module Map"
 lang: ja
-description: "AIKernel.NET 0.1.2 の module boundary、dependency direction、official site の構造を説明します。"
+description: "0.1.2 release に含まれる repository、package、public API surface、source evidence を一覧します。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs
 source: "generated-from-repository-inventory"
@@ -10,52 +10,39 @@ release: "0.1.2"
 updated: "2026-06-17"
 ---
 
-# Architecture
+# Module Map
 
 ## Summary
 
 ### EN
 
-Architecture explains how the repositories cooperate without collapsing contracts, runtime behavior, provider logic, and demos into one package.
+Module Map is the source-backed inventory for the official documentation renewal.
 
 ### JA
 
-Architecture は contract、runtime behavior、provider logic、demo を単一 package に混ぜないための repository 関係を説明します。
+Module Map は公式ドキュメント刷新の根拠となる source-backed inventory です。
 
 ## Why
 
 ### EN
 
-Clear boundaries are essential because package release, Reference generation, and runtime composition are maintained separately.
+A module map prevents accidental dependency drift and helps readers find the correct package without reading every source tree.
 
 ### JA
 
-package release、Reference generation、runtime composition は別々に保守されるため、境界を明確にすることが重要です。
+module map は依存方向の逸脱を防ぎ、読者が全 source tree を読まずに正しい package を探せるようにします。
 
 ## Usage
 
 ### EN
 
-Use the architecture pages before moving APIs between packages or adding new provider/runtime dependencies.
+Use the table to choose the module, then open Reference for package members.
 
 ### JA
 
-API の移動や provider/runtime dependency 追加の前に architecture page を確認します。
+この表で module を選び、package member は Reference で確認します。
 
 ## Examples
-
-```mermaid
-flowchart TD
-    App["Application"] --> Contracts["AIKernel.NET contracts"]
-    Contracts --> Core["AIKernel.Core runtime"]
-    Core --> Providers["AIKernel.Providers"]
-    Core --> Tools["AIKernel.Tools"]
-    Core --> Wasm["AIKernel.Wasm"]
-    Core --> Control["AIKernel.Control"]
-    Cuda["AIKernel.Cuda13.0"] --> Core
-    Doom["AIKernel.Doom demo"] --> Wasm
-    Doom --> Providers
-```
 
 | Module | Role | Version evidence | NuGet packages | Python packages | Public types | Tests | Source evidence |
 |---|---|---:|---:|---:|---:|---:|---|
@@ -70,12 +57,11 @@ flowchart TD
 
 ## Notes
 
-- The graph is generated from repository roles and package metadata.
-- It intentionally shows `AIKernel.Doom` as a demo surface, not as a canonical contract owner.
-- Existing deeper architecture papers remain published under the legacy architecture/theory paths.
+- Package counts include source projects under `src` and skip test projects.
+- Python packages are read from `pyproject.toml`.
+- Public type counts are lexical inventory counts, not behavioral guarantees.
 
 ## See Also
 
-- [System Architecture](system-architecture.md)
-- [Module Map](module-map.md)
-- [Data Flow](data-flow.md)
+- [Reference](/reference/)
+- [Docs Generation Report](../docs-generation-report.md)

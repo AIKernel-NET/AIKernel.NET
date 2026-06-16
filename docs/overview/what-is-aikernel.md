@@ -1,7 +1,7 @@
 ---
-title: "Architecture"
+title: "What is AIKernel.NET"
 lang: ja
-description: "AIKernel.NET 0.1.2 の module boundary、dependency direction、official site の構造を説明します。"
+description: "AIKernel.NET が解決する課題、Semantic OS SDK としての境界、0.1.2 の正典 interface surface を説明します。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs
 source: "generated-from-repository-inventory"
@@ -10,52 +10,41 @@ release: "0.1.2"
 updated: "2026-06-17"
 ---
 
-# Architecture
+# What is AIKernel.NET
 
 ## Summary
 
 ### EN
 
-Architecture explains how the repositories cooperate without collapsing contracts, runtime behavior, provider logic, and demos into one package.
+AIKernel.NET is a modular SDK for AIOS-style applications. Its contract packages define boundaries, while Core, Providers, Control, Tools, Wasm, Doom, and CUDA packages implement or validate those boundaries.
 
 ### JA
 
-Architecture は contract、runtime behavior、provider logic、demo を単一 package に混ぜないための repository 関係を説明します。
+AIKernel.NET は AIOS 型アプリケーションのための modular SDK です。contract package が境界を定義し、Core、Providers、Control、Tools、Wasm、Doom、CUDA package がその境界を実装または検証します。
 
 ## Why
 
 ### EN
 
-Clear boundaries are essential because package release, Reference generation, and runtime composition are maintained separately.
+The repository split exists so provider logic, control-plane evidence, runtime adapters, and scenario demos do not collapse into one package.
 
 ### JA
 
-package release、Reference generation、runtime composition は別々に保守されるため、境界を明確にすることが重要です。
+repo 分割の目的は、provider logic、control-plane evidence、runtime adapter、scenario demo を単一 package へ押し込めないことです。
 
 ## Usage
 
 ### EN
 
-Use the architecture pages before moving APIs between packages or adding new provider/runtime dependencies.
+Read the module map before adding a dependency. Contract-only code belongs in AIKernel.NET; runtime behavior belongs in Core or an extension package.
 
 ### JA
 
-API の移動や provider/runtime dependency 追加の前に architecture page を確認します。
+依存を追加する前に module map を読みます。contract-only code は AIKernel.NET、runtime behavior は Core または extension package に置きます。
 
 ## Examples
 
-```mermaid
-flowchart TD
-    App["Application"] --> Contracts["AIKernel.NET contracts"]
-    Contracts --> Core["AIKernel.Core runtime"]
-    Core --> Providers["AIKernel.Providers"]
-    Core --> Tools["AIKernel.Tools"]
-    Core --> Wasm["AIKernel.Wasm"]
-    Core --> Control["AIKernel.Control"]
-    Cuda["AIKernel.Cuda13.0"] --> Core
-    Doom["AIKernel.Doom demo"] --> Wasm
-    Doom --> Providers
-```
+### Current Modules
 
 | Module | Role | Version evidence | NuGet packages | Python packages | Public types | Tests | Source evidence |
 |---|---|---:|---:|---:|---:|---:|---|
@@ -68,14 +57,15 @@ flowchart TD
 | `AIKernel.Doom` | Official source demo that models DOOM as a WASM process supervised by AIKernel-style provider, operator, consent, and perception boundaries. | `0.1.1.1` | 7 | 0 | 37 | 1 | `AIKernel.Doom/Directory.Build.props` |
 | `AIKernel.Cuda13.0` | External Capability package for Windows win-x64, LibTorch 2.12.0, and CUDA 13.0. CUDA runtime concerns stay outside Core. | `0.1.2` | 1 | 1 | 7 | 1 | `AIKernel.Cuda13.0/src/AIKernel.Cuda13.0.Libtorch2.12.win-x64/AIKernel.Cuda13.0.Libtorch2.12.win-x64.csproj` |
 
+
 ## Notes
 
-- The graph is generated from repository roles and package metadata.
-- It intentionally shows `AIKernel.Doom` as a demo surface, not as a canonical contract owner.
-- Existing deeper architecture papers remain published under the legacy architecture/theory paths.
+- The 0.1.2 contract release is backed by `AIKernel.NET/Directory.Build.props` release notes.
+- Doom-specific vocabulary remains outside the canonical package surface according to the 0.1.2 package notes.
+- When source evidence is missing, this documentation uses `TODO: source required` instead of inventing behavior.
 
 ## See Also
 
-- [System Architecture](system-architecture.md)
-- [Module Map](module-map.md)
-- [Data Flow](data-flow.md)
+- [Module Map](../architecture/module-map.md)
+- [Core Concepts](../concepts/index.md)
+- [Glossary](/glossary/)
