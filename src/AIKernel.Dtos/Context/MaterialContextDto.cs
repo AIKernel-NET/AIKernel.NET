@@ -6,24 +6,24 @@ namespace AIKernel.Dtos.Context;
 /// MaterialContext のデータを表現する DTO です。
 /// RAG の断片や外部情報を含み、必ず正規化・構造化して使用します。
 /// 
-/// 参照: 2.CONTEXT_ISOLATION_SPEC.jp.md
-/// JA: MaterialContextDto の公開契約を定義します。
+/// EN: 参照: 2.CONTEXT_ISOLATION_SPEC.jp.md
+/// EN: Documentation for public API. JA: MaterialContextDto の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Context.MaterialContextDto']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Context.MaterialContextDto']" />
 public sealed class MaterialContextDto
 {
     /// <summary>
-    /// 取得元ソースを取得または設定します。
-    /// JA: Source を取得します。
+    /// EN: 取得元ソースを取得または設定します。
+    /// EN: Documentation for public API. JA: Source を取得します。
     /// </summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.MaterialContextDto.Source']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.MaterialContextDto.Source']" />
     public required string Source { get; init; }
 
     /// <summary>
-    /// 生の素材データを取得または設定します。
-    /// JA: RawData を取得します。
+    /// EN: 生の素材データを取得または設定します。
+    /// EN: Documentation for public API. JA: RawData を取得します。
     /// </summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.MaterialContextDto.RawData']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.MaterialContextDto.RawData']" />
@@ -31,8 +31,8 @@ public sealed class MaterialContextDto
 
     /// <summary>
     /// 正規化されたデータを取得または設定します。
-    /// 不要情報が除去されたバージョン。
-    /// JA: NormalizedData を取得します。
+    /// EN: 不要情報が除去されたバージョン。
+    /// EN: Documentation for public API. JA: NormalizedData を取得します。
     /// </summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.MaterialContextDto.NormalizedData']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.MaterialContextDto.NormalizedData']" />
@@ -40,32 +40,32 @@ public sealed class MaterialContextDto
 
     /// <summary>
     /// 構造化されたデータを取得または設定します。
-    /// 要素分解・抽象化・意味単位化されたバージョン。
-    /// JA: StructuredData を取得します。
+    /// EN: 要素分解・抽象化・意味単位化されたバージョン。
+    /// EN: Documentation for public API. JA: StructuredData を取得します。
     /// </summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.MaterialContextDto.object']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.MaterialContextDto.object']" />
     public Dictionary<string, object>? StructuredData { get; init; }
 
     /// <summary>
-    /// 関連性スコアを取得または設定します（0.0 ～ 1.0）。
-    /// JA: RelevanceScore を取得します。
+    /// EN: 関連性スコアを取得または設定します（0.0 ～ 1.0）。
+    /// EN: Documentation for public API. JA: RelevanceScore を取得します。
     /// </summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.MaterialContextDto.RelevanceScore']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.MaterialContextDto.RelevanceScore']" />
     public double RelevanceScore { get; init; } = 1.0;
 
     /// <summary>
-    /// メタデータを取得または設定します。
-    /// JA: Metadata を取得します。
+    /// EN: メタデータを取得または設定します。
+    /// EN: Documentation for public API. JA: Metadata を取得します。
     /// </summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.MaterialContextDto.object']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.MaterialContextDto.object']" />
     public Dictionary<string, object>? Metadata { get; init; }
 
     /// <summary>
-    /// 取得日時を取得または設定します。
-    /// JA: RetrievedAt を取得します。
+    /// EN: 取得日時を取得または設定します。
+    /// EN: Documentation for public API. JA: RetrievedAt を取得します。
     /// </summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.MaterialContextDto.RetrievedAt']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Context.MaterialContextDto.RetrievedAt']" />

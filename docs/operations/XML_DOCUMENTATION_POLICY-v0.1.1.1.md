@@ -11,15 +11,15 @@ document the contract surface.
 ## Required Format
 
 Inline XML documentation should include English and Japanese text in the same
-XML element. The preferred compact form is English followed by `JA:`.
+XML element. The preferred compact form uses explicit `EN:` and `JA:` markers.
 
 ```csharp
 /// <summary>
-/// Describes a runtime status snapshot. JA: runtime status snapshot を記述します。
+/// EN: Describes a runtime status snapshot. JA: runtime status snapshot を記述します。
 /// </summary>
 public sealed record RuntimeStatusSnapshot
 {
-    /// <summary>Gets the runtime identifier. JA: runtime identifier を取得します。</summary>
+    /// <summary>EN: Gets the runtime identifier. JA: runtime identifier を取得します。</summary>
     public string RuntimeId { get; init; } = string.Empty;
 }
 ```
@@ -29,11 +29,11 @@ include Japanese text.
 
 ```csharp
 /// <summary>
-/// Executes a runtime control operation. JA: runtime control 操作を実行します。
+/// EN: Executes a runtime control operation. JA: runtime control 操作を実行します。
 /// </summary>
-/// <param name="request">The request. JA: request パラメーターです。</param>
-/// <param name="cancellationToken">The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
-/// <returns>The control result. JA: 結果を返します。</returns>
+/// <param name="request">EN: The request. JA: request パラメーターです。</param>
+/// <param name="cancellationToken">EN: The cancellation token. JA: キャンセル通知を監視するトークンです。</param>
+/// <returns>EN: The control result. JA: 結果を返します。</returns>
 ValueTask<RuntimeControlResult> ControlAsync(
     RuntimeControlRequest request,
     CancellationToken cancellationToken);
@@ -78,6 +78,16 @@ declarations have bilingual XML documentation or paired `docs.en.xml` /
 `docs.ja.xml` includes. The normal build and test surface must also pass:
 
 ```powershell
+py tools\check_bilingual_xml_docs.py src
 dotnet build src\AIKernel.NET.slnx
 dotnet test src\tests\AIKernel.Abstractions.Tests\AIKernel.Abstractions.Tests.csproj --no-build
+```
+
+For cross-repository validation from the shared workspace root:
+
+```powershell
+py AIKernel.NET\tools\check_bilingual_xml_docs.py `
+  AIKernel.NET\src AIKernel.Core\src AIKernel.Control\src `
+  AIKernel.Providers\src AIKernel.Wasm\src AIKernel.Cuda13.0\src `
+  AIKernel.Tools\src AIKernel.Demo\src AIKernel.Doom\src
 ```

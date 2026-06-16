@@ -39,7 +39,8 @@ incident response, and SLO/SLA management.
 - v0.1.0 MemoryRegion / MemoryMapper contract extraction
 - v0.1.1 synchronized package line verification across NuGet, PyPI, Providers, WASM, Tools, CUDA, and Demo
 - v0.1.1.1 additive domain contract surface and documentation-policy alignment
-- v0.1.1.1 .NET / NuGet-only package boundary; no PyPI packages are produced for this line
+- v0.1.1.1 .NET / NuGet-only package boundary; no PyPI packages are produced for this validation line
+- v0.1.2 canonical series release assumption: synchronized NuGet and PyPI package families
 - v0.1.1.1 CTG DTO / enum normalization before publication
 
 Use this guide when upgrading package references or validating contract-layer dependencies.
@@ -53,6 +54,7 @@ Use this guide when upgrading package references or validating contract-layer de
 - NuGet package map for contract, runtime, provider, tools, WASM, and CUDA layers
 - PyPI package map for Python wrapper users
 - `0.1.1.1` rule: update .NET / NuGet packages only; keep PyPI packages on `0.1.1`
+- `0.1.2` assumption: publish refreshed NuGet and PyPI package families together
 - Provider selection guidance and repository links
 - 0.1.1 version-mixing rule
 
@@ -213,7 +215,7 @@ Operations documentation is being expanded as contract and packaging boundaries 
 
 Currently:
 - The Migration Guide contains concrete steps through v0.1.1 and the v0.1.1.1 CTG DTO / enum normalization
-- The Package Installation Guide covers the synchronized `0.1.1` NuGet / PyPI line and the `0.1.1.1` NuGet-only contract update
+- The Package Installation Guide covers the synchronized `0.1.1` NuGet / PyPI line, the `0.1.1.1` NuGet-only contract update, and the v0.1.2 synchronized NuGet / PyPI release assumption
 - The Demo Programs Guide covers the official AIKernel.Demo learning path
 - Interface naming, enum handling, XML documentation policy, CTG developer guidance, CTG developer theory, and CTG ROM layout cover the v0.1.1.1 additive contract surface
 - Release, monitoring, incident, and security operations remain Planned

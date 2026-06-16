@@ -10,7 +10,7 @@ namespace AIKernel.Abstractions.Tests.Execution;
 
 /// <summary>
 /// ExecutionPipelineSpecAlignmentTests の契約を定義します。
-/// Defines the ExecutionPipelineSpecAlignmentTests contract. JA: ExecutionPipelineSpecAlignmentTests の公開契約を定義します。
+/// EN: Defines the ExecutionPipelineSpecAlignmentTests contract. JA: ExecutionPipelineSpecAlignmentTests の公開契約を定義します。
 /// </summary>
 public sealed class ExecutionPipelineSpecAlignmentTests
 {
@@ -18,6 +18,10 @@ public sealed class ExecutionPipelineSpecAlignmentTests
     private static readonly string[] AlteredSegments = ["plan"];
     private static readonly string[] AllowedToolsValues = ["tool.a"];
     private static readonly string[] ScopeValues = ["scope.read"];
+    /// <summary>
+    /// EN: Executes EPS_004_EPS_008_UseCase_Flows_By_Interface_Composition.
+    /// EN: Documentation for public API. JA: EPS_004_EPS_008_UseCase_Flows_By_Interface_Composition を実行します。
+    /// </summary>
 
     [Fact]
     public async Task EPS_004_EPS_008_UseCase_Flows_By_Interface_Composition()
@@ -41,7 +45,7 @@ public sealed class ExecutionPipelineSpecAlignmentTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void EPS_005_EPS_F002_HashChain_Tamper_Is_FailClosed()
     {
@@ -61,7 +65,7 @@ public sealed class ExecutionPipelineSpecAlignmentTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public async Task EPS_F005_Logic_Divergence_Returns_Safe_Result_Type()
     {
@@ -74,6 +78,10 @@ public sealed class ExecutionPipelineSpecAlignmentTests
 
     private sealed class StubRouter : ExecutionRouter
     {
+        /// <summary>
+        /// EN: Gets RouteAsync.
+        /// EN: Documentation for public API. JA: RouteAsync を取得します。
+        /// </summary>
         public Task<ModelRoutingDecision> RouteAsync(
             ModelCapacityVector requiredCapacity,
             RuleEvaluationContext ruleEvaluationContext,
@@ -94,13 +102,17 @@ public sealed class ExecutionPipelineSpecAlignmentTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public ModelType SelectOptimalModel(ModelCapacityVector requirement, IEnumerable<ModelType> candidates)
         {
             _ = requirement;
             return candidates.FirstOrDefault();
         }
+        /// <summary>
+        /// EN: Executes IEnumerable&lt;.
+        /// EN: Documentation for public API. JA: IEnumerable&lt; を実行します。
+        /// </summary>
 
         public IEnumerable<(ModelType Model, float Score)> RankModels(ModelCapacityVector requirement, IEnumerable<ModelType> candidates)
         {
@@ -109,7 +121,7 @@ public sealed class ExecutionPipelineSpecAlignmentTests
         }
 
         /// <summary>
-        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// EN: Gets a test helper value. JA: テスト用の値を取得します。
         /// </summary>
         public bool VerifyDeterministicRouting(ModelRoutingDecision decision1, ModelRoutingDecision decision2) =>
             decision1.SelectedProviderId == decision2.SelectedProviderId && decision1.SelectionRationale == decision2.SelectionRationale;
@@ -117,6 +129,10 @@ public sealed class ExecutionPipelineSpecAlignmentTests
 
     private sealed class StubPolisherValidator : IPolisherValidator
     {
+        /// <summary>
+        /// EN: Executes ValidateLogicPreservationAsync.
+        /// EN: Documentation for public API. JA: ValidateLogicPreservationAsync を実行します。
+        /// </summary>
         public Task<PolisherValidationResult> ValidateLogicPreservationAsync(RawLogic originalLogic, string polishedOutput, CancellationToken cancellationToken = default) =>
             Task.FromResult(new PolisherValidationResult
             {
@@ -127,7 +143,7 @@ public sealed class ExecutionPipelineSpecAlignmentTests
             });
 
         /// <summary>
-        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// EN: Gets a test helper value. JA: テスト用の値を取得します。
         /// </summary>
         public Task<LogicDivergenceAnalysis> AnalyzeDivergenceAsync(RawLogic originalLogic, string output, CancellationToken cancellationToken = default) =>
             Task.FromResult(new LogicDivergenceAnalysis
@@ -143,25 +159,77 @@ public sealed class ExecutionPipelineSpecAlignmentTests
     private sealed class StubExecutionConstraints : IExecutionConstraints
     {
         /// <summary>
-        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// EN: Gets a test helper value. JA: テスト用の値を取得します。
         /// </summary>
         public int ContextCardinality => 1;
+        /// <summary>
+        /// EN: Gets AllowedTools.
+        /// EN: Documentation for public API. JA: AllowedTools を取得します。
+        /// </summary>
         public IReadOnlyList<string> AllowedTools => AllowedToolsValues;
+        /// <summary>
+        /// EN: Gets Scopes.
+        /// EN: Documentation for public API. JA: Scopes を取得します。
+        /// </summary>
         public IReadOnlyList<string> Scopes => ScopeValues;
+        /// <summary>
+        /// EN: Gets MaxTokenBudget.
+        /// EN: Documentation for public API. JA: MaxTokenBudget を取得します。
+        /// </summary>
         public int MaxTokenBudget => 2048;
+        /// <summary>
+        /// EN: Gets AvailableMemoryMb.
+        /// EN: Documentation for public API. JA: AvailableMemoryMb を取得します。
+        /// </summary>
         public long AvailableMemoryMb => 1024;
+        /// <summary>
+        /// EN: Gets MaxLatencyMs.
+        /// EN: Documentation for public API. JA: MaxLatencyMs を取得します。
+        /// </summary>
         public int? MaxLatencyMs => 500;
+        /// <summary>
+        /// EN: Gets ComputeDeviceType.
+        /// EN: Documentation for public API. JA: ComputeDeviceType を取得します。
+        /// </summary>
         public string ComputeDeviceType => "CPU";
+        /// <summary>
+        /// EN: Gets ComputeDeviceName.
+        /// EN: Documentation for public API. JA: ComputeDeviceName を取得します。
+        /// </summary>
         public string ComputeDeviceName => "stub";
+        /// <summary>
+        /// EN: Gets QuantizationLevel.
+        /// EN: Documentation for public API. JA: QuantizationLevel を取得します。
+        /// </summary>
         public string QuantizationLevel => "FP16";
+        /// <summary>
+        /// EN: Gets ComputeThroughputTflops.
+        /// EN: Documentation for public API. JA: ComputeThroughputTflops を取得します。
+        /// </summary>
         public float ComputeThroughputTflops => 1.0f;
+        /// <summary>
+        /// EN: Gets BatchSize.
+        /// EN: Documentation for public API. JA: BatchSize を取得します。
+        /// </summary>
         public int BatchSize => 1;
+        /// <summary>
+        /// EN: Gets SequenceLength.
+        /// EN: Documentation for public API. JA: SequenceLength を取得します。
+        /// </summary>
         public int SequenceLength => 512;
         /// <summary>
-        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// EN: Gets a test helper value. JA: テスト用の値を取得します。
         /// </summary>
         public int PhysicalCardinality => 1;
+        /// <summary>
+        /// EN: Executes GetContextValue.
+        /// EN: Documentation for public API. JA: GetContextValue を実行します。
+        /// </summary>
         public string? GetContextValue(string key) => null;
+        /// <summary>
+        /// EN: Executes GetAllContextValues.
+        /// EN: Documentation for public API. JA: GetAllContextValues を実行します。
+        /// </summary>
         public IReadOnlyDictionary<string, string> GetAllContextValues() => new Dictionary<string, string>();
     }
 

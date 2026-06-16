@@ -3,8 +3,8 @@ using AIKernel.Enums;
 namespace AIKernel.Dtos.Governance;
 
 /// <summary>
-/// Replay-compatible score report for one governed semantic trajectory state.
-/// JA: TrajectoryGovernanceScoreReport の公開契約を定義します。
+/// EN: Replay-compatible score report for one governed semantic trajectory state.
+/// EN: Documentation for public API. JA: TrajectoryGovernanceScoreReport の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Governance.TrajectoryGovernanceScoreReport']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Governance.TrajectoryGovernanceScoreReport']" />

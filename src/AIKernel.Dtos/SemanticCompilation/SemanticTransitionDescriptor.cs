@@ -3,8 +3,8 @@ using AIKernel.Enums;
 namespace AIKernel.Dtos.SemanticCompilation;
 
 /// <summary>
-/// Replay-addressable candidate movement from one Semantic IR/state artifact to another.
-/// JA: SemanticTransitionDescriptor の公開契約を定義します。
+/// EN: Replay-addressable candidate movement from one Semantic IR/state artifact to another.
+/// EN: Documentation for public API. JA: SemanticTransitionDescriptor の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.SemanticCompilation.SemanticTransitionDescriptor']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.SemanticCompilation.SemanticTransitionDescriptor']" />

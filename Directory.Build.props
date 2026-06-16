@@ -1,9 +1,9 @@
 <Project>
   <PropertyGroup>
-    <StablePackageVersion>0.1.1.1</StablePackageVersion>
-    <LocalPackageVersionPrefix>0.1.1</LocalPackageVersionPrefix>
+    <StablePackageVersion>0.1.2</StablePackageVersion>
+    <LocalPackageVersionPrefix>0.1.2</LocalPackageVersionPrefix>
     <LocalPackageBuildNumber Condition="'$(LocalPackageBuildNumber)' == ''">0</LocalPackageBuildNumber>
-    <UseLocalPackageVersion Condition="'$(UseLocalPackageVersion)' == ''">false</UseLocalPackageVersion>
+    <UseLocalPackageVersion Condition="'$(UseLocalPackageVersion)' == ''">true</UseLocalPackageVersion>
     <PackageVersion Condition="'$(UseLocalPackageVersion)' == 'true'">$(LocalPackageVersionPrefix)-dev$(LocalPackageBuildNumber)</PackageVersion>
     <PackageVersion Condition="'$(UseLocalPackageVersion)' != 'true'">$(StablePackageVersion)</PackageVersion>
     <Version>$(PackageVersion)</Version>
@@ -20,6 +20,26 @@
     <PackageTags>aikernel;aikernel-core;ai-os;architecture;category-separation;context-isolation;contract-driven;governance;admissibility;preprocessing;semantic-context-os;semantic-compilation;deterministic-replay;fail-closed;rom;canonicalization;pdp;signed-prompt;interface-contracts;dto;enum;capability-modules;dynamicslm;seedslm;hatl</PackageTags>
 	  <PackageReleaseNotes>
 		  <![CDATA[
+AIKernel.NET v0.1.2-dev0 — Canonical Interface Extraction
+
+• Adds the first v0.1.2 canonical cognition pipeline interface surface.
+• Adds Aisthesis, Phantasia, Nous, Telos, Topos, Kairos, Kinesis, and Chronos carriers.
+• Adds Topos triadic vector contracts for Logos, Pathos, Ethos, and composed decision vectors.
+• Adds CTG canon, ruleset, vote, and decision-gate carrier interfaces without changing existing CTG GateInput semantics.
+• Adds vision/audio provider abstractions, portable WebAssembly runtime contracts, and scenario-neutral demo contracts.
+• Keeps Doom-specific and scenario-specific vocabulary outside the canonical package surface.
+• Uses local development package versions as 0.1.2-dev{buildNumber}; stable 0.1.2 packages are created only at publication time.
+
+AIKernel.NET v0.1.2-dev0 — Canonical Interface Extraction
+
+• 最初の v0.1.2 正典 cognition pipeline interface surface を追加。
+• Aisthesis、Phantasia、Nous、Telos、Topos、Kairos、Kinesis、Chronos carrier を追加。
+• Logos、Pathos、Ethos、合成 decision vector 向けの Topos triadic vector contract を追加。
+• 既存 CTG GateInput semantics を変更せず、CTG canon、ruleset、vote、decision-gate carrier interface を追加。
+• vision/audio provider abstraction、portable WebAssembly runtime contract、scenario-neutral demo contract を追加。
+• Doom 固有および scenario 固有 vocabulary は正典 package surface の外に維持。
+• local development package version は 0.1.2-dev{buildNumber} を使用し、stable 0.1.2 package は公開時のみ作成。
+
 AIKernel.NET v0.1.1.1 — Interface Extension Update
 
 • Prepares the AIKernel.NET contract packages for package-level interface extension updates.

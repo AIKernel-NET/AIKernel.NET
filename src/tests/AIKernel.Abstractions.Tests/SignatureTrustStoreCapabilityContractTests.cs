@@ -3,10 +3,14 @@ using AIKernel.Abstractions.Governance;
 namespace AIKernel.Abstractions.Tests;
 
 /// <summary>
-/// Defines a test helper type. JA: テスト用の型を定義します。
+/// EN: Defines a test helper type. JA: テスト用の型を定義します。
 /// </summary>
 public sealed class SignatureTrustStoreCapabilityContractTests
 {
+    /// <summary>
+    /// EN: Executes CompositeSignatureTrustStoreExposesGranularTrustCapabilities.
+    /// EN: Documentation for public API. JA: CompositeSignatureTrustStoreExposesGranularTrustCapabilities を実行します。
+    /// </summary>
     [Fact]
     public void CompositeSignatureTrustStoreExposesGranularTrustCapabilities()
     {
@@ -22,7 +26,7 @@ public sealed class SignatureTrustStoreCapabilityContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void TrustStoreHealthProbeDoesNotExposeTrustResolutionCapabilities()
     {
@@ -35,6 +39,10 @@ public sealed class SignatureTrustStoreCapabilityContractTests
 
     private sealed class HealthOnlyTrustStoreProbe : ITrustStoreHealthProbe
     {
+        /// <summary>
+        /// EN: Executes IsHealthyAsync.
+        /// EN: Documentation for public API. JA: IsHealthyAsync を実行します。
+        /// </summary>
         public Task<bool> IsHealthyAsync(CancellationToken cancellationToken = default)
         {
             return Task.FromResult(true);
@@ -44,17 +52,25 @@ public sealed class SignatureTrustStoreCapabilityContractTests
     private sealed class FullSignatureTrustStore : ISignatureTrustStore
     {
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<double> ResolveTrustScoreAsync(string signerId, CancellationToken cancellationToken = default)
         {
             return Task.FromResult(1.0);
         }
+        /// <summary>
+        /// EN: Executes IsKeyRevokedAsync.
+        /// EN: Documentation for public API. JA: IsKeyRevokedAsync を実行します。
+        /// </summary>
 
         public Task<bool> IsKeyRevokedAsync(string keyId, CancellationToken cancellationToken = default)
         {
             return Task.FromResult(false);
         }
+        /// <summary>
+        /// EN: Executes GetKeyExpiryAsync.
+        /// EN: Documentation for public API. JA: GetKeyExpiryAsync を実行します。
+        /// </summary>
 
         public Task<DateTime?> GetKeyExpiryAsync(string keyId, CancellationToken cancellationToken = default)
         {
@@ -62,18 +78,26 @@ public sealed class SignatureTrustStoreCapabilityContractTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<bool> VerifyCertificateChainAsync(string signerId, CancellationToken cancellationToken = default)
         {
             return Task.FromResult(true);
         }
+        /// <summary>
+        /// EN: Executes GetTrustedAnchorsAsync.
+        /// EN: Documentation for public API. JA: GetTrustedAnchorsAsync を実行します。
+        /// </summary>
 
         public Task<IReadOnlyList<string>> GetTrustedAnchorsAsync(CancellationToken cancellationToken = default)
         {
             IReadOnlyList<string> anchors = [];
             return Task.FromResult(anchors);
         }
+        /// <summary>
+        /// EN: Executes IsHealthyAsync.
+        /// EN: Documentation for public API. JA: IsHealthyAsync を実行します。
+        /// </summary>
 
         public Task<bool> IsHealthyAsync(CancellationToken cancellationToken = default)
         {

@@ -7,7 +7,7 @@ namespace AIKernel.Abstractions.Tests;
 
 /// <summary>
 /// UC-02（Structure フェーズ）と UC-04（生成と出力整形）の整合テスト。
-/// Defines the TwoPhaseExecutionTests contract. JA: TwoPhaseExecutionTests の公開契約を定義します。
+/// EN: Defines the TwoPhaseExecutionTests contract. JA: TwoPhaseExecutionTests の公開契約を定義します。
 /// </summary>
 public class TwoPhaseExecutionTests
 {
@@ -18,11 +18,19 @@ public class TwoPhaseExecutionTests
 
     /// <summary>
     /// テスト用の IThoughtProcess 実装
-    /// Gets the RequiredCapacity value. JA: RequiredCapacity を取得します。
+    /// EN: Gets the RequiredCapacity value. JA: RequiredCapacity を取得します。
     /// </summary>
     private class TestThoughtProcess : IThoughtProcess
     {
+        /// <summary>
+        /// EN: Executes RequiredCapacity.
+        /// EN: Documentation for public API. JA: RequiredCapacity を実行します。
+        /// </summary>
         public ModelCapacityVector RequiredCapacity { get; } = new(reasoningDepth: 0.8f);
+        /// <summary>
+        /// EN: Executes BuildLogicAsync.
+        /// EN: Documentation for public API. JA: BuildLogicAsync を実行します。
+        /// </summary>
 
         public Task<RawLogic> BuildLogicAsync(IContextCollection orchestrationContext, CancellationToken ct = default)
         {
@@ -34,11 +42,19 @@ public class TwoPhaseExecutionTests
 
     /// <summary>
     /// テスト用の IOutputPolisher 実装
-    /// Gets the RequiredCapacity value. JA: RequiredCapacity を取得します。
+    /// EN: Gets the RequiredCapacity value. JA: RequiredCapacity を取得します。
     /// </summary>
     private class TestOutputPolisher : IOutputPolisher
     {
+        /// <summary>
+        /// EN: Executes RequiredCapacity.
+        /// EN: Documentation for public API. JA: RequiredCapacity を実行します。
+        /// </summary>
         public ModelCapacityVector RequiredCapacity { get; } = new(linguisticFluidity: 0.9f, structuralIntegrity: 0.8f);
+        /// <summary>
+        /// EN: Executes RenderAsync.
+        /// EN: Documentation for public API. JA: RenderAsync を実行します。
+        /// </summary>
 
         public Task<string> RenderAsync(RawLogic logic, ExpressionContext expressionContext, CancellationToken ct = default)
         {
@@ -54,41 +70,65 @@ public class TwoPhaseExecutionTests
 
     /// <summary>
     /// テスト用の IContextCollection 実装
-    /// Defines the TestContextCollection helper. JA: TestContextCollection 操作を実行します。
+    /// EN: Defines the TestContextCollection helper. JA: TestContextCollection 操作を実行します。
     /// </summary>
     private class TestContextCollection : IContextCollection
     {
         private readonly List<ContextFragment> _fragments;
+        /// <summary>
+        /// EN: Executes TestContextCollection.
+        /// EN: Documentation for public API. JA: TestContextCollection を実行します。
+        /// </summary>
 
         public TestContextCollection(params ContextFragment[] fragments)
         {
             _fragments = fragments.ToList();
         }
+        /// <summary>
+        /// EN: Executes GetAll.
+        /// EN: Documentation for public API. JA: GetAll を実行します。
+        /// </summary>
 
         public IEnumerable<ContextFragment> GetAll() => _fragments;
 
         /// <summary>
-        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// EN: Gets a test helper value. JA: テスト用の値を取得します。
         /// </summary>
         public IEnumerable<ContextFragment> GetByCategory(ContextCategory category) =>
             _fragments.Where(f => f.Category == category);
+        /// <summary>
+        /// EN: Executes GetOrchestrationBuffer.
+        /// EN: Documentation for public API. JA: GetOrchestrationBuffer を実行します。
+        /// </summary>
 
         public OrchestrationBuffer GetOrchestrationBuffer() =>
             new OrchestrationBuffer(GetByCategory(ContextCategory.Orchestration));
+        /// <summary>
+        /// EN: Executes GetExpressionBuffer.
+        /// EN: Documentation for public API. JA: GetExpressionBuffer を実行します。
+        /// </summary>
 
         public ExpressionBuffer GetExpressionBuffer() =>
             new ExpressionBuffer(GetByCategory(ContextCategory.Expression)
                 .Cast<ExpressionFragment>());
+        /// <summary>
+        /// EN: Executes GetMaterialBuffer.
+        /// EN: Documentation for public API. JA: GetMaterialBuffer を実行します。
+        /// </summary>
 
         public MaterialBuffer GetMaterialBuffer() =>
             new MaterialBuffer(GetByCategory(ContextCategory.Material));
 
         /// <summary>
-        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// EN: Gets a test helper value. JA: テスト用の値を取得します。
         /// </summary>
         public HistoryBuffer GetHistoryBuffer() =>
             new HistoryBuffer(GetByCategory(ContextCategory.History));
     }
+    /// <summary>
+    /// EN: Executes TwoPhaseExecution_BuildLogic_ShouldGenerateRawLogic.
+    /// EN: Documentation for public API. JA: TwoPhaseExecution_BuildLogic_ShouldGenerateRawLogic を実行します。
+    /// </summary>
 
     [Fact]
     public async Task TwoPhaseExecution_BuildLogic_ShouldGenerateRawLogic()
@@ -116,7 +156,7 @@ public class TwoPhaseExecutionTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public async Task TwoPhaseExecution_Render_ShouldApplyExpressionContext()
     {
@@ -146,7 +186,7 @@ public class TwoPhaseExecutionTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public async Task TwoPhaseExecution_EmptyLogic_ShouldThrowException()
     {
@@ -163,7 +203,7 @@ public class TwoPhaseExecutionTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void RawLogicSerializedRepresentation_ShouldSupportWhitespaceChecks()
     {
@@ -180,7 +220,7 @@ public class TwoPhaseExecutionTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void ExecutionResult_ShouldEncapsulateLogicAndOutput()
     {
@@ -208,7 +248,7 @@ public class TwoPhaseExecutionTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public async Task TwoPhaseExecution_CompleteFlow_ShouldProduceExecutionResult()
     {

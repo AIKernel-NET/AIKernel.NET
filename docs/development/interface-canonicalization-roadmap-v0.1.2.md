@@ -2,6 +2,14 @@
 
 This note records implementation surfaces that should be reviewed during the next canonical interface update. It is not a contract file. The current v0.1.1.1 packages keep these surfaces thin so they can be promoted, renamed, merged, or removed without changing CTG semantics.
 
+## Release Assumption
+
+The v0.1.2 canonical series is the next official release line. Unlike the
+v0.1.1.1 local validation line, v0.1.2 is expected to publish synchronized
+NuGet and PyPI package families. Interface promotion decisions in this roadmap
+should therefore consider both .NET package consumers and Python wrapper
+consumers.
+
 ## Candidate Domains
 
 - Perception: frame perception, auditory perception, spatial cognition, HUD signal extraction, and overlay annotation DTO generation.
@@ -18,9 +26,12 @@ This note records implementation surfaces that should be reviewed during the nex
 
 ## v0.1.2 Review Items
 
-- Decide whether `IAuditoryPerceptionProvider` and `ISpatialCognitionProvider` belong in `AIKernel.Abstractions.Perception`.
-- Decide whether spatial cognition DTOs belong in `AIKernel.Dtos.Perception` or a dedicated `AIKernel.Dtos.Spatial` namespace.
-- Unify WASM-local auditory and spatial DTO names with canonical DTO names after contract promotion.
+- Added the first v0.1.2 canonical cognition pipeline surface in
+  [Canonical Interface Set v0.1.2](canonical-interface-set-v0.1.2.md).
+- Map Doom-specific demo examples to scenario-neutral contracts in
+  `AIKernel.Abstractions.Scenarios`.
+- Keep spatial and auditory implementation detail local to implementation
+  repositories until their DTOs stabilize further.
 - Review whether resident model execution should use `AIKernel.Abstractions.Models` or a dedicated execution domain.
 - Consolidate HUD/overlay request metadata keys and diagnostic keys.
 - Preserve the rule that Control reads Core CTG results but does not implement Gate logic.

@@ -41,11 +41,12 @@ tags:
 - 公開更新 version: `0.1.1.1`
 - GitHub release: 作成しない
 - PyPI package: 作成しない（`0.1.1.1` は .NET / NuGet package のみ）
-- ローカル開発 package version: `0.1.1-dev{buildNumber}`
+- 次の公式 release: `0.1.2` 正典シリーズ（NuGet / PyPI package family を同期公開する前提）
+- ローカル開発 package version: `0.1.1.1-dev{buildNumber}`
 - stable pack 例: `dotnet pack src/AIKernel.NET.slnx -c Release`
 - local dev pack 例: `dotnet pack src/AIKernel.NET.slnx -c Release -p:UseLocalPackageVersion=true -p:LocalPackageBuildNumber=42`
 
-`Directory.Build.props` は通常 pack では `PackageVersion=0.1.1.1` を使い、`UseLocalPackageVersion=true` の場合だけ `PackageVersion=0.1.1-dev{LocalPackageBuildNumber}` を使います。assembly/file version は `0.1.1.1` に揃えます。
+`Directory.Build.props` は通常 pack では `PackageVersion=0.1.1.1` を使い、`UseLocalPackageVersion=true` の場合だけ `PackageVersion=0.1.1.1-dev{LocalPackageBuildNumber}` を使います。assembly/file version は `0.1.1.1` に揃えます。
 
 ## 後方互換性ルール
 

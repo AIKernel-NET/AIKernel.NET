@@ -3,7 +3,7 @@ namespace AIKernel.Abstractions.Compute;
 /// <summary>
 /// [EN] Public compute provider contract used by CPU, CUDA, WebGPU, and fallback compute implementations.
 /// [JA] CPU、CUDA、WebGPU、fallback compute 実装で使用する public compute provider contract です。
-/// JA: IComputeProvider の公開契約を定義します。
+/// EN: Documentation for public API. JA: IComputeProvider の公開契約を定義します。
 /// </summary>
 public interface IComputeProvider
 {

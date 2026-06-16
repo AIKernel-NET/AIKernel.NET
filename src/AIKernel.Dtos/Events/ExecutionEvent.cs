@@ -1,8 +1,8 @@
 namespace AIKernel.Dtos.Events;
 
 /// <summary>
-/// ExecutionEvent の契約を定義します。
-/// JA: ExecutionEvent の公開契約を定義します。
+/// EN: ExecutionEvent の契約を定義します。
+/// EN: Documentation for public API. JA: ExecutionEvent の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Events.ExecutionEvent']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Events.ExecutionEvent']" />

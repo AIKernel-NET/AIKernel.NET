@@ -1,6 +1,6 @@
 ---
-title: "AIKernel 0.1.1 / 0.1.1.1 パッケージ導入ガイド"
-updated: 2026-06-14
+title: "AIKernel パッケージ導入ガイド"
+updated: 2026-06-15
 published: 2026-06-10
 version: "0.1.1.1"
 edition: "Release"
@@ -9,7 +9,7 @@ issuer: ai-kernel@aikernel.net
 maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 ---
 
-# AIKernel 0.1.1 / 0.1.1.1 パッケージ導入ガイド
+# AIKernel パッケージ導入ガイド
 
 AIKernel 0.1.1 は、公開された Semantic OS サーフェスを同期した最初のパッケージラインです。  
 .NET パッケージは NuGet、Python ラッパーは PyPI、公式デモは AIKernel.Demo リポジトリで提供されます。
@@ -27,7 +27,8 @@ package version を利用してください。CTG については
 です。
 `0.1.1.1` line は .NET / NuGet package のみの更新です。この line では
 PyPI package を build / publish しません。Python wrapper は同期済み `0.1.1`
-package line のまま維持します。
+package line のまま維持します。次の公式 release line は v0.1.2 正典シリーズであり、
+NuGet と PyPI の package family を同期して公開する前提で準備します。
 
 ## Quick Start: OS サーフェスを起動する
 
@@ -82,7 +83,8 @@ CUDA は意図的にプラットフォームを限定しています。Windows w
 ## PyPI パッケージ
 
 以下の PyPI package は同期済み `0.1.1` line に属します。`0.1.1.1` の
-PyPI package line はありません。
+PyPI package line はありません。次の PyPI package 更新は v0.1.2 正典シリーズで
+行う前提です。
 
 | パッケージ | import surface | 役割 |
 |---|---|---|
@@ -140,8 +142,10 @@ pip install aikernel-wasm==0.1.1
 additive interface-extension line では、更新対象の public package を
 `.NET / NuGet contract package` に限って `0.1.1.1` で揃えてください。
 `0.1.1.1` の PyPI package は作成・公開しません。Python wrapper package は
-`0.1.1` のまま維持します。local development package は次を使います。
+次の公式 release まで `0.1.1` のまま維持します。次の公式 release line は
+v0.1.2 正典シリーズであり、NuGet と PyPI の package family を同期して更新する
+前提で準備します。local development package は次を使います。
 
 ```text
-0.1.1-dev<build-number>
+0.1.1.1-dev<build-number>
 ```

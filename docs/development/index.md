@@ -15,9 +15,10 @@ across AIKernel.NET and the implementation repositories.
 
 ## Reading Order
 
-1. [Repository Alignment v0.1.1.1](repository-alignment-v0.1.1.1.md)
-2. [Interface Canonicalization Roadmap v0.1.2](interface-canonicalization-roadmap-v0.1.2.md)
+1. [Cross-Repository Developer Guide v0.1.1.1](cross-repository-developer-guide-v0.1.1.1.md)
+2. [Repository Alignment v0.1.1.1](repository-alignment-v0.1.1.1.md)
+3. [Interface Canonicalization Roadmap v0.1.2](interface-canonicalization-roadmap-v0.1.2.md)
+4. [Canonical Interface Set v0.1.2](canonical-interface-set-v0.1.2.md)
 
 Use repository-specific `docs/` folders for local build, package, diagnostics,
 and implementation guidance.
-

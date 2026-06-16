@@ -1,5 +1,6 @@
 namespace AIKernel.Dtos.Routing;
 
+/// <summary>EN: Documentation for public API. JA: RoutingReason を表します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Routing.RoutingReason']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Routing.RoutingReason']" />
 public sealed record RoutingReason(

@@ -2,6 +2,7 @@ using AIKernel.Enums;
 
 namespace AIKernel.Dtos.DynamicSlm;
 
+/// <summary>EN: Documentation for public API. JA: DynamicSlmCapabilityGraphUpdate を表します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityGraphUpdate']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityGraphUpdate']" />
 public sealed record DynamicSlmCapabilityGraphUpdate(
@@ -11,6 +12,7 @@ public sealed record DynamicSlmCapabilityGraphUpdate(
     string? TargetCapabilityId,
     IReadOnlyDictionary<string, string> Metadata);
 
+/// <summary>EN: Documentation for public API. JA: DynamicSlmCapabilityGraphUpdatePlan を表します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityGraphUpdatePlan']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmCapabilityGraphUpdatePlan']" />
 public sealed record DynamicSlmCapabilityGraphUpdatePlan(

@@ -11,10 +11,14 @@ using AIKernel.Dtos.Sandbox;
 namespace AIKernel.Abstractions.Tests;
 
 /// <summary>
-/// Defines a test helper type. JA: テスト用の型を定義します。
+/// EN: Defines a test helper type. JA: テスト用の型を定義します。
 /// </summary>
 public sealed class SandboxValidatorIsolationTests
 {
+    /// <summary>
+    /// EN: Executes CompositeToolSandboxExposesExecutionTransferCleanupAndObservationCapabilities.
+    /// EN: Documentation for public API. JA: CompositeToolSandboxExposesExecutionTransferCleanupAndObservationCapabilities を実行します。
+    /// </summary>
     [Fact]
     public void CompositeToolSandboxExposesExecutionTransferCleanupAndObservationCapabilities()
     {
@@ -30,7 +34,7 @@ public sealed class SandboxValidatorIsolationTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void ToolExecutorDoesNotExposeFileTransferOrCleanup()
     {
@@ -40,6 +44,10 @@ public sealed class SandboxValidatorIsolationTests
         Assert.False(executor is IToolFileDownloadSource);
         Assert.False(executor is IToolSandboxCleanup);
     }
+    /// <summary>
+    /// EN: Executes CompositeRomValidatorExposesGranularValidationCapabilities.
+    /// EN: Documentation for public API. JA: CompositeRomValidatorExposesGranularValidationCapabilities を実行します。
+    /// </summary>
 
     [Fact]
     public void CompositeRomValidatorExposesGranularValidationCapabilities()
@@ -54,7 +62,7 @@ public sealed class SandboxValidatorIsolationTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void RomSchemaValidatorDoesNotExposeGraphValidation()
     {
@@ -63,6 +71,10 @@ public sealed class SandboxValidatorIsolationTests
         Assert.False(validator is IRomLinkageValidator);
         Assert.False(validator is IRomCircularReferenceValidator);
     }
+    /// <summary>
+    /// EN: Executes ConversationReaderDoesNotExposeMutationCapabilities.
+    /// EN: Documentation for public API. JA: ConversationReaderDoesNotExposeMutationCapabilities を実行します。
+    /// </summary>
 
     [Fact]
     public void ConversationReaderDoesNotExposeMutationCapabilities()
@@ -75,7 +87,7 @@ public sealed class SandboxValidatorIsolationTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void ContextFragmentCollectionDoesNotExposePhaseBuffers()
     {
@@ -83,6 +95,10 @@ public sealed class SandboxValidatorIsolationTests
 
         Assert.False(fragments is IPhaseBufferCollection);
     }
+    /// <summary>
+    /// EN: Executes CompositeComputeShapeAdvisorExposesGranularComputeCapabilities.
+    /// EN: Documentation for public API. JA: CompositeComputeShapeAdvisorExposesGranularComputeCapabilities を実行します。
+    /// </summary>
 
     [Fact]
     public void CompositeComputeShapeAdvisorExposesGranularComputeCapabilities()
@@ -98,7 +114,7 @@ public sealed class SandboxValidatorIsolationTests
     private sealed class ToolExecutionOnlySandbox : IToolExecutor
     {
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<SandboxExecutionResult> ExecuteToolAsync(
             string toolName,
@@ -111,10 +127,14 @@ public sealed class SandboxValidatorIsolationTests
 
     private sealed class FullToolSandbox : IToolSandbox
     {
+        /// <summary>
+        /// EN: Gets SandboxId.
+        /// EN: Documentation for public API. JA: SandboxId を取得します。
+        /// </summary>
         public string SandboxId => "sandbox";
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<SandboxExecutionResult> ExecuteToolAsync(
             string toolName,
@@ -123,6 +143,10 @@ public sealed class SandboxValidatorIsolationTests
         {
             return Task.FromResult<SandboxExecutionResult>(null!);
         }
+        /// <summary>
+        /// EN: Executes UploadFileAsync.
+        /// EN: Documentation for public API. JA: UploadFileAsync を実行します。
+        /// </summary>
 
         public Task<bool> UploadFileAsync(string fileName, byte[] content)
         {
@@ -130,17 +154,25 @@ public sealed class SandboxValidatorIsolationTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<byte[]?> DownloadFileAsync(string fileName)
         {
             return Task.FromResult<byte[]?>(null);
         }
+        /// <summary>
+        /// EN: Executes CleanupAsync.
+        /// EN: Documentation for public API. JA: CleanupAsync を実行します。
+        /// </summary>
 
         public Task CleanupAsync()
         {
             return Task.CompletedTask;
         }
+        /// <summary>
+        /// EN: Executes GetResourceUsageAsync.
+        /// EN: Documentation for public API. JA: GetResourceUsageAsync を実行します。
+        /// </summary>
 
         public Task<SandboxResourceUsage> GetResourceUsageAsync()
         {
@@ -151,7 +183,7 @@ public sealed class SandboxValidatorIsolationTests
     private sealed class SchemaOnlyRomValidator : IRomSchemaValidator
     {
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<RomSchemaValidationResult> ValidateSchemaAsync(
             IRomDocument document,
@@ -163,6 +195,10 @@ public sealed class SandboxValidatorIsolationTests
 
     private sealed class FullRomValidator : IRomValidator
     {
+        /// <summary>
+        /// EN: Gets ValidateSchemaAsync.
+        /// EN: Documentation for public API. JA: ValidateSchemaAsync を取得します。
+        /// </summary>
         public Task<RomSchemaValidationResult> ValidateSchemaAsync(
             IRomDocument document,
             CancellationToken cancellationToken = default)
@@ -171,7 +207,7 @@ public sealed class SandboxValidatorIsolationTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<RomLinkageValidationResult> ValidateLinkageAsync(
             IRomDocument document,
@@ -180,6 +216,10 @@ public sealed class SandboxValidatorIsolationTests
         {
             return Task.FromResult<RomLinkageValidationResult>(null!);
         }
+        /// <summary>
+        /// EN: Gets ValidateTypeConsistencyAsync.
+        /// EN: Documentation for public API. JA: ValidateTypeConsistencyAsync を取得します。
+        /// </summary>
 
         public Task<RomTypeConsistencyResult> ValidateTypeConsistencyAsync(
             IRomDocument document,
@@ -190,7 +230,7 @@ public sealed class SandboxValidatorIsolationTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<CircularReferenceDetectionResult> DetectCircularReferencesAsync(
             IRomDocument document,
@@ -205,7 +245,7 @@ public sealed class SandboxValidatorIsolationTests
     private sealed class ReadOnlyConversationStore : IConversationSnapshotReader
     {
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<IConversationSnapshot?> GetSnapshotAsync(string snapshotId, CancellationToken ct = default)
         {
@@ -215,13 +255,17 @@ public sealed class SandboxValidatorIsolationTests
 
     private sealed class FragmentOnlyContextCollection : IContextFragmentCollection
     {
+        /// <summary>
+        /// EN: Executes GetAll.
+        /// EN: Documentation for public API. JA: GetAll を実行します。
+        /// </summary>
         public IEnumerable<ContextFragment> GetAll()
         {
             return [];
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public IEnumerable<ContextFragment> GetByCategory(ContextCategory category)
         {
@@ -231,23 +275,35 @@ public sealed class SandboxValidatorIsolationTests
 
     private sealed class FullComputeShapeAdvisor : IComputeShapeAdvisor
     {
+        /// <summary>
+        /// EN: Executes AdvisedPhysicalCardinality.
+        /// EN: Documentation for public API. JA: AdvisedPhysicalCardinality を実行します。
+        /// </summary>
         public int AdvisedPhysicalCardinality(int logicalLength, string deviceType)
         {
             return logicalLength;
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public int SelectOptimalCardinality(IEnumerable<int> candidates, string deviceType)
         {
             return candidates.FirstOrDefault();
         }
+        /// <summary>
+        /// EN: Executes GetCardinalityAlignment.
+        /// EN: Documentation for public API. JA: GetCardinalityAlignment を実行します。
+        /// </summary>
 
         public int GetCardinalityAlignment(string deviceType)
         {
             return 1;
         }
+        /// <summary>
+        /// EN: Executes GetPaddingStrategy.
+        /// EN: Documentation for public API. JA: GetPaddingStrategy を実行します。
+        /// </summary>
 
         public PaddingStrategy GetPaddingStrategy(int logicalLength, string deviceType)
         {
@@ -255,17 +311,25 @@ public sealed class SandboxValidatorIsolationTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public ComputeOverhead EstimatePaddingOverhead(int logicalLength, int physicalLength)
         {
             return null!;
         }
+        /// <summary>
+        /// EN: Executes AdvisedQuantizationLevel.
+        /// EN: Documentation for public API. JA: AdvisedQuantizationLevel を実行します。
+        /// </summary>
 
         public string AdvisedQuantizationLevel(int cardinality, string deviceType, float targetThroughputTflops)
         {
             return string.Empty;
         }
+        /// <summary>
+        /// EN: Executes GetOptimalShape.
+        /// EN: Documentation for public API. JA: GetOptimalShape を実行します。
+        /// </summary>
 
         public ComputeShape GetOptimalShape(IExecutionConstraints constraints)
         {

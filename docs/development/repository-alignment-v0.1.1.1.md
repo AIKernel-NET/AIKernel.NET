@@ -20,10 +20,11 @@ rules.
 - The public baseline is the 0.1.1 package family.
 - The current development update line is 0.1.1.1.
 - Local development packages use `0.1.1.1-dev{build-number}`.
-- The 0.1.1.1 line is NuGet-only unless a Python/PyPI release is explicitly
-  scheduled.
-- Python wrapper documents are reference material for this line. Do not build,
+- The 0.1.1.1 line is a local validation line and is NuGet-only.
+- Python wrapper documents are reference material for 0.1.1.1. Do not build,
   publish, or require PyPI packages for 0.1.1.1 validation.
+- The next official release line is the v0.1.2 canonical series. That line is
+  expected to publish synchronized NuGet and PyPI package families.
 
 ## Documentation Ownership
 
@@ -89,4 +90,3 @@ Validate from the lowest shared surface to the most scenario-specific surface:
 When a repository consumes another repository's current development work, use
 the matching local NuGet package version from the same `0.1.1.1-dev{build}`
 family.
-

@@ -5,10 +5,14 @@ using AIKernel.Dtos.Tokenization;
 namespace AIKernel.Abstractions.Tests;
 
 /// <summary>
-/// Defines a test helper type. JA: テスト用の型を定義します。
+/// EN: Defines a test helper type. JA: テスト用の型を定義します。
 /// </summary>
 public sealed class TokenizerCapabilityContractTests
 {
+    /// <summary>
+    /// EN: Executes CompositeTokenizerExposesGranularTokenizerCapabilities.
+    /// EN: Documentation for public API. JA: CompositeTokenizerExposesGranularTokenizerCapabilities を実行します。
+    /// </summary>
     [Fact]
     public void CompositeTokenizerExposesGranularTokenizerCapabilities()
     {
@@ -26,7 +30,7 @@ public sealed class TokenizerCapabilityContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void TokenCounterDoesNotExposeTokenizeOrDecodeCapabilities()
     {
@@ -39,6 +43,10 @@ public sealed class TokenizerCapabilityContractTests
 
     private sealed class CountOnlyTokenizer : ITokenCounter
     {
+        /// <summary>
+        /// EN: Executes CountTokens.
+        /// EN: Documentation for public API. JA: CountTokens を実行します。
+        /// </summary>
         public int CountTokens(string text)
         {
             return 0;
@@ -48,16 +56,28 @@ public sealed class TokenizerCapabilityContractTests
     private sealed class FullTokenizer : ITokenizer
     {
         /// <summary>
-        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// EN: Gets a test helper value. JA: テスト用の値を取得します。
         /// </summary>
         public string TokenizerProfileId => "profile";
+        /// <summary>
+        /// EN: Gets Name.
+        /// EN: Documentation for public API. JA: Name を取得します。
+        /// </summary>
 
         public string Name => "Tokenizer";
+        /// <summary>
+        /// EN: Executes Tokenize.
+        /// EN: Documentation for public API. JA: Tokenize を実行します。
+        /// </summary>
 
         public IReadOnlyList<Token> Tokenize(string text)
         {
             return [];
         }
+        /// <summary>
+        /// EN: Executes CountTokens.
+        /// EN: Documentation for public API. JA: CountTokens を実行します。
+        /// </summary>
 
         public int CountTokens(string text)
         {
@@ -65,17 +85,25 @@ public sealed class TokenizerCapabilityContractTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public string Decode(IReadOnlyList<Token> tokens)
         {
             return string.Empty;
         }
+        /// <summary>
+        /// EN: Executes GetStatistics.
+        /// EN: Documentation for public API. JA: GetStatistics を実行します。
+        /// </summary>
 
         public TokenizerStatistics GetStatistics()
         {
             return null!;
         }
+        /// <summary>
+        /// EN: Executes SupportsModel.
+        /// EN: Documentation for public API. JA: SupportsModel を実行します。
+        /// </summary>
 
         public bool SupportsModel(string modelName)
         {
@@ -83,12 +111,16 @@ public sealed class TokenizerCapabilityContractTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public int GetPhysicalCardinality(int logicalTokenCount, string deviceType)
         {
             return logicalTokenCount;
         }
+        /// <summary>
+        /// EN: Executes GetPaddingInfo.
+        /// EN: Documentation for public API. JA: GetPaddingInfo を実行します。
+        /// </summary>
 
         public PaddingInfo GetPaddingInfo(int logicalTokenCount, int physicalCardinality)
         {

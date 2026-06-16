@@ -1,8 +1,8 @@
 namespace AIKernel.Dtos.Governance;
 
 /// <summary>
-/// Contract-only semantic region used by trajectory governance scoring.
-/// JA: SemanticEllipsoidDescriptor の公開契約を定義します。
+/// EN: Contract-only semantic region used by trajectory governance scoring.
+/// EN: Documentation for public API. JA: SemanticEllipsoidDescriptor の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Governance.SemanticEllipsoidDescriptor']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Governance.SemanticEllipsoidDescriptor']" />

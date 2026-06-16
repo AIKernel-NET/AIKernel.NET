@@ -62,8 +62,9 @@ CI runs build and tests to ensure baseline quality.
 
 ### 5. XML documentation
 - Public APIs must include bilingual XML docs (`/// <summary>`, parameter descriptions, type parameter descriptions, and return descriptions).
-- Inline XML docs use English followed by `JA:` Japanese text. Existing external docs must use paired `docs.en.xml` and `docs.ja.xml` includes.
+- Inline XML docs use explicit `EN:` and `JA:` text. Existing external docs must use paired `docs.en.xml` and `docs.ja.xml` includes.
 - Follow [`operations/XML_DOCUMENTATION_POLICY-v0.1.1.1.md`](operations/XML_DOCUMENTATION_POLICY-v0.1.1.1.md).
+- Run `py tools\check_bilingual_xml_docs.py src` before opening a release PR.
 - Keep docs up to date and reflect in `docs/` and README.
 
 ### 6. Mark breaking changes
@@ -117,6 +118,7 @@ CI runs build and tests to ensure baseline quality.
 - Mark breaking changes with `[Breaking]`
 - Provide XML docs for public APIs
 - Confirm bilingual XML documentation for public APIs
+- Run the bilingual XML documentation checker
 - Confirm semantic interface naming and avoid mechanical expansion suffixes
 - Confirm enum `Unknown = 0` and fail-closed handling guidance when adding enums
 - Confirm CTG changes follow `operations/CTG_DEVELOPER_GUIDE-v0.1.1.1.md` when applicable

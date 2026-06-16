@@ -1,6 +1,6 @@
 ---
-title: "AIKernel 0.1.1 / 0.1.1.1 Package Installation Guide"
-updated: 2026-06-14
+title: "AIKernel Package Installation Guide"
+updated: 2026-06-15
 published: 2026-06-10
 version: "0.1.1.1"
 edition: "Release"
@@ -9,7 +9,7 @@ issuer: ai-kernel@aikernel.net
 maintainer: "Takuya (AIKernel Project Maintainer)"
 ---
 
-# AIKernel 0.1.1 / 0.1.1.1 Package Installation Guide
+# AIKernel Package Installation Guide
 
 AIKernel 0.1.1 is the first synchronized package line for the public Semantic OS surface.  
 The .NET packages are published through NuGet, the Python wrappers are published through PyPI, and the demo repository provides the official golden-path examples.
@@ -27,7 +27,9 @@ paper reference is
 [`../papers/12-canonical-trajectory-governance/README.md`](../papers/12-canonical-trajectory-governance/README.md).
 The `0.1.1.1` line is a .NET / NuGet package update only. Do not build or
 publish PyPI packages for this line; Python wrappers remain on the synchronized
-`0.1.1` package line.
+`0.1.1` package line until the next official release. The next official release
+line is the v0.1.2 canonical series and is expected to publish synchronized
+NuGet and PyPI package families.
 
 ## Quick Start: Start the OS Surface
 
@@ -82,7 +84,8 @@ CUDA is intentionally platform-scoped. Use the CUDA package only on Windows win-
 ## PyPI Packages
 
 The PyPI packages below belong to the synchronized `0.1.1` line. There is no
-`0.1.1.1` PyPI package line.
+`0.1.1.1` PyPI package line. The next PyPI package update is expected on the
+v0.1.2 canonical series.
 
 | Package | Import Surface | Purpose |
 |---|---|---|
@@ -140,8 +143,9 @@ Use only `0.1.1` packages together for the synchronized line. Mixing `0.1.0` and
 For the additive interface-extension line, keep updated public packages on
 `0.1.1.1` together for the .NET / NuGet contract packages only. Do not create
 or publish PyPI packages for `0.1.1.1`; Python wrapper packages stay at
-`0.1.1`. Local development packages use:
+`0.1.1`. Plan synchronized NuGet + PyPI package updates for the next official
+v0.1.2 canonical series. Local development packages use:
 
 ```text
-0.1.1-dev<build-number>
+0.1.1.1-dev<build-number>
 ```

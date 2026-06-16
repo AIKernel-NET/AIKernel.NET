@@ -9,10 +9,14 @@ using AIKernel.Dtos.Query;
 namespace AIKernel.Abstractions.Tests;
 
 /// <summary>
-/// Defines a test helper type. JA: テスト用の型を定義します。
+/// EN: Defines a test helper type. JA: テスト用の型を定義します。
 /// </summary>
 public sealed class ProviderAndSecurityCapabilityContractTests
 {
+    /// <summary>
+    /// EN: Executes CompositeToolAccessValidatorExposesGranularCapabilities.
+    /// EN: Documentation for public API. JA: CompositeToolAccessValidatorExposesGranularCapabilities を実行します。
+    /// </summary>
     [Fact]
     public void CompositeToolAccessValidatorExposesGranularCapabilities()
     {
@@ -30,7 +34,7 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void ReadOnlyRagProviderDoesNotExposeIndexMutationCapabilities()
     {
@@ -40,6 +44,10 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         Assert.False(provider is IRagIndexDeleter);
         Assert.False(provider is IRagIndexManager);
     }
+    /// <summary>
+    /// EN: Executes CompositeRagProviderExposesSearchAndIndexCapabilities.
+    /// EN: Documentation for public API. JA: CompositeRagProviderExposesSearchAndIndexCapabilities を実行します。
+    /// </summary>
 
     [Fact]
     public void CompositeRagProviderExposesSearchAndIndexCapabilities()
@@ -55,7 +63,7 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void CompositeModelProviderExposesGranularModelCapabilities()
     {
@@ -66,6 +74,10 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         Assert.IsAssignableFrom<IStreamingGenerationProvider>(provider);
         Assert.IsAssignableFrom<IQuestionAnsweringProvider>(provider);
     }
+    /// <summary>
+    /// EN: Executes TextOnlyModelProviderDoesNotExposeStreamingOrQuestionAnswering.
+    /// EN: Documentation for public API. JA: TextOnlyModelProviderDoesNotExposeStreamingOrQuestionAnswering を実行します。
+    /// </summary>
 
     [Fact]
     public void TextOnlyModelProviderDoesNotExposeStreamingOrQuestionAnswering()
@@ -78,7 +90,7 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void CompositeEmbeddingProviderExposesGranularEmbeddingCapabilities()
     {
@@ -89,6 +101,10 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         Assert.IsAssignableFrom<IBatchEmbeddingProvider>(provider);
         Assert.IsAssignableFrom<IEmbeddingDimensionProvider>(provider);
     }
+    /// <summary>
+    /// EN: Executes SingleEmbeddingProviderDoesNotExposeBatchCapability.
+    /// EN: Documentation for public API. JA: SingleEmbeddingProviderDoesNotExposeBatchCapability を実行します。
+    /// </summary>
 
     [Fact]
     public void SingleEmbeddingProviderDoesNotExposeBatchCapability()
@@ -101,7 +117,7 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void ProviderCapabilitiesCanBeExposedAsSeparateCapabilitySources()
     {
@@ -123,7 +139,7 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void QueryProcessingAbstractionsRequireKernelContext()
     {
@@ -138,7 +154,7 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void QueryPartUsesImmutableMetadata()
     {
@@ -155,7 +171,7 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void CompositeProviderExposesGranularLifecycleCapabilities()
     {
@@ -170,7 +186,7 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void CompositeProviderRouterExposesGranularRoutingCapabilities()
     {
@@ -181,6 +197,10 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         Assert.IsAssignableFrom<IMaterialCacheWriter>(router);
         Assert.IsAssignableFrom<IProviderRegistry>(router);
     }
+    /// <summary>
+    /// EN: Executes CacheReadOnlyRouterDoesNotExposeCacheMutationOrRegistryCapabilities.
+    /// EN: Documentation for public API. JA: CacheReadOnlyRouterDoesNotExposeCacheMutationOrRegistryCapabilities を実行します。
+    /// </summary>
 
     [Fact]
     public void CacheReadOnlyRouterDoesNotExposeCacheMutationOrRegistryCapabilities()
@@ -193,7 +213,7 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void CompositeEventBusExposesGranularEventCapabilities()
     {
@@ -204,6 +224,10 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         Assert.IsAssignableFrom<IEventBroadcaster>(eventBus);
         Assert.IsAssignableFrom<IEventSubscriptionRegistry>(eventBus);
     }
+    /// <summary>
+    /// EN: Executes SubscriptionOnlyEventRegistryDoesNotExposePublishCapabilities.
+    /// EN: Documentation for public API. JA: SubscriptionOnlyEventRegistryDoesNotExposePublishCapabilities を実行します。
+    /// </summary>
 
     [Fact]
     public void SubscriptionOnlyEventRegistryDoesNotExposePublishCapabilities()
@@ -217,17 +241,25 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     private sealed class FullToolAccessValidator : IToolAccessValidator
     {
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public bool CanExecuteTool(IToolPermission permission, string toolName)
         {
             return true;
         }
+        /// <summary>
+        /// EN: Executes CanReadFile.
+        /// EN: Documentation for public API. JA: CanReadFile を実行します。
+        /// </summary>
 
         public bool CanReadFile(IToolPermission permission, string filePath)
         {
             return true;
         }
+        /// <summary>
+        /// EN: Executes CanWriteFile.
+        /// EN: Documentation for public API. JA: CanWriteFile を実行します。
+        /// </summary>
 
         public bool CanWriteFile(IToolPermission permission, string filePath)
         {
@@ -235,17 +267,25 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public bool CanAccessNetwork(IToolPermission permission, string host)
         {
             return true;
         }
+        /// <summary>
+        /// EN: Executes CanAccessEnvironment.
+        /// EN: Documentation for public API. JA: CanAccessEnvironment を実行します。
+        /// </summary>
 
         public bool CanAccessEnvironment(IToolPermission permission, string variableName)
         {
             return true;
         }
+        /// <summary>
+        /// EN: Executes CanExecuteSystemCommand.
+        /// EN: Documentation for public API. JA: CanExecuteSystemCommand を実行します。
+        /// </summary>
 
         public bool CanExecuteSystemCommand(IToolPermission permission, string commandName)
         {
@@ -253,12 +293,16 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public bool IsPermissionValid(IToolPermission permission)
         {
             return true;
         }
+        /// <summary>
+        /// EN: Executes ValidateConstraints.
+        /// EN: Documentation for public API. JA: ValidateConstraints を実行します。
+        /// </summary>
 
         public bool ValidateConstraints(IToolPermission permission, IReadOnlyDictionary<string, string> context)
         {
@@ -269,7 +313,7 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     private sealed class SearchOnlyRagProvider : IRagSearchProvider
     {
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<IReadOnlyList<MaterialContextDto>> SearchAsync(
             string query,
@@ -284,18 +328,34 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     private sealed class FullRagProvider : IRagProvider
     {
         /// <summary>
-        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// EN: Gets a test helper value. JA: テスト用の値を取得します。
         /// </summary>
         public string ProviderId => "full-rag";
+        /// <summary>
+        /// EN: Gets Name.
+        /// EN: Documentation for public API. JA: Name を取得します。
+        /// </summary>
 
         public string Name => "Full RAG";
+        /// <summary>
+        /// EN: Gets Version.
+        /// EN: Documentation for public API. JA: Version を取得します。
+        /// </summary>
 
         public string Version => "0.0.2";
+        /// <summary>
+        /// EN: Executes GetCapabilities.
+        /// EN: Documentation for public API. JA: GetCapabilities を実行します。
+        /// </summary>
 
         public IProviderCapabilities GetCapabilities()
         {
             return new EmptyProviderCapabilities();
         }
+        /// <summary>
+        /// EN: Executes IsAvailableAsync.
+        /// EN: Documentation for public API. JA: IsAvailableAsync を実行します。
+        /// </summary>
 
         public Task<bool> IsAvailableAsync()
         {
@@ -303,17 +363,25 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task InitializeAsync()
         {
             return Task.CompletedTask;
         }
+        /// <summary>
+        /// EN: Executes ShutdownAsync.
+        /// EN: Documentation for public API. JA: ShutdownAsync を実行します。
+        /// </summary>
 
         public Task ShutdownAsync()
         {
             return Task.CompletedTask;
         }
+        /// <summary>
+        /// EN: Executes GetHealthAsync.
+        /// EN: Documentation for public API. JA: GetHealthAsync を実行します。
+        /// </summary>
 
         public Task<ProviderHealthStatus> GetHealthAsync()
         {
@@ -321,7 +389,7 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<IReadOnlyList<MaterialContextDto>> SearchAsync(
             string query,
@@ -331,6 +399,10 @@ public sealed class ProviderAndSecurityCapabilityContractTests
             IReadOnlyList<MaterialContextDto> results = [];
             return Task.FromResult(results);
         }
+        /// <summary>
+        /// EN: Gets IndexAsync.
+        /// EN: Documentation for public API. JA: IndexAsync を取得します。
+        /// </summary>
 
         public Task IndexAsync(
             string documentId,
@@ -342,12 +414,16 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task DeleteAsync(string documentId, CancellationToken cancellationToken = default)
         {
             return Task.CompletedTask;
         }
+        /// <summary>
+        /// EN: Executes ClearAsync.
+        /// EN: Documentation for public API. JA: ClearAsync を実行します。
+        /// </summary>
 
         public Task ClearAsync(CancellationToken cancellationToken = default)
         {
@@ -358,7 +434,7 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     private sealed class TextOnlyModelProvider : ITextGenerationProvider
     {
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<string> GenerateAsync(IReadOnlyList<IModelMessage> messages, CancellationToken cancellationToken = default)
         {
@@ -368,13 +444,17 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     private sealed class FullModelProvider : FullProviderBase, IModelProvider
     {
+        /// <summary>
+        /// EN: Executes GenerateAsync.
+        /// EN: Documentation for public API. JA: GenerateAsync を実行します。
+        /// </summary>
         public Task<string> GenerateAsync(IReadOnlyList<IModelMessage> messages, CancellationToken cancellationToken = default)
         {
             return Task.FromResult(string.Empty);
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task StreamGenerateAsync(
             IReadOnlyList<IModelMessage> messages,
@@ -383,6 +463,10 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         {
             return Task.CompletedTask;
         }
+        /// <summary>
+        /// EN: Executes AnswerAsync.
+        /// EN: Documentation for public API. JA: AnswerAsync を実行します。
+        /// </summary>
 
         public Task<string> AnswerAsync(string question, string? context = null, CancellationToken cancellationToken = default)
         {
@@ -393,7 +477,7 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     private sealed class SingleEmbeddingProvider : ITextEmbeddingProvider
     {
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<float[]> EmbedAsync(string text, CancellationToken cancellationToken = default)
         {
@@ -403,13 +487,17 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     private sealed class FullEmbeddingProvider : FullProviderBase, IEmbeddingProvider
     {
+        /// <summary>
+        /// EN: Executes EmbedAsync.
+        /// EN: Documentation for public API. JA: EmbedAsync を実行します。
+        /// </summary>
         public Task<float[]> EmbedAsync(string text, CancellationToken cancellationToken = default)
         {
             return Task.FromResult(Array.Empty<float>());
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<IReadOnlyList<float[]>> EmbedBatchAsync(
             IReadOnlyList<string> texts,
@@ -418,6 +506,10 @@ public sealed class ProviderAndSecurityCapabilityContractTests
             IReadOnlyList<float[]> results = [];
             return Task.FromResult(results);
         }
+        /// <summary>
+        /// EN: Executes GetDimension.
+        /// EN: Documentation for public API. JA: GetDimension を実行します。
+        /// </summary>
 
         public int GetDimension()
         {
@@ -428,17 +520,37 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     private sealed class EmptyProviderCapabilities : IProviderCapabilities
     {
         /// <summary>
-        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// EN: Gets a test helper value. JA: テスト用の値を取得します。
         /// </summary>
         public IReadOnlyList<string> SupportedOperations => [];
+        /// <summary>
+        /// EN: Gets SupportedDataTypes.
+        /// EN: Documentation for public API. JA: SupportedDataTypes を取得します。
+        /// </summary>
 
         public IReadOnlyList<string> SupportedDataTypes => [];
+        /// <summary>
+        /// EN: Gets MaxConcurrentConnections.
+        /// EN: Documentation for public API. JA: MaxConcurrentConnections を取得します。
+        /// </summary>
 
         public int MaxConcurrentConnections => 1;
+        /// <summary>
+        /// EN: Gets RateLimit.
+        /// EN: Documentation for public API. JA: RateLimit を取得します。
+        /// </summary>
 
         public RateLimitInfo? RateLimit => null;
+        /// <summary>
+        /// EN: Executes Vector.
+        /// EN: Documentation for public API. JA: Vector を実行します。
+        /// </summary>
 
         public ModelCapacityVector Vector => new();
+        /// <summary>
+        /// EN: Executes GetDynamicCapacities.
+        /// EN: Documentation for public API. JA: GetDynamicCapacities を実行します。
+        /// </summary>
 
         public IDictionary<string, float>? GetDynamicCapacities(IExecutionConstraints constraints)
         {
@@ -446,17 +558,25 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public ICapabilityProfile? GetCapabilityProfile()
         {
             return null;
         }
+        /// <summary>
+        /// EN: Executes SupportsOperation.
+        /// EN: Documentation for public API. JA: SupportsOperation を実行します。
+        /// </summary>
 
         public bool SupportsOperation(string operation)
         {
             return false;
         }
+        /// <summary>
+        /// EN: Executes SupportsDataType.
+        /// EN: Documentation for public API. JA: SupportsDataType を実行します。
+        /// </summary>
 
         public bool SupportsDataType(string dataType)
         {
@@ -464,34 +584,66 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public bool SupportsQuantization(string quantizationLevel)
         {
             return false;
         }
+        /// <summary>
+        /// EN: Gets SupportsQueryAugmentation.
+        /// EN: Documentation for public API. JA: SupportsQueryAugmentation を取得します。
+        /// </summary>
 
         public bool SupportsQueryAugmentation => false;
+        /// <summary>
+        /// EN: Gets SupportsQueryDecomposition.
+        /// EN: Documentation for public API. JA: SupportsQueryDecomposition を取得します。
+        /// </summary>
 
         public bool SupportsQueryDecomposition => false;
+        /// <summary>
+        /// EN: Gets SupportsQueryRouting.
+        /// EN: Documentation for public API. JA: SupportsQueryRouting を取得します。
+        /// </summary>
 
         public bool SupportsQueryRouting => false;
+        /// <summary>
+        /// EN: Gets MaxQueryParts.
+        /// EN: Documentation for public API. JA: MaxQueryParts を取得します。
+        /// </summary>
 
         public int MaxQueryParts => 0;
 
         /// <summary>
-        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// EN: Gets a test helper value. JA: テスト用の値を取得します。
         /// </summary>
         public IReadOnlyList<string> SupportedQueryProcessingOperations => [];
+        /// <summary>
+        /// EN: Executes SupportsQueryProcessingOperation.
+        /// EN: Documentation for public API. JA: SupportsQueryProcessingOperation を実行します。
+        /// </summary>
 
         public bool SupportsQueryProcessingOperation(string operation)
         {
             return false;
         }
+        /// <summary>
+        /// EN: Gets SupportsEmbedding.
+        /// EN: Documentation for public API. JA: SupportsEmbedding を取得します。
+        /// </summary>
 
         public bool SupportsEmbedding => false;
+        /// <summary>
+        /// EN: Gets EmbeddingDimensions.
+        /// EN: Documentation for public API. JA: EmbeddingDimensions を取得します。
+        /// </summary>
 
         public int? EmbeddingDimensions => null;
+        /// <summary>
+        /// EN: Gets SupportedEmbeddingModels.
+        /// EN: Documentation for public API. JA: SupportedEmbeddingModels を取得します。
+        /// </summary>
 
         public IReadOnlyList<string> SupportedEmbeddingModels => [];
     }
@@ -499,16 +651,28 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     private sealed class StaticOperationCapabilities : IProviderOperationCapabilities
     {
         /// <summary>
-        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// EN: Gets a test helper value. JA: テスト用の値を取得します。
         /// </summary>
         public IReadOnlyList<string> SupportedOperations => [];
+        /// <summary>
+        /// EN: Gets SupportedDataTypes.
+        /// EN: Documentation for public API. JA: SupportedDataTypes を取得します。
+        /// </summary>
 
         public IReadOnlyList<string> SupportedDataTypes => [];
+        /// <summary>
+        /// EN: Executes SupportsOperation.
+        /// EN: Documentation for public API. JA: SupportsOperation を実行します。
+        /// </summary>
 
         public bool SupportsOperation(string operation)
         {
             return false;
         }
+        /// <summary>
+        /// EN: Executes SupportsDataType.
+        /// EN: Documentation for public API. JA: SupportsDataType を実行します。
+        /// </summary>
 
         public bool SupportsDataType(string dataType)
         {
@@ -519,7 +683,7 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     private sealed class CacheReadOnlyRouter : IMaterialCacheReader
     {
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<MaterialContextDto?> GetFromCacheAsync(string cacheKey)
         {
@@ -529,24 +693,36 @@ public sealed class ProviderAndSecurityCapabilityContractTests
 
     private sealed class FullProviderRouter : IProviderRouter
     {
+        /// <summary>
+        /// EN: Executes RetrieveAsync.
+        /// EN: Documentation for public API. JA: RetrieveAsync を実行します。
+        /// </summary>
         public Task<MaterialContextDto> RetrieveAsync(string source, string query)
         {
             return Task.FromResult<MaterialContextDto>(null!);
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<IReadOnlyList<MaterialContextDto>> RetrieveMultipleAsync(IReadOnlyList<string> sources, string query)
         {
             IReadOnlyList<MaterialContextDto> results = [];
             return Task.FromResult(results);
         }
+        /// <summary>
+        /// EN: Executes GetFromCacheAsync.
+        /// EN: Documentation for public API. JA: GetFromCacheAsync を実行します。
+        /// </summary>
 
         public Task<MaterialContextDto?> GetFromCacheAsync(string cacheKey)
         {
             return Task.FromResult<MaterialContextDto?>(null);
         }
+        /// <summary>
+        /// EN: Executes CacheMaterialAsync.
+        /// EN: Documentation for public API. JA: CacheMaterialAsync を実行します。
+        /// </summary>
 
         public Task CacheMaterialAsync(string cacheKey, MaterialContextDto data)
         {
@@ -554,16 +730,24 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public void RegisterProvider(string name, IProvider provider)
         {
         }
+        /// <summary>
+        /// EN: Executes UnregisterProvider.
+        /// EN: Documentation for public API. JA: UnregisterProvider を実行します。
+        /// </summary>
 
         public bool UnregisterProvider(string name)
         {
             return true;
         }
+        /// <summary>
+        /// EN: Executes GetRegisteredProviders.
+        /// EN: Documentation for public API. JA: GetRegisteredProviders を実行します。
+        /// </summary>
 
         public IReadOnlyList<string> GetRegisteredProviders()
         {
@@ -574,17 +758,25 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     private sealed class SubscriptionOnlyEventRegistry : IEventSubscriptionRegistry
     {
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public string Subscribe<T>(string eventName, Func<T, Task> handler)
         {
             return "subscription";
         }
+        /// <summary>
+        /// EN: Executes Unsubscribe.
+        /// EN: Documentation for public API. JA: Unsubscribe を実行します。
+        /// </summary>
 
         public bool Unsubscribe(string subscriptionId)
         {
             return true;
         }
+        /// <summary>
+        /// EN: Executes GetSubscriberCount.
+        /// EN: Documentation for public API. JA: GetSubscriberCount を実行します。
+        /// </summary>
 
         public int GetSubscriberCount(string eventName)
         {
@@ -595,17 +787,25 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     private sealed class FullEventBus : FullProviderBase, IEventBus
     {
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task PublishAsync(string eventName, object eventData, CancellationToken cancellationToken = default)
         {
             return Task.CompletedTask;
         }
+        /// <summary>
+        /// EN: Executes BroadcastAsync.
+        /// EN: Documentation for public API. JA: BroadcastAsync を実行します。
+        /// </summary>
 
         public Task BroadcastAsync(string eventName, object eventData, CancellationToken cancellationToken = default)
         {
             return Task.CompletedTask;
         }
+        /// <summary>
+        /// EN: Executes Subscribe&lt;T&gt;.
+        /// EN: Documentation for public API. JA: Subscribe&lt;T&gt; を実行します。
+        /// </summary>
 
         public string Subscribe<T>(string eventName, Func<T, Task> handler)
         {
@@ -613,12 +813,16 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public bool Unsubscribe(string subscriptionId)
         {
             return true;
         }
+        /// <summary>
+        /// EN: Executes GetSubscriberCount.
+        /// EN: Documentation for public API. JA: GetSubscriberCount を実行します。
+        /// </summary>
 
         public int GetSubscriberCount(string eventName)
         {
@@ -629,18 +833,34 @@ public sealed class ProviderAndSecurityCapabilityContractTests
     private abstract class FullProviderBase : IProvider
     {
         /// <summary>
-        /// Gets a test helper value. JA: テスト用の値を取得します。
+        /// EN: Gets a test helper value. JA: テスト用の値を取得します。
         /// </summary>
         public string ProviderId => "provider";
+        /// <summary>
+        /// EN: Gets Name.
+        /// EN: Documentation for public API. JA: Name を取得します。
+        /// </summary>
 
         public string Name => "Provider";
+        /// <summary>
+        /// EN: Gets Version.
+        /// EN: Documentation for public API. JA: Version を取得します。
+        /// </summary>
 
         public string Version => "0.0.2";
+        /// <summary>
+        /// EN: Executes GetCapabilities.
+        /// EN: Documentation for public API. JA: GetCapabilities を実行します。
+        /// </summary>
 
         public IProviderCapabilities GetCapabilities()
         {
             return new EmptyProviderCapabilities();
         }
+        /// <summary>
+        /// EN: Executes IsAvailableAsync.
+        /// EN: Documentation for public API. JA: IsAvailableAsync を実行します。
+        /// </summary>
 
         public Task<bool> IsAvailableAsync()
         {
@@ -648,17 +868,25 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task InitializeAsync()
         {
             return Task.CompletedTask;
         }
+        /// <summary>
+        /// EN: Executes ShutdownAsync.
+        /// EN: Documentation for public API. JA: ShutdownAsync を実行します。
+        /// </summary>
 
         public Task ShutdownAsync()
         {
             return Task.CompletedTask;
         }
+        /// <summary>
+        /// EN: Executes GetHealthAsync.
+        /// EN: Documentation for public API. JA: GetHealthAsync を実行します。
+        /// </summary>
 
         public Task<ProviderHealthStatus> GetHealthAsync()
         {

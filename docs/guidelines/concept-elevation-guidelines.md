@@ -59,6 +59,30 @@ Rule 6: Every philosophical term must be registered in the Canonical Language Di
 
 Rule 7: Naming rules must be enforced by architecture tests.
 
+## Triadic Form Model
+
+The current AIKernel concept vocabulary is organized around three forms:
+
+| Form | Concepts | Responsibility |
+| --- | --- | --- |
+| Sensory Form | `Aisthesis` / `Phantasia` | raw sensory input and representation / world model |
+| Cognitive-Governance Form | `Nous` / `Telos` / `Ethos` / `Logos` / `Pathos` / `Kairos` | cognition, intent, governance, and execution timing |
+| Actuator / Action Form | `Kinesis` / `Praxis` / `Kratos` / `Energeia` / `Chronos` | motion, interaction, control authority, realized effects, and replay history |
+
+三形体モデルでは、感覚と表象、認知と統治、行動と履歴を別の意味領域として扱う。
+この分類は runtime metadata や UI label でも ASCII-safe な concept name として使う。
+
+Sensor OS mapping follows the same model:
+
+| Sensor | Concept |
+| --- | --- |
+| `visual`, `audio`, `health` | `Aisthesis` |
+| `motor` | `Kinesis` |
+| `compass`, `spatial` | `Phantasia` |
+
+`Hodos`, `Zoe`, and `Topos` were intermediate sensor labels. New code and docs
+should use the triadic mapping above unless preserving legacy metadata.
+
 ## Allowed Layers
 
 - Governance

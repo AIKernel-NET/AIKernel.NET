@@ -7,8 +7,8 @@ namespace AIKernel.Contracts;
 /// 目的、制約、抽象構造を含む不変な入力フォーマットです。
 /// 
 /// 参照: 2.CONTEXT_ISOLATION_SPEC.jp.md
-/// UC-02（Structure フェーズ実行）, UC-04（生成と出力整形）
-/// JA: IOrchestrationContract の公開契約を定義します。
+/// EN: UC-02（Structure フェーズ実行）, UC-04（生成と出力整形）
+/// EN: Documentation for public API. JA: IOrchestrationContract の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IOrchestrationContract']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Contracts.IOrchestrationContract']" />
@@ -16,38 +16,38 @@ public interface IOrchestrationContract
 {
     /// <summary>
     /// 推論に必要なコンテキストを取得します。
-    /// 例・文体・RAG は含まれていません。
-    /// JA: GetContext 操作を実行します。
+    /// EN: 例・文体・RAG は含まれていません。
+    /// EN: Documentation for public API. JA: GetContext 操作を実行します。
     /// </summary>
-    /// <returns>Orchestration コンテキスト JA: 結果を返します。</returns>
+    /// <returns>EN: Documentation for public API. JA: Orchestration コンテキスト 結果を返します。</returns>
     OrchestrationContextDto GetContext();
 
     /// <summary>
-    /// 推論のための目的を取得します。
-    /// JA: GetPurpose 操作を実行します。
+    /// EN: 推論のための目的を取得します。
+    /// EN: Documentation for public API. JA: GetPurpose 操作を実行します。
     /// </summary>
-    /// <returns>目的 JA: 結果を返します。</returns>
+    /// <returns>EN: Documentation for public API. JA: 目的 結果を返します。</returns>
     string GetPurpose();
 
     /// <summary>
-    /// 推論に課される制約条件を取得します。
-    /// JA: GetConstraints 操作を実行します。
+    /// EN: 推論に課される制約条件を取得します。
+    /// EN: Documentation for public API. JA: GetConstraints 操作を実行します。
     /// </summary>
-    /// <returns>制約条件一覧 JA: 結果を返します。</returns>
+    /// <returns>EN: Documentation for public API. JA: 制約条件一覧 結果を返します。</returns>
     IReadOnlyList<string> GetConstraints();
 
     /// <summary>
-    /// 推論の抽象構造を取得します。
-    /// JA: GetStructure 操作を実行します。
+    /// EN: 推論の抽象構造を取得します。
+    /// EN: Documentation for public API. JA: GetStructure 操作を実行します。
     /// </summary>
-    /// <returns>抽象構造 JA: 結果を返します。</returns>
+    /// <returns>EN: Documentation for public API. JA: 抽象構造 結果を返します。</returns>
     string GetStructure();
 
     /// <summary>
-    /// 推論パターンを取得します。
-    /// JA: GetReasoningPattern 操作を実行します。
+    /// EN: 推論パターンを取得します。
+    /// EN: Documentation for public API. JA: GetReasoningPattern 操作を実行します。
     /// </summary>
-    /// <returns>推論パターン。未設定の場合は null。 JA: 結果を返します。</returns>
+    /// <returns>EN: Documentation for public API. JA: 推論パターン。未設定の場合は null。 結果を返します。</returns>
     string? GetReasoningPattern();
 }
 
