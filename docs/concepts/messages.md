@@ -1,6 +1,6 @@
 ---
 title: "Messages"
-lang: ja
+lang: en
 description: "request、response、context、carrier、DTO の流れと source-backed Reference への導線を説明します。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

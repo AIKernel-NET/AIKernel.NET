@@ -1,6 +1,6 @@
 ---
 title: "AIKernel.NET 0.1.2 Documentation"
-lang: ja
+lang: en
 description: "AIKernel.NET 0.1.2 の公式ドキュメント入口です。Overview、Architecture、Concepts、Runtime、Providers、Tools、Wasm、Doom、Reference へ進めます。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs
@@ -54,7 +54,7 @@ Start with Overview if you are new, Architecture if you need module boundaries, 
 | `AIKernel.Providers` | Official extension provider set. Provider-specific behavior is kept outside Core and is exposed through standard, chat, compute, pipeline, local LLM, and Microsoft AI packages. | `0.1.2` | 12 | 1 | 223 | 13 | `AIKernel.Providers/Directory.Build.props` |
 | `AIKernel.Tools` | Developer and operations tools: CLI, inspectors, instrumentation, ROM export, replay helpers, and VFS/kernel-clock inspection. | `0.1.2` | 6 | 1 | 40 | 1 | `AIKernel.Tools/Directory.Build.props` |
 | `AIKernel.Wasm` | Browser and WebAssembly runtime surface for process, memory, file system, WebGPU, audio, display, HUD, input, perception, and spatial packages. | `0.1.2` | 9 | 1 | 119 | 2 | `AIKernel.Wasm/Directory.Build.props` |
-| `AIKernel.Doom` | Official source demo that models DOOM as a WASM process supervised by AIKernel-style provider, operator, consent, and perception boundaries. | `0.1.1.1` | 7 | 0 | 37 | 1 | `AIKernel.Doom/Directory.Build.props` |
+| `AIKernel.Doom` | Official source demo that models DOOM as a WASM process supervised by AIKernel-style provider, operator, consent, and perception boundaries. | `0.1.1.1` | 7 | 0 | 45 | 1 | `AIKernel.Doom/Directory.Build.props` |
 | `AIKernel.Cuda13.0` | External Capability package for Windows win-x64, LibTorch 2.12.0, and CUDA 13.0. CUDA runtime concerns stay outside Core. | `0.1.2` | 1 | 1 | 7 | 1 | `AIKernel.Cuda13.0/src/AIKernel.Cuda13.0.Libtorch2.12.win-x64/AIKernel.Cuda13.0.Libtorch2.12.win-x64.csproj` |
 
 ### Minimal install shape

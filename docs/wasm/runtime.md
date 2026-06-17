@@ -1,6 +1,6 @@
 ---
 title: "Wasm Runtime Model"
-lang: ja
+lang: en
 description: "process、memory、file system、WebGPU、audio、display、input の runtime model を説明します。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

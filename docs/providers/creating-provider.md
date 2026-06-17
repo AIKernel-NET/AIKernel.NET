@@ -1,6 +1,6 @@
 ---
 title: "Creating Providers"
-lang: ja
+lang: en
 description: "新しい Provider を追加する際の source-root、package metadata、tests、Reference 更新手順を説明します。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

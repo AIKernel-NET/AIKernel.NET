@@ -1,6 +1,6 @@
 ---
 title: "Doom Demo Overview"
-lang: ja
+lang: en
 description: "DOOM WASM process、consent gate、browser runtime、provider boundary を説明します。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

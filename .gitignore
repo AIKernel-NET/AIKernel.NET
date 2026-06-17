@@ -58,3 +58,4 @@ nunit-*.xml
 /.vs
 /src/.vs
 /publish
+/docs/todo

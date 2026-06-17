@@ -1,6 +1,6 @@
 ---
 title: "Extensions"
-lang: ja
+lang: en
 description: "Provider、Tool、Wasm、CUDA、Doom demo が Core の外側で拡張される理由を説明します。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

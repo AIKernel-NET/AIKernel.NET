@@ -1,6 +1,6 @@
 ---
 title: "Execution Model"
-lang: ja
+lang: en
 description: "Application から contract、Core、Provider、Control、Tool へ進む execution model を説明します。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

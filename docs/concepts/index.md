@@ -1,6 +1,6 @@
 ---
 title: "Core Concepts"
-lang: ja
+lang: en
 description: "Kernel、Provider、Tool、Runtime、Message、Extension という AIKernel.NET の主要概念をまとめます。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

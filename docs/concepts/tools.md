@@ -1,6 +1,6 @@
 ---
 title: "Tools"
-lang: ja
+lang: en
 description: "CLI、instrumentation、inspectors、ROM storage、replay helper など Tool family の役割を説明します。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

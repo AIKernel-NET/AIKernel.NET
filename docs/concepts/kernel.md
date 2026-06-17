@@ -1,6 +1,6 @@
 ---
 title: "Kernel"
-lang: ja
+lang: en
 description: "AIKernel.Core の Kernel facade、routing、fail-closed runtime boundary を説明します。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

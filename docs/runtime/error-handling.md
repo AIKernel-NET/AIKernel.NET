@@ -1,6 +1,6 @@
 ---
 title: "Error Handling"
-lang: ja
+lang: en
 description: "fail-closed、Result/Option style、validation、governance trace の読み方を説明します。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

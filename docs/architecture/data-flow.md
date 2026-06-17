@@ -1,6 +1,6 @@
 ---
 title: "Data Flow"
-lang: ja
+lang: en
 description: "AIKernel.NET の contract、request/response、provider routing、control evidence、tool inspection の流れを説明します。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

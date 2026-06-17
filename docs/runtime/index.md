@@ -1,6 +1,6 @@
 ---
 title: "Runtime Model"
-lang: ja
+lang: en
 description: "AIKernel.NET 0.1.2 の execution model、lifecycle、configuration、error handling をまとめます。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

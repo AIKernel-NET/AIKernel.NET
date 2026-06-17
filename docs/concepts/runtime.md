@@ -1,6 +1,6 @@
 ---
 title: "Runtime"
-lang: ja
+lang: en
 description: "Runtime model、lifecycle、configuration、error-handling を横断して説明します。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs
