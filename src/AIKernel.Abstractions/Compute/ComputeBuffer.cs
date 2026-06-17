@@ -3,7 +3,7 @@ namespace AIKernel.Abstractions.Compute;
 /// <summary>
 /// [EN] Compute buffer abstraction shared by OS compute providers.
 /// [JA] OS compute Provider で共有する compute buffer 抽象です。
-/// JA: ComputeBuffer の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ComputeBuffer の公開契約を定義します。
 /// </summary>
 public sealed class ComputeBuffer : IDisposable
 {
@@ -11,8 +11,8 @@ public sealed class ComputeBuffer : IDisposable
     private bool _disposed;
 
     /// <summary>[EN] Initializes a compute buffer. [JA] compute buffer を初期化します。 JA: ComputeBuffer 操作を実行します。</summary>
-    /// <param name="size">The buffer size in bytes. JA: byte 単位の buffer size です。</param>
-    /// <param name="nativeBuffer">The optional native buffer handle. JA: 任意の native buffer handle です。</param>
+    /// <param name="size">EN: The buffer size in bytes. JA: byte 単位の buffer size です。</param>
+    /// <param name="nativeBuffer">EN: The optional native buffer handle. JA: 任意の native buffer handle です。</param>
     public ComputeBuffer(int size, object? nativeBuffer = null)
     {
         if (size < 0)
@@ -35,7 +35,7 @@ public sealed class ComputeBuffer : IDisposable
     public bool IsDisposed => _disposed;
 
     /// <summary>[EN] Writes data into this buffer. [JA] この buffer へ data を書き込みます。 JA: Write 操作を実行します。</summary>
-    /// <param name="data">The data to write. JA: 書き込む data です。</param>
+    /// <param name="data">EN: The data to write. JA: 書き込む data です。</param>
     public void Write(ReadOnlyMemory<byte> data)
     {
         ThrowIfDisposed();
@@ -48,7 +48,7 @@ public sealed class ComputeBuffer : IDisposable
     }
 
     /// <summary>[EN] Reads data from this buffer. [JA] この buffer から data を読み取ります。 JA: Read 操作を実行します。</summary>
-    /// <param name="destination">The destination memory. JA: 読み取り先 memory です。</param>
+    /// <param name="destination">EN: The destination memory. JA: 読み取り先 memory です。</param>
     public void Read(Memory<byte> destination)
     {
         ThrowIfDisposed();
@@ -61,7 +61,7 @@ public sealed class ComputeBuffer : IDisposable
     }
 
     /// <summary>[EN] Returns mutable storage memory for fallback providers. [JA] fallback Provider 向けの mutable storage memory を返します。 JA: AsMemory 操作を実行します。</summary>
-    /// <returns>The mutable storage memory. JA: mutable storage memory を返します。</returns>
+    /// <returns>EN: The mutable storage memory. JA: mutable storage memory を返します。</returns>
     public Memory<byte> AsMemory()
     {
         ThrowIfDisposed();

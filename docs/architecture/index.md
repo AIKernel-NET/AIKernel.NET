@@ -1,352 +1,81 @@
 ---
-updated: 2026-06-14
-published: 2026-05-16
-version: "0.1.1.1"
-edition: "Draft"
-status: "Refactor"
-issuer: ai-kernel@aikernel.net
-maintainer: "Takuya (AIKernel Project Maintainer)"
+title: "Architecture"
+lang: ja
+description: "AIKernel.NET 0.1.2 の module boundary、dependency direction、official site の構造を説明します。"
+tags: [AIKernel, AIKernel.NET, v0.1.2]
+category: docs
+source: "generated-from-repository-inventory"
+generated: true
+release: "0.1.2"
+updated: "2026-06-17"
 ---
 
-# AIKernel Architecture Index
-This document is the entry point to the set of documents that systematically present the architectural philosophy of AIKernel.NET.
+# Architecture
 
-AIKernel aims to be the **Operating System (OS) for AI applications**. Its core principles are **category separation, preprocessing-first design, attention pollution prevention, and separation of inference and expression**.
+## Summary
 
-This index functions as a guide to understand AIKernel's design principles, theoretical background, and structural comparisons.
+### EN
 
----
+Architecture explains how the repositories cooperate without collapsing contracts, runtime behavior, provider logic, and demos into one package.
 
-# 1. Core Architectural Principles
+### JA
 
-## [1.1 Principles of Category Separation](./1.CATEGORY_SEPARATION_PRINCIPLES.md)
+Architecture は contract、runtime behavior、provider logic、demo を単一 package に混ぜないための repository 関係を説明します。
 
-Information passed to an LLM must not be mixed into a single context. Mixing information destroys attention, halts inference, and triggers surface-mode behavior.
+## Why
 
-**Category examples:**
-- purpose
-- constraints
-- structure
-- history
-- rag_material
-- expression
-- metadata
+### EN
 
-> "Information passed to an LLM must not be mixed into a single context."
-> — Category Separation Principles
+Clear boundaries are essential because package release, Reference generation, and runtime composition are maintained separately.
 
----
+### JA
 
-## [1.2 Context Isolation Specification](./2.CONTEXT_ISOLATION_SPEC.md)
+package release、Reference generation、runtime composition は別々に保守されるため、境界を明確にすることが重要です。
 
-AIKernel separates information into three layers before passing it to an LLM:
+## Usage
 
-- **OrchestrationContext** (inference)
-- **ExpressionContext** (expression)
-- **MaterialContext** (material)
+### EN
 
-Examples, stylistic instructions, and RAG fragments must not be mixed into inference.
+Use the architecture pages before moving APIs between packages or adding new provider/runtime dependencies.
 
----
+### JA
 
-## [1.3 Theory of Attention Pollution](./3.ATTENTION_POLLUTION_THEORY.md)
+API の移動や provider/runtime dependency 追加の前に architecture page を確認します。
 
-An LLM's inference capability depends on the purity of attention. Examples, stylistic mimicry, RAG fragments, and history divert attention to surface structures and halt inference.
+## Examples
 
-> "When attention is drawn to surface structures, inference halts, and the system falls into surface-mode failure."
-> — Theory of Attention Pollution
+```mermaid
+flowchart TD
+    App["Application"] --> Contracts["AIKernel.NET contracts"]
+    Contracts --> Core["AIKernel.Core runtime"]
+    Core --> Providers["AIKernel.Providers"]
+    Core --> Tools["AIKernel.Tools"]
+    Core --> Wasm["AIKernel.Wasm"]
+    Core --> Control["AIKernel.Control"]
+    Cuda["AIKernel.Cuda13.0"] --> Core
+    Doom["AIKernel.Doom demo"] --> Wasm
+    Doom --> Providers
+```
 
----
+| Module | Role | Version evidence | NuGet packages | Python packages | Public types | Tests | Source evidence |
+|---|---|---:|---:|---:|---:|---:|---|
+| `AIKernel.NET` | Contract packages and canonical interface surface. The 0.1.2 line adds the cognition pipeline interface surface while keeping DTO, enum, contract, and abstraction ownership separated. | `0.1.2` | 4 | 0 | 1065 | 1 | `AIKernel.NET/Directory.Build.props` |
+| `AIKernel.Core` | Runtime and kernel implementation packages: hosting, VFS providers, kernel facade, fail-closed routing, and common runtime helpers. | `0.1.2` | 4 | 1 | 193 | 3 | `AIKernel.Core/Directory.Build.props` |
+| `AIKernel.Control` | Physical execution and governance layer. It contains Control Core, CPU, GPU, Emulator, and Diagnostics packages for CTG-style execution evidence. | `0.1.2` | 6 | 1 | 62 | 1 | `AIKernel.Control/Directory.Build.props` |
+| `AIKernel.Providers` | Official extension provider set. Provider-specific behavior is kept outside Core and is exposed through standard, chat, compute, pipeline, local LLM, and Microsoft AI packages. | `0.1.2` | 12 | 1 | 223 | 13 | `AIKernel.Providers/Directory.Build.props` |
+| `AIKernel.Tools` | Developer and operations tools: CLI, inspectors, instrumentation, ROM export, replay helpers, and VFS/kernel-clock inspection. | `0.1.2` | 6 | 1 | 40 | 1 | `AIKernel.Tools/Directory.Build.props` |
+| `AIKernel.Wasm` | Browser and WebAssembly runtime surface for process, memory, file system, WebGPU, audio, display, HUD, input, perception, and spatial packages. | `0.1.2` | 9 | 1 | 119 | 2 | `AIKernel.Wasm/Directory.Build.props` |
+| `AIKernel.Doom` | Official source demo that models DOOM as a WASM process supervised by AIKernel-style provider, operator, consent, and perception boundaries. | `0.1.1.1` | 7 | 0 | 37 | 1 | `AIKernel.Doom/Directory.Build.props` |
+| `AIKernel.Cuda13.0` | External Capability package for Windows win-x64, LibTorch 2.12.0, and CUDA 13.0. CUDA runtime concerns stay outside Core. | `0.1.2` | 1 | 1 | 7 | 1 | `AIKernel.Cuda13.0/src/AIKernel.Cuda13.0.Libtorch2.12.win-x64/AIKernel.Cuda13.0.Libtorch2.12.win-x64.csproj` |
 
-## [1.4 Risks of Surface-Mode Failure](./4.LLM_SURFACE_MODE_FAILURE.md)
+## Notes
 
-When exposed to examples, LLMs can enter a "non-inferential mode." This is one reason AIKernel isolates examples.
+- The graph is generated from repository roles and package metadata.
+- It intentionally shows `AIKernel.Doom` as a demo surface, not as a canonical contract owner.
+- Existing deeper architecture papers remain published under the legacy architecture/theory paths.
 
----
+## See Also
 
-## [1.5 Preprocessing vs Prompting](./5.PREPROCESSING_VS_PROMPTING.md)
-
-The essence is **structuring preprocessing**, not prompt design. What is included in attention and what is isolated determines inference accuracy.
-
----
-
-## [1.6 DI Composition and Pipeline Bootstrap](./7.DI_COMPOSITION_AND_PIPELINE_BOOTSTRAP.md)
-
-Defines how AIKernel composes model routing, provider binding, and pipeline execution through DI:
-- `IServiceRegistrar` / `IProviderRegistrar`
-- `IKernelModule` / `IKernelHost`
-- `IModelVectorRouter` / `IProviderRouter` / `IModelProvider`
-- `IPipelineOrchestrator` / `ITaskManager`
-
-It also specifies `IPromptVerifier` as a fail-closed startup gate.
-
----
-
-## [1.7 Execution Contract Architecture](./8.EXECUTION_CONTRACT_ARCHITECTURE.md)
-
-Defines phase boundaries for `Structure -> Generation -> Polish` and prevents phase leakage between reasoning and expression.
-
----
-
-## [1.8 PDP Guard Decision Plane](./9.PDP_GUARD_DECISION_PLANE.md)
-
-Defines governance responsibilities and enforces the operating rule:
-- LLM suggests
-- PDP decides
-
----
-
-## [1.9 Dynamic Capacity Routing](./10.DYNAMIC_CAPACITY_ROUTING.md)
-
-Defines capability-vector-driven routing with dynamic axes:
-- `ModelCapacityVector`
-- `IDynamicCapacityProvider`
-- `IVectorMatcher`
-- `IModelVectorRouter`
-
----
-
-## [1.10 Material Quarantine Trust Model](./11.MATERIAL_QUARANTINE_TRUST_MODEL.md)
-
-Defines how external material is quarantined and normalized before entering reasoning paths.
-
----
-
-## [1.11 Semantic Memory Management Spec](./12.SEMANTIC_MEMORY_MANAGEMENT_SPEC.md)
-
-Defines token-budget-aware semantic memory management:
-- layer-aware purge/swap priority
-- summarization with provenance retention
-- fail-closed conditions under context pressure
-
----
-
-## [1.12 Capability Definition Schema](./13.CAPABILITY_DEFINITION_SCHEMA.md)
-
-Defines capability dimensions and declaration schema for model/provider onboarding and routing integrity.
-
----
-
-## [1.13 Signed Prompt Governance Workflow](./14.SIGNED_PROMPT_GOVERNANCE_WORKFLOW.md)
-
-Defines sequence-level fail-closed verification from prompt artifact load to execution allow/deny decision.
-
----
-
-## [1.14 Replayable Execution Dump Format](./15.REPLAYABLE_EXECUTION_DUMP_FORMAT.md)
-
-Defines deterministic replay dump structure (seed, hashes, provider manifest, execution outcome chain).
-
----
-
-## [1.15 Semantic Context OS Vision](./16.SEMANTIC_CONTEXT_OS_VISION.md)
-
-AIKernel's final architecture target is the **Semantic Context OS**, governing reasoning, material, and expression as independent objects.
-
-This chapter defines the following core requirements:
-- System Integrity Requirements (`SIR-001` to `SIR-004`)
-- Kernel startup state machine (Inactive -> Initializing -> Governing -> Ready -> Executing)
-- Architecture logical audit (Replay lock / PDP reasoning isolation / ROM canonicalization)
-
-This document is the north star that constrains AIKernel as an OS that places AI under strict state-machine and immutable constraints.
-
----
-
-## [1.16 Phase 1 Query Processing](./17.QUERY_PROCESSING_PHASE1.md)
-
-Defines query augmentation, decomposition, semantic projection, and query routing as Phase 1 context-build responsibilities.
-
-This chapter keeps RAG outside Core retrieval implementation and aligns Query Processing with ROM, CacheDB, Material Quarantine, and Governance.
-
----
-
-## [1.17 DSL Pipeline and ROM Specification](./18.DSL_PIPELINE_AND_ROM_SPEC.md)
-
-Defines the standard JSON DSL pipeline IR, deterministic loop and suspend semantics, DSL ROM storage, `dsl://` capability invocation, HistoryROM storage under `history://`, and replay metadata for reusable AI-generated capabilities.
-
-v0.0.4 publishes the shared contract surface for this model through `AIKernel.Abstractions.Dsl`, `AIKernel.Abstractions.History`, `AIKernel.Abstractions.Time`, and the corresponding DTO namespaces.
-
----
-
-## [1.18 HATL Interface Contracts](./interfaces/hatl/index.md)
-
-v0.0.5 adds the first public contract surface for HATL ledger entries, public anchors, Digital Deeds, verification results, and external cryptographic operator integration.
-Cryptographic implementation remains outside AIKernel.NET and can be provided by AIKernel.RH-backed operators or other audited modules.
-
----
-
-## 1.19 DynamicSLM Model ABI Contracts
-
-v0.0.5 adds the first public contract surface for DynamicSLM capability-modular SLM artifacts and SeedSLM discipline surfaces.
-The interface index is available at [interfaces/dynamicslm/index.md](./interfaces/dynamicslm/index.md).
-
-The contracts cover Model ABI descriptors, capability subgraph resolution, lineage verification, payload materialization, scheduler placement, differential distillation planning, and background distillation offload while keeping runtime behavior in Core/Provider implementations. SeedSLM additions cover strict output discipline, fail-closed delegation, ReplayLog-compatible thought artifacts, and resident SeedSLM / paged CapabilitySLM memory placement metadata.
-
----
-
-## [1.20 Paper Implementation Status](./PAPER_IMPLEMENTATION_STATUS.md)
-
-Maps each DOI-backed paper to the current AIKernel.NET contract surface and identifies which runtime behavior belongs to Core, Provider, RH, Tools, or future HATL work.
-This includes Paper 12, Canonical Trajectory Governance, and its v0.1.1.1 contract mapping.
-
----
-
-## 1.21 Governance Admission Vocabulary
-
-v0.0.5 adds shared DTO/enum vocabulary for external Capability module manifests/invocation envelopes, pre-inference admissibility replay/profile/budget/result records, trajectory governance evidence records, and Semantic IR G/T/C/B slots.
-This gives Core semantic compilers a stable contract surface for admission evidence while keeping gate execution, policy evaluation, ResultStep composition, and ReplayLog hashing outside AIKernel.NET.
-Semantic Compilation DTOs also provide contract-only carriers for observable semantic states, Semantic IR elements, governed circuit descriptors, finite prototype spaces, semantic distance reports, deterministic synthesis descriptors, and semantic transitions.
-
----
-
-## [1.22 Memory Region / Mapper Contracts](./interfaces/memory/index.md)
-
-v0.1.0 moves the OS-independent `IMemoryRegion` / `IMemoryMapper`
-contract surface into AIKernel.NET. The shared DTO/enum vocabulary lives in
-`AIKernel.Dtos.Memory` and `AIKernel.Enums`, while Result-based adapters and
-Win32/POSIX implementations remain in AIKernel.Core / AIKernel.Kernel.
-
----
-
-## [1.23 Domain Contract Surface v0.1.1.1](./19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md)
-
-v0.1.1.1 adds semantic contract surfaces for adapters, runtime control,
-process control, replay, observability, diagnostics, operator strategy,
-profiles, telemetry, metrics, HUD signals, and overlay annotation.
-
-The surface is additive: existing v0.1.1 public signatures remain stable, new
-interfaces are opt-in, DTO additions are optional, and enum handling follows the
-fail-closed `Unknown = 0` policy.
-
----
-
-## [1.24 Canonical Trajectory Governance](./20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md)
-
-v0.1.1.1 adds the CTG contract vocabulary for triadic council evaluation,
-deterministic step gates, trajectory gates, ROM-backed governance requests, and
-replayable governance traces.
-
-This document maps the Zenodo-published CTG paper to developer architecture
-without embedding canon rule text or runtime implementation in AIKernel.NET.
-The Monolith CTG-ROM is documented as the base canon layer for personalized
-developer diff layers under runtime VFS merge.
-
----
-
-## [1.25 CTG Developer Theory](./21.CTG_DEVELOPER_THEORY-v0.1.1.1.md)
-
-Explains CTG theory in developer terms: three councils, finite vote values,
-discrete step and trajectory gates, rejection taxonomy, canon references, and
-deterministic replay boundaries.
-
-Use this document when reviewing whether CTG DTOs, enums, and runtime-package
-implementations preserve the paper invariants without inventing canon rules.
-
----
-
-# 2. Comparative Architecture
-
-## [2.1 AIKernel vs LangChain](./6.AIKERNEL_VS_LANGCHAIN.md)
-
-Issues with LangChain:
-- All information is mixed into a single context.
-- RAG is passed as-is.
-- Examples and history are mixed.
-- Attention is disrupted.
-
-Features of AIKernel:
-- Category separation
-- Separation of inference and expression layers
-- Isolation of examples
-- Structuring of RAG
-- Prevention of attention pollution
-
-> "LangChain is a structure that 'works by chance.' AIKernel is an architecture that 'works correctly by design.'"
-
----
-
-# 3. Architectural Philosophy
-
-## 3.1 Design Intent
-
-Design Intent belongs to the design layer. This architecture index keeps its navigation flow inside the architecture specification space and describes the relationship without introducing an upward or lateral jump.
-
-AIKernel's design philosophy:
-- Markdown-first principle (human readability)
-- Core = Abstractions + Contracts (JSON Schema)
-- Provider = Capability-based
-- LLM as suggestor, PDP as decision-maker
-- Pipeline = DAG
-- PromptRules = Signed Markdown
-- Deterministic Replay (reproducibility)
-
----
-
-# 4. How to Use This Architecture Section
-
-The `architecture/` directory is structured to:
-- Explain AIKernel's philosophy
-- Explain why category separation is necessary
-- Clarify structural differences from frameworks like LangChain
-- Provide prerequisite knowledge before reading implementation (Core / Kernel / Providers)
-
-Reading this index and the linked documents in order will help you understand **why AIKernel is the "OS for AI applications."**
-
----
-
-# 5. Recommended Reading Order
-
-Read the architecture documents in this order. Each item points downward into the architecture specification space.
-
-- [Category Separation Principles](./1.CATEGORY_SEPARATION_PRINCIPLES.md)
-- [Context Isolation Specification](./2.CONTEXT_ISOLATION_SPEC.md)
-- [Theory of Attention Pollution](./3.ATTENTION_POLLUTION_THEORY.md)
-- [Risks of Surface-Mode Failure](./4.LLM_SURFACE_MODE_FAILURE.md)
-- [Preprocessing vs Prompting](./5.PREPROCESSING_VS_PROMPTING.md)
-- [AIKernel vs LangChain](./6.AIKERNEL_VS_LANGCHAIN.md)
-- [DI Composition and Pipeline Bootstrap](./7.DI_COMPOSITION_AND_PIPELINE_BOOTSTRAP.md)
-- [Execution Contract Architecture](./8.EXECUTION_CONTRACT_ARCHITECTURE.md)
-- [PDP Guard Decision Plane](./9.PDP_GUARD_DECISION_PLANE.md)
-- [Dynamic Capacity Routing](./10.DYNAMIC_CAPACITY_ROUTING.md)
-- [Material Quarantine Trust Model](./11.MATERIAL_QUARANTINE_TRUST_MODEL.md)
-- [Semantic Memory Management Spec](./12.SEMANTIC_MEMORY_MANAGEMENT_SPEC.md)
-- [Capability Definition Schema](./13.CAPABILITY_DEFINITION_SCHEMA.md)
-- [Signed Prompt Governance Workflow](./14.SIGNED_PROMPT_GOVERNANCE_WORKFLOW.md)
-- [Replayable Execution Dump Format](./15.REPLAYABLE_EXECUTION_DUMP_FORMAT.md)
-- [Semantic Context OS Vision](./16.SEMANTIC_CONTEXT_OS_VISION.md)
-- [Phase 1 Query Processing](./17.QUERY_PROCESSING_PHASE1.md)
-- [DSL Pipeline and ROM Specification](./18.DSL_PIPELINE_AND_ROM_SPEC.md)
-- [Capabilities Interfaces](./interfaces/capabilities/index.md)
-- [HATL Interface Contracts](./interfaces/hatl/index.md)
-- [DynamicSLM Interface Contracts](./interfaces/dynamicslm/index.md)
-- [Governance Interfaces](./interfaces/governance/index.md)
-- [Memory Interfaces](./interfaces/memory/index.md)
-- [Domain Contract Surface v0.1.1.1](./19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md)
-- [Canonical Trajectory Governance](./20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md)
-- [CTG Developer Theory](./21.CTG_DEVELOPER_THEORY-v0.1.1.1.md)
-- [Paper Implementation Status](./PAPER_IMPLEMENTATION_STATUS.md)
-
----
-
-# 6. Conclusion
-
-AIKernel's architecture is not something that "works by chance."
-It is an **OS-level approach designed to work correctly by structure.**
-
-This index is the entry point to understanding AIKernel's overall design.
-
----
----
-
-# Changelog
-- v0.0.0 / v0.0.0.0: Initial draft
-- v0.0.1 (2026-05-06): Version upgrade aligned with documentation guidelines
-- v0.0.4 (2026-06-04): Updated architecture index for DSL / History ROM / Time contract publication
-- v0.0.5 (2026-06-05): Added DynamicSLM Model ABI, distillation offload, and SeedSLM discipline contract navigation
-- v0.0.5 (2026-06-05): Added paper implementation status navigation
-- v0.0.5 (2026-06-05): Added HATL external cryptographic operator contract navigation
-- v0.0.5 (2026-06-05): Added governance admission and Semantic IR vocabulary navigation
-- v0.0.5 (2026-06-05): Added Semantic Compilation DTO vocabulary navigation
-- v0.0.5 (2026-06-05): Added external Capability module contract navigation
-- v0.1.0 (2026-06-07): Added MemoryRegion / MemoryMapper contract extraction navigation
-- v0.1.1.1 (2026-06-14): Added domain contract surface, Canonical Trajectory Governance, CTG Developer Theory, and Monolith CTG-ROM layout navigation
+- [System Architecture](system-architecture.md)
+- [Module Map](module-map.md)
+- [Data Flow](data-flow.md)

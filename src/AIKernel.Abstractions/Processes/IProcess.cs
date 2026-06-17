@@ -3,7 +3,7 @@ namespace AIKernel.Abstractions.Processes;
 using AIKernel.Abstractions.Providers;
 
 /// <summary>[EN] Strongly typed AIKernel process identifier. [JA] 強く型付けされた AIKernel process identifier です。 JA: ProcessId 操作を実行します。</summary>
-/// <param name="Value">The process identifier value. JA: process identifier value です。</param>
+/// <param name="Value">EN: The process identifier value. JA: process identifier value です。</param>
 public readonly record struct ProcessId(Guid Value);
 
 /// <summary>[EN] AIKernel logical process state. [JA] AIKernel logical process state です。 JA: ProcessState の公開契約を定義します。</summary>
@@ -20,11 +20,11 @@ public enum ProcessState
 }
 
 /// <summary>[EN] Public AIKernel process snapshot. [JA] 公開 AIKernel process snapshot です。 JA: ProcessInfo の公開契約を定義します。</summary>
-/// <param name="Id">The process identifier. JA: process identifier です。</param>
-/// <param name="Name">The process name. JA: process name です。</param>
-/// <param name="State">The process state. JA: process state です。</param>
-/// <param name="StartedAtUtc">The UTC start timestamp. JA: UTC start timestamp です。</param>
-/// <param name="Metadata">The process metadata. JA: process metadata です。</param>
+/// <param name="Id">EN: The process identifier. JA: process identifier です。</param>
+/// <param name="Name">EN: The process name. JA: process name です。</param>
+/// <param name="State">EN: The process state. JA: process state です。</param>
+/// <param name="StartedAtUtc">EN: The UTC start timestamp. JA: UTC start timestamp です。</param>
+/// <param name="Metadata">EN: The process metadata. JA: process metadata です。</param>
 public sealed record ProcessInfo(
     ProcessId Id,
     string Name,

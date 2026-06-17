@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 /// <summary>
 /// [EN] Compute kernel descriptor shared by OS compute providers.
 /// [JA] OS compute Provider で共有する compute kernel descriptor です。
-/// JA: ComputeKernel の公開契約を定義します。
+/// [EN] Documents this public package API member. [JA] ComputeKernel の公開契約を定義します。
 /// </summary>
 public sealed class ComputeKernel
 {
@@ -14,11 +14,11 @@ public sealed class ComputeKernel
         RegexOptions.Compiled | RegexOptions.CultureInvariant);
 
     /// <summary>[EN] Initializes a compute kernel descriptor. [JA] compute kernel descriptor を初期化します。 JA: ComputeKernel 操作を実行します。</summary>
-    /// <param name="source">The kernel source code. JA: kernel source code です。</param>
-    /// <param name="dispatchX">The dispatch group count in X. JA: X 方向の dispatch group 数です。</param>
-    /// <param name="dispatchY">The dispatch group count in Y. JA: Y 方向の dispatch group 数です。</param>
-    /// <param name="dispatchZ">The dispatch group count in Z. JA: Z 方向の dispatch group 数です。</param>
-    /// <param name="nativePipeline">The optional native pipeline handle. JA: 任意の native pipeline handle です。</param>
+    /// <param name="source">EN: The kernel source code. JA: kernel source code です。</param>
+    /// <param name="dispatchX">EN: The dispatch group count in X. JA: X 方向の dispatch group 数です。</param>
+    /// <param name="dispatchY">EN: The dispatch group count in Y. JA: Y 方向の dispatch group 数です。</param>
+    /// <param name="dispatchZ">EN: The dispatch group count in Z. JA: Z 方向の dispatch group 数です。</param>
+    /// <param name="nativePipeline">EN: The optional native pipeline handle. JA: 任意の native pipeline handle です。</param>
     public ComputeKernel(
         string source,
         int dispatchX,
@@ -68,9 +68,9 @@ public sealed class ComputeKernel
     public object? NativePipeline { get; }
 
     /// <summary>[EN] Creates a standard WGSL vector-add kernel descriptor. [JA] 標準 WGSL vector-add kernel descriptor を作成します。 JA: CreateVectorAdd 操作を実行します。</summary>
-    /// <param name="elementCount">The vector element count. JA: vector element count です。</param>
-    /// <param name="workgroupSize">The workgroup size. JA: workgroup size です。</param>
-    /// <returns>The compute kernel descriptor. JA: compute kernel descriptor を返します。</returns>
+    /// <param name="elementCount">EN: The vector element count. JA: vector element count です。</param>
+    /// <param name="workgroupSize">EN: The workgroup size. JA: workgroup size です。</param>
+    /// <returns>EN: The compute kernel descriptor. JA: compute kernel descriptor を返します。</returns>
     public static ComputeKernel CreateVectorAdd(int elementCount, int workgroupSize = 64)
     {
         if (elementCount <= 0)

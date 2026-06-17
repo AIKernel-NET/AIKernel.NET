@@ -163,7 +163,7 @@ dotnet pack src\AIKernel.NET.slnx -c Release -p:UseLocalPackageVersion=true -p:L
 The local package version format is:
 
 ```text
-0.1.1-dev<build-number>
+0.1.1.1-dev<build-number>
 ```
 
 ---

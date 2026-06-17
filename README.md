@@ -1,7 +1,7 @@
 ---
-updated: 2026-06-14
-published: 2026-06-10
-version: "0.1.1.1"
+updated: 2026-06-16
+published: 2026-06-16
+version: "0.1.2"
 edition: "Release"
 status: "Release"
 issuer: ai-kernel@aikernel.net
@@ -50,22 +50,22 @@ then move to the runtime repository that matches what you want to run.
 Install the contract packages together:
 
 ```bash
-dotnet add package AIKernel.Abstractions --version 0.1.1
-dotnet add package AIKernel.Contracts --version 0.1.1
-dotnet add package AIKernel.Dtos --version 0.1.1
-dotnet add package AIKernel.Enums --version 0.1.1
+dotnet add package AIKernel.Abstractions --version 0.1.2
+dotnet add package AIKernel.Contracts --version 0.1.2
+dotnet add package AIKernel.Dtos --version 0.1.2
+dotnet add package AIKernel.Enums --version 0.1.2
 ```
 
 Do not mix AIKernel contract packages from different version families.
 
 ---
 
-## 0.1.1 Public Package Line
+## 0.1.2 public Package Line
 
 The 0.0.x design-implementation phase and the 0.1.0 prototype validation
-baseline are complete. The current public package line is 0.1.1.
+baseline are complete. The current public package line is 0.1.2.
 
-The 0.1.1 line publishes the contract packages together with executable Core,
+The 0.1.2 line publishes the contract packages together with executable Core,
 external Capability modules, WASM runtime packages, tools, and demo/control
 repositories:
 
@@ -84,12 +84,29 @@ repositories:
 
 Historical architecture documents may retain their original 0.0.x front matter
 and 0.1.0 prototype notes. User-facing package installation examples should use
-the current 0.1.1 packages.
+the current 0.1.2 packages.
 
 Release notes:
 
 - [English](RELEASE_NOTES.md)
 - [日本語](RELEASE_NOTES-ja.md)
+
+---
+
+## Concept Elevation
+
+AIKernel v0.2.x introduces a concept-layer naming system based on a canonical philosophical vocabulary.
+This does not change CTG-ROM or canonical governance contracts.
+
+See:
+
+- [Development Notes](docs/development/index.md)
+- [Repository Alignment v0.1.1.1](docs/development/repository-alignment-v0.1.1.1.md)
+- [Canonical Language Dictionary](docs/canonical-language/index.md)
+- [Concept Elevation Refactoring Design](docs/design/concept-elevation-refactoring-design.md)
+- [Concept Elevation Guidelines](docs/guidelines/concept-elevation-guidelines.md)
+- [Concept Elevation Migration Notes](docs/migration/concept-elevation-v0.1.1.1.md)
+- [Concept Elevation TODO](docs/todo/concept-elevation-refactoring-todo.md)
 
 ---
 
@@ -183,7 +200,7 @@ app.Run();
 ### Target Experience / Boot Log Example
 
 ```txt
-[KERNEL] Initializing AIKernel.NET v0.1.1...
+[KERNEL] Initializing AIKernel.NET v0.1.2...
 [KERNEL] Loading ISignatureTrustStore... [OK]
 [KERNEL] Mounting Vfs (Git: ./context)... [OK]
 [KERNEL] Verifying System Prompt Signature... [VALID]
@@ -272,24 +289,30 @@ The documentation is organized into the following categories:
 | Directory | Role |
 | --- | --- |
 | `docs/architecture` | Why: principles, invariants, governance |
+| `docs/canonical-language` | Vocabulary: ecosystem-wide concept-layer naming dictionary |
 | `docs/design` | How: design decisions and implementation strategy |
 | `docs/specs` | What: normative contracts and acceptance criteria |
 | `docs/guidelines` | Rules: repository and contribution policies |
+| `docs/migration` | Migration notes and compatibility plans |
 | `docs/operations` | Release, migration, and package-public operation guides |
 | `docs/papers` | DOI-backed AIKernel / AIOS paper series |
 | `docs/theory` | Work-in-progress research notes before paper/spec promotion |
+| `docs/todo` | Pre-coding and cross-repository task trackers |
 
 For the latest structure and cross-links, use the category indexes:
 
 - `docs/architecture/index.md` / `docs/architecture/index-jp.md`
+- `docs/canonical-language/index.md`
 - `docs/design/index.md` / `docs/design/index-jp.md`
 - `docs/specs/index.md` / `docs/specs/index-jp.md`
 - `docs/guidelines/index.md` / `docs/guidelines/index-jp.md`
+- `docs/migration/concept-elevation-v0.1.1.1.md`
 - `docs/operations/index.md` / `docs/operations/index-jp.md`
 - `docs/papers/README.md`
 - `docs/theory/README.md` / `docs/theory/README-jp.md`
+- `docs/todo/concept-elevation-refactoring-todo.md`
 
-For the v0.1.1.1 additive contract surface, start with:
+For the v0.1.2 canonical contract surface, start with:
 
 - `docs/architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md`
 - `docs/architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md`
@@ -302,8 +325,8 @@ For the v0.1.1.1 additive contract surface, start with:
 - `docs/operations/ENUM_HANDLING_POLICY-v0.1.1.1.md`
 - `docs/operations/XML_DOCUMENTATION_POLICY-v0.1.1.1.md`
 
-The `0.1.1.1` package line is .NET / NuGet-only. Do not build or publish PyPI
-packages for `0.1.1.1`; Python wrappers remain on the synchronized `0.1.1`
+The `0.1.2` package line publishes .NET / NuGet packages and synchronized PyPI
+wrappers for `0.1.2`; do not mix this line with earlier packages.
 package line.
 
 ---

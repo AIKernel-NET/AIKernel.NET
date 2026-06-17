@@ -7,14 +7,26 @@ namespace AIKernel.Abstractions.Tests;
 
 /// <summary>
 /// IMaterialQuarantine と IStructuredMaterial のテスト
-/// Defines the MaterialQuarantineTests contract. JA: MaterialQuarantineTests の公開契約を定義します。
+/// EN: Defines the MaterialQuarantineTests contract. JA: MaterialQuarantineTests の公開契約を定義します。
 /// </summary>
 public class MaterialQuarantineTests
 {
     private sealed class TestMaterialScanner : IMaterialScanner
     {
+        /// <summary>
+        /// EN: Gets ScanCallCount.
+        /// EN: Documentation for public API. JA: ScanCallCount を取得します。
+        /// </summary>
         public int ScanCallCount { get; private set; }
+        /// <summary>
+        /// EN: Gets EvaluateCallCount.
+        /// EN: Documentation for public API. JA: EvaluateCallCount を取得します。
+        /// </summary>
         public int EvaluateCallCount { get; private set; }
+        /// <summary>
+        /// EN: Executes ScanAsync.
+        /// EN: Documentation for public API. JA: ScanAsync を実行します。
+        /// </summary>
 
         public ValueTask<IReadOnlyList<string>> ScanAsync(string rawMaterial, CancellationToken cancellationToken = default)
         {
@@ -28,7 +40,7 @@ public class MaterialQuarantineTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public ValueTask<TrustContext> EvaluateTrustAsync(string rawMaterial, CancellationToken cancellationToken = default)
         {
@@ -50,7 +62,7 @@ public class MaterialQuarantineTests
     private sealed class StrictScanner : IMaterialScanner
     {
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public ValueTask<IReadOnlyList<string>> ScanAsync(string rawMaterial, CancellationToken cancellationToken = default)
         {
@@ -61,6 +73,10 @@ public class MaterialQuarantineTests
 
             return ValueTask.FromResult<IReadOnlyList<string>>(Array.Empty<string>());
         }
+        /// <summary>
+        /// EN: Executes EvaluateTrustAsync.
+        /// EN: Documentation for public API. JA: EvaluateTrustAsync を実行します。
+        /// </summary>
 
         public ValueTask<TrustContext> EvaluateTrustAsync(string rawMaterial, CancellationToken cancellationToken = default) =>
             ValueTask.FromResult(new TrustContext
@@ -78,7 +94,7 @@ public class MaterialQuarantineTests
     private sealed class StrictFormatQuarantine : IMaterialQuarantine
     {
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<IStructuredMaterial> QuarantineAsync(ContextFragment rawFragment, CancellationToken ct = default)
         {
@@ -104,22 +120,42 @@ public class MaterialQuarantineTests
 
     /// <summary>
     /// テスト用の簡単な実装
-    /// Gets the RawContent value. JA: RawContent を取得します。
+    /// EN: Gets the RawContent value. JA: RawContent を取得します。
     /// </summary>
     private class TestStructuredMaterial : IStructuredMaterial
     {
+        /// <summary>
+        /// EN: Gets RawContent.
+        /// EN: Documentation for public API. JA: RawContent を取得します。
+        /// </summary>
         public required string RawContent { get; init; }
+        /// <summary>
+        /// EN: Gets NormalizedContent.
+        /// EN: Documentation for public API. JA: NormalizedContent を取得します。
+        /// </summary>
         public required string NormalizedContent { get; init; }
+        /// <summary>
+        /// EN: Gets Weight.
+        /// EN: Documentation for public API. JA: Weight を取得します。
+        /// </summary>
         public double Weight { get; init; }
+        /// <summary>
+        /// EN: Gets SourceInfo.
+        /// EN: Documentation for public API. JA: SourceInfo を取得します。
+        /// </summary>
         public required SourceInfo SourceInfo { get; init; }
     }
 
     /// <summary>
     /// テスト用の検疫実装（正常系）
-    /// Executes the QuarantineAsync operation. JA: QuarantineAsync 操作を実行します。
+    /// EN: Executes the QuarantineAsync operation. JA: QuarantineAsync 操作を実行します。
     /// </summary>
     private class SuccessfulQuarantine : IMaterialQuarantine
     {
+        /// <summary>
+        /// EN: Executes QuarantineAsync.
+        /// EN: Documentation for public API. JA: QuarantineAsync を実行します。
+        /// </summary>
         public Task<IStructuredMaterial> QuarantineAsync(ContextFragment rawFragment, CancellationToken ct = default)
         {
             if (rawFragment.Content.Contains("invalid", StringComparison.OrdinalIgnoreCase))
@@ -147,7 +183,7 @@ public class MaterialQuarantineTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public async Task QuarantineAsync_ShouldNormalizeContent()
     {
@@ -173,7 +209,7 @@ public class MaterialQuarantineTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public async Task QuarantineAsync_ShouldThrowInvalidOperationException_WhenContentIsInvalid()
     {
@@ -196,7 +232,7 @@ public class MaterialQuarantineTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void StructuredMaterial_ShouldPreserveSourceInfo()
     {
@@ -224,7 +260,7 @@ public class MaterialQuarantineTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public async Task QuarantineAsync_ShouldAssignCorrectWeight()
     {
@@ -247,7 +283,7 @@ public class MaterialQuarantineTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public async Task Scanner_And_Quarantine_Should_Keep_Clear_Boundaries()
     {
@@ -277,7 +313,7 @@ public class MaterialQuarantineTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public async Task ScannerFailure_ShouldBeRaisedByScanner_BeforeQuarantine()
     {
@@ -301,7 +337,7 @@ public class MaterialQuarantineTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public async Task NormalizationFailure_ShouldBeRaisedByQuarantine_AfterScan()
     {

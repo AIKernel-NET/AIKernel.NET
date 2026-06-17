@@ -2,14 +2,15 @@ using AIKernel.Dtos.Control;
 
 namespace AIKernel.Abstractions.Control;
 
+/// <summary>[EN] Documents this public package API member. [JA] IControlEngine contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Control.IControlEngine']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.Control.IControlEngine']" />
 public interface IControlEngine
 {
-    /// <summary>Gets the EngineId value exposed by the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで公開される EngineId 値を取得します。</summary>
+    /// <summary>EN: Gets the EngineId value exposed by the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで公開される EngineId 値を取得します。</summary>
     string EngineId { get; }
 
-    /// <summary>Executes the ExecuteAsync operation on the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで ExecuteAsync 操作を実行します。</summary>
+    /// <summary>EN: Executes the ExecuteAsync operation on the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで ExecuteAsync 操作を実行します。</summary>
     ValueTask<ControlExecutionResult> ExecuteAsync(
         IExecutionGraph graph,
         ControlExecutionRequest request,

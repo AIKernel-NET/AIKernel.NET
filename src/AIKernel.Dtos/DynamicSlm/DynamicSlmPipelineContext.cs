@@ -1,5 +1,6 @@
 namespace AIKernel.Dtos.DynamicSlm;
 
+/// <summary>[EN] Documents this public package API member. [JA] DynamicSlmPipelineContext を表します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineContext']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineContext']" />
 public sealed record DynamicSlmPipelineContext(
@@ -21,6 +22,7 @@ public sealed record DynamicSlmPipelineContext(
     DynamicSlmPipelineMetadata Metadata,
     IReadOnlyList<DynamicSlmPipelineTrace> Trace)
 {
+    /// <summary>[EN] Documents this public package API member. [JA] DynamicSlmPipelineContext を取得します。</summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='M:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineContext.#ctor']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='M:AIKernel.Dtos.DynamicSlm.DynamicSlmPipelineContext.#ctor']" />
     public DynamicSlmPipelineContext(

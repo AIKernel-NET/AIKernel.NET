@@ -26,10 +26,14 @@ using AIKernel.Enums;
 namespace AIKernel.Abstractions.Tests;
 
 /// <summary>
-/// Defines a test helper type. JA: テスト用の型を定義します。
+/// EN: Defines a test helper type. JA: テスト用の型を定義します。
 /// </summary>
 public sealed class ExtractedInterfaceContractTests
 {
+    /// <summary>
+    /// EN: Executes ContractDtosDoNotInjectRuntimeTimestamps.
+    /// EN: Documentation for public API. JA: ContractDtosDoNotInjectRuntimeTimestamps を実行します。
+    /// </summary>
     [Fact]
     public void ContractDtosDoNotInjectRuntimeTimestamps()
     {
@@ -67,7 +71,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void DslContractsAreOwnedByAbstractions()
     {
@@ -88,7 +92,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void AdmissibilityAndSemanticIrVocabulariesAreSharedContracts()
     {
@@ -168,7 +172,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void TrajectoryGovernanceDtosAreContractOnly()
     {
@@ -219,7 +223,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void SemanticCompilationDtosAreContractOnly()
     {
@@ -300,7 +304,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void DynamicSlmContractsAreOwnedByAbstractions()
     {
@@ -513,7 +517,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void SeedSlmDisciplineContractsAreOwnedByAbstractions()
     {
@@ -693,7 +697,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void HatlContractsAreOwnedByAbstractions()
     {
@@ -772,7 +776,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void HistoryRomContractsAreOwnedByAbstractions()
     {
@@ -791,7 +795,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void CapabilityModuleContractsSupportCliAndAssemblyBoundaries()
     {
@@ -852,7 +856,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void KernelClockContractUsesDtoTimestamp()
     {
@@ -872,7 +876,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void ControlContractsAreOwnedByAbstractions()
     {
@@ -916,7 +920,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void RoutingDecisionIsPureDtoContract()
     {
@@ -948,7 +952,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void MemoryContractsAreOwnedByAbstractionsDtosAndEnums()
     {
@@ -968,7 +972,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void ExtractedContractsDoNotIntroduceReverseDependencies()
     {
@@ -1016,7 +1020,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void PublicInterfacesHaveUniqueSimpleNamesInsideAbstractions()
     {
@@ -1034,7 +1038,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void AbstractionsAndContractsExportInterfacesOnly()
     {
@@ -1070,7 +1074,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void DtosDoNotOwnSharedEnums()
     {
@@ -1115,7 +1119,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void RemovedImplementationTypesAreNotExportedFromContractAssemblies()
     {
@@ -1146,7 +1150,7 @@ public sealed class ExtractedInterfaceContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void SharedInterfaceSurfaceDoesNotUseAmbiguousGenericNames()
     {

@@ -1,8 +1,8 @@
 namespace AIKernel.Dtos.Routing;
 
 /// <summary>
-/// PaddingStrategy の契約を定義します。
-/// JA: PaddingStrategy の公開契約を定義します。
+/// EN: PaddingStrategy の契約を定義します。
+/// [EN] Documents this public package API member. [JA] PaddingStrategy の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Routing.PaddingStrategy']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Routing.PaddingStrategy']" />

@@ -3,10 +3,14 @@ using AIKernel.Contracts;
 namespace AIKernel.Abstractions.Tests;
 
 /// <summary>
-/// Defines a test helper type. JA: テスト用の型を定義します。
+/// EN: Defines a test helper type. JA: テスト用の型を定義します。
 /// </summary>
 public sealed class ContractPurityTests
 {
+    /// <summary>
+    /// EN: Executes MaterialContractExposesOnlyImmutableViewMembers.
+    /// EN: Documentation for public API. JA: MaterialContractExposesOnlyImmutableViewMembers を実行します。
+    /// </summary>
     [Fact]
     public void MaterialContractExposesOnlyImmutableViewMembers()
     {
@@ -23,7 +27,7 @@ public sealed class ContractPurityTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void ContextContractsDoNotOwnValidationOrAnalysisProcessing()
     {
@@ -43,7 +47,7 @@ public sealed class ContractPurityTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void MaterialTransformationsAreExternalizedAsServices()
     {
@@ -54,6 +58,10 @@ public sealed class ContractPurityTests
         Assert.True(typeof(IEssentialMaterialExtractor).IsInterface);
         Assert.True(typeof(IMaterialQuarantineValidator).IsInterface);
     }
+    /// <summary>
+    /// EN: Executes SignalToNoiseRatioCalculatorSupportsUnifiedAndOrchestrationContracts.
+    /// EN: Documentation for public API. JA: SignalToNoiseRatioCalculatorSupportsUnifiedAndOrchestrationContracts を実行します。
+    /// </summary>
 
     [Fact]
     public void SignalToNoiseRatioCalculatorSupportsUnifiedAndOrchestrationContracts()

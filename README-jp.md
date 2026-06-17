@@ -1,7 +1,7 @@
 ---
-updated: 2026-06-07
+updated: 2026-06-15
 published: 2026-05-16
-version: "0.1.1"
+version: "0.1.1.1"
 edition: "Release"
 status: "Released"
 issuer: ai-kernel@aikernel.net
@@ -71,6 +71,21 @@ WASM runtime package、Tools、Demo / Control repository を公開 package famil
 過去の architecture document には元の 0.0.x / 0.1.0 front matter や prototype note が
 残る場合があります。利用者向けの package installation example は、現行の 0.1.1
 package を使用してください。
+
+---
+
+## 0.1.1.1 リポジトリ横断整合
+
+0.1.1.1 系では、Core、Providers、Cuda13.0、Control、Tools、Wasm、Demo、Doom を
+同じローカル NuGet 開発パッケージ family として扱います。
+Python / PyPI package は、明示的に予定された場合を除き、この更新ラインでは作成しません。
+
+参照:
+
+- [Development Notes](docs/development/index-ja.md)
+- [Repository Alignment v0.1.1.1](docs/development/repository-alignment-v0.1.1.1-ja.md)
+- [Concept Elevation Guidelines](docs/guidelines/concept-elevation-guidelines.md)
+- [Concept Elevation Migration Notes](docs/migration/concept-elevation-v0.1.1.1.md)
 
 ---
 

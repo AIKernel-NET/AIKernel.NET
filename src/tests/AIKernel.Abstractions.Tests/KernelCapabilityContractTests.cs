@@ -8,10 +8,14 @@ using KernelContextExecutor = AIKernel.Abstractions.Kernel.IKernelContextExecuto
 namespace AIKernel.Abstractions.Tests;
 
 /// <summary>
-/// Defines a test helper type. JA: テスト用の型を定義します。
+/// EN: Defines a test helper type. JA: テスト用の型を定義します。
 /// </summary>
 public sealed class KernelCapabilityContractTests
 {
+    /// <summary>
+    /// EN: Executes CompositeKernelExposesGranularKernelCapabilities.
+    /// EN: Documentation for public API. JA: CompositeKernelExposesGranularKernelCapabilities を実行します。
+    /// </summary>
     [Fact]
     public void CompositeKernelExposesGranularKernelCapabilities()
     {
@@ -29,7 +33,7 @@ public sealed class KernelCapabilityContractTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void KernelExecutorDoesNotExposeGovernanceAccessors()
     {
@@ -42,6 +46,10 @@ public sealed class KernelCapabilityContractTests
 
     private sealed class ExecuteOnlyKernel : KernelContextExecutor
     {
+        /// <summary>
+        /// EN: Executes ExecuteAsync.
+        /// EN: Documentation for public API. JA: ExecuteAsync を実行します。
+        /// </summary>
         public Task<KernelExecutionResult> ExecuteAsync(UnifiedContextDto contract)
         {
             return Task.FromResult<KernelExecutionResult>(null!);
@@ -51,17 +59,25 @@ public sealed class KernelCapabilityContractTests
     private sealed class FullKernel : IKernel
     {
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public string GetVersion()
         {
             return "0.0.2";
         }
+        /// <summary>
+        /// EN: Executes ExecuteAsync.
+        /// EN: Documentation for public API. JA: ExecuteAsync を実行します。
+        /// </summary>
 
         public Task<KernelExecutionResult> ExecuteAsync(UnifiedContextDto contract)
         {
             return Task.FromResult<KernelExecutionResult>(null!);
         }
+        /// <summary>
+        /// EN: Executes AnalyzeAttentionAsync.
+        /// EN: Documentation for public API. JA: AnalyzeAttentionAsync を実行します。
+        /// </summary>
 
         public Task<AttentionAnalysis> AnalyzeAttentionAsync(OrchestrationContextDto contract)
         {
@@ -69,17 +85,25 @@ public sealed class KernelCapabilityContractTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public Task<MaterialContextDto> PreprocessMaterialAsync(MaterialContextDto material)
         {
             return Task.FromResult(material);
         }
+        /// <summary>
+        /// EN: Executes PrepareExpressionAsync.
+        /// EN: Documentation for public API. JA: PrepareExpressionAsync を実行します。
+        /// </summary>
 
         public Task<ExpressionContextDto> PrepareExpressionAsync(ExpressionContextDto expression)
         {
             return Task.FromResult(expression);
         }
+        /// <summary>
+        /// EN: Executes GetProviderRouter.
+        /// EN: Documentation for public API. JA: GetProviderRouter を実行します。
+        /// </summary>
 
         public IProviderRouter GetProviderRouter()
         {
@@ -87,12 +111,16 @@ public sealed class KernelCapabilityContractTests
         }
 
         /// <summary>
-        /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+        /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
         public IGuard GetGuard()
         {
             return null!;
         }
+        /// <summary>
+        /// EN: Executes GetPdp.
+        /// EN: Documentation for public API. JA: GetPdp を実行します。
+        /// </summary>
 
         public IPdp GetPdp()
         {

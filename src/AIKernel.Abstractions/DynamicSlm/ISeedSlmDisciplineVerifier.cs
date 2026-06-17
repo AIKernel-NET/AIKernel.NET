@@ -2,11 +2,12 @@ namespace AIKernel.Abstractions.DynamicSlm;
 
 using AIKernel.Dtos.DynamicSlm;
 
+/// <summary>[EN] Documents this public package API member. [JA] ISeedSlmDisciplineVerifier contract を定義します。</summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.DynamicSlm.ISeedSlmDisciplineVerifier']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Abstractions.DynamicSlm.ISeedSlmDisciplineVerifier']" />
 public interface ISeedSlmDisciplineVerifier
 {
-    /// <summary>Executes the VerifyAsync operation on the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで VerifyAsync 操作を実行します。</summary>
+    /// <summary>EN: Executes the VerifyAsync operation on the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで VerifyAsync 操作を実行します。</summary>
     ValueTask<DynamicSlmCompatibilityResult> VerifyAsync(
         DynamicSlmModelAbi modelAbi,
         SeedSlmStructuralConstraints structuralConstraints,

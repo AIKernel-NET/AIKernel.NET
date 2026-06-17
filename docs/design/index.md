@@ -34,6 +34,7 @@ Japanese version: [Design Index](index-jp.md)
 - [CONTRACT_VERSIONING.md](CONTRACT_VERSIONING.md)
 - [SEMANTIC_SNAPSHOT_FORMAT.md](SEMANTIC_SNAPSHOT_FORMAT.md)
 - [CTG_CONTRACT_MODEL-v0.1.1.1.md](CTG_CONTRACT_MODEL-v0.1.1.1.md)
+- [concept-elevation-refactoring-design.md](concept-elevation-refactoring-design.md)
 
 ---
 
@@ -41,3 +42,4 @@ Japanese version: [Design Index](index-jp.md)
 - v0.0.0 / v0.0.0.0: Initial draft
 - v0.0.1 (2026-05-06): Added AIOS-oriented architecture mapping
 - v0.1.1.1 (2026-06-14): Added CTG contract model guide
+- v0.1.1.1 (2026-06-15): Added Concept Elevation refactoring design

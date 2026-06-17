@@ -5,10 +5,14 @@ namespace AIKernel.Abstractions.Tests;
 
 /// <summary>
 /// IContextCollection と ContextFragment のテスト
-/// Defines the ContextCollectionTests contract. JA: ContextCollectionTests の公開契約を定義します。
+/// EN: Defines the ContextCollectionTests contract. JA: ContextCollectionTests の公開契約を定義します。
 /// </summary>
 public class ContextCollectionTests
 {
+    /// <summary>
+    /// EN: Executes GetByCategory_ShouldReturnFragmentsOfSpecificCategory.
+    /// EN: Documentation for public API. JA: GetByCategory_ShouldReturnFragmentsOfSpecificCategory を実行します。
+    /// </summary>
     [Fact]
     public void GetByCategory_ShouldReturnFragmentsOfSpecificCategory()
     {
@@ -54,7 +58,7 @@ public class ContextCollectionTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void OrchestrationBuffer_ShouldConvertEnumerableToReadOnlyList()
     {
@@ -76,7 +80,7 @@ public class ContextCollectionTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void ExpressionBuffer_ShouldContainExpressionFragments()
     {
@@ -104,7 +108,7 @@ public class ContextCollectionTests
 
     [Fact]
     /// <summary>
-    /// Executes a test helper member. JA: テスト用のメンバーを実行します。
+    /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
     /// </summary>
     public void Buffer_WithEmptyEnumerable_ShouldCreateEmptyReadOnlyList()
     {
@@ -114,6 +118,10 @@ public class ContextCollectionTests
         // Assert
         Assert.Empty(buffer.Fragments);
     }
+    /// <summary>
+    /// EN: Executes Buffer_WithNullEnumerable_ShouldCreateEmptyReadOnlyList.
+    /// EN: Documentation for public API. JA: Buffer_WithNullEnumerable_ShouldCreateEmptyReadOnlyList を実行します。
+    /// </summary>
 
     [Fact]
     public void Buffer_WithNullEnumerable_ShouldCreateEmptyReadOnlyList()

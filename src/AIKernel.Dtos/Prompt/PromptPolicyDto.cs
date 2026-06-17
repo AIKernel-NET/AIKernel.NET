@@ -1,38 +1,44 @@
 namespace AIKernel.Dtos.Prompt;
 
 /// <summary>
-/// PromptPolicyDto の契約を定義します。
-/// JA: PromptPolicyDto の公開契約を定義します。
+/// EN: PromptPolicyDto の契約を定義します。
+/// [EN] Documents this public package API member. [JA] PromptPolicyDto の公開契約を定義します。
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Prompt.PromptPolicyDto']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Dtos.Prompt.PromptPolicyDto']" />
 public sealed record PromptPolicyDto
 {
+    /// <summary>[EN] Documents this public package API member. [JA] TrustLevelRequired を取得します。</summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Prompt.PromptPolicyDto.TrustLevelRequired']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Prompt.PromptPolicyDto.TrustLevelRequired']" />
     public double TrustLevelRequired { get; init; } = 0.0;
+    /// <summary>[EN] Documents this public package API member. [JA] AllowedProviders を実行します。</summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='M:AIKernel.Dtos.Prompt.PromptPolicyDto.List&lt;string&gt;']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='M:AIKernel.Dtos.Prompt.PromptPolicyDto.List&lt;string&gt;']" />
     public IReadOnlyList<string> AllowedProviders { get; init; } = new List<string>();
-    /// <summary>Gets the AllowedScopes value exposed by the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで公開される AllowedScopes 値を取得します。</summary>
+    /// <summary>EN: Gets the AllowedScopes value exposed by the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで公開される AllowedScopes 値を取得します。</summary>
     public IReadOnlyList<string> AllowedScopes { get; init; } = new List<string>();
-    /// <summary>Gets the AllowedTools value exposed by the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで公開される AllowedTools 値を取得します。</summary>
+    /// <summary>EN: Gets the AllowedTools value exposed by the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで公開される AllowedTools 値を取得します。</summary>
     public IReadOnlyList<string> AllowedTools { get; init; } = new List<string>();
+    /// <summary>[EN] Documents this public package API member. [JA] MaxTokenBudget を取得します。</summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Prompt.PromptPolicyDto.MaxTokenBudget']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Prompt.PromptPolicyDto.MaxTokenBudget']" />
     public int MaxTokenBudget { get; init; }
+    /// <summary>[EN] Documents this public package API member. [JA] ExpiresAt を取得します。</summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Prompt.PromptPolicyDto.ExpiresAt']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Prompt.PromptPolicyDto.ExpiresAt']" />
     public DateTime? ExpiresAt { get; init; }
+    /// <summary>[EN] Documents this public package API member. [JA] CreatedAt を取得します。</summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Prompt.PromptPolicyDto.CreatedAt']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='P:AIKernel.Dtos.Prompt.PromptPolicyDto.CreatedAt']" />
     public DateTime CreatedAt { get; init; }
 
+    /// <summary>[EN] Documents this public package API member. [JA] PromptPolicyDto を実行します。</summary>
     /// <include file="docs.en.xml" path="doc/members/member[@name='M:AIKernel.Dtos.Prompt.PromptPolicyDto.#ctor']" />
     /// <include file="docs.ja.xml" path="doc/members/member[@name='M:AIKernel.Dtos.Prompt.PromptPolicyDto.#ctor']" />
     public PromptPolicyDto() { }
 
-    /// <summary>Initializes a new instance for the PromptPolicyDto AIKernel contract surface. JA: PromptPolicyDto AIKernel 契約サーフェスの新しいインスタンスを初期化します。</summary>
+    /// <summary>EN: Initializes a new instance for the PromptPolicyDto AIKernel contract surface. JA: PromptPolicyDto AIKernel 契約サーフェスの新しいインスタンスを初期化します。</summary>
     public PromptPolicyDto(
         double trustLevelRequired,
         IReadOnlyList<string> allowedProviders,
