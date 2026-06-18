@@ -1,6 +1,6 @@
 ---
 title: "Providers"
-lang: en
+lang: ja
 description: "Provider の役割、Provider registry、standard/chat/compute provider family の読み方を説明します。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

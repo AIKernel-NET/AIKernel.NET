@@ -1,6 +1,6 @@
 ---
 title: "Tutorials"
-lang: en
+lang: ja
 description: "AIKernel.NET 0.1.2 を段階的に試すための tutorial 入口です。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: tutorials

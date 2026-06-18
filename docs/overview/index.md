@@ -1,6 +1,6 @@
 ---
 title: "Overview"
-lang: en
+lang: ja
 description: "AIKernel.NET 0.1.2 の全体像、対象読者、主要モジュール、次に読むべき導線をまとめます。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

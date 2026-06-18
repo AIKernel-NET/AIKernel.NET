@@ -1,6 +1,6 @@
 ---
 title: "Wasm Runtime Tutorial"
-lang: en
+lang: ja
 description: "browser/WebAssembly runtime surface の package を読み、Doom demo とつなぐ手順です。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: tutorials

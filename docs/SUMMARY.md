@@ -1,6 +1,6 @@
 ---
 title: "AIKernel.NET Documentation Summary"
-lang: en
+lang: ja
 description: "AIKernel.NET 0.1.2 公式ドキュメントの章構造、Reference、tutorials、glossary への目次です。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

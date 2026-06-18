@@ -1,6 +1,6 @@
 ---
 title: "Doom Demo"
-lang: en
+lang: ja
 description: "AIKernel.Doom official demo documentation の入口です。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

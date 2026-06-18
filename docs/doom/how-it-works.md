@@ -1,6 +1,6 @@
 ---
 title: "How the Doom Demo Works"
-lang: en
+lang: ja
 description: "DoomProvider、DoomWasm、DoomWeb、DoomCapabilities、DoomOptimizer の関係を説明します。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

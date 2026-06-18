@@ -1,6 +1,6 @@
 ---
 title: "Tools"
-lang: en
+lang: ja
 description: "AIKernel.Tools package family、CLI、inspectors、instrumentation の入口です。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

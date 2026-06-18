@@ -1,6 +1,6 @@
 ---
 title: "Providers"
-lang: en
+lang: ja
 description: "AIKernel.Providers package family と Provider Reference への入口です。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

@@ -1,6 +1,6 @@
 ---
 title: "Creating Tools"
-lang: en
+lang: ja
 description: "Tool package を追加するときの source layout、commands、tests、Reference 更新を説明します。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs

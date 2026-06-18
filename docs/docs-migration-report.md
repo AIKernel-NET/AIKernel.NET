@@ -1,6 +1,6 @@
 ---
 title: "Documentation Migration Report"
-lang: en
+lang: ja
 description: "AIKernel.NET 0.1.2 公式ドキュメント刷新で既存 docs/reference をどう扱ったかを記録します。"
 tags: [AIKernel, AIKernel.NET, v0.1.2]
 category: docs
@@ -63,4 +63,5 @@ Review this report before removing old pages or changing sitemap lifecycle rules
 ## See Also
 
 - [Generation Report](docs-generation-report.md)
+- [410 Report](/docs-410-report.md)
 - [Reference](/reference/)
