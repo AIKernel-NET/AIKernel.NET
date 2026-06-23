@@ -1,9 +1,9 @@
 ---
-updated: 2026-06-15
+updated: 2026-06-23
 published: 2026-05-16
-version: "0.1.1.1"
-edition: "Draft"
-status: "Refactor"
+version: "0.1.3"
+edition: "Canonical Series"
+status: "Active"
 issuer: ai-kernel@aikernel.net
 maintainer: "Takuya (AIKernel Project Maintainer)"
 ---

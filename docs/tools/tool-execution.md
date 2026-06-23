@@ -1,7 +1,7 @@
 ---
 title: "Tool Execution"
-lang: ja
-description: "CLI command、inspector、replay、VFS inspection の実行面を説明します。"
+lang: en
+description: "Tool Execution for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"

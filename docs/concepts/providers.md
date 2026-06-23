@@ -1,7 +1,7 @@
 ---
 title: "Providers"
-lang: ja
-description: "Provider の役割、Provider registry、standard/chat/compute provider family の読み方を説明します。"
+lang: en
+description: "Providers for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"
@@ -67,7 +67,7 @@ Read the concept first, then open package Reference for exact members and source
 ## Notes
 
 - Provider は外部機能や model/capability を Core に直接混ぜないための境界です。
-- If a behavior is not confirmed in source or tests, this documentation leaves it as `TODO: source required`.
+- If a behavior is not confirmed in source or tests, this documentation leaves it as `source evidence required`.
 - Generated Reference pages are separated from these hand-written guide pages.
 
 ## See Also

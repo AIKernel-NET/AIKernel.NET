@@ -1,7 +1,7 @@
 ---
 title: "Tutorials"
-lang: ja
-description: "AIKernel.NET 0.1.3 を段階的に試すための tutorial 入口です。"
+lang: en
+description: "Tutorials for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: tutorials
 source: "generated-from-repository-inventory"

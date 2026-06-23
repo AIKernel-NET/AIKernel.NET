@@ -1,7 +1,7 @@
 ---
 title: "Runtime Model"
-lang: ja
-description: "AIKernel.NET 0.1.3 の execution model、lifecycle、configuration、error handling をまとめます。"
+lang: en
+description: "Runtime Model for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"

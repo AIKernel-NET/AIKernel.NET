@@ -1,9 +1,9 @@
 ---
 title: "移行ガイド（Migration Guide）"
-updated: 2026-06-14
+updated: 2026-06-23
 published: 2026-05-16
-version: "0.1.1.1"
-edition: "Release"
+version: "0.1.3"
+edition: "Canonical Series"
 status: "Active"
 issuer: ai-kernel@aikernel.net
 maintainer: "拓也（AIKernel プロジェクト メンテナー）"
@@ -20,8 +20,8 @@ public package line に対する additive contract expansion です。既存 `0.
 consumer は、新しい domain contract を opt-in で利用しない限りコード移行は不要です。
 `0.1.1.1` の package boundary は .NET / NuGet のみです。この line では
 PyPI package を build / publish せず、Python wrapper は同期済み `0.1.1`
-package line のまま維持します。次の公式 v0.1.3 正典シリーズでは、NuGet と
-PyPI の package family を同期して公開する前提です。
+package line のまま維持します。現在の `0.1.3` 正典シリーズでは、NuGet と
+PyPI の package family を同期して公開します。
 
 CTG contract vocabulary は `0.1.1.1` package line の公開前に正規化されました。
 council vote carrier は `CouncilVote`、finite vote value は `CouncilVoteValue`、

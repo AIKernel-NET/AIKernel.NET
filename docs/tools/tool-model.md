@@ -1,7 +1,7 @@
 ---
 title: "Tool Model"
-lang: ja
-description: "Tool registration、tool execution、inspection、ROM/replay surface を説明します。"
+lang: en
+description: "Tool Model for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"

@@ -1,7 +1,7 @@
 ---
 title: "Documentation Migration Report"
-lang: ja
-description: "AIKernel.NET 0.1.3 公式ドキュメント刷新で既存 docs/reference をどう扱ったかを記録します。"
+lang: en
+description: "Documentation Migration Report for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"

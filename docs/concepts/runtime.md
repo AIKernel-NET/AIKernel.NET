@@ -1,7 +1,7 @@
 ---
 title: "Runtime"
-lang: ja
-description: "Runtime model、lifecycle、configuration、error-handling を横断して説明します。"
+lang: en
+description: "Runtime for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"
@@ -67,7 +67,7 @@ Read the concept first, then open package Reference for exact members and source
 ## Notes
 
 - Runtime は package family をまたぐため、単一の class ではなく flow と boundary で理解します。
-- If a behavior is not confirmed in source or tests, this documentation leaves it as `TODO: source required`.
+- If a behavior is not confirmed in source or tests, this documentation leaves it as `source evidence required`.
 - Generated Reference pages are separated from these hand-written guide pages.
 
 ## See Also

@@ -1,7 +1,7 @@
 ---
 title: "Provider Model"
-lang: ja
-description: "Provider registration、routing、capability boundary、dependency isolation を説明します。"
+lang: en
+description: "Provider Model for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"

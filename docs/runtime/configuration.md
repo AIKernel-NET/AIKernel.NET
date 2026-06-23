@@ -1,7 +1,7 @@
 ---
 title: "Configuration"
-lang: ja
-description: "0.1.3 package version、provider options、CUDA runtime path、Doom consent asset の configuration boundary を説明します。"
+lang: en
+description: "Configuration for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"

@@ -1,7 +1,7 @@
 ---
 title: "Overview"
-lang: ja
-description: "AIKernel.NET 0.1.3 の全体像、対象読者、主要モジュール、次に読むべき導線をまとめます。"
+lang: en
+description: "Overview for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"

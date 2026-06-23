@@ -1,7 +1,7 @@
 ---
 title: "Messages"
-lang: ja
-description: "request、response、context、carrier、DTO の流れと source-backed Reference への導線を説明します。"
+lang: en
+description: "Messages for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"
@@ -67,7 +67,7 @@ Read the concept first, then open package Reference for exact members and source
 ## Notes
 
 - Message/DTO は runtime behavior と混同しないことが重要です。
-- If a behavior is not confirmed in source or tests, this documentation leaves it as `TODO: source required`.
+- If a behavior is not confirmed in source or tests, this documentation leaves it as `source evidence required`.
 - Generated Reference pages are separated from these hand-written guide pages.
 
 ## See Also

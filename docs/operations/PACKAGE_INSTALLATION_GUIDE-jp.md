@@ -11,12 +11,12 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 
 # AIKernel パッケージ導入ガイド
 
-AIKernel 0.1.3 は、Semantic OS サーフェスの次期正典パッケージシリーズです。
+AIKernel 0.1.3 は、Semantic OS サーフェスの現在の正典パッケージシリーズです。
 NuGet パッケージと Python ラッパーパッケージを同じ public API catalog に揃えつつ、
 実装ロジックは managed package 側に維持します。
 
-安定版 `0.1.3` パッケージは、公開タスクが明示的に開始されるまで作成しません。
-リポジトリ間の結合検証では、次のローカル開発版を使います。
+公開利用者は、パッケージ公開タスクが完了した後に公式 feed の安定版 `0.1.3`
+パッケージを使います。リポジトリ間の結合検証では、次のローカル開発版を使います。
 
 | パッケージシステム | 開発版 |
 |---|---|
@@ -32,7 +32,7 @@ metadata のみを正典 `0.1.3` に揃えています。詳細は
 
 ## Quick Start: 正典 0.1.3
 
-安定版公開後は、同じ `0.1.3` ラインの package をレイヤーごとに導入します。
+公式 feed では、同じ `0.1.3` ラインの package をレイヤーごとに導入します。
 
 ```bash
 dotnet add package AIKernel.Core --version 0.1.3
@@ -89,7 +89,7 @@ Doom scenario logic を再実装してはいけません。
 | `aikernel-wasm` | `aikernel_wasm` | WASM runtime と WebGPU wrapper surface。 |
 | `aikernel-cuda13-libtorch2-12-win-x64` | `aikernel_cuda13_libtorch2_12_win_x64` | Windows 専用 CUDA wrapper metadata と loader guidance。 |
 
-安定版公開後は、必要なレイヤーごとに導入します。
+公式 feed では、必要なレイヤーごとに導入します。
 
 ```bash
 pip install aikernel-net==0.1.3
@@ -141,11 +141,12 @@ Demo repository は検証対象であり、package publication 対象ではあ�
 
 | ライン | 意味 |
 |---|---|
-| `0.1.3` | 最初に同期された public Semantic OS package line。 |
-| `0.1.3` | NuGet package と同期 Python wrapper を揃えた public canonical package line。 |
-| `0.1.3` | 現在の正典シリーズターゲット。公開開始後は NuGet / PyPI package family を同期。 |
+| `0.1.1` | AIKernel.NET package family の最初の同期公開 baseline。 |
+| `0.1.1.1` | additive contract と documentation policy を安定化するための NuGet-only validation line。 |
+| `0.1.2` | Doom demo prototype の公開と GPU/HUD integration material の準備を行った正典 release line。 |
+| `0.1.3` | 現在の正典 package series。NuGet / PyPI wrapper、GPU OS interface、canonical metadata を同期。 |
 
-0.1.3 時点の CTG ドキュメントは migration context として維持します。
+履歴 CTG ドキュメントは migration context として維持します。
 
 - [`../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1-jp.md`](../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1-jp.md)
 - [`../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1-jp.md`](../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1-jp.md)
@@ -166,11 +167,11 @@ Demo repository は検証対象であり、package publication 対象ではあ�
 ## リリースルール
 
 正典 line では、同じ `0.1.3` package family だけを組み合わせてください。migration
-behavior を明示的に試験する場合を除き、release validation environment で `0.1.3`、
-`0.1.3`、`0.1.3` を混在させないでください。
+behavior を明示的に試験する場合を除き、release validation environment で安定版 package と
+別 build の `0.1.3-dev<build-number>` / `0.1.3.dev<build-number>` package を混在させないでください。
+また、`0.1.3` family と古い `0.1.x` package を組み合わせないでください。
 
-安定版 package は公開タスクが開始されてから作成します。それまでは、すべての local package
-validation で次を使います。
+local package validation では次を使います。
 
 ```text
 NuGet: 0.1.3-dev<build-number>

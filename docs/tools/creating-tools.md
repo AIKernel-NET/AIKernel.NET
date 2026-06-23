@@ -1,7 +1,7 @@
 ---
 title: "Creating Tools"
-lang: ja
-description: "Tool package を追加するときの source layout、commands、tests、Reference 更新を説明します。"
+lang: en
+description: "Creating Tools for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"

@@ -1,7 +1,7 @@
 ---
 title: "Quick Start"
-lang: ja
-description: "AIKernel.NET 0.1.3 を最小構成で確認するための package install、repository build、Reference の読み方を示します。"
+lang: en
+description: "Quick Start for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"

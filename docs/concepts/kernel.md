@@ -1,7 +1,7 @@
 ---
 title: "Kernel"
-lang: ja
-description: "AIKernel.Core の Kernel facade、routing、fail-closed runtime boundary を説明します。"
+lang: en
+description: "Kernel for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"
@@ -67,7 +67,7 @@ Read the concept first, then open package Reference for exact members and source
 ## Notes
 
 - Kernel は contract を受け取り、runtime behavior を Core 側へ閉じ込める中心です。
-- If a behavior is not confirmed in source or tests, this documentation leaves it as `TODO: source required`.
+- If a behavior is not confirmed in source or tests, this documentation leaves it as `source evidence required`.
 - Generated Reference pages are separated from these hand-written guide pages.
 
 ## See Also

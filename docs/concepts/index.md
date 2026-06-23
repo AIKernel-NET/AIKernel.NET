@@ -1,7 +1,7 @@
 ---
 title: "Core Concepts"
-lang: ja
-description: "Kernel、Provider、Tool、Runtime、Message、Extension という AIKernel.NET の主要概念をまとめます。"
+lang: en
+description: "Core Concepts for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"
@@ -67,7 +67,7 @@ concept overview
 ## Notes
 
 - AIKernel.NET の概念は package 境界と一緒に読む必要があります。
-- If a behavior is not confirmed in source or tests, this documentation leaves it as `TODO: source required`.
+- If a behavior is not confirmed in source or tests, this documentation leaves it as `source evidence required`.
 - Generated Reference pages are separated from these hand-written guide pages.
 
 ## See Also

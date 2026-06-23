@@ -1,7 +1,7 @@
 ---
 title: "First Kernel"
-lang: ja
-description: "AIKernel.Core と provider package を使う最小構成の読み方を説明します。"
+lang: en
+description: "First Kernel for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: tutorials
 source: "generated-from-repository-inventory"

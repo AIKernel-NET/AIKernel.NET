@@ -1,7 +1,7 @@
 ---
 title: "Wasm Integration"
-lang: ja
-description: "Core、Providers、Tools、Doom demo と Wasm runtime を接続する時の integration boundary を説明します。"
+lang: en
+description: "Wasm Integration for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"

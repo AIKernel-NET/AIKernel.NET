@@ -1,7 +1,7 @@
 ---
 title: "Getting Started"
-lang: ja
-description: "package install、source build、Reference 確認の最初の手順です。"
+lang: en
+description: "Getting Started for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: tutorials
 source: "generated-from-repository-inventory"

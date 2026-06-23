@@ -1,7 +1,7 @@
 ---
 title: "Extensions"
-lang: ja
-description: "Provider、Tool、Wasm、CUDA、Doom demo が Core の外側で拡張される理由を説明します。"
+lang: en
+description: "Extensions for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"
@@ -67,7 +67,7 @@ Extension examples include `AIKernel.Providers.Audio`, `AIKernel.Tools.Capabilit
 ## Notes
 
 - Extension は package の独立性と審査可能な Reference を保つために分離します。
-- If a behavior is not confirmed in source or tests, this documentation leaves it as `TODO: source required`.
+- If a behavior is not confirmed in source or tests, this documentation leaves it as `source evidence required`.
 - Generated Reference pages are separated from these hand-written guide pages.
 
 ## See Also

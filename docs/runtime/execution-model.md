@@ -1,7 +1,7 @@
 ---
 title: "Execution Model"
-lang: ja
-description: "Application から contract、Core、Provider、Control、Tool へ進む execution model を説明します。"
+lang: en
+description: "Execution Model for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"

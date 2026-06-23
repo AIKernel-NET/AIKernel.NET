@@ -48,7 +48,7 @@ Extension examples include `AIKernel.Providers.Audio`, `AIKernel.Tools.Capabilit
 ## 補足
 
 - Extension は package の独立性と審査可能な Reference を保つために分離します。
-- If a behavior is not confirmed in source or tests, this documentation leaves it as `TODO: source required`.
+- If a behavior is not confirmed in source or tests, this documentation leaves it as `source evidence required`.
 - Generated Reference pages are separated from these hand-written guide pages.
 
 ## 関連ページ

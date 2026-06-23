@@ -1,7 +1,7 @@
 ---
 title: "Doom Demo"
-lang: ja
-description: "AIKernel.Doom official demo documentation の入口です。"
+lang: en
+description: "Doom Demo for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"
@@ -48,13 +48,13 @@ package table で実装または wrapper package を探し、正確な API membe
 
 | Package | Kind | Version | Description | Source |
 |---|---|---|---|---|
-| [`DoomCapabilities`](/reference/aikernel-doom/doomcapabilities/) | nuget | `0.1.1.1` | doom.start, doom.stop, and doom.status capability invoker for AIKernel.Doom. | `AIKernel.Doom/src/DoomCapabilities/DoomCapabilities.csproj` |
-| [`DoomDemo`](/reference/aikernel-doom/doomdemo/) | nuget | `0.1.1.1` | Prompt-style AIKernel boot sequence and CLI demo for DOOM as a WASM process. | `AIKernel.Doom/src/DoomDemo/DoomDemo.csproj` |
-| [`DoomOptimizer`](/reference/aikernel-doom/doomoptimizer/) | nuget | `0.1.1.1` | Observer ROM profile optimizer for the AIKernel.Doom autoplay demo. | `AIKernel.Doom/src/DoomOptimizer/DoomOptimizer.csproj` |
-| [`DoomProvider`](/reference/aikernel-doom/doomprovider/) | nuget | `0.1.1.1` | DOOM WASM process provider for AIKernel.Doom. | `AIKernel.Doom/src/DoomProvider/DoomProvider.csproj` |
-| [`DoomWasm`](/reference/aikernel-doom/doomwasm/) | nuget | `0.1.1.1` | DOOM WASM ROM metadata and asset resolution support for AIKernel.Doom. | `AIKernel.Doom/src/DoomWasm/DoomWasm.csproj` |
-| [`DoomWasm.Native`](/reference/aikernel-doom/doomwasm-native/) | nuget | `0.1.1.1` | MSBuild utility project for building the DOOM WASM native overlay with Emscripten. | `AIKernel.Doom/src/DoomWasm.Native/DoomWasm.Native.csproj` |
-| [`DoomWeb`](/reference/aikernel-doom/doomweb/) | nuget | `0.1.1.1` | Public Web runtime assets for the AIKernel.Doom WASM demo. Does not include WAD, model, or generated WASM binaries. | `AIKernel.Doom/src/DoomWeb/DoomWeb.csproj` |
+| [`DoomCapabilities`](/reference/aikernel-doom/doomcapabilities/) | nuget | `0.1.3` | doom.start, doom.stop, and doom.status capability invoker for AIKernel.Doom. | `AIKernel.Doom/src/DoomCapabilities/DoomCapabilities.csproj` |
+| [`DoomDemo`](/reference/aikernel-doom/doomdemo/) | nuget | `0.1.3` | Prompt-style AIKernel boot sequence and CLI demo for DOOM as a WASM process. | `AIKernel.Doom/src/DoomDemo/DoomDemo.csproj` |
+| [`DoomOptimizer`](/reference/aikernel-doom/doomoptimizer/) | nuget | `0.1.3` | Observer ROM profile optimizer for the AIKernel.Doom autoplay demo. | `AIKernel.Doom/src/DoomOptimizer/DoomOptimizer.csproj` |
+| [`DoomProvider`](/reference/aikernel-doom/doomprovider/) | nuget | `0.1.3` | DOOM WASM process provider for AIKernel.Doom. | `AIKernel.Doom/src/DoomProvider/DoomProvider.csproj` |
+| [`DoomWasm`](/reference/aikernel-doom/doomwasm/) | nuget | `0.1.3` | DOOM WASM ROM metadata and asset resolution support for AIKernel.Doom. | `AIKernel.Doom/src/DoomWasm/DoomWasm.csproj` |
+| [`DoomWasm.Native`](/reference/aikernel-doom/doomwasm-native/) | nuget | `0.1.3` | MSBuild utility project for building the DOOM WASM native overlay with Emscripten. | `AIKernel.Doom/src/DoomWasm.Native/DoomWasm.Native.csproj` |
+| [`DoomWeb`](/reference/aikernel-doom/doomweb/) | nuget | `0.1.3` | Public Web runtime assets for the AIKernel.Doom WASM demo. Does not include WAD, model, or generated WASM binaries. | `AIKernel.Doom/src/DoomWeb/DoomWeb.csproj` |
 
 
 ## Notes

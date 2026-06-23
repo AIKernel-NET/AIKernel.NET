@@ -1,7 +1,7 @@
 ---
 title: "System Architecture"
-lang: ja
-description: "Core、Control、Providers、Tools、Wasm、Doom、CUDA の責務境界と runtime composition を説明します。"
+lang: en
+description: "System Architecture for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"

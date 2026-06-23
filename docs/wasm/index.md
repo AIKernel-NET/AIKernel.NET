@@ -1,7 +1,7 @@
 ---
 title: "Wasm Runtime"
-lang: ja
-description: "AIKernel.Wasm package family と browser/WebAssembly runtime surface の入口です。"
+lang: en
+description: "Wasm Runtime for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"

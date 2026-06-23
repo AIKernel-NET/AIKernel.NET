@@ -1,7 +1,7 @@
 ---
 title: "Providers"
-lang: ja
-description: "AIKernel.Providers package family と Provider Reference への入口です。"
+lang: en
+description: "Providers for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"

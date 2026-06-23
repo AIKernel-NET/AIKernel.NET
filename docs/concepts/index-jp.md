@@ -48,7 +48,7 @@ concept overview
 ## 補足
 
 - AIKernel.NET の概念は package 境界と一緒に読む必要があります。
-- If a behavior is not confirmed in source or tests, this documentation leaves it as `TODO: source required`.
+- If a behavior is not confirmed in source or tests, this documentation leaves it as `source evidence required`.
 - Generated Reference pages are separated from these hand-written guide pages.
 
 ## 関連ページ

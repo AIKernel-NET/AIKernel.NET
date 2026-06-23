@@ -1,7 +1,7 @@
 ---
 title: "Lifecycle"
-lang: ja
-description: "初期化、登録、実行、観測、終了の lifecycle を package boundary に沿って説明します。"
+lang: en
+description: "Lifecycle for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"

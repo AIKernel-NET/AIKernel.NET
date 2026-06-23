@@ -108,7 +108,7 @@ AIKernel は情報カテゴリ分離・コンテキスト隔離を思想の中�
 - `../guidelines/DOCUMENTATION_GUIDELINES-jp.md`
 - `../operations/INTERFACE_EXTENSION_NAMING-v0.1.1.1-jp.md`
 - `../operations/ENUM_HANDLING_POLICY-v0.1.1.1-jp.md`
-- `../operations/XML_DOCUMENTATION_POLICY-v0.1.1.1-jp.md`
+- `../operations/XML_DOCUMENTATION_POLICY-v0.1.3-jp.md`
 ---
 
 # 変更履歴

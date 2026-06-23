@@ -48,7 +48,7 @@ Concept page は人間に役立つ説明を置くためにあります。単な�
 ## 補足
 
 - Kernel は contract を受け取り、runtime behavior を Core 側へ閉じ込める中心です。
-- If a behavior is not confirmed in source or tests, this documentation leaves it as `TODO: source required`.
+- If a behavior is not confirmed in source or tests, this documentation leaves it as `source evidence required`.
 - Generated Reference pages are separated from these hand-written guide pages.
 
 ## 関連ページ

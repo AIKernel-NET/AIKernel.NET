@@ -1,17 +1,17 @@
 ---
-title: "AIKernel 0.1.1 Demo Programs Guide"
-updated: 2026-06-10
-published: 2026-06-10
-version: "0.1.1"
+title: "AIKernel 0.1.3 Demo Programs Guide"
+updated: 2026-06-23
+published: 2026-06-16
+version: "0.1.3"
 edition: "Release"
 status: "Active"
 issuer: ai-kernel@aikernel.net
 maintainer: "Takuya (AIKernel Project Maintainer)"
 ---
 
-# AIKernel 0.1.1 Demo Programs Guide
+# AIKernel 0.1.3 Demo Programs Guide
 
-AIKernel.Demo is the official example repository for the 0.1.1 package line.  
+AIKernel.Demo is the official example repository for the 0.1.3 package line.
 It is the best first stop after installing packages because each demo maps one OS layer to a minimal golden path.
 
 ## First Demo to Run
@@ -64,14 +64,12 @@ On non-Windows systems, the CUDA demo is expected to report a guarded skip inste
 
 AIKernel.Demo also mirrors the package story on the Python side. Use the Python demos to confirm wrapper imports, managed assembly discovery, and dry-run package surfaces after installing the PyPI packages.
 
-These Python demo checks belong to the synchronized 0.1.1 package line. The
-0.1.1.1 contract update does not introduce new PyPI packages or additional
-Python demo validation. The next official v0.1.3 canonical series is expected
-to refresh the PyPI package family, so update these demo commands when the
-0.1.3 packages are published.
+These Python demo checks belong to the synchronized 0.1.3 package line. The
+0.1.3 canonical series refreshes the PyPI package family together with the
+NuGet package family.
 
 ```bash
-pip install aikernel-net==0.1.1 aikernel-providers==0.1.1 aikernel-tools==0.1.1
+pip install aikernel-net==0.1.3 aikernel-providers==0.1.3 aikernel-tools==0.1.3
 ```
 
 Add `aikernel-governance`, `aikernel-wasm`, or the Windows-only CUDA wrapper only when that layer is part of the scenario.

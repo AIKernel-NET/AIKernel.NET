@@ -48,7 +48,7 @@ Concept page は人間に役立つ説明を置くためにあります。単な�
 ## 補足
 
 - Message/DTO は runtime behavior と混同しないことが重要です。
-- If a behavior is not confirmed in source or tests, this documentation leaves it as `TODO: source required`.
+- If a behavior is not confirmed in source or tests, this documentation leaves it as `source evidence required`.
 - Generated Reference pages are separated from these hand-written guide pages.
 
 ## 関連ページ

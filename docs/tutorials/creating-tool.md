@@ -1,7 +1,7 @@
 ---
 title: "Creating a Tool"
-lang: ja
-description: "Tool/CLI/inspector を追加する時の package boundary と Reference 更新を説明します。"
+lang: en
+description: "Creating a Tool for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: tutorials
 source: "generated-from-repository-inventory"

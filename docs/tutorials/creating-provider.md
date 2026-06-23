@@ -1,7 +1,7 @@
 ---
 title: "Creating a Provider"
-lang: ja
-description: "新しい Provider を足す時の source-root、metadata、tests、docs の揃え方です。"
+lang: en
+description: "Creating a Provider for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: tutorials
 source: "generated-from-repository-inventory"

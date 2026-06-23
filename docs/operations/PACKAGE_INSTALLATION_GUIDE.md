@@ -11,13 +11,13 @@ maintainer: "Takuya (AIKernel Project Maintainer)"
 
 # AIKernel Package Installation Guide
 
-AIKernel 0.1.3 is the next canonical package series for the Semantic OS surface.
+AIKernel 0.1.3 is the current canonical package series for the Semantic OS surface.
 It aligns NuGet packages and Python wrapper packages around the same public API
 catalog, while keeping implementation logic in the managed package layer.
 
-Do not create stable `0.1.3` packages until the release task is explicitly
-opened. During integration and repository-to-repository verification, use local
-development package versions:
+For public consumers, use stable `0.1.3` packages from the official feeds once
+the package publication task is complete. During integration and
+repository-to-repository verification, use local development package versions:
 
 | Package system | Development version |
 |---|---|
@@ -32,7 +32,7 @@ metadata without changing its rule text or semantic content; see
 
 ## Quick Start: Canonical 0.1.3
 
-After the stable release is opened, install matching `0.1.3` packages by layer:
+For public feeds, install matching `0.1.3` packages by layer:
 
 ```bash
 dotnet add package AIKernel.Core --version 0.1.3
@@ -89,7 +89,7 @@ WASM execution, CUDA runtime behavior, or Doom scenario logic.
 | `aikernel-wasm` | `aikernel_wasm` | WASM runtime and WebGPU wrapper surface. |
 | `aikernel-cuda13-libtorch2-12-win-x64` | `aikernel_cuda13_libtorch2_12_win_x64` | Windows-only CUDA wrapper metadata and loader guidance. |
 
-After the stable release is opened:
+For public feeds:
 
 ```bash
 pip install aikernel-net==0.1.3
@@ -141,11 +141,12 @@ Choose the provider package by the runtime boundary you need:
 
 | Line | Meaning |
 |---|---|
-| `0.1.3` | First synchronized public Semantic OS package line. |
-| `0.1.3` | Unified public canonical package line for NuGet packages and synchronized Python wrappers. |
-| `0.1.3` | Current canonical series target. NuGet and PyPI package families are synchronized when publication opens. |
+| `0.1.1` | First synchronized public package baseline for the AIKernel.NET package family. |
+| `0.1.1.1` | NuGet-only validation line used to stabilize additive contract and documentation policy work. |
+| `0.1.2` | Canonical release line that introduced the public Doom prototype and prepared GPU/HUD integration material. |
+| `0.1.3` | Current canonical package series: synchronized NuGet and PyPI wrappers, promoted GPU OS interfaces, and canonical metadata. |
 
-Historical 0.1.3 CTG documents remain available for migration context:
+Historical CTG documents remain available for migration context:
 
 - [`../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md`](../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md)
 - [`../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md`](../architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md)
@@ -166,11 +167,12 @@ Historical 0.1.3 CTG documents remain available for migration context:
 ## Release Rule
 
 Use only matching `0.1.3` package families together for the canonical line.
-Do not mix `0.1.3`, `0.1.3`, and `0.1.3` packages in a release validation
-environment unless the task explicitly tests migration behavior.
+Do not mix stable packages with local `0.1.3-dev<build-number>` /
+`0.1.3.dev<build-number>` packages from another build, and do not combine the
+`0.1.3` family with older `0.1.x` packages unless the task explicitly tests
+migration behavior.
 
-Stable packages are created only after the publication task is opened. Until
-then, all local package validation uses:
+Local package validation uses:
 
 ```text
 NuGet: 0.1.3-dev<build-number>

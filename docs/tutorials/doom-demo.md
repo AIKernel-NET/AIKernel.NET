@@ -1,7 +1,7 @@
 ---
 title: "Doom Demo Tutorial"
-lang: ja
-description: "AIKernel.Doom の consent-gated browser demo と source-only runtime asset boundary を説明します。"
+lang: en
+description: "Doom Demo Tutorial for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: tutorials
 source: "generated-from-repository-inventory"

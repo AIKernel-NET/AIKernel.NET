@@ -1,7 +1,7 @@
 ---
 title: "Provider Configuration"
-lang: ja
-description: "Provider package の設定、依存、失敗時の扱い、Reference の確認方法を説明します。"
+lang: en
+description: "Provider Configuration for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"

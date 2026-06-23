@@ -1,7 +1,7 @@
 ---
 title: "AIKernel.NET Documentation Sitemap"
-lang: ja
-description: "AIKernel.NET 0.1.3 公式ドキュメントの章構造、Reference、tutorials、glossary への目次です。"
+lang: en
+description: "AIKernel.NET Documentation Sitemap for AIKernel.NET 0.1.3 developer documentation."
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"

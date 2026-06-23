@@ -23,6 +23,15 @@ updated: "2026-06-17"
 
 初めて読む場合は Overview、依存境界を確認する場合は Architecture、実行連携は Runtime、型や package の確認は Reference から読み始めます。
 
+## 開発者向け最短導線
+
+ローカルで AIKernel を build / verify する場合は、生成 API reference を開く前に次の順で確認します。
+
+1. [Package Installation Guide](operations/PACKAGE_INSTALLATION_GUIDE-jp.md) で同じ package family を導入する。
+2. [Demo Programs Guide](operations/DEMO_PROGRAMS_GUIDE-jp.md) で公式 demo を実行する。
+3. [v0.1.3 GPU Migration](migration/v0.1.3-gpu-canonical-migration.md) で GPU migration と provider readiness を確認する。
+4. public API member を追加する前に [XML Documentation Policy](operations/XML_DOCUMENTATION_POLICY-v0.1.3-jp.md) を確認する。
+
 ## 例
 
 ### Repository Map
@@ -35,7 +44,7 @@ updated: "2026-06-17"
 | `AIKernel.Providers` | Official extension provider set. Provider-specific behavior is kept outside Core and is exposed through standard, chat, compute, pipeline, local LLM, and Microsoft AI packages. | `0.1.3` | 12 | 1 | 223 | 13 | `AIKernel.Providers/Directory.Build.props` |
 | `AIKernel.Tools` | Developer and operations tools: CLI, inspectors, instrumentation, ROM export, replay helpers, and VFS/kernel-clock inspection. | `0.1.3` | 6 | 1 | 40 | 1 | `AIKernel.Tools/Directory.Build.props` |
 | `AIKernel.Wasm` | Browser and WebAssembly runtime surface for process, memory, file system, WebGPU, audio, display, HUD, input, perception, and spatial packages. | `0.1.3` | 9 | 1 | 119 | 2 | `AIKernel.Wasm/Directory.Build.props` |
-| `AIKernel.Doom` | Official source demo that models DOOM as a WASM process supervised by AIKernel-style provider, operator, consent, and perception boundaries. | `0.1.1.1` | 7 | 0 | 45 | 1 | `AIKernel.Doom/Directory.Build.props` |
+| `AIKernel.Doom` | Official source demo that models DOOM as a WASM process supervised by AIKernel-style provider, operator, consent, and perception boundaries. | `0.1.3` | 7 | 0 | 45 | 1 | `AIKernel.Doom/Directory.Build.props` |
 | `AIKernel.Cuda13.0` | External Capability package for Windows win-x64, LibTorch 2.12.0, and CUDA 13.0. CUDA runtime concerns stay outside Core. | `0.1.3` | 1 | 1 | 7 | 1 | `AIKernel.Cuda13.0/src/AIKernel.Cuda13.0.Libtorch2.12.win-x64/AIKernel.Cuda13.0.Libtorch2.12.win-x64.csproj` |
 
 ### Minimal install shape
@@ -57,6 +66,8 @@ dotnet tool install -g AIKernel.Tools.CLI --version 0.1.3
 
 - [What is AIKernel.NET](overview/what-is-aikernel.md)
 - [Quick Start](overview/quick-start.md)
+- [Package Installation Guide](operations/PACKAGE_INSTALLATION_GUIDE-jp.md)
+- [Demo Programs Guide](operations/DEMO_PROGRAMS_GUIDE-jp.md)
 - [System Architecture](architecture/system-architecture.md)
 - [Runtime Model](runtime/execution-model.md)
 - [Provider Model](providers/provider-model.md)
