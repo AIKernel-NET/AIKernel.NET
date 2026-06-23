@@ -1,19 +1,19 @@
 ---
 title: "Quick Start"
 lang: ja
-description: "AIKernel.NET 0.1.2 を最小構成で確認するための package install、repository build、Reference の読み方を示します。"
-tags: [AIKernel, AIKernel.NET, v0.1.2]
+description: "AIKernel.NET 0.1.3 を最小構成で確認するための package install、repository build、Reference の読み方を示します。"
+tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"
 generated: true
-release: "0.1.2"
+release: "0.1.3"
 updated: "2026-06-17"
 ---
 # Quick Start
 
 ## 概要
 
-Quick Start は stable 0.1.2 package line を導入し、生成 Reference を読むための最短経路を示します。
+Quick Start は stable 0.1.3 package line を導入し、生成 Reference を読むための最短経路を示します。
 
 ## 背景
 
@@ -28,17 +28,17 @@ Quick Start は stable 0.1.2 package line を導入し、生成 Reference を読
 ### NuGet
 
 ```bash
-dotnet add package AIKernel.Core --version 0.1.2
-dotnet add package AIKernel.Hosting --version 0.1.2
-dotnet add package AIKernel.Providers.Standard --version 0.1.2
+dotnet add package AIKernel.Core --version 0.1.3
+dotnet add package AIKernel.Hosting --version 0.1.3
+dotnet add package AIKernel.Providers.Standard --version 0.1.3
 ```
 
 ### Python wrappers
 
 ```bash
-pip install aikernel-net==0.1.2
-pip install aikernel-providers==0.1.2
-pip install aikernel-tools==0.1.2
+pip install aikernel-net==0.1.3
+pip install aikernel-providers==0.1.3
+pip install aikernel-tools==0.1.3
 ```
 
 ### Source build check

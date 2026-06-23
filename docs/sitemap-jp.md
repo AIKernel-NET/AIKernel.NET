@@ -1,12 +1,12 @@
 ---
 title: "AIKernel.NET ドキュメントサイトマップ"
 lang: ja
-description: "AIKernel.NET 0.1.2 公式ドキュメントの章構造、Reference、tutorials、glossary への目次です。"
-tags: [AIKernel, AIKernel.NET, v0.1.2]
+description: "AIKernel.NET 0.1.3 公式ドキュメントの章構造、Reference、tutorials、glossary への目次です。"
+tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"
 generated: true
-release: "0.1.2"
+release: "0.1.3"
 updated: "2026-06-17"
 ---
 
@@ -14,7 +14,7 @@ updated: "2026-06-17"
 
 ## 概要
 
-このページは 0.1.2 documentation renewal の簡潔な目次です。
+このページは 0.1.3 documentation renewal の簡潔な目次です。
 
 ## 背景
 

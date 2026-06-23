@@ -66,9 +66,9 @@ AIKernel.Demo also mirrors the package story on the Python side. Use the Python 
 
 These Python demo checks belong to the synchronized 0.1.1 package line. The
 0.1.1.1 contract update does not introduce new PyPI packages or additional
-Python demo validation. The next official v0.1.2 canonical series is expected
+Python demo validation. The next official v0.1.3 canonical series is expected
 to refresh the PyPI package family, so update these demo commands when the
-0.1.2 packages are published.
+0.1.3 packages are published.
 
 ```bash
 pip install aikernel-net==0.1.1 aikernel-providers==0.1.1 aikernel-tools==0.1.1

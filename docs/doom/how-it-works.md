@@ -2,11 +2,11 @@
 title: "How the Doom Demo Works"
 lang: ja
 description: "DoomProvider、DoomWasm、DoomWeb、DoomCapabilities、DoomOptimizer の関係を説明します。"
-tags: [AIKernel, AIKernel.NET, v0.1.2]
+tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"
 generated: true
-release: "0.1.2"
+release: "0.1.3"
 updated: "2026-06-17"
 ---
 
@@ -20,7 +20,7 @@ Doom source docs identify package responsibilities and runtime consent rules.
 
 ### JA
 
-How the Doom Demo Works は 0.1.2 の repository metadata、package metadata、既存 docs を根拠に説明します。
+How the Doom Demo Works は 0.1.3 の repository metadata、package metadata、既存 docs を根拠に説明します。
 
 ## Why
 

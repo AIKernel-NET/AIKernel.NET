@@ -2,18 +2,18 @@
 title: "Doom Demo"
 lang: ja
 description: "AIKernel.Doom official demo documentation の入口です。"
-tags: [AIKernel, AIKernel.NET, v0.1.2]
+tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"
 generated: true
-release: "0.1.2"
+release: "0.1.3"
 updated: "2026-06-17"
 ---
 # Doom Demo
 
 ## 概要
 
-Doom Demo は 0.1.2 の repository metadata、package metadata、既存 docs を根拠に説明します。
+Doom Demo は 0.1.3 の repository metadata、package metadata、既存 docs を根拠に説明します。
 
 ## 背景
 

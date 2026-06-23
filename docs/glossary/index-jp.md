@@ -1,12 +1,12 @@
 ---
 title: "用語集"
 lang: ja
-description: "AIKernel.NET 0.1.2 の主要用語と哲学由来の概念語彙を、日本語定義、英語定義、カタカナ発音、ローマ字表記つきで整理します。"
-tags: [AIKernel, AIKernel.NET, v0.1.2]
+description: "AIKernel.NET 0.1.3 の主要用語と哲学由来の概念語彙を、日本語定義、英語定義、カタカナ発音、ローマ字表記つきで整理します。"
+tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: glossary
 source: "generated-from-repository-inventory"
 generated: true
-release: "0.1.2"
+release: "0.1.3"
 updated: "2026-06-17"
 ---
 

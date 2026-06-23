@@ -1,19 +1,19 @@
 ---
 title: "Documentation Migration Report"
 lang: ja
-description: "AIKernel.NET 0.1.2 公式ドキュメント刷新で既存 docs/reference をどう扱ったかを記録します。"
-tags: [AIKernel, AIKernel.NET, v0.1.2]
+description: "AIKernel.NET 0.1.3 公式ドキュメント刷新で既存 docs/reference をどう扱ったかを記録します。"
+tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"
 generated: true
-release: "0.1.2"
+release: "0.1.3"
 updated: "2026-06-17"
 ---
 # Documentation Migration Report
 
 ## 概要
 
-この migration report は 0.1.2 renewal 中に既存 documentation をどう扱ったかを記録します。
+この migration report は 0.1.3 renewal 中に既存 documentation をどう扱ったかを記録します。
 
 ## 背景
 
@@ -30,7 +30,7 @@ updated: "2026-06-17"
 | Action | Result | Reason |
 |---|---|---|
 | Existing Markdown deletion | none | Archive candidates require manual source/content review. |
-| New 0.1.2 guide structure | added | Required by the renewal prompt. |
+| New 0.1.3 guide structure | added | Required by the renewal prompt. |
 | Generated Reference | rebuilt by site script | Keeps source paths and package metadata current. |
 | Ad/meta/footer | inherited in build templates | Existing site AdSense and copyright areas are preserved. |
 

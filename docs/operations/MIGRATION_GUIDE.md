@@ -20,7 +20,7 @@ additive package-line contract expansion for already published public packages.
 Existing `0.1.1` consumers do not need code migration unless they opt into the
 new domain contracts. The `0.1.1.1` package boundary is .NET / NuGet only:
 do not build or publish PyPI packages for this line, and keep Python wrappers
-on the synchronized `0.1.1` package line. The next official v0.1.2 canonical
+on the synchronized `0.1.1` package line. The next official v0.1.3 canonical
 series is expected to publish synchronized NuGet and PyPI package families.
 
 The CTG contract vocabulary was normalized before the `0.1.1.1` package line is

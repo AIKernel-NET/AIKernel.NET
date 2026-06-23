@@ -66,8 +66,8 @@ AIKernel.Demo は Python 側にも対応するデモ導線を持ちます。PyPI
 
 この Python デモ確認は、同期済み 0.1.1 パッケージライン向けです。0.1.1.1 の
 contract update では、新しい PyPI package や追加の Python demo validation はありません。
-次の公式 v0.1.2 正典シリーズでは PyPI package family を更新する前提のため、
-0.1.2 package 公開後にこの demo command も更新します。
+次の公式 v0.1.3 正典シリーズでは PyPI package family を更新する前提のため、
+0.1.3 package 公開後にこの demo command も更新します。
 
 ```bash
 pip install aikernel-net==0.1.1 aikernel-providers==0.1.1 aikernel-tools==0.1.1

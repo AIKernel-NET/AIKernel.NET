@@ -2,18 +2,18 @@
 title: "Doom Demo Overview"
 lang: ja
 description: "DOOM WASM process、consent gate、browser runtime、provider boundary を説明します。"
-tags: [AIKernel, AIKernel.NET, v0.1.2]
+tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"
 generated: true
-release: "0.1.2"
+release: "0.1.3"
 updated: "2026-06-17"
 ---
 # Doom Demo Overview
 
 ## 概要
 
-Doom Demo Overview は 0.1.2 の repository metadata、package metadata、既存 docs を根拠に説明します。
+Doom Demo Overview は 0.1.3 の repository metadata、package metadata、既存 docs を根拠に説明します。
 
 ## 背景
 

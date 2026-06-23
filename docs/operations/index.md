@@ -40,7 +40,7 @@ incident response, and SLO/SLA management.
 - v0.1.1 synchronized package line verification across NuGet, PyPI, Providers, WASM, Tools, CUDA, and Demo
 - v0.1.1.1 additive domain contract surface and documentation-policy alignment
 - v0.1.1.1 historical .NET / NuGet-only package boundary
-- v0.1.2 canonical series: synchronized NuGet and PyPI package families after the publication task opens
+- v0.1.3 canonical series: synchronized NuGet and PyPI package families after the publication task opens
 - v0.1.1.1 CTG DTO / enum normalization before publication
 
 Use this guide when upgrading package references or validating contract-layer dependencies.
@@ -54,7 +54,7 @@ Use this guide when upgrading package references or validating contract-layer de
 - NuGet package map for contract, runtime, provider, tools, WASM, and CUDA layers
 - PyPI package map for Python wrapper users
 - `0.1.1.1` rule: update .NET / NuGet packages only; keep PyPI packages on `0.1.1`
-- `0.1.2` assumption: publish refreshed NuGet and PyPI package families together
+- `0.1.3` assumption: publish refreshed NuGet and PyPI package families together
 - Provider selection guidance and repository links
 - 0.1.1 version-mixing rule
 
@@ -144,14 +144,14 @@ Use this guide when adding, reviewing, or mounting CTG-ROM canon and personaliza
 
 ---
 
-### 9a. [CTG ROM Layout v0.1.2](CTG_ROM_LAYOUT-v0.1.2.md)
+### 9a. [CTG ROM Layout v0.1.3](CTG_ROM_LAYOUT-v0.1.3.md)
 **Status:** Active
 **Current contents:**
-- v0.1.2 package-facing CTG-ROM version alignment
+- v0.1.3 package-facing CTG-ROM version alignment
 - rc5 Monolith CTG-ROM content promotion without semantic changes
 - `aikernel-net` bundled CTG-ROM sample synchronization rule
 
-Use this guide when verifying the v0.1.2 ROM metadata, Python sample package
+Use this guide when verifying the v0.1.3 ROM metadata, Python sample package
 contents, or base-layer personalization boundary.
 
 ---
@@ -227,10 +227,10 @@ Operations documentation is being expanded as contract and packaging boundaries 
 
 Currently:
 - The Migration Guide contains concrete steps through v0.1.1 and the v0.1.1.1 CTG DTO / enum normalization
-- The Package Installation Guide covers the v0.1.2 canonical package line, local `0.1.2-dev` / `0.1.2.dev` validation, and historical `0.1.1` / `0.1.1.1` context
+- The Package Installation Guide covers the v0.1.3 canonical package line, local `0.1.3-dev` / `0.1.3.dev` validation, and historical `0.1.1` / `0.1.1.1` context
 - The Demo Programs Guide covers the official AIKernel.Demo learning path
 - Interface naming, enum handling, XML documentation policy, CTG developer guidance, and CTG developer theory cover the v0.1.1.1 additive contract surface
-- CTG ROM Layout v0.1.2 covers the package-facing metadata promotion of the rc5 Monolith CTG-ROM without semantic changes
+- CTG ROM Layout v0.1.3 covers the package-facing metadata promotion of the rc5 Monolith CTG-ROM without semantic changes
 - Release, monitoring, incident, and security operations remain Planned
 
 Future versions will expand this directory.
@@ -254,4 +254,4 @@ Future versions will expand this directory.
 - v0.1.0 (2026-06-07): Added MemoryRegion / MemoryMapper contract extraction coverage
 - v0.1.1 (2026-06-10): Added package installation and demo program guides for the synchronized public release line
 - v0.1.1.1 (2026-06-14): Added CTG developer guide, CTG Developer Theory, Monolith CTG-ROM layout coverage, and the NuGet-only package boundary for 0.1.1.1
-- v0.1.2 (2026-06-16): Updated package installation guidance for synchronized NuGet / PyPI publication, local development package versioning, and CTG-ROM metadata alignment without semantic ROM changes
+- v0.1.3 (2026-06-16): Updated package installation guidance for synchronized NuGet / PyPI publication, local development package versioning, and CTG-ROM metadata alignment without semantic ROM changes

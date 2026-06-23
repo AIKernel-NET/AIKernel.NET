@@ -115,7 +115,7 @@ Defines the compatibility envelope before Concept Elevation implementation begin
 - Cross-repository responsibility boundaries
 - 0.1.1.1 local NuGet package versioning
 - NuGet-only / no-PyPI scope for this update line
-- Thin-surface rule for 0.1.2 contract promotion
+- Thin-surface rule for 0.1.3 contract promotion
 
 Defines the canonical operating envelope for AIKernel.NET, Core, Providers,
 Cuda13.0, Control, Tools, Wasm, Demo, and Doom during 0.1.1.1 development.
