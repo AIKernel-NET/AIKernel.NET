@@ -168,10 +168,10 @@ public sealed record GpuValidationResult
 }
 
 /// <summary>
-/// [EN] Canonical rev3 promotion readiness interpreted from diagnostics metadata.
-/// [JA] diagnostics metadata から解釈した canonical rev3 promotion readiness です。
+/// [EN] Canonical promotion readiness interpreted from diagnostics metadata.
+/// [JA] diagnostics metadata から解釈した canonical promotion readiness です。
 /// </summary>
-public sealed record GpuRev3PromotionReadiness
+public sealed record GpuPromotionReadiness
 {
     /// <summary>[EN] Final authoritative promotion decision. [JA] authoritative promotion の最終判定です。</summary>
     public bool IsAuthoritativeReady { get; init; }
@@ -192,7 +192,7 @@ public sealed record GpuRev3PromotionReadiness
     public bool HasStorageTextureFeature { get; init; }
 
     /// <summary>[EN] Promotion gate value. [JA] promotion gate 値です。</summary>
-    public string Gate { get; init; } = GpuRev3PromotionGates.NotEvaluated;
+    public string Gate { get; init; } = GpuPromotionGates.NotEvaluated;
 
     /// <summary>[EN] Stable machine-readable readiness reason. [JA] 機械判定向けの安定 reason です。</summary>
     public string Reason { get; init; } = "not-evaluated";
@@ -217,8 +217,8 @@ public static class GpuCanonicalValidation
         GpuCanonicalLayouts.All.ToDictionary(static layout => layout.Name, StringComparer.Ordinal);
 
     /// <summary>
-    /// [EN] Validates that supplied layouts match the canonical rev3 registry.
-    /// [JA] 指定 layout が canonical rev3 registry と一致することを検証します。
+    /// [EN] Validates that supplied layouts match the canonical registry.
+    /// [JA] 指定 layout が canonical registry と一致することを検証します。
     /// </summary>
     public static GpuValidationResult ValidateLayouts(IEnumerable<GpuFlatBufferLayout> layouts)
     {
@@ -312,8 +312,8 @@ public static class GpuCanonicalValidation
     }
 
     /// <summary>
-    /// [EN] Validates provider native ABI probe metadata for canonical rev3 native GPU backends.
-    /// [JA] canonical rev3 native GPU backend 用 provider native ABI probe metadata を検証します。
+    /// [EN] Validates provider native ABI probe metadata for canonical native GPU backends.
+    /// [JA] canonical native GPU backend 用 provider native ABI probe metadata を検証します。
     /// </summary>
     public static GpuValidationResult ValidateNativeAbiProbeMetadata(
         GpuBackend backend,
@@ -390,122 +390,122 @@ public static class GpuCanonicalValidation
     }
 
     /// <summary>
-    /// [EN] Validates browser WebGPU rev3 bridge metadata exposed by WASM providers and Doom hosts.
-    /// [JA] WASM provider と Doom host が公開する browser WebGPU rev3 bridge metadata を検証します。
+    /// [EN] Validates browser WebGPU canonical bridge metadata exposed by WASM providers and Doom hosts.
+    /// [JA] WASM provider と Doom host が公開する browser WebGPU canonical bridge metadata を検証します。
     /// </summary>
-    public static GpuValidationResult ValidateRev3BrowserBridgeMetadata(
+    public static GpuValidationResult ValidateBrowserBridgeMetadata(
         IReadOnlyDictionary<string, string> metadata)
     {
         ArgumentNullException.ThrowIfNull(metadata);
 
         var issues = new List<GpuValidationIssue>();
-        foreach (var key in RequiredRev3BrowserBridgeMetadataKeys)
+        foreach (var key in RequiredBrowserBridgeMetadataKeys)
         {
             if (!metadata.TryGetValue(key, out var value) || string.IsNullOrWhiteSpace(value))
             {
                 issues.Add(Error(
-                    "GPU_REV3_BROWSER_BRIDGE_METADATA_MISSING",
-                    $"Rev3 browser bridge metadata is missing required key '{key}'.",
-                    $"rev3BrowserBridge.{key}"));
+                    "GPU_BROWSER_BRIDGE_METADATA_MISSING",
+                    $"Canonical browser bridge metadata is missing required key '{key}'.",
+                    $"canonicalBrowserBridge.{key}"));
             }
         }
 
-        if (metadata.TryGetValue(GpuProviderMetadataKeys.Rev3EnvelopeSchema, out var schema) &&
-            !string.Equals(schema, "aikernel.gpu.rev3.dispatch", StringComparison.Ordinal))
+        if (metadata.TryGetValue(GpuProviderMetadataKeys.CanonicalEnvelopeSchema, out var schema) &&
+            !string.Equals(schema, "aikernel.gpu.dispatch", StringComparison.Ordinal))
         {
             issues.Add(Error(
-                "GPU_REV3_BROWSER_BRIDGE_SCHEMA_INVALID",
-                $"Rev3 browser bridge schema must be 'aikernel.gpu.rev3.dispatch', but was '{schema}'.",
-                $"rev3BrowserBridge.{GpuProviderMetadataKeys.Rev3EnvelopeSchema}"));
+                "GPU_BROWSER_BRIDGE_SCHEMA_INVALID",
+                $"Canonical browser bridge schema must be 'aikernel.gpu.dispatch', but was '{schema}'.",
+                $"canonicalBrowserBridge.{GpuProviderMetadataKeys.CanonicalEnvelopeSchema}"));
         }
 
-        if (metadata.TryGetValue(GpuProviderMetadataKeys.Rev3EnvelopeBridge, out var bridgePath) &&
-            !bridgePath.EndsWith("webgpu-rev3-envelope-bridge.js", StringComparison.Ordinal))
+        if (metadata.TryGetValue(GpuProviderMetadataKeys.CanonicalEnvelopeBridge, out var bridgePath) &&
+            !bridgePath.EndsWith("webgpu-envelope-bridge.js", StringComparison.Ordinal))
         {
             issues.Add(Error(
-                "GPU_REV3_BROWSER_BRIDGE_PATH_INVALID",
-                "Rev3 browser bridge runtime path must end with 'webgpu-rev3-envelope-bridge.js'.",
-                $"rev3BrowserBridge.{GpuProviderMetadataKeys.Rev3EnvelopeBridge}"));
+                "GPU_BROWSER_BRIDGE_PATH_INVALID",
+                "Canonical browser bridge runtime path must end with 'webgpu-envelope-bridge.js'.",
+                $"canonicalBrowserBridge.{GpuProviderMetadataKeys.CanonicalEnvelopeBridge}"));
         }
 
-        if (metadata.TryGetValue(GpuProviderMetadataKeys.Rev3BrowserPassReadiness, out var readiness))
+        if (metadata.TryGetValue(GpuProviderMetadataKeys.CanonicalBrowserPassReadiness, out var readiness))
         {
-            foreach (var token in RequiredRev3BrowserReadinessTokens)
+            foreach (var token in RequiredBrowserReadinessTokens)
             {
                 if (!readiness.Contains(token, StringComparison.Ordinal))
                 {
                     issues.Add(Error(
-                        "GPU_REV3_BROWSER_PASS_READINESS_SHAPE_INVALID",
-                        $"Rev3 browser pass readiness metadata must include '{token}'.",
-                        $"rev3BrowserBridge.{GpuProviderMetadataKeys.Rev3BrowserPassReadiness}"));
+                        "GPU_BROWSER_PASS_READINESS_SHAPE_INVALID",
+                        $"Canonical browser pass readiness metadata must include '{token}'.",
+                        $"canonicalBrowserBridge.{GpuProviderMetadataKeys.CanonicalBrowserPassReadiness}"));
                 }
             }
         }
 
         ValidateNoWhitespaceMetadataValue(
             metadata,
-            GpuProviderMetadataKeys.Rev3EnvelopeBridgeFactory,
-            "rev3BrowserBridge",
+            GpuProviderMetadataKeys.CanonicalEnvelopeBridgeFactory,
+            "canonicalBrowserBridge",
             issues);
         ValidateNoWhitespaceMetadataValue(
             metadata,
-            GpuProviderMetadataKeys.Rev3EnvelopeBridgeExecutorFactory,
-            "rev3BrowserBridge",
+            GpuProviderMetadataKeys.CanonicalEnvelopeBridgeExecutorFactory,
+            "canonicalBrowserBridge",
             issues);
         ValidateNoWhitespaceMetadataValue(
             metadata,
-            GpuProviderMetadataKeys.Rev3EnvelopeBridgeGlobal,
-            "rev3BrowserBridge",
+            GpuProviderMetadataKeys.CanonicalEnvelopeBridgeGlobal,
+            "canonicalBrowserBridge",
             issues);
 
         return GpuValidationResult.FromIssues(issues);
     }
 
     /// <summary>
-    /// [EN] Validates rev3 execution-layer metadata shared by browser WebGPU, Dawn, and CUDA sibling providers.
-    /// [JA] browser WebGPU、Dawn、CUDA sibling provider で共有する rev3 execution-layer metadata を検証します。
+    /// [EN] Validates canonical execution-layer metadata shared by browser WebGPU, Dawn, and CUDA sibling providers.
+    /// [JA] browser WebGPU、Dawn、CUDA sibling provider で共有する canonical execution-layer metadata を検証します。
     /// </summary>
-    public static GpuValidationResult ValidateRev3ExecutionLayerMetadata(
+    public static GpuValidationResult ValidateExecutionLayerMetadata(
         IReadOnlyDictionary<string, string> metadata)
     {
         ArgumentNullException.ThrowIfNull(metadata);
 
         var issues = new List<GpuValidationIssue>();
-        foreach (var key in RequiredRev3ExecutionLayerMetadataKeys)
+        foreach (var key in RequiredExecutionLayerMetadataKeys)
         {
             if (!metadata.TryGetValue(key, out var value) || string.IsNullOrWhiteSpace(value))
             {
                 issues.Add(Error(
-                    "GPU_REV3_EXECUTION_LAYER_METADATA_MISSING",
-                    $"Rev3 execution-layer metadata is missing required key '{key}'.",
-                    $"rev3ExecutionLayer.{key}"));
+                    "GPU_EXECUTION_LAYER_METADATA_MISSING",
+                    $"Canonical execution-layer metadata is missing required key '{key}'.",
+                    $"canonicalExecutionLayer.{key}"));
             }
         }
 
         ValidateNoWhitespaceExecutionLayerMetadataValue(
             metadata,
             GpuProviderMetadataKeys.GpuBypass,
-            "rev3ExecutionLayer",
+            "canonicalExecutionLayer",
             issues);
         ValidateNoWhitespaceExecutionLayerMetadataValue(
             metadata,
             GpuProviderMetadataKeys.NativeJsBridge,
-            "rev3ExecutionLayer",
+            "canonicalExecutionLayer",
             issues);
         ValidateNoWhitespaceExecutionLayerMetadataValue(
             metadata,
             GpuProviderMetadataKeys.AotCompilerHooks,
-            "rev3ExecutionLayer",
+            "canonicalExecutionLayer",
             issues);
         ValidateNoWhitespaceExecutionLayerMetadataValue(
             metadata,
             GpuProviderMetadataKeys.DeterministicFrameSampling,
-            "rev3ExecutionLayer",
+            "canonicalExecutionLayer",
             issues);
         ValidateNoWhitespaceExecutionLayerMetadataValue(
             metadata,
             GpuProviderMetadataKeys.ZeroCopyBufferHandling,
-            "rev3ExecutionLayer",
+            "canonicalExecutionLayer",
             issues);
 
         return GpuValidationResult.FromIssues(issues);
@@ -627,10 +627,10 @@ public static class GpuCanonicalValidation
     }
 
     /// <summary>
-    /// [EN] Validates one canonical rev3 diagnostics metadata dictionary before provider or bridge handoff.
-    /// [JA] provider または bridge handoff 前に canonical rev3 diagnostics metadata 辞書単体を検証します。
+    /// [EN] Validates one canonical diagnostics metadata dictionary before provider or bridge handoff.
+    /// [JA] provider または bridge handoff 前に canonical diagnostics metadata 辞書単体を検証します。
     /// </summary>
-    public static GpuValidationResult ValidateRev3DiagnosticsMetadata(
+    public static GpuValidationResult ValidateDiagnosticsMetadata(
         IReadOnlyDictionary<string, string> metadata,
         string pathName = "diagnostics")
     {
@@ -642,32 +642,32 @@ public static class GpuCanonicalValidation
     }
 
     /// <summary>
-    /// [EN] Evaluates canonical rev3 promotion readiness from validated diagnostics metadata.
-    /// [JA] 検証済み diagnostics metadata から canonical rev3 promotion readiness を評価します。
+    /// [EN] Evaluates canonical promotion readiness from validated diagnostics metadata.
+    /// [JA] 検証済み diagnostics metadata から canonical promotion readiness を評価します。
     /// </summary>
-    public static GpuRev3PromotionReadiness EvaluateRev3PromotionReadiness(
+    public static GpuPromotionReadiness EvaluatePromotionReadiness(
         IReadOnlyDictionary<string, string> metadata)
     {
         ArgumentNullException.ThrowIfNull(metadata);
 
-        if (!TryReadRequiredString(metadata, GpuDiagnosticsMetadataKeys.Rev3PromotionGate, out var gate) ||
-            !TryReadRequiredBoolean(metadata, GpuDiagnosticsMetadataKeys.Rev3AuthoritativeReady, out var authoritativeReady) ||
-            !TryReadRequiredBoolean(metadata, GpuDiagnosticsMetadataKeys.Rev3DiagnosticReady, out var diagnosticReady) ||
-            !TryReadRequiredBoolean(metadata, GpuDiagnosticsMetadataKeys.Rev3FeatureMaskStorageTexture, out var storageTextureReady) ||
-            !TryReadRequiredInt(metadata, GpuDiagnosticsMetadataKeys.Rev3CandidateStreak, out var candidateStreak) ||
-            !TryReadRequiredInt(metadata, GpuDiagnosticsMetadataKeys.Rev3DiagnosticStreak, out var diagnosticStreak) ||
-            !TryReadRequiredInt(metadata, GpuDiagnosticsMetadataKeys.Rev3RequiredStreak, out var requiredStreak))
+        if (!TryReadRequiredString(metadata, GpuDiagnosticsMetadataKeys.CanonicalPromotionGate, out var gate) ||
+            !TryReadRequiredBoolean(metadata, GpuDiagnosticsMetadataKeys.CanonicalAuthoritativeReady, out var authoritativeReady) ||
+            !TryReadRequiredBoolean(metadata, GpuDiagnosticsMetadataKeys.CanonicalDiagnosticReady, out var diagnosticReady) ||
+            !TryReadRequiredBoolean(metadata, GpuDiagnosticsMetadataKeys.CanonicalFeatureMaskStorageTexture, out var storageTextureReady) ||
+            !TryReadRequiredInt(metadata, GpuDiagnosticsMetadataKeys.CanonicalCandidateStreak, out var candidateStreak) ||
+            !TryReadRequiredInt(metadata, GpuDiagnosticsMetadataKeys.CanonicalDiagnosticStreak, out var diagnosticStreak) ||
+            !TryReadRequiredInt(metadata, GpuDiagnosticsMetadataKeys.CanonicalRequiredStreak, out var requiredStreak))
         {
-            return new GpuRev3PromotionReadiness
+            return new GpuPromotionReadiness
             {
                 IsBlocked = true,
                 Reason = "metadata-missing"
             };
         }
 
-        if (!GpuRev3PromotionGates.All.Contains(gate))
+        if (!GpuPromotionGates.All.Contains(gate))
         {
-            return new GpuRev3PromotionReadiness
+            return new GpuPromotionReadiness
             {
                 IsBlocked = true,
                 Gate = gate,
@@ -682,7 +682,7 @@ public static class GpuCanonicalValidation
 
         if (candidateStreak < 0 || diagnosticStreak < 0)
         {
-            return new GpuRev3PromotionReadiness
+            return new GpuPromotionReadiness
             {
                 IsBlocked = true,
                 Gate = gate,
@@ -695,9 +695,9 @@ public static class GpuCanonicalValidation
             };
         }
 
-        if (gate == GpuRev3PromotionGates.NotApplicable)
+        if (gate == GpuPromotionGates.NotApplicable)
         {
-            return new GpuRev3PromotionReadiness
+            return new GpuPromotionReadiness
             {
                 Gate = gate,
                 Reason = "not-applicable",
@@ -709,9 +709,9 @@ public static class GpuCanonicalValidation
             };
         }
 
-        if (gate != GpuRev3PromotionGates.TraceCandidate)
+        if (gate != GpuPromotionGates.TraceCandidate)
         {
-            return new GpuRev3PromotionReadiness
+            return new GpuPromotionReadiness
             {
                 IsBlocked = true,
                 Gate = gate,
@@ -726,7 +726,7 @@ public static class GpuCanonicalValidation
 
         if (requiredStreak <= 0)
         {
-            return new GpuRev3PromotionReadiness
+            return new GpuPromotionReadiness
             {
                 IsBlocked = true,
                 Gate = gate,
@@ -744,7 +744,7 @@ public static class GpuCanonicalValidation
         var promotionCandidate = storageTextureReady && diagnosticStable && candidateStable;
         var finalReady = promotionCandidate && authoritativeReady;
 
-        return new GpuRev3PromotionReadiness
+        return new GpuPromotionReadiness
         {
             IsAuthoritativeReady = finalReady,
             IsDiagnosticReady = diagnosticReady,
@@ -753,7 +753,7 @@ public static class GpuCanonicalValidation
             IsBlocked = !storageTextureReady,
             HasStorageTextureFeature = storageTextureReady,
             Gate = gate,
-            Reason = ResolveRev3PromotionReason(
+            Reason = ResolvePromotionReason(
                 finalReady,
                 storageTextureReady,
                 diagnosticReady,
@@ -791,7 +791,7 @@ public static class GpuCanonicalValidation
         }
     }
 
-    private static string ResolveRev3PromotionReason(
+    private static string ResolvePromotionReason(
         bool finalReady,
         bool storageTextureReady,
         bool diagnosticReady,
@@ -901,8 +901,8 @@ public static class GpuCanonicalValidation
 
     private static IReadOnlyList<string> RequiredControlArbitrationMetadataKeys { get; } =
     [
-        GpuDiagnosticsMetadataKeys.Rev3PassId,
-        GpuDiagnosticsMetadataKeys.Rev3ExecutionMode,
+        GpuDiagnosticsMetadataKeys.CanonicalPassId,
+        GpuDiagnosticsMetadataKeys.CanonicalExecutionMode,
         GpuProviderMetadataKeys.Backend,
         GpuProviderMetadataKeys.Fallback,
         GpuControlMetadataKeys.IntentId,
@@ -927,17 +927,17 @@ public static class GpuCanonicalValidation
         GpuControlMetadataKeys.NativePassBridgeAvailable
     ];
 
-    private static IReadOnlyList<string> RequiredRev3BrowserBridgeMetadataKeys { get; } =
+    private static IReadOnlyList<string> RequiredBrowserBridgeMetadataKeys { get; } =
     [
-        GpuProviderMetadataKeys.Rev3BrowserPassReadiness,
-        GpuProviderMetadataKeys.Rev3EnvelopeBridge,
-        GpuProviderMetadataKeys.Rev3EnvelopeBridgeExecutorFactory,
-        GpuProviderMetadataKeys.Rev3EnvelopeBridgeFactory,
-        GpuProviderMetadataKeys.Rev3EnvelopeBridgeGlobal,
-        GpuProviderMetadataKeys.Rev3EnvelopeSchema
+        GpuProviderMetadataKeys.CanonicalBrowserPassReadiness,
+        GpuProviderMetadataKeys.CanonicalEnvelopeBridge,
+        GpuProviderMetadataKeys.CanonicalEnvelopeBridgeExecutorFactory,
+        GpuProviderMetadataKeys.CanonicalEnvelopeBridgeFactory,
+        GpuProviderMetadataKeys.CanonicalEnvelopeBridgeGlobal,
+        GpuProviderMetadataKeys.CanonicalEnvelopeSchema
     ];
 
-    private static IReadOnlyList<string> RequiredRev3BrowserReadinessTokens { get; } =
+    private static IReadOnlyList<string> RequiredBrowserReadinessTokens { get; } =
     [
         "Passes.",
         "Aisthesis",
@@ -950,7 +950,7 @@ public static class GpuCanonicalValidation
         "ReadyForBuiltIn"
     ];
 
-    private static IReadOnlyList<string> RequiredRev3ExecutionLayerMetadataKeys { get; } =
+    private static IReadOnlyList<string> RequiredExecutionLayerMetadataKeys { get; } =
     [
         GpuProviderMetadataKeys.PassBridge,
         GpuProviderMetadataKeys.RawCaptureSource,
@@ -961,55 +961,55 @@ public static class GpuCanonicalValidation
         GpuProviderMetadataKeys.ZeroCopyBufferHandling
     ];
 
-    private static IReadOnlyList<string> RequiredRev3FrameDiagnosticsMetadataKeys { get; } =
+    private static IReadOnlyList<string> RequiredFrameDiagnosticsMetadataKeys { get; } =
     [
-        GpuDiagnosticsMetadataKeys.Rev3FrameIndex,
-        GpuDiagnosticsMetadataKeys.Rev3SampleTicks
+        GpuDiagnosticsMetadataKeys.CanonicalFrameIndex,
+        GpuDiagnosticsMetadataKeys.CanonicalSampleTicks
     ];
 
-    private static IReadOnlyList<string> RequiredRev3DiagnosticsMetadataKeys { get; } =
+    private static IReadOnlyList<string> RequiredDiagnosticsMetadataKeys { get; } =
     [
-        GpuDiagnosticsMetadataKeys.Rev3AuthoritativeReady,
-        GpuDiagnosticsMetadataKeys.Rev3CandidateStreak,
-        GpuDiagnosticsMetadataKeys.Rev3DiagnosticReady,
-        GpuDiagnosticsMetadataKeys.Rev3DiagnosticStreak,
-        GpuDiagnosticsMetadataKeys.Rev3ExecutionMode,
-        GpuDiagnosticsMetadataKeys.Rev3FeatureMaskStorageTexture,
-        GpuDiagnosticsMetadataKeys.Rev3PassId,
-        GpuDiagnosticsMetadataKeys.Rev3PassReadiness,
-        GpuDiagnosticsMetadataKeys.Rev3PathRole,
-        GpuDiagnosticsMetadataKeys.Rev3PilotState,
-        GpuDiagnosticsMetadataKeys.Rev3PromotionGate,
-        GpuDiagnosticsMetadataKeys.Rev3RequiredStreak,
-        .. RequiredRev3FrameDiagnosticsMetadataKeys
+        GpuDiagnosticsMetadataKeys.CanonicalAuthoritativeReady,
+        GpuDiagnosticsMetadataKeys.CanonicalCandidateStreak,
+        GpuDiagnosticsMetadataKeys.CanonicalDiagnosticReady,
+        GpuDiagnosticsMetadataKeys.CanonicalDiagnosticStreak,
+        GpuDiagnosticsMetadataKeys.CanonicalExecutionMode,
+        GpuDiagnosticsMetadataKeys.CanonicalFeatureMaskStorageTexture,
+        GpuDiagnosticsMetadataKeys.CanonicalPassId,
+        GpuDiagnosticsMetadataKeys.CanonicalPassReadiness,
+        GpuDiagnosticsMetadataKeys.CanonicalPathRole,
+        GpuDiagnosticsMetadataKeys.CanonicalPilotState,
+        GpuDiagnosticsMetadataKeys.CanonicalPromotionGate,
+        GpuDiagnosticsMetadataKeys.CanonicalRequiredStreak,
+        .. RequiredFrameDiagnosticsMetadataKeys
     ];
 
-    private static IReadOnlyList<string> Rev3DiagnosticsBooleanMetadataKeys { get; } =
+    private static IReadOnlyList<string> DiagnosticsBooleanMetadataKeys { get; } =
     [
-        GpuDiagnosticsMetadataKeys.Rev3AuthoritativeReady,
-        GpuDiagnosticsMetadataKeys.Rev3DiagnosticReady,
-        GpuDiagnosticsMetadataKeys.Rev3FeatureMaskStorageTexture,
-        GpuDiagnosticsMetadataKeys.Rev3PromotionBlocked,
-        GpuDiagnosticsMetadataKeys.Rev3PromotionCandidateReady,
-        GpuDiagnosticsMetadataKeys.Rev3PromotionDiagnosticStable
+        GpuDiagnosticsMetadataKeys.CanonicalAuthoritativeReady,
+        GpuDiagnosticsMetadataKeys.CanonicalDiagnosticReady,
+        GpuDiagnosticsMetadataKeys.CanonicalFeatureMaskStorageTexture,
+        GpuDiagnosticsMetadataKeys.CanonicalPromotionBlocked,
+        GpuDiagnosticsMetadataKeys.CanonicalPromotionCandidateReady,
+        GpuDiagnosticsMetadataKeys.CanonicalPromotionDiagnosticStable
     ];
 
-    private static IReadOnlyList<string> Rev3DiagnosticsIntegerMetadataKeys { get; } =
+    private static IReadOnlyList<string> DiagnosticsIntegerMetadataKeys { get; } =
     [
-        GpuDiagnosticsMetadataKeys.Rev3CandidateStreak,
-        GpuDiagnosticsMetadataKeys.Rev3DiagnosticStreak,
-        GpuDiagnosticsMetadataKeys.Rev3RequiredStreak,
-        GpuDiagnosticsMetadataKeys.Rev3FrameIndex,
-        GpuDiagnosticsMetadataKeys.Rev3SampleTicks
+        GpuDiagnosticsMetadataKeys.CanonicalCandidateStreak,
+        GpuDiagnosticsMetadataKeys.CanonicalDiagnosticStreak,
+        GpuDiagnosticsMetadataKeys.CanonicalRequiredStreak,
+        GpuDiagnosticsMetadataKeys.CanonicalFrameIndex,
+        GpuDiagnosticsMetadataKeys.CanonicalSampleTicks
     ];
 
-    private static IReadOnlyDictionary<string, IReadOnlySet<string>> Rev3DiagnosticsKnownValueMetadataKeys { get; } =
+    private static IReadOnlyDictionary<string, IReadOnlySet<string>> DiagnosticsKnownValueMetadataKeys { get; } =
         new Dictionary<string, IReadOnlySet<string>>(StringComparer.Ordinal)
         {
-            [GpuDiagnosticsMetadataKeys.Rev3ExecutionMode] = GpuRev3ExecutionModes.All,
-            [GpuDiagnosticsMetadataKeys.Rev3PathRole] = GpuRev3PathRoles.All,
-            [GpuDiagnosticsMetadataKeys.Rev3PilotState] = GpuRev3PilotStates.All,
-            [GpuDiagnosticsMetadataKeys.Rev3PromotionGate] = GpuRev3PromotionGates.All
+            [GpuDiagnosticsMetadataKeys.CanonicalExecutionMode] = GpuExecutionModes.All,
+            [GpuDiagnosticsMetadataKeys.CanonicalPathRole] = GpuPathRoles.All,
+            [GpuDiagnosticsMetadataKeys.CanonicalPilotState] = GpuCanonicalPilotStates.All,
+            [GpuDiagnosticsMetadataKeys.CanonicalPromotionGate] = GpuPromotionGates.All
         };
 
     private static void ValidateBooleanMetadata(
@@ -1050,8 +1050,8 @@ public static class GpuCanonicalValidation
         if (value.Any(char.IsWhiteSpace))
         {
             issues.Add(Error(
-                "GPU_REV3_BROWSER_BRIDGE_IDENTIFIER_INVALID",
-                $"Rev3 browser bridge metadata key '{key}' must be a compact identifier with no whitespace.",
+                "GPU_BROWSER_BRIDGE_IDENTIFIER_INVALID",
+                $"Canonical browser bridge metadata key '{key}' must be a compact identifier with no whitespace.",
                 $"{pathPrefix}.{key}"));
         }
     }
@@ -1070,8 +1070,8 @@ public static class GpuCanonicalValidation
         if (value.Any(char.IsWhiteSpace))
         {
             issues.Add(Error(
-                "GPU_REV3_EXECUTION_LAYER_IDENTIFIER_INVALID",
-                $"Rev3 execution-layer metadata key '{key}' must be a compact identifier with no whitespace.",
+                "GPU_EXECUTION_LAYER_IDENTIFIER_INVALID",
+                $"Canonical execution-layer metadata key '{key}' must be a compact identifier with no whitespace.",
                 $"{pathPrefix}.{key}"));
         }
     }
@@ -1139,20 +1139,20 @@ public static class GpuCanonicalValidation
             }
         }
 
-        if (metadata.Keys.Any(static key => key.StartsWith("rev3_", StringComparison.Ordinal)))
+        if (metadata.Keys.Any(IsCanonicalDiagnosticsMetadataKey))
         {
-            foreach (var key in RequiredRev3DiagnosticsMetadataKeys)
+            foreach (var key in RequiredDiagnosticsMetadataKeys)
             {
                 if (!metadata.TryGetValue(key, out var value) || string.IsNullOrWhiteSpace(value))
                 {
                     issues.Add(Error(
-                        "GPU_DIAGNOSTICS_REV3_METADATA_MISSING",
-                        $"GPU diagnostics rev3 metadata must include key '{key}'.",
+                        "GPU_DIAGNOSTICS_METADATA_MISSING",
+                        $"GPU diagnostics canonical metadata must include key '{key}'.",
                         $"{pathName}.metadata.{key}"));
                 }
             }
 
-            foreach (var key in Rev3DiagnosticsBooleanMetadataKeys)
+            foreach (var key in DiagnosticsBooleanMetadataKeys)
             {
                 if (!metadata.TryGetValue(key, out var value) || string.IsNullOrWhiteSpace(value))
                 {
@@ -1163,13 +1163,13 @@ public static class GpuCanonicalValidation
                     !string.Equals(value, "false", StringComparison.OrdinalIgnoreCase))
                 {
                     issues.Add(Error(
-                        "GPU_DIAGNOSTICS_REV3_METADATA_BOOLEAN_INVALID",
-                        $"GPU diagnostics rev3 metadata key '{key}' must be 'true' or 'false', but was '{value}'.",
+                        "GPU_DIAGNOSTICS_METADATA_BOOLEAN_INVALID",
+                        $"GPU diagnostics canonical metadata key '{key}' must be 'true' or 'false', but was '{value}'.",
                         $"{pathName}.metadata.{key}"));
                 }
             }
 
-            foreach (var key in Rev3DiagnosticsIntegerMetadataKeys)
+            foreach (var key in DiagnosticsIntegerMetadataKeys)
             {
                 if (!metadata.TryGetValue(key, out var value) || string.IsNullOrWhiteSpace(value))
                 {
@@ -1179,13 +1179,13 @@ public static class GpuCanonicalValidation
                 if (!long.TryParse(value, out var parsed) || parsed < 0)
                 {
                     issues.Add(Error(
-                        "GPU_DIAGNOSTICS_REV3_METADATA_INTEGER_INVALID",
-                        $"GPU diagnostics rev3 metadata key '{key}' must be a non-negative integer, but was '{value}'.",
+                        "GPU_DIAGNOSTICS_METADATA_INTEGER_INVALID",
+                        $"GPU diagnostics canonical metadata key '{key}' must be a non-negative integer, but was '{value}'.",
                         $"{pathName}.metadata.{key}"));
                 }
             }
 
-            foreach (var pair in Rev3DiagnosticsKnownValueMetadataKeys)
+            foreach (var pair in DiagnosticsKnownValueMetadataKeys)
             {
                 if (!metadata.TryGetValue(pair.Key, out var value) || string.IsNullOrWhiteSpace(value))
                 {
@@ -1195,27 +1195,33 @@ public static class GpuCanonicalValidation
                 if (!pair.Value.Contains(value))
                 {
                     issues.Add(Error(
-                        "GPU_DIAGNOSTICS_REV3_METADATA_VALUE_UNKNOWN",
-                        $"GPU diagnostics rev3 metadata key '{pair.Key}' has unknown canonical value '{value}'.",
+                        "GPU_DIAGNOSTICS_METADATA_VALUE_UNKNOWN",
+                        $"GPU diagnostics canonical metadata key '{pair.Key}' has unknown canonical value '{value}'.",
                         $"{pathName}.metadata.{pair.Key}"));
                 }
             }
         }
 
-        if (metadata.TryGetValue(GpuDiagnosticsMetadataKeys.Rev3PassReadiness, out var readiness))
+        if (metadata.TryGetValue(GpuDiagnosticsMetadataKeys.CanonicalPassReadiness, out var readiness))
         {
-            foreach (var token in RequiredRev3BrowserReadinessTokens)
+            foreach (var token in RequiredBrowserReadinessTokens)
             {
                 if (!readiness.Contains(token, StringComparison.Ordinal))
                 {
                     issues.Add(Error(
-                        "GPU_DIAGNOSTICS_REV3_PASS_READINESS_SHAPE_INVALID",
-                        $"GPU diagnostics rev3 pass readiness metadata must include '{token}'.",
-                        $"{pathName}.metadata.{GpuDiagnosticsMetadataKeys.Rev3PassReadiness}"));
+                        "GPU_DIAGNOSTICS_PASS_READINESS_SHAPE_INVALID",
+                        $"GPU diagnostics canonical pass readiness metadata must include '{token}'.",
+                        $"{pathName}.metadata.{GpuDiagnosticsMetadataKeys.CanonicalPassReadiness}"));
                 }
             }
         }
     }
+
+    private static bool IsCanonicalDiagnosticsMetadataKey(string key)
+        => RequiredDiagnosticsMetadataKeys.Contains(key, StringComparer.Ordinal) ||
+            DiagnosticsBooleanMetadataKeys.Contains(key, StringComparer.Ordinal) ||
+            DiagnosticsIntegerMetadataKeys.Contains(key, StringComparer.Ordinal) ||
+            DiagnosticsKnownValueMetadataKeys.ContainsKey(key);
 
     private static GpuValidationIssue Error(string code, string message, string path)
         => new()
@@ -1324,65 +1330,65 @@ public sealed record GpuDiagnosticsPathInfo
 public static class GpuDiagnosticsMetadataKeys
 {
     /// <summary>[EN] Canonical pass identifier. [JA] canonical pass identifier です。</summary>
-    public const string Rev3PassId = "rev3_pass_id";
+    public const string CanonicalPassId = "pass_id";
 
     /// <summary>[EN] Deterministic frame index copied from GpuFrameToken. [JA] GpuFrameToken 由来の deterministic frame index です。</summary>
-    public const string Rev3FrameIndex = "rev3_frame_index";
+    public const string CanonicalFrameIndex = "frame_index";
 
     /// <summary>[EN] Deterministic sample ticks copied from GpuFrameToken. [JA] GpuFrameToken 由来の deterministic sample ticks です。</summary>
-    public const string Rev3SampleTicks = "rev3_sample_ticks";
+    public const string CanonicalSampleTicks = "sample_ticks";
 
     /// <summary>[EN] Path role such as game, bonsai, hud, or sensor. [JA] game、bonsai、hud、sensor などの path role です。</summary>
-    public const string Rev3PathRole = "rev3_path_role";
+    public const string CanonicalPathRole = "path_role";
 
     /// <summary>[EN] Pilot comparison state. [JA] pilot 比較状態です。</summary>
-    public const string Rev3PilotState = "rev3_pilot_state";
+    public const string CanonicalPilotState = "pilot_state";
 
     /// <summary>[EN] Promotion gate state. [JA] promotion gate 状態です。</summary>
-    public const string Rev3PromotionGate = "rev3_promotion_gate";
+    public const string CanonicalPromotionGate = "promotion_gate";
 
     /// <summary>[EN] Consecutive candidate frame count. [JA] 連続 candidate frame 数です。</summary>
-    public const string Rev3CandidateStreak = "rev3_candidate_streak";
+    public const string CanonicalCandidateStreak = "candidate_streak";
 
     /// <summary>[EN] Consecutive diagnostic-ready frame count. [JA] 連続 diagnostic-ready frame 数です。</summary>
-    public const string Rev3DiagnosticStreak = "rev3_diagnostic_streak";
+    public const string CanonicalDiagnosticStreak = "diagnostic_streak";
 
     /// <summary>[EN] Required streak count for readiness. [JA] readiness に必要な streak 数です。</summary>
-    public const string Rev3RequiredStreak = "rev3_required_streak";
+    public const string CanonicalRequiredStreak = "required_streak";
 
     /// <summary>[EN] True when the path may become authoritative. [JA] path が authoritative になり得る場合 true です。</summary>
-    public const string Rev3AuthoritativeReady = "rev3_authoritative_ready";
+    public const string CanonicalAuthoritativeReady = "authoritative_ready";
 
     /// <summary>[EN] True when the path is diagnostically stable. [JA] path が diagnostics 上 stable な場合 true です。</summary>
-    public const string Rev3DiagnosticReady = "rev3_diagnostic_ready";
+    public const string CanonicalDiagnosticReady = "diagnostic_ready";
 
     /// <summary>[EN] Execution mode such as browser WebGPU compute or deterministic fallback. [JA] browser WebGPU compute や deterministic fallback などの execution mode です。</summary>
-    public const string Rev3ExecutionMode = "rev3_execution_mode";
+    public const string CanonicalExecutionMode = "execution_mode";
 
     /// <summary>[EN] True when Aisthesis owns a canonical FeatureMask GPU storage texture. [JA] Aisthesis が canonical FeatureMask GPU storage texture を所有する場合 true です。</summary>
-    public const string Rev3FeatureMaskStorageTexture = "rev3_feature_mask_storage_texture";
+    public const string CanonicalFeatureMaskStorageTexture = "feature_mask_storage_texture";
 
     /// <summary>[EN] Compact pass-readiness summary for browser HUD rows. [JA] browser HUD row 用の compact pass-readiness summary です。</summary>
-    public const string Rev3PassReadiness = "rev3_pass_readiness";
+    public const string CanonicalPassReadiness = "pass_readiness";
 
     /// <summary>[EN] True when promotion readiness is blocked. [JA] promotion readiness が block されている場合 true です。</summary>
-    public const string Rev3PromotionBlocked = "rev3_promotion_blocked";
+    public const string CanonicalPromotionBlocked = "promotion_blocked";
 
     /// <summary>[EN] True when the path is a stable promotion candidate. [JA] path が stable promotion candidate の場合 true です。</summary>
-    public const string Rev3PromotionCandidateReady = "rev3_promotion_candidate_ready";
+    public const string CanonicalPromotionCandidateReady = "promotion_candidate_ready";
 
     /// <summary>[EN] True when diagnostic readiness has reached the required stable streak. [JA] diagnostic readiness が required stable streak に到達した場合 true です。</summary>
-    public const string Rev3PromotionDiagnosticStable = "rev3_promotion_diagnostic_stable";
+    public const string CanonicalPromotionDiagnosticStable = "promotion_diagnostic_stable";
 
-    /// <summary>[EN] Machine-readable reason produced by the rev3 promotion evaluator. [JA] rev3 promotion evaluator が生成する機械判定用 reason です。</summary>
-    public const string Rev3PromotionReason = "rev3_promotion_reason";
+    /// <summary>[EN] Machine-readable reason produced by the canonical promotion evaluator. [JA] canonical promotion evaluator が生成する機械判定用 reason です。</summary>
+    public const string CanonicalPromotionReason = "promotion_reason";
 }
 
 /// <summary>
-/// [EN] Canonical v0.1.3 rev3 diagnostics execution mode values.
-/// [JA] canonical v0.1.3 rev3 diagnostics execution mode 値です。
+/// [EN] Canonical v0.1.3 diagnostics execution mode values.
+/// [JA] canonical v0.1.3 diagnostics execution mode 値です。
 /// </summary>
-public static class GpuRev3ExecutionModes
+public static class GpuExecutionModes
 {
     /// <summary>[EN] Browser WebGPU compute execution. [JA] browser WebGPU compute execution です。</summary>
     public const string BrowserWebGpuCompute = "browser-webgpu-compute";
@@ -1435,10 +1441,10 @@ public static class GpuRev3ExecutionModes
 }
 
 /// <summary>
-/// [EN] Canonical v0.1.3 rev3 diagnostics path roles.
-/// [JA] canonical v0.1.3 rev3 diagnostics path role 値です。
+/// [EN] Canonical v0.1.3 diagnostics path roles.
+/// [JA] canonical v0.1.3 diagnostics path role 値です。
 /// </summary>
-public static class GpuRev3PathRoles
+public static class GpuPathRoles
 {
     /// <summary>[EN] Game rendering path. [JA] game rendering path です。</summary>
     public const string Game = "game";
@@ -1506,10 +1512,10 @@ public static class GpuRev3PathRoles
 }
 
 /// <summary>
-/// [EN] Canonical v0.1.3 rev3 pilot state values used by diagnostics rows.
-/// [JA] diagnostics row で使う canonical v0.1.3 rev3 pilot state 値です。
+/// [EN] Canonical v0.1.3 pilot state values used by diagnostics rows.
+/// [JA] diagnostics row で使う canonical v0.1.3 pilot state 値です。
 /// </summary>
-public static class GpuRev3PilotStates
+public static class GpuCanonicalPilotStates
 {
     /// <summary>[EN] Pilot state has not been evaluated. [JA] pilot state は未評価です。</summary>
     public const string NotEvaluated = "not-evaluated";
@@ -1578,10 +1584,10 @@ public static class GpuRev3PilotStates
 }
 
 /// <summary>
-/// [EN] Canonical v0.1.3 rev3 promotion gate values used by diagnostics rows.
-/// [JA] diagnostics row で使う canonical v0.1.3 rev3 promotion gate 値です。
+/// [EN] Canonical v0.1.3 promotion gate values used by diagnostics rows.
+/// [JA] diagnostics row で使う canonical v0.1.3 promotion gate 値です。
 /// </summary>
-public static class GpuRev3PromotionGates
+public static class GpuPromotionGates
 {
     /// <summary>[EN] Promotion gate has not been evaluated. [JA] promotion gate は未評価です。</summary>
     public const string NotEvaluated = "not-evaluated";
@@ -1618,8 +1624,8 @@ public static class GpuRev3PromotionGates
 }
 
 /// <summary>
-/// [EN] Canonical v0.1.3 metadata keys shared by GPU provider manifests, capability descriptors, and rev3 dispatch envelopes.
-/// [JA] GPU provider manifest、capability descriptor、rev3 dispatch envelope で共有する canonical v0.1.3 metadata key です。
+/// [EN] Canonical v0.1.3 metadata keys shared by GPU provider manifests, capability descriptors, and canonical dispatch envelopes.
+/// [JA] GPU provider manifest、capability descriptor、canonical dispatch envelope で共有する canonical v0.1.3 metadata key です。
 /// </summary>
 public static class GpuProviderMetadataKeys
 {
@@ -1668,29 +1674,29 @@ public static class GpuProviderMetadataKeys
     /// <summary>[EN] Raw capture source. [JA] raw capture source です。</summary>
     public const string RawCaptureSource = "raw_capture_source";
 
-    /// <summary>[EN] Canonical rev3 enablement marker. [JA] canonical rev3 有効化 marker です。</summary>
-    public const string Rev3 = "rev3";
+    /// <summary>[EN] Canonical enablement marker. [JA] canonical 有効化 marker です。</summary>
+    public const string Canonical = "canonical";
 
     /// <summary>[EN] Provider or schema version. [JA] provider または schema version です。</summary>
     public const string Version = "version";
 
     /// <summary>[EN] Browser executor per-pass readiness diagnostics shape. [JA] browser executor の pass 別 readiness diagnostics 形状です。</summary>
-    public const string Rev3BrowserPassReadiness = "rev3_browser_pass_readiness";
+    public const string CanonicalBrowserPassReadiness = "browser_pass_readiness";
 
-    /// <summary>[EN] Packaged browser rev3 bridge runtime path. [JA] packaged browser rev3 bridge runtime path です。</summary>
-    public const string Rev3EnvelopeBridge = "rev3_envelope_bridge";
+    /// <summary>[EN] Packaged browser canonical bridge runtime path. [JA] packaged browser canonical bridge runtime path です。</summary>
+    public const string CanonicalEnvelopeBridge = "envelope_bridge";
 
     /// <summary>[EN] Browser WebGPU executor factory. [JA] browser WebGPU executor factory です。</summary>
-    public const string Rev3EnvelopeBridgeExecutorFactory = "rev3_envelope_bridge_executor_factory";
+    public const string CanonicalEnvelopeBridgeExecutorFactory = "envelope_bridge_executor_factory";
 
-    /// <summary>[EN] Rev3 envelope bridge factory. [JA] rev3 envelope bridge factory です。</summary>
-    public const string Rev3EnvelopeBridgeFactory = "rev3_envelope_bridge_factory";
+    /// <summary>[EN] Canonical envelope bridge factory. [JA] canonical envelope bridge factory です。</summary>
+    public const string CanonicalEnvelopeBridgeFactory = "envelope_bridge_factory";
 
-    /// <summary>[EN] Rev3 browser bridge global object. [JA] rev3 browser bridge global object です。</summary>
-    public const string Rev3EnvelopeBridgeGlobal = "rev3_envelope_bridge_global";
+    /// <summary>[EN] Canonical browser bridge global object. [JA] canonical browser bridge global object です。</summary>
+    public const string CanonicalEnvelopeBridgeGlobal = "envelope_bridge_global";
 
-    /// <summary>[EN] Rev3 dispatch envelope schema. [JA] rev3 dispatch envelope schema です。</summary>
-    public const string Rev3EnvelopeSchema = "rev3_envelope_schema";
+    /// <summary>[EN] Canonical dispatch envelope schema. [JA] canonical dispatch envelope schema です。</summary>
+    public const string CanonicalEnvelopeSchema = "envelope_schema";
 }
 
 /// <summary>

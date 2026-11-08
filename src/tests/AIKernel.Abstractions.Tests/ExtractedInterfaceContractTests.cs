@@ -347,7 +347,7 @@ public sealed class ExtractedInterfaceContractTests
 
         var abi = new DynamicSlmModelAbi(
             "model-1",
-            "0.0.1",
+            "0.1.3",
             new DynamicSlmSemanticProfile("profile-1", "planning", ["agent"], ["json"], "schema", ["replay-v1"]),
             graph,
             new DynamicSlmExecutionProfile(1024, 10, null, [DynamicSlmAcceleratorKind.Cpu], "int8", true, true),
@@ -471,7 +471,7 @@ public sealed class ExtractedInterfaceContractTests
 
         var legacyAbi = new DynamicSlmModelAbi(
             "legacy-model",
-            "0.0.1",
+            "0.1.3",
             abi.SemanticProfile,
             abi.CapabilityGraph,
             abi.ExecutionProfile,
@@ -634,7 +634,7 @@ public sealed class ExtractedInterfaceContractTests
 
         var seedAbi = new DynamicSlmModelAbi(
             profile.SeedModelId,
-            "0.0.1",
+            "0.1.3",
             new DynamicSlmSemanticProfile("profile-1", "planning", ["agent"], ["json"], "schema", ["replay-v1"]),
             seedGraph,
             new DynamicSlmExecutionProfile(1024, 10, null, [DynamicSlmAcceleratorKind.Gpu], "int8", true, true),
@@ -807,7 +807,7 @@ public sealed class ExtractedInterfaceContractTests
             "scrape",
             CapabilityModuleKind.CliExecutable,
             CapabilityInvocationMode.Sandbox,
-            "0.0.1",
+            "0.1.3",
             "aik-scrape",
             "file://tools/aik-scrape.exe",
             "sha256-cli",
@@ -820,7 +820,7 @@ public sealed class ExtractedInterfaceContractTests
             "rh",
             CapabilityModuleKind.ManagedAssembly,
             CapabilityInvocationMode.AssemblyReference,
-            "0.0.1",
+            "0.1.3",
             "AIKernel.RH.Operator",
             "nuget://AIKernel.RH",
             "sha256-assembly",
@@ -1065,6 +1065,7 @@ public sealed class ExtractedInterfaceContractTests
     [
         "AIKernel.Abstractions.Compute.ComputeBuffer",
         "AIKernel.Abstractions.Compute.ComputeKernel",
+        "AIKernel.Abstractions.Gpu.GpuProviderOptions",
         "AIKernel.Abstractions.Logging.LogLevel",
         "AIKernel.Abstractions.Processes.ProcessId",
         "AIKernel.Abstractions.Processes.ProcessInfo",

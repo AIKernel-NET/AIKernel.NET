@@ -6,7 +6,7 @@ namespace AIKernel.Abstractions.Tests;
 public sealed class GpuCanonicalContractTests
 {
     [Fact]
-    public void GpuCanonicalLayouts_MatchRev3Shapes()
+    public void GpuCanonicalLayouts_MatchCanonicalShapes()
     {
         Assert.Equal(8, GpuCanonicalLayouts.All.Count);
         Assert.Equal(81, GpuCanonicalLayouts.HudCells.MaxItems);
@@ -21,19 +21,19 @@ public sealed class GpuCanonicalContractTests
     }
 
     [Fact]
-    public void GpuRev3PathRoles_ResolveCanonicalRolesFromPassIds()
+    public void GpuPathRoles_ResolveCanonicalRolesFromPassIds()
     {
-        Assert.True(GpuRev3PathRoles.TryResolveFromPassId(GpuOperationNames.GpuAisthesisRawFrame, out var aisthesisRole));
-        Assert.Equal(GpuRev3PathRoles.Sensor, aisthesisRole);
-        Assert.True(GpuRev3PathRoles.TryResolveFromPassId(GpuOperationNames.GpuSpatialReasoning, out var spatialRole));
-        Assert.Equal(GpuRev3PathRoles.Sensor, spatialRole);
-        Assert.True(GpuRev3PathRoles.TryResolveFromPassId(GpuOperationNames.GpuHudComposite, out var hudRole));
-        Assert.Equal(GpuRev3PathRoles.Hud, hudRole);
-        Assert.True(GpuRev3PathRoles.TryResolveFromPassId("bonsai.model", out var bonsaiRole));
-        Assert.Equal(GpuRev3PathRoles.Bonsai, bonsaiRole);
-        Assert.True(GpuRev3PathRoles.TryResolveFromPassId("game.render", out var gameRole));
-        Assert.Equal(GpuRev3PathRoles.Game, gameRole);
-        Assert.False(GpuRev3PathRoles.TryResolveFromPassId("unknown", out _));
+        Assert.True(GpuPathRoles.TryResolveFromPassId(GpuOperationNames.GpuAisthesisRawFrame, out var aisthesisRole));
+        Assert.Equal(GpuPathRoles.Sensor, aisthesisRole);
+        Assert.True(GpuPathRoles.TryResolveFromPassId(GpuOperationNames.GpuSpatialReasoning, out var spatialRole));
+        Assert.Equal(GpuPathRoles.Sensor, spatialRole);
+        Assert.True(GpuPathRoles.TryResolveFromPassId(GpuOperationNames.GpuHudComposite, out var hudRole));
+        Assert.Equal(GpuPathRoles.Hud, hudRole);
+        Assert.True(GpuPathRoles.TryResolveFromPassId("bonsai.model", out var bonsaiRole));
+        Assert.Equal(GpuPathRoles.Bonsai, bonsaiRole);
+        Assert.True(GpuPathRoles.TryResolveFromPassId("game.render", out var gameRole));
+        Assert.Equal(GpuPathRoles.Game, gameRole);
+        Assert.False(GpuPathRoles.TryResolveFromPassId("unknown", out _));
     }
 
     [Fact]
@@ -136,7 +136,7 @@ public sealed class GpuCanonicalContractTests
     }
 
     [Fact]
-    public void ValidateFrameDiagnostics_AllowsRev3PilotReadinessMetadata()
+    public void ValidateFrameDiagnostics_AllowsCanonicalPilotReadinessMetadata()
     {
         var diagnostics = new GpuFrameDiagnostics
         {
@@ -149,20 +149,20 @@ public sealed class GpuCanonicalContractTests
                 PassId = "aisthesis",
                 Metadata = new SortedDictionary<string, string>(StringComparer.Ordinal)
                 {
-                    [GpuDiagnosticsMetadataKeys.Rev3AuthoritativeReady] = "false",
-                    [GpuDiagnosticsMetadataKeys.Rev3CandidateStreak] = "3",
-                    [GpuDiagnosticsMetadataKeys.Rev3DiagnosticReady] = "true",
-                    [GpuDiagnosticsMetadataKeys.Rev3DiagnosticStreak] = "3",
-                    [GpuDiagnosticsMetadataKeys.Rev3ExecutionMode] = GpuRev3ExecutionModes.BrowserWebGpuCompute,
-                    [GpuDiagnosticsMetadataKeys.Rev3FeatureMaskStorageTexture] = "true",
-                    [GpuDiagnosticsMetadataKeys.Rev3FrameIndex] = "1",
-                    [GpuDiagnosticsMetadataKeys.Rev3PassReadiness] = "Passes.{Aisthesis,SpatialReasoning,HudComposite}:ShaderBound=true,PipelineCached=true,BuiltInExecutor=true,InjectedExecutor=false,ReadyForBuiltIn=true",
-                    [GpuDiagnosticsMetadataKeys.Rev3PassId] = GpuOperationNames.GpuAisthesisRawFrame,
-                    [GpuDiagnosticsMetadataKeys.Rev3PathRole] = "sensor",
-                    [GpuDiagnosticsMetadataKeys.Rev3PilotState] = GpuRev3PilotStates.Within,
-                    [GpuDiagnosticsMetadataKeys.Rev3PromotionGate] = GpuRev3PromotionGates.TraceCandidate,
-                    [GpuDiagnosticsMetadataKeys.Rev3RequiredStreak] = "8",
-                    [GpuDiagnosticsMetadataKeys.Rev3SampleTicks] = "100"
+                    [GpuDiagnosticsMetadataKeys.CanonicalAuthoritativeReady] = "false",
+                    [GpuDiagnosticsMetadataKeys.CanonicalCandidateStreak] = "3",
+                    [GpuDiagnosticsMetadataKeys.CanonicalDiagnosticReady] = "true",
+                    [GpuDiagnosticsMetadataKeys.CanonicalDiagnosticStreak] = "3",
+                    [GpuDiagnosticsMetadataKeys.CanonicalExecutionMode] = GpuExecutionModes.BrowserWebGpuCompute,
+                    [GpuDiagnosticsMetadataKeys.CanonicalFeatureMaskStorageTexture] = "true",
+                    [GpuDiagnosticsMetadataKeys.CanonicalFrameIndex] = "1",
+                    [GpuDiagnosticsMetadataKeys.CanonicalPassReadiness] = "Passes.{Aisthesis,SpatialReasoning,HudComposite}:ShaderBound=true,PipelineCached=true,BuiltInExecutor=true,InjectedExecutor=false,ReadyForBuiltIn=true",
+                    [GpuDiagnosticsMetadataKeys.CanonicalPassId] = GpuOperationNames.GpuAisthesisRawFrame,
+                    [GpuDiagnosticsMetadataKeys.CanonicalPathRole] = "sensor",
+                    [GpuDiagnosticsMetadataKeys.CanonicalPilotState] = GpuCanonicalPilotStates.Within,
+                    [GpuDiagnosticsMetadataKeys.CanonicalPromotionGate] = GpuPromotionGates.TraceCandidate,
+                    [GpuDiagnosticsMetadataKeys.CanonicalRequiredStreak] = "8",
+                    [GpuDiagnosticsMetadataKeys.CanonicalSampleTicks] = "100"
                 }
             }
         };
@@ -171,31 +171,31 @@ public sealed class GpuCanonicalContractTests
 
         Assert.True(result.IsValid);
         Assert.Equal(
-            GpuRev3PromotionGates.TraceCandidate,
-            diagnostics.SensorPath.Metadata[GpuDiagnosticsMetadataKeys.Rev3PromotionGate]);
+            GpuPromotionGates.TraceCandidate,
+            diagnostics.SensorPath.Metadata[GpuDiagnosticsMetadataKeys.CanonicalPromotionGate]);
         Assert.Equal(
             "true",
-            diagnostics.SensorPath.Metadata[GpuDiagnosticsMetadataKeys.Rev3FeatureMaskStorageTexture]);
+            diagnostics.SensorPath.Metadata[GpuDiagnosticsMetadataKeys.CanonicalFeatureMaskStorageTexture]);
         Assert.Equal(
-            GpuRev3ExecutionModes.BrowserWebGpuCompute,
-            diagnostics.SensorPath.Metadata[GpuDiagnosticsMetadataKeys.Rev3ExecutionMode]);
+            GpuExecutionModes.BrowserWebGpuCompute,
+            diagnostics.SensorPath.Metadata[GpuDiagnosticsMetadataKeys.CanonicalExecutionMode]);
         Assert.Equal(
             "Passes.{Aisthesis,SpatialReasoning,HudComposite}:ShaderBound=true,PipelineCached=true,BuiltInExecutor=true,InjectedExecutor=false,ReadyForBuiltIn=true",
-            diagnostics.SensorPath.Metadata[GpuDiagnosticsMetadataKeys.Rev3PassReadiness]);
+            diagnostics.SensorPath.Metadata[GpuDiagnosticsMetadataKeys.CanonicalPassReadiness]);
     }
 
     [Fact]
-    public void EvaluateRev3PromotionReadiness_RequiresAuthoritativeReadyAndStableStreaks()
+    public void EvaluatePromotionReadiness_RequiresAuthoritativeReadyAndStableStreaks()
     {
-        var metadata = Rev3ReadinessMetadata(
+        var metadata = ReadinessMetadata(
             authoritativeReady: true,
             diagnosticReady: true,
             candidateStreak: 8,
             diagnosticStreak: 8,
             requiredStreak: 8,
-            gate: GpuRev3PromotionGates.TraceCandidate);
+            gate: GpuPromotionGates.TraceCandidate);
 
-        var readiness = GpuCanonicalValidation.EvaluateRev3PromotionReadiness(metadata);
+        var readiness = GpuCanonicalValidation.EvaluatePromotionReadiness(metadata);
 
         Assert.True(readiness.IsAuthoritativeReady);
         Assert.True(readiness.IsDiagnosticReady);
@@ -208,17 +208,17 @@ public sealed class GpuCanonicalContractTests
     }
 
     [Fact]
-    public void EvaluateRev3PromotionReadiness_KeepsPilotDiagnosticUntilStreaksAndAuthoritativeReady()
+    public void EvaluatePromotionReadiness_KeepsPilotDiagnosticUntilStreaksAndAuthoritativeReady()
     {
-        var metadata = Rev3ReadinessMetadata(
+        var metadata = ReadinessMetadata(
             authoritativeReady: false,
             diagnosticReady: true,
             candidateStreak: 3,
             diagnosticStreak: 3,
             requiredStreak: 8,
-            gate: GpuRev3PromotionGates.TraceCandidate);
+            gate: GpuPromotionGates.TraceCandidate);
 
-        var readiness = GpuCanonicalValidation.EvaluateRev3PromotionReadiness(metadata);
+        var readiness = GpuCanonicalValidation.EvaluatePromotionReadiness(metadata);
 
         Assert.False(readiness.IsAuthoritativeReady);
         Assert.True(readiness.IsDiagnosticReady);
@@ -231,11 +231,11 @@ public sealed class GpuCanonicalContractTests
     }
 
     [Theory]
-    [InlineData(GpuRev3PromotionGates.Fallback)]
-    [InlineData(GpuRev3PromotionGates.NativeBridgeRequired)]
-    public void EvaluateRev3PromotionReadiness_BlocksFallbackAndNativeBridgeGates(string gate)
+    [InlineData(GpuPromotionGates.Fallback)]
+    [InlineData(GpuPromotionGates.NativeBridgeRequired)]
+    public void EvaluatePromotionReadiness_BlocksFallbackAndNativeBridgeGates(string gate)
     {
-        var metadata = Rev3ReadinessMetadata(
+        var metadata = ReadinessMetadata(
             authoritativeReady: true,
             diagnosticReady: true,
             candidateStreak: 8,
@@ -243,7 +243,7 @@ public sealed class GpuCanonicalContractTests
             requiredStreak: 8,
             gate: gate);
 
-        var readiness = GpuCanonicalValidation.EvaluateRev3PromotionReadiness(metadata);
+        var readiness = GpuCanonicalValidation.EvaluatePromotionReadiness(metadata);
 
         Assert.False(readiness.IsAuthoritativeReady);
         Assert.False(readiness.IsPromotionCandidate);
@@ -252,27 +252,27 @@ public sealed class GpuCanonicalContractTests
     }
 
     [Fact]
-    public void EvaluateRev3PromotionReadiness_AllowsNotEvaluatedGateWithoutRequiredStreak()
+    public void EvaluatePromotionReadiness_AllowsNotEvaluatedGateWithoutRequiredStreak()
     {
-        var metadata = Rev3ReadinessMetadata(
+        var metadata = ReadinessMetadata(
             authoritativeReady: false,
             diagnosticReady: false,
             candidateStreak: 0,
             diagnosticStreak: 0,
             requiredStreak: 0,
-            gate: GpuRev3PromotionGates.NotEvaluated);
+            gate: GpuPromotionGates.NotEvaluated);
 
-        var readiness = GpuCanonicalValidation.EvaluateRev3PromotionReadiness(metadata);
+        var readiness = GpuCanonicalValidation.EvaluatePromotionReadiness(metadata);
 
         Assert.False(readiness.IsAuthoritativeReady);
         Assert.False(readiness.IsPromotionCandidate);
         Assert.True(readiness.IsBlocked);
-        Assert.Equal(GpuRev3PromotionGates.NotEvaluated, readiness.Gate);
-        Assert.Equal(GpuRev3PromotionGates.NotEvaluated, readiness.Reason);
+        Assert.Equal(GpuPromotionGates.NotEvaluated, readiness.Gate);
+        Assert.Equal(GpuPromotionGates.NotEvaluated, readiness.Reason);
     }
 
     [Fact]
-    public void ValidateFrameDiagnostics_RejectsPartialRev3FrameTokenMetadata()
+    public void ValidateFrameDiagnostics_RejectsPartialCanonicalFrameTokenMetadata()
     {
         var diagnostics = new GpuFrameDiagnostics
         {
@@ -284,8 +284,8 @@ public sealed class GpuCanonicalContractTests
                 PassId = "aisthesis",
                 Metadata = new SortedDictionary<string, string>(StringComparer.Ordinal)
                 {
-                    [GpuDiagnosticsMetadataKeys.Rev3FrameIndex] = "1",
-                    [GpuDiagnosticsMetadataKeys.Rev3PassId] = GpuOperationNames.GpuAisthesisRawFrame
+                    [GpuDiagnosticsMetadataKeys.CanonicalFrameIndex] = "1",
+                    [GpuDiagnosticsMetadataKeys.CanonicalPassId] = GpuOperationNames.GpuAisthesisRawFrame
                 }
             }
         };
@@ -294,13 +294,13 @@ public sealed class GpuCanonicalContractTests
 
         Assert.False(result.IsValid);
         Assert.Contains(result.Errors, issue =>
-            issue.Code == "GPU_DIAGNOSTICS_REV3_METADATA_MISSING" &&
+            issue.Code == "GPU_DIAGNOSTICS_METADATA_MISSING" &&
             issue.Path is not null &&
-            issue.Path.EndsWith(GpuDiagnosticsMetadataKeys.Rev3SampleTicks, StringComparison.Ordinal));
+            issue.Path.EndsWith(GpuDiagnosticsMetadataKeys.CanonicalSampleTicks, StringComparison.Ordinal));
     }
 
     [Fact]
-    public void ValidateFrameDiagnostics_RejectsInvalidRev3PromotionGateMetadataShape()
+    public void ValidateFrameDiagnostics_RejectsInvalidCanonicalPromotionGateMetadataShape()
     {
         var diagnostics = new GpuFrameDiagnostics
         {
@@ -312,20 +312,20 @@ public sealed class GpuCanonicalContractTests
                 PassId = "aisthesis",
                 Metadata = new SortedDictionary<string, string>(StringComparer.Ordinal)
                 {
-                    [GpuDiagnosticsMetadataKeys.Rev3AuthoritativeReady] = "maybe",
-                    [GpuDiagnosticsMetadataKeys.Rev3CandidateStreak] = "-1",
-                    [GpuDiagnosticsMetadataKeys.Rev3DiagnosticReady] = "true",
-                    [GpuDiagnosticsMetadataKeys.Rev3DiagnosticStreak] = "not-a-number",
-                    [GpuDiagnosticsMetadataKeys.Rev3ExecutionMode] = GpuRev3ExecutionModes.BrowserWebGpuCompute,
-                    [GpuDiagnosticsMetadataKeys.Rev3FeatureMaskStorageTexture] = "false",
-                    [GpuDiagnosticsMetadataKeys.Rev3FrameIndex] = "1",
-                    [GpuDiagnosticsMetadataKeys.Rev3PassReadiness] = "Passes.{Aisthesis,SpatialReasoning,HudComposite}:ShaderBound=true,PipelineCached=true,BuiltInExecutor=true,InjectedExecutor=false,ReadyForBuiltIn=true",
-                    [GpuDiagnosticsMetadataKeys.Rev3PassId] = GpuOperationNames.GpuAisthesisRawFrame,
-                    [GpuDiagnosticsMetadataKeys.Rev3PathRole] = "sensor",
-                    [GpuDiagnosticsMetadataKeys.Rev3PilotState] = GpuRev3PilotStates.BrowserBuiltinCompute,
-                    [GpuDiagnosticsMetadataKeys.Rev3PromotionGate] = GpuRev3PromotionGates.TraceCandidate,
-                    [GpuDiagnosticsMetadataKeys.Rev3RequiredStreak] = "8",
-                    [GpuDiagnosticsMetadataKeys.Rev3SampleTicks] = "100"
+                    [GpuDiagnosticsMetadataKeys.CanonicalAuthoritativeReady] = "maybe",
+                    [GpuDiagnosticsMetadataKeys.CanonicalCandidateStreak] = "-1",
+                    [GpuDiagnosticsMetadataKeys.CanonicalDiagnosticReady] = "true",
+                    [GpuDiagnosticsMetadataKeys.CanonicalDiagnosticStreak] = "not-a-number",
+                    [GpuDiagnosticsMetadataKeys.CanonicalExecutionMode] = GpuExecutionModes.BrowserWebGpuCompute,
+                    [GpuDiagnosticsMetadataKeys.CanonicalFeatureMaskStorageTexture] = "false",
+                    [GpuDiagnosticsMetadataKeys.CanonicalFrameIndex] = "1",
+                    [GpuDiagnosticsMetadataKeys.CanonicalPassReadiness] = "Passes.{Aisthesis,SpatialReasoning,HudComposite}:ShaderBound=true,PipelineCached=true,BuiltInExecutor=true,InjectedExecutor=false,ReadyForBuiltIn=true",
+                    [GpuDiagnosticsMetadataKeys.CanonicalPassId] = GpuOperationNames.GpuAisthesisRawFrame,
+                    [GpuDiagnosticsMetadataKeys.CanonicalPathRole] = "sensor",
+                    [GpuDiagnosticsMetadataKeys.CanonicalPilotState] = GpuCanonicalPilotStates.BrowserBuiltinCompute,
+                    [GpuDiagnosticsMetadataKeys.CanonicalPromotionGate] = GpuPromotionGates.TraceCandidate,
+                    [GpuDiagnosticsMetadataKeys.CanonicalRequiredStreak] = "8",
+                    [GpuDiagnosticsMetadataKeys.CanonicalSampleTicks] = "100"
                 }
             }
         };
@@ -333,12 +333,12 @@ public sealed class GpuCanonicalContractTests
         var result = GpuCanonicalValidation.ValidateFrameDiagnostics(diagnostics);
 
         Assert.False(result.IsValid);
-        Assert.Contains(result.Errors, issue => issue.Code == "GPU_DIAGNOSTICS_REV3_METADATA_BOOLEAN_INVALID");
-        Assert.Contains(result.Errors, issue => issue.Code == "GPU_DIAGNOSTICS_REV3_METADATA_INTEGER_INVALID");
+        Assert.Contains(result.Errors, issue => issue.Code == "GPU_DIAGNOSTICS_METADATA_BOOLEAN_INVALID");
+        Assert.Contains(result.Errors, issue => issue.Code == "GPU_DIAGNOSTICS_METADATA_INTEGER_INVALID");
     }
 
     [Fact]
-    public void ValidateFrameDiagnostics_RejectsUnknownRev3DiagnosticsStateValues()
+    public void ValidateFrameDiagnostics_RejectsUnknownCanonicalDiagnosticsStateValues()
     {
         var diagnostics = new GpuFrameDiagnostics
         {
@@ -350,20 +350,20 @@ public sealed class GpuCanonicalContractTests
                 PassId = "aisthesis",
                 Metadata = new SortedDictionary<string, string>(StringComparer.Ordinal)
                 {
-                    [GpuDiagnosticsMetadataKeys.Rev3AuthoritativeReady] = "false",
-                    [GpuDiagnosticsMetadataKeys.Rev3CandidateStreak] = "1",
-                    [GpuDiagnosticsMetadataKeys.Rev3DiagnosticReady] = "true",
-                    [GpuDiagnosticsMetadataKeys.Rev3DiagnosticStreak] = "1",
-                    [GpuDiagnosticsMetadataKeys.Rev3ExecutionMode] = "browser-webgpu-comptue",
-                    [GpuDiagnosticsMetadataKeys.Rev3FeatureMaskStorageTexture] = "false",
-                    [GpuDiagnosticsMetadataKeys.Rev3FrameIndex] = "1",
-                    [GpuDiagnosticsMetadataKeys.Rev3PassReadiness] = "Passes.{Aisthesis,SpatialReasoning,HudComposite}:ShaderBound=true,PipelineCached=true,BuiltInExecutor=true,InjectedExecutor=false,ReadyForBuiltIn=true",
-                    [GpuDiagnosticsMetadataKeys.Rev3PassId] = GpuOperationNames.GpuAisthesisRawFrame,
-                    [GpuDiagnosticsMetadataKeys.Rev3PathRole] = "senser",
-                    [GpuDiagnosticsMetadataKeys.Rev3PilotState] = "trace-readyish",
-                    [GpuDiagnosticsMetadataKeys.Rev3PromotionGate] = "trace-candidte",
-                    [GpuDiagnosticsMetadataKeys.Rev3RequiredStreak] = "3",
-                    [GpuDiagnosticsMetadataKeys.Rev3SampleTicks] = "100"
+                    [GpuDiagnosticsMetadataKeys.CanonicalAuthoritativeReady] = "false",
+                    [GpuDiagnosticsMetadataKeys.CanonicalCandidateStreak] = "1",
+                    [GpuDiagnosticsMetadataKeys.CanonicalDiagnosticReady] = "true",
+                    [GpuDiagnosticsMetadataKeys.CanonicalDiagnosticStreak] = "1",
+                    [GpuDiagnosticsMetadataKeys.CanonicalExecutionMode] = "browser-webgpu-comptue",
+                    [GpuDiagnosticsMetadataKeys.CanonicalFeatureMaskStorageTexture] = "false",
+                    [GpuDiagnosticsMetadataKeys.CanonicalFrameIndex] = "1",
+                    [GpuDiagnosticsMetadataKeys.CanonicalPassReadiness] = "Passes.{Aisthesis,SpatialReasoning,HudComposite}:ShaderBound=true,PipelineCached=true,BuiltInExecutor=true,InjectedExecutor=false,ReadyForBuiltIn=true",
+                    [GpuDiagnosticsMetadataKeys.CanonicalPassId] = GpuOperationNames.GpuAisthesisRawFrame,
+                    [GpuDiagnosticsMetadataKeys.CanonicalPathRole] = "senser",
+                    [GpuDiagnosticsMetadataKeys.CanonicalPilotState] = "trace-readyish",
+                    [GpuDiagnosticsMetadataKeys.CanonicalPromotionGate] = "trace-candidte",
+                    [GpuDiagnosticsMetadataKeys.CanonicalRequiredStreak] = "3",
+                    [GpuDiagnosticsMetadataKeys.CanonicalSampleTicks] = "100"
                 }
             }
         };
@@ -372,25 +372,25 @@ public sealed class GpuCanonicalContractTests
 
         Assert.False(result.IsValid);
         Assert.Contains(result.Errors, issue =>
-            issue.Code == "GPU_DIAGNOSTICS_REV3_METADATA_VALUE_UNKNOWN" &&
+            issue.Code == "GPU_DIAGNOSTICS_METADATA_VALUE_UNKNOWN" &&
             issue.Path is not null &&
-            issue.Path.EndsWith(GpuDiagnosticsMetadataKeys.Rev3ExecutionMode, StringComparison.Ordinal));
+            issue.Path.EndsWith(GpuDiagnosticsMetadataKeys.CanonicalExecutionMode, StringComparison.Ordinal));
         Assert.Contains(result.Errors, issue =>
-            issue.Code == "GPU_DIAGNOSTICS_REV3_METADATA_VALUE_UNKNOWN" &&
+            issue.Code == "GPU_DIAGNOSTICS_METADATA_VALUE_UNKNOWN" &&
             issue.Path is not null &&
-            issue.Path.EndsWith(GpuDiagnosticsMetadataKeys.Rev3PathRole, StringComparison.Ordinal));
+            issue.Path.EndsWith(GpuDiagnosticsMetadataKeys.CanonicalPathRole, StringComparison.Ordinal));
         Assert.Contains(result.Errors, issue =>
-            issue.Code == "GPU_DIAGNOSTICS_REV3_METADATA_VALUE_UNKNOWN" &&
+            issue.Code == "GPU_DIAGNOSTICS_METADATA_VALUE_UNKNOWN" &&
             issue.Path is not null &&
-            issue.Path.EndsWith(GpuDiagnosticsMetadataKeys.Rev3PilotState, StringComparison.Ordinal));
+            issue.Path.EndsWith(GpuDiagnosticsMetadataKeys.CanonicalPilotState, StringComparison.Ordinal));
         Assert.Contains(result.Errors, issue =>
-            issue.Code == "GPU_DIAGNOSTICS_REV3_METADATA_VALUE_UNKNOWN" &&
+            issue.Code == "GPU_DIAGNOSTICS_METADATA_VALUE_UNKNOWN" &&
             issue.Path is not null &&
-            issue.Path.EndsWith(GpuDiagnosticsMetadataKeys.Rev3PromotionGate, StringComparison.Ordinal));
+            issue.Path.EndsWith(GpuDiagnosticsMetadataKeys.CanonicalPromotionGate, StringComparison.Ordinal));
     }
 
     [Fact]
-    public void ValidateFrameDiagnostics_RejectsIncompleteRev3PassReadinessMetadata()
+    public void ValidateFrameDiagnostics_RejectsIncompleteCanonicalPassReadinessMetadata()
     {
         var diagnostics = new GpuFrameDiagnostics
         {
@@ -402,7 +402,7 @@ public sealed class GpuCanonicalContractTests
                 PassId = "aisthesis",
                 Metadata = new SortedDictionary<string, string>(StringComparer.Ordinal)
                 {
-                    [GpuDiagnosticsMetadataKeys.Rev3PassReadiness] = "Passes.{Aisthesis,HudComposite}:ShaderBound,PipelineCached"
+                    [GpuDiagnosticsMetadataKeys.CanonicalPassReadiness] = "Passes.{Aisthesis,HudComposite}:ShaderBound,PipelineCached"
                 }
             }
         };
@@ -411,52 +411,52 @@ public sealed class GpuCanonicalContractTests
 
         Assert.False(result.IsValid);
         Assert.Contains(result.Errors, issue =>
-            issue.Code == "GPU_DIAGNOSTICS_REV3_PASS_READINESS_SHAPE_INVALID" &&
+            issue.Code == "GPU_DIAGNOSTICS_PASS_READINESS_SHAPE_INVALID" &&
             issue.Message.Contains("ReadyForBuiltIn", StringComparison.Ordinal));
     }
 
     [Fact]
-    public void ValidateRev3DiagnosticsMetadata_ValidatesSingleBridgeMetadataDictionary()
+    public void ValidateDiagnosticsMetadata_ValidatesSingleBridgeMetadataDictionary()
     {
-        var metadata = Rev3ReadinessMetadata(
+        var metadata = ReadinessMetadata(
             authoritativeReady: false,
             diagnosticReady: true,
             candidateStreak: 1,
             diagnosticStreak: 1,
             requiredStreak: 1,
-            gate: GpuRev3PromotionGates.TraceCandidate);
+            gate: GpuPromotionGates.TraceCandidate);
 
-        var result = GpuCanonicalValidation.ValidateRev3DiagnosticsMetadata(metadata, "envelope");
+        var result = GpuCanonicalValidation.ValidateDiagnosticsMetadata(metadata, "envelope");
 
         Assert.True(result.IsValid);
     }
 
     [Fact]
-    public void ValidateRev3DiagnosticsMetadata_RejectsMalformedSingleBridgeMetadataDictionary()
+    public void ValidateDiagnosticsMetadata_RejectsMalformedSingleBridgeMetadataDictionary()
     {
-        var metadata = Rev3ReadinessMetadata(
+        var metadata = ReadinessMetadata(
             authoritativeReady: false,
             diagnosticReady: true,
             candidateStreak: 1,
             diagnosticStreak: 1,
             requiredStreak: 1,
-            gate: GpuRev3PromotionGates.TraceCandidate);
-        metadata[GpuDiagnosticsMetadataKeys.Rev3PilotState] = "browser-comptue";
-        metadata[GpuDiagnosticsMetadataKeys.Rev3PassReadiness] = "Passes.{Aisthesis}:ShaderBound=true";
+            gate: GpuPromotionGates.TraceCandidate);
+        metadata[GpuDiagnosticsMetadataKeys.CanonicalPilotState] = "browser-comptue";
+        metadata[GpuDiagnosticsMetadataKeys.CanonicalPassReadiness] = "Passes.{Aisthesis}:ShaderBound=true";
 
-        var result = GpuCanonicalValidation.ValidateRev3DiagnosticsMetadata(metadata, "envelope");
+        var result = GpuCanonicalValidation.ValidateDiagnosticsMetadata(metadata, "envelope");
 
         Assert.False(result.IsValid);
         Assert.Contains(result.Errors, issue =>
-            issue.Code == "GPU_DIAGNOSTICS_REV3_METADATA_VALUE_UNKNOWN" &&
-            issue.Path == $"envelope.metadata.{GpuDiagnosticsMetadataKeys.Rev3PilotState}");
+            issue.Code == "GPU_DIAGNOSTICS_METADATA_VALUE_UNKNOWN" &&
+            issue.Path == $"envelope.metadata.{GpuDiagnosticsMetadataKeys.CanonicalPilotState}");
         Assert.Contains(result.Errors, issue =>
-            issue.Code == "GPU_DIAGNOSTICS_REV3_PASS_READINESS_SHAPE_INVALID" &&
-            issue.Path == $"envelope.metadata.{GpuDiagnosticsMetadataKeys.Rev3PassReadiness}");
+            issue.Code == "GPU_DIAGNOSTICS_PASS_READINESS_SHAPE_INVALID" &&
+            issue.Path == $"envelope.metadata.{GpuDiagnosticsMetadataKeys.CanonicalPassReadiness}");
     }
 
     [Fact]
-    public void GpuProviderMetadataKeys_ExposeRev3ManifestAndEnvelopeBoundary()
+    public void GpuProviderMetadataKeys_ExposeCanonicalManifestAndEnvelopeBoundary()
     {
         Assert.Equal("adapter_profile", GpuProviderMetadataKeys.AdapterProfile);
         Assert.Equal("ais_matrix_order", GpuProviderMetadataKeys.AisMatrixOrder);
@@ -473,21 +473,21 @@ public sealed class GpuCanonicalContractTests
         Assert.Equal("provider_family", GpuProviderMetadataKeys.ProviderFamily);
         Assert.Equal("provider_role", GpuProviderMetadataKeys.ProviderRole);
         Assert.Equal("raw_capture_source", GpuProviderMetadataKeys.RawCaptureSource);
-        Assert.Equal("rev3", GpuProviderMetadataKeys.Rev3);
+        Assert.Equal("canonical", GpuProviderMetadataKeys.Canonical);
         Assert.Equal("version", GpuProviderMetadataKeys.Version);
-        Assert.Equal("rev3_browser_pass_readiness", GpuProviderMetadataKeys.Rev3BrowserPassReadiness);
-        Assert.Equal("rev3_envelope_bridge", GpuProviderMetadataKeys.Rev3EnvelopeBridge);
-        Assert.Equal("rev3_envelope_bridge_executor_factory", GpuProviderMetadataKeys.Rev3EnvelopeBridgeExecutorFactory);
-        Assert.Equal("rev3_envelope_bridge_factory", GpuProviderMetadataKeys.Rev3EnvelopeBridgeFactory);
-        Assert.Equal("rev3_envelope_bridge_global", GpuProviderMetadataKeys.Rev3EnvelopeBridgeGlobal);
-        Assert.Equal("rev3_envelope_schema", GpuProviderMetadataKeys.Rev3EnvelopeSchema);
+        Assert.Equal("browser_pass_readiness", GpuProviderMetadataKeys.CanonicalBrowserPassReadiness);
+        Assert.Equal("envelope_bridge", GpuProviderMetadataKeys.CanonicalEnvelopeBridge);
+        Assert.Equal("envelope_bridge_executor_factory", GpuProviderMetadataKeys.CanonicalEnvelopeBridgeExecutorFactory);
+        Assert.Equal("envelope_bridge_factory", GpuProviderMetadataKeys.CanonicalEnvelopeBridgeFactory);
+        Assert.Equal("envelope_bridge_global", GpuProviderMetadataKeys.CanonicalEnvelopeBridgeGlobal);
+        Assert.Equal("envelope_schema", GpuProviderMetadataKeys.CanonicalEnvelopeSchema);
     }
 
     [Fact]
     public void GpuDiagnosticsMetadataKeys_ExposeDeterministicFrameSamplingBoundary()
     {
-        Assert.Equal("rev3_frame_index", GpuDiagnosticsMetadataKeys.Rev3FrameIndex);
-        Assert.Equal("rev3_sample_ticks", GpuDiagnosticsMetadataKeys.Rev3SampleTicks);
+        Assert.Equal("frame_index", GpuDiagnosticsMetadataKeys.CanonicalFrameIndex);
+        Assert.Equal("sample_ticks", GpuDiagnosticsMetadataKeys.CanonicalSampleTicks);
     }
 
     [Fact]
@@ -513,8 +513,8 @@ public sealed class GpuCanonicalContractTests
     {
         var metadata = new SortedDictionary<string, string>(StringComparer.Ordinal)
         {
-            [GpuDiagnosticsMetadataKeys.Rev3PassId] = GpuOperationNames.GpuHudComposite,
-            [GpuDiagnosticsMetadataKeys.Rev3ExecutionMode] = "control-gpu-approved",
+            [GpuDiagnosticsMetadataKeys.CanonicalPassId] = GpuOperationNames.GpuHudComposite,
+            [GpuDiagnosticsMetadataKeys.CanonicalExecutionMode] = "control-gpu-approved",
             [GpuProviderMetadataKeys.Backend] = GpuBackend.WebGpu.ToString(),
             [GpuProviderMetadataKeys.Fallback] = "none",
             [GpuControlMetadataKeys.IntentId] = "render",
@@ -542,8 +542,8 @@ public sealed class GpuCanonicalContractTests
     {
         var metadata = new SortedDictionary<string, string>(StringComparer.Ordinal)
         {
-            [GpuDiagnosticsMetadataKeys.Rev3PassId] = GpuOperationNames.GpuHudComposite,
-            [GpuDiagnosticsMetadataKeys.Rev3ExecutionMode] = "control-gpu-approved",
+            [GpuDiagnosticsMetadataKeys.CanonicalPassId] = GpuOperationNames.GpuHudComposite,
+            [GpuDiagnosticsMetadataKeys.CanonicalExecutionMode] = "control-gpu-approved",
             [GpuProviderMetadataKeys.Backend] = GpuBackend.WebGpu.ToString(),
             [GpuProviderMetadataKeys.Fallback] = "none",
             [GpuControlMetadataKeys.IntentId] = "render",
@@ -562,91 +562,91 @@ public sealed class GpuCanonicalContractTests
     }
 
     [Fact]
-    public void ValidateRev3BrowserBridgeMetadata_AllowsCanonicalWasmBridgeMetadata()
+    public void ValidateBrowserBridgeMetadata_AllowsCanonicalWasmBridgeMetadata()
     {
         var metadata = new SortedDictionary<string, string>(StringComparer.Ordinal)
         {
-            [GpuProviderMetadataKeys.Rev3BrowserPassReadiness] = "Passes.{Aisthesis,SpatialReasoning,HudComposite}:ShaderBound,PipelineCached,BuiltInExecutor,InjectedExecutor,ReadyForBuiltIn",
-            [GpuProviderMetadataKeys.Rev3EnvelopeBridge] = "runtime/browser/webgpu-rev3-envelope-bridge.js",
-            [GpuProviderMetadataKeys.Rev3EnvelopeBridgeExecutorFactory] = "createWebGpuRev3BrowserExecutor",
-            [GpuProviderMetadataKeys.Rev3EnvelopeBridgeFactory] = "createWebGpuRev3EnvelopeBridge",
-            [GpuProviderMetadataKeys.Rev3EnvelopeBridgeGlobal] = "AIKernelWebGpuRev3",
-            [GpuProviderMetadataKeys.Rev3EnvelopeSchema] = "aikernel.gpu.rev3.dispatch"
+            [GpuProviderMetadataKeys.CanonicalBrowserPassReadiness] = "Passes.{Aisthesis,SpatialReasoning,HudComposite}:ShaderBound,PipelineCached,BuiltInExecutor,InjectedExecutor,ReadyForBuiltIn",
+            [GpuProviderMetadataKeys.CanonicalEnvelopeBridge] = "runtime/browser/webgpu-envelope-bridge.js",
+            [GpuProviderMetadataKeys.CanonicalEnvelopeBridgeExecutorFactory] = "createWebGpuBrowserExecutor",
+            [GpuProviderMetadataKeys.CanonicalEnvelopeBridgeFactory] = "createWebGpuEnvelopeBridge",
+            [GpuProviderMetadataKeys.CanonicalEnvelopeBridgeGlobal] = "AIKernelWebGpu",
+            [GpuProviderMetadataKeys.CanonicalEnvelopeSchema] = "aikernel.gpu.dispatch"
         };
 
-        var result = GpuCanonicalValidation.ValidateRev3BrowserBridgeMetadata(metadata);
+        var result = GpuCanonicalValidation.ValidateBrowserBridgeMetadata(metadata);
 
         Assert.True(result.IsValid);
     }
 
     [Fact]
-    public void ValidateRev3BrowserBridgeMetadata_RejectsMissingPassReadinessToken()
+    public void ValidateBrowserBridgeMetadata_RejectsMissingPassReadinessToken()
     {
         var metadata = new SortedDictionary<string, string>(StringComparer.Ordinal)
         {
-            [GpuProviderMetadataKeys.Rev3BrowserPassReadiness] = "Passes.{Aisthesis,HudComposite}:ShaderBound,PipelineCached,BuiltInExecutor,InjectedExecutor",
-            [GpuProviderMetadataKeys.Rev3EnvelopeBridge] = "runtime/browser/webgpu-rev3-envelope-bridge.js",
-            [GpuProviderMetadataKeys.Rev3EnvelopeBridgeExecutorFactory] = "createWebGpuRev3BrowserExecutor",
-            [GpuProviderMetadataKeys.Rev3EnvelopeBridgeFactory] = "createWebGpuRev3EnvelopeBridge",
-            [GpuProviderMetadataKeys.Rev3EnvelopeBridgeGlobal] = "AIKernelWebGpuRev3",
-            [GpuProviderMetadataKeys.Rev3EnvelopeSchema] = "aikernel.gpu.rev3.dispatch"
+            [GpuProviderMetadataKeys.CanonicalBrowserPassReadiness] = "Passes.{Aisthesis,HudComposite}:ShaderBound,PipelineCached,BuiltInExecutor,InjectedExecutor",
+            [GpuProviderMetadataKeys.CanonicalEnvelopeBridge] = "runtime/browser/webgpu-envelope-bridge.js",
+            [GpuProviderMetadataKeys.CanonicalEnvelopeBridgeExecutorFactory] = "createWebGpuBrowserExecutor",
+            [GpuProviderMetadataKeys.CanonicalEnvelopeBridgeFactory] = "createWebGpuEnvelopeBridge",
+            [GpuProviderMetadataKeys.CanonicalEnvelopeBridgeGlobal] = "AIKernelWebGpu",
+            [GpuProviderMetadataKeys.CanonicalEnvelopeSchema] = "aikernel.gpu.dispatch"
         };
 
-        var result = GpuCanonicalValidation.ValidateRev3BrowserBridgeMetadata(metadata);
+        var result = GpuCanonicalValidation.ValidateBrowserBridgeMetadata(metadata);
 
         Assert.False(result.IsValid);
         Assert.Contains(
             result.Errors,
             static issue =>
-                issue.Code == "GPU_REV3_BROWSER_PASS_READINESS_SHAPE_INVALID" &&
+                issue.Code == "GPU_BROWSER_PASS_READINESS_SHAPE_INVALID" &&
                 issue.Message.Contains("SpatialReasoning", StringComparison.Ordinal));
         Assert.Contains(
             result.Errors,
             static issue =>
-                issue.Code == "GPU_REV3_BROWSER_PASS_READINESS_SHAPE_INVALID" &&
+                issue.Code == "GPU_BROWSER_PASS_READINESS_SHAPE_INVALID" &&
                 issue.Message.Contains("ReadyForBuiltIn", StringComparison.Ordinal));
     }
 
     [Fact]
-    public void ValidateRev3ExecutionLayerMetadata_AllowsCanonicalWebGpuExecutionMetadata()
+    public void ValidateExecutionLayerMetadata_AllowsCanonicalWebGpuExecutionMetadata()
     {
         var metadata = new SortedDictionary<string, string>(StringComparer.Ordinal)
         {
             [GpuProviderMetadataKeys.PassBridge] = "optional-native-or-js",
             [GpuProviderMetadataKeys.RawCaptureSource] = "raw-framebuffer",
             [GpuProviderMetadataKeys.GpuBypass] = "raw-texture-binding",
-            [GpuProviderMetadataKeys.NativeJsBridge] = "rev3-envelope-bridge",
+            [GpuProviderMetadataKeys.NativeJsBridge] = "canonical-envelope-bridge",
             [GpuProviderMetadataKeys.AotCompilerHooks] = "planned-gpu-native-execution",
             [GpuProviderMetadataKeys.DeterministicFrameSampling] = "frame-token-index-sample-ticks",
             [GpuProviderMetadataKeys.ZeroCopyBufferHandling] = "raw-framebuffer-texture"
         };
 
-        var result = GpuCanonicalValidation.ValidateRev3ExecutionLayerMetadata(metadata);
+        var result = GpuCanonicalValidation.ValidateExecutionLayerMetadata(metadata);
 
         Assert.True(result.IsValid);
     }
 
     [Fact]
-    public void ValidateRev3ExecutionLayerMetadata_RejectsMissingZeroCopyBufferHandling()
+    public void ValidateExecutionLayerMetadata_RejectsMissingZeroCopyBufferHandling()
     {
         var metadata = new SortedDictionary<string, string>(StringComparer.Ordinal)
         {
             [GpuProviderMetadataKeys.PassBridge] = "optional-native-or-js",
             [GpuProviderMetadataKeys.RawCaptureSource] = "raw-framebuffer",
             [GpuProviderMetadataKeys.GpuBypass] = "raw-texture-binding",
-            [GpuProviderMetadataKeys.NativeJsBridge] = "rev3-envelope-bridge",
+            [GpuProviderMetadataKeys.NativeJsBridge] = "canonical-envelope-bridge",
             [GpuProviderMetadataKeys.AotCompilerHooks] = "planned-gpu-native-execution",
             [GpuProviderMetadataKeys.DeterministicFrameSampling] = "frame-token-index-sample-ticks"
         };
 
-        var result = GpuCanonicalValidation.ValidateRev3ExecutionLayerMetadata(metadata);
+        var result = GpuCanonicalValidation.ValidateExecutionLayerMetadata(metadata);
 
         Assert.False(result.IsValid);
         Assert.Contains(
             result.Errors,
             static issue =>
-                issue.Code == "GPU_REV3_EXECUTION_LAYER_METADATA_MISSING" &&
-                issue.Path == $"rev3ExecutionLayer.{GpuProviderMetadataKeys.ZeroCopyBufferHandling}");
+                issue.Code == "GPU_EXECUTION_LAYER_METADATA_MISSING" &&
+                issue.Path == $"canonicalExecutionLayer.{GpuProviderMetadataKeys.ZeroCopyBufferHandling}");
     }
 
     [Fact]
@@ -858,7 +858,7 @@ public sealed class GpuCanonicalContractTests
             ZeroCopy = true
         };
 
-    private static SortedDictionary<string, string> Rev3ReadinessMetadata(
+    private static SortedDictionary<string, string> ReadinessMetadata(
         bool authoritativeReady,
         bool diagnosticReady,
         int candidateStreak,
@@ -867,20 +867,20 @@ public sealed class GpuCanonicalContractTests
         string gate)
         => new(StringComparer.Ordinal)
         {
-            [GpuDiagnosticsMetadataKeys.Rev3AuthoritativeReady] = authoritativeReady.ToString().ToLowerInvariant(),
-            [GpuDiagnosticsMetadataKeys.Rev3CandidateStreak] = candidateStreak.ToString(),
-            [GpuDiagnosticsMetadataKeys.Rev3DiagnosticReady] = diagnosticReady.ToString().ToLowerInvariant(),
-            [GpuDiagnosticsMetadataKeys.Rev3DiagnosticStreak] = diagnosticStreak.ToString(),
-            [GpuDiagnosticsMetadataKeys.Rev3ExecutionMode] = GpuRev3ExecutionModes.BrowserWebGpuCompute,
-            [GpuDiagnosticsMetadataKeys.Rev3FeatureMaskStorageTexture] = "true",
-            [GpuDiagnosticsMetadataKeys.Rev3FrameIndex] = "1",
-            [GpuDiagnosticsMetadataKeys.Rev3PassReadiness] = "Passes.{Aisthesis,SpatialReasoning,HudComposite}:ShaderBound=true,PipelineCached=true,BuiltInExecutor=true,InjectedExecutor=false,ReadyForBuiltIn=true",
-            [GpuDiagnosticsMetadataKeys.Rev3PassId] = GpuOperationNames.GpuAisthesisRawFrame,
-            [GpuDiagnosticsMetadataKeys.Rev3PathRole] = "sensor",
-            [GpuDiagnosticsMetadataKeys.Rev3PilotState] = GpuRev3PilotStates.Within,
-            [GpuDiagnosticsMetadataKeys.Rev3PromotionGate] = gate,
-            [GpuDiagnosticsMetadataKeys.Rev3RequiredStreak] = requiredStreak.ToString(),
-            [GpuDiagnosticsMetadataKeys.Rev3SampleTicks] = "100"
+            [GpuDiagnosticsMetadataKeys.CanonicalAuthoritativeReady] = authoritativeReady.ToString().ToLowerInvariant(),
+            [GpuDiagnosticsMetadataKeys.CanonicalCandidateStreak] = candidateStreak.ToString(),
+            [GpuDiagnosticsMetadataKeys.CanonicalDiagnosticReady] = diagnosticReady.ToString().ToLowerInvariant(),
+            [GpuDiagnosticsMetadataKeys.CanonicalDiagnosticStreak] = diagnosticStreak.ToString(),
+            [GpuDiagnosticsMetadataKeys.CanonicalExecutionMode] = GpuExecutionModes.BrowserWebGpuCompute,
+            [GpuDiagnosticsMetadataKeys.CanonicalFeatureMaskStorageTexture] = "true",
+            [GpuDiagnosticsMetadataKeys.CanonicalFrameIndex] = "1",
+            [GpuDiagnosticsMetadataKeys.CanonicalPassReadiness] = "Passes.{Aisthesis,SpatialReasoning,HudComposite}:ShaderBound=true,PipelineCached=true,BuiltInExecutor=true,InjectedExecutor=false,ReadyForBuiltIn=true",
+            [GpuDiagnosticsMetadataKeys.CanonicalPassId] = GpuOperationNames.GpuAisthesisRawFrame,
+            [GpuDiagnosticsMetadataKeys.CanonicalPathRole] = "sensor",
+            [GpuDiagnosticsMetadataKeys.CanonicalPilotState] = GpuCanonicalPilotStates.Within,
+            [GpuDiagnosticsMetadataKeys.CanonicalPromotionGate] = gate,
+            [GpuDiagnosticsMetadataKeys.CanonicalRequiredStreak] = requiredStreak.ToString(),
+            [GpuDiagnosticsMetadataKeys.CanonicalSampleTicks] = "100"
         };
 
     private static IReadOnlyList<float> FilledMatrix()

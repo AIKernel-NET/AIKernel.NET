@@ -63,7 +63,7 @@ public sealed class KernelCapabilityContractTests
         /// </summary>
         public string GetVersion()
         {
-            return "0.0.2";
+            return "0.1.3";
         }
         /// <summary>
         /// EN: Executes ExecuteAsync.
