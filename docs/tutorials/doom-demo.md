@@ -1,74 +1,26 @@
 ---
 title: "Doom Demo Tutorial"
 lang: en
-description: "Doom Demo Tutorial for AIKernel.NET 0.1.3 developer documentation."
+description: "Doom Demo Tutorial"
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: tutorials
 source: "generated-from-repository-inventory"
 generated: true
 release: "0.1.3"
-updated: "2026-06-17"
+updated: "2026-11-08"
 ---
 
 # Doom Demo Tutorial
 
-## Summary
+1. Open the [embedded Doom demo](https://aikernel.net/#doom-demo).
+2. Review the terms and license notices. Choose GPU or CPU mode to approve the downloads, or leave the demo suspended.
+3. After loading, use Start or the runtime controls. If the GPU is unavailable or VRAM is limited, use CPU mode.
 
-### EN
+## Demo Versions
 
-Doom tutorial points to the demo source and deployment asset rules.
-
-### JA
-
-Doom Demo Tutorial は、0.1.3 公式サイトで迷わず実作業へ進むための tutorial です。
-
-## Why
-
-### EN
-
-Tutorial pages are intentionally workflow-based. They are not generated API listings.
-
-### JA
-
-Tutorial page は workflow-based です。生成 API 一覧ではありません。
-
-## Usage
-
-### EN
-
-Follow the command shape, then use Reference to check the actual package and member details.
-
-### JA
-
-command 形を確認したら、実際の package と member の詳細は Reference で確認します。
-
-## Examples
-
-```bash
-dotnet add package AIKernel.Core --version 0.1.3
-dotnet add package AIKernel.Providers.Standard --version 0.1.3
-```
-
-| Package | Kind | Version | Description | Source |
-|---|---|---|---|---|
-| [`AIKernel.Abstractions`](/reference/aikernel-net/aikernel-abstractions/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Abstractions/AIKernel.Abstractions.csproj` |
-| [`AIKernel.Contracts`](/reference/aikernel-net/aikernel-contracts/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Contracts/AIKernel.Contracts.csproj` |
-| [`AIKernel.Dtos`](/reference/aikernel-net/aikernel-dtos/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Dtos/AIKernel.Dtos.csproj` |
-| [`AIKernel.Enums`](/reference/aikernel-net/aikernel-enums/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Enums/AIKernel.Enums.csproj` |
-| [`AIKernel.Common`](/reference/aikernel-core/aikernel-common/) | nuget | `0.1.3` | English AIKernel.Common provides foundational utility components shared across the AIKernel ecosystem. This package contains cross-cutting features such as f... | `AIKernel.Core/src/AIKernel.Common/AIKernel.Common.csproj` |
-| [`AIKernel.Core`](/reference/aikernel-core/aikernel-core/) | nuget | `0.1.3` | EN: Core runtime engine for AIKernel.NET. Provides the foundational execution logic for VFS, ROM, Context construction, and inference execution in a determin... | `AIKernel.Core/src/AIKernel.Core/AIKernel.Core.csproj` |
-| [`AIKernel.Hosting`](/reference/aikernel-core/aikernel-hosting/) | nuget | `0.1.3` | EN: Hosting and dependency injection extensions for AIKernel.NET. Provides IServiceCollection integration and startup wiring for ASP.NET Core and .NET Generi... | `AIKernel.Core/src/AIKernel.Hosting/AIKernel.Hosting.csproj` |
-| [`AIKernel.Kernel`](/reference/aikernel-core/aikernel-kernel/) | nuget | `0.1.3` | EN: Kernel facade and orchestration layer for AIKernel.NET. Coordinates Core, Providers, Context, Governance, and execution flow through a unified IKernel in... | `AIKernel.Core/src/AIKernel.Kernel/AIKernel.Kernel.csproj` |
-| ... | ... | ... | 47 more packages are listed in the generated Reference. | ... |
-
-## Notes
-
-- Commands are examples of package selection, not a guarantee that every environment has all optional runtimes installed.
-- CUDA and Doom assets have separate runtime requirements.
-- Keep implementation changes outside documentation-only work.
+The version selector is staged at `/demo/doom/`. When deployed, each approved build will live under `/demo/doom/versions/v<version>/` with its own JS, worker, WASM, and profile. The first staged update includes the existing `v0.1.2` release only; `v0.1.3` is a local preview. WAD and model files stay at the shared host paths and are downloaded only after consent.
 
 ## See Also
 
-- [Docs](/docs/)
-- [Reference](/reference/)
-- [Glossary](/glossary/)
+- [AIKernel.Doom](https://github.com/AIKernel-NET/AIKernel.Doom)
+- [Demo Programs Guide](../operations/DEMO_PROGRAMS_GUIDE.md)

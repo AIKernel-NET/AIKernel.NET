@@ -157,13 +157,10 @@ contents, or base-layer personalization boundary.
 
 ---
 
-### 10. Release Operations
-**Status:** Planned
-**Planned contents:**
-- Release workflow (tag → build → publish → verify)
-- Handling of signed artifacts
-- Versioning rules (SemVer + Contract Versioning alignment)
-- Post-release validation procedures
+### 10. [0.1.3 Release Preparation](../development/package-release-alignment-v0.1.3.md)
+
+- Dependency order and separation of local and stable packages
+- Local verification evidence, remaining Python and demo gates, and checks after publication
 
 ---
 
@@ -232,7 +229,7 @@ Currently:
 - The Demo Programs Guide covers the official AIKernel.Demo learning path
 - Interface naming, enum handling, XML documentation policy, CTG developer guidance, and CTG developer theory cover the v0.1.1.1 additive contract surface
 - CTG ROM Layout v0.1.3 covers the package-facing metadata promotion of the rc5 Monolith CTG-ROM without semantic changes
-- Release, monitoring, incident, and security operations remain Planned
+- The 0.1.3 release preparation guide is available; general release, monitoring, incident, and security operations remain Planned
 
 Future versions will expand this directory.
 

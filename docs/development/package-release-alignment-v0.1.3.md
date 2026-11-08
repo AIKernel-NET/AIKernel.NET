@@ -1,5 +1,5 @@
 ---
-updated: 2026-06-23
+updated: 2026-11-08
 published: 2026-06-16
 version: "0.1.3"
 edition: "Canonical Series"
@@ -19,7 +19,8 @@ versions are safe to combine during local validation.
 
 ## Current Package Line
 
-Use `0.1.3` as the public canonical package family.
+The stable release target is `0.1.3`. Local development-build verification does
+not mean stable packages were published or that stable PyPI wheels passed verification.
 
 During local validation, use one matching development family at a time:
 
@@ -45,8 +46,51 @@ Build and verify repositories in this order:
 8. `AIKernel.Demo`
 9. `AIKernel.Doom`
 
-The first seven repositories define package surfaces. Demo and Doom validate
-that the package surfaces work together.
+The first seven repositories define package surfaces. Demo and Doom are source
+demos that validate integration; they are not NuGet or PyPI publication targets.
+Native Dawn verification is a separate lane.
+
+## Local Verification Record: `0.1.3-dev3`
+
+Local verification as of 2026-11-08. The workspace feed is
+`artifacts/local-nuget/v0.1.3-dev3/`; logs are under
+`artifacts/contract-validation/v0.1.3-dev3/`. Release counts are from successful
+runs only and exclude retries and separate smoke tests.
+
+| Repository | Release tests passed | NuGet packages | Additional checks |
+|---|---:|---:|---|
+| AIKernel.NET | 173 | 4 | Includes 37 cases in `GpuCanonicalContractTests` |
+| AIKernel.Core | 439 | 5 | Restored and verified against the dev3 contract packages |
+| AIKernel.Control | 42 | 6 | Regenerated Python DLLs and dependency manifests; verified loading |
+| AIKernel.Providers | 120 | 12 | Regenerated and loaded Python DLLs, including Compute; verified registration |
+| AIKernel.Cuda13.0 | 21 | 1 | Verified the Windows x64 native ABI and loading from an isolated Python bundle; not model inference |
+| AIKernel.Wasm | 64 | 9 | Ran three WebGPU passes in a real browser. Verified bundled DLLs and three `.create()` methods in the isolated dev3 wheel |
+| AIKernel.Tools | 34 | 6 | Verified the CLI, bundled DLL loading, and eight Python tests with the isolated dev3 wheel |
+
+The feed contains 43 NuGet packages. Demo is not covered by this record.
+Separately, Doom passed 566 Release tests, 42 JavaScript tests, and four
+versioned-page startup and rendering tests, and started in both GPU and CPU
+modes in Edge. This is not a full browser lifecycle test.
+
+## Stable Release Gates
+
+1. Review changes per repository and pin the release commits. If the package
+   payload changes, use a fresh development version and feed rather than
+   overwriting dev3.
+2. Verify Demo integration and any optional native
+   capabilities included in the release scope, against the selected dependency graph.
+3. Regenerate the bundle for each PyPI target from the matching package line and
+   test a wheel installed in a clean environment. Recheck `.create()` for
+   `WasmRuntime`, `WasmRuntimeContext`, and `WebGpuWasmBackend` with the stable DLLs.
+   Check the inputs to the publishing workflow so stable wheels cannot bundle
+   development-build binaries.
+4. After release approval, build stable `0.1.3` artifacts anew in dependency order.
+   Verify dependencies, payloads, hashes, and restore from a clean consumer.
+   The NET repository defaults to a local version: pass `UseLocalPackageVersion=false`
+   explicitly when building the stable contracts.
+5. Verify stable packages from the official feeds before switching the website's
+   installation instructions. Publish a new Doom URL only after the lifecycle
+   and corresponding-source/license gates pass; do not overwrite the old version.
 
 ## Source Of Truth
 

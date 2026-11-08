@@ -157,13 +157,10 @@ boundary を検証する場合に利用する。
 
 ---
 
-### 10. Release Operations（リリース運用）
-**ステータス:** Planned
-**内容（予定）:**
-- リリースフロー（tag → build → publish → announce）
-- 署名付きアーティファクトの扱い
-- バージョン管理（SemVer / Contract Versioning との整合）
-- リリース後の検証手順
+### 10. [0.1.3 リリース準備](../development/package-release-alignment-v0.1.3-ja.md)
+
+- 依存関係の順序、ローカル版と安定版の使い分け
+- ローカル検証の記録、残る Python・デモの確認、公開後の検証
 
 ---
 
@@ -232,7 +229,7 @@ Operations 文書は、contract と package 境界の安定化に合わせて順
 - Demo Programs Guide は公式 AIKernel.Demo の学習導線を扱う
 - Interface naming、enum handling、XML documentation policy、CTG developer guidance、CTG developer theory は v0.1.1.1 additive contract surface を扱う
 - CTG ROM Layout v0.1.3 は、rc5 Monolith CTG-ROM を semantic changes なしで package-facing metadata promotion する範囲を扱う
-- Release、monitoring、incident、security operations は Planned
+- 0.1.3 のリリース準備手順は整備済み。一般的なリリース、監視、インシデント、セキュリティ運用は Planned
 という状態であり、今後のバージョンで順次追加される。
 
 ---

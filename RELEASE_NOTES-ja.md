@@ -2,6 +2,12 @@
 
 [English](RELEASE_NOTES.md)
 
+## 0.1.3（公開準備中）
+
+- GPU Provider と各パスのインターフェース、フレーム／ターゲット DTO、能力フラグ、診断メタデータ、共有検証を契約パッケージに追加します。契約パッケージに GPU ランタイムは含めません。
+- raw framebuffer を HUD・表示用ターゲットから分離し、Provider／ブリッジの境界でレイアウト、能力、診断を検証します。
+- 移行とローカル検証の手順は [GPU 移行ガイド](docs/migration/v0.1.3-gpu-canonical-migration-jp.md) と [リリース整合ガイド](docs/development/package-release-alignment-v0.1.3-ja.md) を参照してください。
+
 ## 0.1.2
 
 **2026年6月16日 - 正典 Interface line。**

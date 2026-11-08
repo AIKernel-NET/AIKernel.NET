@@ -1,6 +1,6 @@
 ---
 title: "AIKernel パッケージ導入ガイド"
-updated: 2026-06-16
+updated: 2026-11-08
 published: 2026-06-16
 version: "0.1.3"
 edition: "Canonical Series"
@@ -42,6 +42,9 @@ dotnet tool install -g AIKernel.Tools.CLI --version 0.1.3
 
 ローカル検証では、安定版 version を `0.1.3-dev<build-number>` に置き換え、
 依存順に作成した local NuGet package source を参照します。
+専用の NuGet 設定で `AIKernel.*` をそのローカルフィードに割り当て、新規の
+パッケージキャッシュへ復元します。既存キャッシュや公式フィードの AIKernel
+パッケージが、検証対象の候補を置き換えるのを防ぐためです。
 
 CLI サーフェスは次のコマンドで確認します。
 
