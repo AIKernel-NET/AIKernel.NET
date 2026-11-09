@@ -45,7 +45,7 @@ English is the canonical manuscript. Japanese is included as a companion transla
 - Synchronized paper-en.md, paper-ja.md, metadata-zenodo.md, and .zenodo.json with the selected references.
 
 
-## Rev3 Reference Cleanup
+## Canonical Reference Cleanup
 
 - Reviewed the provisional AIKernel reference set and reduced the manuscript references to works directly needed by the DynamicSLM argument.
 - Prepared the reference structure for a final pass using the author's ORCID-linked AIKernel paper list and the latest DOI guidance.

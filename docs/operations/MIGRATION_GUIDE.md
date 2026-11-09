@@ -1,9 +1,9 @@
 ---
 title: "Migration Guide"
-updated: 2026-06-14
+updated: 2026-06-23
 published: 2026-05-16
-version: "0.1.1.1"
-edition: "Release"
+version: "0.1.3"
+edition: "Canonical Series"
 status: "Active"
 issuer: ai-kernel@aikernel.net
 maintainer: "Takuya (AIKernel Project Maintainer)"
@@ -20,8 +20,8 @@ additive package-line contract expansion for already published public packages.
 Existing `0.1.1` consumers do not need code migration unless they opt into the
 new domain contracts. The `0.1.1.1` package boundary is .NET / NuGet only:
 do not build or publish PyPI packages for this line, and keep Python wrappers
-on the synchronized `0.1.1` package line. The next official v0.1.2 canonical
-series is expected to publish synchronized NuGet and PyPI package families.
+on the synchronized `0.1.1` package line. The current `0.1.3` canonical
+series publishes synchronized NuGet and PyPI package families.
 
 The CTG contract vocabulary was normalized before the `0.1.1.1` package line is
 published: council vote carriers use `CouncilVote`, finite vote values use

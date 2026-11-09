@@ -7,7 +7,7 @@ AIKernel.NET は、Semantic Context OS の契約を定義する仕様先行リ�
 
 ## 現在のパッケージ基準
 
-v0.1.1 時点:
+v0.1.3 時点:
 
 - `AIKernel.Abstractions` と `AIKernel.Contracts` は Interface のみを公開します。
 - DTO は `AIKernel.Dtos` が所有します。
@@ -15,7 +15,7 @@ v0.1.1 時点:
 - `AIKernel.Vfs` は `AIKernel.Abstractions` 内の公開 namespace です。個別の `AIKernel.Vfs` package/project は存在しません。
 - `IResult` や `ISemanticHasher` などの曖昧な ChatChain 旧名は公開されません。`IChatTurnVerificationResult` と `IChatTurnSemanticHasher` を使用してください。
 
-AIKernel.NET の各 package は同じ version line に揃えてください。`AIKernel.Abstractions` v0.1.1 と古い `AIKernel.Dtos` / `AIKernel.Enums` を混在させないでください。
+AIKernel.NET の各 package は同じ version line に揃えてください。`AIKernel.Abstractions` v0.1.3 と古い `AIKernel.Dtos` / `AIKernel.Enums` を混在させないでください。
 
 application author 向けの安全な install rule は単純です。Core、Providers、Tools、
 Wasm、Demo package を追加する前に、`AIKernel.Abstractions`、`AIKernel.Contracts`、

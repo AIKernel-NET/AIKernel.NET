@@ -4,11 +4,11 @@ title: "AIKernel Contributing Guide"
 scope:
   - repo: AIKernel.NET
 createdAt: 2026-04-28T00:00:00Z
-updated: 2026-06-14
+updated: 2026-06-23
 published: 2026-05-16
-version: "0.1.1.1"
-edition: "Draft"
-status: "Refactor"
+version: "0.1.3"
+edition: "Canonical Series"
+status: "Active"
 issuer: ai-kernel@aikernel.net
 maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 signature: ""
@@ -62,7 +62,7 @@ CI は build と test を実行し、ベースライン品質を確認します�
 ### 5. XML documentation
 - Public API にはバイリンガル XML ドキュメント（`/// <summary>`、パラメータ説明、型パラメータ説明、戻り値説明）を付与してください。
 - inline XML docs では `EN:` と `JA:` を明示してください。既存の external docs を使う場合は `docs.en.xml` と `docs.ja.xml` を対で include してください。
-- [`operations/XML_DOCUMENTATION_POLICY-v0.1.1.1-jp.md`](operations/XML_DOCUMENTATION_POLICY-v0.1.1.1-jp.md) に従ってください。
+- [`operations/XML_DOCUMENTATION_POLICY-v0.1.3-jp.md`](operations/XML_DOCUMENTATION_POLICY-v0.1.3-jp.md) に従ってください。
 - release PR を開く前に `py tools\check_bilingual_xml_docs.py src` を実行してください。
 - ドキュメントは常に最新化し、`docs/` と README に反映してください。
 

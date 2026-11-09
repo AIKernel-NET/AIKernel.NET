@@ -4,11 +4,11 @@ title: "AIKernel Contributing Guide"
 scope:
   - repo: AIKernel.NET
 createdAt: 2026-04-28T00:00:00Z
-updated: 2026-06-14
+updated: 2026-06-23
 published: 2026-05-16
-version: "0.1.1.1"
-edition: "Draft"
-status: "Refactor"
+version: "0.1.3"
+edition: "Canonical Series"
+status: "Active"
 issuer: ai-kernel@aikernel.net
 maintainer: "Takuya (AIKernel Project Maintainer)"
 signature: ""
@@ -63,7 +63,7 @@ CI runs build and tests to ensure baseline quality.
 ### 5. XML documentation
 - Public APIs must include bilingual XML docs (`/// <summary>`, parameter descriptions, type parameter descriptions, and return descriptions).
 - Inline XML docs use explicit `EN:` and `JA:` text. Existing external docs must use paired `docs.en.xml` and `docs.ja.xml` includes.
-- Follow [`operations/XML_DOCUMENTATION_POLICY-v0.1.1.1.md`](operations/XML_DOCUMENTATION_POLICY-v0.1.1.1.md).
+- Follow [`operations/XML_DOCUMENTATION_POLICY-v0.1.3.md`](operations/XML_DOCUMENTATION_POLICY-v0.1.3.md).
 - Run `py tools\check_bilingual_xml_docs.py src` before opening a release PR.
 - Keep docs up to date and reflect in `docs/` and README.
 

@@ -108,7 +108,7 @@ For each release, publish:
 - `../guidelines/DOCUMENTATION_GUIDELINES.md`
 - `../operations/INTERFACE_EXTENSION_NAMING-v0.1.1.1.md`
 - `../operations/ENUM_HANDLING_POLICY-v0.1.1.1.md`
-- `../operations/XML_DOCUMENTATION_POLICY-v0.1.1.1.md`
+- `../operations/XML_DOCUMENTATION_POLICY-v0.1.3.md`
 ---
 
 # Changelog

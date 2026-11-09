@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
-    <StablePackageVersion>0.1.2</StablePackageVersion>
-    <LocalPackageVersionPrefix>0.1.2</LocalPackageVersionPrefix>
+    <StablePackageVersion>0.1.3</StablePackageVersion>
+    <LocalPackageVersionPrefix>0.1.3</LocalPackageVersionPrefix>
     <LocalPackageBuildNumber Condition="'$(LocalPackageBuildNumber)' == ''">0</LocalPackageBuildNumber>
     <UseLocalPackageVersion Condition="'$(UseLocalPackageVersion)' == ''">true</UseLocalPackageVersion>
     <PackageVersion Condition="'$(UseLocalPackageVersion)' == 'true'">$(LocalPackageVersionPrefix)-dev$(LocalPackageBuildNumber)</PackageVersion>
@@ -20,6 +20,26 @@
     <PackageTags>aikernel;aikernel-core;ai-os;architecture;category-separation;context-isolation;contract-driven;governance;admissibility;preprocessing;semantic-context-os;semantic-compilation;deterministic-replay;fail-closed;rom;canonicalization;pdp;signed-prompt;interface-contracts;dto;enum;capability-modules;dynamicslm;seedslm;hatl</PackageTags>
 	  <PackageReleaseNotes>
 		  <![CDATA[
+AIKernel.NET v0.1.3-dev1 — Canonical GPU Integration
+
+• Adds the canonical GPU contract surface for WebGPU, Dawn, CUDA, and deterministic CPU fallback providers.
+• Adds GpuProviderCapabilities, GpuFrameTargetKind, GpuReadbackPolicy, and ego-radar HUD mode vocabulary.
+• Adds canonical GPU DTOs for frame tokens, raw/HUD double-buffer targets, diagnostics, GPU HUD, GPU Aisthesis, and spatial reasoning.
+• Splits HUD geometry from semantic state through HudPanelRect and HudPanelStateVector layouts.
+• Defines the v0.1.3 flat buffer layout registry: HudCells, HudRect, HudPanelRect, HudPanelStateVector, StateVector, AisMatrix, FeatureVector, and SpatialVector.
+• Preserves the raw-capture rule: sensor analysis must use RawFramebuffer, not HUD-composited or display fallback surfaces.
+• Uses local development package versions as 0.1.3-dev{buildNumber}; stable 0.1.3 packages are created only at publication time.
+
+AIKernel.NET v0.1.3-dev1 — Canonical GPU Integration
+
+• WebGPU、Dawn、CUDA、deterministic CPU fallback Provider 向けの canonical GPU contract surface を追加。
+• GpuProviderCapabilities、GpuFrameTargetKind、GpuReadbackPolicy、ego-radar HUD mode vocabulary を追加。
+• frame token、raw/HUD double-buffer target、diagnostics、GPU HUD、GPU Aisthesis、spatial reasoning 用の canonical GPU DTO を追加。
+• HudPanelRect と HudPanelStateVector layout により HUD geometry と semantic state を分離。
+• v0.1.3 flat buffer layout registry として HudCells、HudRect、HudPanelRect、HudPanelStateVector、StateVector、AisMatrix、FeatureVector、SpatialVector を定義。
+• sensor analysis は HUD 合成済み surface や display fallback ではなく RawFramebuffer を使う raw-capture rule を保持。
+• local development package version は 0.1.3-dev{buildNumber} を使用し、stable 0.1.3 package は公開時のみ作成。
+
 AIKernel.NET v0.1.2-dev0 — Canonical Interface Extraction
 
 • Adds the first v0.1.2 canonical cognition pipeline interface surface.

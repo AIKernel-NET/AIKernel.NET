@@ -1,7 +1,7 @@
 ---
 updated: 2026-06-16
 published: 2026-06-16
-version: "0.1.2"
+version: "0.1.3"
 edition: "Release"
 status: "Release"
 issuer: ai-kernel@aikernel.net
@@ -50,22 +50,22 @@ then move to the runtime repository that matches what you want to run.
 Install the contract packages together:
 
 ```bash
-dotnet add package AIKernel.Abstractions --version 0.1.2
-dotnet add package AIKernel.Contracts --version 0.1.2
-dotnet add package AIKernel.Dtos --version 0.1.2
-dotnet add package AIKernel.Enums --version 0.1.2
+dotnet add package AIKernel.Abstractions --version 0.1.3
+dotnet add package AIKernel.Contracts --version 0.1.3
+dotnet add package AIKernel.Dtos --version 0.1.3
+dotnet add package AIKernel.Enums --version 0.1.3
 ```
 
 Do not mix AIKernel contract packages from different version families.
 
 ---
 
-## 0.1.2 public Package Line
+## 0.1.3 public Package Line
 
 The 0.0.x design-implementation phase and the 0.1.0 prototype validation
-baseline are complete. The current public package line is 0.1.2.
+baseline are complete. The current public package line is 0.1.3.
 
-The 0.1.2 line publishes the contract packages together with executable Core,
+The 0.1.3 line publishes the contract packages together with executable Core,
 external Capability modules, WASM runtime packages, tools, and demo/control
 repositories:
 
@@ -84,7 +84,7 @@ repositories:
 
 Historical architecture documents may retain their original 0.0.x front matter
 and 0.1.0 prototype notes. User-facing package installation examples should use
-the current 0.1.2 packages.
+the current 0.1.3 packages.
 
 Release notes:
 
@@ -200,7 +200,7 @@ app.Run();
 ### Target Experience / Boot Log Example
 
 ```txt
-[KERNEL] Initializing AIKernel.NET v0.1.2...
+[KERNEL] Initializing AIKernel.NET v0.1.3...
 [KERNEL] Loading ISignatureTrustStore... [OK]
 [KERNEL] Mounting Vfs (Git: ./context)... [OK]
 [KERNEL] Verifying System Prompt Signature... [VALID]
@@ -312,7 +312,7 @@ For the latest structure and cross-links, use the category indexes:
 - `docs/theory/README.md` / `docs/theory/README-jp.md`
 - `docs/todo/concept-elevation-refactoring-todo.md`
 
-For the v0.1.2 canonical contract surface, start with:
+For the v0.1.3 canonical contract surface, start with:
 
 - `docs/architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md`
 - `docs/architecture/20.CANONICAL_TRAJECTORY_GOVERNANCE-v0.1.1.1.md`
@@ -325,8 +325,8 @@ For the v0.1.2 canonical contract surface, start with:
 - `docs/operations/ENUM_HANDLING_POLICY-v0.1.1.1.md`
 - `docs/operations/XML_DOCUMENTATION_POLICY-v0.1.1.1.md`
 
-The `0.1.2` package line publishes .NET / NuGet packages and synchronized PyPI
-wrappers for `0.1.2`; do not mix this line with earlier packages.
+The `0.1.3` package line publishes .NET / NuGet packages and synchronized PyPI
+wrappers for `0.1.3`; do not mix this line with earlier packages.
 package line.
 
 ---

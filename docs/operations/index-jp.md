@@ -1,8 +1,8 @@
 ---
-updated: 2026-06-14
+updated: 2026-06-23
 published: 2026-05-16
-version: "0.1.1.1"
-edition: "Release"
+version: "0.1.3"
+edition: "Canonical Series"
 status: "Active"
 issuer: ai-kernel@aikernel.net
 maintainer: "拓也（AIKernel プロジェクト メンテナー）"
@@ -10,8 +10,9 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 
 # AIKernel Operations — Index
 このディレクトリは、AIKernel.NET の **運用（Operations）** に関する文書をまとめるための入口となる。
-0.1.1 以降、この Operations 領域は公開パッケージの導入手順、
-公式デモプログラムの読み進め方、リリース時の検証サーフェスも扱う。
+0.1.3 正典シリーズでは、この Operations 領域が公開パッケージの導入手順、
+公式デモプログラムの読み進め方、local package validation rule、
+リリース時の検証サーフェスを扱う。
 
 Operations は、アーキテクチャ思想（architecture）や実装方針（design）、
 ガイドライン（guideline）とは異なり、
@@ -40,7 +41,7 @@ Operations は、アーキテクチャ思想（architecture）や実装方針（
 - v0.1.1 の NuGet、PyPI、Providers、WASM、Tools、CUDA、Demo を横断した同期パッケージライン検証
 - v0.1.1.1 の additive domain contract surface と documentation policy alignment
 - v0.1.1.1 は .NET / NuGet のみの package boundary とし、この validation line では PyPI package を作成しない
-- v0.1.2 正典シリーズの release 前提: NuGet と PyPI の package family を同期して公開する
+- v0.1.3 正典シリーズ: 現在の package line として NuGet と PyPI の package family を同期して公開する
 - v0.1.1.1 の CTG DTO / enum 正規化
 
 package reference の更新や contract-layer dependency の検証時に、このガイドを参照する。
@@ -53,10 +54,10 @@ package reference の更新や contract-layer dependency の検証時に、こ�
 - AIKernel OS サーフェスを起動する最短 3 コマンド
 - contract、runtime、provider、tools、WASM、CUDA レイヤーの NuGet パッケージ一覧
 - Python wrapper 利用者向けの PyPI パッケージ一覧
-- `0.1.1.1` rule: .NET / NuGet package のみ更新し、PyPI package は `0.1.1` のまま維持する
-- `0.1.2` assumption: 更新済み NuGet / PyPI package family を同期して公開する
+- 安定版 `0.1.3` install command と local `0.1.3-dev` / `0.1.3.dev` validation command
+- 正典 line における NuGet / PyPI package family 同期ルール
 - Provider の選び方とリポジトリ導線
-- 0.1.1 のバージョン混在ルール
+- 安定版 package、local package、migration test の version mixing rule
 
 AIKernel パッケージを導入する場合や、パッケージファミリ境界を検証する場合に利用する。
 
@@ -97,7 +98,7 @@ external metadata から値を受け取る場合に利用する。
 
 ---
 
-### 6. [XML Documentation Policy](XML_DOCUMENTATION_POLICY-v0.1.1.1-jp.md)
+### 6. [XML Documentation Policy](XML_DOCUMENTATION_POLICY-v0.1.3-jp.md)
 **ステータス:** Active
 **現在の内容:**
 - public API のバイリンガル XML documentation 要件
@@ -144,25 +145,22 @@ CTG-ROM canon と personalization layer を追加、レビュー、または mou
 
 ---
 
-### 9a. [CTG ROM Layout v0.1.2](CTG_ROM_LAYOUT-v0.1.2-jp.md)
+### 9a. [CTG ROM Layout v0.1.3](CTG_ROM_LAYOUT-v0.1.3-jp.md)
 **ステータス:** Active
 **現在の内容:**
-- v0.1.2 package-facing CTG-ROM version alignment
+- v0.1.3 package-facing CTG-ROM version alignment
 - rc5 Monolith CTG-ROM content promotion without semantic changes
 - `aikernel-net` 同梱 CTG-ROM sample の synchronization rule
 
-v0.1.2 ROM metadata、Python sample package contents、base-layer personalization
+v0.1.3 ROM metadata、Python sample package contents、base-layer personalization
 boundary を検証する場合に利用する。
 
 ---
 
-### 10. Release Operations（リリース運用）
-**ステータス:** Planned
-**内容（予定）:**
-- リリースフロー（tag → build → publish → announce）
-- 署名付きアーティファクトの扱い
-- バージョン管理（SemVer / Contract Versioning との整合）
-- リリース後の検証手順
+### 10. [0.1.3 リリース準備](../development/package-release-alignment-v0.1.3-ja.md)
+
+- 依存関係の順序、ローカル版と安定版の使い分け
+- ローカル検証の記録、残る Python・デモの確認、公開後の検証
 
 ---
 
@@ -227,11 +225,11 @@ Operations 文書は、contract と package 境界の安定化に合わせて順
 
 現時点では、
 - Migration Guide は v0.1.1 までの具体的な移行手順と v0.1.1.1 の CTG DTO / enum 正規化を含む
-- Package Installation Guide は v0.1.2 正典 package line、local `0.1.2-dev` / `0.1.2.dev` validation、履歴としての `0.1.1` / `0.1.1.1` context を扱う
+- Package Installation Guide は v0.1.3 正典 package line、local `0.1.3-dev` / `0.1.3.dev` validation、repository order、履歴 context を扱う
 - Demo Programs Guide は公式 AIKernel.Demo の学習導線を扱う
 - Interface naming、enum handling、XML documentation policy、CTG developer guidance、CTG developer theory は v0.1.1.1 additive contract surface を扱う
-- CTG ROM Layout v0.1.2 は、rc5 Monolith CTG-ROM を semantic changes なしで package-facing metadata promotion する範囲を扱う
-- Release、monitoring、incident、security operations は Planned
+- CTG ROM Layout v0.1.3 は、rc5 Monolith CTG-ROM を semantic changes なしで package-facing metadata promotion する範囲を扱う
+- 0.1.3 のリリース準備手順は整備済み。一般的なリリース、監視、インシデント、セキュリティ運用は Planned
 という状態であり、今後のバージョンで順次追加される。
 
 ---
@@ -240,7 +238,7 @@ Operations 文書は、contract と package 境界の安定化に合わせて順
 
 - `docs/architecture/` — アーキテクチャ思想（Why）
 - `docs/design/` — 実装方針（How）
-- `docs/guideline/` — 運用ルール（Rules）
+- `docs/guidelines/` — 運用ルール（Rules）
 - `docs/operations/` — 運用手順（Runbook） ← *本ディレクトリ*
 ---
 
@@ -253,4 +251,4 @@ Operations 文書は、contract と package 境界の安定化に合わせて順
 - v0.1.0 (2026-06-07): MemoryRegion / MemoryMapper contract extraction を追加
 - v0.1.1 (2026-06-10): 同期された公開リリースライン向けに package installation guide と demo programs guide を追加
 - v0.1.1.1 (2026-06-14): CTG developer guide、CTG Developer Theory、Monolith CTG-ROM layout coverage、0.1.1.1 の NuGet-only package boundary を追加
-- v0.1.2 (2026-06-16): NuGet / PyPI 同期公開、local development package versioning、semantic ROM changes なしの CTG-ROM metadata alignment に合わせて package installation guidance を更新
+- v0.1.3 (2026-06-16): NuGet / PyPI 同期公開、local development package versioning、semantic ROM changes なしの CTG-ROM metadata alignment に合わせて package installation guidance を更新

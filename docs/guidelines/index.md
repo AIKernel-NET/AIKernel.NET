@@ -1,9 +1,9 @@
 ---
-updated: 2026-06-15
+updated: 2026-06-23
 published: 2026-05-16
-version: "0.1.1.1"
-edition: "Draft"
-status: "Refactor"
+version: "0.1.3"
+edition: "Canonical Series"
+status: "Active"
 issuer: ai-kernel@aikernel.net
 maintainer: "Takuya (AIKernel Project Maintainer)"
 ---
@@ -115,7 +115,7 @@ Defines the compatibility envelope before Concept Elevation implementation begin
 - Cross-repository responsibility boundaries
 - 0.1.1.1 local NuGet package versioning
 - NuGet-only / no-PyPI scope for this update line
-- Thin-surface rule for 0.1.2 contract promotion
+- Thin-surface rule for 0.1.3 contract promotion
 
 Defines the canonical operating envelope for AIKernel.NET, Core, Providers,
 Cuda13.0, Control, Tools, Wasm, Demo, and Doom during 0.1.1.1 development.

@@ -1,0 +1,131 @@
+{
+  "title": "Capability-Distributed Resident Intelligence Kernel Model for Deterministic Semantic Operating Systems Based on Interface-Led Architecture",
+  "upload_type": "publication",
+  "publication_type": "technicalnote",
+  "description": "This technical note proposes a capability-distributed resident intelligence kernel model for AIKernel. It separates SeedSLM, a pinned read-only resident intelligence kernel, from DynamicSLM capability modules that are paged into VRAM under deterministic governance. It also defines five-dimensional semantic tensor projection over Telos, Ethos, Logos, Pathos, and Techne, and a Bonsai CTG Router for fail-closed semantic routing. The English manuscript is canonical; the Japanese manuscript is included as a companion translation.",
+  "creators": [
+    {
+      "name": "Sogawa, Takuya",
+      "orcid": "0009-0009-7499-2595",
+      "affiliation": "AIKernel Project"
+    }
+  ],
+  "version": "v0.1.0",
+  "publication_date": "2026-06-17",
+  "doi": "10.5281/zenodo.20735831",
+  "language": "eng",
+  "keywords": [
+    "AIKernel",
+    "Interface-Led Architecture",
+    "Semantic Context OS",
+    "SeedSLM",
+    "DynamicSLM",
+    "Resident Intelligence Kernel",
+    "Capability Paging",
+    "Semantic Tensor Projection",
+    "Bonsai CTG Router",
+    "Semantic Tokenizer",
+    "Representation Engineering",
+    "Fail-Closed Governance",
+    "VRAM Allocator",
+    "Differential Distillation"
+  ],
+  "license": "cc-by-4.0",
+  "related_identifiers": [
+    {
+      "identifier": "https://arxiv.org/abs/2507.07505",
+      "relation": "cites",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://arxiv.org/abs/2310.01405",
+      "relation": "cites",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://arxiv.org/abs/2106.09685",
+      "relation": "cites",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://arxiv.org/abs/2305.14314",
+      "relation": "cites",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://arxiv.org/abs/2311.03285",
+      "relation": "cites",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://arxiv.org/abs/2310.18547",
+      "relation": "cites",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://doi.org/10.1145/3600006.3613165",
+      "relation": "cites",
+      "resource_type": "publication-conferencepaper"
+    },
+    {
+      "identifier": "https://arxiv.org/abs/2307.09702",
+      "relation": "cites",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://arxiv.org/abs/2212.06094",
+      "relation": "cites",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://arxiv.org/abs/2310.08560",
+      "relation": "cites",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://arxiv.org/abs/2403.16971",
+      "relation": "cites",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20681895",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20550614",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20290614",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20322690",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20460322",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20534341",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote"
+    },
+    {
+      "identifier": "https://github.com/AIKernel-NET/AIKernel.NET",
+      "relation": "isSupplementedBy",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://aikernel.net/",
+      "relation": "isSupplementedBy",
+      "resource_type": "other"
+    }
+  ]
+}

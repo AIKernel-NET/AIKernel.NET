@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata from this file."
+title: "Capability-Distributed Resident Intelligence Kernel Model for Deterministic Semantic Operating Systems Based on Interface-Led Architecture"
+authors:
+  - family-names: "Sogawa"
+    given-names: "Takuya"
+    orcid: "https://orcid.org/0009-0009-7499-2595"
+    affiliation: "AIKernel Project"
+version: "v0.1.0"
+date-released: "2026-06-17"
+doi: "10.5281/zenodo.20735831"
+license: "CC-BY-4.0"
+type: "article"
+abstract: "This technical note proposes a capability-distributed resident intelligence kernel model for deterministic Semantic Context Operating Systems. It defines SeedSLM, DynamicSLM, two-layer VRAM placement, five-dimensional semantic tensor projection, and Bonsai CTG routing for fail-closed governance."
+keywords:
+  - AIKernel
+  - SeedSLM
+  - DynamicSLM
+  - Semantic Context OS
+  - Semantic Tensor Projection
+  - Bonsai CTG Router
+  - Fail-Closed Governance

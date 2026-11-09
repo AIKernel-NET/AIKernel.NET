@@ -2,6 +2,12 @@
 
 [日本語](RELEASE_NOTES-ja.md)
 
+## 0.1.3 (Unreleased)
+
+- Publish the GPU vocabulary through the contract packages: provider and pass interfaces, frame/target DTOs, capability flags, canonical diagnostics, and shared validation. The contract packages do not include a GPU runtime.
+- Keep raw framebuffer input separate from HUD and display targets. Validate layouts, capabilities, and diagnostics at the provider/bridge boundary.
+- See the [GPU migration guide](docs/migration/v0.1.3-gpu-canonical-migration.md) and the [release alignment guide](docs/development/package-release-alignment-v0.1.3.md) for migration and local verification.
+
 ## 0.1.2
 
 **June 16th, 2026 - Canonical interface line.**

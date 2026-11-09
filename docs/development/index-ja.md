@@ -1,7 +1,7 @@
 ---
 updated: 2026-06-16
 published: 2026-06-16
-version: "0.1.2"
+version: "0.1.3"
 edition: "Draft"
 status: "Development"
 issuer: ai-kernel@aikernel.net
@@ -15,12 +15,17 @@ maintainer: "Takuya (AIKernel Project Maintainer)"
 
 ## 読む順番
 
+まず現行 0.1.3 の正典 note から読みます。
+
+1. [Interface Canonicalization Roadmap v0.1.3](interface-canonicalization-roadmap-v0.1.3-ja.md)
+2. [正典 Interface Set v0.1.3](canonical-interface-set-v0.1.3-ja.md)
+3. [Interface Breaking Change Check v0.1.3](interface-breaking-change-check-v0.1.3-ja.md)
+4. [Package Release Alignment v0.1.3](package-release-alignment-v0.1.3-ja.md)
+
+次の履歴 note は、migration context を確認する場合だけ参照します。
+
 1. [リポジトリ横断開発者ガイド v0.1.1.1](cross-repository-developer-guide-v0.1.1.1-ja.md)
 2. [Repository Alignment v0.1.1.1](repository-alignment-v0.1.1.1-ja.md)
-3. [Interface Canonicalization Roadmap v0.1.2](interface-canonicalization-roadmap-v0.1.2-ja.md)
-4. [正典 Interface Set v0.1.2](canonical-interface-set-v0.1.2-ja.md)
-5. [Interface Breaking Change Check v0.1.2](interface-breaking-change-check-v0.1.2-ja.md)
-6. [Package Release Alignment v0.1.2](package-release-alignment-v0.1.2-ja.md)
 
 各 repository の local build、package、diagnostics、implementation guidance は、
 それぞれの `docs/` folder を参照してください。

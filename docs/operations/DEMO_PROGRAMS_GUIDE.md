@@ -1,17 +1,17 @@
 ---
-title: "AIKernel 0.1.1 Demo Programs Guide"
-updated: 2026-06-10
-published: 2026-06-10
-version: "0.1.1"
+title: "AIKernel 0.1.3 Demo Programs Guide"
+updated: 2026-11-08
+published: 2026-06-16
+version: "0.1.3"
 edition: "Release"
 status: "Active"
 issuer: ai-kernel@aikernel.net
 maintainer: "Takuya (AIKernel Project Maintainer)"
 ---
 
-# AIKernel 0.1.1 Demo Programs Guide
+# AIKernel 0.1.3 Demo Programs Guide
 
-AIKernel.Demo is the official example repository for the 0.1.1 package line.  
+AIKernel.Demo is the official example repository for the 0.1.3 package line.
 It is the best first stop after installing packages because each demo maps one OS layer to a minimal golden path.
 
 ## First Demo to Run
@@ -64,17 +64,27 @@ On non-Windows systems, the CUDA demo is expected to report a guarded skip inste
 
 AIKernel.Demo also mirrors the package story on the Python side. Use the Python demos to confirm wrapper imports, managed assembly discovery, and dry-run package surfaces after installing the PyPI packages.
 
-These Python demo checks belong to the synchronized 0.1.1 package line. The
-0.1.1.1 contract update does not introduce new PyPI packages or additional
-Python demo validation. The next official v0.1.2 canonical series is expected
-to refresh the PyPI package family, so update these demo commands when the
-0.1.2 packages are published.
+These commands apply after the corresponding stable 0.1.3 wheels are
+published. For release verification use matching local wheels and consult the
+[release alignment guide](../development/package-release-alignment-v0.1.3.md).
 
 ```bash
-pip install aikernel-net==0.1.1 aikernel-providers==0.1.1 aikernel-tools==0.1.1
+pip install aikernel-net==0.1.3 aikernel-providers==0.1.3 aikernel-tools==0.1.3
 ```
 
 Add `aikernel-governance`, `aikernel-wasm`, or the Windows-only CUDA wrapper only when that layer is part of the scenario.
+
+## Doom Browser Demo
+
+`AIKernel.Doom` is a separate source demo, not a package to install. The
+[official embedded demo](https://aikernel.net/#doom-demo) remains available.
+The versioned site layout uses `/demo/doom/` as the selector and
+`/demo/doom/versions/v<version>/` for each standalone page after deployment.
+The prepared update contains `v0.1.2` only; `v0.1.3` remains a local preview.
+
+Review the license notice and explicitly approve before the browser downloads
+the WAD and model. A page that reaches the consent screen has not yet passed
+the full gameplay or restart test.
 
 ## Operational Reading Order
 

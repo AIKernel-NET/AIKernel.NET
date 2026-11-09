@@ -1,7 +1,7 @@
 ---
-updated: 2026-06-15
-published: 2026-05-16
-version: "0.1.1.1"
+updated: 2026-06-23
+published: 2026-06-16
+version: "0.1.3"
 edition: "Release"
 status: "Released"
 issuer: ai-kernel@aikernel.net
@@ -49,34 +49,34 @@ AIKernel が初めての場合、この repository は contract と vocabulary �
 contract package は同じ version family でまとめて導入してください。
 
 ```bash
-dotnet add package AIKernel.Abstractions --version 0.1.1
-dotnet add package AIKernel.Contracts --version 0.1.1
-dotnet add package AIKernel.Dtos --version 0.1.1
-dotnet add package AIKernel.Enums --version 0.1.1
+dotnet add package AIKernel.Abstractions --version 0.1.3
+dotnet add package AIKernel.Contracts --version 0.1.3
+dotnet add package AIKernel.Dtos --version 0.1.3
+dotnet add package AIKernel.Enums --version 0.1.3
 ```
 
 異なる version family の AIKernel contract package を混在させないでください。
 
 ---
 
-## 0.1.1 公開パッケージライン
+## 0.1.3 公開パッケージライン
 
 0.0.x の design / implementation phase と 0.1.0 prototype validation baseline は完了しました。
-現在の public package line は 0.1.1 です。
+現在の public package line は 0.1.3 です。
 
-0.1.1 では、契約 package に加えて、実行可能な Core、外部 Capability module、
+0.1.3 では、契約 package に加えて、実行可能な Core、外部 Capability module、
 WASM runtime package、Tools、Demo / Control repository を公開 package family として
 扱います。
 
 過去の architecture document には元の 0.0.x / 0.1.0 front matter や prototype note が
-残る場合があります。利用者向けの package installation example は、現行の 0.1.1
+残る場合があります。利用者向けの package installation example は、現行の 0.1.3
 package を使用してください。
 
 ---
 
-## 0.1.1.1 リポジトリ横断整合
+## 0.1.3 リポジトリ横断整合
 
-0.1.1.1 系では、Core、Providers、Cuda13.0、Control、Tools、Wasm、Demo、Doom を
+0.1.3 系では、Core、Providers、Cuda13.0、Control、Tools、Wasm、Demo、Doom を
 同じローカル NuGet 開発パッケージ family として扱います。
 Python / PyPI package は、明示的に予定された場合を除き、この更新ラインでは作成しません。
 
@@ -182,7 +182,7 @@ app.Run();
 起動時には以下のシーケンスが実行されます。
 
 ```txt
-[KERNEL] Initializing AIKernel.NET v0.1.1...
+[KERNEL] Initializing AIKernel.NET v0.1.3...
 [KERNEL] Loading ISignatureTrustStore... [OK]
 [KERNEL] Mounting Vfs (Git: ./context)... [OK]
 [KERNEL] Verifying System Prompt Signature... [VALID]

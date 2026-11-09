@@ -342,7 +342,7 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         /// EN: Documentation for public API. JA: Version を取得します。
         /// </summary>
 
-        public string Version => "0.0.2";
+        public string Version => "0.1.3";
         /// <summary>
         /// EN: Executes GetCapabilities.
         /// EN: Documentation for public API. JA: GetCapabilities を実行します。
@@ -847,7 +847,7 @@ public sealed class ProviderAndSecurityCapabilityContractTests
         /// EN: Documentation for public API. JA: Version を取得します。
         /// </summary>
 
-        public string Version => "0.0.2";
+        public string Version => "0.1.3";
         /// <summary>
         /// EN: Executes GetCapabilities.
         /// EN: Documentation for public API. JA: GetCapabilities を実行します。

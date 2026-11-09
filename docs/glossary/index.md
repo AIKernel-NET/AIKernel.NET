@@ -1,12 +1,12 @@
 ---
 title: "Glossary"
-lang: ja
-description: "AIKernel.NET 0.1.2 の Kernel、Provider、Tool、Runtime、Wasm、Doom、Control、Capability などの用語集です。"
-tags: [AIKernel, AIKernel.NET, v0.1.2]
+lang: en
+description: "Glossary for AIKernel.NET 0.1.3 developer documentation."
+tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: glossary
 source: "generated-from-repository-inventory"
 generated: true
-release: "0.1.2"
+release: "0.1.3"
 updated: "2026-06-17"
 ---
 
@@ -59,7 +59,7 @@ Provider、Tool、Capability、CTG、Wasm、Doom などの domain term が出た
 ## Notes
 
 - Terms are intentionally bilingual because the source repository contains English and Japanese documentation.
-- If a term lacks source evidence, future updates should add `TODO: source required` rather than inventing a definition.
+- If a term lacks source evidence, future updates should add `source evidence required` rather than inventing a definition.
 
 ## See Also
 

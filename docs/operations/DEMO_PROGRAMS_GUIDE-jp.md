@@ -1,17 +1,17 @@
 ---
-title: "AIKernel 0.1.1 デモプログラムガイド"
-updated: 2026-06-10
-published: 2026-06-10
-version: "0.1.1"
+title: "AIKernel 0.1.3 デモプログラムガイド"
+updated: 2026-11-08
+published: 2026-06-16
+version: "0.1.3"
 edition: "Release"
 status: "Active"
 issuer: ai-kernel@aikernel.net
 maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 ---
 
-# AIKernel 0.1.1 デモプログラムガイド
+# AIKernel 0.1.3 デモプログラムガイド
 
-AIKernel.Demo は、0.1.1 パッケージラインの公式サンプルリポジトリです。  
+AIKernel.Demo は、0.1.3 パッケージラインの公式サンプルリポジトリです。
 各デモは OS レイヤーごとに最小のゴールデンパスを示すため、パッケージ導入後に最初に触る場所として適しています。
 
 ## 最初に動かすデモ
@@ -64,16 +64,25 @@ Windows 以外では、CUDA デモは失敗ではなく guarded skip を報告�
 
 AIKernel.Demo は Python 側にも対応するデモ導線を持ちます。PyPI パッケージ導入後、wrapper import、managed assembly discovery、dry-run package surface の確認に利用します。
 
-この Python デモ確認は、同期済み 0.1.1 パッケージライン向けです。0.1.1.1 の
-contract update では、新しい PyPI package や追加の Python demo validation はありません。
-次の公式 v0.1.2 正典シリーズでは PyPI package family を更新する前提のため、
-0.1.2 package 公開後にこの demo command も更新します。
+次のコマンドは、対応する安定版 0.1.3 wheel の公開後に使います。公開前の
+検証には同じ系列のローカル wheel を使い、
+[リリース整合ガイド](../development/package-release-alignment-v0.1.3-ja.md) を参照してください。
 
 ```bash
-pip install aikernel-net==0.1.1 aikernel-providers==0.1.1 aikernel-tools==0.1.1
+pip install aikernel-net==0.1.3 aikernel-providers==0.1.3 aikernel-tools==0.1.3
 ```
 
 `aikernel-governance`、`aikernel-wasm`、Windows 専用 CUDA wrapper は、そのレイヤーを利用するシナリオで追加します。
+
+## Doom ブラウザーデモ
+
+`AIKernel.Doom` は独立したソースデモで、インストールするパッケージではありません。
+[公式サイトの埋め込みデモ](https://aikernel.net/#doom-demo) は引き続き利用できます。
+版別ページの反映後は `/demo/doom/` が一覧、`/demo/doom/versions/v<version>/` が
+個別の URL になります。用意した配置候補は `v0.1.2` のみで、`v0.1.3` はローカルプレビューです。
+
+ライセンス表示を確認し、WAD とモデルのダウンロードには明示的に同意してください。
+同意画面までの表示確認は、ゲームプレイや再起動を含む検証とは別です。
 
 ## 推奨される読み進め方
 
