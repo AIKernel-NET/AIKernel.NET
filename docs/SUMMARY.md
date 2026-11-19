@@ -1,53 +1,15 @@
 ---
-title: "AIKernel.NET Documentation Summary"
+generated: false
 lang: en
-description: "AIKernel.NET Documentation Summary for AIKernel.NET 0.1.3 developer documentation."
-tags: [AIKernel, AIKernel.NET, v0.1.3]
-category: docs
-source: "generated-from-repository-inventory"
-generated: true
-release: "0.1.3"
-updated: "2026-06-17"
+title: "Documentation reading path"
 ---
 
-# AIKernel.NET Documentation Summary
+# Documentation reading path
 
-## Summary
-
-### EN
-
-This page is a concise table of contents for the 0.1.3 documentation renewal.
-
-### JA
-
-このページは 0.1.3 documentation renewal の簡潔な目次です。
-
-## Why
-
-The site needs a clear crawlable structure that helps readers and search systems understand the relationship between guide pages and generated Reference.
-
-## Usage
-
-- [Overview](overview/index.md)
-- [Architecture](architecture/index.md)
-- [Core Concepts](concepts/index.md)
-- [Runtime Model](runtime/index.md)
-- [Providers](providers/index.md)
-- [Tools](tools/index.md)
-- [Wasm Runtime](wasm/index.md)
-- [Doom Demo](doom/index.md)
-- [API Reference](/reference/)
-- [Tutorials](/tutorials/)
-- [Glossary](/glossary/)
-
-## Examples
-
-Use this file when checking that the generated site has the expected public entry points.
-
-## Notes
-
-This file is generated from `WebSite/script/generate_canon_docs.py`.
-
-## See Also
-
-- [Documentation Generation Report](docs-generation-report.md)
+- [Guide home](index.md)
+- [Run a sample](overview/quick-start.md)
+- [Read the code](tutorials/first-kernel.md)
+- [Understand the concepts](concepts/index.md)
+- [Troubleshooting](runtime/index.md)
+- [Glossary](glossary/index.md)
+- [API Reference](https://aikernel.net/reference/)

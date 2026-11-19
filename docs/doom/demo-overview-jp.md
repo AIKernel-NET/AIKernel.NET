@@ -1,24 +1,39 @@
 ---
-title: "Doom デモの概要"
+title: "Doomデモで何を確かめられるか"
 lang: ja
-description: "Doom デモの概要"
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "Doomデモは、ブラウザー上のゲーム実行と、入力・観測・自動操作を組み合わせたAIKernelの実験環境です。まず手動操作で動作を確かめ、その後に自動操作と状態表示を観察すると、問題を切り分けやすくなります。"
 category: docs
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-11-08"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
 
-# Doom デモの概要
+# Doomデモで何を確かめられるか
 
-DOOM エンジンはブラウザー内の WASM で実行されます。統治された実行制御、センシング、HUD の証跡を WebGPU と CPU 描画モードで確認できます。ユーザーがダウンロードに同意するまではゲームを起動しません。
+Doomデモは、ブラウザー上のゲーム実行と、入力・観測・自動操作を組み合わせたAIKernelの実験環境です。まず手動操作で動作を確かめ、その後に自動操作と状態表示を観察すると、問題を切り分けやすくなります。
 
-## デモのバージョン
+## デモを開く
 
-配置候補では `/demo/doom/` が一覧です。反映後は承認済みの各版を `/demo/doom/versions/v<version>/` に置き、JS・Worker・WASM・プロファイルを版ごとに分けます。初回の候補は既存の `v0.1.2` のみで、`v0.1.3` はローカルプレビューです。WAD とモデルは共通の配信先から同意後に取得します。
+[Doomデモ](/demo/doom/)を開いてください。ページに表示されるアセットの利用条件と準備手順を確認してから開始します。Doom固有の素材は、AIKernelのソースコードとは別に扱われます。
 
-## 関連ページ
+## 三つに分けて観察する
 
-- [AIKernel.Doom](https://github.com/AIKernel-NET/AIKernel.Doom)
-- [デモプログラムガイド](../operations/DEMO_PROGRAMS_GUIDE-jp.md)
+| 観察対象 | 確認すること |
+| --- | --- |
+| ゲーム本体 | 起動するか、画面が更新されるか、手動入力に応答するか |
+| 自動操作 | 有効になっているか、移動や操作がどう変わるか、停止できるか |
+| 状態表示・記録 | 選ばれた実行方式、観測や判断の情報、エラーが見えるか |
+
+手動では動くのに自動操作が進まない場合、まず自動操作の状態と制御側のログを確認します。ゲーム画面自体が止まっている場合は、起動・アセット・Workerなど実行環境の調査を先に行います。
+
+## このデモだけでは判断できないこと
+
+特定の場面で自動操作できたことは、別マップの攻略や全端末での動作を保証しません。CPUへの代替経路が使われる場合もあるため、GPU利用の確認は表示されたバックエンド情報と合わせて行います。
+
+## 問題を報告する
+
+デモの版、ブラウザー、OS、開始から問題が起こるまでの操作、最初のエラーを添えてください。自動操作の有効・無効と、手動操作の可否もあると再現しやすくなります。
+
+[AIKernel.Doomの日本語ドキュメント](https://github.com/AIKernel-NET/AIKernel.Doom/blob/main/docs/README-ja.md)にはデバッグや制御の詳細があります。ブラウザー側の前提は[Wasmガイド](../wasm/runtime-jp.md)、AIKernel全体の入門は[最初のサンプル](../overview/quick-start-jp.md)から始められます。

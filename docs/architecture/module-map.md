@@ -1,67 +1,40 @@
 ---
-title: "Module Map"
+title: "Choose the packages you need"
 lang: en
-description: "Module Map for AIKernel.NET 0.1.3 developer documentation."
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "Choose AIKernel packages by the responsibility your application needs and understand the boundaries between contracts and implementations."
 category: docs
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-06-17"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
 
-# Module Map
+# Choose the packages you need
 
-## Summary
+Choose dependencies by the responsibility your application needs: shared types, runtime behavior, external capabilities, or inspection tools. You do not need every package family to start.
 
-### EN
+## Grow from the smallest .NET example
 
-Module Map is the source-backed inventory for the official documentation renewal.
+The first sample uses Core, Hosting, Kernel, and shared contracts. Add a provider when you need an external model or service. Consider Wasm for browser execution. CUDA is not a prerequisite for basic onboarding.
 
-### JA
+| Repository | Responsibility | When you need it |
+| --- | --- | --- |
+| AIKernel.NET | Interfaces, DTOs, and enums | Sharing input/output contracts between components |
+| AIKernel.Core | Runtime, Hosting, Kernel, and VFS | Hosting the basic runtime in .NET |
+| AIKernel.Providers | Model, service, and compute implementations | Connecting an external capability |
+| AIKernel.Control | Execution and control components | Working with the control plane or emulator |
+| AIKernel.Tools | CLI and inspection tools | Investigating runtime state and records |
+| AIKernel.Wasm | Browser and WebAssembly components | Web execution and rendering |
+| AIKernel.Cuda13.0 | CUDA and LibTorch integration | Using a supported GPU environment |
+| AIKernel.Demo | Application examples | Learning how to compose the pieces |
 
-Module Map は公式ドキュメント刷新の根拠となる source-backed inventory です。
+Applications call implementations through contracts. Provider-specific communication and GPU configuration belong with their implementations rather than in shared DTOs. This helps a test implementation and a real service share the same boundary.
 
-## Why
+The [sample project file](https://github.com/AIKernel-NET/AIKernel.Demo/blob/8c960f57bdf6f431663a1ca33de7584f5e882140/src/AIKernel.Demo.CoreRuntime/AIKernel.Demo.CoreRuntime.csproj) shows concrete dependencies for the first exercise.
 
-### EN
+## Keep versions aligned
 
-A module map prevents accidental dependency drift and helps readers find the correct package without reading every source tree.
+These examples use 0.1.3 while documentation is prepared for 0.1.4. Updating the prose does not imply publication of new packages. Keep the sample source and dependencies in the same version family rather than adding DLLs from another release by hand.
 
-### JA
-
-module map は依存方向の逸脱を防ぎ、読者が全 source tree を読まずに正しい package を探せるようにします。
-
-## Usage
-
-### EN
-
-Use the table to choose the module, then open Reference for package members.
-
-### JA
-
-この表で module を選び、package member は Reference で確認します。
-
-## Examples
-
-| Module | Role | Version evidence | NuGet packages | Python packages | Public types | Tests | Source evidence |
-|---|---|---:|---:|---:|---:|---:|---|
-| `AIKernel.NET` | Contract packages and canonical interface surface. The 0.1.3 line adds the cognition pipeline interface surface while keeping DTO, enum, contract, and abstraction ownership separated. | `0.1.3` | 4 | 0 | 1065 | 1 | `AIKernel.NET/Directory.Build.props` |
-| `AIKernel.Core` | Runtime and kernel implementation packages: hosting, VFS providers, kernel facade, fail-closed routing, and common runtime helpers. | `0.1.3` | 4 | 1 | 193 | 3 | `AIKernel.Core/Directory.Build.props` |
-| `AIKernel.Control` | Physical execution and governance layer. It contains Control Core, CPU, GPU, Emulator, and Diagnostics packages for CTG-style execution evidence. | `0.1.3` | 6 | 1 | 62 | 1 | `AIKernel.Control/Directory.Build.props` |
-| `AIKernel.Providers` | Official extension provider set. Provider-specific behavior is kept outside Core and is exposed through standard, chat, compute, pipeline, local LLM, and Microsoft AI packages. | `0.1.3` | 12 | 1 | 223 | 13 | `AIKernel.Providers/Directory.Build.props` |
-| `AIKernel.Tools` | Developer and operations tools: CLI, inspectors, instrumentation, ROM export, replay helpers, and VFS/kernel-clock inspection. | `0.1.3` | 6 | 1 | 40 | 1 | `AIKernel.Tools/Directory.Build.props` |
-| `AIKernel.Wasm` | Browser and WebAssembly runtime surface for process, memory, file system, WebGPU, audio, display, HUD, input, perception, and spatial packages. | `0.1.3` | 9 | 1 | 119 | 2 | `AIKernel.Wasm/Directory.Build.props` |
-| `AIKernel.Doom` | Official source demo that models DOOM as a WASM process supervised by AIKernel-style provider, operator, consent, and perception boundaries. | `0.1.3` | 7 | 0 | 45 | 1 | `AIKernel.Doom/Directory.Build.props` |
-| `AIKernel.Cuda13.0` | External Capability package for Windows win-x64, LibTorch 2.12.0, and CUDA 13.0. CUDA runtime concerns stay outside Core. | `0.1.3` | 1 | 1 | 7 | 1 | `AIKernel.Cuda13.0/src/AIKernel.Cuda13.0.Libtorch2.12.win-x64/AIKernel.Cuda13.0.Libtorch2.12.win-x64.csproj` |
-
-## Notes
-
-- Package counts include source projects under `src` and skip test projects.
-- Python packages are read from `pyproject.toml`.
-- Public type counts are lexical inventory counts, not behavioral guarantees.
-
-## See Also
-
-- [Reference](/reference/)
-- [Docs Generation Report](../docs-generation-report.md)
+Use [API Reference](/reference/) for exact members, [Quick Start](../overview/quick-start.md) for installation order, and [Runtime troubleshooting](../runtime/index.md) when integration fails.

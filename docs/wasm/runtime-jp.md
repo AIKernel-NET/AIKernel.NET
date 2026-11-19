@@ -1,53 +1,35 @@
 ---
-title: "Wasm Runtime Model"
+title: "ブラウザーで動かす前に"
 lang: ja
-description: "process、memory、file system、WebGPU、audio、display、input の runtime model を説明します。"
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "AIKernel.Wasmは、ブラウザーやWebAssemblyの実行、描画、入力などを扱うパッケージ群です。.NETのコンソールサンプルが動いても、ブラウザー側のGPU・アセット・権限まで確認できたことにはなりません。"
 category: docs
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-06-17"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
-# Wasm Runtime Model
 
-## 概要
+# ブラウザーで動かす前に
 
-Wasm Runtime Model は 0.1.3 の repository metadata、package metadata、既存 docs を根拠に説明します。
+AIKernel.Wasmは、ブラウザーやWebAssemblyの実行、描画、入力などを扱うパッケージ群です。.NETのコンソールサンプルが動いても、ブラウザー側のGPU・アセット・権限まで確認できたことにはなりません。
 
-## 背景
+## まず動作を見たい場合
 
-この guide page は explanatory material と generated Reference を分離し、低品質な API dump page になることを避けます。
+[Doomデモの案内](../doom/demo-overview-jp.md)から公開デモへ進みます。ゲームが動くこと、AIによる自動操作、HUDの状態表示はそれぞれ別に観察してください。画面が出ただけで、すべてのバックエンドが動作したとは判断できません。
 
-## 使い方
+## 自分のアプリへ組み込む場合
 
-package table で実装または wrapper package を探し、正確な API member は Reference で確認します。
+必要なのがプロセス実行、ファイル、描画、音声、入力のどれかを先に決めます。[AIKernel.WasmのREADME](https://github.com/AIKernel-NET/AIKernel.Wasm/blob/main/README-ja.md)と[ブラウザー用サンプル](https://github.com/AIKernel-NET/AIKernel.Demo/blob/main/src/AIKernel.Demo.Wasm/README.md)で、その機能に必要な準備を確認します。
 
-## 例
+ローカルのHTMLを直接開く方法では、Workerやアセット取得などがブラウザーの制約で動かないことがあります。サンプルに記載された開発サーバーの手順を使い、読み込み先のURLと失敗したネットワークリクエストを確認してください。
 
-### Related packages
+## GPUの結果を確かめる
 
-| Package | Kind | Version | Description | Source |
-|---|---|---|---|---|
-| [`AIKernel.Wasm.Audio`](/reference/aikernel-wasm/aikernel-wasm-audio/) | nuget | `0.1.3` | EN: AIKernel WASM audio package for runtime audio buffers and WebAudio boundary contracts. JA: runtime audio buffer と WebAudio boundary contract を提供する AIKern... | `AIKernel.Wasm/src/Audio/AIKernel.Wasm.Audio/AIKernel.Wasm.Audio.csproj` |
-| [`AIKernel.Wasm.Display`](/reference/aikernel-wasm/aikernel-wasm-display/) | nuget | `0.1.3` | EN: AIKernel WASM display package for framebuffer, frame source, screenshot adapter, and virtual surface descriptors. JA: framebuffer、frame source、screenshot... | `AIKernel.Wasm/src/Display/AIKernel.Wasm.Display/AIKernel.Wasm.Display.csproj` |
-| [`AIKernel.Wasm.Hud`](/reference/aikernel-wasm/aikernel-wasm-hud/) | nuget | `0.1.3` | EN: AIKernel WASM HUD package for signal and overlay annotation DTO generation without rendering. JA: rendering を行わず signal / overlay annotation DTO を生成する AI... | `AIKernel.Wasm/src/Hud/AIKernel.Wasm.Hud/AIKernel.Wasm.Hud.csproj` |
-| [`AIKernel.Wasm.Input`](/reference/aikernel-wasm/aikernel-wasm-input/) | nuget | `0.1.3` | EN: AIKernel WASM input package for keyboard, pointer, gamepad, and virtual input injection. JA: keyboard、pointer、gamepad、virtual input injection を提供する AIKer... | `AIKernel.Wasm/src/Input/AIKernel.Wasm.Input/AIKernel.Wasm.Input.csproj` |
-| [`AIKernel.Wasm.Models`](/reference/aikernel-wasm/aikernel-wasm-models/) | nuget | `0.1.3` | EN: AIKernel WASM model execution package for descriptor-driven WebGPU resident model boundaries. JA: descriptor-driven な WebGPU resident model 境界を提供する AIKer... | `AIKernel.Wasm/src/Models/AIKernel.Wasm.Models/AIKernel.Wasm.Models.csproj` |
-| [`AIKernel.Wasm.Perception`](/reference/aikernel-wasm/aikernel-wasm-perception/) | nuget | `0.1.3` | EN: AIKernel WASM perception package for browser-neutral frame and WebAudio signal extraction. JA: browser-neutral な frame / WebAudio signal extraction を提供する... | `AIKernel.Wasm/src/Perception/AIKernel.Wasm.Perception/AIKernel.Wasm.Perception.csproj` |
-| [`AIKernel.Wasm.Runtime`](/reference/aikernel-wasm/aikernel-wasm-runtime/) | nuget | `0.1.3` | EN: AIKernel WASM runtime service package for browser/WebAssembly process, memory, stdin, file system, event, audio, screenshot, save-state, and time provide... | `AIKernel.Wasm/src/Runtime/AIKernel.Wasm.Runtime/AIKernel.Wasm.Runtime.csproj` |
-| [`AIKernel.Wasm.Spatial`](/reference/aikernel-wasm/aikernel-wasm-spatial/) | nuget | `0.1.3` | EN: AIKernel WASM spatial cognition package for scenario-independent visual and auditory perception composition. JA: scenario 非依存の visual / auditory percepti... | `AIKernel.Wasm/src/Spatial/AIKernel.Wasm.Spatial/AIKernel.Wasm.Spatial.csproj` |
-| [`AIKernel.Wasm.WebGpuComputeProvider`](/reference/aikernel-wasm/aikernel-wasm-webgpucomputeprovider/) | nuget | `0.1.3` | EN: Official AIKernel.NET WASM provider for WebGPU compute with deterministic CPU fallback. JA: deterministic CPU fallback を備えた WebGPU compute 向け AIKernel.NE... | `AIKernel.Wasm/src/Compute/WebGpuComputeProvider/WebGpuComputeProvider.csproj` |
-| [`aikernel-wasm`](/reference/aikernel-wasm/python/aikernel-wasm/) | python | `0.1.3` | Python wrapper for AIKernel.Wasm 0.1.3 runtime and WebGPU provider assemblies. | `AIKernel.Wasm/python/pyproject.toml` |
+WebGPUの利用可否はブラウザーと端末の組み合わせに依存します。CPUへの代替経路で動作した結果と、GPUで実行した結果は分けて記録します。HUDに表示されるバックエンドや診断情報を使って、実際にどちらが選ばれたかを確認します。
 
-## 補足
+## 再現情報を残す
 
-- Examples are limited to package and command shapes confirmed in repository metadata.
-- For behavior details, inspect the linked source path and tests.
-- If a runtime asset is hosted outside the source repository, the page treats it as deployment configuration rather than source behavior.
+ブラウザーの名前と版、OS、選択したバックエンド、実行URL、デモの版、最初のエラーを残します。モデルやアセットの準備が必要な場合は、その準備が完了しているかも添えてください。
 
-## 関連ページ
-
-- [Architecture](../architecture/index.md)
-- [Reference](/reference/)
-- [Generation Report](../docs-generation-report.md)
+実行全体の切り分けは[トラブル対応](../runtime/index-jp.md)、パッケージ間の位置づけは[構成の説明](../architecture/module-map-jp.md)で確認できます。

@@ -1,61 +1,71 @@
 ---
-title: "Quick Start"
+title: "最初のサンプルを動かす"
 lang: ja
-description: "AIKernel.NET 0.1.3 を最小構成で確認するための package install、repository build、Reference の読み方を示します。"
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "小さなコンソールアプリを実行し、AIKernelが処理の行き先、利用できる機能、時刻、ファイルへの窓口をどのように分けているかを確認します。実行時のAPIキー、モデルのダウンロード、GPUは不要です。"
 category: docs
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-06-17"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
-# Quick Start
 
-## 概要
+# 最初のサンプルを動かす
 
-Quick Start は stable 0.1.3 package line を導入し、生成 Reference を読むための最短経路を示します。
+小さなコンソールアプリを実行し、AIKernelが処理の行き先、利用できる機能、時刻、ファイルへの窓口をどのように分けているかを確認します。実行時のAPIキー、モデルのダウンロード、GPUは不要です。
 
-## 背景
+## 始める前に
 
-有用な quick start は隠れた前提を避ける必要があります。以下の例は repository の project metadata に存在する package ID を使います。
+Gitと.NET 10 SDKを用意してください。SDKは `dotnet --version` で確認できます。初回のソース取得とNuGetパッケージの復元にはネットワーク接続が必要です。
 
-## 使い方
+この手順は0.1.4に向けた入門改訂です。使用するサンプルとパッケージの基準は0.1.3で、0.1.4の公開済みパッケージを前提にしていません。2026年11月12日にWindowsと.NET SDK 10.0.401で下記のサンプルの実行を確認しました。
 
-必要な package family だけを導入し、対応する Reference page で member と source path を確認します。
+## 1. サンプルを取得する
 
-## 例
+新しい作業フォルダーで、次のコマンドを実行します。確認したソースに固定するため、コミットを指定しています。既存の作業中のコピーがある場合も、この手順では別のフォルダーを使ってください。
 
-### NuGet
-
-```bash
-dotnet add package AIKernel.Core --version 0.1.3
-dotnet add package AIKernel.Hosting --version 0.1.3
-dotnet add package AIKernel.Providers.Standard --version 0.1.3
+```powershell
+git clone https://github.com/AIKernel-NET/AIKernel.Demo.git aikernel-first-run
+cd aikernel-first-run
+git checkout 8c960f57bdf6f431663a1ca33de7584f5e882140
+dotnet --version
 ```
 
-### Python wrappers
+## 2. 一つのプロジェクトを実行する
 
-```bash
-pip install aikernel-net==0.1.3
-pip install aikernel-providers==0.1.3
-pip install aikernel-tools==0.1.3
+現在のフォルダーが `aikernel-first-run` であることを確認してから実行します。ソリューション全体をビルドする必要はありません。
+
+```powershell
+dotnet restore src/AIKernel.Demo.CoreRuntime/AIKernel.Demo.CoreRuntime.csproj
+dotnet run --project src/AIKernel.Demo.CoreRuntime/AIKernel.Demo.CoreRuntime.csproj -c Release --no-restore
 ```
 
-### Source build check
+## 3. 出力を確認する
 
-```bash
-dotnet build AIKernel.Core/AIKernel.Core.slnx
-dotnet build AIKernel.Providers/AIKernel.Providers.slnx
+ビルドのメッセージに続いて、次の行が表示されればサンプルは動いています。末尾には `contract.map=` で始まる型名の一覧も表示されます。
+
+```text
+AIKernel.Demo.CoreRuntime
+router.route=local.default
+registry=InMemoryCapabilityRegistry
+clock.replaying=False
+vfs.provider=MemoryFileProvider
 ```
 
-## 補足
+`local.default` は入力に対して選ばれた行き先です。`False` は今回の時計がリプレイモードではないことを示します。ここでは構成要素を作って確認しており、LLMへの問い合わせや完全なKernel起動は行いません。これで、外部モデルの認証や通信を調べる前に、基本パッケージを使える環境か確かめられます。
 
-- CUDA support is an external Capability package, not a Core dependency.
-- Doom runtime assets are consent-gated and are documented separately.
-- If a package is not listed in Reference, verify the corresponding `.csproj` or `pyproject.toml` first.
+## うまく動かないとき
 
-## 関連ページ
+| 表示・症状 | 確認すること |
+| --- | --- |
+| `dotnet` が見つからない | .NET 10 SDKのインストール後、ターミナルを開き直します。Runtimeだけではビルドできません。 |
+| SDKが見つからない・対象フレームワークを扱えない | `dotnet --list-sdks` で.NET 10 SDKを確認します。作業フォルダーや親フォルダーに `global.json` がある場合は、そのSDK指定も確認します。 |
+| `NU1301` など復元時のエラー | NuGetへの接続、プロキシ、`NuGet.config` を確認します。APIキーはこの復元エラーと無関係です。 |
+| プロジェクトファイルが見つからない | `AIKernel.Demo.slnx` のあるフォルダーから実行しているか確認します。 |
+| APIや型が見つからない | 指定コミットと0.1.3のパッケージ参照に戻り、異なる版のDLLを混在させていないか確認します。 |
 
-- [Reference](/reference/)
-- [First Kernel Tutorial](/tutorials/first-kernel/)
-- [Configuration](../runtime/configuration.md)
+動作確認では、指定した公開コミットから取得したプロジェクトと設定ファイルを使い、空のパッケージ保存先へNuGetから復元して実行しました。ネットワークやプロキシの条件が異なる場合は、上の表で切り分けてください。
+
+## 次に、出力とコードを結びつける
+
+[サンプルを一行ずつ読む](../tutorials/first-kernel-jp.md)では、今の出力を作ったコードを追い、一か所変更して結果を比べます。言葉が気になったら[最初に知っておく概念](../concepts/index-jp.md)を参照してください。

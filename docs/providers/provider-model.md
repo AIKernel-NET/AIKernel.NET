@@ -1,76 +1,36 @@
 ---
-title: "Provider Model"
+title: "Choose and connect a provider"
 lang: en
-description: "Provider Model for AIKernel.NET 0.1.3 developer documentation."
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "Choose a provider for your model or service, identify its configuration requirements, and separate connection failures from runtime failures."
 category: docs
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-06-17"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
 
-# Provider Model
+# Choose and connect a provider
 
-## Summary
+A Provider implements a capability such as a model connection, file access, an external service, or computation. Choose by the operation you need, then establish the application's wiring before adding credentials or hardware dependencies.
 
-### EN
+| Task | Implementation or example to inspect | Prerequisites |
+| --- | --- | --- |
+| Learn without external calls | CoreRuntime and Mock Provider | .NET and matching package versions |
+| Connect a conversation model | ChatOpenAI, MicrosoftAI, or LocalLlm README | Endpoint and credentials, or a local model |
+| Use OS services | StandardProviders example | Settings and permissions for the operation |
+| Run GPU computation | CudaCompute or Wasm WebGPU | Supported backend and runtime |
 
-Provider-specific logic is kept outside Core.
+## Check before connecting
 
-### JA
+Confirm that the exposed operation matches your application's request; package versions align with Core and contracts; the provider is registered in the host; and its required options are supplied. Understand its failures and external effects, including transmission, cost, and permissions.
 
-Provider Model は 0.1.3 の repository metadata、package metadata、既存 docs を根拠に説明します。
+Provider configuration differs by implementation. Follow the relevant guide from the [AIKernel.Providers README](https://github.com/AIKernel-NET/AIKernel.Providers/blob/main/README.md) and compare it with the source version you use, rather than assuming one registration snippet works for every provider.
 
-## Why
+## Implementing your own provider
 
-### EN
+Start with the contract and input/output types. Read a minimal existing provider. Keep external communication in that implementation, separate from execution ordering and monitoring. Test invalid input, authentication failure, cancellation, and service failure as well as successful responses.
 
-This guide page keeps generated Reference separate from explanatory material, which helps avoid low-value API dump pages.
+[Package responsibilities](../architecture/module-map.md) explains where shared types belong. The [development guidelines](../guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES.md) describe the architectural rules.
 
-### JA
-
-この guide page は explanatory material と generated Reference を分離し、低品質な API dump page になることを避けます。
-
-## Usage
-
-### EN
-
-Use the package table to locate the implementation or wrapper package, then open Reference for exact API members.
-
-### JA
-
-package table で実装または wrapper package を探し、正確な API member は Reference で確認します。
-
-## Examples
-
-### Related packages
-
-| Package | Kind | Version | Description | Source |
-|---|---|---|---|---|
-| [`AIKernel.Providers.Audio`](/reference/aikernel-providers/aikernel-providers-audio/) | nuget | `0.1.3` | EN: Pure managed audio provider substrate with format validation, capability descriptors, and backend-independent base classes. JA: format validation、capabil... | `AIKernel.Providers/src/Audio/AIKernel.Providers.Audio/AIKernel.Providers.Audio.csproj` |
-| [`AIKernel.Providers.ChatHistory`](/reference/aikernel-providers/aikernel-providers-chathistory/) | nuget | `0.1.3` | EN: Official AIKernel.NET extension provider for deterministic chat history records. JA: deterministic chat history record を AIKernel 上で扱うための AIKernel.NET 公式... | `AIKernel.Providers/src/Chat/ChatHistoryProvider/ChatHistoryProvider.csproj` |
-| [`AIKernel.Providers.ChatOpenAI`](/reference/aikernel-providers/aikernel-providers-chatopenai/) | nuget | `0.1.3` | EN: Official AIKernel.NET extension provider for OpenAI-compatible ChatCompletion, Embedding, and Moderation endpoints. JA: OpenAI 互換 ChatCompletion、Embeddin... | `AIKernel.Providers/src/Chat/ChatOpenAIProvider/ChatOpenAIProvider.csproj` |
-| [`AIKernel.Providers.Compute`](/reference/aikernel-providers/aikernel-providers-compute/) | nuget | `0.1.3` | EN: Pure managed compute provider substrate with backend-neutral buffer metadata descriptors. JA: backend-neutral な buffer metadata descriptor を含む pure manag... | `AIKernel.Providers/src/Compute/AIKernel.Providers.Compute/AIKernel.Providers.Compute.csproj` |
-| [`AIKernel.Providers.Council`](/reference/aikernel-providers/aikernel-providers-council/) | nuget | `0.1.3` | EN: Council semantic evaluation provider contracts and minimal runtime-configurable providers for AIKernel CTG orchestration. JA: AIKernel CTG orchestration... | `AIKernel.Providers/src/Council/AIKernel.Providers.Council/AIKernel.Providers.Council.csproj` |
-| [`AIKernel.Providers.CudaCompute`](/reference/aikernel-providers/aikernel-providers-cudacompute/) | nuget | `0.1.3` | EN: Official AIKernel.NET extension provider for native CUDA compute modules. JA: Native CUDA compute module を AIKernel 上で扱うための AIKernel.NET 公式拡張 Provider です。 | `AIKernel.Providers/src/Compute/CudaComputeProvider/CudaComputeProvider.csproj` |
-| [`AIKernel.Providers.DynamicPipelineCompiler`](/reference/aikernel-providers/aikernel-providers-dynamicpipelinecompiler/) | nuget | `0.1.3` | EN: Official AIKernel.NET extension provider for dynamic semantic pipeline compilation. JA: 動的 semantic pipeline compile を AIKernel 上で扱うための AIKernel.NET 公式拡張... | `AIKernel.Providers/src/Pipeline/DynamicPipelineCompilerProvider/DynamicPipelineCompilerProvider.csproj` |
-| [`AIKernel.Providers.LocalLlm`](/reference/aikernel-providers/aikernel-providers-localllm/) | nuget | `0.1.3` | EN: Official AIKernel.NET extension provider for local LLM runtimes such as Ollama, llama.cpp, and vLLM. JA: Ollama、llama.cpp、vLLM などの local LLM runtime を AI... | `AIKernel.Providers/src/Llm/LocalLlmProvider/LocalLlmProvider.csproj` |
-| [`AIKernel.Providers.MicrosoftAI`](/reference/aikernel-providers/aikernel-providers-microsoftai/) | nuget | `0.1.3` | EN: Microsoft.Extensions.AI based provider implementation for AIKernel.NET. Enables OpenAI-compatible model execution while preserving AIKernel's capability-... | `AIKernel.Providers/src/Llm/MicrosoftAIProvider/AIKernel.Providers.MicrosoftAI.csproj` |
-| [`AIKernel.Providers.Perception`](/reference/aikernel-providers/aikernel-providers-perception/) | nuget | `0.1.3` | EN: Pure managed perception provider substrate with capability descriptors and deterministic routing policies. JA: capability descriptor と deterministic rout... | `AIKernel.Providers/src/Perception/AIKernel.Providers.Perception/AIKernel.Providers.Perception.csproj` |
-| [`AIKernel.Providers.Standard`](/reference/aikernel-providers/aikernel-providers-standard/) | nuget | `0.1.3` | EN: Official AIKernel.NET standard OS driver providers for compute, file system, logging, process supervision, event bus, network, scheduling, and profiling.... | `AIKernel.Providers/src/Standard/AIKernel.Providers.Standard/AIKernel.Providers.Standard.csproj` |
-| [`AIKernel.Providers.Substrate`](/reference/aikernel-providers/aikernel-providers-substrate/) | nuget | `0.1.3` | EN: Pure managed provider manifest, registry, and deterministic routing substrate for AIKernel.Providers. JA: AIKernel.Providers 向けの pure managed な provider... | `AIKernel.Providers/src/ProviderSubstrate/AIKernel.Providers.Substrate/AIKernel.Providers.Substrate.csproj` |
-| [`aikernel-providers`](/reference/aikernel-providers/python/aikernel-providers/) | python | `0.1.3` | Python wrapper for AIKernel.Providers v0.1.3 official extension providers with bundled managed assemblies and pythonnet loading. | `AIKernel.Providers/python/pyproject.toml` |
-
-
-## Notes
-
-- Examples are limited to package and command shapes confirmed in repository metadata.
-- For behavior details, inspect the linked source path and tests.
-- If a runtime asset is hosted outside the source repository, the page treats it as deployment configuration rather than source behavior.
-
-## See Also
-
-- [Architecture](../architecture/index.md)
-- [Reference](/reference/)
-- [Generation Report](../docs-generation-report.md)
+After connecting, inspect the selected provider, operation, and actual result. A dry-run example proves wiring, not successful external communication. Switch from the minimal example to a live connection in stages and use [runtime troubleshooting](../runtime/index.md) to isolate failures.

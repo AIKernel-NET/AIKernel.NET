@@ -1,24 +1,35 @@
 ---
-title: "Doom Demo Overview"
+title: "What to observe in the Doom demo"
 lang: en
-description: "Doom Demo Overview"
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "Observe manual play, automated control, and diagnostics separately in the AIKernel Doom demo and report a reproducible failure."
 category: docs
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-11-08"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
 
-# Doom Demo Overview
+# What to observe in the Doom demo
 
-The browser runs the DOOM engine in WASM. The demo illustrates governed runtime control, sensing and HUD evidence, with WebGPU and a CPU rendering mode. The game runtime stays suspended until the visitor approves the download.
+The Doom demo combines browser-hosted game execution with input, observation, and automated control. Test manual operation first, then observe automation and status separately so that failures are easier to isolate.
 
-## Demo Versions
+## Open the demo
 
-The version selector is staged at `/demo/doom/`. When deployed, each approved build will live under `/demo/doom/versions/v<version>/` with its own JS, worker, WASM, and profile. The first staged update includes the existing `v0.1.2` release only; `v0.1.3` is a local preview. WAD and model files stay at the shared host paths and are downloaded only after consent.
+Open the [Doom demo](/demo/doom/). Follow its asset preparation and usage conditions before starting. Doom-specific assets are handled separately from AIKernel source code.
 
-## See Also
+| Observe | Check |
+| --- | --- |
+| Game runtime | Startup, frame updates, response to manual input |
+| Automated control | Enabled state, resulting movement/actions, ability to stop |
+| Diagnostics | Selected backend, observation/decision evidence, errors |
 
-- [AIKernel.Doom](https://github.com/AIKernel-NET/AIKernel.Doom)
-- [Demo Programs Guide](../operations/DEMO_PROGRAMS_GUIDE.md)
+If manual play works but automation does not progress, begin with automation state and control logs. If the game itself is frozen, investigate startup, assets, workers, and runtime errors first.
+
+## Interpret the result carefully
+
+Successful automation in one scene does not establish completion of other maps or support for every device. A CPU fallback may be active; inspect backend information before concluding that the GPU executed a workload.
+
+To report a problem, include the demo version, browser, OS, actions leading to the issue, and first error. State whether automation was enabled and manual controls worked.
+
+The [Doom documentation](https://github.com/AIKernel-NET/AIKernel.Doom/blob/main/docs/README.md) covers debugging and control in detail. Read [browser prerequisites](../wasm/runtime.md), or start learning the SDK with [the first console sample](../overview/quick-start.md).

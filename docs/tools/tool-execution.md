@@ -1,70 +1,46 @@
 ---
-title: "Tool Execution"
+title: "Inspect the runtime with tools"
 lang: en
-description: "Tool Execution for AIKernel.NET 0.1.3 developer documentation."
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "Install the AIKernel CLI and inspect runtime health, system information, available capabilities, and virtual files."
 category: docs
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-06-17"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
 
-# Tool Execution
+# Inspect the runtime with tools
 
-## Summary
+AIKernel.Tools provides CLI and inspection facilities. Use them to investigate visible capabilities and resources before changing the application's implementation.
 
-### EN
+## Install the CLI
 
-Tool execution examples are rooted in package and command names.
+The CLI is distributed as a .NET tool, rather than a normal in-process library. These commands are documented in the 0.1.3 Demo README:
 
-### JA
+```powershell
+dotnet tool install -g AIKernel.Tools.CLI --version 0.1.3
+aik runtime ping
+aik system info
+aik capabilities list
+```
 
-Tool Execution は 0.1.3 の repository metadata、package metadata、既存 docs を根拠に説明します。
+Installation requires the .NET SDK and access to the package source. If a version is already installed, check `dotnet tool list -g` first. These CLI instructions were checked against source documentation; they are separate from the console run verified in Quick Start.
 
-## Why
+## Interpret the results
 
-### EN
+Use `runtime ping` for a basic response, `system info` for visible configuration, and `capabilities list` for exposed operations. The available capabilities depend on the host and registrations; a fixed capability list is not a universal success condition.
 
-This guide page keeps generated Reference separate from explanatory material, which helps avoid low-value API dump pages.
+To inspect a file root explicitly:
 
-### JA
+```powershell
+aik system vfs --vfs-root .
+```
 
-この guide page は explanatory material と generated Reference を分離し、低品質な API dump page になることを避けます。
+Here `.` is the current directory. Choose a directory relevant to your investigation and avoid exposing unrelated secrets.
 
-## Usage
+## Compare execution records
 
-### EN
+When examining replay records, compare inputs, provider selection, rules, and package versions. Differences in text alone do not explain differences in execution conditions.
 
-Use the package table to locate the implementation or wrapper package, then open Reference for exact API members.
-
-### JA
-
-package table で実装または wrapper package を探し、正確な API member は Reference で確認します。
-
-## Examples
-
-### Related packages
-
-| Package | Kind | Version | Description | Source |
-|---|---|---|---|---|
-| [`AIKernel.Tools.Capability.RomStorage`](/reference/aikernel-tools/aikernel-tools-capability-romstorage/) | nuget | `0.1.3` | AIKernel.Tools.Capability.RomStorage package metadata is defined in AIKernel.Tools/src/AIKernel.Tools.Capability.RomStorage/AIKernel.Tools.Capability.RomStor... | `AIKernel.Tools/src/AIKernel.Tools.Capability.RomStorage/AIKernel.Tools.Capability.RomStorage.csproj` |
-| [`AIKernel.Tools.CLI`](/reference/aikernel-tools/aikernel-tools-cli/) | nuget | `0.1.3` | AIKernel.Tools.CLI package metadata is defined in AIKernel.Tools/src/AIKernel.CLI/AIKernel.CLI.csproj. | `AIKernel.Tools/src/AIKernel.CLI/AIKernel.CLI.csproj` |
-| [`AIKernel.Tools.Inspectors.ChatHistoryScraper`](/reference/aikernel-tools/aikernel-tools-inspectors-chathistoryscraper/) | nuget | `0.1.3` | AIKernel.Tools.Inspectors.ChatHistoryScraper package metadata is defined in AIKernel.Tools/src/AIKernel.Tools.Inspectors.ChatHistoryScraper/AIKernel.Tools.In... | `AIKernel.Tools/src/AIKernel.Tools.Inspectors.ChatHistoryScraper/AIKernel.Tools.Inspectors.ChatHistoryScraper.csproj` |
-| [`AIKernel.Tools.Inspectors.KernelClock`](/reference/aikernel-tools/aikernel-tools-inspectors-kernelclock/) | nuget | `0.1.3` | AIKernel.Tools.Inspectors.KernelClock package metadata is defined in AIKernel.Tools/src/AIKernel.Tools.Inspectors.KernelClock/AIKernel.Tools.Inspectors.Kerne... | `AIKernel.Tools/src/AIKernel.Tools.Inspectors.KernelClock/AIKernel.Tools.Inspectors.KernelClock.csproj` |
-| [`AIKernel.Tools.Inspectors.Vfs`](/reference/aikernel-tools/aikernel-tools-inspectors-vfs/) | nuget | `0.1.3` | AIKernel.Tools.Inspectors.Vfs package metadata is defined in AIKernel.Tools/src/AIKernel.Tools.Inspectors.Vfs/AIKernel.Tools.Inspectors.Vfs.csproj. | `AIKernel.Tools/src/AIKernel.Tools.Inspectors.Vfs/AIKernel.Tools.Inspectors.Vfs.csproj` |
-| [`AIKernel.Tools.Instrumentation`](/reference/aikernel-tools/aikernel-tools-instrumentation/) | nuget | `0.1.3` | AIKernel.Tools.Instrumentation package metadata is defined in AIKernel.Tools/src/AIKernel.Tools.Instrumentation/AIKernel.Tools.Instrumentation.csproj. | `AIKernel.Tools/src/AIKernel.Tools.Instrumentation/AIKernel.Tools.Instrumentation.csproj` |
-| [`aikernel-tools`](/reference/aikernel-tools/python/aikernel-tools/) | python | `0.1.3` | Python wrapper for AIKernel.Tools v0.1.3 instrumentation contracts with bundled managed assemblies and pythonnet loading. | `AIKernel.Tools/python/pyproject.toml` |
-
-
-## Notes
-
-- Examples are limited to package and command shapes confirmed in repository metadata.
-- For behavior details, inspect the linked source path and tests.
-- If a runtime asset is hosted outside the source repository, the page treats it as deployment configuration rather than source behavior.
-
-## See Also
-
-- [Architecture](../architecture/index.md)
-- [Reference](/reference/)
-- [Generation Report](../docs-generation-report.md)
+See the [Tools README](https://github.com/AIKernel-NET/AIKernel.Tools/blob/main/README.md) for available inspection features and the [Demo README](https://github.com/AIKernel-NET/AIKernel.Demo/blob/8c960f57bdf6f431663a1ca33de7584f5e882140/README.md) for examples. Use [troubleshooting](../runtime/index.md) to investigate failures or [Core concepts](../concepts/index.md) to understand replay terminology.

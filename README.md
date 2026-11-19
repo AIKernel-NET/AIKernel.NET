@@ -1,5 +1,5 @@
 ---
-updated: 2026-06-16
+updated: 2026-11-12
 published: 2026-06-16
 version: "0.1.3"
 edition: "Release"
@@ -12,51 +12,26 @@ maintainer: "Takuya (AIKernel Project Maintainer)"
 
 ![AIKernel.NET Logo](docs/assets/aikernel-logo.png)
 
-AIKernel is an operating system for AI applications.
+AIKernel is a .NET foundation for composing AI execution conditions, external capabilities, and inspectable records. This repository owns the shared contracts: interfaces, DTOs, enums, and boundary types.
 
-AIKernel does not define features themselves.  
-It defines the deterministic execution context in which features become inevitable.
+**AIKernel.Core** supplies runtime behavior; **AIKernel.Providers** and other packages supply external integrations. Start with a runnable sample, then choose the capabilities your application needs.
 
-This repository manages the canonical contract set of AIKernel.
+## Start here
 
-AIKernel.NET is a contract-first foundation that treats LLMs not as simple APIs, but as capability-bearing processes.
+1. [What AIKernel helps you build](docs/overview/what-is-aikernel.md).
+2. [Run your first sample](docs/overview/quick-start.md), without an API key or GPU.
+3. [Read and change the sample](docs/tutorials/first-kernel.md) to connect its output to code.
 
-In the AIOS SDK, AIKernel.NET is the contract vocabulary layer. It defines the
-stable interfaces, DTOs, enums, and boundary types that other AIKernel layers
-compose into an AI Operating System distribution.
-
-AIKernel also provides an official AIOS distribution, codenamed
-**AIKernel.Monolith**. Monolith has begun development as the standard AIOS that
-integrates the SDK layers into a unified reference system after the 0.1.x line
-stabilizes.
-
----
-
-## Start Here
-
-If you are new to AIKernel, use this repository for contracts and vocabulary,
-then move to the runtime repository that matches what you want to run.
-
-| You want to... | Start with |
+| Your task | Guide |
 | --- | --- |
-| Reference stable interfaces, DTOs, and enums | `AIKernel.Abstractions`, `AIKernel.Contracts`, `AIKernel.Dtos`, `AIKernel.Enums` |
-| Build a .NET host or service | [AIKernel.Core](https://github.com/AIKernel-NET/AIKernel.Core) |
-| Add official Providers or OS drivers | [AIKernel.Providers](https://github.com/AIKernel-NET/AIKernel.Providers) |
-| Run physical execution engines | [AIKernel.Control](https://github.com/AIKernel-NET/AIKernel.Control) |
-| Use the `aik` CLI or replay/inspection tools | [AIKernel.Tools](https://github.com/AIKernel-NET/AIKernel.Tools) |
-| Run browser/WebAssembly workloads | [AIKernel.Wasm](https://github.com/AIKernel-NET/AIKernel.Wasm) |
-| Learn through runnable examples | [AIKernel.Demo](https://github.com/AIKernel-NET/AIKernel.Demo) |
+| Choose dependencies | [Package responsibilities](docs/architecture/module-map.md) |
+| Connect a model or service | [Provider guide](docs/providers/provider-model.md) |
+| Fix setup or startup | [Troubleshooting](docs/runtime/index.md) |
+| Look up exact types and members | [API Reference](https://aikernel.net/reference/) |
 
-Install the contract packages together:
+[All guides](docs/index.md) · [日本語](README-jp.md)
 
-```bash
-dotnet add package AIKernel.Abstractions --version 0.1.3
-dotnet add package AIKernel.Contracts --version 0.1.3
-dotnet add package AIKernel.Dtos --version 0.1.3
-dotnet add package AIKernel.Enums --version 0.1.3
-```
-
-Do not mix AIKernel contract packages from different version families.
+This onboarding revision prepares for 0.1.4. The tested example baseline is 0.1.3. Documentation changes and package publication are separate; the walkthrough records the source revision and expected output.
 
 ---
 
@@ -160,91 +135,11 @@ For executable contracts and spec sheets, see `docs/specs/index.md`.
 
 ---
 
-## Hosting Example (C#)
+## Try an executable example
 
-AIKernel.NET integrates with ASP.NET Core DI.  
-By composing Core, Providers, and Governance, you can host an AI execution platform.
+[Quick Start](docs/overview/quick-start.md) covers preparation, execution, and output. The [sample walkthrough](docs/tutorials/first-kernel.md) connects actual code to each result.
 
-Because AIKernel.NET is based on interface contracts, implementations can be replaced freely.
-
-### Example Implementation
-
-```csharp
-var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddAIKernelCore(options =>
-{
-    options.EnableDeterministicReplay = true;
-    options.FailClosed = true;
-});
-
-builder.Services.AddModelProvider<OpenAIModelProvider>();
-builder.Services.AddVfsProvider<GitVfsProvider>();
-
-builder.Services.AddSignatureTrustStore<FileSignatureTrustStore>();
-
-builder.Services.AddControllers();
-
-var app = builder.Build();
-
-using (var scope = app.Services.CreateScope())
-{
-    var kernel = scope.ServiceProvider.GetRequiredService<IAIKernel>();
-    await kernel.InitializeAsync();
-}
-
-app.MapControllers();
-app.Run();
-```
-
-### Target Experience / Boot Log Example
-
-```txt
-[KERNEL] Initializing AIKernel.NET v0.1.3...
-[KERNEL] Loading ISignatureTrustStore... [OK]
-[KERNEL] Mounting Vfs (Git: ./context)... [OK]
-[KERNEL] Verifying System Prompt Signature... [VALID]
-[KERNEL] Routing to Provider: [[provider.reasoning.high]]... [OK]
-
-> Hello Intelligence.
-> The Semantic Context is stable. Governance is active.
-> This boot sequence is deterministic and verifiable.
-```
-
----
-
-## API Example / curl
-
-AIKernel can be exposed as an OpenAI-compatible API.  
-Below is an execution example with explicit context.
-
-```bash
-curl -X POST http://localhost:5000/v1/execute \
-  -H "Content-Type: application/json" \
-  -d '{
-    "capability": "reasoning",
-    "input": "Hello Intelligence",
-    "context": {
-      "vfs": "git://./context"
-    }
-  }'
-```
-
-### Response Example
-
-```json
-{
-  "output": "[OpenAI] Hello Intelligence",
-  "provider": "openai",
-  "capability": "reasoning",
-  "context": {
-    "vfs": "git://./context"
-  }
-}
-```
-
-> Context is not merely input data.  
-> It is an execution condition bound to the Kernel.
+For a Web API or external model, choose a host through the [Provider guide](docs/providers/provider-model.md) and [AIKernel.Demo](https://github.com/AIKernel-NET/AIKernel.Demo). The basic example constructs runtime components; it does not boot a complete Kernel or call an LLM.
 
 ---
 

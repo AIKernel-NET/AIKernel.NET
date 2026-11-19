@@ -1,55 +1,56 @@
 ---
-title: "First Kernel"
+title: "サンプルを読み、入力を変えてみる"
 lang: ja
-description: "AIKernel.Core と provider package を使う最小構成の読み方を説明します。"
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "[最初のサンプル](../overview/quick-start-jp.md)が動いたら、出力を作るコードを読んでみましょう。今回は「入力文字列を変えると、処理の行き先も変わるか」を確かめます。"
 category: tutorials
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-06-17"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
-# First Kernel
 
-## 概要
+# サンプルを読み、入力を変えてみる
 
-First Kernel は、0.1.3 公式サイトで迷わず実作業へ進むための tutorial です。
+[最初のサンプル](../overview/quick-start-jp.md)が動いたら、出力を作るコードを読んでみましょう。今回は「入力文字列を変えると、処理の行き先も変わるか」を確かめます。
 
-## 背景
+## 入口は二つのファイル
 
-Tutorial page は workflow-based です。生成 API 一覧ではありません。
+`AIKernel.Demo` の `src/AIKernel.Demo.CoreRuntime/Program.cs` は、`CoreRuntimeDemo.RunAsync()` の結果を一行ずつ表示します。実際の準備処理は、同じフォルダーの `CoreRuntimeDemo.cs` にあります。
 
-## 使い方
-
-command 形を確認したら、実際の package と member の詳細は Reference で確認します。
-
-## 例
-
-```bash
-dotnet add package AIKernel.Core --version 0.1.3
-dotnet add package AIKernel.Providers.Standard --version 0.1.3
+```csharp
+var router = new PassThroughSemanticRouter();
+var route = await router.RouteAsync("demo core runtime").ConfigureAwait(false);
+var registry = new InMemoryCapabilityRegistry();
+var clock = KernelClock.System();
+var memory = new MemoryFileProvider(new MemoryFileProviderOptions());
 ```
 
-| Package | Kind | Version | Description | Source |
-|---|---|---|---|---|
-| [`AIKernel.Abstractions`](/reference/aikernel-net/aikernel-abstractions/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Abstractions/AIKernel.Abstractions.csproj` |
-| [`AIKernel.Contracts`](/reference/aikernel-net/aikernel-contracts/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Contracts/AIKernel.Contracts.csproj` |
-| [`AIKernel.Dtos`](/reference/aikernel-net/aikernel-dtos/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Dtos/AIKernel.Dtos.csproj` |
-| [`AIKernel.Enums`](/reference/aikernel-net/aikernel-enums/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Enums/AIKernel.Enums.csproj` |
-| [`AIKernel.Common`](/reference/aikernel-core/aikernel-common/) | nuget | `0.1.3` | English AIKernel.Common provides foundational utility components shared across the AIKernel ecosystem. This package contains cross-cutting features such as f... | `AIKernel.Core/src/AIKernel.Common/AIKernel.Common.csproj` |
-| [`AIKernel.Core`](/reference/aikernel-core/aikernel-core/) | nuget | `0.1.3` | EN: Core runtime engine for AIKernel.NET. Provides the foundational execution logic for VFS, ROM, Context construction, and inference execution in a determin... | `AIKernel.Core/src/AIKernel.Core/AIKernel.Core.csproj` |
-| [`AIKernel.Hosting`](/reference/aikernel-core/aikernel-hosting/) | nuget | `0.1.3` | EN: Hosting and dependency injection extensions for AIKernel.NET. Provides IServiceCollection integration and startup wiring for ASP.NET Core and .NET Generi... | `AIKernel.Core/src/AIKernel.Hosting/AIKernel.Hosting.csproj` |
-| [`AIKernel.Kernel`](/reference/aikernel-core/aikernel-kernel/) | nuget | `0.1.3` | EN: Kernel facade and orchestration layer for AIKernel.NET. Coordinates Core, Providers, Context, Governance, and execution flow through a unified IKernel in... | `AIKernel.Core/src/AIKernel.Kernel/AIKernel.Kernel.csproj` |
-| ... | ... | ... | 47 more packages are listed in the generated Reference. | ... |
+この抜粋は、Quick Startで指定したソースの処理です。単独の完成したプログラムではなく、既存ファイルの中で読むコードです。
 
-## 補足
+## 出力から分かること
 
-- Commands are examples of package selection, not a guarantee that every environment has all optional runtimes installed.
-- CUDA and Doom assets have separate runtime requirements.
-- Keep implementation changes outside documentation-only work.
+| 出力 | コードで行っていること | この段階では分からないこと |
+| --- | --- | --- |
+| `router.route=local.default` | ルーターに入力を渡し、返された行き先を表示 | LLMが内容を理解したかどうか |
+| `registry=InMemoryCapabilityRegistry` | 機能を登録するための入れ物を作成 | 外部Providerの登録や呼び出しの成功 |
+| `clock.replaying=False` | 通常の時計を作成 | 過去の処理を再生できたかどうか |
+| `vfs.provider=MemoryFileProvider` | メモリ上のファイルを扱う実装を作成 | ローカルディスクやGitのマウント成功 |
 
-## 関連ページ
+型名が表示されたことと、その機能をすべて実行したことは区別します。特に `contract.map` はAPIの入口の一覧であり、各サービスの起動ログではありません。
 
-- [Docs](/docs/)
-- [Reference](/reference/)
-- [Glossary](/glossary/)
+## 入力を一か所だけ変える
+
+`CoreRuntimeDemo.cs` の `"demo core runtime"` を `"hello AIKernel"` に変え、Quick Startと同じ `dotnet run` をもう一度実行します。
+
+`PassThroughSemanticRouter` の既定の行き先は `local.default` なので、出力の行き先は同じままです。入力の文章を変えただけでは、別モデルへの振り分けは追加されません。入力に応じて分岐させたい場合は、ルーターの実装・設定を選ぶ作業が必要になります。
+
+学習が終わったら、文字列を元に戻して保存してください。別の変更もあるファイル全体を巻き戻す必要はありません。
+
+## 次に試すことを選ぶ
+
+- 外部モデルやサービスにつなぐには[Providerの選び方](../providers/provider-model-jp.md)へ進みます。
+- 各パッケージの役割を知りたい場合は[構成と依存関係](../architecture/module-map-jp.md)を読みます。
+- 起動・設定で問題が起きた場合は[実行環境の確認とトラブル対応](../runtime/index-jp.md)を使います。
+
+[確認したソース](https://github.com/AIKernel-NET/AIKernel.Demo/blob/8c960f57bdf6f431663a1ca33de7584f5e882140/src/AIKernel.Demo.CoreRuntime/CoreRuntimeDemo.cs)も参照できます。

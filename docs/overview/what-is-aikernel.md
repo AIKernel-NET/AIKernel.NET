@@ -1,71 +1,40 @@
 ---
-title: "What is AIKernel.NET"
+title: "What AIKernel helps you build"
 lang: en
-description: "What is AIKernel.NET for AIKernel.NET 0.1.3 developer documentation."
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "Understand what AIKernel contributes to a .NET application, when its component boundaries are useful, and what a first sample can demonstrate."
 category: docs
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-06-17"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
 
-# What is AIKernel.NET
+# What AIKernel helps you build
 
-## Summary
+AIKernel is a .NET foundation for composing AI applications with explicit execution conditions, external capabilities, and inspectable records. It is aimed at developers who need to organize the work around a model call.
 
-### EN
+## Consider an application that answers from files
 
-AIKernel.NET is a modular SDK for AIOS-style applications. Its contract packages define boundaries, while Core, Providers, Control, Tools, Wasm, Doom, and CUDA packages implement or validate those boundaries.
+You need to know which files were read, which model received the input, whether an operation was allowed, and where a failure occurred. Putting all of these concerns inside a single model integration makes changing providers and diagnosing failures difficult.
 
-### JA
+AIKernel separates file access through VFS, external implementations through Providers, and available operations through Capabilities. Your application chooses implementations and execution rules. Those boundaries help you change models or execution environments without making every component depend on the same implementation.
 
-AIKernel.NET は AIOS 型アプリケーションのための modular SDK です。contract package が境界を定義し、Core、Providers、Control、Tools、Wasm、Doom、CUDA package がその境界を実装または検証します。
+## Choose a starting point
 
-## Why
+| Your task | Start here |
+| --- | --- |
+| Run something in .NET | [First sample](quick-start.md) |
+| Connect a model or service | [Choose a provider](../providers/provider-model.md) |
+| Investigate configuration and failures | [Runtime troubleshooting](../runtime/index.md) |
+| Explore browser execution | [Understand the Doom demo](../doom/demo-overview.md) |
 
-### EN
+## Contracts and runtime are separate
 
-The repository split exists so provider logic, control-plane evidence, runtime adapters, and scenario demos do not collapse into one package.
+The `AIKernel.NET` repository owns shared interfaces and data types. `AIKernel.Core` implements runtime behavior. `AIKernel.Providers` and other packages supply external capabilities. Installing the contract packages alone does not start a chat API server.
 
-### JA
+The project's “AI operating system” terminology describes management of capabilities, context, and execution rules. In practice, you compose the required pieces in a .NET application or a browser runtime.
 
-repo 分割の目的は、provider logic、control-plane evidence、runtime adapter、scenario demo を単一 package へ押し込めないことです。
+Inspecting or replaying an execution process does not guarantee that an external LLM generates identical text on each call. GPU backends and external models also have their own prerequisites. The first sample deliberately checks basic components before introducing them.
 
-## Usage
-
-### EN
-
-Read the module map before adding a dependency. Contract-only code belongs in AIKernel.NET; runtime behavior belongs in Core or an extension package.
-
-### JA
-
-依存を追加する前に module map を読みます。contract-only code は AIKernel.NET、runtime behavior は Core または extension package に置きます。
-
-## Examples
-
-### Current Modules
-
-| Module | Role | Version evidence | NuGet packages | Python packages | Public types | Tests | Source evidence |
-|---|---|---:|---:|---:|---:|---:|---|
-| `AIKernel.NET` | Contract packages and canonical interface surface. The 0.1.3 line adds the cognition pipeline interface surface while keeping DTO, enum, contract, and abstraction ownership separated. | `0.1.3` | 4 | 0 | 1065 | 1 | `AIKernel.NET/Directory.Build.props` |
-| `AIKernel.Core` | Runtime and kernel implementation packages: hosting, VFS providers, kernel facade, fail-closed routing, and common runtime helpers. | `0.1.3` | 4 | 1 | 193 | 3 | `AIKernel.Core/Directory.Build.props` |
-| `AIKernel.Control` | Physical execution and governance layer. It contains Control Core, CPU, GPU, Emulator, and Diagnostics packages for CTG-style execution evidence. | `0.1.3` | 6 | 1 | 62 | 1 | `AIKernel.Control/Directory.Build.props` |
-| `AIKernel.Providers` | Official extension provider set. Provider-specific behavior is kept outside Core and is exposed through standard, chat, compute, pipeline, local LLM, and Microsoft AI packages. | `0.1.3` | 12 | 1 | 223 | 13 | `AIKernel.Providers/Directory.Build.props` |
-| `AIKernel.Tools` | Developer and operations tools: CLI, inspectors, instrumentation, ROM export, replay helpers, and VFS/kernel-clock inspection. | `0.1.3` | 6 | 1 | 40 | 1 | `AIKernel.Tools/Directory.Build.props` |
-| `AIKernel.Wasm` | Browser and WebAssembly runtime surface for process, memory, file system, WebGPU, audio, display, HUD, input, perception, and spatial packages. | `0.1.3` | 9 | 1 | 119 | 2 | `AIKernel.Wasm/Directory.Build.props` |
-| `AIKernel.Doom` | Official source demo that models DOOM as a WASM process supervised by AIKernel-style provider, operator, consent, and perception boundaries. | `0.1.3` | 7 | 0 | 45 | 1 | `AIKernel.Doom/Directory.Build.props` |
-| `AIKernel.Cuda13.0` | External Capability package for Windows win-x64, LibTorch 2.12.0, and CUDA 13.0. CUDA runtime concerns stay outside Core. | `0.1.3` | 1 | 1 | 7 | 1 | `AIKernel.Cuda13.0/src/AIKernel.Cuda13.0.Libtorch2.12.win-x64/AIKernel.Cuda13.0.Libtorch2.12.win-x64.csproj` |
-
-
-## Notes
-
-- The 0.1.3 contract release is backed by `AIKernel.NET/Directory.Build.props` release notes.
-- Doom-specific vocabulary remains outside the canonical package surface according to the 0.1.3 package notes.
-- When source evidence is missing, this documentation uses `source evidence required` instead of inventing behavior.
-
-## See Also
-
-- [Module Map](../architecture/module-map.md)
-- [Core Concepts](../concepts/index.md)
-- [Glossary](/glossary/)
+The onboarding baseline is 0.1.3 while documentation is prepared for 0.1.4. Read [Package responsibilities](../architecture/module-map.md) when you are ready to choose dependencies.

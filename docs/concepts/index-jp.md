@@ -1,58 +1,44 @@
 ---
-title: "Core Concepts"
+title: "最初に知っておく概念"
 lang: ja
-description: "Kernel、Provider、Tool、Runtime、Message、Extension という AIKernel.NET の主要概念をまとめます。"
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "AIKernelの用語は、アプリが「何を使い、どの条件で実行し、何を記録するか」に結びつけると理解しやすくなります。最初は次の六つを押さえてください。"
 category: docs
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-06-17"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
-# Core Concepts
 
-## 概要
+# 最初に知っておく概念
 
-このページでは Core Concepts を repository metadata と generated Reference に基づいて説明します。
+AIKernelの用語は、アプリが「何を使い、どの条件で実行し、何を記録するか」に結びつけると理解しやすくなります。最初は次の六つを押さえてください。
 
-## 背景
+## 一つの処理を、役割ごとに見る
 
-Concept page は人間に役立つ説明を置くためにあります。単なる生成表ではなく、API surface がなぜ分割されているかを説明します。
+ファイルを読んでモデルへ質問するアプリを考えます。ファイルを読む実装とモデルへの接続は交換可能にし、その結果を使って次の処理へ進む判断は別に持ちます。この分担によって、実モデルを使わずに動作を確かめたり、外部接続だけを交換したりできます。
 
-## 使い方
+| 用語 | 役割 | 具体例 |
+| --- | --- | --- |
+| Contract（契約） | 部品同士が使う型と呼び出し方の約束 | インターフェース、入力・結果を渡すDTO |
+| Provider | モデル、ファイル、計算などを実際に提供する部品 | モデルAPIへの接続、メモリ上のファイル |
+| Capability | Providerなどが公開する、利用可能な処理 | 登録済みの処理を名前や記述から選ぶ |
+| Context（文脈） | 実行に結びつく入力や条件 | 参照する情報、適用するルール |
+| VFS | ファイルの保存方法を共通の窓口から扱う仕組み | メモリ上のファイルとGit由来のファイル |
+| Replay | 記録した情報から実行経路や条件を再現・検査する仕組み | 過去と今回で選ばれたProviderや条件を比較する |
 
-まず概念を読み、正確な member と source path は package Reference で確認します。
+## Provider・Operator・Observerの違い
 
-## 例
+Providerは外部機能を提供します。Operatorは処理の順番や結果の受け渡しを担当します。Observerは実行の記録や監視を担当します。たとえばモデルの通信処理をProviderへ置くと、実行順序を管理する部分に接続先ごとの差分を持ち込まずに済みます。
 
-### Source-backed Example
+これらは設計上の役割です。各サンプルで何が実装・登録されているかは、コードと設定を確認してください。名前が出てくるだけで監査や権限制御が有効になっているとは限りません。
 
-concept overview
+## 「決定論的」とは何を指すか
 
-### Package context
+同じ条件で処理経路や判断を検査できるようにすることと、外部モデルの出力文を常に一致させることを区別します。モデルの非決定的な振る舞いは外部接続の境界で扱い、記録した入力・結果・条件を使って実行を調べます。
 
-| Package | Kind | Version | Description | Source |
-|---|---|---|---|---|
-| [`AIKernel.Abstractions`](/reference/aikernel-net/aikernel-abstractions/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Abstractions/AIKernel.Abstractions.csproj` |
-| [`AIKernel.Contracts`](/reference/aikernel-net/aikernel-contracts/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Contracts/AIKernel.Contracts.csproj` |
-| [`AIKernel.Dtos`](/reference/aikernel-net/aikernel-dtos/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Dtos/AIKernel.Dtos.csproj` |
-| [`AIKernel.Enums`](/reference/aikernel-net/aikernel-enums/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Enums/AIKernel.Enums.csproj` |
-| [`AIKernel.Common`](/reference/aikernel-core/aikernel-common/) | nuget | `0.1.3` | English AIKernel.Common provides foundational utility components shared across the AIKernel ecosystem. This package contains cross-cutting features such as f... | `AIKernel.Core/src/AIKernel.Common/AIKernel.Common.csproj` |
-| [`AIKernel.Core`](/reference/aikernel-core/aikernel-core/) | nuget | `0.1.3` | EN: Core runtime engine for AIKernel.NET. Provides the foundational execution logic for VFS, ROM, Context construction, and inference execution in a determin... | `AIKernel.Core/src/AIKernel.Core/AIKernel.Core.csproj` |
-| [`AIKernel.Hosting`](/reference/aikernel-core/aikernel-hosting/) | nuget | `0.1.3` | EN: Hosting and dependency injection extensions for AIKernel.NET. Provides IServiceCollection integration and startup wiring for ASP.NET Core and .NET Generi... | `AIKernel.Core/src/AIKernel.Hosting/AIKernel.Hosting.csproj` |
-| [`AIKernel.Kernel`](/reference/aikernel-core/aikernel-kernel/) | nuget | `0.1.3` | EN: Kernel facade and orchestration layer for AIKernel.NET. Coordinates Core, Providers, Context, Governance, and execution flow through a unified IKernel in... | `AIKernel.Core/src/AIKernel.Kernel/AIKernel.Kernel.csproj` |
-| [`aikernel-net`](/reference/aikernel-core/python/aikernel-net/) | python | `0.1.3` | Python binding for AIKernel Core 0.1.3 functional primitives, provider contracts, manifests, and managed assembly discovery. | `AIKernel.Core/python/pyproject.toml` |
-| [`AIKernel.Control`](/reference/aikernel-control/aikernel-control/) | nuget | `0.1.3` | Entry package for AIKernel.Control v0.1.3. Installs the Control Core, CPU, Emulator, Diagnostics, and GPU boundary packages for governed semantic execution h... | `AIKernel.Control/src/AIKernel.Control/AIKernel.Control.csproj` |
-| ... | ... | ... | 45 more packages are listed in the generated Reference. | ... |
+## サンプルに戻って確かめる
 
-## 補足
+入門に登場する `MemoryFileProvider` はVFSの実装、`InMemoryCapabilityRegistry` は機能を登録する入れ物です。サンプルはそれらを生成して型名を表示します。読み書きや外部モデル呼び出しまで行う例ではありません。
 
-- AIKernel.NET の概念は package 境界と一緒に読む必要があります。
-- If a behavior is not confirmed in source or tests, this documentation leaves it as `source evidence required`.
-- Generated Reference pages are separated from these hand-written guide pages.
-
-## 関連ページ
-
-- [Architecture](../architecture/index.md)
-- [Runtime](../runtime/index.md)
-- [Reference](/reference/)
+[サンプルの読み方](../tutorials/first-kernel-jp.md)で出力とコードを対応づけ、より詳しい設計規律は[開発ガイドライン](../guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES-jp.md)で確認できます。

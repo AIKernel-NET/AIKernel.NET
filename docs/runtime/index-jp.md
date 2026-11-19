@@ -1,62 +1,43 @@
 ---
-title: "Runtime Model"
+title: "実行環境の確認とトラブル対応"
 lang: ja
-description: "AIKernel.NET 0.1.3 の execution model、lifecycle、configuration、error handling をまとめます。"
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "問題が起きたら、ソース取得、パッケージ復元、ビルド、起動、外部機能の呼び出しを順に分けて調べます。最初の失敗箇所を絞ると、関係のない設定を変えずに原因を追えます。"
 category: docs
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-06-17"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
-# Runtime Model
 
-## 概要
+# 実行環境の確認とトラブル対応
 
-Runtime Model は 0.1.3 の repository metadata、package metadata、既存 docs を根拠に説明します。
+問題が起きたら、ソース取得、パッケージ復元、ビルド、起動、外部機能の呼び出しを順に分けて調べます。最初の失敗箇所を絞ると、関係のない設定を変えずに原因を追えます。
 
-## 背景
+## まず、基本サンプルで切り分ける
 
-この guide page は explanatory material と generated Reference を分離し、低品質な API dump page になることを避けます。
+[Quick Start](../overview/quick-start-jp.md)が動くなら、.NETと基本パッケージの利用は確認できています。外部モデルを追加してから失敗した場合は、接続先、認証、Providerの登録、必要なモデルやネイティブライブラリへ調査を進めます。
 
-## 使い方
+| 失敗する段階 | 残す情報 | 次に確認する場所 |
+| --- | --- | --- |
+| パッケージ復元 | エラーコード、パッケージIDと版 | `NuGet.config`、接続環境、参照バージョン |
+| ビルド | 最初のコンパイルエラー | SDK、対象フレームワーク、ソースと依存の組み合わせ |
+| 起動 | 起動時の例外・検証結果 | DI登録、設定ファイル、必須設定の読み込み |
+| Provider呼び出し | 選ばれたProvider、処理名、エラー結果 | 接続先、認証、入力、Provider固有の前提 |
+| GPU・Wasm実行 | バックエンド、ブラウザー、失敗箇所 | 対応環境、ライブラリ、権限、アセット |
 
-package table で実装または wrapper package を探し、正確な API member は Reference で確認します。
+## 設定は、接続先を持つ部品で確認する
 
-## 例
+すべてのProviderが同じ環境変数や設定キーを使うとは限りません。選んだProviderのREADMEで必要なキーを確認してください。APIキーやアクセストークンはソースへ埋め込まず、使用するホストの設定・秘密情報管理の仕組みから渡します。問い合わせにログを添えるときも秘密情報を取り除きます。
 
-### Related packages
+## 拒否された実行を成功として扱わない
 
-| Package | Kind | Version | Description | Source |
-|---|---|---|---|---|
-| [`AIKernel.Common`](/reference/aikernel-core/aikernel-common/) | nuget | `0.1.3` | English AIKernel.Common provides foundational utility components shared across the AIKernel ecosystem. This package contains cross-cutting features such as f... | `AIKernel.Core/src/AIKernel.Common/AIKernel.Common.csproj` |
-| [`AIKernel.Core`](/reference/aikernel-core/aikernel-core/) | nuget | `0.1.3` | EN: Core runtime engine for AIKernel.NET. Provides the foundational execution logic for VFS, ROM, Context construction, and inference execution in a determin... | `AIKernel.Core/src/AIKernel.Core/AIKernel.Core.csproj` |
-| [`AIKernel.Hosting`](/reference/aikernel-core/aikernel-hosting/) | nuget | `0.1.3` | EN: Hosting and dependency injection extensions for AIKernel.NET. Provides IServiceCollection integration and startup wiring for ASP.NET Core and .NET Generi... | `AIKernel.Core/src/AIKernel.Hosting/AIKernel.Hosting.csproj` |
-| [`AIKernel.Kernel`](/reference/aikernel-core/aikernel-kernel/) | nuget | `0.1.3` | EN: Kernel facade and orchestration layer for AIKernel.NET. Coordinates Core, Providers, Context, Governance, and execution flow through a unified IKernel in... | `AIKernel.Core/src/AIKernel.Kernel/AIKernel.Kernel.csproj` |
-| [`AIKernel.Control`](/reference/aikernel-control/aikernel-control/) | nuget | `0.1.3` | Entry package for AIKernel.Control v0.1.3. Installs the Control Core, CPU, Emulator, Diagnostics, and GPU boundary packages for governed semantic execution h... | `AIKernel.Control/src/AIKernel.Control/AIKernel.Control.csproj` |
-| [`AIKernel.Control.Core`](/reference/aikernel-control/aikernel-control-core/) | nuget | `0.1.3` | Control-plane runtime entry package for AIKernel.Control. Provides Bonsai provider contracts, model config/tokenizer/model-state wrappers, provider capabilit... | `AIKernel.Control/src/AIKernel.Control.Core/AIKernel.Control.Core.csproj` |
-| [`AIKernel.Control.CPU`](/reference/aikernel-control/aikernel-control-cpu/) | nuget | `0.1.3` | CPU execution package for AIKernel.Control. Provides the public Bonsai Q1_0 1-bit CPU inference kernel and CPU-side physical execution boundary for governed... | `AIKernel.Control/src/AIKernel.Control.CPU/AIKernel.Control.CPU.csproj` |
-| [`AIKernel.Control.Diagnostics`](/reference/aikernel-control/aikernel-control-diagnostics/) | nuget | `0.1.3` | Diagnostics package for AIKernel.Control. Provides public replay approval diagnostics records and observability support for governed control-plane execution. | `AIKernel.Control/src/AIKernel.Control.Diagnostics/AIKernel.Control.Diagnostics.csproj` |
-| [`AIKernel.Control.Emulator`](/reference/aikernel-control/aikernel-control-emulator/) | nuget | `0.1.3` | Deterministic emulator package for AIKernel.Control. Provides public emulated execution graph/node wrappers, deterministic scheduling, allow-all policy, and... | `AIKernel.Control/src/AIKernel.Control.Emulator/AIKernel.Control.Emulator.csproj` |
-| [`AIKernel.Control.GPU`](/reference/aikernel-control/aikernel-control-gpu/) | nuget | `0.1.3` | GPU boundary package for AIKernel.Control. Provides the public Bonsai GPU execution delegate contract so CUDA, WebGPU, ROCm, Vulkan, or other device-specific... | `AIKernel.Control/src/AIKernel.Control.GPU/AIKernel.Control.GPU.csproj` |
-| [`AIKernel.Wasm.Audio`](/reference/aikernel-wasm/aikernel-wasm-audio/) | nuget | `0.1.3` | EN: AIKernel WASM audio package for runtime audio buffers and WebAudio boundary contracts. JA: runtime audio buffer と WebAudio boundary contract を提供する AIKern... | `AIKernel.Wasm/src/Audio/AIKernel.Wasm.Audio/AIKernel.Wasm.Audio.csproj` |
-| [`AIKernel.Wasm.Display`](/reference/aikernel-wasm/aikernel-wasm-display/) | nuget | `0.1.3` | EN: AIKernel WASM display package for framebuffer, frame source, screenshot adapter, and virtual surface descriptors. JA: framebuffer、frame source、screenshot... | `AIKernel.Wasm/src/Display/AIKernel.Wasm.Display/AIKernel.Wasm.Display.csproj` |
-| [`AIKernel.Wasm.Hud`](/reference/aikernel-wasm/aikernel-wasm-hud/) | nuget | `0.1.3` | EN: AIKernel WASM HUD package for signal and overlay annotation DTO generation without rendering. JA: rendering を行わず signal / overlay annotation DTO を生成する AI... | `AIKernel.Wasm/src/Hud/AIKernel.Wasm.Hud/AIKernel.Wasm.Hud.csproj` |
-| [`AIKernel.Wasm.Input`](/reference/aikernel-wasm/aikernel-wasm-input/) | nuget | `0.1.3` | EN: AIKernel WASM input package for keyboard, pointer, gamepad, and virtual input injection. JA: keyboard、pointer、gamepad、virtual input injection を提供する AIKer... | `AIKernel.Wasm/src/Input/AIKernel.Wasm.Input/AIKernel.Wasm.Input.csproj` |
-| [`AIKernel.Wasm.Models`](/reference/aikernel-wasm/aikernel-wasm-models/) | nuget | `0.1.3` | EN: AIKernel WASM model execution package for descriptor-driven WebGPU resident model boundaries. JA: descriptor-driven な WebGPU resident model 境界を提供する AIKer... | `AIKernel.Wasm/src/Models/AIKernel.Wasm.Models/AIKernel.Wasm.Models.csproj` |
-| [`AIKernel.Wasm.Perception`](/reference/aikernel-wasm/aikernel-wasm-perception/) | nuget | `0.1.3` | EN: AIKernel WASM perception package for browser-neutral frame and WebAudio signal extraction. JA: browser-neutral な frame / WebAudio signal extraction を提供する... | `AIKernel.Wasm/src/Perception/AIKernel.Wasm.Perception/AIKernel.Wasm.Perception.csproj` |
-| [`AIKernel.Wasm.Runtime`](/reference/aikernel-wasm/aikernel-wasm-runtime/) | nuget | `0.1.3` | EN: AIKernel WASM runtime service package for browser/WebAssembly process, memory, stdin, file system, event, audio, screenshot, save-state, and time provide... | `AIKernel.Wasm/src/Runtime/AIKernel.Wasm.Runtime/AIKernel.Wasm.Runtime.csproj` |
-| [`AIKernel.Wasm.Spatial`](/reference/aikernel-wasm/aikernel-wasm-spatial/) | nuget | `0.1.3` | EN: AIKernel WASM spatial cognition package for scenario-independent visual and auditory perception composition. JA: scenario 非依存の visual / auditory percepti... | `AIKernel.Wasm/src/Spatial/AIKernel.Wasm.Spatial/AIKernel.Wasm.Spatial.csproj` |
-| [`AIKernel.Wasm.WebGpuComputeProvider`](/reference/aikernel-wasm/aikernel-wasm-webgpucomputeprovider/) | nuget | `0.1.3` | EN: Official AIKernel.NET WASM provider for WebGPU compute with deterministic CPU fallback. JA: deterministic CPU fallback を備えた WebGPU compute 向け AIKernel.NE... | `AIKernel.Wasm/src/Compute/WebGpuComputeProvider/WebGpuComputeProvider.csproj` |
+許可ルールが処理を拒否した場合は、単なる通信エラーと区別します。失敗を無視して次の処理へ進めたり、理由を調べずに許可ルールを緩めたりすると、実行条件が分からなくなります。判断結果と、その入力・適用ルールを先に確認してください。
 
-## 補足
+同様に、Replay用の記録があることと、今回の処理が正しく再生されたことは別です。入力、参照する資産、Provider、パッケージ版を比較してから差を判断します。
 
-- Examples are limited to package and command shapes confirmed in repository metadata.
-- For behavior details, inspect the linked source path and tests.
-- If a runtime asset is hosted outside the source repository, the page treats it as deployment configuration rather than source behavior.
+## 問い合わせに添えると役立つ情報
 
-## 関連ページ
+使用OS、`dotnet --info` のSDK情報、ソースのコミット、パッケージ版、再現コマンド、期待する出力と実際の最初のエラーをまとめます。最小サンプルでも起こるかを添えると、調べる範囲を狭められます。
 
-- [Architecture](../architecture/index.md)
-- [Reference](/reference/)
-- [Generation Report](../docs-generation-report.md)
+[Providerの選び方](../providers/provider-model-jp.md)と[ツールの使い分け](../tools/tool-execution-jp.md)も参照できます。連絡先は[お問い合わせ](/contact/)です。

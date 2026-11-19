@@ -1,74 +1,29 @@
 ---
-title: "Tutorials"
+title: "Learn by running a sample"
 lang: en
-description: "Tutorials for AIKernel.NET 0.1.3 developer documentation."
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "Follow the AIKernel learning sequence from a first console run to code changes, provider selection, and browser experiments."
 category: tutorials
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-06-17"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
 
-# Tutorials
+# Learn by running a sample
 
-## Summary
+Learn in stages: establish the execution environment, understand the code, then connect external capabilities. You do not need to integrate every package at once.
 
-### EN
+## 1. Run the basic sample
 
-Choose a tutorial by workflow: install, first kernel, provider, tool, Wasm, or Doom.
+[Quick Start](../overview/quick-start.md) prints routing and VFS information in a .NET console. You need Git and the .NET SDK. Initial downloads require a network connection, but execution needs no model or API key.
 
-### JA
+## 2. Change one input
 
-Tutorials は、0.1.3 公式サイトで迷わず実作業へ進むための tutorial です。
+[Read and change the sample](first-kernel.md) changes an input string and runs the same router again. Observe what changes and what stays the same to distinguish routing from model inference.
 
-## Why
+## 3. Move toward your application
 
-### EN
+For an external model, read [Choose a provider](../providers/provider-model.md). For a web application, read [browser prerequisites](../wasm/runtime.md). To observe an existing application first, explore the [Doom demo](../doom/demo-overview.md).
 
-Tutorial pages are intentionally workflow-based. They are not generated API listings.
-
-### JA
-
-Tutorial page は workflow-based です。生成 API 一覧ではありません。
-
-## Usage
-
-### EN
-
-Follow the command shape, then use Reference to check the actual package and member details.
-
-### JA
-
-command 形を確認したら、実際の package と member の詳細は Reference で確認します。
-
-## Examples
-
-```bash
-dotnet add package AIKernel.Core --version 0.1.3
-dotnet add package AIKernel.Providers.Standard --version 0.1.3
-```
-
-| Package | Kind | Version | Description | Source |
-|---|---|---|---|---|
-| [`AIKernel.Abstractions`](/reference/aikernel-net/aikernel-abstractions/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Abstractions/AIKernel.Abstractions.csproj` |
-| [`AIKernel.Contracts`](/reference/aikernel-net/aikernel-contracts/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Contracts/AIKernel.Contracts.csproj` |
-| [`AIKernel.Dtos`](/reference/aikernel-net/aikernel-dtos/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Dtos/AIKernel.Dtos.csproj` |
-| [`AIKernel.Enums`](/reference/aikernel-net/aikernel-enums/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Enums/AIKernel.Enums.csproj` |
-| [`AIKernel.Common`](/reference/aikernel-core/aikernel-common/) | nuget | `0.1.3` | English AIKernel.Common provides foundational utility components shared across the AIKernel ecosystem. This package contains cross-cutting features such as f... | `AIKernel.Core/src/AIKernel.Common/AIKernel.Common.csproj` |
-| [`AIKernel.Core`](/reference/aikernel-core/aikernel-core/) | nuget | `0.1.3` | EN: Core runtime engine for AIKernel.NET. Provides the foundational execution logic for VFS, ROM, Context construction, and inference execution in a determin... | `AIKernel.Core/src/AIKernel.Core/AIKernel.Core.csproj` |
-| [`AIKernel.Hosting`](/reference/aikernel-core/aikernel-hosting/) | nuget | `0.1.3` | EN: Hosting and dependency injection extensions for AIKernel.NET. Provides IServiceCollection integration and startup wiring for ASP.NET Core and .NET Generi... | `AIKernel.Core/src/AIKernel.Hosting/AIKernel.Hosting.csproj` |
-| [`AIKernel.Kernel`](/reference/aikernel-core/aikernel-kernel/) | nuget | `0.1.3` | EN: Kernel facade and orchestration layer for AIKernel.NET. Coordinates Core, Providers, Context, Governance, and execution flow through a unified IKernel in... | `AIKernel.Core/src/AIKernel.Kernel/AIKernel.Kernel.csproj` |
-| ... | ... | ... | 47 more packages are listed in the generated Reference. | ... |
-
-## Notes
-
-- Commands are examples of package selection, not a guarantee that every environment has all optional runtimes installed.
-- CUDA and Doom assets have separate runtime requirements.
-- Keep implementation changes outside documentation-only work.
-
-## See Also
-
-- [Docs](/docs/)
-- [Reference](/reference/)
-- [Glossary](/glossary/)
+Use the [glossary](../glossary/index.md) for terminology and [troubleshooting](../runtime/index.md) for execution failures. Verify each stage before adding another capability so that you can identify where a failure begins.
