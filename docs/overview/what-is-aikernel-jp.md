@@ -1,51 +1,42 @@
 ---
-title: "What is AIKernel.NET"
+title: "AIKernelでできること"
 lang: ja
-description: "AIKernel.NET が解決する課題、Semantic OS SDK としての境界、0.1.3 の正典 interface surface を説明します。"
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "AIKernelは、AIアプリケーションの実行条件、外部機能との接続、処理の記録を共通の仕組みで扱う.NET基盤です。モデル呼び出しだけでなく、その前後の処理を組み立てたい開発者を対象にしています。"
 category: docs
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-06-17"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
-# What is AIKernel.NET
 
-## 概要
+# AIKernelでできること
 
-AIKernel.NET は AIOS 型アプリケーションのための modular SDK です。contract package が境界を定義し、Core、Providers、Control、Tools、Wasm、Doom、CUDA package がその境界を実装または検証します。
+AIKernelは、AIアプリケーションの実行条件、外部機能との接続、処理の記録を共通の仕組みで扱う.NET基盤です。モデル呼び出しだけでなく、その前後の処理を組み立てたい開発者を対象にしています。
 
-## 背景
+## たとえば、ファイルを使って回答するアプリ
 
-repo 分割の目的は、provider logic、control-plane evidence、runtime adapter、scenario demo を単一 package へ押し込めないことです。
+アプリがファイルを読み、モデルに回答を依頼する場合、「どのファイルを読んだか」「どのモデルへ渡したか」「実行してよい操作か」「失敗はどこで起きたか」を把握する必要があります。これらを一つのモデル呼び出しの中に埋め込むと、接続先の変更や問題の調査が難しくなります。
 
-## 使い方
+AIKernelでは、ファイルへの窓口をVFS、外部機能の実装をProvider、利用できる処理をCapabilityとして扱います。アプリケーションが必要な実装と実行ルールを組み合わせることで、モデルや実行環境を変える際の境界を明確にできます。
 
-依存を追加する前に module map を読みます。contract-only code は AIKernel.NET、runtime behavior は Core または extension package に置きます。
+## 何から始めればよいか
 
-## 例
+| 作りたいもの・知りたいこと | 入口 |
+| --- | --- |
+| まず.NETで動かしたい | [最初のサンプル](quick-start-jp.md) |
+| モデルや外部サービスを接続したい | [Providerの選び方](../providers/provider-model-jp.md) |
+| 処理の構成や失敗箇所を調べたい | [実行環境とトラブル対応](../runtime/index-jp.md) |
+| ブラウザーでの動作を見たい | [Doomデモの見方](../doom/demo-overview-jp.md) |
 
-### Current Modules
+## SDKと実行環境の違い
 
-| Module | Role | Version evidence | NuGet packages | Python packages | Public types | Tests | Source evidence |
-|---|---|---:|---:|---:|---:|---:|---|
-| `AIKernel.NET` | Contract packages and canonical interface surface. The 0.1.3 line adds the cognition pipeline interface surface while keeping DTO, enum, contract, and abstraction ownership separated. | `0.1.3` | 4 | 0 | 1065 | 1 | `AIKernel.NET/Directory.Build.props` |
-| `AIKernel.Core` | Runtime and kernel implementation packages: hosting, VFS providers, kernel facade, fail-closed routing, and common runtime helpers. | `0.1.3` | 4 | 1 | 193 | 3 | `AIKernel.Core/Directory.Build.props` |
-| `AIKernel.Control` | Physical execution and governance layer. It contains Control Core, CPU, GPU, Emulator, and Diagnostics packages for CTG-style execution evidence. | `0.1.3` | 6 | 1 | 62 | 1 | `AIKernel.Control/Directory.Build.props` |
-| `AIKernel.Providers` | Official extension provider set. Provider-specific behavior is kept outside Core and is exposed through standard, chat, compute, pipeline, local LLM, and Microsoft AI packages. | `0.1.3` | 12 | 1 | 223 | 13 | `AIKernel.Providers/Directory.Build.props` |
-| `AIKernel.Tools` | Developer and operations tools: CLI, inspectors, instrumentation, ROM export, replay helpers, and VFS/kernel-clock inspection. | `0.1.3` | 6 | 1 | 40 | 1 | `AIKernel.Tools/Directory.Build.props` |
-| `AIKernel.Wasm` | Browser and WebAssembly runtime surface for process, memory, file system, WebGPU, audio, display, HUD, input, perception, and spatial packages. | `0.1.3` | 9 | 1 | 119 | 2 | `AIKernel.Wasm/Directory.Build.props` |
-| `AIKernel.Doom` | Official source demo that models DOOM as a WASM process supervised by AIKernel-style provider, operator, consent, and perception boundaries. | `0.1.3` | 7 | 0 | 45 | 1 | `AIKernel.Doom/Directory.Build.props` |
-| `AIKernel.Cuda13.0` | External Capability package for Windows win-x64, LibTorch 2.12.0, and CUDA 13.0. CUDA runtime concerns stay outside Core. | `0.1.3` | 1 | 1 | 7 | 1 | `AIKernel.Cuda13.0/src/AIKernel.Cuda13.0.Libtorch2.12.win-x64/AIKernel.Cuda13.0.Libtorch2.12.win-x64.csproj` |
+`AIKernel.NET` リポジトリは、インターフェースやデータ型などの共通の約束を管理します。実際のランタイムは `AIKernel.Core`、外部接続は `AIKernel.Providers` などのリポジトリに分かれています。契約パッケージだけをインストールしても、会話APIサーバーが自動的に起動するわけではありません。
 
-## 補足
+「AIのOS」という呼び方は、AIの処理に使う機能・文脈・実行規則を管理する役割を表します。利用時は.NETアプリケーションやブラウザー実行環境に必要な部品を組み込みます。
 
-- The 0.1.3 contract release is backed by `AIKernel.NET/Directory.Build.props` release notes.
-- Doom-specific vocabulary remains outside the canonical package surface according to the 0.1.3 package notes.
-- When source evidence is missing, this documentation uses `source evidence required` instead of inventing behavior.
+## 利用する前に知っておくこと
 
-## 関連ページ
+実行経路や条件を記録・検査できる設計と、外部LLMが毎回同じ文章を返すことは別です。また、GPU・モデル・外部サービスには個別の準備が必要です。最初のサンプルはそれらを使わず、基本部品だけを確認できるようにしています。
 
-- [Module Map](../architecture/module-map.md)
-- [Core Concepts](../concepts/index.md)
-- [Glossary](/glossary/)
+現在の入門の基準は0.1.3です。0.1.4向けの改訂では、確認した動作と将来の設計を区別して説明します。より詳しい構成は[パッケージの役割](../architecture/module-map-jp.md)へ進んでください。

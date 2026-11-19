@@ -1,5 +1,5 @@
 ---
-updated: 2026-06-23
+updated: 2026-11-12
 published: 2026-06-16
 version: "0.1.3"
 edition: "Release"
@@ -12,50 +12,28 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 
 ![AIKernel.NET Logo](docs/assets/aikernel-logo.png)
 
-AIKernel は、AI アプリケーションのためのオペレーティングシステムです。
+AIKernelは、AIアプリの実行条件、外部機能との接続、処理の記録を組み立てる.NET基盤です。このリポジトリは、部品同士で共有するインターフェース、DTO、列挙型などの契約を管理します。
 
-AIKernel は、機能そのものを定義しません。  
-機能が必然的に成立するための、決定論的な実行コンテキストを定義します。
+実行基盤は **AIKernel.Core**、外部接続は **AIKernel.Providers** などに分かれています。最初はサンプルを動かし、必要な機能に応じてパッケージを選んでください。
 
-このリポジトリは、AIKernel の正典となる契約群を管理します。
+## 初めての方へ
 
-AIKernel.NET は、LLM を API ではなく、能力（Capability）を持つプロセスとして扱う Contract-First な基盤です。
+1. [AIKernelでできること](docs/overview/what-is-aikernel-jp.md)で用途をつかむ。
+2. [最初のサンプルを動かす](docs/overview/quick-start-jp.md)。APIキーやGPUは不要です。
+3. [出力とコードを読む](docs/tutorials/first-kernel-jp.md)。入力を変更して結果を比べます。
 
-AIOS SDK において、AIKernel.NET は契約語彙のレイヤーです。安定した
-interface、DTO、enum、境界型を定義し、他の AIKernel layer がそれらを
-組み合わせて AI Operating System distribution を構築できるようにします。
+## やりたいことから探す
 
-AIKernel には、公式 AIOS ディストリビューションである **AIKernel.Monolith** もあります。
-Monolith は 0.1.x 系 SDK の安定化後に、SDK の各 layer を統合する標準 AIOS
-として開発が開始されています。
-
----
-
-## 最初に読む場所
-
-AIKernel が初めての場合、この repository は contract と vocabulary の入口として使い、
-実際に動かしたい内容に応じて runtime repository へ進んでください。
-
-| やりたいこと | 入口 |
+| 目的 | ガイド |
 | --- | --- |
-| 安定した interface、DTO、enum を参照する | `AIKernel.Abstractions`, `AIKernel.Contracts`, `AIKernel.Dtos`, `AIKernel.Enums` |
-| .NET host / service を構築する | [AIKernel.Core](https://github.com/AIKernel-NET/AIKernel.Core) |
-| 公式 Provider / OS driver を追加する | [AIKernel.Providers](https://github.com/AIKernel-NET/AIKernel.Providers) |
-| 物理実行エンジンを使う | [AIKernel.Control](https://github.com/AIKernel-NET/AIKernel.Control) |
-| `aik` CLI や replay / inspection tool を使う | [AIKernel.Tools](https://github.com/AIKernel-NET/AIKernel.Tools) |
-| browser / WebAssembly workload を扱う | [AIKernel.Wasm](https://github.com/AIKernel-NET/AIKernel.Wasm) |
-| runnable example から学ぶ | [AIKernel.Demo](https://github.com/AIKernel-NET/AIKernel.Demo) |
+| 必要なパッケージを選ぶ | [構成と依存関係](docs/architecture/module-map-jp.md) |
+| モデル・サービスを接続する | [Providerを選ぶ](docs/providers/provider-model-jp.md) |
+| 起動・設定で困っている | [トラブル対応](docs/runtime/index-jp.md) |
+| 型やメソッドを調べる | [APIリファレンス](https://aikernel.net/reference-ja/) |
 
-contract package は同じ version family でまとめて導入してください。
+[ガイド全体](docs/index-jp.md) · [English](README.md)
 
-```bash
-dotnet add package AIKernel.Abstractions --version 0.1.3
-dotnet add package AIKernel.Contracts --version 0.1.3
-dotnet add package AIKernel.Dtos --version 0.1.3
-dotnet add package AIKernel.Enums --version 0.1.3
-```
-
-異なる version family の AIKernel contract package を混在させないでください。
+この入門は0.1.4に向けて改訂しています。サンプルの動作確認基準は0.1.3です。パッケージのリリースと文章の改訂は区別し、実行手順に確認したソースと出力を記載しています。
 
 ---
 
@@ -140,93 +118,11 @@ Pre-inference admissibility contract は、critical-operation / computational-co
 
 ---
 
-## ホスティング例 (C#)
+## 実行例を試す
 
-AIKernel.NET は ASP.NET Core の DI に統合されます。  
-Core・Provider・Governance を構成することで、AI 実行基盤をホスティングできます。
+[Quick Start](docs/overview/quick-start-jp.md)に、取得から実行、出力の確認までの手順があります。[サンプル解説](docs/tutorials/first-kernel-jp.md)では実際のコードと出力を対応づけています。
 
-AIKernel.NET は Interface による契約レイヤーで構成されているため、実装は自由に差し替えることができます。
-
-### 実装コード例
-
-```csharp
-var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddAIKernelCore(options =>
-{
-    options.EnableDeterministicReplay = true;
-    options.FailClosed = true;
-});
-
-builder.Services.AddModelProvider<OpenAIModelProvider>();
-builder.Services.AddVfsProvider<GitVfsProvider>();
-
-builder.Services.AddSignatureTrustStore<FileSignatureTrustStore>();
-
-builder.Services.AddControllers();
-
-var app = builder.Build();
-
-using (var scope = app.Services.CreateScope())
-{
-    var kernel = scope.ServiceProvider.GetRequiredService<IAIKernel>();
-    await kernel.InitializeAsync();
-}
-
-app.MapControllers();
-app.Run();
-```
-
-### 起動ログイメージ
-
-起動時には以下のシーケンスが実行されます。
-
-```txt
-[KERNEL] Initializing AIKernel.NET v0.1.3...
-[KERNEL] Loading ISignatureTrustStore... [OK]
-[KERNEL] Mounting Vfs (Git: ./context)... [OK]
-[KERNEL] Verifying System Prompt Signature... [VALID]
-[KERNEL] Routing to Provider: [[provider.reasoning.high]]... [OK]
-
-> Hello Intelligence.
-> The Semantic Context is stable. Governance is active.
-> This boot sequence is deterministic and verifiable.
-```
-
----
-
-## API Example / curl 実行例
-
-AIKernel は OpenAI 互換 API として公開できます。  
-以下は Context を明示した実行例です。
-
-```bash
-curl -X POST http://localhost:5000/v1/execute \
-  -H "Content-Type: application/json" \
-  -d '{
-    "capability": "reasoning",
-    "input": "Hello Intelligence",
-    "context": {
-      "vfs": "git://./context"
-    }
-  }'
-```
-
-### レスポンス例
-
-```json
-{
-  "output": "[OpenAI] Hello Intelligence",
-  "provider": "openai",
-  "capability": "reasoning",
-  "context": {
-    "vfs": "git://./context"
-  }
-}
-```
-
-> Context は単なる入力データではありません。  
-> Kernel に束縛される実行条件です。
+Web APIや外部モデルを使う場合は、[Providerガイド](docs/providers/provider-model-jp.md)と[AIKernel.Demo](https://github.com/AIKernel-NET/AIKernel.Demo)で対象のホストを選んでください。基本サンプルは完全なKernel起動やLLM呼び出しを行うものではありません。
 
 ---
 

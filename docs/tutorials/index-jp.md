@@ -1,55 +1,29 @@
 ---
-title: "Tutorials"
+title: "実行して学ぶ"
 lang: ja
-description: "AIKernel.NET 0.1.3 を段階的に試すための tutorial 入口です。"
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "最初の学習では、基本の実行環境、コードの読み方、外部接続の順に確かめます。一度にすべてのパッケージを組み込む必要はありません。"
 category: tutorials
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-06-17"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
-# Tutorials
 
-## 概要
+# 実行して学ぶ
 
-Tutorials は、0.1.3 公式サイトで迷わず実作業へ進むための tutorial です。
+最初の学習では、基本の実行環境、コードの読み方、外部接続の順に確かめます。一度にすべてのパッケージを組み込む必要はありません。
 
-## 背景
+## 1. 基本サンプルを実行する
 
-Tutorial page は workflow-based です。生成 API 一覧ではありません。
+[最初のサンプル](../overview/quick-start-jp.md)では、.NETのコンソールにルーティングやVFSの情報を表示します。必要なのはGitと.NET SDKです。初回取得時にはネットワークを使いますが、サンプルの実行にモデルやAPIキーは不要です。
 
-## 使い方
+## 2. 一か所変更し、出力を比べる
 
-command 形を確認したら、実際の package と member の詳細は Reference で確認します。
+[サンプルの読み方](first-kernel-jp.md)では、入力文字列を変えて同じルーターを実行します。何が変わり、何が変わらないかを観察して、ルーティングとモデル推論の違いをつかみます。
 
-## 例
+## 3. 作りたいアプリに進む
 
-```bash
-dotnet add package AIKernel.Core --version 0.1.3
-dotnet add package AIKernel.Providers.Standard --version 0.1.3
-```
+外部モデルを使う場合は[Providerの選び方](../providers/provider-model-jp.md)、Webアプリの場合は[ブラウザー側の前提](../wasm/runtime-jp.md)へ進みます。先に完成した環境を観察したい場合は[Doomデモ](../doom/demo-overview-jp.md)が参考になります。
 
-| Package | Kind | Version | Description | Source |
-|---|---|---|---|---|
-| [`AIKernel.Abstractions`](/reference/aikernel-net/aikernel-abstractions/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Abstractions/AIKernel.Abstractions.csproj` |
-| [`AIKernel.Contracts`](/reference/aikernel-net/aikernel-contracts/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Contracts/AIKernel.Contracts.csproj` |
-| [`AIKernel.Dtos`](/reference/aikernel-net/aikernel-dtos/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Dtos/AIKernel.Dtos.csproj` |
-| [`AIKernel.Enums`](/reference/aikernel-net/aikernel-enums/) | nuget | `0.1.3` | AIKernel is an operating-system-style framework for AI applications, designed around strict category separation, context isolation, and contract-driven orche... | `AIKernel.NET/src/AIKernel.Enums/AIKernel.Enums.csproj` |
-| [`AIKernel.Common`](/reference/aikernel-core/aikernel-common/) | nuget | `0.1.3` | English AIKernel.Common provides foundational utility components shared across the AIKernel ecosystem. This package contains cross-cutting features such as f... | `AIKernel.Core/src/AIKernel.Common/AIKernel.Common.csproj` |
-| [`AIKernel.Core`](/reference/aikernel-core/aikernel-core/) | nuget | `0.1.3` | EN: Core runtime engine for AIKernel.NET. Provides the foundational execution logic for VFS, ROM, Context construction, and inference execution in a determin... | `AIKernel.Core/src/AIKernel.Core/AIKernel.Core.csproj` |
-| [`AIKernel.Hosting`](/reference/aikernel-core/aikernel-hosting/) | nuget | `0.1.3` | EN: Hosting and dependency injection extensions for AIKernel.NET. Provides IServiceCollection integration and startup wiring for ASP.NET Core and .NET Generi... | `AIKernel.Core/src/AIKernel.Hosting/AIKernel.Hosting.csproj` |
-| [`AIKernel.Kernel`](/reference/aikernel-core/aikernel-kernel/) | nuget | `0.1.3` | EN: Kernel facade and orchestration layer for AIKernel.NET. Coordinates Core, Providers, Context, Governance, and execution flow through a unified IKernel in... | `AIKernel.Core/src/AIKernel.Kernel/AIKernel.Kernel.csproj` |
-| ... | ... | ... | 47 more packages are listed in the generated Reference. | ... |
-
-## 補足
-
-- Commands are examples of package selection, not a guarantee that every environment has all optional runtimes installed.
-- CUDA and Doom assets have separate runtime requirements.
-- Keep implementation changes outside documentation-only work.
-
-## 関連ページ
-
-- [Docs](/docs/)
-- [Reference](/reference/)
-- [Glossary](/glossary/)
+分からない言葉は[用語集](../glossary/index-jp.md)、実行できないときは[トラブル対応](../runtime/index-jp.md)を参照してください。各段階で動作を確かめてから次の機能を追加すると、失敗の原因を絞りやすくなります。

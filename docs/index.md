@@ -1,110 +1,40 @@
 ---
-title: "AIKernel.NET 0.1.3 Documentation"
+title: "Start using AIKernel"
 lang: en
-description: "Official entry point for AIKernel.NET 0.1.3 documentation, including Overview, Architecture, Concepts, Runtime, Providers, Tools, Wasm, Doom, and Reference."
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "Start with a runnable AIKernel sample, learn the concepts behind its output, and find guides for providers, packages, troubleshooting, and browser execution."
 category: docs
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-06-17"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
 
-# AIKernel.NET 0.1.3 Documentation
+# Start using AIKernel
 
-## Summary
+Build with AIKernel by running one small sample, understanding its output, and then adding the models or execution environments your application needs.
 
-### EN
+## Start here
 
-This page is the curated entry point for the AIKernel.NET 0.1.3 documentation set. It separates hand-written guides from generated package reference pages and points readers to the next practical page.
+1. [What AIKernel helps you build](overview/what-is-aikernel.md): understand its purpose and boundaries.
+2. [Run your first sample](overview/quick-start.md): begin without an API key or GPU.
+3. [Read and change the sample](tutorials/first-kernel.md): connect the output to code.
 
-### JA
+## Find a task
 
-このページは AIKernel.NET 0.1.3 公式ドキュメントの入口です。手書きガイド、自動生成 Reference、チュートリアル、用語集を分離し、読者が次に読むべきページへ迷わず進めるようにします。
+| Your task | Guide |
+| --- | --- |
+| Choose NuGet dependencies | [Package responsibilities](architecture/module-map.md) |
+| Connect a model or service | [Choose a provider](providers/provider-model.md) |
+| Fix setup or startup failures | [Configuration and troubleshooting](runtime/index.md) |
+| Inspect state and records | [Use the tools](tools/tool-execution.md) |
+| Run in a browser | [Wasm prerequisites](wasm/runtime.md) |
+| Observe an existing application | [Doom demo guide](doom/demo-overview.md) |
 
-## Why
+## Understand or look up a detail
 
-### EN
+[Core concepts](concepts/index.md) explains the roles through one application. Use the [glossary](glossary/index.md) for unfamiliar words and [API Reference](/reference/) for exact types, methods, and packages.
 
-The previous site mixed broad essays, interface pages, package references, and release material. The 0.1.3 renewal keeps the useful material but adds a clear reader path and source-backed summaries.
+Contributors can read the [development guidelines](guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES.md). For research and design background, visit [papers](papers/12-canonical-trajectory-governance/README.md). Historical documents describe the versions recorded on those documents.
 
-### JA
-
-以前の公式サイトでは、設計論文、interface page、package reference、release 文章が同じ階層に混在していました。0.1.3 では既存の有用な内容を残しつつ、読者の目的別に入口を整理します。
-
-## Usage
-
-### EN
-
-Start with Overview if you are new, Architecture if you need module boundaries, Runtime if you are integrating execution, and Reference when you need package or API details.
-
-### JA
-
-初めて読む場合は Overview、依存境界を確認する場合は Architecture、実行連携は Runtime、型や package の確認は Reference から読み始めます。
-
-## Developer Fast Path
-
-### EN
-
-If you are trying to build or verify AIKernel locally, use this path before
-opening the generated API reference:
-
-1. Install matching packages with the [Package Installation Guide](operations/PACKAGE_INSTALLATION_GUIDE.md).
-2. Run the official examples with the [Demo Programs Guide](operations/DEMO_PROGRAMS_GUIDE.md).
-3. Check GPU migration and provider readiness in the [v0.1.3 GPU Migration](migration/v0.1.3-gpu-canonical-migration.md) note.
-4. Follow the [XML Documentation Policy](operations/XML_DOCUMENTATION_POLICY-v0.1.3.md) before adding public API members.
-
-### JA
-
-ローカルで AIKernel を build / verify する場合は、生成 API reference を開く前に次の順で確認します。
-
-1. [Package Installation Guide](operations/PACKAGE_INSTALLATION_GUIDE-jp.md) で同じ package family を導入する。
-2. [Demo Programs Guide](operations/DEMO_PROGRAMS_GUIDE-jp.md) で公式 demo を実行する。
-3. [v0.1.3 GPU Migration](migration/v0.1.3-gpu-canonical-migration.md) で GPU migration と provider readiness を確認する。
-4. public API member を追加する前に [XML Documentation Policy](operations/XML_DOCUMENTATION_POLICY-v0.1.3-jp.md) を確認する。
-
-## Examples
-
-### Repository Map
-
-| Module | Role | Version evidence | NuGet packages | Python packages | Public types | Tests | Source evidence |
-|---|---|---:|---:|---:|---:|---:|---|
-| `AIKernel.NET` | Contract packages and canonical interface surface. The 0.1.3 line adds the cognition pipeline interface surface while keeping DTO, enum, contract, and abstraction ownership separated. | `0.1.3` | 4 | 0 | 1065 | 1 | `AIKernel.NET/Directory.Build.props` |
-| `AIKernel.Core` | Runtime and kernel implementation packages: hosting, VFS providers, kernel facade, fail-closed routing, and common runtime helpers. | `0.1.3` | 4 | 1 | 193 | 3 | `AIKernel.Core/Directory.Build.props` |
-| `AIKernel.Control` | Physical execution and governance layer. It contains Control Core, CPU, GPU, Emulator, and Diagnostics packages for CTG-style execution evidence. | `0.1.3` | 6 | 1 | 62 | 1 | `AIKernel.Control/Directory.Build.props` |
-| `AIKernel.Providers` | Official extension provider set. Provider-specific behavior is kept outside Core and is exposed through standard, chat, compute, pipeline, local LLM, and Microsoft AI packages. | `0.1.3` | 12 | 1 | 223 | 13 | `AIKernel.Providers/Directory.Build.props` |
-| `AIKernel.Tools` | Developer and operations tools: CLI, inspectors, instrumentation, ROM export, replay helpers, and VFS/kernel-clock inspection. | `0.1.3` | 6 | 1 | 40 | 1 | `AIKernel.Tools/Directory.Build.props` |
-| `AIKernel.Wasm` | Browser and WebAssembly runtime surface for process, memory, file system, WebGPU, audio, display, HUD, input, perception, and spatial packages. | `0.1.3` | 9 | 1 | 119 | 2 | `AIKernel.Wasm/Directory.Build.props` |
-| `AIKernel.Doom` | Official source demo that models DOOM as a WASM process supervised by AIKernel-style provider, operator, consent, and perception boundaries. | `0.1.3` | 7 | 0 | 37 | 1 | `AIKernel.Doom/Directory.Build.props` |
-| `AIKernel.Cuda13.0` | External Capability package for Windows win-x64, LibTorch 2.12.0, and CUDA 13.0. CUDA runtime concerns stay outside Core. | `0.1.3` | 1 | 1 | 7 | 1 | `AIKernel.Cuda13.0/src/AIKernel.Cuda13.0.Libtorch2.12.win-x64/AIKernel.Cuda13.0.Libtorch2.12.win-x64.csproj` |
-
-### Minimal install shape
-
-```bash
-dotnet add package AIKernel.Core --version 0.1.3
-dotnet add package AIKernel.Providers.Standard --version 0.1.3
-dotnet tool install -g AIKernel.Tools.CLI --version 0.1.3
-```
-
-
-## Notes
-
-- Release date recorded for this renewal: `2026-06-16`.
-- Package versions are read from repository metadata rather than guessed.
-- Thin pages are avoided by grouping API facts at package, module, or concept level.
-- Existing advertisement meta, AdSense slot, footer, and copyright display are inherited by the website build templates.
-
-## See Also
-
-- [What is AIKernel.NET](overview/what-is-aikernel.md)
-- [Quick Start](overview/quick-start.md)
-- [Package Installation Guide](operations/PACKAGE_INSTALLATION_GUIDE.md)
-- [Demo Programs Guide](operations/DEMO_PROGRAMS_GUIDE.md)
-- [System Architecture](architecture/system-architecture.md)
-- [Runtime Model](runtime/execution-model.md)
-- [Provider Model](providers/provider-model.md)
-- [Tool Model](tools/tool-model.md)
-- [Wasm Runtime](wasm/runtime.md)
-- [Doom Demo](doom/demo-overview.md)
-- [API Reference](/reference/)
-- [Glossary](/glossary/)
+The onboarding example currently targets 0.1.3. This documentation revision prepares for 0.1.4 and is separate from package publication. Quick Start records the source revision and observed output.

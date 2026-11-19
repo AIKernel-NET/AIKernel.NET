@@ -1,68 +1,36 @@
 ---
-title: "Glossary"
+title: "Glossary with practical examples"
 lang: en
-description: "Glossary for AIKernel.NET 0.1.3 developer documentation."
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "Find plain definitions of AIKernel terms and follow links to guides that show how each concept is used."
 category: glossary
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-06-17"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
 
-# Glossary
+# Glossary with practical examples
 
-## Summary
+Use this glossary when a term interrupts your reading. Each entry describes a responsibility in ordinary language before you look up exact API types.
 
-### EN
+| Term | Meaning | Example |
+| --- | --- | --- |
+| Kernel | A central facade coordinating runtime components | An entry point to composed execution |
+| Contract | Shared types and calling conventions | Interfaces and DTOs |
+| DTO | A data carrier between components | Typed input or result data |
+| Provider | An external capability implementation | Model connection, files, computation |
+| Capability | An exposed operation available to an application | A registered operation that can be selected and invoked |
+| Context | Inputs and conditions associated with execution | Referenced information and rules |
+| VFS | A common interface to file resources | Memory-backed file access |
+| ROM | Knowledge assets treated as fixed after loading | A knowledge snapshot used in execution |
+| Operator | A role managing execution order and result flow | Continuing after checking the previous result |
+| Observer | A role recording or monitoring execution | Evidence of what happened and where |
+| Replay | Inspection or reproduction using recorded information | Comparing inputs or provider selection |
+| Fail-Closed | Preventing execution when conditions are not met | Rejecting an operation without permission |
+| DAG | A directed acyclic graph | Dependencies and ordering between steps |
+| Wasm | WebAssembly | A code format used in browsers and other runtimes |
 
-Glossary defines recurring AIKernel.NET terms in English and Japanese and links each term to the most relevant guide or Reference section.
+Adding a Provider does not automatically configure recording, replay, and permission rules. Check the host, registrations, and settings together. Likewise, deterministic execution should not be read as a promise of identical text from an external LLM.
 
-### JA
-
-Glossary は AIKernel.NET の主要用語を English / Japanese で定義し、関連 guide や Reference へ接続します。
-
-## Why
-
-### EN
-
-Shared terms prevent documentation pages from redefining the same concept inconsistently.
-
-### JA
-
-共有用語により、複数ページで同じ概念を別々に再定義して不整合になることを防ぎます。
-
-## Usage
-
-### EN
-
-Use this page when a guide uses a domain term such as Provider, Tool, Capability, CTG, Wasm, or Doom.
-
-### JA
-
-Provider、Tool、Capability、CTG、Wasm、Doom などの domain term が出たときに参照します。
-
-## Examples
-
-| Term | English definition | Japanese definition | Related page |
-|---|---|---|---|
-| Kernel | Runtime facade and execution boundary owned by Core. | Core が所有する runtime facade と execution boundary。 | [Kernel](/docs/concepts/kernel/) |
-| Provider | Extension boundary for model, capability, platform, or service behavior. | model、capability、platform、service behavior の extension boundary。 | [Providers](/docs/providers/provider-model/) |
-| Tool | Developer or operations surface around inspection, replay, CLI, and ROM workflows. | inspection、replay、CLI、ROM workflow のための developer / operations surface。 | [Tools](/docs/tools/tool-model/) |
-| Runtime | Execution flow spanning contracts, Core, providers, control evidence, and tools. | contracts、Core、providers、control evidence、tools をまたぐ execution flow。 | [Runtime](/docs/runtime/) |
-| Wasm | Browser/WebAssembly isolation package family. | browser / WebAssembly isolation の package family。 | [Wasm](/docs/wasm/runtime/) |
-| Doom | Official demo that validates provider, WASM, consent, and perception boundaries. | provider、WASM、consent、perception boundary を検証する official demo。 | [Doom Demo](/docs/doom/demo-overview/) |
-| CTG | Canonical Trajectory Governance evidence and decision surface. | trajectory governance の evidence / decision surface。 | [Control](/docs/runtime/error-handling/) |
-| Capability | Package-exposed operation boundary that can be routed, invoked, inspected, or governed. | routing、invoke、inspect、governance の対象になる package-exposed operation boundary。 | [Extensions](/docs/concepts/extensions/) |
-
-
-## Notes
-
-- Terms are intentionally bilingual because the source repository contains English and Japanese documentation.
-- If a term lacks source evidence, future updates should add `source evidence required` rather than inventing a definition.
-
-## See Also
-
-- [Concepts](/docs/concepts/)
-- [Reference](/reference/)
-- [Tutorials](/tutorials/)
+Read [Core concepts](../concepts/index.md) to connect these terms in one example. Use [API Reference](/reference/) for exact members and the [development guidelines](../guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES.md) for the detailed design vocabulary.

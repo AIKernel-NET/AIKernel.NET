@@ -1,48 +1,42 @@
 ---
-title: "Module Map"
+title: "必要なパッケージを選ぶ"
 lang: ja
-description: "0.1.3 release に含まれる repository、package、public API surface、source evidence を一覧します。"
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "AIKernelのパッケージは、共通の型、実行の仕組み、外部機能、開発用ツールに分かれています。作るアプリに必要な役割から依存関係を選ぶと、すべてのパッケージを調べずに始められます。"
 category: docs
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-06-17"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
-# Module Map
 
-## 概要
+# 必要なパッケージを選ぶ
 
-Module Map は公式ドキュメント刷新の根拠となる source-backed inventory です。
+AIKernelのパッケージは、共通の型、実行の仕組み、外部機能、開発用ツールに分かれています。作るアプリに必要な役割から依存関係を選ぶと、すべてのパッケージを調べずに始められます。
 
-## 背景
+## 最小の.NETアプリから広げる
 
-module map は依存方向の逸脱を防ぎ、読者が全 source tree を読まずに正しい package を探せるようにします。
+入門サンプルはCore、Hosting、Kernelなどを利用します。モデル接続が必要になったときにProviderを、ブラウザー上で動かすときにWasmを検討します。CUDAパッケージは基本入門の必須条件ではありません。
 
-## 使い方
+| リポジトリ | 主な役割 | 必要になる場面 |
+| --- | --- | --- |
+| AIKernel.NET | インターフェース、DTO、列挙型などの共通契約 | 複数の部品で共通の入力・出力を定義する |
+| AIKernel.Core | 実行基盤、Hosting、Kernel、VFSなど | .NETアプリで基本のランタイムを組み込む |
+| AIKernel.Providers | モデル・サービス・計算などの外部機能 | 外部への接続や実装を選ぶ |
+| AIKernel.Control | 実行エンジンと制御のための部品 | 制御面やエミュレーターを扱う |
+| AIKernel.Tools | CLI、検査、記録の確認など | 動作状態や実行記録を調べる |
+| AIKernel.Wasm | ブラウザー・WebAssembly向け機能 | Web上での実行や描画を組み込む |
+| AIKernel.Cuda13.0 | CUDA・LibTorchに関わる外部計算機能 | 対応するGPU環境を使う |
+| AIKernel.Demo | 利用例 | アプリ側の組み立て方を学ぶ |
 
-この表で module を選び、package member は Reference で確認します。
+## 依存の考え方
 
-## 例
+アプリケーションは契約を使って実装を呼び出します。Provider固有の通信やGPU設定を共通DTOへ入れず、接続を持つ実装側に置きます。これにより、同じ契約を使うテスト用実装と実サービスを切り替えやすくなります。
 
-| Module | Role | Version evidence | NuGet packages | Python packages | Public types | Tests | Source evidence |
-|---|---|---:|---:|---:|---:|---:|---|
-| `AIKernel.NET` | Contract packages and canonical interface surface. The 0.1.3 line adds the cognition pipeline interface surface while keeping DTO, enum, contract, and abstraction ownership separated. | `0.1.3` | 4 | 0 | 1065 | 1 | `AIKernel.NET/Directory.Build.props` |
-| `AIKernel.Core` | Runtime and kernel implementation packages: hosting, VFS providers, kernel facade, fail-closed routing, and common runtime helpers. | `0.1.3` | 4 | 1 | 193 | 3 | `AIKernel.Core/Directory.Build.props` |
-| `AIKernel.Control` | Physical execution and governance layer. It contains Control Core, CPU, GPU, Emulator, and Diagnostics packages for CTG-style execution evidence. | `0.1.3` | 6 | 1 | 62 | 1 | `AIKernel.Control/Directory.Build.props` |
-| `AIKernel.Providers` | Official extension provider set. Provider-specific behavior is kept outside Core and is exposed through standard, chat, compute, pipeline, local LLM, and Microsoft AI packages. | `0.1.3` | 12 | 1 | 223 | 13 | `AIKernel.Providers/Directory.Build.props` |
-| `AIKernel.Tools` | Developer and operations tools: CLI, inspectors, instrumentation, ROM export, replay helpers, and VFS/kernel-clock inspection. | `0.1.3` | 6 | 1 | 40 | 1 | `AIKernel.Tools/Directory.Build.props` |
-| `AIKernel.Wasm` | Browser and WebAssembly runtime surface for process, memory, file system, WebGPU, audio, display, HUD, input, perception, and spatial packages. | `0.1.3` | 9 | 1 | 119 | 2 | `AIKernel.Wasm/Directory.Build.props` |
-| `AIKernel.Doom` | Official source demo that models DOOM as a WASM process supervised by AIKernel-style provider, operator, consent, and perception boundaries. | `0.1.3` | 7 | 0 | 45 | 1 | `AIKernel.Doom/Directory.Build.props` |
-| `AIKernel.Cuda13.0` | External Capability package for Windows win-x64, LibTorch 2.12.0, and CUDA 13.0. CUDA runtime concerns stay outside Core. | `0.1.3` | 1 | 1 | 7 | 1 | `AIKernel.Cuda13.0/src/AIKernel.Cuda13.0.Libtorch2.12.win-x64/AIKernel.Cuda13.0.Libtorch2.12.win-x64.csproj` |
+初めての導入では、[サンプルのプロジェクトファイル](https://github.com/AIKernel-NET/AIKernel.Demo/blob/8c960f57bdf6f431663a1ca33de7584f5e882140/src/AIKernel.Demo.CoreRuntime/AIKernel.Demo.CoreRuntime.csproj)を見ると、どのパッケージが実際に必要かを確認できます。
 
-## 補足
+## バージョンをそろえる
 
-- Package counts include source projects under `src` and skip test projects.
-- Python packages are read from `pyproject.toml`.
-- Public type counts are lexical inventory counts, not behavioral guarantees.
+この入門で使う基準は0.1.3です。0.1.4向けの文章改訂とパッケージ公開は別に扱います。サンプルのソースと依存するパッケージ群を同じ系列にそろえ、異なる版のDLLを手作業で追加しないようにしてください。
 
-## 関連ページ
-
-- [Reference](/reference/)
-- [Docs Generation Report](../docs-generation-report.md)
+正確な型名やメンバーは[APIリファレンス](/reference-ja/)で調べます。導入の順番は[Quick Start](../overview/quick-start-jp.md)、失敗時の切り分けは[実行環境の確認](../runtime/index-jp.md)へ進んでください。

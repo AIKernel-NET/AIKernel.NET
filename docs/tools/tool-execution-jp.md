@@ -1,50 +1,46 @@
 ---
-title: "Tool Execution"
+title: "CLIと実行記録を使って調べる"
 lang: ja
-description: "CLI command、inspector、replay、VFS inspection の実行面を説明します。"
-tags: [AIKernel, AIKernel.NET, v0.1.3]
+description: "AIKernel.Toolsは、CLIや実行記録の検査を担当します。アプリの実装を変える前に、どの機能やファイル領域が見えているかを確認するために使います。"
 category: docs
-source: "generated-from-repository-inventory"
-generated: true
+source: "maintained-guide"
+generated: false
 release: "0.1.3"
-updated: "2026-06-17"
+documentation_target: "0.1.4"
+updated: "2026-11-12"
 ---
-# Tool Execution
 
-## 概要
+# CLIと実行記録を使って調べる
 
-Tool Execution は 0.1.3 の repository metadata、package metadata、既存 docs を根拠に説明します。
+AIKernel.Toolsは、CLIや実行記録の検査を担当します。アプリの実装を変える前に、どの機能やファイル領域が見えているかを確認するために使います。
 
-## 背景
+## CLIを導入する
 
-この guide page は explanatory material と generated Reference を分離し、低品質な API dump page になることを避けます。
+CLIは.NETのツールとしてインストールします。アプリのプロジェクトへ通常のライブラリとして追加するものとは導入方法が異なります。以下は0.1.3のDemo READMEに記載されたコマンドです。
 
-## 使い方
+```powershell
+dotnet tool install -g AIKernel.Tools.CLI --version 0.1.3
+aik runtime ping
+aik system info
+aik capabilities list
+```
 
-package table で実装または wrapper package を探し、正確な API member は Reference で確認します。
+インストールには.NET SDKとパッケージ配布元への接続が必要です。すでに別版が入っている場合は、まず `dotnet tool list -g` で版を確認します。このページのCLI例はソースの記載を確認したもので、Quick Startのコンソールデモとは別の手順です。
 
-## 例
+## 結果をどう使うか
 
-### Related packages
+`runtime ping` で基本の応答を調べ、`system info` で見えている構成を確認し、`capabilities list` で公開されている処理を調べます。表示される機能は使うホストや登録状態に依存するため、固定の一覧を成功条件にしません。
 
-| Package | Kind | Version | Description | Source |
-|---|---|---|---|---|
-| [`AIKernel.Tools.Capability.RomStorage`](/reference/aikernel-tools/aikernel-tools-capability-romstorage/) | nuget | `0.1.3` | AIKernel.Tools.Capability.RomStorage package metadata is defined in AIKernel.Tools/src/AIKernel.Tools.Capability.RomStorage/AIKernel.Tools.Capability.RomStor... | `AIKernel.Tools/src/AIKernel.Tools.Capability.RomStorage/AIKernel.Tools.Capability.RomStorage.csproj` |
-| [`AIKernel.Tools.CLI`](/reference/aikernel-tools/aikernel-tools-cli/) | nuget | `0.1.3` | AIKernel.Tools.CLI package metadata is defined in AIKernel.Tools/src/AIKernel.CLI/AIKernel.CLI.csproj. | `AIKernel.Tools/src/AIKernel.CLI/AIKernel.CLI.csproj` |
-| [`AIKernel.Tools.Inspectors.ChatHistoryScraper`](/reference/aikernel-tools/aikernel-tools-inspectors-chathistoryscraper/) | nuget | `0.1.3` | AIKernel.Tools.Inspectors.ChatHistoryScraper package metadata is defined in AIKernel.Tools/src/AIKernel.Tools.Inspectors.ChatHistoryScraper/AIKernel.Tools.In... | `AIKernel.Tools/src/AIKernel.Tools.Inspectors.ChatHistoryScraper/AIKernel.Tools.Inspectors.ChatHistoryScraper.csproj` |
-| [`AIKernel.Tools.Inspectors.KernelClock`](/reference/aikernel-tools/aikernel-tools-inspectors-kernelclock/) | nuget | `0.1.3` | AIKernel.Tools.Inspectors.KernelClock package metadata is defined in AIKernel.Tools/src/AIKernel.Tools.Inspectors.KernelClock/AIKernel.Tools.Inspectors.Kerne... | `AIKernel.Tools/src/AIKernel.Tools.Inspectors.KernelClock/AIKernel.Tools.Inspectors.KernelClock.csproj` |
-| [`AIKernel.Tools.Inspectors.Vfs`](/reference/aikernel-tools/aikernel-tools-inspectors-vfs/) | nuget | `0.1.3` | AIKernel.Tools.Inspectors.Vfs package metadata is defined in AIKernel.Tools/src/AIKernel.Tools.Inspectors.Vfs/AIKernel.Tools.Inspectors.Vfs.csproj. | `AIKernel.Tools/src/AIKernel.Tools.Inspectors.Vfs/AIKernel.Tools.Inspectors.Vfs.csproj` |
-| [`AIKernel.Tools.Instrumentation`](/reference/aikernel-tools/aikernel-tools-instrumentation/) | nuget | `0.1.3` | AIKernel.Tools.Instrumentation package metadata is defined in AIKernel.Tools/src/AIKernel.Tools.Instrumentation/AIKernel.Tools.Instrumentation.csproj. | `AIKernel.Tools/src/AIKernel.Tools.Instrumentation/AIKernel.Tools.Instrumentation.csproj` |
-| [`aikernel-tools`](/reference/aikernel-tools/python/aikernel-tools/) | python | `0.1.3` | Python wrapper for AIKernel.Tools v0.1.3 instrumentation contracts with bundled managed assemblies and pythonnet loading. | `AIKernel.Tools/python/pyproject.toml` |
+ファイル領域を確認するときは、対象フォルダーを明示します。
 
-## 補足
+```powershell
+aik system vfs --vfs-root .
+```
 
-- Examples are limited to package and command shapes confirmed in repository metadata.
-- For behavior details, inspect the linked source path and tests.
-- If a runtime asset is hosted outside the source repository, the page treats it as deployment configuration rather than source behavior.
+この `.` はコマンドを実行しているフォルダーです。調査対象でない秘密情報のあるフォルダーを選ばないようにしてください。
 
-## 関連ページ
+## Replayの記録を読むとき
 
-- [Architecture](../architecture/index.md)
-- [Reference](/reference/)
-- [Generation Report](../docs-generation-report.md)
+処理の入力、Providerの選択、適用したルール、パッケージ版を比較します。文章の差だけでなく、実行条件が変わっていないかを見ることが大切です。利用可能な検査機能は[ToolsのREADME](https://github.com/AIKernel-NET/AIKernel.Tools/blob/main/README-ja.md)、利用例は[DemoのREADME](https://github.com/AIKernel-NET/AIKernel.Demo/blob/8c960f57bdf6f431663a1ca33de7584f5e882140/README-ja.md)で確認できます。
+
+記録に問題があるときは[トラブル対応](../runtime/index-jp.md)、そもそもReplayが何を意味するかは[概念説明](../concepts/index-jp.md)へ進んでください。
