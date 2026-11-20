@@ -6,6 +6,7 @@
 
 - Cosmos 3 Edge／Nano の取り込み済み重みで、文章・RGB画像・時刻付き動画フレームから応答を生成できます。CPU推論は CUDA と LibTorch が不要です。対話APIは各ターンの発言者と画像を保って次の質問を処理します。
 - Monolith のモデル登録で、使用するモデルと import-manifest.json の SHA-256 を固定できます。WebSite の日英チャットでは、接続状態を確認し、同じ写真について続けて質問できます。利用者のAPIキーは不要です。
+- Cosmos のモデル登録とローカルチャットの起動引数で、実メモリ予算と重み・KVキャッシュの容量を指定できます。ホストの監査ログには、要求ごとの重みとKVの読み戻し回数を記録します。受付時にトークナイザーや前処理ファイルの欠落も検出します。Monolith の `/health` では実行中のホストのバージョンを確認できます。
 - Cosmos 3 Edge／Nano を4ワーカー、モデルホストの7 GB枠で実行し、文章・画像・動画の全6条件で参照回答と生成トークン列が一致しました。標準KV設定（128 MB）での最大RSSは3.564 GBです。6件合計のSSD書き込み量は標準設定で84 KiB、KVを8 MiBに制限した試験で18.09 GBでした。 [開発機との比較と測定条件](https://github.com/AIKernel-NET/AIKernel.Core/blob/c502bfda7017779783809507b18e3929ad5b6e52/docs/development/evidence/cosmos3-server-7gb-20261120/README.md)
 - GPT-OSS-20B は Server の実メモリ7GB枠でSSDへのページングを使用し、検証用2入力で llama.cpp と生成トークン列を照合しました。
 - Bonsai 1.7B を用いる CTG 評価では、審査対象の提案と裏付けとなる観測を分け、governance ROM の規則に従って判定します。対象例の合格は任意の提案に対する精度を保証するものではありません。
