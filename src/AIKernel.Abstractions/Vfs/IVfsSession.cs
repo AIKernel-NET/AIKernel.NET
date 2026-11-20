@@ -27,6 +27,13 @@ public interface IVfsSession :
     /// <returns>[EN] Documents this public package API member. [JA] ファイル 結果を返します。</returns>
     Task<IVfsFile> ReadFileAsync(string path);
 
+    /// <summary>Checks cancellation before dispatch. Implementations can override this overload to cancel active work.</summary>
+    Task<IVfsFile> ReadFileAsync(string path, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        return ReadFileAsync(path);
+    }
+
     /// <summary>
     /// EN: ディレクトリを取得します。
     /// [EN] Documents this public package API member. [JA] GetDirectoryAsync 操作を実行します。
@@ -34,6 +41,13 @@ public interface IVfsSession :
     /// <param name="path">[EN] Documents this public package API member. [JA] ディレクトリパス path パラメーターです。</param>
     /// <returns>[EN] Documents this public package API member. [JA] ディレクトリ 結果を返します。</returns>
     Task<IVfsDirectory> GetDirectoryAsync(string path);
+
+    /// <summary>Checks cancellation before dispatch. Implementations can override this overload to cancel active work.</summary>
+    Task<IVfsDirectory> GetDirectoryAsync(string path, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        return GetDirectoryAsync(path);
+    }
 
     async Task<IReadableVfsFile> IReadableVfsSession.ReadReadableFileAsync(string path)
     {

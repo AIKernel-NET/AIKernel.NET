@@ -20,6 +20,8 @@ Japanese version: [Paper Implementation Status](PAPER_IMPLEMENTATION_STATUS-jp.m
 
 # AIKernel Paper Implementation Status
 
+**0.1.4 implementation scope.** `WasmRuntimeContext` models linear memory and host callbacks. The embedding engine supplies bytecode execution and isolation. Hosts supply implementations of `IToolSandbox`, `ISandboxRuntimeControlProvider`, `IToolAccessValidator`, and `ISignatureTrustStore`.
+
 This document tracks how the DOI-backed paper series maps to the current package surface.
 It does not modify the Zenodo-managed papers under `docs/papers`.
 

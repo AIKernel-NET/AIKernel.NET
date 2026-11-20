@@ -23,7 +23,7 @@ canonical in the 0.1.3 line.
 | Runtime and hosting | Kernel, VFS, process, memory, ROM, and execution boundaries. |
 | Control | Intent, objective, action, governance, arbitration, and fallback evidence. |
 | Providers | Standard, chat, compute, local LLM, Microsoft AI, CUDA, WebGPU, and Dawn paths. |
-| WASM | Browser runtime, sandbox, WebGPU bridge, WebAudio, display, HUD, and Aisthesis. |
+| WASM | Browser runtime model, host isolation contracts, WebGPU bridge, WebAudio, display, HUD, and Aisthesis. |
 | Tools | CLI, inspectors, formatting, verification, and package-integrity checks. |
 | Demo and Doom | Scenario validation for canonical runtime, Control, GPU HUD, and Aisthesis surfaces. |
 

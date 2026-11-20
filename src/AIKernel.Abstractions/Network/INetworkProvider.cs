@@ -31,9 +31,30 @@ public interface INetworkProvider : IProvider
     /// <summary>[EN] Connects to a host and port. [JA] host と port へ接続します。 JA: ConnectAsync 操作を実行します。</summary>
     Task<INetworkStream> ConnectAsync(string host, int port);
 
+    /// <summary>Checks cancellation before dispatch. Implementations can override this overload to cancel active work.</summary>
+    Task<INetworkStream> ConnectAsync(string host, int port, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        return ConnectAsync(host, port);
+    }
+
     /// <summary>[EN] Executes an HTTP GET. [JA] HTTP GET を実行します。 JA: HttpGetAsync 操作を実行します。</summary>
     Task<IHttpResponse> HttpGetAsync(string url);
 
+    /// <summary>Checks cancellation before dispatch. Implementations can override this overload to cancel active work.</summary>
+    Task<IHttpResponse> HttpGetAsync(string url, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        return HttpGetAsync(url);
+    }
+
     /// <summary>[EN] Executes an HTTP POST. [JA] HTTP POST を実行します。 JA: HttpPostAsync 操作を実行します。</summary>
     Task<IHttpResponse> HttpPostAsync(string url, byte[] body);
+
+    /// <summary>Checks cancellation before dispatch. Implementations can override this overload to cancel active work.</summary>
+    Task<IHttpResponse> HttpPostAsync(string url, byte[] body, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        return HttpPostAsync(url, body);
+    }
 }

@@ -5,6 +5,7 @@ namespace AIKernel.Abstractions.Runtime;
 /// <summary>
 /// EN: Represents a portable WebAssembly runtime boundary without JavaScript or browser implementation details. JA: JavaScript や browser 実装詳細を持たない portable WebAssembly runtime 境界を表します。
 /// </summary>
+/// <remarks>This invocation contract requires a host engine. The AIKernel.Wasm process model exposes a separate process lifecycle API. Its host callbacks do not execute WebAssembly bytecode.</remarks>
 public interface IWasmRuntime
 {
     /// <summary>

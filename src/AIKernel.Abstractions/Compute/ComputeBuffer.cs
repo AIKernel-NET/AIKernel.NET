@@ -5,10 +5,10 @@ namespace AIKernel.Abstractions.Compute;
 /// [JA] OS compute Provider で共有する compute buffer 抽象です。
 /// [EN] Documents this public package API member. [JA] ComputeBuffer の公開契約を定義します。
 /// </summary>
-public sealed class ComputeBuffer : IDisposable
+public sealed class ComputeBuffer : IDisposable, IAsyncDisposable
 {
     private readonly byte[] _storage;
-    private bool _disposed;
+    private int _disposed;
 
     /// <summary>[EN] Initializes a compute buffer. [JA] compute buffer を初期化します。 JA: ComputeBuffer 操作を実行します。</summary>
     /// <param name="size">EN: The buffer size in bytes. JA: byte 単位の buffer size です。</param>
@@ -32,7 +32,7 @@ public sealed class ComputeBuffer : IDisposable
     public object? NativeBuffer { get; }
 
     /// <summary>[EN] Returns whether this buffer has been disposed. [JA] buffer が dispose 済みかどうかを返します。 JA: Write 操作を実行します。</summary>
-    public bool IsDisposed => _disposed;
+    public bool IsDisposed => Volatile.Read(ref _disposed) != 0;
 
     /// <summary>[EN] Writes data into this buffer. [JA] この buffer へ data を書き込みます。 JA: Write 操作を実行します。</summary>
     /// <param name="data">EN: The data to write. JA: 書き込む data です。</param>
@@ -71,12 +71,24 @@ public sealed class ComputeBuffer : IDisposable
     /// <summary>[EN] Disposes the compute buffer. [JA] compute buffer を dispose します。 JA: Dispose 操作を実行します。</summary>
     public void Dispose()
     {
-        _disposed = true;
+        if (IsDisposed) return;
+        if (NativeBuffer is IAsyncDisposable and not IDisposable)
+            throw new InvalidOperationException("Use DisposeAsync for this asynchronous native buffer.");
+        if (Interlocked.Exchange(ref _disposed, 1) == 0 && NativeBuffer is IDisposable disposable)
+            disposable.Dispose();
+    }
+
+    /// <summary>Releases the owned native buffer once, including asynchronous backend resources.</summary>
+    public async ValueTask DisposeAsync()
+    {
+        if (Interlocked.Exchange(ref _disposed, 1) != 0) return;
+        if (NativeBuffer is IAsyncDisposable native) await native.DisposeAsync().ConfigureAwait(false);
+        else if (NativeBuffer is IDisposable disposable) disposable.Dispose();
     }
 
     private void ThrowIfDisposed()
     {
-        if (_disposed)
+        if (IsDisposed)
         {
             throw new ObjectDisposedException(nameof(ComputeBuffer));
         }

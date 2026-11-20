@@ -20,6 +20,8 @@ English version: [Paper Implementation Status](PAPER_IMPLEMENTATION_STATUS.md)
 
 # AIKernel Paper Implementation Status
 
+**0.1.4 の適用範囲**　`WasmRuntimeContext` はメモリとホスト関数の状態を管理します。バイトコードの実行と隔離は組み込み先が担います。`IToolSandbox`、`ISandboxRuntimeControlProvider`、`IToolAccessValidator`、`ISignatureTrustStore` はホスト側の実装が必要です。
+
 この文書は、DOI 付き論文シリーズが現在の package surface にどこまで反映されているかを追跡します。
 Zenodo 管理対象である `docs/papers` 配下の論文本体は変更しません。
 

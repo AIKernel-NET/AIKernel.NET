@@ -13,7 +13,7 @@ updated: "2026-06-17"
 
 ## 概要
 
-System Architecture は package の責務に焦点を当てます。contracts は定義、Core は実行、Providers は拡張、Control は統治、Tools は検査、Wasm は browser 実行隔離、Doom は demo path 検証を担います。
+System Architecture は package の責務に焦点を当てます。contracts は定義、Core は実行、Providers は拡張、Control は統治、Tools は検査、Wasm はプロセス状態とホスト呼び出しのモデル化（バイトコードの実行と隔離は組み込み先が担当）、Doom は demo path 検証を担います。
 
 ## 背景
 

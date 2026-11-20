@@ -71,7 +71,7 @@ aik capabilities invoke aikernel.vfs vfs.exists path=README.md
 | 標準 Driver | `AIKernel.Providers.Standard` | CPU compute、file system、logging、event bus、network、profiler、scheduler provider。 |
 | Provider 拡張 | `AIKernel.Providers.*` | runtime-configurable / descriptor-driven provider family。 |
 | Tools | `AIKernel.Tools.*` | canonical formatting、inspection、replay、instrumentation、CLI。 |
-| WASM | `AIKernel.Wasm.*` | WASM runtime、WebGPU、WebAudio、perception、HUD、overlay、sandbox surface。 |
+| WASM | `AIKernel.Wasm.*` | WASM runtime、WebGPU、WebAudio、perception、HUD、overlay、ホスト連携契約。 |
 | CUDA native | `AIKernel.Cuda13.0.Libtorch2.12.win-x64` | Windows 専用の LibTorch 2.12 / CUDA 13.0 package。 |
 
 CUDA は意図的にプラットフォームを限定しています。Windows win-x64 かつ native runtime
@@ -163,7 +163,7 @@ Demo repository は検証対象であり、package publication 対象ではあ�
 - [AIKernel.Providers](https://github.com/AIKernel-NET/AIKernel.Providers) - standard / extension provider drivers。
 - [AIKernel.Control](https://github.com/AIKernel-NET/AIKernel.Control) - governance と control plane。
 - [AIKernel.Tools](https://github.com/AIKernel-NET/AIKernel.Tools) - instrumentation と CLI。
-- [AIKernel.Wasm](https://github.com/AIKernel-NET/AIKernel.Wasm) - sandboxed WASM runtime。
+- [AIKernel.Wasm](https://github.com/AIKernel-NET/AIKernel.Wasm) - ホスト関数を扱うWASMランタイムモデル。信頼できないモジュールの実行には、隔離を提供するエンジンを別途組み込んでください。
 - [AIKernel.Cuda13.0](https://github.com/AIKernel-NET/AIKernel.Cuda13.0) - Windows CUDA package line。
 - [AIKernel.Demo](https://github.com/AIKernel-NET/AIKernel.Demo) - 公式サンプル。
 
@@ -180,3 +180,9 @@ local package validation では次を使います。
 NuGet: 0.1.3-dev<build-number>
 PyPI:  0.1.3.dev<build-number>
 ```
+
+## 0.1.4 のホスト設定
+
+`KernelRequest` を使うホストは、認証済み主体、PDP、Guard を設定してください。`vfs.open` と `model.execute` のそれぞれで承認が必要です。VFS には `CredentialValidator` を設定し、書き込みが必要なローカル VFS だけ `AllowWrite` を有効にします。物理 VFS のルートと配下のディレクトリはホストが管理してください。Web VFS に独自の HTTP ハンドラーを渡す場合は自動リダイレクトを無効にします。標準の ROM 検証器には VFS パスとファイル全体の SHA-256 を、動的プロバイダーには DLL の SHA-256 を `TrustedAssemblyDigests` に登録します。
+
+標準ネットワークプロバイダーの接続先は `services.AddAIKernelStandardProviders("https://api.example.org")` のように登録します。空の一覧では、このプロバイダーからの外向き通信を拒否します。標準以外のポートは明記し、TCP 接続には `tcp://ホスト名:ポート` を個別に登録します。

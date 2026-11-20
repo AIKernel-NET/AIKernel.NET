@@ -44,8 +44,22 @@ public interface IProcess
     /// <summary>[EN] Starts the process. [JA] process を開始します。 JA: StartAsync 操作を実行します。</summary>
     Task StartAsync();
 
+    /// <summary>Checks cancellation before dispatch. Implementations can override this overload to cancel active work.</summary>
+    Task StartAsync(CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        return StartAsync();
+    }
+
     /// <summary>[EN] Stops the process. [JA] process を停止します。 JA: StopAsync 操作を実行します。</summary>
     Task StopAsync();
+
+    /// <summary>Checks cancellation before dispatch. Implementations can override this overload to cancel active work.</summary>
+    Task StopAsync(CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        return StopAsync();
+    }
 }
 
 /// <summary>[EN] Host that creates AIKernel logical processes. [JA] AIKernel logical process を作成する host です。 JA: IProcessHost の公開契約を定義します。</summary>
@@ -53,6 +67,13 @@ public interface IProcessHost
 {
     /// <summary>[EN] Creates a process. [JA] process を作成します。 JA: CreateProcessAsync 操作を実行します。</summary>
     Task<IProcess> CreateProcessAsync(string name, object? args = null);
+
+    /// <summary>Checks cancellation before dispatch. Implementations can override this overload to cancel active work.</summary>
+    Task<IProcess> CreateProcessAsync(string name, object? args, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        return CreateProcessAsync(name, args);
+    }
 }
 
 /// <summary>[EN] Provider contract for process supervision. [JA] process supervision 向け Provider contract です。 JA: IProcessSupervisorProvider の公開契約を定義します。</summary>

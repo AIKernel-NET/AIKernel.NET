@@ -22,7 +22,7 @@ maintainer: "拓也（AIKernel プロジェクト メンテナー）"
 | Runtime and hosting | Kernel、VFS、process、memory、ROM、execution boundary。 |
 | Control | Intent、objective、action、governance、arbitration、fallback evidence。 |
 | Providers | Standard、chat、compute、local LLM、Microsoft AI、CUDA、WebGPU、Dawn path。 |
-| WASM | Browser runtime、sandbox、WebGPU bridge、WebAudio、display、HUD、Aisthesis。 |
+| WASM | ブラウザーランタイムモデル、ホスト側で隔離を提供するための契約、WebGPU bridge、WebAudio、display、HUD、Aisthesis。 |
 | Tools | CLI、inspector、formatter、verification、package-integrity check。 |
 | Demo and Doom | canonical runtime、Control、GPU HUD、Aisthesis surface の scenario validation。 |
 

@@ -72,7 +72,7 @@ aik capabilities invoke aikernel.vfs vfs.exists path=README.md
 | Standard drivers | `AIKernel.Providers.Standard` | CPU compute, file systems, logging, event bus, network, profiler, and scheduler providers. |
 | Provider extensions | `AIKernel.Providers.*` | Runtime-configurable and descriptor-driven provider families. |
 | Tools | `AIKernel.Tools.*` | Canonical formatting, inspection, replay, instrumentation, and CLI. |
-| WASM | `AIKernel.Wasm.*` | WASM runtime, WebGPU, WebAudio, perception, HUD, overlay, and sandbox surfaces. |
+| WASM | `AIKernel.Wasm.*` | WASM runtime, WebGPU, WebAudio, perception, HUD, overlay, and host integration contracts. |
 | CUDA native | `AIKernel.Cuda13.0.Libtorch2.12.win-x64` | Windows-only LibTorch 2.12 / CUDA 13.0 package. |
 
 CUDA is intentionally platform-scoped. Use the CUDA package only on Windows
@@ -164,7 +164,7 @@ Historical CTG documents remain available for migration context:
 - [AIKernel.Providers](https://github.com/AIKernel-NET/AIKernel.Providers) - standard and extension provider drivers.
 - [AIKernel.Control](https://github.com/AIKernel-NET/AIKernel.Control) - governance and control plane.
 - [AIKernel.Tools](https://github.com/AIKernel-NET/AIKernel.Tools) - instrumentation and CLI.
-- [AIKernel.Wasm](https://github.com/AIKernel-NET/AIKernel.Wasm) - sandboxed WASM runtime.
+- [AIKernel.Wasm](https://github.com/AIKernel-NET/AIKernel.Wasm) - WASM runtime model for host-provided functions. Supply a sandboxing engine before accepting untrusted modules.
 - [AIKernel.Cuda13.0](https://github.com/AIKernel-NET/AIKernel.Cuda13.0) - Windows CUDA package line.
 - [AIKernel.Demo](https://github.com/AIKernel-NET/AIKernel.Demo) - official examples.
 
@@ -182,3 +182,9 @@ Local package validation uses:
 NuGet: 0.1.3-dev<build-number>
 PyPI:  0.1.3.dev<build-number>
 ```
+
+## Host configuration for 0.1.4
+
+Configure a host principal, PDP, and Guard before using the `KernelRequest` entry point. Both `vfs.open` and `model.execute` require approval. For a file provider, set `CredentialValidator` and enable `AllowWrite` explicitly when writes are needed. Keep the physical VFS root and its directories under host control. For HTTP file providers, configure injected HTTP handlers with automatic redirects disabled. The built-in ROM verifier requires a SHA-256 pin over the complete ROM file keyed by its VFS path. Dynamic provider DLLs require a host-provisioned SHA-256 digest in `TrustedAssemblyDigests`.
+
+List each destination the standard network provider may contact when registering it, for example `services.AddAIKernelStandardProviders("https://api.example.org")`. An empty list disables outbound requests through this provider. Include the port for nonstandard endpoints and use a separate `tcp://host:port` entry for raw TCP.

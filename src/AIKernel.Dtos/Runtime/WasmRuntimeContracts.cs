@@ -59,6 +59,7 @@ public sealed record WasmInvocationResult
     public string InvocationId { get; init; } = string.Empty;
 
     /// <summary>EN: Gets whether invocation succeeded. JA: 呼び出しが成功したかどうかを取得します。</summary>
+    /// <remarks>Only true reports success. Null represents an unreported outcome and cannot authorize execution.</remarks>
     public bool? Succeeded { get; init; }
 
     /// <summary>EN: Gets a stable error code when invocation failed. JA: 呼び出しに失敗した場合の安定したエラーコードを取得します。</summary>
@@ -92,6 +93,7 @@ public sealed record WasmExecutionSnapshot
     public IReadOnlyList<string> ModuleIds { get; init; } = [];
 
     /// <summary>EN: Gets whether context capture succeeded. JA: 文脈取得が成功したかどうかを取得します。</summary>
+    /// <remarks>Only true reports success. Null represents an unreported outcome and cannot authorize execution.</remarks>
     public bool? Succeeded { get; init; }
 
     /// <summary>EN: Gets a stable error code when context capture failed. JA: 文脈取得に失敗した場合の安定したエラーコードを取得します。</summary>
