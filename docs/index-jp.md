@@ -7,7 +7,7 @@ source: "maintained-guide"
 generated: false
 release: "0.1.3"
 documentation_target: "0.1.4"
-updated: "2026-11-12"
+updated: "2026-11-20"
 ---
 
 # AIKernelを使い始める
@@ -24,6 +24,7 @@ AIKernelでアプリを作るためのガイドです。まず一つのサンプ
 
 | やりたいこと | ガイド |
 | --- | --- |
+| 0.1.3のアプリを0.1.4で試す | [モデルの選び方と最初の回答の確認](overview/upgrade-0-1-4-jp.md) |
 | 必要なNuGetパッケージを選ぶ | [構成と依存関係](architecture/module-map-jp.md) |
 | モデルや外部サービスを接続する | [Providerを選ぶ](providers/provider-model-jp.md) |
 | 設定や起動の問題を解決する | [実行環境の確認とトラブル対応](runtime/index-jp.md) |

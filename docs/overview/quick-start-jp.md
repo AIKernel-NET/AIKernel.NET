@@ -7,7 +7,7 @@ source: "maintained-guide"
 generated: false
 release: "0.1.3"
 documentation_target: "0.1.4"
-updated: "2026-11-12"
+updated: "2026-11-20"
 ---
 
 # 最初のサンプルを動かす
@@ -69,3 +69,5 @@ vfs.provider=MemoryFileProvider
 ## 次に、出力とコードを結びつける
 
 [サンプルを一行ずつ読む](../tutorials/first-kernel-jp.md)では、今の出力を作ったコードを追い、一か所変更して結果を比べます。言葉が気になったら[最初に知っておく概念](../concepts/index-jp.md)を参照してください。
+
+次に手元のモデルで回答を生成したい方は、[0.1.4への移行ガイド](upgrade-0-1-4-jp.md)へ進んでください。CPUで動くCosmosに質問を送り、回答を確かめる手順があります。

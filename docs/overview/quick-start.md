@@ -7,7 +7,7 @@ source: "maintained-guide"
 generated: false
 release: "0.1.3"
 documentation_target: "0.1.4"
-updated: "2026-11-12"
+updated: "2026-11-20"
 ---
 
 # Run your first sample
@@ -65,3 +65,5 @@ A final `contract.map=` line lists the public types touched by the sample. `loca
 The verification used project and configuration files retrieved from the pinned public commit, restored packages from NuGet into an empty package directory, and ran the sample. Use the table above to diagnose differences in network or proxy configuration.
 
 Continue with [Read and change the sample](../tutorials/first-kernel.md) to connect each output line to code, or [Core concepts](../concepts/index.md) for the terminology.
+
+To generate an answer using local model weights, follow the [0.1.4 upgrade guide](upgrade-0-1-4.md). It walks through a request to Cosmos on a local CPU host.

@@ -7,7 +7,7 @@ source: "maintained-guide"
 generated: false
 release: "0.1.3"
 documentation_target: "0.1.4"
-updated: "2026-11-12"
+updated: "2026-11-20"
 ---
 
 # Start using AIKernel
@@ -24,6 +24,7 @@ Build with AIKernel by running one small sample, understanding its output, and t
 
 | Your task | Guide |
 | --- | --- |
+| Try an existing 0.1.3 application with 0.1.4 | [Choose a model and verify your first reply](overview/upgrade-0-1-4.md) |
 | Choose NuGet dependencies | [Package responsibilities](architecture/module-map.md) |
 | Connect a model or service | [Choose a provider](providers/provider-model.md) |
 | Fix setup or startup failures | [Configuration and troubleshooting](runtime/index.md) |

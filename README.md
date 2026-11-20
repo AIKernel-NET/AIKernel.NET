@@ -31,7 +31,7 @@ AIKernel is a .NET foundation for composing AI execution conditions, external ca
 
 [All guides](docs/index.md) · [日本語](README-jp.md)
 
-This onboarding revision prepares for 0.1.4. The tested example baseline is 0.1.3. Documentation changes and package publication are separate; the walkthrough records the source revision and expected output.
+Using the published 0.1.3 packages? The [0.1.4 upgrade guide](docs/overview/upgrade-0-1-4.md) covers model selection and how to check your first reply after an update. Version 0.1.4 is in preparation. [Release notes](RELEASE_NOTES.md)
 
 ---
 
