@@ -20,13 +20,13 @@ updated: "2026-11-20"
 | 画像や動画について質問する | Cosmos 3 Edge／Nanoが文章・RGB画像・時刻付きフレームを読み、文章で回答します。最初の動作確認には重みの小さいEdgeを使えます。 | 取り込み済みのreasoner重みとマニフェスト。CPUで実行できます。 |
 | ローカルで文章を生成する | Bonsai 1.7B／4BまたはGemma 4 E2B。GemmaにはNVIDIA GPU上でforward全体を実行する経路もあります。 | 選んだモデルに対応するGGUF。CUDA経路を選ぶ場合は対応ドライバーとネイティブライブラリ。 |
 | RAMより大きなモデルを使う | GPT-OSS-20BのCPUホストは、AIKernelの仮想メモリで重みをSSDから必要に応じて読み込みます。 | 対応する重み、SSD、ホストのメモリ予算。 |
-| 操作を実行してよいか評価する | Bonsai 1.7BのCTGが、操作の提案とホストが取得した観測を別々に受け取ります。 | ホスト側の権限確認と、ハッシュを固定した `rom/governance` の三規則。 |
+| 操作を実行してよいか評価する | Bonsai 1.7BのCTGが、操作の提案とホストが取得した観測を別々に受け取ります。 | ホスト側の権限確認と、ハッシュを固定した `rom/governance` の三規則。  通常のチャットは登録JSONの固定票を使います。操作ごとの評議には[ホスト統合例](inference-api-0-1-4-jp.md#bonsaictgcouncilevaluator)を参照してください。 |
 
 公開後にパッケージを更新するときは、まず検証用プロジェクトで契約パッケージとCoreの参照を同じリリース系列にそろえます。旧LibTorch追加パッケージを使うアプリは0.1.3の構成を保存し、CUDA Driver経路への切り替えを個別に試してください。[パッケージの役割](../architecture/module-map-jp.md) · [モデルごとのアクセラレーター](https://github.com/AIKernel-NET/AIKernel.Core/blob/dev/docs/inference-accelerators-0.1.4.md)
 
 ## Cosmosで最初の回答を確かめる
 
-以下は、開発版Monolithをローカルで動かす方のためのBashの例です。Edgeの取り込み先をモデルマウントに置き、登録IDを `cosmos-edge`、Providerを `providers.cosmos-cpu`、モデルを `cosmos3-edge` とします。登録の `cosmos.directory` にマウントからの相対パス、`cosmos.manifestSha256` に信頼した取り込みマニフェストのSHA-256を指定します。[重みの取り込み手順](https://github.com/AIKernel-NET/AIKernel.Core/blob/dev/docs/cosmos3-inference.md) · [Monolithの起動とモデル登録](https://github.com/AIKernel-NET/AIKernel.Monolith/blob/dev/README.md)
+開発版のCore・Providers・Monolithを同じ親ディレクトリに置き、.NET SDK 10.0.404系を用意します。[Monolithの起動手順](https://github.com/AIKernel-NET/AIKernel.Monolith/blob/dev/README.md#run-the-monolith)に沿って4つのディレクトリを作り、Edgeを `models/edge` に取り込み、検証用の[登録JSON](https://github.com/AIKernel-NET/AIKernel.Monolith/blob/dev/samples/cosmos-edge.json)を `models/cosmos-edge.json` に配置します。手順中のインストーラーは既知のマニフェストと照合し、ディスク上のSHA-256を登録します。登録IDは `cosmos-edge` です。[取り込みに必要なツールと容量](https://github.com/AIKernel-NET/AIKernel.Core/blob/dev/docs/cosmos3-inference.md)
 
 ホストが `127.0.0.1:8080` で起動したら、クライアントの環境変数 `AIKERNEL_API_KEY` にホストと同じ認証トークンを設定し、受付状態を確認します。
 
