@@ -4,7 +4,7 @@
 
 ## 0.1.4（公開準備中）
 
-0.1.3から更新する方は、[モデルの選び方と最初の回答の確認手順](docs/overview/upgrade-0-1-4-jp.md)から始めてください。
+0.1.3から更新する方は、[モデルの選び方と最初の回答の確認手順](docs/overview/upgrade-0-1-4-jp.md)から始めてください。 SDKから呼び出す場合は[Cosmos・Gemma・Bonsai CTGのAPI例](docs/overview/inference-api-0-1-4-jp.md)を参照してください。
 
 - Cosmos 3 Edge／Nano の取り込み済み重みで、文章・RGB画像・時刻付き動画フレームから応答を生成できます。CPU推論は CUDA と LibTorch が不要です。対話APIは各ターンの発言者と画像を保って次の質問を処理します。
 - Monolith のモデル登録で、使用するモデルと import-manifest.json の SHA-256 を固定できます。WebSite の日英チャットでは、接続状態を確認し、同じ写真について続けて質問できます。利用者のAPIキーは不要です。
