@@ -11,7 +11,7 @@ updated: "2026-11-20"
 
 # Moving from 0.1.3 to 0.1.4
 
-Version 0.1.4 is in preparation. Before updating an existing application, record its 0.1.3 package versions, model, input and expected output so you can repeat the same check. New users can use the [0.1.3 walkthrough](quick-start.md) to check their .NET setup before downloading weights.
+Before updating an existing application, record its 0.1.3 package versions, model, input and expected output so you can repeat the same check. New users can use the [0.1.3 walkthrough](quick-start.md) to check their .NET setup before downloading weights. See the [0.1.4 release notes](https://github.com/AIKernel-NET/AIKernel.NET/releases/tag/v0.1.4) for the full list of changes.
 
 ## Choose what you want to run
 
@@ -22,7 +22,7 @@ Version 0.1.4 is in preparation. Before updating an existing application, record
 | Use a model larger than available RAM | The GPT-OSS-20B CPU host uses AIKernel virtual memory to read weights from SSD on demand. | Compatible weights, SSD space and a host memory budget. |
 | Decide whether to execute an operation | Bonsai 1.7B evaluates the proposed operation separately from the observations the host collected. | Host authorization and the three hash-pinned rules from `rom/governance`.  Ordinary chat uses the registration votes. For a council assessment per operation, see the [host integration](inference-api-0-1-4.md#bonsaictgcouncilevaluator). |
 
-When the release is available, update the contracts and Core to the same release line in a test project first. If your application uses the legacy LibTorch add-on, keep its 0.1.3 configuration for comparison and test a move to the CUDA Driver path separately. [Package responsibilities](../architecture/module-map.md) · [Accelerator support](https://github.com/AIKernel-NET/AIKernel.Core/blob/dev/docs/inference-accelerators-0.1.4.md)
+First update your contracts and Core references to 0.1.4 in a test project. If your application uses the legacy LibTorch add-on, keep its 0.1.3 configuration for comparison and test a move to the CUDA Driver path separately. [Package responsibilities](../architecture/module-map.md) · [Accelerator support](https://github.com/AIKernel-NET/AIKernel.Core/blob/dev/docs/inference-accelerators-0.1.4.md)
 
 ## Check your first Cosmos reply
 

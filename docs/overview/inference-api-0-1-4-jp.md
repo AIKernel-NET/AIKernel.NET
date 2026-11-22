@@ -11,7 +11,7 @@ updated: "2026-11-20"
 
 # 0.1.4で使う推論・操作評価API
 
-公開準備中の0.1.4のAPIです。3型とも `AIKernel.Kernel` プロジェクトの `AIKernel.Kernel.Inference` 名前空間にあります。開発版のCoreを参照するアプリから呼び出します。
+3型とも `AIKernel.Kernel` の0.1.4に含まれます。NuGetで `AIKernel.Kernel` を参照し、`AIKernel.Kernel.Inference` 名前空間を使用します。
 
 ## Cosmos3Model
 

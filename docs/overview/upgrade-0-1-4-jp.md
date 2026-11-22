@@ -11,7 +11,7 @@ updated: "2026-11-20"
 
 # 0.1.3から0.1.4へ移行する
 
-0.1.4は公開準備中です。現在のアプリを比較の基準にするには、0.1.3で使っているパッケージの版、モデル、入力、期待する出力を先に記録します。初めて使う方は、モデルの準備に入る前に[0.1.3のサンプル](quick-start-jp.md)で.NET環境を確認できます。
+アップグレードする前に、0.1.3で使っているパッケージの版、モデル、入力、期待する出力を記録します。初めて使う方は、モデルの準備に入る前に[0.1.3のサンプル](quick-start-jp.md)で.NET環境を確認できます。変更の一覧は[0.1.4のリリースノート](https://github.com/AIKernel-NET/AIKernel.NET/releases/tag/v0.1.4)に掲載しています。
 
 ## 用途に合わせて選ぶ
 
@@ -22,7 +22,7 @@ updated: "2026-11-20"
 | RAMより大きなモデルを使う | GPT-OSS-20BのCPUホストは、AIKernelの仮想メモリで重みをSSDから必要に応じて読み込みます。 | 対応する重み、SSD、ホストのメモリ予算。 |
 | 操作を実行してよいか評価する | Bonsai 1.7BのCTGが、操作の提案とホストが取得した観測を別々に受け取ります。 | ホスト側の権限確認と、ハッシュを固定した `rom/governance` の三規則。  通常のチャットは登録JSONの固定票を使います。操作ごとの評議には[ホスト統合例](inference-api-0-1-4-jp.md#bonsaictgcouncilevaluator)を参照してください。 |
 
-公開後にパッケージを更新するときは、まず検証用プロジェクトで契約パッケージとCoreの参照を同じリリース系列にそろえます。旧LibTorch追加パッケージを使うアプリは0.1.3の構成を保存し、CUDA Driver経路への切り替えを個別に試してください。[パッケージの役割](../architecture/module-map-jp.md) · [モデルごとのアクセラレーター](https://github.com/AIKernel-NET/AIKernel.Core/blob/dev/docs/inference-accelerators-0.1.4.md)
+まず検証用プロジェクトで契約パッケージとCoreの参照を0.1.4にそろえます。旧LibTorch追加パッケージを使うアプリは0.1.3の構成を保存し、CUDA Driver経路への切り替えを個別に試してください。[パッケージの役割](../architecture/module-map-jp.md) · [モデルごとのアクセラレーター](https://github.com/AIKernel-NET/AIKernel.Core/blob/dev/docs/inference-accelerators-0.1.4.md)
 
 ## Cosmosで最初の回答を確かめる
 

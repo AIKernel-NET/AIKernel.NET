@@ -11,7 +11,7 @@ updated: "2026-11-20"
 
 # Inference and governed operations in 0.1.4
 
-These APIs belong to the 0.1.4 release candidate. Reference the development version of the `AIKernel.Kernel` project. All three types use the `AIKernel.Kernel.Inference` namespace.
+All three types are available in the `AIKernel.Kernel` 0.1.4 NuGet package. Import the `AIKernel.Kernel.Inference` namespace to use them.
 
 ## Cosmos3Model
 

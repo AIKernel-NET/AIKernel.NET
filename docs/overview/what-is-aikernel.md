@@ -37,4 +37,4 @@ The project's “AI operating system” terminology describes management of capa
 
 Inspecting or replaying an execution process does not guarantee that an external LLM generates identical text on each call. GPU backends and external models also have their own prerequisites. The first sample deliberately checks basic components before introducing them.
 
-The onboarding baseline is 0.1.3 while documentation is prepared for 0.1.4. Read [Package responsibilities](../architecture/module-map.md) when you are ready to choose dependencies.
+The onboarding sample pins 0.1.3 so you can reproduce its output. Use the [0.1.4 migration guide](upgrade-0-1-4.md) to update an existing app or [Package responsibilities](../architecture/module-map.md) to choose dependencies.

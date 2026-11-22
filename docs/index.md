@@ -5,7 +5,7 @@ description: "Start with a runnable AIKernel sample, learn the concepts behind i
 category: docs
 source: "maintained-guide"
 generated: false
-release: "0.1.3"
+release: "0.1.4"
 documentation_target: "0.1.4"
 updated: "2026-11-20"
 ---
@@ -38,4 +38,4 @@ Build with AIKernel by running one small sample, understanding its output, and t
 
 Contributors can read the [development guidelines](guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES.md). For research and design background, visit [papers](papers/12-canonical-trajectory-governance/README.md). Historical documents describe the versions recorded on those documents.
 
-The onboarding example currently targets 0.1.3. This documentation revision prepares for 0.1.4 and is separate from package publication. Quick Start records the source revision and observed output.
+The onboarding example pins 0.1.3 and records the source revision and expected output. If you already use AIKernel, follow the [0.1.4 migration guide](overview/upgrade-0-1-4.md).
