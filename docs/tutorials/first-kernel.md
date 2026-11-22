@@ -5,9 +5,9 @@ description: "Match the CoreRuntime output to its C# source, change one input, a
 category: tutorials
 source: "maintained-guide"
 generated: false
-release: "0.1.3"
+release: "0.1.4"
 documentation_target: "0.1.4"
-updated: "2026-11-12"
+updated: "2026-11-23"
 ---
 
 # Read and change the sample
@@ -47,4 +47,4 @@ When finished, change the string back and save. There is no need to discard unre
 
 Read [Choose a provider](../providers/provider-model.md) to connect an external capability, [Package responsibilities](../architecture/module-map.md) to choose dependencies, or [Configuration and troubleshooting](../runtime/index.md) to investigate failures.
 
-Compare the exercise with the [verified source revision](https://github.com/AIKernel-NET/AIKernel.Demo/blob/8c960f57bdf6f431663a1ca33de7584f5e882140/src/AIKernel.Demo.CoreRuntime/CoreRuntimeDemo.cs).
+Compare the exercise with the [verified source revision](https://github.com/AIKernel-NET/AIKernel.Demo/blob/800f92fc816bb792e91d2a31d5ec363a8c737278/src/AIKernel.Demo.CoreRuntime/CoreRuntimeDemo.cs).

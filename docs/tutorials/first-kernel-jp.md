@@ -5,9 +5,9 @@ description: "[最初のサンプル](../overview/quick-start-jp.md)が動いた
 category: tutorials
 source: "maintained-guide"
 generated: false
-release: "0.1.3"
+release: "0.1.4"
 documentation_target: "0.1.4"
-updated: "2026-11-12"
+updated: "2026-11-23"
 ---
 
 # サンプルを読み、入力を変えてみる
@@ -53,4 +53,4 @@ var memory = new MemoryFileProvider(new MemoryFileProviderOptions());
 - 各パッケージの役割を知りたい場合は[構成と依存関係](../architecture/module-map-jp.md)を読みます。
 - 起動・設定で問題が起きた場合は[実行環境の確認とトラブル対応](../runtime/index-jp.md)を使います。
 
-[確認したソース](https://github.com/AIKernel-NET/AIKernel.Demo/blob/8c960f57bdf6f431663a1ca33de7584f5e882140/src/AIKernel.Demo.CoreRuntime/CoreRuntimeDemo.cs)も参照できます。
+[確認したソース](https://github.com/AIKernel-NET/AIKernel.Demo/blob/800f92fc816bb792e91d2a31d5ec363a8c737278/src/AIKernel.Demo.CoreRuntime/CoreRuntimeDemo.cs)も参照できます。

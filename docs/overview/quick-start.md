@@ -5,9 +5,9 @@ description: "Restore and run the verified AIKernel CoreRuntime sample with .NET
 category: docs
 source: "maintained-guide"
 generated: false
-release: "0.1.3"
+release: "0.1.4"
 documentation_target: "0.1.4"
-updated: "2026-11-20"
+updated: "2026-11-23"
 ---
 
 # Run your first sample
@@ -18,7 +18,7 @@ Run a small console application to see how AIKernel separates routing, available
 
 Install Git and the .NET 10 SDK. Check the SDK with `dotnet --version`. Downloading the repository and restoring NuGet dependencies initially require network access.
 
-This guide is part of the documentation revision for 0.1.4. Its example still targets the 0.1.3 package family; it does not assume a published 0.1.4 package. The sample was run on Windows with .NET SDK 10.0.401 on November 12, 2026.
+This sample uses AIKernel 0.1.4 from NuGet. The output below was verified on Windows on November 23, 2026. To see a model respond before installing the SDK, open the [model-switching demo](https://aikernel.net/en/demo/chat/).
 
 ## Get the verified sample
 
@@ -27,7 +27,7 @@ Use a new directory so that checking out this revision does not disturb work in 
 ```powershell
 git clone https://github.com/AIKernel-NET/AIKernel.Demo.git aikernel-first-run
 cd aikernel-first-run
-git checkout 8c960f57bdf6f431663a1ca33de7584f5e882140
+git checkout 800f92fc816bb792e91d2a31d5ec363a8c737278
 dotnet --version
 ```
 
@@ -36,8 +36,8 @@ dotnet --version
 Run these commands from `aikernel-first-run`. Building the entire solution is unnecessary for this exercise.
 
 ```powershell
-dotnet restore src/AIKernel.Demo.CoreRuntime/AIKernel.Demo.CoreRuntime.csproj
-dotnet run --project src/AIKernel.Demo.CoreRuntime/AIKernel.Demo.CoreRuntime.csproj -c Release --no-restore
+dotnet restore src/AIKernel.Demo.CoreRuntime/AIKernel.Demo.CoreRuntime.csproj -p:StablePackageVersion=0.1.4 -p:UseLocalPackageVersion=false
+dotnet run --project src/AIKernel.Demo.CoreRuntime/AIKernel.Demo.CoreRuntime.csproj -c Release --no-restore -p:StablePackageVersion=0.1.4 -p:UseLocalPackageVersion=false
 ```
 
 After any build messages, expect:
@@ -60,10 +60,10 @@ A final `contract.map=` line lists the public types touched by the sample. `loca
 | SDK or target framework error | Check for a .NET 10 SDK with `dotnet --list-sdks`. If your working directory or a parent contains `global.json`, also check its SDK selection. |
 | `NU1301` or restore failure | Check NuGet connectivity, proxy settings, and `NuGet.config`. An LLM API key cannot fix package restoration. |
 | Project file not found | Run from the directory containing `AIKernel.Demo.slnx`. |
-| Missing types or methods | Use the pinned source and matching 0.1.3 dependencies; remove accidental references to a different family. |
+| Missing types or methods | Check out the pinned revision and include the 0.1.4 properties in both commands. |
 
 The verification used project and configuration files retrieved from the pinned public commit, restored packages from NuGet into an empty package directory, and ran the sample. Use the table above to diagnose differences in network or proxy configuration.
 
 Continue with [Read and change the sample](../tutorials/first-kernel.md) to connect each output line to code, or [Core concepts](../concepts/index.md) for the terminology.
 
-To generate an answer using local model weights, follow the [0.1.4 upgrade guide](upgrade-0-1-4.md). It walks through a request to Cosmos on a local CPU host.
+To generate an answer using your own CPU and model weights, see the local inference steps in the [0.1.4 upgrade guide](upgrade-0-1-4.md).
