@@ -4,6 +4,10 @@
 
 ## 0.1.4（公開準備中）
 
+HTTP API と MCP ツールから同じ業務処理を呼ぶアプリ向けに、エンドポイント、ツール、認証、接続先管理と生存確認の契約を追加しました。Kestrel と MCP の実装は任意パッケージ `AIKernel.Providers.Distributed` から登録できます。
+
+Perception、Cosmos、Council、マニフェスト読み込み・検証の公開契約を共有パッケージに収録しました。既存の名前空間と旧アセンブリからの型転送を維持しています。
+
 0.1.3から更新する方は、[モデルの選び方と最初の回答の確認手順](docs/overview/upgrade-0-1-4-jp.md)から始めてください。 SDKから呼び出す場合は[Cosmos・Gemma・Bonsai CTGのAPI例](docs/overview/inference-api-0-1-4-jp.md)を参照してください。
 
 - Cosmos 3 Edge／Nano の取り込み済み重みで、文章・RGB画像・時刻付き動画フレームから応答を生成できます。CPU推論は CUDA と LibTorch が不要です。対話APIは各ターンの発言者と画像を保って次の質問を処理します。

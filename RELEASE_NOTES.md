@@ -4,6 +4,10 @@
 
 ## 0.1.4 (release candidate in development)
 
+Applications can expose one service over HTTP and MCP through new endpoint, tool, authentication, connection profile and heartbeat contracts. Register the optional `AIKernel.Providers.Distributed` package to host the transports.
+
+Shared packages now own the Perception, Cosmos, Council and manifest inspection contracts. Existing namespaces and type forwarders preserve the original type names.
+
 For an existing 0.1.3 application, start with the [model selection and first-reply checks](docs/overview/upgrade-0-1-4.md). For direct SDK integration, see the [Cosmos, Gemma and Bonsai CTG API examples](docs/overview/inference-api-0-1-4.md).
 
 - Imported Cosmos 3 Edge and Nano checkpoints generate text from text, RGB images and timestamped video frames on CPU. The runtime requires neither CUDA nor LibTorch. Multi-turn generation preserves each speaker and earlier attachments.
