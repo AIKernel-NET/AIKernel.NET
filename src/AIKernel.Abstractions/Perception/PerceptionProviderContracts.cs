@@ -1,24 +1,6 @@
 namespace AIKernel.Providers.Perception;
 
 /// <summary>
-/// [EN] Performs provider-neutral frame perception without owning browser or scenario-specific runtime code.
-/// [JA] browser や scenario 固有 runtime code を所有せず provider-neutral な frame perception を実行します。
-/// </summary>
-public interface IFramePerceptionProvider
-{
-    /// <summary>
-    /// [EN] Analyzes a frame perception request.
-    /// [JA] frame perception request を解析します。
-    /// </summary>
-    /// <param name="request">[EN] Frame perception request. [JA] frame perception request です。</param>
-    /// <param name="cancellationToken">[EN] Cancellation token. [JA] キャンセル通知を監視するトークンです。</param>
-    /// <returns>[EN] Frame perception result. [JA] frame perception result を返します。</returns>
-    ValueTask<FramePerceptionProviderResult> AnalyzeFrameAsync(
-        FramePerceptionProviderRequest request,
-        CancellationToken cancellationToken);
-}
-
-/// <summary>
 /// [EN] Performs provider-neutral auditory perception over PCM-like descriptors.
 /// [JA] PCM 風 descriptor に対する provider-neutral な auditory perception を実行します。
 /// </summary>

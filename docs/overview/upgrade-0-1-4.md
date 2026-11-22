@@ -6,12 +6,18 @@ category: docs
 source: "maintained-guide"
 generated: false
 documentation_target: "0.1.4"
-updated: "2026-11-20"
+updated: "2026-11-23"
 ---
 
 # Moving from 0.1.3 to 0.1.4
 
-Before updating an existing application, record its 0.1.3 package versions, model, input and expected output so you can repeat the same check. New users can use the [0.1.3 walkthrough](quick-start.md) to check their .NET setup before downloading weights. See the [0.1.4 release notes](https://github.com/AIKernel-NET/AIKernel.NET/releases/tag/v0.1.4) for the full list of changes.
+Before updating an existing application, record its 0.1.3 package versions, model, input and expected output so you can repeat the same check. New users can use the [0.1.3 walkthrough](quick-start.md) to check their .NET setup before downloading weights. See the [0.1.4 release notes](https://github.com/AIKernel-NET/AIKernel.NET/blob/dev/RELEASE_NOTES.md) for the full list of changes.
+
+## Add HTTP and MCP to an existing service
+
+Reference version **0.1.4** of both `AIKernel.Hosting` and `AIKernel.Providers.Distributed` in a test project. To try a local candidate, restore using the candidate feed and a fresh package cache. This also works when a previous build was installed under the same version.
+
+Register the operations your application exposes. In the notes sample, call the MCP tool `save_note`, then pass its ID to the HTTP endpoint `GET /notes/{id}`. Receiving the original text verifies that both transports reached the same application service. The exported connection file contains the server's bearer credential. [Run the sample](https://github.com/AIKernel-NET/AIKernel.Providers/blob/dev/samples/DistributedApplication/README.en.md)
 
 ## Choose what you want to run
 

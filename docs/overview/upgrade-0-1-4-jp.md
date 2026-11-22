@@ -6,12 +6,18 @@ category: docs
 source: "maintained-guide"
 generated: false
 documentation_target: "0.1.4"
-updated: "2026-11-20"
+updated: "2026-11-23"
 ---
 
 # 0.1.3から0.1.4へ移行する
 
-アップグレードする前に、0.1.3で使っているパッケージの版、モデル、入力、期待する出力を記録します。初めて使う方は、モデルの準備に入る前に[0.1.3のサンプル](quick-start-jp.md)で.NET環境を確認できます。変更の一覧は[0.1.4のリリースノート](https://github.com/AIKernel-NET/AIKernel.NET/releases/tag/v0.1.4)に掲載しています。
+アップグレードする前に、0.1.3で使っているパッケージの版、モデル、入力、期待する出力を記録します。初めて使う方は、モデルの準備に入る前に[0.1.3のサンプル](quick-start-jp.md)で.NET環境を確認できます。変更の一覧は[0.1.4のリリースノート](https://github.com/AIKernel-NET/AIKernel.NET/blob/dev/RELEASE_NOTES-ja.md)に掲載しています。
+
+## 既存サービスに HTTP／MCP を追加する
+
+テスト用プロジェクトで `AIKernel.Hosting` と `AIKernel.Providers.Distributed` をともに **0.1.4** に揃えます。ローカル候補で試す場合は、候補フィードを登録した NuGet.Config と空のパッケージキャッシュを指定して復元します。同じ 0.1.4 の試作版を以前インストールした環境でも、今回の配布物を選べます。
+
+アプリが公開する操作を登録し、メモのサンプルで MCP の `save_note` が返す ID を HTTP の `GET /notes/{id}` に渡します。同じ本文が返れば、両方の入口から同じサービスを利用できています。接続ファイルにはサーバー固有の Bearer トークンが含まれます。[起動と認証の手順](https://github.com/AIKernel-NET/AIKernel.Providers/blob/dev/samples/DistributedApplication/README.md)
 
 ## 用途に合わせて選ぶ
 

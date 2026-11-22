@@ -17,5 +17,4 @@ public sealed record ConnectionDescriptor(int SchemaVersion, string Service, str
     public override string ToString() => $"{Service} ({ServerId})";
 }
 public sealed record Heartbeat(string Service, string ServerId, string Status, DateTimeOffset Utc);
-public enum ConnectionState { Unchecked, Connecting, Online, Unavailable, Unauthorized, IdentityMismatch }
 public sealed record HeartbeatObservation(Guid ServerId, ConnectionState State, DateTimeOffset? CheckedAt, DateTimeOffset? LastSuccess);
