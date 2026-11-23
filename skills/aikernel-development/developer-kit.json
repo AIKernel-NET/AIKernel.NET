@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "name": "aikernel-development",
+  "sdkVersion": "0.1.4",
+  "skill": "https://aikernel.net/ai/SKILL.md",
+  "guides": {
+    "ja": "https://aikernel.net/ai/",
+    "en": "https://aikernel.net/en/ai/"
+  },
+  "packages": {
+    "dotnet": {
+      "targetFramework": "net10.0",
+      "id": "AIKernel.Core",
+      "version": "0.1.4",
+      "install": "dotnet add package AIKernel.Core --version 0.1.4",
+      "registry": "https://www.nuget.org/packages/AIKernel.Core/0.1.4"
+    },
+    "python": {
+      "id": "aikernel-net",
+      "version": "0.1.4",
+      "install": "python -m pip install aikernel-net==0.1.4",
+      "registry": "https://pypi.org/project/aikernel-net/0.1.4/"
+    }
+  },
+  "tasks": {
+    "install": {
+      "ja": "https://aikernel.net/docs/operations/PACKAGE_INSTALLATION_GUIDE-jp/",
+      "en": "https://aikernel.net/docs/operations/PACKAGE_INSTALLATION_GUIDE/"
+    },
+    "firstRun": {
+      "ja": "https://aikernel.net/docs/overview/quick-start-jp/",
+      "en": "https://aikernel.net/docs/overview/quick-start/"
+    },
+    "migration": {
+      "ja": "https://aikernel.net/docs/overview/upgrade-0-1-4-jp/",
+      "en": "https://aikernel.net/docs/overview/upgrade-0-1-4/"
+    },
+    "architecture": {
+      "ja": "https://aikernel.net/docs/architecture/module-map-jp/",
+      "en": "https://aikernel.net/docs/architecture/module-map/"
+    },
+    "inference": {
+      "ja": "https://aikernel.net/docs/overview/inference-api-0-1-4-jp/",
+      "en": "https://aikernel.net/docs/overview/inference-api-0-1-4/"
+    },
+    "providers": {
+      "ja": "https://aikernel.net/docs/providers/provider-model-jp/",
+      "en": "https://aikernel.net/docs/providers/provider-model/"
+    },
+    "httpAndMcp": {
+      "package": "AIKernel.Providers.Distributed",
+      "version": "0.1.4",
+      "ja": "https://github.com/AIKernel-NET/AIKernel.Providers/blob/dev/samples/DistributedApplication/README.md",
+      "en": "https://github.com/AIKernel-NET/AIKernel.Providers/blob/dev/samples/DistributedApplication/README.en.md"
+    },
+    "governedInference": {
+      "ja": "https://aikernel.net/docs/overview/inference-api-0-1-4-jp/#bonsaictgcouncilevaluator",
+      "en": "https://aikernel.net/docs/overview/inference-api-0-1-4/#bonsaictgcouncilevaluator"
+    },
+    "replay": {
+      "ja": "https://github.com/AIKernel-NET/AIKernel.NET/blob/dev/docs/specs/06.REPLAY_DUMP_SPEC-jp.md",
+      "en": "https://github.com/AIKernel-NET/AIKernel.NET/blob/dev/docs/specs/06.REPLAY_DUMP_SPEC.md"
+    }
+  },
+  "repositories": {
+    "contracts": "https://github.com/AIKernel-NET/AIKernel.NET",
+    "runtime": "https://github.com/AIKernel-NET/AIKernel.Core",
+    "providers": "https://github.com/AIKernel-NET/AIKernel.Providers",
+    "control": "https://github.com/AIKernel-NET/AIKernel.Control",
+    "tools": "https://github.com/AIKernel-NET/AIKernel.Tools",
+    "examples": "https://github.com/AIKernel-NET/AIKernel.Demo"
+  }
+}

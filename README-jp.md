@@ -31,9 +31,9 @@ AIKernelは、AIアプリの実行条件、外部機能との接続、処理の�
 | 起動・設定で困っている | [トラブル対応](docs/runtime/index-jp.md) |
 | 型やメソッドを調べる | [APIリファレンス](https://aikernel.net/reference-ja/) |
 
-[ガイド全体](docs/index-jp.md) · [English](README.md)
+[ガイド全体](docs/index-jp.md) · [AIアシスタントと開発する](https://aikernel.net/ai/) · [English](README.md)
 
-公開版0.1.3をお使いの方は、[0.1.4への移行ガイド](docs/overview/upgrade-0-1-4-jp.md)でモデルの選び方と更新後の確認手順を参照できます。0.1.4は公開準備中です。[リリースノート](RELEASE_NOTES-ja.md)
+0.1.3をお使いの方は、[0.1.4への移行ガイド](docs/overview/upgrade-0-1-4-jp.md)でモデルの選び方と更新後の確認手順を参照できます。[リリースノート](RELEASE_NOTES-ja.md)
 
 ---
 
