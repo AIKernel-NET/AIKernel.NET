@@ -17,6 +17,23 @@ public interface IImageEditProvider
     ValueTask<ReadOnlyMemory<byte>> StylizeAsync(
         ReadOnlyMemory<byte> image, string style, CancellationToken cancellationToken = default);
 
+    /// <summary>Applies a selected amount of the illustration effect and preserves source transparency.</summary>
+    /// <param name="image">Encoded PNG or JPEG.</param>
+    /// <param name="style">One of <c>illustration</c>, <c>pencil</c>, or <c>detail</c>.</param>
+    /// <param name="options">Strength options. Pass <see langword="null"/> for the full effect.</param>
+    /// <param name="cancellationToken">Signals cancellation of the operation.</param>
+    /// <returns>The edited PNG bytes.</returns>
+    /// <exception cref="NotSupportedException">The style or requested strength is unavailable.</exception>
+    ValueTask<ReadOnlyMemory<byte>> StylizeAsync(
+        ReadOnlyMemory<byte> image, string style, ImageStylizationOptions? options, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        if (options is { Strength: not 1d })
+            throw new NotSupportedException("This image provider does not support adjustable stylization strength.");
+
+        return StylizeAsync(image, style, cancellationToken);
+    }
+
     /// <summary>Removes the background and returns a PNG with a soft alpha channel.</summary>
     /// <param name="image">Encoded PNG or JPEG.</param>
     /// <param name="cancellationToken">Signals cancellation of the operation.</param>
