@@ -7,6 +7,7 @@
   <Project Path="AIKernel.Contracts.Images/AIKernel.Contracts.Images.csproj" />
   <Project Path="AIKernel.Contracts.ProviderPlacement/AIKernel.Contracts.ProviderPlacement.csproj" />
   <Project Path="AIKernel.Contracts.Embedding/AIKernel.Contracts.Embedding.csproj" />
+  <Project Path="AIKernel.Contracts.Reranking/AIKernel.Contracts.Reranking.csproj" />
   <Project Path="AIKernel.Dtos/AIKernel.Dtos.csproj" />
   <Project Path="AIKernel.Enums/AIKernel.Enums.csproj" />
 </Solution>

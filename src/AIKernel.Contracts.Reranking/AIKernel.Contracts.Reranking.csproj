@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <PackageVersion>0.1.4</PackageVersion>
+    <Version>$(PackageVersion)</Version>
+    <AssemblyVersion>0.1.4.0</AssemblyVersion>
+    <FileVersion>0.1.4.0</FileVersion>
+    <InformationalVersion>$(PackageVersion)</InformationalVersion>
+    <PackageValidationBaselineVersion></PackageValidationBaselineVersion>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>aikernel-logo128x128.png</PackageIcon>
+    <Description>AIKernel text reranking and capability contracts using the shared provider score ABI.</Description>
+    <PackageReleaseNotes>Adds the first text reranking contract for the AIKernel 0.1.4 provider ABI.</PackageReleaseNotes>
+    <PackageTags>aikernel;contracts;reranker</PackageTags>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AIKernel.Abstractions" Version="[0.1.4]" />
+    <PackageReference Include="AIKernel.Contracts.ProviderPlacement" Version="[0.1.4]" />
+    <None Update="README.md" Pack="true" PackagePath="/" />
+    <None Include="../aikernel-logo128x128.png" Pack="true" PackagePath="/" />
+    <None Include="../../LICENSE" Pack="true" PackagePath="/" />
+  </ItemGroup>
+</Project>
