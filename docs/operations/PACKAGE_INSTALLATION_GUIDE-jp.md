@@ -33,6 +33,22 @@ dotnet list package --include-transitive
 
 他のProviderや依存関係は、[パッケージの役割](../architecture/module-map-jp.md)と[NuGetの公開一覧](https://www.nuget.org/profiles/AIKernel-NET)をご覧ください。
 
+## WebGPU を追加する
+
+用途に合わせて Provider を選びます。どちらも .NET 10 と AIKernel SDK 0.1.4 に対応します。
+
+| 実行環境 | パッケージ | 確認できること |
+| --- | --- | --- |
+| ネイティブ .NET ホスト | [AIKernel.Dawn.Provider 0.1.4](https://www.nuget.org/packages/AIKernel.Dawn.Provider/0.1.4) | D3D12 または Vulkan で `compute.vector_add` を実行する |
+| ブラウザー内の WebAssembly | [AIKernel.Wasm.WebGpuComputeProvider 0.1.5](https://www.nuget.org/packages/AIKernel.Wasm.WebGpuComputeProvider/0.1.5) | OPFS に保存した重みをページ単位で WebGPU に転送する |
+
+```bash
+dotnet add package AIKernel.Dawn.Provider --version 0.1.4
+dotnet add package AIKernel.Wasm.WebGpuComputeProvider --version 0.1.5
+```
+
+Dawn の Linux 動作は Ubuntu 24.04 と Vulkan ドライバーで検証しました。ブラウザー版はローカルホストまたは HTTPS で配信し、専用 Worker を使います。環境に応じた準備と計算結果の確認方法は[ブラウザー・WebGPU ガイド](../wasm/runtime-jp.md)を参照してください。
+
 ## PyPI パッケージ
 
 仮想環境を有効にしてから、その環境のPythonで実行します。

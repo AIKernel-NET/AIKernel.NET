@@ -33,6 +33,22 @@ Check that `AIKernel.Core` resolves to 0.1.4. If your solution uses Central Pack
 
 For other providers and dependencies, see the [module map](../architecture/module-map.md) or the [published NuGet packages](https://www.nuget.org/profiles/AIKernel-NET).
 
+## Add WebGPU
+
+Choose the provider that fits your host. Both use .NET 10 and support the AIKernel 0.1.4 SDK.
+
+| Host | Package | Use |
+| --- | --- | --- |
+| Native .NET | [AIKernel.Dawn.Provider 0.1.4](https://www.nuget.org/packages/AIKernel.Dawn.Provider/0.1.4) | Run `compute.vector_add` with D3D12 or Vulkan |
+| Browser WebAssembly | [AIKernel.Wasm.WebGpuComputeProvider 0.1.5](https://www.nuget.org/packages/AIKernel.Wasm.WebGpuComputeProvider/0.1.5) | Upload pages of immutable OPFS weights into a WebGPU buffer |
+
+```bash
+dotnet add package AIKernel.Dawn.Provider --version 0.1.4
+dotnet add package AIKernel.Wasm.WebGpuComputeProvider --version 0.1.5
+```
+
+Dawn was verified on Linux with Ubuntu 24.04 and a Vulkan driver. Serve the browser assets from localhost or HTTPS and use a dedicated worker. The [browser and WebGPU guide](../wasm/runtime.md) shows the prerequisites and how to verify execution.
+
 ## PyPI Packages
 
 Use a virtual environment and run these commands with its Python interpreter.
