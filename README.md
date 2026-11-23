@@ -95,6 +95,7 @@ Each layer is published as a separate NuGet package.
 | Core Types | `AIKernel.Enums` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Enums.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Enums/) |
 | Data Models | `AIKernel.Dtos` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Dtos.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Dtos/) |
 | Contracts | `AIKernel.Contracts` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Contracts.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Contracts/) |
+| Image contracts | `AIKernel.Contracts.Images` | 0.1.4 | [Interface guide](src/AIKernel.Contracts.Images/README.md) |
 | Abstractions | `AIKernel.Abstractions` | ![NuGet](https://img.shields.io/nuget/v/AIKernel.Abstractions.svg) | [NuGet](https://www.nuget.org/packages/AIKernel.Abstractions/) |
 
 As of `v0.0.4`, Vfs interface contracts are published through `AIKernel.Abstractions`.
