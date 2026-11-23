@@ -35,7 +35,7 @@ This demo shows the smallest complete runtime shape: semantic router, capability
 | `AIKernel.Demo.StandardProviders` | `AIKernel.Providers.Standard` | File systems, logging, network, EventBus, profiler, and scheduler. |
 | `AIKernel.Demo.Tools` | `AIKernel.Tools.Instrumentation` | Canonical formatting, inspection, replay, and ROM tooling. |
 | `AIKernel.Demo.Wasm` | `AIKernel.Wasm.Runtime`, `AIKernel.Wasm.WebGpuComputeProvider` | WASM runtime, memory, FS, event, audio, screenshot, save-state, time, and WebGPU surface. |
-| `AIKernel.Demo.Cuda` | `AIKernel.Cuda13.0.Libtorch2.12.win-x64` | Windows-only CUDA descriptor and guarded native capability surface. |
+| `AIKernel.Demo.Cuda` | `AIKernel.Kernel` 0.1.4 | VRAM transfer through the bundled CUDA Driver. |
 
 ## Running the Full Demo Set
 
@@ -52,13 +52,13 @@ dotnet run --project src/AIKernel.Demo.Tools/AIKernel.Demo.Tools.csproj
 dotnet run --project src/AIKernel.Demo.Wasm/AIKernel.Demo.Wasm.csproj
 ```
 
-Run the CUDA demo only on Windows with the required CUDA native runtime:
+For CUDA on Windows x64 and Linux x64, use the CUDA Driver bundled with `AIKernel.Kernel` 0.1.4. Its only native runtime prerequisite is the NVIDIA driver.
 
 ```bash
 dotnet run --project src/AIKernel.Demo.Cuda/AIKernel.Demo.Cuda.csproj
 ```
 
-On non-Windows systems, the CUDA demo is expected to report a guarded skip instead of failing the release path.
+Unsupported platforms and hosts without an available driver or CUDA device report `status=skipped`. Successful transfers report `status=ok`.
 
 ## Python Demo Surface
 
@@ -72,7 +72,7 @@ published. For release verification use matching local wheels and consult the
 pip install aikernel-net==0.1.3 aikernel-providers==0.1.3 aikernel-tools==0.1.3
 ```
 
-Add `aikernel-governance`, `aikernel-wasm`, or the Windows-only CUDA wrapper only when that layer is part of the scenario.
+Add `aikernel-governance` or `aikernel-wasm` when the scenario uses that layer.
 
 ## Doom Browser Demo
 

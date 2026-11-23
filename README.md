@@ -40,14 +40,12 @@ The [0.1.4 upgrade guide](docs/overview/upgrade-0-1-4.md) covers model selection
 The 0.0.x design-implementation phase and the 0.1.0 prototype validation
 baseline are complete. The current public package line is 0.1.3.
 
-The 0.1.3 line publishes the contract packages together with executable Core,
-external Capability modules, WASM runtime packages, tools, and demo/control
-repositories:
+AIKernel is distributed across the following contract, runtime, provider, tool,
+and demo repositories.
 
 - `AIKernel.NET` - MIT contract packages: interfaces, DTOs, and enums.
 - `AIKernel.Core` - Apache-2.0 runtime, monads, DSL, Kernel, Hosting, and
   provider integration.
-- `AIKernel.Cuda13.0` - Apache-2.0 external CUDA Capability package.
 - `AIKernel.Demo` - prototype applications for console, API host, WASM,
   pipeline, PDP, VFS, and replay inspection.
 - `AIKernel.Tools` - external Capability modules and developer tools.
@@ -56,6 +54,11 @@ repositories:
 - `AIKernel.Providers` - official extension Provider and standard OS driver
   packages.
 - `AIKernel.Wasm` - browser/WebAssembly runtime and WebGPU provider packages.
+
+For CUDA on Windows x64 and Linux x64, use the CUDA Driver bundled with
+`AIKernel.Kernel` 0.1.4. The NVIDIA driver is its only native runtime prerequisite.
+`AIKernel.Cuda13.0` is the legacy LibTorch reference implementation through 0.1.3.
+Maintenance has ended.
 
 Historical architecture documents may retain their original 0.0.x front matter
 and 0.1.0 prototype notes. User-facing package installation examples should use

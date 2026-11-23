@@ -49,6 +49,16 @@ dotnet add package AIKernel.Wasm.WebGpuComputeProvider --version 0.1.5
 
 Dawn was verified on Linux with Ubuntu 24.04 and a Vulkan driver. Serve the browser assets from localhost or HTTPS and use a dedicated worker. The [browser and WebGPU guide](../wasm/runtime.md) shows the prerequisites and how to verify execution.
 
+## Use CUDA
+
+For CUDA on Windows x64 and Linux x64, use the CUDA Driver bundled with `AIKernel.Kernel` 0.1.4. Its only native runtime prerequisite is the NVIDIA driver.
+
+```bash
+dotnet add package AIKernel.Kernel --version 0.1.4
+```
+
+`AIKernel.Cuda13.0` is the legacy LibTorch reference implementation through 0.1.3. Maintenance has ended.
+
 ## PyPI Packages
 
 Use a virtual environment and run these commands with its Python interpreter.
@@ -65,7 +75,7 @@ Check that `Version: 0.1.4` appears. The [aikernel-net project on PyPI](https://
 | Version | When to consult it |
 | --- | --- |
 | 0.1.4 | Current installation steps, including HTTP and MCP hosting and the standard CPU inference path. |
-| 0.1.3 | Migration and legacy LibTorch/CUDA configurations. Use the [migration guide](../overview/upgrade-0-1-4.md) to test the newer CUDA Driver path separately. |
+| 0.1.3 | Earlier configurations. See the [0.1.4 migration guide](../overview/upgrade-0-1-4.md). |
 | 0.1.2 and earlier | Historical documentation for reproducing earlier deployments. |
 
 When upgrading, update your directly referenced AIKernel packages together and check the versions of the resolved dependencies. For repository integration tests with local build packages, use a separate feed and a fresh package cache so that the packages under test are identifiable.

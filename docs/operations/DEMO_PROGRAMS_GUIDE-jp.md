@@ -35,7 +35,7 @@ dotnet run --project src/AIKernel.Demo.CoreRuntime/AIKernel.Demo.CoreRuntime.csp
 | `AIKernel.Demo.StandardProviders` | `AIKernel.Providers.Standard` | File system、logging、network、EventBus、profiler、scheduler。 |
 | `AIKernel.Demo.Tools` | `AIKernel.Tools.Instrumentation` | Canonical formatting、inspection、replay、ROM tooling。 |
 | `AIKernel.Demo.Wasm` | `AIKernel.Wasm.Runtime`, `AIKernel.Wasm.WebGpuComputeProvider` | WASM runtime、memory、FS、event、audio、screenshot、save-state、time、WebGPU surface。 |
-| `AIKernel.Demo.Cuda` | `AIKernel.Cuda13.0.Libtorch2.12.win-x64` | Windows 専用 CUDA descriptor と guarded native capability surface。 |
+| `AIKernel.Demo.Cuda` | `AIKernel.Kernel` 0.1.4 | 同梱 CUDA Driver による VRAM 転送。 |
 
 ## 全デモの実行
 
@@ -52,13 +52,13 @@ dotnet run --project src/AIKernel.Demo.Tools/AIKernel.Demo.Tools.csproj
 dotnet run --project src/AIKernel.Demo.Wasm/AIKernel.Demo.Wasm.csproj
 ```
 
-CUDA デモは、必要な CUDA native runtime が存在する Windows 環境でのみ実行します。
+Windows x64 と Linux x64 では、`AIKernel.Kernel` 0.1.4 同梱の CUDA Driver を使います。実行時に必要なネイティブ依存は NVIDIA ドライバのみです。
 
 ```bash
 dotnet run --project src/AIKernel.Demo.Cuda/AIKernel.Demo.Cuda.csproj
 ```
 
-Windows 以外では、CUDA デモは失敗ではなく guarded skip を報告する想定です。
+対応外の環境、ドライバ未導入、または CUDA デバイスがない場合は `status=skipped`、転送成功時は `status=ok` が表示されます。
 
 ## Python デモサーフェス
 
@@ -72,7 +72,7 @@ AIKernel.Demo は Python 側にも対応するデモ導線を持ちます。PyPI
 pip install aikernel-net==0.1.3 aikernel-providers==0.1.3 aikernel-tools==0.1.3
 ```
 
-`aikernel-governance`、`aikernel-wasm`、Windows 専用 CUDA wrapper は、そのレイヤーを利用するシナリオで追加します。
+`aikernel-governance` と `aikernel-wasm` は、そのレイヤーを利用する場合に追加します。
 
 ## Doom ブラウザーデモ
 

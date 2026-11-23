@@ -132,8 +132,9 @@ Capability descriptors, DynamicSLM, SeedSLM, HATL, and governance vocabulary.
 Runtime behavior, Result monad adapters, LINQ composition helpers, Python
 bindings, CUDA/native bridges, and physical execution engines remain outside
 AIKernel.NET and must live in implementation repositories such as
-AIKernel.Core, AIKernel.Control, AIKernel.Tools, AIKernel.Cuda13.0, or
-AIKernel.Demo.
+AIKernel.Core, AIKernel.Control, AIKernel.Tools, or AIKernel.Demo.
+
+For CUDA on Windows x64 and Linux x64, use the CUDA Driver bundled with `AIKernel.Kernel` 0.1.4. Its only native runtime prerequisite is the NVIDIA driver.
 
 ---
 
