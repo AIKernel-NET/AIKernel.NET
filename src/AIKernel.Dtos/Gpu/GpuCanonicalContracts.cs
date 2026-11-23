@@ -874,7 +874,9 @@ public static class GpuCanonicalValidation
                 GpuNativeAbiMetadataKeys.CudaNativeAbiAvailable,
                 GpuNativeAbiMetadataKeys.CudaNativeAbiReason,
                 GpuNativeAbiMetadataKeys.CudaNativeBridgeAvailable,
+#pragma warning disable CS0618 // Preserve validation of metadata from the legacy CUDA backend.
                 GpuNativeAbiMetadataKeys.CudaLibTorchPathAvailable,
+#pragma warning restore CS0618
                 GpuNativeAbiMetadataKeys.CudaNativeValidation
             ],
             _ => []
@@ -893,8 +895,10 @@ public static class GpuCanonicalValidation
                 GpuNativeAbiMetadataKeys.CudaNativeAbiAvailable,
                 GpuNativeAbiMetadataKeys.CudaNativeBridgeAvailable,
                 GpuNativeAbiMetadataKeys.CudaNativeLoaderConfigured,
+#pragma warning disable CS0618 // Preserve validation of metadata from the legacy CUDA backend.
                 GpuNativeAbiMetadataKeys.CudaLibTorchPathConfigured,
                 GpuNativeAbiMetadataKeys.CudaLibTorchPathAvailable
+#pragma warning restore CS0618
             ],
             _ => []
         };
@@ -1806,15 +1810,19 @@ public static class GpuNativeAbiMetadataKeys
     public const string CudaNativeValidation = "cuda.native.validation";
 
     /// <summary>[EN] LibTorch runtime path configuration state. [JA] LibTorch runtime path 設定状態です。</summary>
+    [Obsolete("Used by the retired LibTorch CUDA backend. The Kernel CUDA Driver does not use this key.")]
     public const string CudaLibTorchPathConfigured = "cuda.libtorch.path.configured";
 
     /// <summary>[EN] LibTorch runtime path availability. [JA] LibTorch runtime path 利用可能状態です。</summary>
+    [Obsolete("Used by the retired LibTorch CUDA backend. The Kernel CUDA Driver does not use this key.")]
     public const string CudaLibTorchPathAvailable = "cuda.libtorch.path.available";
 
     /// <summary>[EN] LibTorch runtime path environment variable. [JA] LibTorch runtime path 環境変数です。</summary>
+    [Obsolete("Used by the retired LibTorch CUDA backend. The Kernel CUDA Driver does not use this key.")]
     public const string CudaLibTorchPathEnvironmentVariable = "cuda.libtorch.path.env";
 
     /// <summary>[EN] LibTorch runtime path. [JA] LibTorch runtime path です。</summary>
+    [Obsolete("Used by the retired LibTorch CUDA backend. The Kernel CUDA Driver does not use this key.")]
     public const string CudaLibTorchPath = "cuda.libtorch.path";
 }
 

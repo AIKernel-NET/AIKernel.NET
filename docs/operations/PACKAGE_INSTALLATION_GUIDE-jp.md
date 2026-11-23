@@ -49,6 +49,16 @@ dotnet add package AIKernel.Wasm.WebGpuComputeProvider --version 0.1.5
 
 Dawn の Linux 動作は Ubuntu 24.04 と Vulkan ドライバーで検証しました。ブラウザー版はローカルホストまたは HTTPS で配信し、専用 Worker を使います。環境に応じた準備と計算結果の確認方法は[ブラウザー・WebGPU ガイド](../wasm/runtime-jp.md)を参照してください。
 
+## CUDA を使う
+
+Windows x64 と Linux x64 では、`AIKernel.Kernel` 0.1.4 同梱の CUDA Driver を使います。実行時に必要なネイティブ依存は NVIDIA ドライバのみです。
+
+```bash
+dotnet add package AIKernel.Kernel --version 0.1.4
+```
+
+`AIKernel.Cuda13.0` は 0.1.3 までの旧 LibTorch 参照実装で、保守は終了しました。
+
 ## PyPI パッケージ
 
 仮想環境を有効にしてから、その環境のPythonで実行します。
@@ -65,7 +75,7 @@ python -m pip show aikernel-net
 | 版 | 参照する場面 |
 | --- | --- |
 | 0.1.4 | 現行の導入手順。HTTP／MCPホスティングや標準CPU推論を使う場合。 |
-| 0.1.3 | 移行前の確認や旧LibTorch／CUDA構成を再現する場合。CUDA Driver経路への移行は[移行ガイド](../overview/upgrade-0-1-4-jp.md)に沿って別途検証します。 |
+| 0.1.3 | 以前の構成を確認する場合。[0.1.4 移行ガイド](../overview/upgrade-0-1-4-jp.md)を参照してください。 |
 | 0.1.2以前 | 過去の構成を再現するために当時の資料を参照する場合。 |
 
 更新時はアプリが直接参照するAIKernelパッケージをそろえ、依存として取得された版も確認します。ローカルビルドを検証する場合は、専用フィードと空のパッケージキャッシュを使うと、検証対象の配布物を特定できます。

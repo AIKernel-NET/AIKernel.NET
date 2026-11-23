@@ -132,8 +132,9 @@ governance vocabulary の共有 contract ownership を凍結します。
 
 Runtime behavior、Result monad adapter、LINQ composition helper、Python binding、
 CUDA/native bridge、physical execution engine は AIKernel.NET の外側に置き、
-AIKernel.Core、AIKernel.Control、AIKernel.Tools、AIKernel.Cuda13.0、AIKernel.Demo
-などの実装 repository が所有します。
+AIKernel.Core、AIKernel.Control、AIKernel.Tools、AIKernel.Demo などの実装 repository が所有します。
+
+Windows x64 と Linux x64 では、`AIKernel.Kernel` 0.1.4 同梱の CUDA Driver を使います。実行時に必要なネイティブ依存は NVIDIA ドライバのみです。
 
 ---
 

@@ -773,10 +773,12 @@ public sealed class GpuCanonicalContractTests
         Assert.Equal("cuda.native.loader.env", GpuNativeAbiMetadataKeys.CudaNativeLoaderEnvironmentVariable);
         Assert.Equal("cuda.native.loader.path", GpuNativeAbiMetadataKeys.CudaNativeLoaderPath);
         Assert.Equal("cuda.native.validation", GpuNativeAbiMetadataKeys.CudaNativeValidation);
+#pragma warning disable CS0618 // Verify compatibility with the published legacy keys.
         Assert.Equal("cuda.libtorch.path.configured", GpuNativeAbiMetadataKeys.CudaLibTorchPathConfigured);
         Assert.Equal("cuda.libtorch.path.available", GpuNativeAbiMetadataKeys.CudaLibTorchPathAvailable);
         Assert.Equal("cuda.libtorch.path.env", GpuNativeAbiMetadataKeys.CudaLibTorchPathEnvironmentVariable);
         Assert.Equal("cuda.libtorch.path", GpuNativeAbiMetadataKeys.CudaLibTorchPath);
+#pragma warning restore CS0618
     }
 
     [Fact]
@@ -807,7 +809,9 @@ public sealed class GpuCanonicalContractTests
             [GpuNativeAbiMetadataKeys.CudaNativeAbiAvailable] = "false",
             [GpuNativeAbiMetadataKeys.CudaNativeAbiReason] = "native-bridge-not-configured",
             [GpuNativeAbiMetadataKeys.CudaNativeBridgeAvailable] = "false",
+#pragma warning disable CS0618 // Verify compatibility with the published legacy keys.
             [GpuNativeAbiMetadataKeys.CudaLibTorchPathAvailable] = "false"
+#pragma warning restore CS0618
         };
 
         var result = GpuCanonicalValidation.ValidateNativeAbiProbeMetadata(GpuBackend.Cuda, metadata);

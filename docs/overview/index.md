@@ -71,7 +71,9 @@ Architecture、Runtime、Providers、Tools、Wasm、Doom、Tutorial、API Refere
 
 - `AIKernel.NET` owns contracts and canonical interface boundaries.
 - `AIKernel.Core` owns runtime behavior.
-- `AIKernel.Providers`, `AIKernel.Control`, `AIKernel.Tools`, `AIKernel.Wasm`, and `AIKernel.Cuda13.0` are separate package families.
+- `AIKernel.Providers`, `AIKernel.Control`, `AIKernel.Tools`, and `AIKernel.Wasm` are separate package families.
+- For CUDA on Windows x64 and Linux x64, use the CUDA Driver bundled with `AIKernel.Kernel` 0.1.4. Its only native runtime prerequisite is the NVIDIA driver.
+- `AIKernel.Cuda13.0` is the legacy LibTorch reference implementation through 0.1.3. Maintenance has ended.
 - `AIKernel.Doom` is documented as an official demo and validation surface.
 
 ## See Also
