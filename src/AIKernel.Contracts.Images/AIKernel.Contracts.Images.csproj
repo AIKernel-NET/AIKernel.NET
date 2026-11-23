@@ -6,17 +6,17 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageId>AIKernel.Contracts.Images</PackageId>
     <Title>AIKernel Image Provider Contracts</Title>
-    <PackageVersion>0.1.5</PackageVersion>
+    <PackageVersion>0.2.0</PackageVersion>
     <Version>$(PackageVersion)</Version>
     <AssemblyVersion>0.1.4.0</AssemblyVersion>
-    <FileVersion>0.1.5.0</FileVersion>
+    <FileVersion>0.2.0.0</FileVersion>
     <InformationalVersion>$(PackageVersion)</InformationalVersion>
-    <PackageValidationBaselineVersion>0.1.4</PackageValidationBaselineVersion>
+    <PackageValidationBaselineVersion>0.1.5</PackageValidationBaselineVersion>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>aikernel-logo128x128.png</PackageIcon>
     <PackageTags>aikernel;contracts;image;image-editing</PackageTags>
     <Description>Provider-neutral contracts for local image editing and visual tagging in AIKernel.</Description>
-    <PackageReleaseNotes>Adds a prompt-based image editing interface alongside the 0.1.4 image editing and visual tagging interfaces.</PackageReleaseNotes>
+    <PackageReleaseNotes>Adds optional illustration strength while preserving the existing image editing, prompt editing, and visual tagging contracts.</PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
     <None Update="README.md" Pack="true" PackagePath="README.md" />
