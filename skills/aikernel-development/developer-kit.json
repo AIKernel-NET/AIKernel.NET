@@ -50,16 +50,16 @@
     "httpAndMcp": {
       "package": "AIKernel.Providers.Distributed",
       "version": "0.1.4",
-      "ja": "https://github.com/AIKernel-NET/AIKernel.Providers/blob/dev/samples/DistributedApplication/README.md",
-      "en": "https://github.com/AIKernel-NET/AIKernel.Providers/blob/dev/samples/DistributedApplication/README.en.md"
+      "ja": "https://github.com/AIKernel-NET/AIKernel.Providers/blob/c184f421193a51a9f540804922ef481200de1ada/samples/DistributedApplication/README.md",
+      "en": "https://github.com/AIKernel-NET/AIKernel.Providers/blob/c184f421193a51a9f540804922ef481200de1ada/samples/DistributedApplication/README.en.md"
     },
     "governedInference": {
       "ja": "https://aikernel.net/docs/overview/inference-api-0-1-4-jp/#bonsaictgcouncilevaluator",
       "en": "https://aikernel.net/docs/overview/inference-api-0-1-4/#bonsaictgcouncilevaluator"
     },
     "replay": {
-      "ja": "https://github.com/AIKernel-NET/AIKernel.NET/blob/dev/docs/specs/06.REPLAY_DUMP_SPEC-jp.md",
-      "en": "https://github.com/AIKernel-NET/AIKernel.NET/blob/dev/docs/specs/06.REPLAY_DUMP_SPEC.md"
+      "ja": "https://github.com/AIKernel-NET/AIKernel.NET/blob/v0.1.4/docs/specs/06.REPLAY_DUMP_SPEC-jp.md",
+      "en": "https://github.com/AIKernel-NET/AIKernel.NET/blob/v0.1.4/docs/specs/06.REPLAY_DUMP_SPEC.md"
     }
   },
   "repositories": {
