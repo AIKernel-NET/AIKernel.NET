@@ -84,6 +84,7 @@ Dependencies not listed here are generally forbidden; exceptions must be documen
 ### 4.2 Forbidden
 
 - Circular dependencies (A → B → A)
+- Project or package references to the retired LibTorch-based CUDA capability.
 - src referencing tests (reverse flow)
 - Core referencing Kernel/Providers/Server/Hosting/Enterprise
 - AIKernel.Common referencing AIKernel contract, DTO, Core, Provider, Vfs, Hosting, or application-specific types

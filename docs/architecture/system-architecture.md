@@ -1,13 +1,13 @@
 ---
 title: "System Architecture"
 lang: en
-description: "System Architecture for AIKernel.NET 0.1.3 developer documentation."
+description: "Core、Control、Providers、Tools、Wasm、Doom、CUDA の責務境界と runtime composition を説明します。"
 tags: [AIKernel, AIKernel.NET, v0.1.3]
 category: docs
 source: "generated-from-repository-inventory"
 generated: true
 release: "0.1.3"
-updated: "2026-06-17"
+updated: "2026-11-24"
 ---
 
 # System Architecture
@@ -36,11 +36,11 @@ AdSense review risk increases when pages look like disconnected generated lists.
 
 ### EN
 
-Trace a feature from contract to runtime package, then to provider/tool integration and finally to the Reference page.
+Trace a feature from contract to runtime package, then to provider/tool integration and finally to the Reference page. For CUDA on Windows x64 and Linux x64, use the CUDA Driver bundled with `AIKernel.Kernel` 0.1.4. Its only native runtime prerequisite is the NVIDIA driver.
 
 ### JA
 
-機能を contract から runtime package、provider/tool integration、Reference page へ辿ります。
+機能を contract から runtime package、provider/tool integration、Reference page へ辿ります。Windows x64 と Linux x64 で CUDA を使う場合は、`AIKernel.Kernel` 0.1.4 同梱の CUDA Driver を使います。実行時に必要なネイティブ依存は NVIDIA ドライバのみです。
 
 ## Examples
 
@@ -52,7 +52,7 @@ flowchart TD
     Core --> Tools["AIKernel.Tools"]
     Core --> Wasm["AIKernel.Wasm"]
     Core --> Control["AIKernel.Control"]
-    Cuda["AIKernel.Cuda13.0"] --> Core
+    Core --> Cuda["AIKernel.Kernel CUDA Driver (0.1.4)"]
     Doom["AIKernel.Doom demo"] --> Wasm
     Doom --> Providers
 ```
@@ -62,7 +62,6 @@ flowchart TD
 
 - Runtime behavior must not be inferred from names alone; check package descriptions and tests.
 - Provider and Tool packages are extension surfaces, not contract owners.
-- CUDA is optional and external to Core.
 
 ## See Also
 

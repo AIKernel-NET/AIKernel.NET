@@ -16,7 +16,7 @@ AIKernelのパッケージは、共通の型、実行の仕組み、外部機能
 
 ## 最小の.NETアプリから広げる
 
-入門サンプルはCore、Hosting、Kernelなどを利用します。モデル接続が必要になったときにProviderを、ブラウザー上で動かすときにWasmを検討します。CUDAパッケージは基本入門の必須条件ではありません。
+入門サンプルはCore、Hosting、Kernelなどを利用します。モデル接続が必要になったときにProviderを、ブラウザー上で動かすときにWasmを検討します。入門サンプルは CPU で動作します。Windows x64 と Linux x64 で CUDA を使う場合は、`AIKernel.Kernel` 0.1.4 同梱の CUDA Driver を使います。実行時に必要なネイティブ依存は NVIDIA ドライバのみです。
 
 | リポジトリ | 主な役割 | 必要になる場面 |
 | --- | --- | --- |
@@ -26,7 +26,6 @@ AIKernelのパッケージは、共通の型、実行の仕組み、外部機能
 | AIKernel.Control | 実行エンジンと制御のための部品 | 制御面やエミュレーターを扱う |
 | AIKernel.Tools | CLI、検査、記録の確認など | 動作状態や実行記録を調べる |
 | AIKernel.Wasm | ブラウザー・WebAssembly向け機能 | Web上での実行や描画を組み込む |
-| AIKernel.Cuda13.0 | CUDA・LibTorchに関わる外部計算機能 | 対応するGPU環境を使う |
 | AIKernel.Demo | 利用例 | アプリ側の組み立て方を学ぶ |
 
 ## 依存の考え方
