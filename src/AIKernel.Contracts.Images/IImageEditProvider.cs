@@ -41,4 +41,17 @@ public interface IImageEditProvider
     /// <exception cref="InvalidOperationException">No background removal model is registered.</exception>
     ValueTask<ReadOnlyMemory<byte>> RemoveBackgroundAsync(
         ReadOnlyMemory<byte> image, CancellationToken cancellationToken = default);
+
+    /// <summary>Removes the background with optional full-resolution edge refinement.</summary>
+    /// <param name="image">Encoded input image.</param>
+    /// <param name="options">Refinement parameters. Null or default values preserve the original behavior.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    ValueTask<ReadOnlyMemory<byte>> RemoveBackgroundAsync(
+        ReadOnlyMemory<byte> image, ImageMattingOptions? options, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        if (options is { MaskRefineRadius: > 0 } or { MaskErodePx: > 0 } or { DecontaminateEdge: true })
+            throw new NotSupportedException("This provider does not support matte edge refinement.");
+        return RemoveBackgroundAsync(image, cancellationToken);
+    }
 }
