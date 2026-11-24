@@ -7,7 +7,7 @@ source: "maintained-guide"
 generated: false
 release: "0.1.3"
 documentation_target: "0.1.4"
-updated: "2026-11-12"
+updated: "2026-11-24"
 ---
 
 # What AIKernel helps you build
@@ -37,4 +37,4 @@ The project's “AI operating system” terminology describes management of capa
 
 Inspecting or replaying an execution process does not guarantee that an external LLM generates identical text on each call. GPU backends and external models also have their own prerequisites. The first sample deliberately checks basic components before introducing them.
 
-The onboarding sample pins 0.1.3 so you can reproduce its output. Use the [0.1.4 migration guide](upgrade-0-1-4.md) to update an existing app or [Package responsibilities](../architecture/module-map.md) to choose dependencies.
+The onboarding sample pins the published 0.1.4 release so you can reproduce its output. Use the [0.1.4 migration guide](upgrade-0-1-4.md) to update an existing app or [Package responsibilities](../architecture/module-map.md) to choose dependencies.

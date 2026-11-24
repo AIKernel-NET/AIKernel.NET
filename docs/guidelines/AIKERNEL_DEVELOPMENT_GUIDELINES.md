@@ -298,11 +298,19 @@ and a checklist**.
 
 **Rules**
 
-- Canonical module `Version` is `0.1.0`. `AssemblyVersion` and `FileVersion`
-  are `0.1.0.0`.
-- Local development builds use `0.1.0-devX`. Increment dev numbers according
-  to dependency order.
-- NuGet references use exact ranges, for example `[0.1.0-dev42]`.
+- The first three components of a public NuGet package version identify the
+  coordinated AIKernel release line. The initial release in the 0.1.4 line is
+  `0.1.4`.
+- For a module-only release, use that module's release count as the fourth
+  component, for example `0.1.4.1` and `0.1.4.2`. The first three components
+  advance with a coordinated release.
+- Choose the next coordinated SDK line after reviewing the package versions
+  already on NuGet. Registered versions remain part of the release history.
+- Use `PackageVersion` for the published ID. The bundled Provider manifest and
+  the base of `InformationalVersion` must report that version. Keep
+  `AssemblyVersion` at the module's compatibility baseline. Use a `-devX`
+  suffix for local development packages and increment it in dependency order.
+- NuGet references use exact ranges, for example `[0.1.4.1]`.
 - Breaking changes go through the governance process. Observers perform version
   compatibility checks.
 
@@ -318,7 +326,9 @@ and a checklist**.
 
 **Checklist**
 
-- [ ] Is `AssemblyVersion` set to `0.1.0.0`?
+- [ ] Does a module-only release use its module's release count as the fourth
+  version component?
+- [ ] Do the packed version, Provider manifest, and informational version agree?
 - [ ] Do NuGet references use exact ranges?
 - [ ] Are breaking changes approved by governance?
 

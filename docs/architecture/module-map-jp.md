@@ -5,9 +5,9 @@ description: "AIKernelのパッケージは、共通の型、実行の仕組み�
 category: docs
 source: "maintained-guide"
 generated: false
-release: "0.1.3"
+release: "0.1.4"
 documentation_target: "0.1.4"
-updated: "2026-11-12"
+updated: "2026-11-24"
 ---
 
 # 必要なパッケージを選ぶ
@@ -37,6 +37,6 @@ AIKernelのパッケージは、共通の型、実行の仕組み、外部機能
 
 ## バージョンをそろえる
 
-この入門で使う基準は0.1.3です。0.1.4向けの文章改訂とパッケージ公開は別に扱います。サンプルのソースと依存するパッケージ群を同じ系列にそろえ、異なる版のDLLを手作業で追加しないようにしてください。
+入門サンプルは公開済みの AIKernel SDK 0.1.4 を使います。用途別の Provider と共有契約の版は[パッケージ導入ガイド](../operations/PACKAGE_INSTALLATION_GUIDE-jp.md)で確認してください。
 
 正確な型名やメンバーは[APIリファレンス](/reference-ja/)で調べます。導入の順番は[Quick Start](../overview/quick-start-jp.md)、失敗時の切り分けは[実行環境の確認](../runtime/index-jp.md)へ進んでください。

@@ -5,9 +5,9 @@ description: "Choose AIKernel packages by the responsibility your application ne
 category: docs
 source: "maintained-guide"
 generated: false
-release: "0.1.3"
+release: "0.1.4"
 documentation_target: "0.1.4"
-updated: "2026-11-12"
+updated: "2026-11-24"
 ---
 
 # Choose the packages you need
@@ -35,6 +35,6 @@ The [sample project file](https://github.com/AIKernel-NET/AIKernel.Demo/blob/8c9
 
 ## Keep versions aligned
 
-These examples use 0.1.3 while documentation is prepared for 0.1.4. Updating the prose does not imply publication of new packages. Keep the sample source and dependencies in the same version family rather than adding DLLs from another release by hand.
+The onboarding sample uses the published AIKernel SDK 0.1.4. See the [installation guide](../operations/PACKAGE_INSTALLATION_GUIDE.md) for the published version of each Provider and its shared contracts.
 
 Use [API Reference](/reference/) for exact members, [Quick Start](../overview/quick-start.md) for installation order, and [Runtime troubleshooting](../runtime/index.md) when integration fails.

@@ -1,7 +1,7 @@
 ---
 title: "AIKernel Package Installation Guide"
 description: "Install AIKernel 0.1.4 from NuGet or PyPI, check the resolved version, and choose packages for runtime, hosting, or HTTP and MCP."
-updated: 2026-11-23
+updated: 2026-11-24
 published: 2026-06-16
 version: "0.1.4"
 status: "Active"
@@ -11,7 +11,7 @@ maintainer: "Takuya (AIKernel Project Maintainer)"
 
 # AIKernel Package Installation Guide
 
-This guide uses the published 0.1.4 packages. If you are starting from an empty folder, the [Quick Start](../overview/quick-start.md) gives you a project to run and the output to check. If you already use 0.1.3, start with the [0.1.4 migration guide](../overview/upgrade-0-1-4.md).
+The runtime example uses the published AIKernel SDK 0.1.4. Check the table for the published version of the Provider you need. If you are starting from an empty folder, the [Quick Start](../overview/quick-start.md) gives you a project to run and the output to check. If you already use 0.1.3, start with the [0.1.4 migration guide](../overview/upgrade-0-1-4.md).
 
 ## NuGet Packages
 
@@ -30,6 +30,26 @@ Check that `AIKernel.Core` resolves to 0.1.4. If your solution uses Central Pack
 | A console sample using the runtime | [AIKernel.Core 0.1.4](https://www.nuget.org/packages/AIKernel.Core/0.1.4) |
 | An application using .NET Generic Host | [AIKernel.Hosting 0.1.4](https://www.nuget.org/packages/AIKernel.Hosting/0.1.4) |
 | One application service exposed over HTTP and MCP | [AIKernel.Providers.Distributed 0.1.4](https://www.nuget.org/packages/AIKernel.Providers.Distributed/0.1.4) with Hosting |
+
+## Published Provider versions by task
+
+Configure any model or native runtime required by the Provider in your host. NuGet normally restores the shared contracts as dependencies. Check each Provider's NuGet dependencies if your project pins a contract directly in `Directory.Packages.props`.
+
+| Task | NuGet package | Task-specific shared contract |
+| --- | --- | --- |
+| Local chat generation | [AIKernel.Providers.LocalLlm 0.1.6](https://www.nuget.org/packages/AIKernel.Providers.LocalLlm/0.1.6) | — |
+| Text embeddings | [AIKernel.Providers.Embedding 0.1.4](https://www.nuget.org/packages/AIKernel.Providers.Embedding/0.1.4) | [AIKernel.Contracts.Embedding 0.1.4](https://www.nuget.org/packages/AIKernel.Contracts.Embedding/0.1.4) |
+| Rerank search results | [AIKernel.Providers.Reranker 0.1.4](https://www.nuget.org/packages/AIKernel.Providers.Reranker/0.1.4) | [AIKernel.Contracts.Reranking 0.1.4](https://www.nuget.org/packages/AIKernel.Contracts.Reranking/0.1.4) |
+| Transcribe WAV audio | [AIKernel.Providers.Stt 0.1.4](https://www.nuget.org/packages/AIKernel.Providers.Stt/0.1.4) | [AIKernel.Contracts.SpeechRecognition 0.1.4](https://www.nuget.org/packages/AIKernel.Contracts.SpeechRecognition/0.1.4) |
+| Synthesize speech | [AIKernel.Providers.Tts 0.1.4](https://www.nuget.org/packages/AIKernel.Providers.Tts/0.1.4) | — |
+| Retrieve documents with citations | [AIKernel.Providers.DocumentSearch 0.1.4](https://www.nuget.org/packages/AIKernel.Providers.DocumentSearch/0.1.4) | — |
+| Stylize images and remove backgrounds | [AIKernel.Providers.Image 0.3.0](https://www.nuget.org/packages/AIKernel.Providers.Image/0.3.0) | [AIKernel.Contracts.Images 0.3.0](https://www.nuget.org/packages/AIKernel.Contracts.Images/0.3.0) |
+| Edit images with FLUX.2 klein 4B | [AIKernel.Providers.Flux 0.1.5](https://www.nuget.org/packages/AIKernel.Providers.Flux/0.1.5) | [AIKernel.Contracts.Images 0.1.5](https://www.nuget.org/packages/AIKernel.Contracts.Images/0.1.5) |
+| Run FLUX.2 klein 4B with CUDA | [AIKernel.Providers.Flux.Cuda 0.1.5](https://www.nuget.org/packages/AIKernel.Providers.Flux.Cuda/0.1.5) | [AIKernel.Contracts.Images 0.1.5](https://www.nuget.org/packages/AIKernel.Contracts.Images/0.1.5) |
+| Connect a Cosmos runtime | [AIKernel.Providers.Cosmos 0.1.4](https://www.nuget.org/packages/AIKernel.Providers.Cosmos/0.1.4) | — |
+| Select a Provider placement target | [AIKernel.Providers.ProviderPlacement 0.1.4](https://www.nuget.org/packages/AIKernel.Providers.ProviderPlacement/0.1.4) | [AIKernel.Contracts.ProviderPlacement 0.1.4](https://www.nuget.org/packages/AIKernel.Contracts.ProviderPlacement/0.1.4) |
+
+A Provider's initial release uses the SDK version `0.1.4`. Module-only updates increment the fourth component, for example `0.1.4.1` and `0.1.4.2`. Some LocalLlm, image, and WebGPU packages were published under other versions, which are shown in the tables.
 
 For other providers and dependencies, see the [module map](../architecture/module-map.md) or the [published NuGet packages](https://www.nuget.org/profiles/AIKernel-NET).
 

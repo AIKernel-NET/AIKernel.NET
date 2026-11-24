@@ -6,12 +6,12 @@ category: docs
 source: "maintained-guide"
 generated: false
 documentation_target: "0.1.4"
-updated: "2026-11-23"
+updated: "2026-11-24"
 ---
 
 # 0.1.3から0.1.4へ移行する
 
-アップグレードする前に、0.1.3で使っているパッケージの版、モデル、入力、期待する出力を記録します。初めて使う方は、モデルの準備に入る前に[0.1.3のサンプル](quick-start-jp.md)で.NET環境を確認できます。変更の一覧は[0.1.4のリリースノート](https://github.com/AIKernel-NET/AIKernel.NET/blob/dev/RELEASE_NOTES-ja.md)に掲載しています。
+アップグレードする前に、0.1.3で使っているパッケージの版、モデル、入力、期待する出力を記録します。初めて使う方は、モデルの準備に入る前に[0.1.4のサンプル](quick-start-jp.md)で.NET環境を確認できます。変更の一覧は[0.1.4のリリースノート](https://github.com/AIKernel-NET/AIKernel.NET/blob/v0.1.4/RELEASE_NOTES-ja.md)に掲載しています。
 
 ## 既存サービスに HTTP／MCP を追加する
 

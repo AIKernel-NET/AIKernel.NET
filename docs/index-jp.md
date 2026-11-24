@@ -7,7 +7,7 @@ source: "maintained-guide"
 generated: false
 release: "0.1.4"
 documentation_target: "0.1.4"
-updated: "2026-11-20"
+updated: "2026-11-24"
 ---
 
 # AIKernelを使い始める
@@ -40,4 +40,4 @@ AIKernelでアプリを作るためのガイドです。まず一つのサンプ
 
 ## このガイドの対象
 
-入門サンプルは0.1.3に固定し、確認したソースと出力を記載しています。既存アプリを更新する方は[0.1.4への移行ガイド](overview/upgrade-0-1-4-jp.md)をご覧ください。
+入門サンプルは0.1.4に固定し、確認したソースと出力を記載しています。既存アプリを更新する方は[0.1.4への移行ガイド](overview/upgrade-0-1-4-jp.md)をご覧ください。

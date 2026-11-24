@@ -6,12 +6,12 @@ category: docs
 source: "maintained-guide"
 generated: false
 documentation_target: "0.1.4"
-updated: "2026-11-23"
+updated: "2026-11-24"
 ---
 
 # Moving from 0.1.3 to 0.1.4
 
-Before updating an existing application, record its 0.1.3 package versions, model, input and expected output so you can repeat the same check. New users can use the [0.1.3 walkthrough](quick-start.md) to check their .NET setup before downloading weights. See the [0.1.4 release notes](https://github.com/AIKernel-NET/AIKernel.NET/blob/dev/RELEASE_NOTES.md) for the full list of changes.
+Before updating an existing application, record its 0.1.3 package versions, model, input and expected output so you can repeat the same check. New users can use the [0.1.4 walkthrough](quick-start.md) to check their .NET setup before downloading weights. See the [0.1.4 release notes](https://github.com/AIKernel-NET/AIKernel.NET/blob/v0.1.4/RELEASE_NOTES.md) for the full list of changes.
 
 ## Add HTTP and MCP to an existing service
 
