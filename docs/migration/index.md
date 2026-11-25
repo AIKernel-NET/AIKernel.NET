@@ -17,6 +17,7 @@ contract and ecosystem changes.
 
 ## Documents
 
+- [Migrating to LocalLlm 0.3.0](local-llm-0.3.0.md)
 - [Concept Elevation Refactoring Migration Notes](concept-elevation-v0.1.1.1.md)
 
 ## Policy

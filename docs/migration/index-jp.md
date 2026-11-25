@@ -20,6 +20,7 @@ description: "AIKernel の contract と ecosystem 変更に関する互換性維
 
 ## 文書
 
+- [LocalLlm 0.3.0への移行](local-llm-0.3.0-jp.md)
 - [Concept Elevation Refactoring Migration Notes](concept-elevation-v0.1.1.1-jp.md)
 
 ## 方針
