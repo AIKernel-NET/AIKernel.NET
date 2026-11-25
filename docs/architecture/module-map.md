@@ -16,7 +16,7 @@ Choose dependencies by the responsibility your application needs: shared types, 
 
 ## Grow from the smallest .NET example
 
-The first sample uses Core, Hosting, Kernel, and shared contracts. Add a provider when you need an external model or service. Consider Wasm for browser execution. CUDA is not a prerequisite for basic onboarding.
+The first sample uses Core, Hosting, Kernel, and shared contracts. Add a provider when you need an external model or service. Consider Wasm for browser execution. Basic onboarding runs on the CPU. For CUDA on Windows x64 and Linux x64, use the CUDA Driver bundled with `AIKernel.Kernel` 0.1.4. Its only native runtime prerequisite is the NVIDIA driver.
 
 | Repository | Responsibility | When you need it |
 | --- | --- | --- |
@@ -26,7 +26,6 @@ The first sample uses Core, Hosting, Kernel, and shared contracts. Add a provide
 | AIKernel.Control | Execution and control components | Working with the control plane or emulator |
 | AIKernel.Tools | CLI and inspection tools | Investigating runtime state and records |
 | AIKernel.Wasm | Browser and WebAssembly components | Web execution and rendering |
-| AIKernel.Cuda13.0 | CUDA and LibTorch integration | Using a supported GPU environment |
 | AIKernel.Demo | Application examples | Learning how to compose the pieces |
 
 Applications call implementations through contracts. Provider-specific communication and GPU configuration belong with their implementations rather than in shared DTOs. This helps a test implementation and a real service share the same boundary.

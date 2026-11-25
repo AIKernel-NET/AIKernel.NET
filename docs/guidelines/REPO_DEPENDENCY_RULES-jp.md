@@ -85,6 +85,7 @@ tags:
 ### 4.2 禁止事項（Forbidden）
 
 - 循環依存（A → B → A）
+- 保守終了した LibTorch ベースの CUDA 機能へのプロジェクト参照・パッケージ参照。
 - src が tests を参照すること（逆流）
 - Core が Kernel/Providers/Server/Hosting/Enterprise を参照すること
 - AIKernel.Common が AIKernel contract、DTO、Core、Provider、Vfs、Hosting、または application-specific type を参照すること
