@@ -52,7 +52,7 @@ flowchart TD
     Core --> Tools["AIKernel.Tools"]
     Core --> Wasm["AIKernel.Wasm"]
     Core --> Control["AIKernel.Control"]
-    Cuda["AIKernel.Cuda13.0"] --> Core
+    Core --> Cuda["AIKernel.Kernel CUDA Driver (0.1.4)"]
     Doom["AIKernel.Doom demo"] --> Wasm
     Doom --> Providers
 ```
@@ -66,7 +66,11 @@ flowchart TD
 | `AIKernel.Tools` | Developer and operations tools: CLI, inspectors, instrumentation, ROM export, replay helpers, and VFS/kernel-clock inspection. | `0.1.3` | 6 | 1 | 40 | 1 | `AIKernel.Tools/Directory.Build.props` |
 | `AIKernel.Wasm` | Browser and WebAssembly runtime surface for process, memory, file system, WebGPU, audio, display, HUD, input, perception, and spatial packages. | `0.1.3` | 9 | 1 | 119 | 2 | `AIKernel.Wasm/Directory.Build.props` |
 | `AIKernel.Doom` | Official source demo that models DOOM as a WASM process supervised by AIKernel-style provider, operator, consent, and perception boundaries. | `0.1.3` | 7 | 0 | 45 | 1 | `AIKernel.Doom/Directory.Build.props` |
-| `AIKernel.Cuda13.0` | External Capability package for Windows win-x64, LibTorch 2.12.0, and CUDA 13.0. CUDA runtime concerns stay outside Core. | `0.1.3` | 1 | 1 | 7 | 1 | `AIKernel.Cuda13.0/src/AIKernel.Cuda13.0.Libtorch2.12.win-x64/AIKernel.Cuda13.0.Libtorch2.12.win-x64.csproj` |
+
+The table records the 0.1.3 repository inventory. For CUDA today, use
+`AIKernel.Kernel` 0.1.4, part of `AIKernel.Core`. It bundles the CUDA Driver
+for Windows x64 and Linux x64. Its only native runtime prerequisite is an
+NVIDIA driver.
 
 ## Notes
 
