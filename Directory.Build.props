@@ -1,8 +1,11 @@
 <Project>
   <PropertyGroup>
     <StablePackageVersion>0.1.4</StablePackageVersion>
+    <FoundationPackageVersion Condition="'$(MSBuildProjectName)' == 'AIKernel.Enums' Or '$(MSBuildProjectName)' == 'AIKernel.Dtos' Or '$(MSBuildProjectName)' == 'AIKernel.Abstractions'">0.3.0</FoundationPackageVersion>
+    <StablePackageVersion Condition="'$(FoundationPackageVersion)' != ''">$(FoundationPackageVersion)</StablePackageVersion>
     <EnablePackageValidation>true</EnablePackageValidation>
     <PackageValidationBaselineVersion>0.1.3</PackageValidationBaselineVersion>
+    <PackageValidationBaselineVersion Condition="'$(FoundationPackageVersion)' != ''">0.1.4</PackageValidationBaselineVersion>
     <LocalPackageVersionPrefix>$(StablePackageVersion)</LocalPackageVersionPrefix>
     <LocalPackageBuildNumber Condition="'$(LocalPackageBuildNumber)' == ''">0</LocalPackageBuildNumber>
     <UseLocalPackageVersion Condition="'$(UseLocalPackageVersion)' == ''">true</UseLocalPackageVersion>
@@ -10,6 +13,7 @@
     <PackageVersion Condition="'$(UseLocalPackageVersion)' != 'true'">$(StablePackageVersion)</PackageVersion>
     <Version>$(PackageVersion)</Version>
     <AssemblyVersion>$(StablePackageVersion)</AssemblyVersion>
+    <AssemblyVersion Condition="'$(FoundationPackageVersion)' != ''">0.1.4.0</AssemblyVersion>
     <FileVersion>$(StablePackageVersion)</FileVersion>
     <InformationalVersion>$(PackageVersion)</InformationalVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -108,5 +112,8 @@ AIKernel.NET v0.1.1 — First Stable Contract Baseline
 
 ]]>
 	  </PackageReleaseNotes>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(FoundationPackageVersion)' != ''">
+    <PackageReleaseNotes>Shared enums, DTOs and abstractions for the AIKernel 0.3.0 runtime on .NET 10.</PackageReleaseNotes>
   </PropertyGroup>
 </Project>
