@@ -139,7 +139,7 @@ def main():
     def dotnet(*arguments):
         subprocess.run(["dotnet", *arguments], cwd=ROOT, env=env, check=True)
 
-    dotnet("restore", project, "--locked-mode", "--no-http-cache", "--configfile", config)
+    dotnet("restore", project, "-p:NuGetLockFilePath=packages.frozen.lock.json", "--locked-mode", "--no-http-cache", "--configfile", config)
     graph = {p.name: verify_graph(p, cache, feed) for p in (LIB, TESTS)}
     dotnet("build", project, "-c", "Release", "--no-restore")
     output = TESTS / "bin/Release/net10.0"

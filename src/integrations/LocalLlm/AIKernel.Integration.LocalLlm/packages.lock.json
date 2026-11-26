@@ -6,12 +6,12 @@
         "type": "Direct",
         "requested": "[0.3.0, 0.3.0]",
         "resolved": "0.3.0",
-        "contentHash": "aHtqQxlr0EH8BPRHuOtf6EyZ5DrOYvOu+Y4YxE2cp7E53vCicKFIaJb/pjavn5DDjsR4HqKc7hBfboeyv86nCg==",
+        "contentHash": "BxZ8HMtEPl/+d4Exi3uqw94ETFJVMGFcOl5kNcswxIyRQOGtb+rhKFq0ohtg7S2ILGJROf5Bk/ityjowBhUF/w==",
         "dependencies": {
-          "AIKernel.Abstractions": "[0.1.4]",
-          "AIKernel.Core": "[0.1.4]",
-          "AIKernel.Dtos": "[0.1.4]",
-          "AIKernel.Enums": "[0.1.4]",
+          "AIKernel.Abstractions": "[0.3.0]",
+          "AIKernel.Core": "[0.3.0]",
+          "AIKernel.Dtos": "[0.3.0]",
+          "AIKernel.Enums": "[0.3.0]",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.8",
           "Silk.NET.Vulkan": "2.23.0"
         }
@@ -20,39 +20,39 @@
         "type": "Direct",
         "requested": "[0.3.0, 0.3.0]",
         "resolved": "0.3.0",
-        "contentHash": "GhHL+/7iULs/v4taYlFa5VIRwJV8uI22zjOa/+6Tg2bzgAgAJQKMp0uyPXSBJx5YBcrsfT97PCKgWl0rK3GMkw==",
+        "contentHash": "tFlqVtXvxjzrIrxxADLd2WDmXLwG/iXwAFtmO7R18i8YC1838T55CFttqzUtppuxKmioFrvjIwsaSIwScWlmtw==",
         "dependencies": {
-          "AIKernel.Abstractions": "0.1.4",
-          "AIKernel.Common": "[0.1.4]",
-          "AIKernel.Core": "[0.1.4]",
-          "AIKernel.Dtos": "0.1.4",
-          "AIKernel.Enums": "0.1.4",
+          "AIKernel.Abstractions": "[0.3.0]",
+          "AIKernel.Common": "[0.3.0]",
+          "AIKernel.Core": "[0.3.0]",
+          "AIKernel.Dtos": "[0.3.0]",
+          "AIKernel.Enums": "[0.3.0]",
           "AIKernel.Kernel": "[0.3.0]"
         }
       },
       "AIKernel.Abstractions": {
         "type": "Transitive",
-        "resolved": "0.1.4",
-        "contentHash": "cF5k021znYIHduxTorcduSEY1Ku4+QcSW5chm/m9uLfMMfvmphqIuzhcWi/Nc3zJOqHE3Xw35gp2X0eZD0yiig==",
+        "resolved": "0.3.0",
+        "contentHash": "uMRKvio8S/yj8KeFdIp05FOphbHvkUxbjD+8yeHP0ImMwLTQaujX4odGCiNMXB6VLOPKXAhYILuWS2v4hGwJdw==",
         "dependencies": {
-          "AIKernel.Dtos": "0.1.4",
-          "AIKernel.Enums": "0.1.4"
+          "AIKernel.Dtos": "0.3.0",
+          "AIKernel.Enums": "0.3.0"
         }
       },
       "AIKernel.Common": {
         "type": "Transitive",
-        "resolved": "0.1.4",
-        "contentHash": "fP8ZNh9oyccPQ34MHWkqbU+5uvBoEJdNbS9srXUJoKohZxzIzKi7dmLOuQSOc0d5hjIevjMMslR7trgfm4EheQ=="
+        "resolved": "0.3.0",
+        "contentHash": "4nni7LvBvQHV83+qUQdGv+KxydB8bnIp8LV5uPuiegowjkbT1taKHRNbcbFfGACEf4G9C7KY/AqNHQ7uxKCBKg=="
       },
       "AIKernel.Core": {
         "type": "Transitive",
-        "resolved": "0.1.4",
-        "contentHash": "v2JPxk4+48fDGYYZhGflvmu5xhSJ9Obnfmc6FRhJLXb1HOjzL5biAbfaY/hxFOoEPwFAbPnjL/WTpaC73VHcWQ==",
+        "resolved": "0.3.0",
+        "contentHash": "lYJkJY0ClpzAb2nWa2A5wfKD4I53bFKjAIFjbpJKMegeDUOOBQyN07kkBppz9UmktGZrsSBhoWEGLO+3122GYw==",
         "dependencies": {
-          "AIKernel.Abstractions": "0.1.4",
-          "AIKernel.Common": "0.1.4",
-          "AIKernel.Dtos": "0.1.4",
-          "AIKernel.Enums": "0.1.4",
+          "AIKernel.Abstractions": "[0.3.0]",
+          "AIKernel.Common": "0.3.0",
+          "AIKernel.Dtos": "[0.3.0]",
+          "AIKernel.Enums": "[0.3.0]",
           "Microsoft.Extensions.Configuration.Abstractions": "10.0.8",
           "Microsoft.Extensions.Http": "10.0.8",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "10.0.8",
@@ -61,16 +61,16 @@
       },
       "AIKernel.Dtos": {
         "type": "Transitive",
-        "resolved": "0.1.4",
-        "contentHash": "lQmpUp4yvEzFCq92Lbsoh/ChvgpuuW+NXj3FJlMGbGEPJy31SvmEi+jF9PyZtQGHITRlZmoLE1p9EdDtFLEnkw==",
+        "resolved": "0.3.0",
+        "contentHash": "ZKMaOI5ZciOLtA/VnLGK/NCGYVRgnEs/7CC9zcLBMp4pFpy2GdfHuFMLVInsEwu+2+xvu07iC1iuojVLJg+4mA==",
         "dependencies": {
-          "AIKernel.Enums": "0.1.4"
+          "AIKernel.Enums": "0.3.0"
         }
       },
       "AIKernel.Enums": {
         "type": "Transitive",
-        "resolved": "0.1.4",
-        "contentHash": "Ru+k+T5dCZAZ1yQdCepCiCsQ9roHtx2+qpzqiz9M5Q+YtoTPHqqd2bXLZ3/fwppoSUl0F9XINxFmrK6Zh6yCuQ=="
+        "resolved": "0.3.0",
+        "contentHash": "sSosSKcHeS38FgoUwMqHoyHqgtRTQJiF0nNoJexB7U4b/JRPuU1ExSAuORSElGx2X7ZYeWOSAW2KkKW0twTSMA=="
       },
       "Microsoft.DotNet.PlatformAbstractions": {
         "type": "Transitive",
