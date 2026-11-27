@@ -40,8 +40,8 @@
     <member name="T:AIKernel.Vfs.IVfsQueryResult">
       <summary>Represents the IVfsQueryResult public reference surface for AIKernel package consumers.</summary>
     </member>
-    <member name="T:AIKernel.Vfs.IVfsSession">
-      <summary>Represents the IVfsSession public reference surface for AIKernel package consumers.</summary>
+    <member name="T:AIKernel.Vfs.IVfsSessionHandle">
+      <summary>Owns an authenticated VFS session and exposes its identifier. Test the operation-specific capability before performing I/O.</summary>
     </member>
     <member name="T:AIKernel.Vfs.IWritableVfsFile">
       <summary>Represents the IWritableVfsFile public reference surface for AIKernel package consumers.</summary>

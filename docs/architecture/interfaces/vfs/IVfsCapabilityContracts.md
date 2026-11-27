@@ -41,11 +41,10 @@ These contracts are owned by `AIKernel.Abstractions` while preserving the public
 | `IQueryableVfsSession` | Execute provider-defined Vfs queries. |
 
 ## Compatibility Contracts
-`IVfsFile`, `IVfsDirectory`, and `IVfsSession` remain as composite compatibility contracts.
+In 0.1.4, callers received the composite `IVfsSession`. In 0.3.0, `OpenSessionAsync` returns `IVfsSessionHandle`, which exposes `SessionId` and asynchronous disposal. Check the operation-specific interface before accessing a resource. File and directory composite types remain available.
 
 - `IVfsFile` extends `IReadableVfsFile`.
 - `IVfsDirectory` extends `INavigableVfsDirectory` and keeps legacy directory return types.
-- `IVfsSession` composes readable, writable, deletable, navigable, queryable, and async-disposable session capabilities.
 
 ## Fail-Closed Rule
 A caller must check the required capability interface before executing an operation. If the capability is absent, execution must be denied before side effects begin.

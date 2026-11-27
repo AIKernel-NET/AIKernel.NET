@@ -326,6 +326,9 @@ public sealed record TrajectoryGateInput
 /// </summary>
 public sealed record TrajectoryGateRequest
 {
+    /// <summary>EN: Artifact digests supplied by the evidence-producing host. JA: 証跡作成元が指定する4点のハッシュ参照です。</summary>
+    public GovernanceEvidenceHashes? EvidenceHashes { get; init; }
+
     /// <summary>EN: Gets the operation identifier. JA: 操作識別子を取得します。</summary>
     public string OperationId { get; init; } = string.Empty;
 
@@ -434,6 +437,19 @@ public sealed record StepGovernanceTrace
 /// </summary>
 public sealed record GovernanceTrace
 {
+    /// <summary>EN: SHA-256 reference to the ROM snapshot. JA: ROMスナップショットのSHA-256参照です。</summary>
+    public string? RomHash { get; init; }
+
+    /// <summary>EN: SHA-256 reference to the observed state. JA: 観測状態のSHA-256参照です。</summary>
+    public string? StateHash { get; init; }
+
+    /// <summary>EN: SHA-256 reference to the proposed action. JA: 提案行為のSHA-256参照です。</summary>
+    public string? ActionHash { get; init; }
+
+    /// <summary>EN: SHA-256 reference to the replay log. JA: リプレイログのSHA-256参照です。</summary>
+    public string? ReplayLogHash { get; init; }
+
+
     /// <summary>EN: Gets the trace identifier. JA: トレース識別子を取得します。</summary>
     public string TraceId { get; init; } = string.Empty;
 

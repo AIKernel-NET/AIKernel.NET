@@ -44,7 +44,15 @@ Vfs permissions are expressed through capability interfaces rather than late run
 - Vfs interface contracts are owned by the Abstractions assembly; concrete data carriers are defined in `AIKernel.Dtos.Vfs`.
 - `AIKernel.Vfs` is a public namespace, not a separate package/project dependency.
 - Capability availability must be represented by implemented interfaces, not by placeholder methods that throw `NotSupportedException`.
-- `IVfsFile`, `IVfsDirectory`, and `IVfsSession` remain composite compatibility contracts for callers that require the legacy full surface.
+In 0.1.4, callers received the composite `IVfsSession`. In 0.3.0, `OpenSessionAsync` returns `IVfsSessionHandle`, which exposes `SessionId` and asynchronous disposal. Check the operation-specific interface before accessing a resource. File and directory composite types remain available.
+
+```csharp
+await using var session = await provider.OpenSessionAsync(credentials);
+if (session is not IReadableVfsSession reader)
+    throw new NotSupportedException("This operation requires readable storage.");
+var file = await reader.ReadReadableFileAsync(path, cancellationToken);
+```
+
 
 ## Documents
 - [IVfsProvider](../vfs/IVfsProvider.md)

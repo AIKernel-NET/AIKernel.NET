@@ -40,8 +40,8 @@
     <member name="T:AIKernel.Vfs.IVfsQueryResult">
       <summary>AIKernel パッケージ利用者に公開される IVfsQueryResult の参照サーフェスを表します。</summary>
     </member>
-    <member name="T:AIKernel.Vfs.IVfsSession">
-      <summary>AIKernel パッケージ利用者に公開される IVfsSession の参照サーフェスを表します。</summary>
+    <member name="T:AIKernel.Vfs.IVfsSessionHandle">
+      <summary>認証済みVFSセッションの識別子と寿命を表します。I/Oの前に操作に必要な能力を確認します。</summary>
     </member>
     <member name="T:AIKernel.Vfs.IWritableVfsFile">
       <summary>AIKernel パッケージ利用者に公開される IWritableVfsFile の参照サーフェスを表します。</summary>

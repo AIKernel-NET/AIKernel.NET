@@ -44,7 +44,15 @@ Vfs の権限は、実行時に遅延失敗させるメソッドではなく、�
 - Vfs interface contract は Abstractions assembly が所有し、具象データキャリアは `AIKernel.Dtos.Vfs` に定義する。
 - `AIKernel.Vfs` は公開 namespace であり、個別 package/project dependency ではない。
 - Capability の有無は、`NotSupportedException` を投げる placeholder method ではなく、実装 interface によって表現する。
-- `IVfsFile`, `IVfsDirectory`, `IVfsSession` は、従来の全体 surface を必要とする呼び出し元のための互換合成 contract として残す。
+0.1.4 では合成型 `IVfsSession` を返しました。0.3.0 の `OpenSessionAsync` は、`SessionId` と非同期破棄を持つ `IVfsSessionHandle` を返します。リソースへアクセスする前に、必要な操作のインタフェースを確認してください。 ファイルとディレクトリの合成型は引き続き利用できます。
+
+```csharp
+await using var session = await provider.OpenSessionAsync(credentials);
+if (session is not IReadableVfsSession reader)
+    throw new NotSupportedException("This operation requires readable storage.");
+var file = await reader.ReadReadableFileAsync(path, cancellationToken);
+```
+
 
 ## ドキュメント一覧
 - [IVfsProvider](../vfs/IVfsProvider-jp.md)

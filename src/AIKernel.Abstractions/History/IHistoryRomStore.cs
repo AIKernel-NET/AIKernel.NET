@@ -10,7 +10,7 @@ public interface IHistoryRomStore
 {
     /// <summary>EN: Executes the SaveHistoryAsRomAsync operation on the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで SaveHistoryAsRomAsync 操作を実行します。</summary>
     Task<HistoryRomMetadata> SaveHistoryAsRomAsync(
-        IVfsSession session,
+        IVfsSessionHandle session,
         string @namespace,
         string name,
         IReadOnlyList<ChatHistoryRomRecord> records,
@@ -22,7 +22,7 @@ public interface IHistoryRomStore
 
     /// <summary>EN: Executes the SaveMarkdownAsRomAsync operation on the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで SaveMarkdownAsRomAsync 操作を実行します。</summary>
     Task<HistoryRomMetadata> SaveMarkdownAsRomAsync(
-        IVfsSession session,
+        IVfsSessionHandle session,
         string @namespace,
         string name,
         string markdown,
@@ -31,7 +31,7 @@ public interface IHistoryRomStore
 
     /// <summary>EN: Executes the LoadHistoryRomAsync operation on the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで LoadHistoryRomAsync 操作を実行します。</summary>
     Task<HistoryRomMetadata> LoadHistoryRomAsync(
-        IVfsSession session,
+        IVfsSessionHandle session,
         string @namespace,
         string name,
         DateTimeOffset createdAtUtc,

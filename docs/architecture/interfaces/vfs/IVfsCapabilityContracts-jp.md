@@ -41,11 +41,10 @@ Vfs capability contract は、ファイルシステム権限を型システム�
 | `IQueryableVfsSession` | provider 定義の Vfs query を実行する。 |
 
 ## Compatibility Contracts
-`IVfsFile`, `IVfsDirectory`, `IVfsSession` は互換合成 contract として残す。
+0.1.4 では合成型 `IVfsSession` を返しました。0.3.0 の `OpenSessionAsync` は、`SessionId` と非同期破棄を持つ `IVfsSessionHandle` を返します。リソースへアクセスする前に、必要な操作のインタフェースを確認してください。 ファイルとディレクトリの合成型は引き続き利用できます。
 
 - `IVfsFile` は `IReadableVfsFile` を継承する。
 - `IVfsDirectory` は `INavigableVfsDirectory` を継承し、従来の directory 戻り値型を維持する。
-- `IVfsSession` は readable, writable, deletable, navigable, queryable, async-disposable な session capability を合成する。
 
 ## Fail-Closed Rule
 呼び出し側は、操作を開始する前に必要な capability interface を確認すること。Capability が存在しない場合、副作用が始まる前に実行を拒否しなければならない。

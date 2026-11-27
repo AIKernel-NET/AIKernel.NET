@@ -131,7 +131,7 @@ This is a breaking change that affects namespaces, project/package names, and pu
 | `ProviderID` | `ProviderId` | `Id` is normalized as a two-letter word. |
 | `IROMCanonicalizer` | `IRomCanonicalizer` | Treat three-letter acronyms as PascalCase words. |
 
-Types that already use the canonical spelling, such as `IVfsProvider`, `IVfsSession`, `VfsProviderHealth`, and `VfsEntry`, remain unchanged.
+Types that already use the canonical spelling, such as `IVfsProvider`, `VfsProviderHealth`, and `VfsEntry`, remain unchanged.
 
 ### 5.2 Migration Steps
 1. Replace `using AIKernel.VFS;` with `using AIKernel.Vfs;`.
@@ -159,13 +159,19 @@ In v0.0.2, Vfs permissions are represented by capability interfaces instead of a
 | `IQueryableVfsSession` | Execute provider-defined queries. |
 
 ### 6.2 Compatibility Contracts
-Existing `IVfsFile`, `IVfsDirectory`, and `IVfsSession` contracts remain as composite compatibility contracts.
+In 0.1.4, callers received the composite `IVfsSession`. In 0.3.0, `OpenSessionAsync` returns `IVfsSessionHandle`, which exposes `SessionId` and asynchronous disposal. Check the operation-specific interface before accessing a resource. File and directory composite types remain available.
+
+```csharp
+await using var session = await provider.OpenSessionAsync(credentials);
+if (session is not IReadableVfsSession reader)
+    throw new NotSupportedException("This operation requires readable storage.");
+var file = await reader.ReadReadableFileAsync(path, cancellationToken);
+```
+
 
 - `IVfsFile` extends `IReadableVfsFile`.
 - `IVfsDirectory` extends `INavigableVfsDirectory` while preserving legacy `IVfsFile` / `IVfsDirectory` return types.
-- `IVfsSession` composes readable / writable / deletable / navigable / queryable / async-disposable capabilities.
 
-As a result, existing implementations that depend on `IVfsSession` do not need to be replaced immediately. However, new implementations and standard providers should narrow their dependencies to the smallest capability interface required.
 
 ### 6.3 Implementation Guidance
 - Read-only providers should implement only `IReadableVfsSession`, and should not implement `IWritableVfsSession` or `IDeletableVfsSession`.
@@ -502,7 +508,7 @@ The following contracts moved from the `AIKernel.Vfs` project to the `AIKernel.A
 | Contract | New owner | Compatibility |
 |---|---|---|
 | `IVfsProvider` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
-| `IVfsSession` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
+| `IVfsSessionHandle` | `AIKernel.Abstractions` | Common session handle starting in 0.3.0. |
 | `IReadableVfsSession` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
 | `IWritableVfsSession` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |
 | `IDeletableVfsSession` | `AIKernel.Abstractions` | Type-forwarded by `AIKernel.Vfs`. |

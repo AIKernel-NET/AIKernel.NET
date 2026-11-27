@@ -11,7 +11,7 @@ public interface IContextAssembler
 {
     /// <summary>EN: Executes the AssembleAsync operation on the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで AssembleAsync 操作を実行します。</summary>
     Task<IContextSnapshot> AssembleAsync(
-        IVfsSession session,
+        IVfsSessionHandle session,
         ContextAssemblyRequest request,
         CancellationToken cancellationToken = default);
 }

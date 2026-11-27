@@ -129,7 +129,7 @@ v0.0.2 では、.NET Framework Design Guidelines に合わせて、3 文字以�
 | `ProviderID` | `ProviderId` | `Id` は 2 文字語として `Id` に統一。 |
 | `IROMCanonicalizer` | `IRomCanonicalizer` | 3 文字 acronym を PascalCase の単語として扱う。 |
 
-既存の `IVfsProvider`, `IVfsSession`, `VfsProviderHealth`, `VfsEntry` など、すでに `Vfs` 表記になっている型名はそのまま維持します。
+既存の `IVfsProvider`, `VfsProviderHealth`, `VfsEntry` など、すでに `Vfs` 表記になっている型名はそのまま維持します。
 
 ### 5.2 移行手順
 1. `using AIKernel.VFS;` を `using AIKernel.Vfs;` に変更します。
@@ -157,13 +157,19 @@ v0.0.2 では、Vfs の権限を monolithic contract ではなく capability int
 | `IQueryableVfsSession` | provider 定義 query の実行。 |
 
 ### 6.2 互換 contract
-既存の `IVfsFile`, `IVfsDirectory`, `IVfsSession` は互換合成 contract として残ります。
+0.1.4 では合成型 `IVfsSession` を返しました。0.3.0 の `OpenSessionAsync` は、`SessionId` と非同期破棄を持つ `IVfsSessionHandle` を返します。リソースへアクセスする前に、必要な操作のインタフェースを確認してください。 ファイルとディレクトリの合成型は引き続き利用できます。
+
+```csharp
+await using var session = await provider.OpenSessionAsync(credentials);
+if (session is not IReadableVfsSession reader)
+    throw new NotSupportedException("This operation requires readable storage.");
+var file = await reader.ReadReadableFileAsync(path, cancellationToken);
+```
+
 
 - `IVfsFile` は `IReadableVfsFile` を継承します。
 - `IVfsDirectory` は `INavigableVfsDirectory` を継承し、従来の `IVfsFile` / `IVfsDirectory` 戻り値を維持します。
-- `IVfsSession` は readable / writable / deletable / navigable / queryable / async-disposable capability を合成します。
 
-このため、既存の `IVfsSession` 前提の実装はすぐに全置換する必要はありません。ただし、新規実装や標準 provider では、必要最小限の capability interface へ依存を縮小することを推奨します。
 
 ### 6.3 実装側の移行指針
 - 読み取り専用 provider は `IReadableVfsSession` のみを実装し、`IWritableVfsSession` や `IDeletableVfsSession` を実装しません。
@@ -500,7 +506,7 @@ AIKernel.Abstractions -> Providers
 | Contract | 新しい所有元 | 互換性 |
 |---|---|---|
 | `IVfsProvider` | `AIKernel.Abstractions` | `AIKernel.Vfs` が type-forwarding。 |
-| `IVfsSession` | `AIKernel.Abstractions` | `AIKernel.Vfs` が type-forwarding。 |
+| `IVfsSessionHandle` | `AIKernel.Abstractions` | 0.3.0 のセッション共通契約。 |
 | `IReadableVfsSession` | `AIKernel.Abstractions` | `AIKernel.Vfs` が type-forwarding。 |
 | `IWritableVfsSession` | `AIKernel.Abstractions` | `AIKernel.Vfs` が type-forwarding。 |
 | `IDeletableVfsSession` | `AIKernel.Abstractions` | `AIKernel.Vfs` が type-forwarding。 |

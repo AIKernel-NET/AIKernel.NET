@@ -10,7 +10,7 @@ public interface IDslRomStore
 {
     /// <summary>EN: Executes the SaveDslAsRomAsync operation on the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで SaveDslAsRomAsync 操作を実行します。</summary>
     Task<DslRomMetadata> SaveDslAsRomAsync(
-        IVfsSession session,
+        IVfsSessionHandle session,
         string @namespace,
         string name,
         string jsonDsl,
@@ -20,7 +20,7 @@ public interface IDslRomStore
 
     /// <summary>EN: Executes the LoadDslRomAsync operation on the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで LoadDslRomAsync 操作を実行します。</summary>
     Task<DslRomMetadata> LoadDslRomAsync(
-        IVfsSession session,
+        IVfsSessionHandle session,
         string @namespace,
         string name,
         DateTimeOffset createdAtUtc,

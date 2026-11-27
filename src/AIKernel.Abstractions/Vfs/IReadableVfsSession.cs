@@ -6,14 +6,8 @@ namespace AIKernel.Vfs;
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IReadableVfsSession']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IReadableVfsSession']" />
-public interface IReadableVfsSession
+public interface IReadableVfsSession : IVfsSessionHandle
 {
-    /// <summary>
-    /// EN: セッションの一意識別子を取得します。
-    /// [EN] Documents this public package API member. [JA] ReadReadableFileAsync 操作を実行します。
-    /// </summary>
-    string SessionId { get; }
-
     /// <summary>
     /// EN: ファイルを読み取ります。
     /// [EN] Documents this public package API member. [JA] ReadReadableFileAsync 操作を実行します。
@@ -29,4 +23,10 @@ public interface IReadableVfsSession
     /// <param name="path">[EN] Documents this public package API member. [JA] パス path パラメーターです。</param>
     /// <returns>[EN] Documents this public package API member. [JA] 存在する場合は true。 結果を返します。</returns>
     Task<bool> ExistsAsync(string path);
+    /// <summary>EN: Checks cancellation before dispatch. JA: 要求取消を確認してから実行します。</summary>
+    Task<IReadableVfsFile> ReadReadableFileAsync(string path, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        return ReadReadableFileAsync(path);
+    }
 }

@@ -6,7 +6,7 @@ namespace AIKernel.Vfs;
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IQueryableVfsSession']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IQueryableVfsSession']" />
-public interface IQueryableVfsSession
+public interface IQueryableVfsSession : IVfsSessionHandle
 {
     /// <summary>
     /// EN: クエリを実行します。

@@ -32,7 +32,7 @@ public interface IVfsProvider
     /// </summary>
     /// <param name="credentials">[EN] Documents this public package API member. [JA] 認証情報 credentials パラメーターです。</param>
     /// <returns>[EN] Documents this public package API member. [JA] Vfs セッション 結果を返します。</returns>
-    Task<IVfsSession> OpenSessionAsync(IVfsCredentials credentials);
+    Task<IVfsSessionHandle> OpenSessionAsync(IVfsCredentials credentials);
 
     /// <summary>
     /// EN: プロバイダーが利用可能かどうかを確認します。

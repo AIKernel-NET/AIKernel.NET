@@ -10,7 +10,7 @@ public interface IRomLoader
 {
     /// <summary>EN: Executes the LoadAsync operation on the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで LoadAsync 操作を実行します。</summary>
     Task<RomSnapshot> LoadAsync(
-        IVfsSession session,
+        IVfsSessionHandle session,
         string path,
         CancellationToken cancellationToken = default);
 }

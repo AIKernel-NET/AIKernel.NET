@@ -9,7 +9,7 @@ using AIKernel.Vfs;
 public interface IKernelVfsSessionFactory
 {
     /// <summary>EN: Executes the OpenSessionAsync operation on the AIKernel public contract surface. JA: AIKernel の公開契約サーフェスで OpenSessionAsync 操作を実行します。</summary>
-    Task<IVfsSession> OpenSessionAsync(
+    Task<IVfsSessionHandle> OpenSessionAsync(
         KernelRequest request,
         CancellationToken cancellationToken = default);
 }

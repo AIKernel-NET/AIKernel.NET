@@ -6,7 +6,7 @@ namespace AIKernel.Vfs;
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IDeletableVfsSession']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IDeletableVfsSession']" />
-public interface IDeletableVfsSession
+public interface IDeletableVfsSession : IVfsSessionHandle
 {
     /// <summary>
     /// EN: ファイル/ディレクトリを削除します。

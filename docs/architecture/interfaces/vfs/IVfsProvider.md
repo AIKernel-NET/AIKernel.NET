@@ -30,7 +30,7 @@ Define the provider boundary that opens authenticated Vfs sessions within AIKern
 | --- | --- | --- |
 | `ProviderId` | `string` | Vfs provider identifier. |
 | `Name` | `string` | Vfs provider display name. |
-| `OpenSessionAsync(IVfsCredentials credentials)` | `Task<IVfsSession>` | Open authenticated Vfs session. |
+| `OpenSessionAsync(IVfsCredentials credentials)` | `Task<IVfsSessionHandle>` | Open authenticated Vfs session. |
 | `IsAvailableAsync()` | `Task<bool>` | Check provider availability. |
 | `GetHealthAsync()` | `Task<VfsProviderHealth>` | Return health status for diagnostics. |
 

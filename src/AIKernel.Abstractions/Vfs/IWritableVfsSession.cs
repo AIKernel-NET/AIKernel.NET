@@ -6,7 +6,7 @@ namespace AIKernel.Vfs;
 /// </summary>
 /// <include file="docs.en.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IWritableVfsSession']" />
 /// <include file="docs.ja.xml" path="doc/members/member[@name='T:AIKernel.Vfs.IWritableVfsSession']" />
-public interface IWritableVfsSession
+public interface IWritableVfsSession : IVfsSessionHandle
 {
     /// <summary>
     /// EN: ファイルを書き込みます。
