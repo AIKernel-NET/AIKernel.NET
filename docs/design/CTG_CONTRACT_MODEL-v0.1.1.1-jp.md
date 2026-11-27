@@ -281,3 +281,7 @@ theory name として新規 documentation に導入しない。
 - [CTG Developer Guide](../operations/CTG_DEVELOPER_GUIDE-v0.1.1.1-jp.md)
 - [CTG ROM Layout](../operations/CTG_ROM_LAYOUT-v0.1.1.1-jp.md)
 - [Domain Contract Surface v0.1.1.1](../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1-jp.md)
+
+## 空の軌跡（2026-11-27 著者決定）
+
+軌跡が空の場合、評価は正常に完了し、判断は `Halt`、受理は `false`、理由は `ImplicitDeny` となる。論文 §2.3 の積を空列に拡張すると空積は 1 になる。実行系は評価対象が一段もない入力を受理しない。これは安全側に維持する版固有の意味論（Versioned Semantics）である。

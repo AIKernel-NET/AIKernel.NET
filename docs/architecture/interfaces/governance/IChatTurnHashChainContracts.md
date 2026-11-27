@@ -68,3 +68,12 @@ Use the specific ChatChain names when integrating deterministic replay or chat-h
 # Changelog
 - v0.0.4 (2026-06-04): Added ChatChain governance contract documentation.
 - v0.0.5 (2026-06-05): Clarified removal of the legacy ambiguous ChatChain interface names.
+
+## Default encoding and signer registration
+
+The default `AlgorithmTaggedChatTurnSignatureProvider` Base64-encodes the UTF-8 hash string and prefixes an algorithm tag. It uses no key and does not authenticate the signer. A host that requires a cryptographic signature supplies its own signing and verification implementation. In this example, the host provides `MyChatTurnSigner`.
+
+```csharp
+services.AddSingleton<IChatTurnSignatureProvider, MyChatTurnSigner>();
+services.AddAIKernelCore();
+```

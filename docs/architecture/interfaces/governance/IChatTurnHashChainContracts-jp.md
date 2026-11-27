@@ -68,3 +68,12 @@ v0.0.4 では曖昧だった ChatChain 契約名に専用名を導入し、v0.0.
 # 変更履歴
 - v0.0.4 (2026-06-04): ChatChain governance contract documentation を追加。
 - v0.0.5 (2026-06-05): 旧 ChatChain 曖昧 interface 名の削除を明確化。
+
+## 既定の符号化と署名実装の登録
+
+既定の `AlgorithmTaggedChatTurnSignatureProvider` は、UTF-8 のハッシュ文字列を Base64 に符号化してアルゴリズム名を付ける。鍵を使う暗号署名ではなく、署名者の真正性を確認できない。署名者の確認が必要なホストは、鍵で署名・検証する独自実装を登録する。次の `MyChatTurnSigner` はホストが用意する型である。
+
+```csharp
+services.AddSingleton<IChatTurnSignatureProvider, MyChatTurnSigner>();
+services.AddAIKernelCore();
+```

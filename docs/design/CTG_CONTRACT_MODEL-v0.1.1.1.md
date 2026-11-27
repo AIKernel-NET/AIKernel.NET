@@ -286,3 +286,7 @@ the older shorthand as a formal theory name in new documentation.
 - [CTG Developer Guide](../operations/CTG_DEVELOPER_GUIDE-v0.1.1.1.md)
 - [CTG ROM Layout](../operations/CTG_ROM_LAYOUT-v0.1.1.1.md)
 - [Domain Contract Surface v0.1.1.1](../architecture/19.DOMAIN_CONTRACT_SURFACE-v0.1.1.1.md)
+
+## Empty trajectories (author decision, 2026-11-27)
+
+For an empty trajectory, evaluation succeeds with decision `Halt`, acceptance `false`, and reason `ImplicitDeny`. Extending the product in paper §2.3 to an empty sequence gives the identity 1. The runtime requires an evaluated step for acceptance and intentionally retains this conservative rule as versioned semantics.

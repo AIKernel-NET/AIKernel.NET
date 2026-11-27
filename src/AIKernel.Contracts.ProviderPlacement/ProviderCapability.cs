@@ -12,7 +12,9 @@ public enum ProviderKind
     /// <summary>[EN] Classification models (reserved). [JA] 分類モデル（予約）。</summary>
     Classification,
     /// <summary>[EN] Scoring models (reserved). [JA] スコアリングモデル（予約）。</summary>
-    Scoring
+    Scoring,
+    /// <summary>[EN] Chat generation. [JA] チャット生成。</summary>
+    ChatGeneration = 5
 }
 
 /// <summary>[EN] Input or output modality. [JA] 入出力のモダリティ。</summary>
@@ -32,7 +34,9 @@ public enum ExecutionTarget
     /// <summary>[EN] CPU. [JA] CPU。</summary>
     Cpu,
     /// <summary>[EN] CUDA GPU. [JA] CUDA GPU。</summary>
-    Cuda
+    Cuda,
+    /// <summary>[EN] Vulkan compute. [JA] Vulkan コンピュート。</summary>
+    Vulkan = 2
 }
 
 /// <summary>[EN] Supported request forms. [JA] 対応する呼び出し形態。</summary>

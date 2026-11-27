@@ -35,6 +35,7 @@ AIKernel 抽象契約のユニットテストを収容します。実装依存�
     <ProjectReference Include="..\..\AIKernel.Dtos\AIKernel.Dtos.csproj" />
     <ProjectReference Include="..\..\AIKernel.Enums\AIKernel.Enums.csproj" />
     <ProjectReference Include="..\..\AIKernel.Contracts\AIKernel.Contracts.csproj" />
+    <ProjectReference Include="..\..\AIKernel.Contracts.ProviderPlacement\AIKernel.Contracts.ProviderPlacement.csproj" />
   </ItemGroup>
 
   <ItemGroup>
