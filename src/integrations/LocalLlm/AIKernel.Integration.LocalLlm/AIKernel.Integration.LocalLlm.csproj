@@ -4,6 +4,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <IsPackable>false</IsPackable>
+    <DefineConstants Condition="'$(UseHistoricalContracts)' == 'true'">$(DefineConstants);AIKERNEL_HISTORICAL_CONTRACTS</DefineConstants>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
   </PropertyGroup>
   <ItemGroup>

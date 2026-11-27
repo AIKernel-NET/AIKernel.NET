@@ -36,7 +36,14 @@ public sealed class LocalLlmRegistration : IAsyncDisposable
         try
         {
             await _provider.InitializeAsync().ConfigureAwait(false);
-            await registry.RegisterAsync(_provider.ToCapabilityDescriptor(), cancellationToken).ConfigureAwait(false);
+#if AIKERNEL_HISTORICAL_CONTRACTS
+            var descriptor = _provider.ToCapabilityDescriptor();
+#else
+            AIKernel.Abstractions.Providers.IProviderCapabilitySource source = _provider;
+            var descriptor = source.ToCapabilityDescriptor()
+                ?? throw new InvalidOperationException("LocalLlm did not supply its registration descriptor.");
+#endif
+            await registry.RegisterAsync(descriptor, cancellationToken).ConfigureAwait(false);
             return this;
         }
         catch

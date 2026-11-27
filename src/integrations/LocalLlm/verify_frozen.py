@@ -141,7 +141,7 @@ def main():
 
     dotnet("restore", project, "-p:NuGetLockFilePath=packages.frozen.lock.json", "--locked-mode", "--no-http-cache", "--configfile", config)
     graph = {p.name: verify_graph(p, cache, feed) for p in (LIB, TESTS)}
-    dotnet("build", project, "-c", "Release", "--no-restore")
+    dotnet("build", project, "-c", "Release", "--no-restore", "-p:UseHistoricalContracts=true")
     output = TESTS / "bin/Release/net10.0"
     binaries = check_output(feed, output)
     shared = check_shared_output(cache, output, graph[TESTS.name])

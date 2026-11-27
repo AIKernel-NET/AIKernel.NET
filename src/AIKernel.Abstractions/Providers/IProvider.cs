@@ -42,6 +42,11 @@ public interface IProviderCapabilitySource
     /// [EN] Documents this public package API member. [JA] GetCapabilities 操作を実行します。
     /// </summary>
     IProviderCapabilities GetCapabilities();
+
+    /// <summary>Returns the descriptor this provider supplies for module registration.
+    /// 登録用のモジュール記述子を返します。提供していない場合は null を返します。</summary>
+    /// <remarks>Hosts can query this capability without initializing or registering a module on its behalf.</remarks>
+    AIKernel.Dtos.Capabilities.CapabilityModuleDescriptor? ToCapabilityDescriptor() => null;
 }
 
 /// <summary>
