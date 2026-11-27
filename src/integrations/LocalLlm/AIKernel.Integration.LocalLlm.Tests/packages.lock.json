@@ -30,7 +30,7 @@
       "AIKernel.Abstractions": {
         "type": "Transitive",
         "resolved": "0.3.0",
-        "contentHash": "uMRKvio8S/yj8KeFdIp05FOphbHvkUxbjD+8yeHP0ImMwLTQaujX4odGCiNMXB6VLOPKXAhYILuWS2v4hGwJdw==",
+        "contentHash": "dxHliMIuuHkMGHewoxXP1a1ns1IH34+x5ZA85emykI3oOljInbpPtePAk3LaYWkY/WjdFq5nwcXbMgxg3gwduw==",
         "dependencies": {
           "AIKernel.Dtos": "0.3.0",
           "AIKernel.Enums": "0.3.0"
@@ -39,12 +39,12 @@
       "AIKernel.Common": {
         "type": "Transitive",
         "resolved": "0.3.0",
-        "contentHash": "4nni7LvBvQHV83+qUQdGv+KxydB8bnIp8LV5uPuiegowjkbT1taKHRNbcbFfGACEf4G9C7KY/AqNHQ7uxKCBKg=="
+        "contentHash": "8grGioD8HslB+zR41yMbs+kh639sDP+RgCr0VLJuvztsN0sL+X1tdD8Cx2p1ufOP3qubLmExmvGQx6WK8LhYvA=="
       },
       "AIKernel.Core": {
         "type": "Transitive",
         "resolved": "0.3.0",
-        "contentHash": "lYJkJY0ClpzAb2nWa2A5wfKD4I53bFKjAIFjbpJKMegeDUOOBQyN07kkBppz9UmktGZrsSBhoWEGLO+3122GYw==",
+        "contentHash": "wiahE7hebuYhiQigmI1KyUJyxbvw1tH8zo/g0+oDuGnxNtaxX0ijHK7n8IUHvGEtUJ5wHHlEXf9QsTY22MrcnQ==",
         "dependencies": {
           "AIKernel.Abstractions": "[0.3.0]",
           "AIKernel.Common": "0.3.0",
@@ -59,7 +59,7 @@
       "AIKernel.Dtos": {
         "type": "Transitive",
         "resolved": "0.3.0",
-        "contentHash": "ZKMaOI5ZciOLtA/VnLGK/NCGYVRgnEs/7CC9zcLBMp4pFpy2GdfHuFMLVInsEwu+2+xvu07iC1iuojVLJg+4mA==",
+        "contentHash": "NUn3/NX33KLcu6eY4jRHIXc9rYHgeOu0vuE6casG6TV4iz1cccNqi9V3XCSvffoR4nkOXrhaln2Rckao5wdgZg==",
         "dependencies": {
           "AIKernel.Enums": "0.3.0"
         }
@@ -67,12 +67,12 @@
       "AIKernel.Enums": {
         "type": "Transitive",
         "resolved": "0.3.0",
-        "contentHash": "sSosSKcHeS38FgoUwMqHoyHqgtRTQJiF0nNoJexB7U4b/JRPuU1ExSAuORSElGx2X7ZYeWOSAW2KkKW0twTSMA=="
+        "contentHash": "FGGu4rFCDHBqVy/qEjwhxPCWFvlc2SuGLgsnSXX5wUldOYkeQh14IHmY2Ws1dhGBEyuuhn9K61DWDnfMhJeZoA=="
       },
       "AIKernel.Kernel": {
         "type": "Transitive",
         "resolved": "0.3.0",
-        "contentHash": "BxZ8HMtEPl/+d4Exi3uqw94ETFJVMGFcOl5kNcswxIyRQOGtb+rhKFq0ohtg7S2ILGJROf5Bk/ityjowBhUF/w==",
+        "contentHash": "oBSa2vH6rdZVRsDrFJ+Cw/Ti/z823RhtYH0mz/rZ3T20JH6awDQBfKEZduJmU1ycPa6fTRf1HTZI91Kjasi2tA==",
         "dependencies": {
           "AIKernel.Abstractions": "[0.3.0]",
           "AIKernel.Core": "[0.3.0]",
@@ -85,7 +85,7 @@
       "AIKernel.Providers.LocalLlm": {
         "type": "Transitive",
         "resolved": "0.3.0",
-        "contentHash": "tFlqVtXvxjzrIrxxADLd2WDmXLwG/iXwAFtmO7R18i8YC1838T55CFttqzUtppuxKmioFrvjIwsaSIwScWlmtw==",
+        "contentHash": "GC4fHPtsAzbwaLg73SF19DeiQ+4EtYKkbQFwX5s2k5YZDhTCFipjXG8+n1XryiPwzbqPzWqveRWsezv8qq1iow==",
         "dependencies": {
           "AIKernel.Abstractions": "[0.3.0]",
           "AIKernel.Common": "[0.3.0]",
