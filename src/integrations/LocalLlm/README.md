@@ -14,6 +14,8 @@ if (descriptor is not null && registration.ResolveInvoker(descriptor.CapabilityI
 
 The coordinated host asks the shared `IProviderCapabilitySource.ToCapabilityDescriptor()` contract for the descriptor after initialization. A provider that does not supply a module descriptor returns `null`. The frozen-feed runner selects the historical concrete call when building against the archived contracts.
 
+When consuming the new descriptor API, restore the host and provider together from the coordinated package lock. A LocalLlm binary built before the interface member was introduced still returns its descriptor through its original concrete method. With the new Abstractions assembly it returns the default `null` through the interface. Rebuild third-party providers against the new contract to expose their matching descriptor method through that interface.
+
 The host owns the registration and registry. Keep the registry scoped to that host. Stop admitting new requests before disposal. Use the provider's `Succeeded` and `ErrorCode` for each request. A registered descriptor advertises an operation even if a particular model is unavailable.
 
 ## Test the coordinated 0.3.0 candidates
