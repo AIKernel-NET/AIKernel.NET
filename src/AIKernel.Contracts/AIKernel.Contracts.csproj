@@ -6,6 +6,11 @@
 
     <!-- Package metadata -->
     <Title>AIKernel.NET Contracts</Title>
+    <PackageVersion>0.3.0</PackageVersion>
+    <Version>$(PackageVersion)</Version>
+    <FileVersion>0.3.0.0</FileVersion>
+    <InformationalVersion>$(PackageVersion)</InformationalVersion>
+    <PackageReleaseNotes>Targets the AIKernel 0.3.0 shared DTO and enum packages for orchestration and context projection.</PackageReleaseNotes>
 
     <!-- Description: English then Japanese -->
     <Description>
@@ -37,7 +42,7 @@ OrchestrationContext、MaterialContext、ExpressionContext など、AIKernel OS 
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AIKernel.Enums\AIKernel.Enums.csproj" />
-    <ProjectReference Include="..\AIKernel.Dtos\AIKernel.Dtos.csproj" />
+    <PackageReference Include="AIKernel.Enums" Version="[0.3.0]" />
+    <PackageReference Include="AIKernel.Dtos" Version="[0.3.0]" />
   </ItemGroup>
 </Project>
