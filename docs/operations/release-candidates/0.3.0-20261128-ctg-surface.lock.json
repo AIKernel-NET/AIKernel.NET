@@ -1,0 +1,104 @@
+{
+  "candidate": "0.3.0 / CTG #13",
+  "scope": "Tested registration candidate, pending author approval.",
+  "format": "SHA256 of UTF-8 JSON sorted unique [assembly,type,signature], no whitespace, Unicode retained, (type) included. Detailed public surface and its raw digest accompany the evidence.",
+  "signatureCount": 14810,
+  "signatureSha256": "9b31ed6c842c27998af141edee9035c8a4e868c4f6725b1a69e8d3f64d90de04",
+  "fullAuditSha256": "c5ba18c44fec40f141f0f26af26ceb1716c47c93ed6ebcffd6f572a00eeac48f",
+  "changesFromPrior": [
+    [
+      "AIKernel.Kernel",
+      "AIKernel.Kernel.Inference.BonsaiCtgCouncilEvaluator",
+      "public System.Threading.Tasks.Task<AIKernel.Common.Results.Result<AIKernel.Dtos.Governance.GovernanceTrace>> EvaluateProposalTraceAsync(AIKernel.Dtos.Governance.CouncilEvaluationRequest request, string proposal, AIKernel.Kernel.Inference.BonsaiCtgEvidenceRequirements evidence, string evidenceRoot, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))"
+    ]
+  ],
+  "perAssembly": {
+    "AIKernel.Abstractions": {
+      "count": 1409,
+      "sha256": "7634d2db29f384b9cd710a9fe5a3cabeab758606256a42e69ebbd8c9a1ee30e4"
+    },
+    "AIKernel.Common": {
+      "count": 304,
+      "sha256": "8a37438bb7fa97e4ea1a684f24f5b560bd8018c6f15f6f947443fed0d5bd1782"
+    },
+    "AIKernel.Contracts.Embedding": {
+      "count": 161,
+      "sha256": "731c922975a71e033419645807607d86fabda068d353f2b57d44c70d433ba5f2"
+    },
+    "AIKernel.Contracts.ProviderPlacement": {
+      "count": 368,
+      "sha256": "90b91cc779a50154ec5e3352c41d71743a2b626e07483e7dd61bc1009c5cee84"
+    },
+    "AIKernel.Contracts.Reranking": {
+      "count": 56,
+      "sha256": "fc2e6c6ad71eb9ecc7681df5d4be528ddc235911ab4d7f221f0c3255423c78df"
+    },
+    "AIKernel.Core": {
+      "count": 1038,
+      "sha256": "82037c2721addc3460984854c9f235d4e67b908dd25d335dabdf0ca49a4f111b"
+    },
+    "AIKernel.Dtos": {
+      "count": 8824,
+      "sha256": "7f21ef73e5dc51873d5dff17173527e3046c6d9f730c786d00c914486c340c86"
+    },
+    "AIKernel.Enums": {
+      "count": 987,
+      "sha256": "8ecf0698cdfc2af887d27b368444fcf13b88f3790d0ca03b936b67734b04f640"
+    },
+    "AIKernel.Kernel": {
+      "count": 996,
+      "sha256": "f4d52d9604d7cf44be18bc8eca0b177459e859217599918c9f00ee41d6cae9d9"
+    },
+    "AIKernel.Providers.DocumentSearch": {
+      "count": 96,
+      "sha256": "d9330ce6a8950b28beba376abe69dba16f0de9c4e510a92cc1a514292405b6b5"
+    },
+    "AIKernel.Providers.Embedding": {
+      "count": 32,
+      "sha256": "465fba9838ed16505df8ad55a8fa2ad4f23c764e75a52a2c485890c3629848b5"
+    },
+    "AIKernel.Providers.Reranker": {
+      "count": 30,
+      "sha256": "237aba31fc2864aae205800cc883b6007e55c6e9e7585a337a2c5172cccc892f"
+    },
+    "AIKernel.Providers.Standard": {
+      "count": 246,
+      "sha256": "e3b41533bc915b4f8cf432a20cc55955a5fecec86f5fef1aed6f5e42bd9311a2"
+    },
+    "AIKernel.Providers.Svs": {
+      "count": 97,
+      "sha256": "c4bc712d4add2274c03591cc6d294ff8e0e18fc50a9f7511c52bddc570e6d9ff"
+    },
+    "AIKernel.Providers.Tts": {
+      "count": 90,
+      "sha256": "2f88845e8c8a6307d28e50bec252818ebc10e68948bc1b3f9b158b60f37403fd"
+    },
+    "LocalLlmProvider": {
+      "count": 76,
+      "sha256": "67ab6b64b961b616e76d102969e03a71b892dc7630d0374496f2b789e29c3716"
+    }
+  },
+  "packageSha256": {
+    "AIKernel.Abstractions": "8e420a304b3da3b0f93677fec10d8d95607bea413f64745155eb37bca17135cf",
+    "AIKernel.Common": "8123e908a645e917ac9fb1a6a855c65898f6a2751ee301d0889592dafe37736c",
+    "AIKernel.Contracts.Embedding": "4dcfbc8b9d5af10cdd85c0ccbf22840da89a9d0542246da17b5adbcc2f35ca9c",
+    "AIKernel.Contracts.ProviderPlacement": "b5bb0f0f31f0f989130f0f8a4c540a599212a071cea255f9bc0e1c502cef9c57",
+    "AIKernel.Contracts.Reranking": "39ee3221b7509f58589aaf23bcca01c3929a8ac1bb9056e9cccfa024f8723f0b",
+    "AIKernel.Core": "b3bf68806cd89ff1c8c4322ce9359cda9ebe989299795843d5eeb469e9a95cb3",
+    "AIKernel.Dtos": "bc49fce75bce77b85b725aa4f496fbd0f9c053b6255fd07de5d4c994d0893296",
+    "AIKernel.Enums": "a33c55d9b5d5efa3cc6f64c1ebf52cdefc3f847c74fdd094f06bd4429e878f34",
+    "AIKernel.Kernel": "c65019fed345a42a895498f68ce4ab5d1ce6ede867d976e87642d904d099bbbb",
+    "AIKernel.Providers.DocumentSearch": "2a18199d9d4f5b2dcce4a1cc37597cc7048f11105570f8773bb63271632cf23f",
+    "AIKernel.Providers.Embedding": "0f382379c91ab7a246c6cbeacc6c0deb36e05bb811ac3f70fe2dcabff21a32ac",
+    "AIKernel.Providers.LocalLlm": "974c32b9585fbd6d85ab6f1258a9482da688116a28d8481dc43fee7c176c8f1d",
+    "AIKernel.Providers.Reranker": "cef34a5604db8a5c41c9de19dacc27c124ceda38b8bcac968b6f28a88d6cf02e",
+    "AIKernel.Providers.Standard": "fdecb3598ebf90b08495c7ab0986e2d7b69abaff08a27a3c2466ebfbe7e7d84b",
+    "AIKernel.Providers.Svs": "8b43e3745acedd0217710c5a6e4e166d28380e3b644203951f375ef30c5cb76c",
+    "AIKernel.Providers.Tts": "ecac950d857647f29495bf0768d4af1a71abc8052ed06bfd9933e4a6ef79dd38"
+  },
+  "deferred": [
+    "Formal freeze and NuGet registration require author approval."
+  ],
+  "previousCandidate": "0.3.0-20261127-surface.lock.json",
+  "evidenceId": "86c63440c88e4f158cb07fd176f1ab3a"
+}
