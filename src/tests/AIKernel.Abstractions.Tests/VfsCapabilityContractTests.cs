@@ -9,13 +9,13 @@ namespace AIKernel.Abstractions.Tests;
 public sealed class VfsCapabilityContractTests
 {
     /// <summary>
-    /// EN: Executes CompositeSessionExposesGranularCapabilities.
-    /// EN: Documentation for public API. JA: CompositeSessionExposesGranularCapabilities を実行します。
+    /// EN: Executes FullSessionExposesImplementedCapabilities.
+    /// EN: Documentation for public API. JA: FullSessionExposesImplementedCapabilities を実行します。
     /// </summary>
     [Fact]
-    public async Task CompositeSessionExposesGranularCapabilities()
+    public async Task FullSessionExposesImplementedCapabilities()
     {
-        IVfsSession session = new FullVfsSession();
+        IVfsSessionHandle session = new FullVfsSession();
 
         Assert.IsAssignableFrom<IReadableVfsSession>(session);
         Assert.IsAssignableFrom<IWritableVfsSession>(session);
@@ -43,8 +43,40 @@ public sealed class VfsCapabilityContractTests
         Assert.False(session is IQueryableVfsSession);
     }
 
+    [Fact]
+    public async Task WriteOnlySessionCanBeReturnedAndDisposedThroughTheHandle()
+    {
+        var writer = new WriteOnlyVfsSession();
+        await using (IVfsSessionHandle session = writer)
+        {
+            Assert.Equal("writer", session.SessionId);
+            Assert.False(session is IReadableVfsSession);
+            await Assert.IsAssignableFrom<IWritableVfsSession>(session).WriteFileAsync("/test", [42]);
+        }
+        Assert.True(writer.Disposed);
+        Assert.Equal(new byte[] { 42 }, writer.Content);
+    }
+
+    private sealed class WriteOnlyVfsSession : IWritableVfsSession
+    {
+        public string SessionId => "writer";
+        public byte[]? Content { get; private set; }
+        public bool Disposed { get; private set; }
+        public Task WriteFileAsync(string path, byte[] content)
+        {
+            Content = content;
+            return Task.CompletedTask;
+        }
+        public ValueTask DisposeAsync()
+        {
+            Disposed = true;
+            return ValueTask.CompletedTask;
+        }
+    }
+
     private sealed class ReadOnlyVfsSession : IReadableVfsSession
     {
+        public ValueTask DisposeAsync() => ValueTask.CompletedTask;
         /// <summary>
         /// EN: Gets SessionId.
         /// EN: Documentation for public API. JA: SessionId を取得します。
@@ -69,7 +101,7 @@ public sealed class VfsCapabilityContractTests
         }
     }
 
-    private sealed class FullVfsSession : IVfsSession
+    private sealed class FullVfsSession : IReadableVfsSession, IWritableVfsSession, IDeletableVfsSession, INavigableVfsSession, IQueryableVfsSession
     {
         /// <summary>
         /// EN: Gets a test helper value. JA: テスト用の値を取得します。
@@ -80,9 +112,9 @@ public sealed class VfsCapabilityContractTests
         /// EN: Documentation for public API. JA: ReadFileAsync を実行します。
         /// </summary>
 
-        public Task<IVfsFile> ReadFileAsync(string path)
+        public Task<IReadableVfsFile> ReadReadableFileAsync(string path)
         {
-            return Task.FromResult<IVfsFile>(new ReadableFile(path));
+            return Task.FromResult<IReadableVfsFile>(new ReadableFile(path));
         }
         /// <summary>
         /// EN: Executes WriteFileAsync.
@@ -97,9 +129,9 @@ public sealed class VfsCapabilityContractTests
         /// <summary>
         /// EN: Executes a test helper member. JA: テスト用のメンバーを実行します。
         /// </summary>
-        public Task<IVfsDirectory> GetDirectoryAsync(string path)
+        public Task<INavigableVfsDirectory> GetNavigableDirectoryAsync(string path)
         {
-            return Task.FromResult<IVfsDirectory>(new NavigableDirectory(path));
+            return Task.FromResult<INavigableVfsDirectory>(new NavigableDirectory(path));
         }
         /// <summary>
         /// EN: Executes ExistsAsync.
